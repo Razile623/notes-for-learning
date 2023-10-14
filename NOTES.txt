@@ -1,0 +1,3951 @@
+public class Name{
+
+	public static void main(String[] args){
+		String firstName;
+		String	custName = "Sally Smith";
+		int spaceIndex;
+		
+		//Get the  index of the space character " "
+		spaceIndex = custName.indexOf(" ");
+
+		//Use the substring method to locate the first name
+		firstName = custName.substring(0, spaceIndex);
+		System.out.println(firstname);
+	}
+}
+
+
+Using the JAVA API documentation
+
+Consist of a set of webpages;
+	list all the classes in the API
+		description of what the class does
+		list of constructors, methods, and fields for the class
+	Highly hyperlinked to show the interconnections between classes and to facilitate lookup
+
+
+StringBuilder Class
+
+-mutable alternative to string
+-instantiated using the new keyword
+-has many method for manipulating a value
+
+StringBuilder mySB = new StringBuilder ("Hello");
+mySB.append(" World");
+
+public class Shoppingcart{
+
+	public static void main(String[] args){
+		String firstName;
+		String	custName = "Sally Smith";
+		int spaceIndex;
+		StringBuilder sb;
+		
+		//Get the  index of the space character " "
+		spaceIndex = custName.indexOf(" ");
+
+		//Use the substring method to locate the first name
+		firstName = custName.substring(0, spaceIndex);
+		System.out.println(firstName);
+		//Instantiate and initialize sb to firstName
+		sb = new StringBuilder(firstName);
+		System.out.println(sb);
+
+		sb.append(" Smith");
+		System.out.println(sb);
+	}
+}
+
+
+Primitive Data Types
+Integral types - byte, short, int, and long
+Floating point type -float and double
+Textual Type -char
+Logical type - boolean
+Unicode - primitive type
+
+final - constant and cannot be changed
+
+The remaining numeric operators
+remainder = modulus %
+	ex. 31/6
+	    - mod is 1
+
+preincrement =++variable
+postincrement =variable++
+predecrement =--variable
+postdecrement =variable--
+
+
+
+Promoting and Casting Variable
+
+Promotions
+	Automatic promotion
+
+Type Casting
+When to cast:
+	If you assign a larger type to a smaller type
+	If you assign a floating point type to an integral type
+
+Beware of the possibility of lost precision
+
+All literal floating point values are viewed as double
+
+L notifies the compiler that a number is double value
+F notifies the compiler that a number is float value
+
+
+
+public class Shoppingcart{
+
+	public static void main(String[] args){
+	
+		int int1;
+		long long1 = 99000000000L;
+		float fit1 = 13.5F;
+		char ch1 = '0';
+		
+		//print the long variable
+		System.out.println("long: " + long1);
+		//Assign the long to the int and print the int variable
+		int1 =(int)long1;
+		System.out.println("Long assign to int variable " + int1);	
+	}
+}
+
+
+Method and Conditionals
+void method - nothing to return
+main method = calling method
+diplay method = worker method
+constructor method - is a special method that is invoked when you create an object instance
+	it is called by using the new keyword
+	its purpose is to instantiate an object of the class and store the reference in the reference variable
+	it has unique method signature
+
+Method arguments and return values
+arguments - is a value that is passed during a method call
+parameter- is a variable defined in the method declaration
+
+use the keyword return within a method
+
+
+
+
+Static method and variables
+static modifier is applied to a method or variable
+method/variable:
+	belongs to the class and is shared by all object of that class
+	is not unique
+
+
+Creating and Accessing Static Members
+To create a static variable or method
+	static String mSmall;
+	static void setMSmall(String desc);
+To access a static variable or method
+	From another class
+		ItemSizes.mSmall;
+		ItemSize.setMSmall("Men's Small");
+	From withim the class
+		mSmall;		
+		setSmall("Men's Small);
+
+
+Method Overloading
+	have the same name
+	have different signatures
+		the number, types, order of parameter
+	have different functionality
+
+
+ACCESS CONTROL
+hide fields and methods from other classes
+determine how internal data is changed
+keep the implementation separate from the public interface
+	public interface
+		setPrice(Customer cust)
+	implementation		
+		public void setPrice(Customers cust){
+			// set price discount relative to customer
+		}
+access modifier
+	public: accessible by anyone
+	private:accessible only within the class
+
+Encapsulation
+	hiding object fields
+	mandates programming to the interface
+	encourages good object-oriented design
+   Get and set
+ 
+Declaring 2 dimentional array
+	ex. int [] [] yearlySales;
+	Syntax:	type [] [] array_identifier;
+
+Instantiating 2 Dimensional array
+	ex. yearlySales = new int [5] [4]'
+	syntax: array_identifier = new type [number_of_arrays] [lenght];
+
+Initializing a 2 Dimentional Array
+	ex. int [] [] yearlySales = new int [5] [4];
+		yearlySales[0][0] = 1000;
+
+Introduction to Object
+Defining Object Properties
+Instantiating Object
+Describing Object References
+Reference Different Object
+Reference and Ojects in Memory
+Two Reference for One Object
+Describing Arrays Object in Memory
+Describing Constructor and Methods
+Implementing Constructors
+Method Parameter
+Method Return Types
+Method Overloading
+Variable Scope
+Exercise: Creating Overloading Methods
+Take Test
+
+Java Array are stored in memory, object stored on the heap
+Arguments is a value passed into a method called
+What makes up the method signature
+	Method Name
+	Parameter Types
+	Order of parameters
+	Number of parameters
+
+Java scope defines where a certain variable or method is accessible in a program
+
+Class components 
+	noun-class name
+	verb - behavior or method
+	adjective- property or field
+
+Heap - object instance
+Stack - Reference type & Primitive type
+
+
+Static Variable is shared by all object in class
+Instance variable is unique to an individual object 
+
+
+Introduction to Static Members
+Creating and Accessing Static Members
+Exploring Constants
+Promoting and casting variables
+Converting data values
+Introduction to access control
+Using public and private modifier
+Encapsulation
+Using Setter Method with checking
+Overloading Constructors
+Passing an Object Reference
+Passing by value
+Exercise: Data Conversion in a Setter Method
+Take Test
+
+Static modifier - can be accessed without instantiating the class
+		-Is shared by all object of the class
+		- Is not unique to an object instance
+
+If someone attempts to change the value of a constant after it has already been assigned a value, the compiler will give an error
+
+Promotion - ex. int to double
+		byte to short
+Casting - ex. long to int
+		double to float
+
+Method use to convert a string to a primitive int type, Interger.parseInt
+
+Benefits of Access Control
+	keep the implementation separate from the public interface
+	determine how internal data gets changed
+	hide fields and methods from other classes
+
+
+Benefits of encapsulation
+	method can change the data type to match the field
+	encourages good object-oriented design 
+	a class can be changed as long as the interface remains the same
+
+Benefits of checking in setter methos provide
+	it ensures the validity of data
+
+this- keyword use to call a overloaded constructor from other constructor
+
+Object Reference - value is copied
+
+
+Testing String Equality
+Comparing Strings Lexicographically
+Introduction To Mutable Strings
+Using StringBuilder to Concatenate Strings
+Splitting Strings
+Iterating Over Words in a String
+Performing a String Replace
+Primitive Data Types
+Using the modulus Operator
+Using Combined Assignment Operator
+Exercise:Concatenate a string of Numbers
+Take Test
+
+StringBuilder provides a mutable alternative to String
+	-is instantiated using the new keyword
+	- has many methods for manipulating its value
+	-provides better performance because it is mutable
+	-can be created with an initial capacity
+	-methods for data manipulation: append, delete, insert, replace
+String is still needed
+	- it may be safer to use an immutable object	
+	-  method in the API may require a string
+	- instantiation without new
+
+append- method used to concatenate a String to a StringBuilder object
+String[]- object type is returned by the String split method
+
+StringBuilder advantages over String for concatenation(or appending)
+
+Declaring and Instantiate StringBuilder
+	StringBuilder mySB = new StringBuilder("Hello");
+
+StringBuilder Append
+	StringBuilder mySB = new StringBuilder("Hello");
+	mySB.append(" World");
+
+
+
+String Replace
+	String result = phrase.replace("the", "a");
+	System.out.println(result);
+
+String split
+	String word: result.split("\\s+")
+	System.out.println(word); 
+
+\\s+ -newlines, spaces, tabs
+
+Methods used to test for the equality of String Values
+	-equalsIgnoreCase
+	-equals
+	
+Negative return value indicate when calling the compareTo method on a String
+	-the String is lexicographically less than the string argument
+
+byte -8
+short-16
+long-64
+int-32
+
+Java API Documentation
+	Consist of a set of webpages
+		List all the classes in the API
+			Description of what the class does
+			list of constructors, methods, and fields, for the class
+		Highly hyperlinked to show the interconnections between classes and to facilitate lookup
+		
+
+
+Java Platform SE & JDK Version 10 API Specification
+	This document is divided into three sections:
+	JAVA SE:
+		The java platform, standard Edition (Java SE) API's define the core Java platform for general-purpose computing
+		These API's are in modules whose name start with java
+	JDK
+		The JDK APIs are specific to the JDK and will not necessarily be available in all implementations of the Java SE platform.
+		These API's are in modules whose names start with jdk
+	JavaFX
+		defines a set of user-interface controls, graphics, media
+		and web packages for developing rich client application 
+		These API's are in modules whose names start with javafx
+		
+	
+
+Creating a LocalDateTime Object
+
+	LocalDateTime myDate = LocalDateTime.now();
+	System.out.println(mydate);
+	System.out.println(mydate.getDayOftMonth() );
+	System.out.println(mydate.getHours() );
+
+Using Calendar
+	import java.time.LocalDateTime;
+	import java.time.chrono.JapaneseDate;
+	import java.time.chrono.ThaiBuddhistDate;
+
+
+	LocalDateTime myDate = LocalDateTime.now();	
+	System.out.println(mydate);
+
+	JapaneseDate jDate = JapaneseDate/from(myDate);
+	System.out.println(jDate);
+
+	ThaiBuddhishDate tDate = ThaiBuddhishDate.from(mydate);
+	System.out.println(jDate);
+
+
+	
+	
+Online Documentation would you find information for classes belonging to the core platform
+	Modules beginning with javafx
+	Modules beginning with java
+	
+Method of LocalDateTime can be used to get the current date and time
+	now()
+
+java.time.chrono - package contains Java classes that represent alternate calendar system
+
+
+Valid values from the FormatStyle enumeration
+	LONG, SHORT, FULL
+
+parse() - method of the LocalDate class, is able to convert a string into a LocalDate
+		instance
+
+Approaches valid way to avoid an infinitte while loop - in the body of the while block, adjust values that effect the expression
+
+
+enhanced for - type of loop most appropriate for processing elements in Java array
+
+
+
+
+ Nested for loop is the most appropriate for iterating a 2d array
+
+step over - debugger action allow us to skip over a method call when in debug mode
+
+The purpoes of breakpoint when developing a Java app is pause the app when running in debug mode
+
+When paused at a breakpoint in a debugging session for a Java app - it define new breakpoint, modify variable values and inspect the stack trace
+
+
+Inheritance allows one class to be derived from another
+	less code duplication
+	edits are done in one directions
+	Parent class is known as superclass
+	child class is known as subclass
+
+
+Java Class Hierarchy and Inheritance
+Creating Subclasses
+Overriding Methods in the Superclass
+Using the super keyword
+Polymorphism
+Casting Superclass References
+Using the instanceof Operator
+Contrasting Abstract and Non-Abstract Classes
+Extending an Abstract Class
+
+
+Polymorphism 
+	means that the same message to two different object can have different results
+	in Java , it means the same method is implemented differently by different classes
+		This is especially powerful in the context of inheritance
+		it relies upon the "is a" relationships
+
+Superclass and subclass relationship
+	use inheritance only when it is completely valid or unavoidable
+		use the "is a" test to decide whether an inheritance relationship makes sense
+
+
+
+ 
+benefits of Encapsulation
+	protects an object from unwanted access by clients
+	prevents assigning undesired values for its variable by the client, which can make the state of an object unstable
+	allows changing the class implementation without modifying the client interface
+
+
+Pupose of Java Community Process
+	Produces java specification requests
+	Develop new Java standards
+	Provides early access to specifications
+
+
+public class ClassName{} - Defines a class and the name must be the same as the filename
+public static void main(String args[]){} - defines a class method that is dspecial and is invoked when the class is run by the runtime
+import<package> -defines other classes of groups of classes used in your class
+package<package_name> - Defines where a class lives relative other classes
+
+
+
+
+StringBuilder class method available
+	substring
+	append
+	insert
+	length
+
+Singleton Pattern
+	details a class implementation that can be instantiated only once
+	
+
+
+Abstract Method
+	Cannot have a method body
+	Must be declared in an abstract class
+	Is overriden in subclasses
+
+final method cannot be overriden and extended
+
+
+Rules in creating Interface, for your access modifiers, all the methods in the interface are going to be public
+
+
+default methods 		
+	are declared by using the keyword default
+	are fully implemented methods within an interface
+	privide useful inheritance mechanics
+
+
+
+Anonymous Inner Class
+Comparing Classes, Interfaces and Lambda Expressions
+Lambda Expressions
+Writing Lambda Expressions
+	
+
+
+Lambda Expression Defines
+arguments list- int x, int y
+arrow token ->
+body - x+y
+
+example:
+	(int x, int y) -> x +y
+	(x, y) -> x+y
+	(x,y) -> { System.out.println (x +y) ;}
+	(String s) -> s.contains("word")
+	s -> s.contains("word")
+
+ContainsAnalyzer.java
+public class ContainsAnalyzer implements StringAnalyzer{
+public boolean analyze( String target, String searchStr) {
+	return target.contains (searchStr);
+	}
+}
+
+Generics
+	Provides flexible type safety to your code
+	Move many common errors from runtime to compile time
+	Provide cleaner, easier-to-write code
+	Reduce the need for casting with collections
+	Are used heavily in the Java Collections API
+
+Generics with type inference diamond
+	Syntax
+		There is no need to repeat types on the right side of the statement
+		Angle brackets  indicate that type parameters are mirrored
+	Simplifies generics declarations
+	Saves Typing
+
+
+
+Collections 
+	is a single object designed to manage a group of object.			
+		Objects in  a collection are called elements
+		Primitives are not allowed in a collectoin
+	Various collection types implement many common data structures:
+		Stack, queue, dynamic array, hash
+	The collection API relies heavily on generics for its implementation
+
+
+Set Interface
+A set is an interface that contains only unique elements
+A set has no index
+Duplicate elements are not allowed
+You can iterate through elements to access them. 	
+TreeSet provides sorted implementation
+
+
+
+Map Interface
+A collection that stores multiple key-value pairs
+	Key: Unique identifier for each element in a collection
+	Value: A value stored in the element associated with the key
+Called:"associative arrays" in other languanges
+
+
+Ordering Collections
+Th Comparable and Comparator interfaces are used to sort collections
+	Both are implemented using generics
+Using the Comparable interface:
+	Overrides the compareTo method
+	Provides only one sort option
+Using the Comparator interface:
+	is implemented by using the compare methos
+	enables you to create multiple Comparator classes
+	enables you to create and use numerous sorting options
+
+
+
+Using the Builder Pattern
+allows object creation using mthod chaining
+	makes code easier to read
+	more flexible object creation	
+	Object returns itself
+	A fluent approach
+Java Streams 
+	Streams
+		java.util.stream
+		a sequence of elements on which various methods can be chained
+	Method Chaining
+		multiple methods can be called in one statement
+	Stream Characteristics
+		Immutable
+		Once elements are consumed, they are no longer available from the stream
+		A chain of operations can occur only once on a particular stream (a pipeline)
+		Can be serial(default) or parallel
+
+Pipeline defined
+	A stream pipeline consist of;
+		A source 
+		0 Or more intermediate operations
+		One terminal operation	
+The filter MEthod
+	The stream class converts collections to a pipeline
+		immutable data
+		can only be used once and then tossed
+	Filter methos uses predicate lambdas to select items
+Syntax;
+	System.out.println("\n== CA Transations Lambda ==");
+	tList.stream()
+		.filter(t -> t.getState().equals("CA"))
+		.foreach(SalesTxn: :printSummary); -------> Lambda expression
+
+
+Method references
+	
+	alternatively, you can use a method reference
+		- foreach(SalesTxn: :printSummary));
+	Use of method reference
+		Reference to a static method
+			- ContainingClass: :staticMethodName
+			-Reference to an instance method
+			-Reference to ana  instance method of an arbitrary object of a particular type(e.g.. String: : compareToIgnoreCase)
+			-Reference to a constructor
+				- ClassName: :new
+
+
+Built in Functional Interfaces
+	why not just jump to the cool streams stuff?
+	Lambda expression rely on functional interfaces
+		Important to understand what an interface does
+		concept make using lambdas easier
+	Focus on the purpose of main functional interfaces
+	Become aware of many primitive variations
+	Lambda expressions have properties like a variable
+		Use when needed
+		or can be stored and reused
+
+The java.util.function package
+	Predicate: an expression that returns a boolean
+	Consumer: An expression that performs operations on an object passed as argument and has a void return type
+	Function: Transform a T to a U
+	Supplier: Provides an instance of a T (such as a factory)
+	Primitive variations
+	Binary Variations
+
+
+Primitve Interfaces
+Primitive versions of all main interfaces
+	will see these a lot in method calls
+Return a primitive
+	ex. ToDoubleFunction
+Consume a primitive
+	ex. DoubleFunctions
+Why have these?
+	avoid auto-boxing and unboxing
+
+
+
+Using Binary Version of Base Interfaces
+Using the Unary Operator Functional Interfaces
+
+	
+Types of Opertions
+	Intermdiate
+		-filter() map()	peek()
+	Terminal
+		foreach() count() sum() average() min() max() collect()
+	Termimal short-circuit
+		findFirst() findAny()	anyMatch() allMatch() noneMatch()
+
+
+Extracting Data with Map
+map(Function<? super T,? extends R> mapper)
+	a map takes one Function as an argument.
+		a function take one generic and return something else.
+	Primitive versions of map	
+		- mapToInt() mapToLong() mapToDouble()
+
+
+Flatten Data with flatMap
+	use the flatMap method to flatten data in a steam.
+
+Taking a Peek
+	peek(Consumer<? super T> action)
+		The peek method performs the operations specified by the lambda expression and returns the elements to the stream.
+		Great for printing intermediate results
+
+
+
+Search Methods: Overview
+	findFirst()
+		returns the first elements that meets the specified criteria
+	allMatch()
+		returns true if all the elements meet the criteria
+	noneMatch()
+		returns true of none of the elemets meeet the criteria
+	All of the above are short-circuit terminal operations.
+
+Search Methods
+	Nondeterministic search methods
+		for nondeterministic cases. In effect , situations where parallel are more effective
+		Results may vary between invocations
+	findAny()
+		returns the first element found that meets the specified criteria
+		results may vary when performed in parallel
+	anyMatch()
+		returns true if any elements meet the criteria 
+		results may vary when performed in parallel
+
+Optional Class
+	Optional<T>
+		a container object that may or may not contain a  non-null value
+		if a value is present , isPresent() returns true.
+		get() returns the value
+		Found in java.util.
+	Optional Primitives
+		OptionalDouble OptionalInt OptionalLong
+
+Lazy Operations
+	only do the needful
+	- can be optimized
+	-only required operations are performed
+
+
+
+Steam Data methods
+	count()
+		returns the count of elements in this stream
+	max(Comparator<? super T> comparator)
+		Returns the maximum elements of this streams according to the provided Comparator
+	min(Comparator<? super T> comparator)
+		returns the minimum element of this stream according to the provided Comparator
+
+Performing Calculations
+	average()
+		returns an optinal describing the arithmetic mean of elements of this stream
+		return an empty optional if this stream is empty
+		type returned depends on primitive class
+	sum()
+		returns the sum of elements in this stream
+		Methods are found in primitive streams
+			DoubleStream, IntStream, LongStream
+
+
+
+Sorting
+	sorted()
+		returns a stream consisting of  the elements sorted according to natural order
+	sorted(Comparator<? super T> comparator
+		returns a stream consisting of the elements  sorted according to the Comparator
+
+
+Saving Data from a stream
+	collect(Collector<? super T, A, R> collector)
+		allows you to save the result of a stream to a new data structure
+		relies on the collections class
+		ex. 
+			stream().collect(Collector.toList());
+			stream().collect(Collector.toMap());
+
+Collector class
+	averagingDouble(ToDoubleFunction<? super T> mapper)
+		produces the arithmetic mean of a double-valued function applied to the inputs elements
+	groupingBy(Function<? super T,? extends K> classifier)
+		a "group by" operation on input elements of type T, grouping elements according to a classification function, and returning the results in a map
+	joining()
+		concatenates the input elements into a String, in encounter order
+	partitioningBy(Predicate<? super T> predicate)
+		partition the input elements according to a predicate
+
+Quick Stream with Stream.of
+	stream.of method allows you to easily create a stream
+
+
+Error Handling
+	errors:
+		should be the "exception" and not the expected behavior
+		must be handled to create reliable applications
+		can occur as the result of application bugs
+		can occur because of factors beyond the control of a the application
+			databases becoming unreachable
+			hard drives failing
+
+Exception Handling in Java
+	Handling an exception means you must add in a code block to handle the error
+	declaring an exception means you declare that a method may fail to execute successfully
+
+Checked exeptions, which must be "handled or declared"
+Unchecked exceptions, which are not typically " handled or declared"        
+
+
+
+Using try-with-resources statements
+	is a try statement that declares one or more resources
+	any class that implements java.lang.AutoCloseable can be used as a resources
+
+Custom exceptions
+	you can create custom exception classes by extending Exception or one of its subclasses
+
+Assertions
+
+	use assertions to document and verify the assumptions and internal logic of a single method;
+		internal invariants
+		control flow invariants
+		class invariants
+	Inappropriate uses of assertions
+		do not use assertions to check the parameters of a public method
+		do not use method that can cause side effects in the assertion check
+
+
+
+Assertion Syntax
+	2 forms of assert statement:
+		assert booleanExpression;
+			this statements test the boolean expression.
+			it does nothing if the boolean expression evaluates to true.		
+			if the boolean expression evaluates to false, this statement throws an AssertionError.
+		assert booleanExpression : expression;
+			this form acts just like assert booleanExpression;
+			in addition , if the boolean expresssion evaluated to false, the second argument is converted to a string and is used as descriptive text in the AssertionError message.
+
+
+
+Controlling Runtime Evaluation of Assertions
+	if assertion checking is disabled, the code runs as fast as if the check were never there.
+	assertions check are disable by default. Enable assertions with either of the following commands:
+	
+	java -enablesassertions MyProgram
+	java -ea MyProgram
+	
+
+	Assertions checking can be controlled on class, packages, and package hierarchy basis
+
+Previous Java Date and Time
+	Disadvantages of java.util.Date (Calendar, TimeZone & DateFormat):
+		Does not support fluent API approach
+		Instances are mutable - not comapatible with lambda
+		not thread safe
+		weakly typed calendars
+		one size fits all
+
+
+Java Date and Time API: Goals
+	The classes and methods should be straighforward
+	The API should support a fluent API approach.
+	Instances of time/date objects should be immutable.(This is important for lambda operations.)
+	Use ISO standards to define date and time.
+	Time and Date operations should be thread safe.
+	The API should support strong typing, which makes it much easier to develop good code first. (the compiler is your friend)
+	toString will always return a human-readable format
+	Allow developers to extend the API easily
+
+
+
+
+The java.time API defines two classes for working with local dates and times (without a time zone):
+	LocalDate:
+		does not include time		
+		a year-month-day representation
+		toString- ISO 8601 format(YYYY-MM-DD)
+	LocalTime:
+		does not include date
+		stores hours: minutes:seconds.nanoseconds
+		toString -(HH:mm:ss.SSSS)
+
+Modeling Time Zones
+	ZoneId: is a specific location or offset relative to UTC
+	ex. ZoneId nyTZ= ZoneId.of("America/New_York");
+	
+	ZoneOffset: Extends ZoneId; specifies the actual time difference from UTC
+	ex. ZoneOffset USEast = ZoneOffset.of("-5");
+	
+	ZoneRules: is the class used to determine offsets
+
+
+Dates and time amounts
+Instant - Stores an instant in time on the time-line
+	useful for: timestamps, e.g login events
+	Store as seconds (long) , and  nanoseconds (int)
+	Methods used to compare before and after
+
+Period is a class that holds a date-based amount
+	Years, months, and days based on the ISO-8601 calendar
+	Plus and minus work with a conceptual day, thus preserving daylight savings changes
+
+Duration is a class that stores a time-based amount.	
+	Time is model as actual seconds and nanoseconds
+	Days are treated as 24 hours, and ignores daylight savings
+
+              
+                  Calculating Between Days
+TemporalUnit is an interface representing a unit of time. 
+	Implemented by the enum class ChronoUnit
+	Period also provides a between method
+
+DateTimeFormatter produces formatted date/times
+	Using predefined constant, patterns letters, or a localized style.
+
+
+LocalDate -class that holds an events such as bdays, anniversary, or meetings
+ChronoUnit- holds time units such as half days, hours, years, and weeks
+ZoneId- defines as a specific location or offset relative to Coordinated Universal Time or UTC
+
+"MMMM d, yyyy"- US common string date format
+
+
+
+Java I/O Basics
+	java defines  an I/O channel as a stream
+	an I/O stream represents an input source or an output destination
+	an I/O stream can represent many different kinds of sources and destination, including disk files, devices, other programs , and memory arrays
+	I/O streams support many different kinds of data, including simple bytes , primitive data types, localized characters, and objects
+
+Byte Streams InputStream Methods
+	3 Basic read method are:
+	int read()
+	int read(byte[] buffer)
+	int read(byte[] buffer, int offset, int length)
+
+	Other methods include:
+	void close();			//close an open stream
+	int available();		//Number of bytes available
+	long skip(long n);		//Discard n bytes from stream
+
+
+	
+Character Stream
+	
+	3 basic read method are:
+	int read()
+	int read(char[] cbuf)
+	int read(char[] cbuf, int offset, int length)
+
+	Other methods include:
+	void close()
+	boolean ready()
+	long skip(long n)
+	boolean markSupported()
+	void mark(int readAheadLimit)
+	void reset()
+
+Chaining Stream
+	
+	Data source | -> File Input Stream -> Buffered Input Stream -> Data Input Stream -> Program
+
+	Program -> Data Output Stream -> Buffered Output Stream -> File Output Stream -> | Data Sink
+ 
+
+Reading and Writing data from the console
+
+Console I/O
+	The System class in the java.lang package has 3 static instance field: out, in, and err.
+	The System.out field is a static instance of a PrintStream object that enables you to write to standard output
+	The System.in field is a static instance of an InputStream object that enables you to read from standard input.
+	The System.err field is a static instance of a PrintStream object that enables you to write to standard error.
+
+Writing to Standard Output
+	The println and print method are part of the java.io.PrintStream class.
+	The println method print the arguments and a newline character(\n).
+	The print method print the argument without a newline character.
+	The print and printLn methods are overloaded for most primitive types (boolean, char, int, long, float, and double) and for char[], object, and String.
+	The print(object) and println(object) methods call the toString method on the argument
+
+
+java.io.InputStreamReader; - get the input of the user
+
+
+Serialization
+
+Persistence
+	Saving data to some type of permanent storage is called persistence. An Object that is pesistent-capable can be stored on disk (or any other storage device), or sent to another machine to be store there.
+		A non-persisted object exists only as long as the Java Virtual Machine is running
+		Java serialization is the standard mechanism for saving an object as a sequence of bytes that can later be rebuilt into a copy of the object.
+		To serialize an object of a specific class , the class must implement the java.io.Serialization interface.
+
+
+Serialization and Object Graphs
+	When an object is serialized, only the field of the object are preserved.
+	When a field references an object, the fields of the referenced object are also serialized, if that object's class is also serializable.
+	The tree of an object's fields constitutes the object graph.
+
+Trancient Fields and Objects
+	Some objects classes are not serializable because they represent transient operating System--specific information. 
+	If the object graph contains a non-serializable reference,a NotSerializableException is thrown and the serialization operation fails.
+	Fields that should not be serialized or that do  not need to be serialized can be marked with the keyword transient.
+
+Serial Version UID
+	During serialization, a version number, serialVersionUID, id used to associate the serialized output with the class used in the serialization process.
+	After Deserialization, the serialVersionUID is checked to verify that the classes loaded are compatible with the object being deserialized.
+	If the receiver of a serialized object has loaded classes for that object with different serialVersionUID, deserialization will result in an InvalidClassException.
+	A serializable class can declare its own serialVersionIUD by explicitly declaring a field named serialVersionIUD as a static final and of type long:
+		private static long serialVersionUID = 42L;
+
+
+
+Conclusion:
+	Streams - used to perform Java input and output operations
+	void flush(); - OutputStream method that is used to force a write to the stream
+	FileReader & FileWriter- classes that are used when using the character format rather than the byte format
+	Mark transient - when the object should not or does not need to be serialized.
+
+
+
+
+Limitation of java.io.File
+	Does not work well with symbolic links
+	Scalability Issues
+	Performance Issues
+	Very limited set of file attributes
+	Very basic file system access functionality
+
+In NIO.2, both files and directories are represented by a path, which is the relative or absolute location of the file or directory.
+
+Relative Path Vs. Absolute Path
+	a path is either relative or absolute
+	an absolute path always contains the root elements and the complete directory list required to locate the file.
+	ex. ...
+	    /home/peter/statusReport
+	    ...
+
+	A relative path must be combined with another path in order to access a file.
+	ex. ...
+	    clarence/foo
+	    ...
+
+Java NIO.2 Concepts
+Prior to JDK 7, the java.io.File class was the entry point for all file and directory operations. With NIO.2, there is a new package and classes:
+	java.noi.file.Path: Locates a file or a directory by using a system-dependent path
+	java.io.file.Files: Using a Path, performs operations on files and directories
+	java.nio.file.FileSystem: Provides an interfaces to a file system and a factory for creating a Path and other object that accesss a file system.
+	All the methods that access the file system throw IOException or a subclass.
+
+Path Interface
+	The java.io.file.Path interface provides the entry point for the NIO.2 file and directory manipulation.
+	
+	ex. FileSystem fs = FileSystems.getDefault();
+	Path p1 = fs.getPath("/home/oracle/labs/resources/myFile.txt");
+	
+	To Obtain a Path object , obtain an instance of the default file system. and then invoke the getPath method:
+	
+	ex. 
+	Path p1 = Path.get("/home/oracle/labs/resources/myFile.txt");
+	Path p2 = Path.get("/home/oracle", "labs", "resources", "myFile.txt");
+
+Path Interface Features
+	The path interface defines the methods used to locate a file or a directory om a file system. These methods include:
+		To access the components of a path:
+			- getFileName, getParent, getRoot, getNameCount
+		To operate on a path:
+			-normalize, toUri, toAbolutePath, subpath, resolve, relativize
+		To compare path:
+			-startsWith, endsWithm equals
+
+
+Removing Redundancies from a Path
+	Many files system use "." notation to denote the current directory and ".." to denote the parent directory.
+	ex. /home/./clarence/foo
+		/home/peter../clarence/foo
+	
+	The normalize method removes any redundant elements, which includes any "." or "directory/.." occurrences
+	ex.
+		Path p = Path.get("/home/peter/../clarence/foo");
+		Path normalizedPath = p.normalize();
+	
+		/home/clarence/foo
+
+Creating a Subpath
+	A portion of a path can be obtained by creating a subpath using the subpath method:
+	
+	Path subpath(int beginIndex, int endIndex);
+	
+	The element returned by endIndex is one less that the endIndex value.
+	ex.
+	Path p1 = Path.get ("/home/oracle/Temp/foo/bar");
+	Path p2 = p1.subpath (1,3);
+	oracle/Temp
+
+
+Joining 2 Paths
+	The resolve method is used to combine 2 paths
+	ex. 
+	Path p1 = Path.get ("/home/clarence/foo/");
+	p1.resolve("bar"); // Returns /home/oracle/Temp/foo/bar
+	
+	Passing an absolute path to the resolve method returns the passing-in path
+	ex. Path.get("foo").resolve("/home/clarence"); // Returns /home/clarence
+
+
+Checking a file or Directory
+	a Path object represents the concept of a file or a directory location. Before  you can access a file or directory, you should first access the file system to detemine whether it exist using the following Files methods:
+		exists(Path p, LinkOption... option)
+		Test to see wheter a file exist. By default, symbolic links are followed.
+		notExist(Path p, LinkOption... option)
+		Test to see wheter a file does not exist. By default, symbolic links are followed.
+
+
+
+To verify that a file can be accessed , the Files class provides the following boolean methods.
+	isReadable (Path)
+	isWritable(Path)
+	isExecutable(Path)
+
+
+
+Creating Files and Directories
+	Files and directorues can be created using of the following methods:
+		Files.createFile (Path dir);
+		Files.createDirectory (Path dir);
+	The createDirectories method can be used to create directories that do not exist, from top to bottom:
+	Files.createDirectories(Paths.get("/home/oracle/Temp/foo/bar/example"));
+
+Deleting a File or Directory
+	You can delete files, directories, or links. The Files class provides 2 methods:
+	 	delete(Path)
+		deleteIfExist(Path)
+	//...
+	Files.delete(path);
+	//...
+
+
+Copying a File or Directory
+	using the copy(Path,Path, CopyOption...) method
+
+Moving  a File or Directory
+	using the move(Path,Path, CopyOption...) method
+  
+
+Walk the Directory Structure
+	The Files.walk() method walk the Directory Structure
+
+
+BufferedReader File Stream
+	The new lines() method converts a BufferedReader into  a stream.
+	The lines() method can be called using NIO classes
+	Use readAllLines() to load a file into an ArrayList
+
+
+Conclusion:
+
+
+Concurrency & Parallelism
+
+absulute - type of path always contains the root element and the complete directory list that is required to locate the file
+lines() -new method converts a BufferedReader into a stream
+
+
+Legacy Thread and Runnable
+	Extends the Thread Class
+		simpler code
+	Implements the Runnable interface
+		- More flexible
+		- extends is still free
+
+java.util.concurrent package- contains classes that are useful in concurrent programming
+
+
+java.util.concurrent.Callable
+- callable interface
+	similar to Runnable, but can: 	
+		return a result using generics
+		throw a checked exception
+
+Threading Concerns
+	Thread Safety
+		Classes should continue to behave correctly when accessed from multiple threads
+	Performance: Deadlock and livelock
+		Threads typically interact with other threads. As more threads are introduced into an application, the possibility exist threads will reach a point where they cannot continue
+
+
+Atomic Operation
+	functions as a single operation
+
+
+Deadlock results when two or more threads are blocked forever, waiting for each other.
+
+java.util.concurrent.atomic package
+	lock free thread-safe variables
+CyclicBarrier
+	a class that blocks until a specified number of threads are waiting for the thread to complete
+Concurrency collections
+
+
+Without Parallelism
+	modern system contain multiple CPUs. If you do not leverage threads in some way, only a portion of your system's processing power will be utilized
+
+Naive parallelism
+	a simple parallelism solution breaks the data to be processed into multiple sets. One data set for each CPU and one thread to process each data set.
+
+         
+
+Fork-Join Framework
+
+	splitting datasets into equal sized subset for each thread to process has a couple of problems. Ideally all CPUs should be fully utilized until the task is finished but:
+		CPUs may run a  different speeds
+	
+
+Work-Stealing
+	divide the data to be processed into a large number of subsets
+	Assign the data subset to a thread's processing queue
+	Each thread will have many subsets
+
+ForkJoinPool is used to execute a ForkJoinTask. It creates a thread for each CPU in the system by default.
+
+
+Fork-Join framework Recommendations
+	Avoid I/O or blocking operations
+	Know your hardware
+	Know your Problem
+
+
+Reduction - an operation that takes a sequence of input elements and combines them into a single summary result by repeated application of a combining operation
+		- implemented with the reduce() method
+
+
+Performance
+	Do not assume parallel is always faster
+	Qualitative Considerations
+	Primitive Streams provided for performance
+
+
+
+The JDBC API & Localization
+
+
+Properties
+java.util.Properties class is used to load and save key-value pairs in Java
+can be stored in a simple text file
+File name ends in .properties
+File can be anywhere that compiler can find it.	
+
+Resource Bundle
+ResourceBundle class isolates locale-specific data:
+	Returns key/value pair stored separately
+	Can be a class or a .properties file
+Step to use:
+	Create bundle files for each locale
+	Call a specific locale from your application
+
+Format Date and Currency
+java.time.format.DateTimeFormatter
+java.text.NumberFormat
+Create object using Locale.
+
+Displaying Currency
+Format Currency:
+	Get a currency instance from NumberFormat
+	Pass the Double to the format method
+
+
+Displaying Dates
+Format a dates
+	get a DateTimeFormatter object based on the Locale.
+	From the LocaleDateTime variable, call the format method passing the formatter
+
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+SOFTWARE TESTING CONCEPTS
+
+IMPLEMENTING UNIT TESTING BEST PRACTICES
+
+Agile testing
+	-testing practice that follows agile principle
+	-begins at project initiation with continuous integration
+	- not sequential
+
+Agile testing Principles
+	- Enables quality gate with continuous feedback mechanism 
+	- Adopts test-driven development approach
+	- Provides clean codes
+
+Agile Testing Strategies
+	- Iteration 0
+	- construction Iteration
+	- release
+	-production
+
+Agile testing plan Checklist
+	- determine testing scope
+	-Identify new funtionalities to test
+	- List level or types of testing based on features complexities
+	- Plan load and performance testing
+	- Plan for risk mitigation
+	- List deliverables and milestone
+
+Agile Testing Quadrant
+	Supporting the team
+	-Automated
+	- Automated and manual
+	Business facing
+	- Automated and manual
+	- manual
+	Critique product
+	-manual
+	-Tools
+	Technology facing
+	- Tools	
+	-Automated
+
+
+Core Unit testing Pattern
+	Result test pattern
+	State test pattern
+	Database test Pattern
+	Integration test Pattern
+
+Good and Bad Unit Tests
+
+Features of Good Test
+	Small and isolated cases
+	Avoid test Interdependence
+	Mock as little as required
+	Maintain clear naming convention
+	Keep test independent of external factors
+
+Features of Bad Unit Test
+	Using non-deterministic factors in the codebases
+	Using side-effecting methods
+	Mutable global state
+	Mocking interfaces and classes outside the codebases
+
+Writing Good Test
+	Plan early
+	Use DRY principle
+	Should be deterministic
+	Avoid ignoring tests
+	One Logical assertion per test
+
+Test Automation Frameworks
+	Module-based
+	Library Architecture
+	Data-driven 
+	Keyword-driven
+	Hybrid
+	BDD
+
+
+
+
+Types of Test Doubles
+
+Dummy objects
+Stub class
+Fake objects
+Mock object
+
+
+Using Test Double
+
+	Mock
+	 |
+	Execution
+	 |
+	Validation
+
+Benefits Of Mocking API
+	API MOCK
+FOr tester to stimulates external dependencies and unexpected behavior
+For operation and architect to enable isolated development project
+For functional tester to create test during development 
+For Customers to try APIs 
+For developers to be independent of API availability and functionality
+
+
+4 types of machine Learning Problems
+
+Never mock values
+Avoid mocking concrete classes
+Use Intergration tests
+Mock Selectively
+
+
+Course Summary
+
+Implementing Unit Testing Best Practices
+	Unit Testing pattern and frameworks
+	JUnit and TestNG AAA testing
+	Testing REST APIs 
+	Unit testing with TDD
+	Automated testing with JUnit and selenium
+
+
+ESSENTIAL CHECKLIST FOR PLANNING AGILE TESTING
+-Listing deliverables and milestones
+-Planning load and performance testing
+
+
+PROMINENT TESTING PATTERN THAT IS USED TO IMPLEMENT UNIT TESTING
+-Database test pattern
+-State test pattern
+
+Characteristics of bad test
+-Using non-deterministic factors in the codebases
+-Mocking interfaces and classes outside the codebases
+
+Valid category of test automation framework
+-Hybrid
+-Keyword-driven
+
+
+Annotation we use to implement AAA pattern in JUnit
+@RunWith
+@Parameters
+
+Best Practices that we can follow when using Mocks
+-We should avoid mocking concrete classes
+-we should never mock values
+
+
+Different Approach that we can use to mock object using Mockito
+-Using the @Mock annotation
+-using the static mock() method
+
+
+
+Assert libraries that we can use with Mocha to test RESTfuk APIs
+-Chai
+-Should.js
+
+Different type of Mocks that we can use with SoapUI to unit test web services.
+-Soap mock
+-REST mock
+
+
+Subclass of DBTestCase that we can use to write DBUnit test cases to connect and execute test cases
+-JdbcBasedDBTestCase
+-DataSourceBasedDBTestCase
+
+
+Annotation can we use to manage test fixtures to implement Test-driven Development
+-@After
+-@Before
+
+Classes of openQA package that we use to integrate unit test creation with JUnit and Selenium to test browser compatibility
+-By
+-WebDriver
+
+
+Automated Testing: Design Patterns
+Importance of Automated Testing
+Why Test?
+	- reliability
+	- Accuracy
+	- Safety
+	-Efficiency
+
+Repetitive Tasks
+- Automation
+-Bug Prevention
+-Productivity
+
+Improve Understanding
+-Documentation
+-Auditing
+-Refactoring
+
+Manual Testing
+-Discovery
+-Establish Patterns
+-Determine what to automate
+
+Software Developers Testing Roles
+QA Tester- traditional software development role
+Automation test Engineer- Test-centric code and operations
+
+
+Roles and Responsibilities
+Test strategy - testing methodologies
+Coordination- Reporting and tracking
+Tools- getting the job done
+
+Domain Considerations
+Scalability
+Efficiency 
+Reliability
+
+Unit testing
+	verify individual parts
+
+Code paths
+Code coverage
+	
+Manually- testing the test
+Automated-testing regressively
+
+Testing Effectively
+Proactive
+Creative
+Think Outside-the-box
+
+Functional Tests- comprehensive end-to-end
+
+High-level Planning
+Goals
+Support
+Ease to use
+
+
+Functional testing
+-unit testing
+-intregration testing
+- White box and black box testing
+-regresssion testing
+
+Non-Functional
+-Performance Testing
+-Stress Testing
+-Penetration Testing
+-Migration Testing
+
+Strategic components
+Team expertise
+Maintainability
+Ecosystem
+Efficiency
+
+Unit Testing-code-centric
+API testing-interface-centric
+
+UNIT Testing
+Code coverage
+Testing possible paths
+Individual parts
+Developer-driven
+
+API Testing
+Inputs ans outputs
+Expected behavior
+Integration
+QA-driven
+
+Complementary Features
+Work outwards
+
+
+Test-Driven
+Write tests first- then code to pass test
+Consider all inputs- expected errors
+Improve refactoring- refactor test first
+
+The AAA Pattern
+Arrange
+Act
+Assert
+
+Behavior-driven Development (BDD)
+Outside-in
+User Interactions
+Multi-step Automation
+Case-based
+
+Outside-in 
+User-centric
+Use cases
+Highest level
+Customers expectation
+Validation
+
+Inside-out
+Code-centric
+Application units
+Lowest level
+Specification details
+Verification
+
+Programming Libraries-driven by unit tests
+Command Line applications
+	Inside-out
+	Options and Arguments
+	Limited Interaction
+
+GUI applications
+	Underlying code
+	Interface code
+	Stateful assumptions
+
+Web application
+	Server-page generation and API tests
+	Browsers-Multi-client considerations
+	Page tests-behavior and functional
+
+Traditional- scripts and macros
+
+Programming Language Oriented
+	Request Libraries
+	Simulation
+	Unit testing
+	Framework testing
+	Postman and  swagger
+	Web-driven- selenium webDriver
+	Page Objects- reusable components
+
+Navigationg with Selenium webDriver
+
+python --version
+pip --version
+pip3
+
+Conclusion
+
+The main purpose of manual testing is to determine what to automate
+
+Quality Assurance Tester- Traditional software developments team role
+Automation Test Engineer- test centric code and operations role
+
+Unit Test effectively used in automated testing by testing the smallest testable parts
+
+
+Web- type of application is often associated with multi-client considerations
+
+Web bases- type of testing tool is Selenium
+
+Web browser- element does the selenium WebDriver provide interface for.
+
+
+Assertion- the result of  a unit test typically verified
+
+Creating reusable code- main benefits of using the Selenium page Object pattern
+
+TestCase- class that implemented in creating a test case using the Python unittest library.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+JUnit Fundamentals
+
+
+When doing regression testing we want to be able to manage test in small groups. What class is defined in JUnit to allows us to do this?
+	---@SuiteClasses
+
+
+The @After annotation provides us a way to help clean up our testing environment. The @After annotation signals JUnit to run the methods at which point in the testing cycle?
+	--After each test has been run
+
+There are times when we want to put control to the results in the hands of the test designer and developer, which may or may not be the same person that's developing the code. What annotation in JUnit allows us to be able to specify what will be returned by the called method regardless of how that method actually behaves?
+	---@Mock
+
+In JUnit there is a really powerful way to allow us me to focus in, to just run a specific type of test. We can define at a method level much more than at class level, which types of test I want to run. Which annotation allows us to unlock this functionality?
+	---@Category
+
+
+JUnit provides a basic test runner that will execute most test cases for you. As we expand the custom features that needs special test condition or use third party solutions, we need to use the smarter test runner to execute our test. What must be passed as a parameter into the @RunWith cutom runner annotation in order for test cases to execute correctly?	
+	--A class object
+
+
+
+While the test fixture capability provides many good options Managing files, database connection, pr any customized solution you wish to create, in a reusable way can be accomplished by which of the following annotations?
+	--@Rule
+
+Test cases are written to check functionality, but the test space can often be expanded dramatically by simply changing the input values to a test. JUnit provides a mechanism, by which we can execute a test many times across a changing set of inputs. What is the annotation that allows us to use this functionality?
+	--@Parameters
+
+When doing performance testing or testing to see how the system responds to a lot of data, JUnit provides us with a tool to simplify the process. This tool allows us to perform rapud test data generation and clear mechanism for externalizing data. It even gives us the ability to check that the data is valid and this reducing false failures. What is the feature within JUnit that allows us to do so?
+	--Theories
+
+
+Test suites have always existed in JUnit, but have changed quite a bit from the legacy to the current approach. If you deal with legacy test suites, it may be useful to see how they can be used or converted into their modern equivalent. Legacy JUnit testing required you to do what to the TestSuitee class in order to be able to use it?
+	--extend
+
+In JUnit there is an annotation that provides us an extension to give us universal checks across all test cases within a JUnit test, or further details and control within each test. It gives us moere granularity and control to create customized testing, beyond what is provided in basic JUnit. What is that annotation?
+	--@Rule
+
+
+JUnit has been a solid testing framework for a very long time. The most recent versions take a great advantage of annotations. But many test were created before this job enchancement. Legacy test cases had extended out what class?
+	--TestCase
+
+JUnit is most effective when run with every change, to ensure that the code is always working. Integrating JUnit into tools, which executes many Java builds these days, allows us to test the code each time it is recompiled. What is a tool that can be integrated with JUnit to do this?
+	--Maven
+
+While we wan out test to always be passing, it's inevitable that some will fail ovet time. As features are not yet developed, are being changed, or simply we just don't have time to fix the test. While we still may want that test around, we now have the ability to temporarily ignore it's execution using a simple annotation. Which of the following annotation allows for this functionality?
+	--@Ignore
+
+
+Most testing is directed at funtional requirements and satisfying the behavior within the system. We cannot forget, however, that execution time is a factor for the acceptability of solution as well. Which of the following is a properly formatted annotation that will have a time limit of 2 seconds before the test is considered to have failed?
+	--@Test(timeout=2000)
+
+
+By default JUnit will execute test cases in whatever order it decides, which could vary each time the test is executed. Some test designs must assume a specific orfer for each test case. What annotation in JUnit allow us to be able to specify the order that tests will run?
+	--@FixMethodOrder
+
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+CompTIA Linux+ 
+
+Introduction to Linux & Command Line Interface
+
+Crtl + Alt + F1 = open CLI
+
+Pound symbol = root user
+Dollar sign = regular user
+
+COMMANDS
+ls =shows all the file that are in my home directory 
+
+uname = show the Unix name of the system
+
+history = show all the different command that you've typed since you started the system
+
+clear = clear the screen
+
+pwd = show your present working directory
+
+echo = used to show text on the screen
+
+touch = create a empty file
+
+vi = use to edit file 
+nano = use to edit file
+
+cat = shows the text  index
+
+whoami = shows you what user account you're logged in as.
+
+su = substitute to other user
+
+su root = become a root user
+su - 
+
+cd/etc = access sudoer file
+sudo = stands for super user do, we're telling the super user to do something, use if you only use dew commands
+
+sudoer file = if you make mistake in sudoer's file you could make  it where you're no longer able to use the sudo command, and you might end up locking yourself out of the machine 
+
+
+sudo visudo = special version of vi that is specifically set to edit the sudoer file
+sudoedit = shortcut for the default sudo editor
+which ip = which command tell you where that command actually exist
+
+
+
+
+Conclusion
+
+There are hundreds of linux distribution.
+
+sudo vi/etc/sudoer  &
+sudoedit /etc/sudoers - command that grants additional users access to use the sudo command
+
+[root@localhost ~]# ls -la /usr = the argument is the /usr
+
+man = linux shell command that is used to display help
+
+sudo <command> = command is used to run only a single command under the root administrator context
+
+1991 =Linus Torvalds annouce his new free operating system
+
+When changing user contexts what benefits if there to using su -<username> instead of su <usename>, it create a full login session that changes directories.
+ 
+What is the impact of running the dash shell instead of bas shell?
+	A small percentage of the commands will be different
+
+What is the focus of Open Source software
+	enabling community collaboration
+
+What domain in the Linux+ Exam is particularly useful to new user who are frustrated when their installation of a Linux based OS doesn't work and they don't know how to fix it?
+	Linux Troubleshooting and Diagnostics
+
+
+
+
+
+CompTIA Linux+: Managing Users & Groups
+
+
+man useradd
+useradd = command that add users
+-c = command that allows you to put comment
+  ex. -c "Elizar Gimenez"
+
+-e = command that is use for expiration date of the user
+  ex. 2019/12/31
+
+-s = command to change the shell
+  ex. -s /bin/dash
+
+-d = command to create a folder
+  ex. -d home/jane_smith
+
+
+Example of adding user 
+sudo useradd -c "Jane Smith" -e 2019/12/31 -s /bin/dash -d /home/jane_smith jsmith
+
+
+Get the user id
+	sudo useradd sarah
+	sudo id sarah 
+
+Delete account = deleting user is not a good practice but if you do add -r to remove their home directory 
+	sudo userdel sarah
+	sudo userdel -r sarah
+
+
+
+man usermod =command where you can modify any login
+
+usermod -l = -l  change the name
+
+sudo passwd <username>= change password
+
+man chage = designed to change the age of a password or set an expiration
+
+sudo chage -l <username> = it will tell everything about their password
+
+sudo useradd -D = it will show all the defaults
+
+cd /etc/skel = skeleton folder
+
+
+sudo less /etc/login.defs = login definition
+
+
+GROUP creating
+ex. sudo groupadd Sales
+    tail  etc/group
+
+
+Group deletion
+	groupdel or group delete
+
+Changing the name
+sudo groupmod -n <new name> <old name>
+
+
+Add user into the group
+sudo gpasswd -a <username> <group name> = group password command and also allow you to add user to the group
+
+Remove the user from the group
+sudo gpasswd -d <username> <group name>
+
+Make the user the administrator to the group
+sudo gpasswd -A <username> <group name>
+
+CHANGE THE GROUP CONTENT FOR A MOMENT
+newgrp <group name> = change the context for a moment
+
+chown = to change the owner
+
+getent or get entity = used to find information inside of the /etc/group/ and /etc/passwd file as well
+
+CONCLUSION:
+
+passwd = command can an administrator use to change the password of an existing user account
+
+The advantage of using the -r switch in the context of the userdel command is it removes user's home directory
+
+Currently the most common use of the -c switch of the useradd command is to store user's fullname
+
+cat etc/group |grep <username> = command that would reveal the MOST information about groups of a certain username.
+
+The effects of using the -A switch when executing the gpasswd command are add a user to a group and then makes the defined user a group administrator
+
+
+CompTIA Linux+: File Access & Permissions
+Working with File Permission and Ownership
+
+ls -l = command for longer list of names
+
+
+
+	
+	Owner 
+	permissions
+	   |
+	   |	Other permissions
+	   |       |
+	d rwx r-x r-x DirA
+	|      |	  
+    Type     Group
+    of 	     permission
+    Objects
+
+
+rwx= means read, write, execute
+
+Identities
+u            = user
+g	     = group
+o	     = other
+
+Permissions
+- 		=none
+r		=read
+w		=write
+x		=execute  
+
+Numerical Values
+4		= Read
+2		= write
+1		= execute
+
+Numerical Notation
+0	=none
+1	=execute
+2	=write
+3	=Write and execute
+4	=read
+5	=read and execute
+6	=read and write
+7	=read, write and execute
+
+
+Modify Permissions
+
+man chmod
+ex.
+chmod g+w <file>
+chmod o-r <file>
+chmod g+w, o-r <file>
+chmod u=rw, g=rw, o-rwx <file>   // Equal symbol override the permission
+
+File listing
+ls -l file* = files details
+
+
+umask = what defines the default permission
+
+umask Values
+
+0 =read, write and execute
+1 =read and write
+2 = read and execute
+3 =read only
+4 = write and execute
+5 =write only
+6 =execute only
+7 = no permissions
+
+mkdir <directory name> = make directories
+
+chown <specify the owner you want to be> 
+sudo chown <name of owner>:<group> <file> = change the owner
+
+
+Change the group
+chgrp <group> <file>
+
+Change the group without changing the owner
+sudo chown :<group> <file>
+
+
+Change the ownership in sub-directories
+sudo chown -R <name> /home/<filename>/*
+
+When you take the archieve, if you use the tar command to wrap up the files first, the tar
+command will actually back up the permission as well.
+
+USING FILESYSTEM ACCESS CONTROL  LISTS
+
+What FACLs do, is they allows us to assign extra stuff, you still have the UGO that doesn't change
+
+getfacl
+setfacl = modify new style FACL permission and also the old style Unix.
+-m = means modify
+ex. setfacl -m o::r <file> 
+    setfacl -m u:<username>:rw <file>
+    setfacl -m g:<group name>:rw <file>
+
+
+-t = Sticky bit is designed for shared folders, it tells the folder to watch for when people create documents to be able to tack that on and keep track of who created it
+
+Turn on the sticky bit using the chmod
+ex. chmod o+t,g+t CorpData
+
+CONCLUSION:
+
+setfacl and getfacl commands enables for Linux administrator to access to more advance and granular permissions
+
+chmod u=rwx,g=rw,o=r file2.txt & chmod u+x,o-w file2.txt =commands that grant owners read, write and execute; group memeber read and write; and other read only permission on afile named file2.txt that already had the permission -rw-rw-rw
+
+An administrator types ls -l they recieve the results d rwx r-x r-wx DirA. What does the "r-x" represent in this output?
+	group permissions
+
+
+What is the purpose of the sticky bit in Linux permission?
+	ensure that only file creators can delete their files
+
+
+
+CompTIA Linux+: Disk Partition & File Systems
+
+lsblk partition command 
+
+sudo fdisk /dev/sdb = take you to the fdisk editor 
+
+
+
+man mkfs = show the help files for make file system
+ls usr/sbin/mkfs*
+
+
+making swap partition
+sudo mkswap /dev/sdv3
+sudo swapon /dev/sdv3
+
+CONCLUSION:
+
+MBR	-default Linux partition ID is 83
+	-Uses the fdisk utility to manage partitions
+	- Limited to 4 primary partitions
+	-Support an extended number of partitions through logical partitions
+
+GPT	-Limited to 128 partitions
+	-Uses the gdisk utility to manage partitions
+	-Default Linux partition ID is 8300
+
+
+ext4	-A very mature and fully supported file system used as the default by ubuntu.
+ZFS	-Has a strong following but mainly designed foe network storage appliances or clusters doing shared storage.
+Btrfs	-Tends to be a more cutting edge file system that has built-in support for software raid.
+XFS	-Has built-in support for partition resizing, backed by Red Hat, and is the default in CentOS.
+
+Which commands can format the first partitions of /dev/sdb using the XFS file system?
+	mkfs.xfs /dev/sdb1
+	mkfs -t xfs /dev/sdb1
+
+What command makes the first ext4 formatted disk partition on /dev/sdb available from /mnt/private?
+	mount/dev/sdb1/mnt/private
+
+
+CompTIA Linux+: Logical Volumes & Filesystem Hierarchy
+
+Logical Volume Manager	
+	allows us to have a lot of flexibility with our file systems.
+
+sudo yum list lvm*
+
+if the lvm is not installed
+sudo yum install lvm2
+lsblk
+ls /usr/sbin/vg*
+ls /usr/sbin/lv*
+sudo pvcreate /dev/sdb1/dev/sdc1 
+sudo pvdisplay
+sudo vgcreate vgl /dev/sdb1/dev/sdc1 
+sudo lvcreate -L 1500G vgl -n lv1
+sudo lvdisplay
+
+
+CONCLUSION:
+
+What directory represents all of the executable that are currently running in memory?
+	-proc
+
+What is the correct descriptive syntax for creating a logical volume using LVM?
+	-lvcreate -L <size> <physical disk name> -n <logical volume name>
+
+
+What is the purpose of the Linux Foundations Filesystem Hierarchy Standard?
+	-Ensure user and software can file and directory locations
+
+
+What directory is designed to hold data that is temporary and not mission critical?
+	-var
+
+What commands are needed to increase the size of a logical volume located on physical volumes that are completely allocated?
+	-lvresize
+	-pvcreate
+	-vgextend
+
+What LVM component represent the aggregation of disk space before it is dispersed to mountable blocks of storage?
+	- Volume Group
+
+What is the purpose of the Linux Foundation Filesystem Hierarchy Standard?
+	- Ensure users and software can file and directory locations
+
+
+
+
+
+CompTIA Linux+: Using vi/vim to Edit files
+Using the vi/vim Text Editor
+vi - is extremely non-user friendly
+
+MODES
+		Command Mode
+      :(colon)	/ / Esc \ \ i
+	       / /	 \ \
+	Execute Mode    Insert Mode
+
+
+ls
+ls -l
+ls -lh
+
+
+vi <filename> --> edit document
+
+press i to go to the insert mode
+press colon to go to execute mode
+:w --> save the document
+press dd or :d --> delete line
+:q! --> quit and dont save changes
+:set number --> add line number
+
+vi ~/.vimrc --> put preferences
+:<starting pageto delete>,<ending page to delete>d --> delete paragraph
+
+Searching in vi
+/<word to search> and press n to go to the next word and N is going backwards
+?<word> --> search backwards
+
+Search and Replace
+/<word>/<word to replace> --> single line
+:%s/<word>/<word to replace> --> whole document
+:<paragraph no.>,<paragraph no.>s/<word>/<word to replace> 
+
+:<line no.> --> jump over the line number
+
+
+
+Using Advanced vi/vim Text Editor Features
+
+vi <filename>
+
+Open document and search
+vi +/<word to search> <filename>
+
+Navigation without Arrow
+HJKL
+
+New Line
+o --> insert in new line
+a --> insert after the cursor
+
+
+
+Cut, Copy and Paste
+yanking --> coping 
+yy --> copy the line
+p or :p --> paste
+:<line no.>,<line no>y --> copy lines
+
+Saving the document
+:w 
+:w <filename change> --> change filename
+
+:q --> exit the document
+
+
+Saving and Exit at the same time
+:wq
+
+Edit another file while in the other existing file
+:e <filename>
+:e! --> switch to other document without saving it
+
+
+Saving and Exiting at the same time
+hold shift and press ZZ
+
+
+CONCLUSION:
+
+What vi character navigation method is supported even across distributions or terminal methods?
+	j, k, h, l
+
+What features are available in the vim editor that are not available in vi?
+	line numbers
+	
+
+What mode in VIM enables you to add text to a document?
+	Insert	
+
+
+What vi command exits a document without saving?
+	:q!
+
+
+What vi command would copy the current line into the buffer?
+	yy	
+
+
+
+
+
+
+CompTIA Linux+: Locating & Manipulating Files///few file are missing
+
+sudo tail /var/log/messages
+
+Move the file
+cp /var/log/messages home/ <destination>
+mv " " " " " " " " " "  = mv is move
+
+
+cp -r = make it recursive
+cp = means copy
+
+mkdir <filename> = make directory
+
+rm <file> = remove file and directories 
+rmdir <file> = remove directory specifically
+rm -rf  <file> = force remove the file
+
+
+Finding Files and Using Aliases
+
+Find and locate
+
+find . -name <file> = . means scan this directory
+find / -name <filename> 2>/dev/null = search the entire hard drive, 2>/dev/null means throw away the errors
+find /usr/bin -perm -x 
+find / -size <size ex. 5M>  2>/dev/null= find the file through the size
+ 
+locate <filename> = fast but not up-to-date
+ip addr = ip address
+
+whereis ip = locate ip
+which command = it will show only one 
+
+type = what type it is
+grep = search file inside the file
+
+
+CONCLUSION:
+
+What command would display the first 20 lines of a text document named db_log.txt?
+	head -n 20 db_log.txt
+
+What command enumarates all the hidden files in a directory and displays the permissions associated with those lines?
+	ls -la
+
+
+What is the potential hazard of using the locate command to find a file?
+	It's database may be out of sync with new files
+
+What command outputs the text from the file, adding pagination that only moves forwards through a document?
+	more
+
+What command would search the current directory and sub-directories for a files with the txt.extensions?
+	find. -name"*.txt"
+
+
+
+
+
+CompTIA Linux+: Searching& Manipulating File Contents
+
+Using grep and Regular Expressions to Find Data
+
+man grep
+man 7 regex
+
+Wildcards
+
+[] list of possible values (square bracket)
+-  Range of values (hypen)
+.  Any single character
+*  Any number character (asterisk)
+^  Beginning of line (carrot)
+$  End of line (dollar sign)
+|  or (pipe symbol)
+() Sub-expression or slice
+\  escape character (backslash)
+
+Two mode of grep
+fixes string
+regular expression
+
+grep -r <file> <home directory>
+
+
+Manapulating Text File Content
+
+printf = format text
+
+wc <filename> = character counts
+wc -w <filename>= just the word count
+sort command =sort the file(temporary)
+
+ex. sort <file>
+
+put -r and it will reverse it
+ex. sort -r <file>
+
+ex. sort -k 2 -t" " ./<file> = " " is a delimeter it can be , or - or anything
+
+
+cut command = similar to sort
+ex. 
+	cut -f 2 -d, ./<file>
+
+Spaces is not good delimiter
+
+diff command = compare file and show the difference
+
+ex.
+	diff <file> <file>
+
+Use for scripting and automation
+man sed 
+man awk
+
+CONCLUSION
+
+
+What command brings up the manual information pages for creating POSIX.2 regular expression statements?
+	man 7 regex
+
+
+Which command deletes any line that contains the word “remove” from a text file called myInfo.txt?
+	sed ‘/remove/d’ myinfo.txt
+
+
+What commands would find and return the lines that contain the names Bob, Bobby, Rob, or Robert in a text file?
+	cat mydoc.txt | grep –E “Bob|Bobby|Rob|Robert”
+	cat mydoc.txt | grep –E “Bob*|Rob*”
+
+
+What command searches for all files and subdirectories in the /media directory for the name Bob?
+	grep –r Bob /media
+
+
+What command would sort, in descending order, a text file containing a list of employee names?
+	sort –r employees.txt
+
+What command would list only the first names from a comma separated file containing only employee names where the first field contains the last name and the second field contains the first name?
+	cut –f 2 –d”,” employees.csv
+
+
+
+
+CompTIA Linux+: Boot Process & Kernel
+
+Configuring the Linux Kernel
+kernel = the heart and soul of linux operating system
+
+
+Kernel  - memory
+	- File System Access
+	- Processes	
+	- Devices
+	- Resource Allocation
+
+
+User space:
+user-level programs
+
+Kernel space:
+Modules, drivers, services
+
+Hardware
+
+LINUX OS
+	its the Linux kernel combined with the GNU utilities
+
+Linux is a monolithic kernel not a microkernel
+
+uname -a = information about kernel
+
+insmod = install modules
+rmmod e1000 = remove modules
+lsmod = see information about modules
+
+
+modprobe = take a look at the hardware that is present  and all of the modules that are present, and if it sees a hardware that's missing a module, it will load the module. It keeps the system Update while its runnning
+
+cd/etc/modprobe.d
+
+sysctl -a = show the parameter of the kernel
+
+
+Describing the Boot process
+
+BIOS/UEFI		|
+MBR/GPT			|
+GRUB 2			|
+initrd/kernel		|
+systemd process		|
+
+cd/boot
+
+
+vim /etc/grub.d/40_custom
+	|
+/etc/grub.d/40_custom
+	|	
+	| grub2-mkconfig
+	|
+/boot/efi/EFI/centos/grub.cfg		
+
+
+
+
+
+CONCLUSION:
+
+Where does the grub.cfg file reside in the Linux OS directory?
+	/boot/grub2
+
+Where do the modules for the kernel reside in the Linux OS directory?
+	/lib/modules
+
+
+modprobe -Add or removes modules while system is running
+
+rmmod -Remove a module
+
+insmod - Install a module
+
+lsmod - Pull a list of modules in Linux
+
+modinfo - Provide a description of a module
+
+Which key allows the ability to go to command shell on GRUB loader and edit the configuration on boot?
+	e
+
+Which command will provide a list information regarding the parameters being passed to the kernel?
+	sysctl
+
+
+
+
+CompTIA Linux+: Graphical User Interfaces
+
+Describing GUIs in Linux
+
+Input
+   |
+X server
+   |	x client web browser
+   |	x client graphics
+   |	x client terminal
+   |
+Compositor
+
+
+Input
+   |
+Wayland Compositor
+   |-   Wayland client web browser
+   |-	Wayland client graphics
+   |-	Wayland client terminal
+
+
+CONCLUSION:
+
+
+What is the X Server communicating with to receive information to send to the other components?
+	Compositor
+
+Which X client GUI is normally installed by default for Red Hat and Centos distributions?
+	Gnome
+
+
+What is a default X client GUI installed on SUSE?
+	KDE
+
+
+
+
+CompTIA Linux+: Managing Services
+
+Configuring Services with systemd
+
+
+Daemon - any program that runs in the background as part of the operating system that it runs unattended from the user.
+
+
+
+ps aux = command that show all of the processes with the user that's attached to them.
+
+
+
+CONCLUSION:
+
+Where do the systemd unit files reside in the Linux OS directory?
+	/lib/systemd/system
+
+Which command would allow the mysqld service to run on runlevel 2, 3, and 5?
+	chkconfig --level 235 mysqld on
+
+
+Which command will identify the services and tell you their runlevels?
+	chkconfig --list
+
+Which systemctl command keeps the httpd service active when a machine reboots or is shut down?
+	systemctl enable httpd
+
+Which term refers to a predated systemd as an initialization system for major Linux distributions?
+	SysVinit
+
+rc3.d -Full multiuser mode
+rc6.d -Reboot
+rc1.d -Single user mode
+rc0.d -Halt
+
+
+
+CompTIA Linux+: Troubleshooting Services
+
+Describing and Analyzing Processes
+
+systemd-analyze blame = command that troubleshoot systemd on your system
+
+
+Troubleshooting Problem Processes
+
+bg <number> = command for background processes
+fg <number> = foreground
+
+
+Priorities program
+
+Niceness value range is from -20 to +19
++19 is a slowest
+-20 is the fastest 
+
+nice -n <number> vim ./<filename>
+
+renice = command changes the priority of a running application
+	= you must know the process ID you can't use application name
+
+ex.
+Check the process ID
+ps aux | grep vim
+
+renice -n <number> 14735
+
+
+pgrep vim = shortcut for process ID
+
+KILL the application
+kill <process ID> =command
+killall <application name>
+
+CONCLUSION:
+
+What command can terminate a process, with process ID 14735, that is no longer responding or working?
+	kill 14735
+
+
+What is the range and priority (from fastest to slowest) for setting a nice value for a Linux process?
+	-20 to 19
+
+In what state of the process life cycle is a process that is a child of a process that has finished but has not been told to stop by its parent process?
+	Zombie State
+
+
+
+ps aux	-Shows the process table where you can see parent and child processes listed
+
+top	-Shows an updating real-time display of running processes sorted by their utilization
+
+lsof	-Lists files that are open by processes running on the system
+
+uptime	-Shows how long the system has been online and the load averages in a single line
+
+system-analyze blame	-Lists all services since bootup and the time they use
+
+
+
+CompTIA Linux+: Managing & Configuring Hardware
+
+Managing Hardware
+
+cd /dev
+
+force reload 
+sudo udevadm control --reload-rules
+sudo udevadm trigger
+
+lspci - list the hardware
+
+
+dmesg | less=command it will show you the log in the hardware
+
+dmesg --follow
+
+
+Configuring Printers
+
+sudo yum list cups
+*if not installed
+sudo yum install cups
+sudo systemctl enable --now cups
+sudo systemctl status cups
+
+
+sudo yum install hplip = print driver cups
+
+Add printer
+browse through 127.0.0.1:631
+
+connection: socket://10.0.10.50
+
+
+Use the printer
+lp -d <Name of the printer> ./cal-2019.txt
+
+lp = for printing
+lpstat =info
+cancel = cancel
+
+
+CONCLUSION:
+
+
+Which Linux command correctly activates the CUPS service immediately and keeps it running on restart on Red Hat distro?
+	systemctl enable --now cups
+
+
+Which command can be used to list all USB specific devices plugged into a laptop using Linux?
+	lsusb
+
+Which command lists all the hardware plugged into a PCI bus of a laptop on an Ubuntu OS?
+	lspci
+
+What format are printer drivers in CUPS?
+	.ppd
+
+Which directory is typically the main location for viewing all the device files in Linux?
+	/dev
+
+What command provides a user-friendly command reference to create and define a printer in CUPS?
+	lpadm
+
+
+
+
+CompTIA Linux+: TCP/IP & Networking
+
+Describing Networking
+
+ip addr = show network adapter
+Types of Networks
+Class A -255.0.0.0	/8	-16,77,214 host		ex. 10.x.x.x /8
+Class B	-255.255.0.0	/16	-65,534 host		ex. 172.16.x.x -> 172.31.x.x /16
+Class C	-255.255.255.0	/24	-254 host		ex. 192.168.x.x /24
+	
+
+ARIN = organization that make sure there is no duplicate ip address
+
+IPV4 = 4.3 ip addresses
+
+
+Application 	HTTP	FTP	SMTP	TFTP	SNMP
+		  \      |	/	|	/
+		   \	 |     /	|      /
+Transport		TCP		UDP
+			 \		/
+			  \	       /
+Internet			IP
+			       / \
+			      /   \
+Media Access	 802.3Ethernet	   802.11 Wireless	
+
+
+Common TCP/UDP ports
+
+Port Number	Protocol	TCP/UDP
+20		  FTP		  TCP
+21		  FTP		  TCP
+22		  SSH 		  TCP
+23		  TELNET	  TCP
+25		  SMTP		  TCP
+53		  DNS		  TCP/UDP
+80		  HTTP		  TCP
+110		  POP3		  TCP
+119		  NNTP		  TCP
+123		  NTP		  UDP
+139		  NetBIOS	  TCP/UDP
+143		  IMAP		  TCP
+161		  SNMP		  UDP
+443		  HTTPS		  TCP
+465		  SMTP-SSL	  TCP
+993		  IMAPS		  TCP
+995		  POP3S		  TCP
+
+
+Configuring Networking in Linux
+
+Old Commands
+ifconfig
+route
+
+New Commands
+ip addr
+ip route
+
+Run the DHCP
+sudo dhclient = turn on dhcp
+sudo dhclient -r = reboot dhcp
+
+Restart the system network
+sudo systemctl restart network
+service network restart
+
+
+Change the network configuration
+CentOS, RedHat and Fedora
+cd /etc/sysconfig
+cd network-script
+sudo vim ifcfg-ens33
+
+
+CHANGE HOSTNAME
+cat /etc/hostname = check the host name
+sudo hostnamectl set-hostname <name>
+
+
+nmcli device status
+nmcli device show ens33
+sudo nmcli connection edit ens33
+set connection.autoconnect yes
+set ipv4.method manual
+set ipv4.addr 192.168.0.2/24
+set ipv4.gateway 192.168.0.1
+save
+quit
+sudo nmcli connection reload
+
+
+CONCLUSION:
+
+
+Which command can acquire a lease or send another DHCP request on a system?
+	dhclient
+
+
+What purpose does TCP and UDP provide on the network?
+	Transport
+
+
+What is /24 in IP addressing converted to in bits when referring to the subnet of an IP address?
+	255.255.255.0
+
+Which directory contains script files to configure the network interface on a Red hat-based Linux distro?
+	/etc/sysconfig/network-scripts
+
+What command can be used to determine the gateway of the network?
+	route
+
+
+CompTIA Linux+: Troubleshooting Network Connections
+
+Command
+ping
+
+IPV6 ping
+	ping6
+
+traceroute www.google.com
+
+ping the default gateway
+ping own ip address
+ping 127.0.0.1
+
+tracepath www.google.com
+
+nslookup www.google.com
+
+nslookup www.google.com 1.1.1.1
+dig www.google.com
+cat /etc/resolve.conf
+cat /etc/hosts
+ip link
+
+sudo systemctl restart network
+
+If using Netplan
+sudo netplan apply
+
+ss -atp
+
+ss -tp
+ss --route
+ss --program
+
+sudo tcpdump -i ens33 ./data.txt
+
+
+CONCLUSION:
+	
+Which command can be used to follow a path to destination?
+	tracepath
+
+
+Which command can be used to perform name server lookups when troubleshooting network issues?
+	dig
+
+Which protocol analyzer tool provides a GUI to sniff networks when troubleshooting connections?
+	wireshark
+
+
+
+CompTIA Linux+: Installing & Managing Software
+
+Managing Software Packages Using apt
+
+pkg
+
+apt-get
+apt-cache
+
+apt = for aplitude
+sudo apt install mc
+cd /etc/apt
+cd sources.list.d
+less ./sources.list
+
+
+if you know what you're looking for you can use
+the apt list
+ex. apt list apache2
+
+if you dont know what your looking for you can;
+apt search
+
+
+sudo apt update
+sudo apt upgrade
+sudo disk-upgrade
+sudo apt remove webmin
+sudo apt remoce mc
+
+
+
+Managing Software Packages Using yum and dnf
+
+DNF - means Dandified Yum 
+
+
+man rpm
+cd /etc/yum.repos.d
+yum list apache
+
+yum info httpd
+sudo yum install httpd
+sudo yum install nano
+sudo yum search webmin
+
+sudo rpm --import jcameron.key.asc
+
+sudo yum update
+sudo yum remove <software name> 
+sudo yum erase <software name>
+sudo dnf autoremove
+
+
+CONCLUSION:
+	
+What command adds a new key for verifying the software from a new repository where the key has been stored in the file repo-key.asc?
+	apt-key add repo-key.asc	
+
+
+What command returns additional information for a package called httpd?
+	yum info httpd
+
+
+Where does apt check for the list of repositories it can use to find and download software on Debian or Ubuntu?
+	/etc/apt/sources.list
+
+
+What command forces yum to check the repositories and update any software which has been installed?
+	yum update
+	
+Where are the repositories for yum and dnf stored on Red Hat Enterprise Linux or CentOS?
+	/etc/yum.repos.d/
+
+Which apt commands can find matching packages for “apache” on Debian or Ubuntu?
+	apt list apache*
+	apt search apache
+
+
+
+CompTIA Linux+: Installing Software from Source code
+Building and Installing from Source Code
+
+sudo yum install gcc
+
+
+sudo yum install gcc make gzip
+tar xvzf ./<file name>
+ex.
+
+tar xvzf ./john-1.8.0.tar.gz
+cd src
+
+make config
+make
+make clean linux-x86-64
+cd run
+sudo make install
+  
+CONCLUSION:
+
+What command can usually be run, especially after a previous make command ran with an error, to erase the left-over files created while attempting to compile the software?
+	make clean
+
+
+What are three common tools generally used to build software on Linux?
+	gcc, make, and gzip
+	
+
+
+
+CompTIA Linux+: Security Best Practices
+Describing Linux Security
+
+Confidentiality
+Availability
+Integrity
+
+
+sudo yum install audit
+cd /etc/audit
+
+less audit.rules
+cd /var/log
+cd audit
+
+paintext - encryption - ciphertext
+	       |
+ciphertext - decryption - paintext
+
+
+Hashing
+message - hash function - digest
+
+LUKS Setup
+blkid
+sudo umount /dev/sdb1
+shred -v --iterations=1 /dev/sdb1
+cryptsetup --verbose --verify-passpharse luksFormat /dev/sdb1
+
+blkid
+cryptsetup luksOpen /dev/sdb1 storage1
+mkfs.xfs /dev/mapper/storage1
+mount /dev/mapper/storage1 /mnt/storage1
+cd /mnt/storage1
+cp -R /home/dpezet/Documents/* ./
+ls
+
+
+Hardening SSH Clients and Servers
+
+sudo yum list ssh*
+sudo yum list openssh*
+
+systemctl status sshd
+cd /etc/ssh
+
+sudo vim /etc/ssh/sshd_config
+
+sudo systemctl  restart sshd
+ls
+sudo rm -f * key*
+ls
+sudo systemctl stop sshd
+sudo ssh-keygen -t rsa -f /etc/ssh/ssh_host_rsa_key
+sudo ssh-keygen -t ed25519 -f /etc/ssh/ssh_host_ed25519_key
+sudo ssh-keygen -t ecdsa -f /etc/ssh/ssh_host_ecdsa_key
+
+sudo systemclt start sshd
+
+cd
+ls
+ls -a
+cs .ssh
+ls -l
+ls -la
+ssh-keyscan 127.0.0.1
+ssh-keyscan 127.0.0.1 >> -/.ssh/known_hosts
+cat ~/.ssh/known_hosts
+cat ~/.ssh/l=known_hosts
+rm known_hosts
+sudo vim/etc/ssh/ssh_config
+
+sudo mkdir .ssh
+cd .ssh
+ls
+cd /etc
+cd ssh
+pwd
+sudo vim ./ssh config
+ 
+ssh-keyscan 127.0.0.1
+ssh-keygen -lf /etc/ssh/ssh_host_ecdsa_key.pub
+ssh-keygen -lf /etc/ssh/ssh_host_ecdsa_key.pub -E sha512
+ssh-keygen -lf /etc/ssh/ssh_host_ecdsa_key.pub -E md5
+ssh-keygen -lf /etc/ssh/ssh_host_ecdsa_key.pub -E sha256
+
+
+
+CONCLUSION:
+	
+What value is there in defining known hosts for SSH?
+	Clients can recognize trusted Servers
+
+	
+What are the common packages that provide SSH protocol functionality to a Linux system?
+	oenssh
+	sshd
+
+What file controls the server side configuration of SSH on a Linux system?
+	sshd_config
+
+
+What is the typical order of operations by an attacker who does not have credentials to access a system directly?
+	Discovery
+	Enumerate
+	Gain A Foothold
+	Maintain Persistence
+	Cover Tracks
+
+ Picking and choosing who has access to a particular piece of data is described by what aspect of the CIA Triad?
+	Confidentiality
+
+
+What is the most secure assumption to make with Linux distributions regarding SSH private keys?
+	It is best to generate new keys
+
+
+What is the security technique that creates a digest from a message in order to provide a guarantee of data integrity?
+	Hashing
+
+
+CompTIA Linux+:SELinux & AppArmor
+
+Configuring SELinux Security
+
+sestatus
+sudo setenforce permissive
+sestatus
+sudo vim /etc/selinux/config
+sudo setenforce enforcing
+getenforce
+cd /var/log/audit
+sudo -s
+cd /var/log/audit
+tail audit.log
+ 
+ps aux | grep crond
+ps auxZ | grep crond
+  
+ps aux | grep httpd
+ls -lZ
+
+mkdir /website
+vim /etc/httpd/conf.d/
+cd /etc/httpd
+ls
+cd conf
+ls
+vim httpd.conf 
+service httpd stop
+service httpd start
+
+cd
+chcon -Rv --type=httpd_sys_content_t /website 
+
+restorecon -Rv /website
+sudo semanage fcontext -a -t httpd_sys_content_t /website
+sudo yum install policycoreutils.python
+sudo semanage fcontext -a -t httpd_sys_content_t /website
+restorecon -Rv /website
+
+semanage port -a -t http_port_t -p tcp 8080
+semanage port -l
+
+semanage port -l | grep 8080
+
+
+Configuring AppArmor Security
+
+apparmore_status
+
+Ubuntu
+sudo apparmor_status
+
+sudo apt list apparmor*
+
+apparmor is based on path name
+
+ss -an
+
+cd tunables
+ls
+aa-unconfined
+sudo aa-unconfined
+which apache2
+
+sudo systemclt restart apache2 
+sudo apt install libapache2-mod-apparmor
+
+sudo aa-enforce /etc/apparmor.d/usr.sbin.apache2
+sudo systemclt restart
+
+CONCLUSION:
+	
+
+What command is used to add permanent policy changes to the label contexts defined for SELinux?
+	semanage
+
+
+What command changes the SELinux mode to permanently enforced?
+	sudo vim etc/selinux/config and set SELINUX=enforcing
+
+	
+What can AppArmor do to protect a Linux system?
+	Limit the resources a particular application can use
+
+SELinux
+	Designed to protect the entire operating system
+	Default for Red Hat Distributions
+
+
+Apparmor
+	Default for Debian and Ubuntu distributions
+	Designed to protect specific applications
+	Uses path names	
+
+
+What command identifies applications that are not protected by AppArmor?
+	sudo aa-unconfined
+
+What is the technique used by SELinux to secure running applications?
+	Require system-wide label matching between applications and resources
+
+
+
+
+
+CompTIA Linux+: Network Firewall & Traffic Filtering 
+Using firewall to implement a Host-based Firewall
+
+
+systemctl status firewalld
+sudo firewall-cmd --state
+sudo -s
+firewall-cmd --get-zones
+firewall-cmd --get-default-zone
+firewall-cmd --get-active-zone
+firewall-cmd --new-zone=testlab
+firewall-cmd --permanent --new-zone=testlab
+firewall-cmd  --list-all
+firewall-cmd --list-get-zones
+firewall-cmd --reload
+firewall-cmd --get-zones
+cat /etc/sysconfig/network-scripts/ifcfg-ens33
+
+firewall-cmd --get-active-zones
+firewall-cmd --get-services
+
+
+firewall-cmd --permanent --add-service=http
+firewall-cmd --permanent --add-service=ftp
+firewall-cmd --add-service=ftp
+firewall-cmd --add-service=http
+
+firewall-cmd --list-services
+firewall-cmd --permanent --list-services
+
+firewall-cmd --permanent --add-port=8080/tcp
+firewall-cmd --permanent --add-port=50000-60000/udp
+firewall-cmd --permanent --get-services 
+
+firewall-cmd --permanent --list-services
+firewall-cmd --permanent --list-ports
+
+
+Using iptables to Implement a Host-based Firewall
+sudo -s
+iptables --list
+
+firewall-cmd --get-zones
+
+yum list iptables*
+yum install iptables-services -y
+systemctl stop firewalld
+systemctl mask firewalld
+systemctl enable --now iptables
+ 
+systemctl enable -now ip6tables ---> for IPV6 
+
+iptables --list
+iptables --list-rules
+
+iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+iptables --list
+iptables -A INPUT -p tcp --dport ssh -s 10.0.222.222 -j ACCEPT
+iptables --list
+iptables-save 
+cat /etc/sysconfig/iptables
+iptables-save > /etc/sysconfig/iptables
+iptables-save | tee /etc/sysconfig/iptables
+
+iptables -F ---> flush
+iptables --list 
+
+systemctl restart iptables
+iptables --list
+
+vim /etc/sysconfig/iptables
+
+iptables -vnL --line ---> statistics 
+
+watch -n 0.5 iptables -vnL
+
+
+CONCLUSION:
+
+What command identifies zones that are currently linked to network interfaces?
+	firewall-cmd --get-active-zones
+
+
+What objects are used by firewalld to control traffic flow?
+	Zones
+
+What iptables policy typically has the most individual entries on a workstation?
+	Input
+
+What technique ensures that firewalld cannot be started by other applications?
+	systemctl mask firewalld
+
+
+What iptables command would allow any device to access to a web server’s default HTTP port?
+	iptables -A Input -p tcp –dport 80 -j ACCEPT
+	
+
+
+
+CompTIA Linux+: Backup and Restore
+Performing Backups and Restoring Files
+
+
+Differential and Incremental backup
+
+man tar ---> glue together the files
+
+tar cvzf /mnt/storage1/backup/tgz <where to back up ex. home/dpezet> ---> c means compress(backing up)
+								     ---> x means extract(restoring)
+
+
+ls /mnt/storage1
+ls -lh /mnt/storage1
+
+RESTORE IT
+mkdir restore
+cd restore
+tar xvzf /mnt/storage1/backup.tgz
+ls
+cd home
+cd /mnt/storage1
+
+DAR - disk archive as opposed to tape archive
+
+Ubuntu
+dar
+sudo apt install dar
+dar -R /home/dpezet -c /mnt/storage1/full.bak
+ls -lh /mnt/storage1
+touch test1.txt
+vim ./text1.txt
+
+dar -R /home/dpezet/ -c /mnt/storage1/incr1.bak -A /mnt/storage1/full.bak.1.dar
+
+lsblk
+sudo dd if=/dev/sdb1 of=/dev/sdd1d
+sudo mkdir /mnt/storage3
+sudo mount /dev/sdd1/mnt/storage3
+sudo -s
+cd /mtn
+cd /mnt 
+
+CONCLUSION:
+
+
+What command creates a compressed tar file containing the home directory and its subdirectories in a file called backup.tgz?
+	tar cvzf /mnt/backup.tgz /home
+	
+
+Which backup strategy allows you to backup the changes each night since the last full backup was completed?
+	Differential	
+
+Which command can create a duplicate of the disk at /dev/sdb on to the disk at /dev/sdc?
+	dd if=/dev/sdb of=/dev/sdc
+
+
+
+
+CompTIA Linux+: Bourne-again Shell & Scripting
+Using and Configuring Bash
+
+cd /etc
+ls pro*
+less /etc/profile
+
+ps aux | grep bash
+source ~/bash_profile
+
+sysinfo.sh 
+
+set -o allexport ----> take any of my variables and set them to be exported
+
+
+Creating Bash Script
+vim sample.sh
+	#!/bin/bash
+	echo "Hello World
+
+
+cat sample.sh
+
+bash ./sample.sh
+vim ./sample.sh
+
+./sample.sh
+ls -l
+chmod  +x sample.sh
+ls -l
+./sample.sh
+
+
+cat ./sample.sh
+
+man read
+man test
+man seq
+seq 1 10
+
+
+CONCLUSION:
+
+What should be the first line of a Bash script if you want to let the terminal know that Bash must be used to run the script?
+	#!/bin/bash
+
+                 
+Which Bash configuration files can regular users edit in their home directories to override the system default Bash configuration files?
+	bash_profile
+	.bashrc
+
+
+	
+Where is the best place to put global custom Bash configuration settings that would apply to every user on a system?
+	/etc/profile.d
+
+
+
+echo -e --> Displays data on a single line and lets the next command continue displaying on that same line
+
+read --> Gets data from the standard input and captures that input
+
+test --> Asks a question used for comparing two values
+
+seq --> Prints or generates a list of numbers
+
+
+What command would make a variable called SCRDEPTH global so that it could be used in any Bash session?
+	export SCRDEPTH
+
+What command can be used inside a Bash script to determine if a directory called /srv exists?
+	test -d /srv
+	
+
+
+
+CompTIA Linux+: Scheduling Tasks
+Using at and cron to Schedule Tasks
+
+ls
+man at
+at 10 PM Fri
+
+/user/bin/bash /home/dpezet/backup.sh
+uptime
+press ctrl + d 
+atq
+
+cd/etc
+
+cat at.deny
+sudo cat at.deny
+
+cron is a replacement of at
+
+cd cron
+cat logrotate
+sudo cat logrotate
+
+
+Run in specific time
+cat /etc/crontab
+
+the first asterisk is minutes, then hour, then day, then month, day
+
+cd cron.d
+ls
+sysstat
+sudo cat ./sysstat
+
+
+Using cron and anacron to Schedule Tasks
+
+cat /etc/crontab
+ls /etc/cron.d
+sysstat
+cd
+pwd
+ls -a
+cd /var/spool
+cd cron
+ls
+sudo -s
+cd cron
+ls
+ls -la
+ 
+exit
+whoami
+crontab -e ---> edit
+
+Install Anacron
+sudo yum install anacron --> nickname is cronie
+
+cat anacrontab
+
+
+CONCLUSION:
+
+Which crontab entry running as root gets cron to run the myinfo command every 15 minutes?
+	*/15 * * * * root myinfo
+
+Where do you find the hourly, daily, weekly, and monthly folders that contain the scripts scheduled for cron to run?
+	/etc
+
+		
+What command allows you to set up a sequence of commands to run at 11 pm on Friday?
+	at 11 PM Fri
+
+
+What service can be used, or installed if it isn’t already installed, to run scheduled cron tasks that cron missed because the system was off at the time the job was scheduled?
+	anacron	
+
+
+What command allows a regular user to add or edit their own cron tasks?
+	crontab -e
+	
+
+
+
+CompTIA Linux+: Git Version Control
+Describing Version Control and Using Git	
+
+sudo yum list git
+sudo yum install git
+
+mkdir Projects
+cd Projects
+
+ls
+cd
+git config --global user.email <email>
+git config --global user.name <name>
+
+CONCLUSION:
+
+What is the core purpose of the git command?
+	Version control
+
+
+What command is used to create a copy of a project that could allow for a project owner to approve or reject another person’s changes to a git project?
+	git checkout -b
+
+What are prerequisites to using the git command for version control?
+	Define email
+	Define username
+	Install git package
+
+	
+
+CompTIA Linux+: Installing CentOS
+Describing CentOS and How it is Installed
+Completing a CentOs Installation
+
+CONCLUSION:
+
+What are the first two actions recommended to protect a freshly installed instance of CentOS?
+	install updates
+	assign the root password
+	
+	
+ What partition can be flagged as read-only for protection of the Linux kernel?
+	/boot
+
+
+What Base Environment installation choice installs the most common end user desktop onto CentOS?
+	GNOME Desktop
+
+
+What properties could be assumed if an ISO file has the name CentOS-7-x86_64-DVD-1810.iso?
+	Released in October
+	64 bit version of CentOS
+	CentOS version 7
+
+
+What is the minimum amount of memory required for CentOS with a graphical user interface?
+	512 MB
+
+
+
+CompTIA Linux+: Installing Ubuntu
+- based on debian
+
+CONCLUSION:
+
+What installation option helps to ensure that an Ubuntu installation is as current and safe as possible?
+	Download updates
+
+
+What is the minimum amount of memory required for Ubuntu Desktop Edition?
+	2 GB
+
+What enables the application of updates that normally require restarting?
+	Canonical Livepatch
+
+
+
+
+
+
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Virtualization Concepts
+
+CompTIA A+ 220-1001: Virtualization
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

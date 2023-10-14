@@ -1,0 +1,741 @@
+
+
+Types of Test Doubles
+
+Dummy objects
+Stub class
+Fake objects
+Mock object
+
+
+Using Test Double
+
+	Mock
+	 |
+	Execution
+	 |
+	Validation
+
+Benefits Of Mocking API
+	API MOCK
+FOr tester to stimulates external dependencies and unexpected behavior
+For operation and architect to enable isolated development project
+For functional tester to create test during development 
+For Customers to try APIs 
+For developers to be independent of API availability and functionality
+
+
+4 types of machine Learning Problems
+
+Never mock values
+Avoid mocking concrete classes
+Use Intergration tests
+Mock Selectively
+
+
+Course Summary
+
+Implementing Unit Testing Best Practices
+	Unit Testing pattern and frameworks
+	JUnit and TestNG AAA testing
+	Testing REST APIs 
+	Unit testing with TDD
+	Automated testing with JUnit and selenium
+
+
+ESSENTIAL CHECKLIST FOR PLANNING AGILE TESTING
+-Listing deliverables and milestones
+-Planning load and performance testing
+
+
+PROMINENT TESTING PATTERN THAT IS USED TO IMPLEMENT UNIT TESTING
+-Database test pattern
+-State test pattern
+
+Characteristics of bad test
+-Using non-deterministic factors in the codebases
+-Mocking interfaces and classes outside the codebases
+
+Valid category of test automation framework
+-Hybrid
+-Keyword-driven
+
+
+Annotation we use to implement AAA pattern in JUnit
+@RunWith
+@Parameters
+
+Best Practices that we can follow when using Mocks
+-We should avoid mocking concrete classes
+-we should never mock values
+
+
+Different Approach that we can use to mock object using Mockito
+-Using the @Mock annotation
+-using the static mock() method
+
+
+
+Assert libraries that we can use with Mocha to test RESTfuk APIs
+-Chai
+-Should.js
+
+Different type of Mocks that we can use with SoapUI to unit test web services.
+-Soap mock
+-REST mock
+
+
+Subclass of DBTestCase that we can use to write DBUnit test cases to connect and execute test cases
+-JdbcBasedDBTestCase
+-DataSourceBasedDBTestCase
+
+
+Annotation can we use to manage test fixtures to implement Test-driven Development
+-@After
+-@Before
+
+Classes of openQA package that we use to integrate unit test creation with JUnit and Selenium to test browser compatibility
+-By
+-WebDriver
+
+
+Automated Testing: Design Patterns
+Importance of Automated Testing
+Why Test?
+	- reliability
+	- Accuracy
+	- Safety
+	-Efficiency
+
+Repetitive Tasks
+- Automation
+-Bug Prevention
+-Productivity
+
+Improve Understanding
+-Documentation
+-Auditing
+-Refactoring
+
+Manual Testing
+-Discovery
+-Establish Patterns
+-Determine what to automate
+
+Software Developers Testing Roles
+QA Tester- traditional software development role
+Automation test Engineer- Test-centric code and operations
+
+
+Roles and Responsibilities
+Test strategy - testing methodologies
+Coordination- Reporting and tracking
+Tools- getting the job done
+
+Domain Considerations
+Scalability
+Efficiency 
+Reliability
+
+Unit testing
+	verify individual parts
+
+Code paths
+Code coverage
+	
+Manually- testing the test
+Automated-testing regressively
+
+Testing Effectively
+Proactive
+Creative
+Think Outside-the-box
+
+Functional Tests- comprehensive end-to-end
+
+High-level Planning
+Goals
+Support
+Ease to use
+
+
+Functional testing
+-unit testing
+-intregration testing
+- White box and black box testing
+-regresssion testing
+
+Non-Functional
+-Performance Testing
+-Stress Testing
+-Penetration Testing
+-Migration Testing
+
+Strategic components
+Team expertise
+Maintainability
+Ecosystem
+Efficiency
+
+Unit Testing-code-centric
+API testing-interface-centric
+
+UNIT Testing
+Code coverage
+Testing possible paths
+Individual parts
+Developer-driven
+
+API Testing
+Inputs ans outputs
+Expected behavior
+Integration
+QA-driven
+
+Complementary Features
+Work outwards
+
+
+Test-Driven
+Write tests first- then code to pass test
+Consider all inputs- expected errors
+Improve refactoring- refactor test first
+
+The AAA Pattern
+Arrange
+Act
+Assert
+
+Behavior-driven Development (BDD)
+Outside-in
+User Interactions
+Multi-step Automation
+Case-based
+
+Outside-in 
+User-centric
+Use cases
+Highest level
+Customers expectation
+Validation
+
+Inside-out
+Code-centric
+Application units
+Lowest level
+Specification details
+Verification
+
+Programming Libraries-driven by unit tests
+Command Line applications
+	Inside-out
+	Options and Arguments
+	Limited Interaction
+
+GUI applications
+	Underlying code
+	Interface code
+	Stateful assumptions
+
+Web application
+	Server-page generation and API tests
+	Browsers-Multi-client considerations
+	Page tests-behavior and functional
+
+Traditional- scripts and macros
+
+Programming Language Oriented
+	Request Libraries
+	Simulation
+	Unit testing
+	Framework testing
+	Postman and  swagger
+	Web-driven- selenium webDriver
+	Page Objects- reusable components
+
+Navigationg with Selenium webDriver
+
+python --version
+pip --version
+pip3
+
+Conclusion
+
+The main purpose of manual testing is to determine what to automate
+
+Quality Assurance Tester- Traditional software developments team role
+Automation Test Engineer- test centric code and operations role
+
+Unit Test effectively used in automated testing by testing the smallest testable parts
+
+
+Web- type of application is often associated with multi-client considerations
+
+Web bases- type of testing tool is Selenium
+
+Web browser- element does the selenium WebDriver provide interface for.
+
+
+Assertion- the result of  a unit test typically verified
+
+Creating reusable code- main benefits of using the Selenium page Object pattern
+
+TestCase- class that implemented in creating a test case using the Python unittest library.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+JUnit Fundamentals
+
+
+When doing regression testing we want to be able to manage test in small groups. What class is defined in JUnit to allows us to do this?
+	---@SuiteClasses
+
+
+The @After annotation provides us a way to help clean up our testing environment. The @After annotation signals JUnit to run the methods at which point in the testing cycle?
+	--After each test has been run
+
+There are times when we want to put control to the results in the hands of the test designer and developer, which may or may not be the same person that's developing the code. What annotation in JUnit allows us to be able to specify what will be returned by the called method regardless of how that method actually behaves?
+	---@Mock
+
+In JUnit there is a really powerful way to allow us me to focus in, to just run a specific type of test. We can define at a method level much more than at class level, which types of test I want to run. Which annotation allows us to unlock this functionality?
+	---@Category
+
+
+JUnit provides a basic test runner that will execute most test cases for you. As we expand the custom features that needs special test condition or use third party solutions, we need to use the smarter test runner to execute our test. What must be passed as a parameter into the @RunWith cutom runner annotation in order for test cases to execute correctly?	
+	--A class object
+
+
+
+While the test fixture capability provides many good options Managing files, database connection, pr any customized solution you wish to create, in a reusable way can be accomplished by which of the following annotations?
+	--@Rule
+
+Test cases are written to check functionality, but the test space can often be expanded dramatically by simply changing the input values to a test. JUnit provides a mechanism, by which we can execute a test many times across a changing set of inputs. What is the annotation that allows us to use this functionality?
+	--@Parameters
+
+When doing performance testing or testing to see how the system responds to a lot of data, JUnit provides us with a tool to simplify the process. This tool allows us to perform rapud test data generation and clear mechanism for externalizing data. It even gives us the ability to check that the data is valid and this reducing false failures. What is the feature within JUnit that allows us to do so?
+	--Theories
+
+
+Test suites have always existed in JUnit, but have changed quite a bit from the legacy to the current approach. If you deal with legacy test suites, it may be useful to see how they can be used or converted into their modern equivalent. Legacy JUnit testing required you to do what to the TestSuitee class in order to be able to use it?
+	--extend
+
+In JUnit there is an annotation that provides us an extension to give us universal checks across all test cases within a JUnit test, or further details and control within each test. It gives us moere granularity and control to create customized testing, beyond what is provided in basic JUnit. What is that annotation?
+	--@Rule
+
+
+JUnit has been a solid testing framework for a very long time. The most recent versions take a great advantage of annotations. But many test were created before this job enchancement. Legacy test cases had extended out what class?
+	--TestCase
+
+JUnit is most effective when run with every change, to ensure that the code is always working. Integrating JUnit into tools, which executes many Java builds these days, allows us to test the code each time it is recompiled. What is a tool that can be integrated with JUnit to do this?
+	--Maven
+
+While we wan out test to always be passing, it's inevitable that some will fail ovet time. As features are not yet developed, are being changed, or simply we just don't have time to fix the test. While we still may want that test around, we now have the ability to temporarily ignore it's execution using a simple annotation. Which of the following annotation allows for this functionality?
+	--@Ignore
+
+
+Most testing is directed at funtional requirements and satisfying the behavior within the system. We cannot forget, however, that execution time is a factor for the acceptability of solution as well. Which of the following is a properly formatted annotation that will have a time limit of 2 seconds before the test is considered to have failed?
+	--@Test(timeout=2000)
+
+
+By default JUnit will execute test cases in whatever order it decides, which could vary each time the test is executed. Some test designs must assume a specific orfer for each test case. What annotation in JUnit allow us to be able to specify the order that tests will run?
+	--@FixMethodOrder
+
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+CompTIA Linux+ 
+
+Introduction to Linux & Command Line Interface
+
+Crtl + Alt + F1 = open CLI
+
+Pound symbol = root user
+Dollar sign = regular user
+
+COMMANDS
+ls =shows all the file that are in my home directory 
+
+uname = show the Unix name of the system
+
+history = show all the different command that you've typed since you started the system
+
+clear = clear the screen
+
+pwd = show your present working directory
+
+echo = used to show text on the screen
+
+touch = create a empty file
+
+vi = use to edit file 
+nano = use to edit file
+
+cat = shows the text  index
+
+whoami = shows you what user account you're logged in as.
+
+su = substitute to other user
+
+su root = become a root user
+su - 
+
+cd/etc = access sudoer file
+sudo = stands for super user do, we're telling the super user to do something, use if you only use dew commands
+
+sudoer file = if you make mistake in sudoer's file you could make  it where you're no longer able to use the sudo command, and you might end up locking yourself out of the machine 
+
+
+sudo visudo = special version of vi that is specifically set to edit the sudoer file
+sudoedit = shortcut for the default sudo editor
+which ip = which command tell you where that command actually exist
+
+
+
+
+Conclusion
+
+There are hundreds of linux distribution.
+
+sudo vi/etc/sudoer  &
+sudoedit /etc/sudoers - command that grants additional users access to use the sudo command
+
+[root@localhost ~]# ls -la /usr = the argument is the /usr
+
+man = linux shell command that is used to display help
+
+sudo <command> = command is used to run only a single command under the root administrator context
+
+1991 =Linus Torvalds annouce his new free operating system
+
+When changing user contexts what benefits if there to using su -<username> instead of su <usename>, it create a full login session that changes directories.
+ 
+What is the impact of running the dash shell instead of bas shell?
+	A small percentage of the commands will be different
+
+What is the focus of Open Source software
+	enabling community collaboration
+
+What domain in the Linux+ Exam is particularly useful to new user who are frustrated when their installation of a Linux based OS doesn't work and they don't know how to fix it?
+	Linux Troubleshooting and Diagnostics
+
+
+
+
+
+CompTIA Linux+: Managing Users & Groups
+
+
+man useradd
+useradd = command that add users
+-c = command that allows you to put comment
+  ex. -c "Elizar Gimenez"
+
+-e = command that is use for expiration date of the user
+  ex. 2019/12/31
+
+-s = command to change the shell
+  ex. -s /bin/dash
+
+-d = command to create a folder
+  ex. -d home/jane_smith
+
+
+Example of adding user 
+sudo useradd -c "Jane Smith" -e 2019/12/31 -s /bin/dash -d /home/jane_smith jsmith
+
+
+Get the user id
+	sudo useradd sarah
+	sudo id sarah 
+
+Delete account = deleting user is not a good practice but if you do add -r to remove their home directory 
+	sudo userdel sarah
+	sudo userdel -r sarah
+
+
+
+man usermod =command where you can modify any login
+
+usermod -l = -l  change the name
+
+sudo passwd <username>= change password
+
+man chage = designed to change the age of a password or set an expiration
+
+sudo chage -l <username> = it will tell everything about their password
+
+sudo useradd -D = it will show all the defaults
+
+cd /etc/skel = skeleton folder
+
+
+sudo less /etc/login.defs = login definition
+
+
+GROUP creating
+ex. sudo groupadd Sales
+    tail  etc/group
+
+
+Group deletion
+	groupdel or group delete
+
+Changing the name
+sudo groupmod -n <new name> <old name>
+
+
+Add user into the group
+sudo gpasswd -a <username> <group name> = group password command and also allow you to add user to the group
+
+Remove the user from the group
+sudo gpasswd -d <username> <group name>
+
+Make the user the administrator to the group
+sudo gpasswd -A <username> <group name>
+
+CHANGE THE GROUP CONTENT FOR A MOMENT
+newgrp <group name> = change the context for a moment
+
+chown = to change the owner
+
+getent or get entity = used to find information inside of the /etc/group/ and /etc/passwd file as well
+
+CONCLUSION:
+
+passwd = command can an administrator use to change the password of an existing user account
+
+The advantage of using the -r switch in the context of the userdel command is it removes user's home directory
+
+Currently the most common use of the -c switch of the useradd command is to store user's fullname
+
+cat etc/group |grep <username> = command that would reveal the MOST information about groups of a certain username.
+
+The effects of using the -A switch when executing the gpasswd command are add a user to a group and then makes the defined user a group administrator
+
+
+CompTIA Linux+: File Access & Permissions
+Working with File Permission and Ownership
+
+ls -l = command for longer list of names
+
+
+
+	
+	Owner 
+	permissions
+	   |
+	   |	Other permissions
+	   |       |
+	d rwx r-x r-x DirA
+	|      |	  
+    Type     Group
+    of 	     permission
+    Objects
+
+
+rwx= means read, write, execute
+
+Identities
+u            = user
+g	     = group
+o	     = other
+
+Permissions
+- 		=none
+r		=read
+w		=write
+x		=execute  
+
+Numerical Values
+4		= Read
+2		= write
+1		= execute
+
+Numerical Notation
+0	=none
+1	=execute
+2	=write
+3	=Write and execute
+4	=read
+5	=read and execute
+6	=read and write
+7	=read, write and execute
+
+
+Modify Permissions
+
+man chmod
+ex.
+chmod g+w <file>
+chmod o-r <file>
+chmod g+w, o-r <file>
+chmod u=rw, g=rw, o-rwx <file>   // Equal symbol override the permission
+
+File listing
+ls -l file* = files details
+
+
+umask = what defines the default permission
+
+umask Values
+
+0 =read, write and execute
+1 =read and write
+2 = read and execute
+3 =read only
+4 = write and execute
+5 =write only
+6 =execute only
+7 = no permissions
+
+mkdir <directory name> = make directories
+
+chown <specify the owner you want to be> 
+sudo chown <name of owner>:<group> <file> = change the owner
+
+
+Change the group
+chgrp <group> <file>
+
+Change the group without changing the owner
+sudo chown :<group> <file>
+
+
+Change the ownership in sub-directories
+sudo chown -R <name> /home/<filename>/*
+
+When you take the archieve, if you use the tar command to wrap up the files first, the tar
+command will actually back up the permission as well.
+
+USING FILESYSTEM ACCESS CONTROL  LISTS
+
+What FACLs do, is they allows us to assign extra stuff, you still have the UGO that doesn't change
+
+getfacl
+setfacl = modify new style FACL permission and also the old style Unix.
+-m = means modify
+ex. setfacl -m o::r <file> 
+    setfacl -m u:<username>:rw <file>
+    setfacl -m g:<group name>:rw <file>
+
+
+-t = Sticky bit is designed for shared folders, it tells the folder to watch for when people create documents to be able to tack that on and keep track of who created it
+
+Turn on the sticky bit using the chmod
+ex. chmod o+t,g+t CorpData
+
+CONCLUSION:
+
+setfacl and getfacl commands enables for Linux administrator to access to more advance and granular permissions
+
+chmod u=rwx,g=rw,o=r file2.txt & chmod u+x,o-w file2.txt =commands that grant owners read, write and execute; group memeber read and write; and other read only permission on afile named file2.txt that already had the permission -rw-rw-rw
+
+An administrator types ls -l they recieve the results d rwx r-x r-wx DirA. What does the "r-x" represent in this output?
+	group permissions
+
+
+What is the purpose of the sticky bit in Linux permission?
+	ensure that only file creators can delete their files
+
+
+
+CompTIA Linux+: Disk Partition & File Systems
+
+lsblk partition command 
+
+sudo fdisk /dev/sdb = take you to the fdisk editor 
+
+
+
+man mkfs = show the help files for make file system
+ls usr/sbin/mkfs*
+
+
+making swap partition
+sudo mkswap /dev/sdv3
+sudo swapon /dev/sdv3
+
+CONCLUSION:
+
+MBR	-default Linux partition ID is 83
+	-Uses the fdisk utility to manage partitions
+	- Limited to 4 primary partitions
+	-Support an extended number of partitions through logical partitions
+
+GPT	-Limited to 128 partitions
+	-Uses the gdisk utility to manage partitions
+	-Default Linux partition ID is 8300
+
+
+ext4	-A very mature and fully supported file system used as the default by ubuntu.
+ZFS	-Has a strong following but mainly designed foe network storage appliances or clusters doing shared storage.
+Btrfs	-Tends to be a more cutting edge file system that has built-in support for software raid.
+XFS	-Has built-in support for partition resizing, backed by Red Hat, and is the default in CentOS.
+
+Which commands can format the first partitions of /dev/sdb using the XFS file system?
+	mkfs.xfs /dev/sdb1
+	mkfs -t xfs /dev/sdb1
+
+What command makes the first ext4 formatted disk partition on /dev/sdb available from /mnt/private?
+	mount/dev/sdb1/mnt/private
+
+
+CompTIA Linux+: Logical Volumes & Filesystem Hierarchy
+
+Logical Volume Manager	
+	allows us to have a lot of flexibility with our file systems.
+
+sudo yum list lvm*
+
+if the lvm is not installed
+sudo yum install lvm2
+lsblk
+ls /usr/sbin/vg*
+ls /usr/sbin/lv*
+sudo pvcreate /dev/sdb1/dev/sdc1 
+sudo pvdisplay
+sudo vgcreate vgl /dev/sdb1/dev/sdc1 
+sudo lvcreate -L 1500G vgl -n lv1
+sudo lvdisplay
+
+
+CONCLUSION:
+
+What directory represents all of the executable that are currently running in memory?
+	-proc
+
+What is the correct descriptive syntax for creating a logical volume using LVM?
+	-lvcreate -L <size> <physical disk name> -n <logical volume name>
+
+
+What is the purpose of the Linux Foundations Filesystem Hierarchy Standard?
+	-Ensure user and software can file and directory locations
+
+
+What directory is designed to hold data that is temporary and not mission critical?
+	-var
+
+What commands are needed to increase the size of a logical volume located on physical volumes that are completely allocated?
+	-lvresize
+	-pvcreate
+	-vgextend
+
+What LVM component represent the aggregation of disk space before it is dispersed to mountable blocks of storage?
+	- Volume Group
+
+What is the purpose of the Linux Foundation Filesystem Hierarchy Standard?
+	- Ensure users and software can file and directory locations
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

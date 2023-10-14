@@ -1,0 +1,181 @@
+Monthly meeting - Quality Management Meeting
+PAL - Process Asset Library
+	- information store and make process assets available for use by project group and support group
+
+Project Initiation - mostly done by a project manager
+
+
+Client				NSP
+Project Proposal -----> 	Feasibility study
+				|
+				Trade control 
+				|
+Agreement      <---------------Approval by DC head
+					|
+--------> Request for Quotation--> Initial Estimation
+					|
+	Quotation  <--------------Formal Quotation
+
+Purchase Order -----------> Project Registration
+(P.O)					|
+				SAP Registration
+					|
+				Project Planning
+
+
+
+
+
+Project managers ---> TCA
+
+
+
+Software engineering
+the application of a systematic, diciplined, quantifiable approach to the development, operation, and maintenance of software; that is the application of engineering to software
+	-Design, building and maintaining software products
+	- In a timely Fashion
+	- and in a reliable process
+	-and cost-effectively
+
+Difference between software and a programmer
+Programmer- write the source code
+Software engineer- apply engineering test
+
+
+What is a process
+-a set of practices performed to achieve a given purpose; it may include tools, methods, materials, and/or people
+
+SQA- doing the audit
+   - they are following the process 
+
+
+NSP Software Processes
+Project Management
+	Project initiation
+	Project Planning
+	Project Monitoring and Control
+	Kick-off
+	Project closure
+
+
+Quality Assurance And control
+	Reviews
+	Phase Evaluation
+]	Wrap-up
+	SWQC
+	Process and Product Quality Audits
+	Measurement and Analysis
+	
+
+Software Development
+	Requirements Analysis
+	Basic Design
+	Detailed Design
+	Coding
+	Unit Testing
+	Integration Testing
+	Release
+
+Support Processes
+	Configuration Management
+	Project Registration
+
+
+
+
+Project Organization - Project Roles
+
+Project Manager (PM)
+	Creation and development of the project plan
+	Updating the project plan based in current project status
+	Interfacing with the customer
+	Negotiates with management e.g resources
+Project Leader (PL)
+	Technical Project development
+	Execution of the plan
+	Providing progress inputs to PM
+Assistant PL (Asst. PL)
+	Helps the PL in project monitoring 
+	Takes over when PL is absent
+Software Quality Assurance in Charge (SQA)
+	Help in the creation of the QA plan of the project 
+	Coordinates definition of project processes
+	Do audits to make sure that the quality control procedures agreed with PM/PL is followed
+	Collects ans submits project data
+CM-in-charge
+	Manages the source code repository, back-up and release activities
+System Administrator (SysAd)
+	Manages HW and software resources
+		Inventory
+		Maintenance
+		Installation
+
+Review coordinator
+	Plans, implement and monitor review activities and ensures they are propertly executed
+
+Librarian
+	Manages project documents
+		Document Registration
+		Check in/out documents
+
+Developer
+	Execute development task(design, review, source coding)
+	Provide status of assigned tasks
+Test coordinator
+	Monitors testing activities and ensures they are properly executed
+Tester
+	Execute test procedures and reports bugs
+QA Coordinator
+	Coordinates with SQA
+	Monitors project group's QA activities
+	Manages SWQC of the group
+
+
+PMBOK- project management body of knowledge
+	-Guidelines
+
+
+5 Main Phases of the project Life cycle
+
+Monitoring and controlling
+	initialing
+	Planning ---> Executing
+		 <----   
+	Closing
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

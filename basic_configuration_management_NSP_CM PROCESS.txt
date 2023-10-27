@@ -1,0 +1,2028 @@
+Basic Configuration Management & NSP CM process Overview
+
+
+What are the common problems you encountered with your project repository and project work products?
+
+Common problems encountered...
+Updates of interfaces document was not communicated.
+Wrong version of the interface of document is used to create the Basic Design.
+Product shipped contained the wrong version of the source code.
+	Difficulty in recreating a reported problems
+	Reoccurrence of fixed bugs
+	Inability to obtain the same version that our customers have 
+	Lost/Misplaced source files
+Share Code/ Share Data
+	Some are not notified of bug fixes in code shared by several engineer.
+Simultaneous Update
+	Modification made in a file was overwritten
+
+
+What is Configuration Management?
+	Is the discipline of identifying the configuration of a system at distinct point in time for the purpose of systematically controlling changes to the configuration, and maintaing the integrity and traceability of the configuration throughout the system life cycle.
+
+Purpose of Configuration Management
+
+To establish and maintain the integrity of work products using: 
+
+	configuration identification,
+	configuration control, 
+	configuration status accounting and 
+	configuration audits
+
+
+CM Principles
+
+Integrity - The existence and correctness of the configuration items stored in the repository.
+
+Traceability - To be able to trace or monitor changes made to the configuration items in the repository.
+		To be alble to trace or monitor the relationship between the software and all other software products.
+
+
+NSP CM process
+
+NSP Process Architecture		NSP CM Process				Output
+
+Project Initiation			CM Planning				CM Plan
+	|				     |		
+Project Planning			Establish Repository			Project Repository
+	|				     |
+--------------------------------------------------------------------------------WPR
+	|				     |					
+      BD/FD									Meeting Minutes								
+	|
+        DD									Audit Results	
+	|			Perform CM Activities				
+	CD									Project Baselines
+	|																	
+	Testing									Release
+	|				     |					Backup	
+------------------------------------------------------------------------------------------------------
+	|				     |
+Project Closure				Archive					Archived Project WP
+
+
+
+CM Planning & Establish Repository
+
+Purpose: To be able to plan the activities necessary for the execution of CM of the project group.
+
+	Plan CM Activities
+	Establish Project's repository
+		Learn and Understand the CM plan
+
+Members do not know how to perform the necessary CM Activities
+Not all configuration items will be identified and controlled
+Changes will not be handled properly
+Too many documents to handle
+
+
+
+CM Planning Standard Documents
+	Configuration Management Plan Template
+	Review Checklist
+	Review Record Card Template
+	Directory Structure Standard Guideline
+	Document Registration Code, Version Number, and File Naming Guideline
+	Checkin and Checkout Guideline
+
+
+CM Activities: Configuration Identification
+
+Purpose: To identify the project work products to be placed under configuration management
+	
+	Identify the project work products to be manage.
+	Assign unique identifiers and location
+	Record fucntional and physical characteristics of identified configuration items.
+	Support traceability between the software and all other related software products.
+	
+		You can only manage and control items that you identified.
+		The project may use their WBS to help them identify the possible output work products they may create and manage.
+
+
+Document Control 
+	Registration
+	Naming Convention
+	Versioning	
+
+1. Department/Section & FY
+2. Project Registration Series
+3. Project Series 
+	00 - Main Project
+	01 - Subproject
+4.Document Type
+5.Document Series
+6.Supporting document series
+	001 for RRC series
+
+					     Document Registration No.
+					     /
+			SWD10-05100-PLN008-001_Project Plan 1.xls
+						    |		\
+				         	Document Name	File Extension
+
+
+
+		Final Copy/Major   Minor Revision 
+	         Revision       \   |
+				XX.YY.ZZ
+					\
+					Draft Version
+
+Assigning unique identifiers help easier management and control of project work products.
+
+
+
+Document Control
+
+NSP Standard Directory  Structure
+
+<Project Name>
+:----Baseline Map.xls
+:----Work Product Registry.xls
+:------- 01 Project Management
+:        :
+:	 :---01 Initiation
+:	 :
+:	 :---02 PPMC
+:	 :
+:	 :---03 Closing
+:
+:------- O2 Engineering
+:	 :
+:	 :---01 Requirements
+:	 :
+:	 :---02 Design
+:	 :
+:	 :---03 Coding
+:	 :
+:	 :---04 Testing
+:	 :
+:	 :---05 User Documentation
+:	 :
+:	 :---06 Release
+:	 :
+:	 :---07 Libraries
+:
+:------- 03 Support
+	 :
+	 :---01 QA
+	 :
+	 :---02 Communications
+ 	 :
+	 :---03 References
+	 :
+	 :---04 Tools
+
+Tailoring
+	Project Development lifecycle
+	Deliverables required by client
+	Addition of directories/Sub-directories
+
+
+
+
+__________________________________________________________________________________________________________________________
+
+Git is ...
+Distributed
+	Does not require a constant connection to a central server
+
+Adaptive
+	model can adapt to fit the workflow of almost any team
+
+
+Fast and Reliable
+	Git branches are sparse, allowing for change-only tracking.
+
+Flexible
+	git can be command line or GUI driven, allowing everyone to contribute
+
+
+
+
+Terms for working with Git
+
+Branch
+	A branch is an independent line of development
+Tag
+	Mark a specific point in time on a branch
+Checkout
+	Get a specific branch to start making your changes
+Commit 
+	Adds changes you've made to the repository
+Push	
+	Send changes to a remote repository
+Workspace
+	Directory where you store the repository on your computer
+
+Untracked files
+	New files that Git has not been told to keep track of yet
+Working area
+	Files that have been modified but not committed
+
+Staging Area
+	Modified/Added files that are marked to go into the next commit
+
+Local repository ("repo")
+	Local copy of the entire upstream repository
+
+Remote (upstream) repo
+	Hosted repository on a shared  server (e.g Gitlab)
+
+
+
+Document Control 
+
+Revision History
+	Records the changes made from one version to another
+
+
+Sample 				Bad Practice			Good Practice
+
+Updating design 		-Update section 5		Updated based on review #01:
+document due to review 		-Retrieval of neType is not		- Corrected Recovery Time and Hold-off Time in
+comments			indicated in page 8		Section 5 Scenario Value Pattern
+									Added retrieval of neType in Section 7 Interface
+
+Updating design document	Modified Window Image,		Removed function related to LO X-CON in sections: Window Image, Window Specification, Event and Interface base on MR#012 
+due to requirements change	Window Specification,
+				Event and Interface
+
+
+Modifying source code		Modification in source code 	2010/12/15 by M. Bean - Modified to fix bug #01:
+due to bug fix			is not accounted in revision	Removed function related to LO X-CON
+				history				
+
+			
+				svn log sample:			svn log sample:
+				Modified file due to bug fix	Modified file for bug fix #01
+								Removed function related to LO X-CON
+
+Revision History should be descriptive, brief and precise/specific
+
+
+
+Configuration Control Activities
+
+1. Repository Check in/Check out
+2. Baselines
+3. Change Control
+4. Release
+5. Backup
+
+
+CM Activities: Configuration Identification
+
+	Misplaced work products
+	Changes are not accounted
+	Correct version are not used as input document
+
+
+Standard Document:
+	Document Registration Code, Version Number, and file Naming Guidelines
+	Directory Structure Standard Guidelines
+	Work Product Registry Template
+
+
+
+
+Doc vs. Repo Mapping Exercise
+
+Test Cases & Test procedures documents
+Team Member weekly Status Report
+Development Source codes
+Requirements List
+Release Notes
+Test Data
+Contracts
+Risk Management Plan
+Monthly Project Status Report
+Minutes of the meeting
+Project Schedule
+Detailed Design
+Emails
+Third Party Binary Files
+Interface Document from Client
+Integration Test Procedure
+Release Procedure
+SQA Evaluation and Audit Report
+Project Development Plan
+Build Scripts
+Estimation worksheet
+Unit Test Procedures
+Lessons Learned Document
+Project Proposal Document
+MR form
+SQA Plan
+MR Log
+Basic Design
+MakeFile
+Customer Survey Form
+Review Management Sheet
+Configuration Management Plan
+HW & SW Development Environment Guide
+Installation & User's Manual Document
+
+
+CM Activities: Configuration Control
+
+Purpose: To manage and control configuration items, ensuring its safety and security so that it will not be changed without proper authorization.
+
+	Control Repository Access
+	Manage Changes to all configuration items.
+		External and Internal Modification Requests
+	Perform Baselines
+	Perform Release 
+	Backup
+
+
+Update WPR at least once a week to avoid bulk and tedious update.
+
+
+Configuration Control Activities
+1. Repository Check in/Check out
+2. Baselines
+3. Change Control
+4. Release
+5. Backup
+
+1. Repository Check in/Check out
+
+Purpose: To put work products into the repository using a version control application for easier retrieval and management.
+
+Establish and follow the standart procedure in accessing the repository.
+	Level of access to the repository
+	Consistent access logging
+
+
+Make sure that the files will be placed in the correct directory of the repository.
+When checking-in source codes, make sure that the checked-in code will not contain or introduce errors when the whole system is compiled/build.
+Be sure to check-in all work products before weekends or long vacation. If possible, check-in work products at the end of the day. This will keep the work product updated even if the responsible person will be absent on the next day.
+
+
+
+2. Baselines
+ 
+Purpose: To establish that the approved configuration items will serve as basis for further development and that it can be changed only through formal change control procedures.
+
+
+Agree and Approve the configuration items (e.g design, code)
+Use the approved configuration items as the basis of the next task.
+Take a snapshot of the system at appropriate points in the project lifecycle.
+
+
+Importance of Baselines
+
+Baselines RL Basis for what product to develop.
+Baseline Design basis for implementation of the product.
+Baseline Source Codes basis for testing Activities
+
+When creating a work product make sure that the referenced document used is the latest baseline.
+
+
+3. Change Control
+
+Purpose: To manage the changes of the baselines configuration items.
+
+Manage configuration items that are affected by the change  (Requirement, Design, Review, etc..)
+Access impact of changes to the baselines.
+Maintain Traceability of the configuration items.
+Ensure integrity of configuration items.
+
+
+To maintain integrity of the repository:
+	Always monitor changes in the repository.
+	Always follow project's change control procedure.
+
+
+
+Change Control Process
+
+Issue Change Request <------------------------------------ Triggers
+	|							Modification Request (Client/Developer)
+Analyze, Propose, Review, And Approve					Changes in Requirements
+MR Procedure, Bug Report, RRC						Changes in design
+	|				\				Changes in behaviour
+Implement Modification	  _____________| \					Bug Fix
+	|		  |	       |  \	Monitor, Managed		Reviews
+Confirm  Modification     |	       |  /	And Controlled by
+	|		  |____________| /	CM-In-Charge
+Release Changes                        |/
+
+
+
+
+
+4. Release Activities
+
+Purpose: To check readiness of the release items, prepare the deliverables and send to its intended recipient.
+
+Check readiness of deliverables for release
+Prepare and package deliverables.
+Send package deliverables to intended recipient
+PM gets confirmation from recipient
+
+
+
+5. Backup - preservation of the content of the configuration management system.
+
+Purpose: To be able to store the configuration items on a separate medium as a precautionary measure to prevent loss of data should the primary storage medium fail.
+
+Preform regular backup as planned.
+Check integrity of backup
+
+
+CM Activities: Configuration Control
+
+	Cannot Trace proper location of work products.
+	Cannot determine which version is latest.
+	Changes are not accounted.
+
+Incorrect version of design is used as basis for coding
+
+	Cannot trace why a change was made
+	Changes are not properly disseminated
+	Not all configuration item subject for change was updated.
+	Updates could cause errors.
+
+Package release is incorrect or lacking
+We do not have copy of the released package.
+
+
+Configuration Control Strandard Documents
+
+Work Product Registry Template
+Directory Structure standard
+Checkin and Checkout Guideline
+Modification Request (MR) Procedure
+Modifiacation Request (MR) Log Template
+Modification Request (MR) Template
+Review Record Card Template
+Problem Handling Sheet (PHS) Template
+Test Result and Release Evaluation Checklist
+Release Procedure
+Release Notes Guideline
+Release Notes Template
+
+CM Activities: Configuration Audits (1/2)
+
+Purpose: To Check integrity of the configuration management system of the group
+
+Use the CM plan as the basis for all CM Audits.
+Check the existence and correctness of the configuration items stored in the repository.
+Check if changes made to the configuration items in the repository are traceable.
+Resolve non-conformance(s) found.
+Confirm Resolution.
+
+	Perform CM Audit to Maintain the integrity of the repository
+	Do Regular audits to avoid bulk and tedious CM Audit
+	Always follow project's guidelines and procedure to limmit too much rework.
+	Improve project's CM process from the weakness found
+
+
+
+CM Activities: Configuration Audits
+	Project cannot ensure the integrity of configuration management system
+	Project member's practice might not be aligned with project's defined standards.
+	Project may encounter repeating problems.
+
+Standard Documents:
+	Configuration Management Audits Guideline
+	Configuration Management Audit Checklist
+	Configuration Management Plan Template
+	Work Product Registry Template
+
+
+
+
+
+CM Activities: Status Accounting
+	
+Purpose: To check the status of all configuration items and track any changes made to them.
+
+Check and update status of each configuration item in the WPR at least once a week.
+Notify all stakeholders if necessary.
+
+
+
+
+CM Activities: Status Accounting
+	Project Cannot ensure the integrity of configuration management system.
+	Project Member's practice might not be aligned with project's defined standards
+	Project may encounter repeating problems
+
+Standard Documents:
+	Configuration Management Audit Guideline
+	Configuration Management Audit Checklist
+
+
+Archive
+
+Purpose: To be able to take a final snapshot of the project which can be used as basis for future endeavors related to this project or for future project reference by other projects
+
+Archive Project Work Products
+	Note: Request to ITNA of Project Team uses the company wide repository
+Give archive to SQA for storage.
+
+	Difficulty in retrieving latest version of project work products.
+	Project work products is lost.
+
+
+
+SUMMARY
+
+
+
+NSP Process Architecture		NSP CM Process				Output
+
+Project Initiation			CM Planning				CM Plan
+	|				     |		
+Project Planning			Establish Repository			Project Repository
+	|				     |
+--------------------------------------------------------------------------------WPR
+	|				     |					
+      BD/FD									Meeting Minutes								
+	|                          Perform CM Activities
+        DD				Identification				Audit Results	
+	|				Control			
+	CD				Status Accounting			Project Baselines
+	|				CM Audit													
+	Testing									Release
+	|				     |					Backup	
+------------------------------------------------------------------------------------------------------
+	|				     |
+Project Closure				Archive					Archived Project WP
+
+
+
+
+
+Which document contains the list of registered work products of the group that is under CM.
+- Work Product Registry
+
+It is the activity of putting/retrieving work products into/from the repository using a version control application.
+- Repository Check in/Check out
+
+
+It refers to a set of specifications or work products that has been formally reviewed and agreed on, which thereafter serves as the basis for further development, and which can be changed only through change control procedures.
+- Baselines
+
+
+It refers to the record of the changes made from one version to another.
+- Revision History
+
+
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Git vs.  Subversion
+
+Distributed vs. Centralized Version Control Systems
+
+Centralized
+	RCS, CVS, Subversion
+	All developers access a single central repository
+	Working offline can be a challenge
+	Need Access to repository to view history or to commit code.
+
+Distributed
+	Bitkeeper, Git, Mercurial
+	Every developer has his/her own copy of the repository
+	Developers can work offline - commit, branch, merge branches, view history
+	Access to internet is only needed when synchronization with other team members is required.
+
+
+
+Git vs. Subversion Features
+
+
+Features			Subverion 			Git
+
+Command Line			Monolithic			>150 Commands
+
+File manager			Tight Integration		Command line front-end
+
+IDE				All major IDEs 			All major IDEs
+
+Continuous Integration		Jenkins, TeamCity,		Jenkins, TeamCity,		
+				Bamboo...			Bamboo...	
+				
+Cloud				Private and Public Cloud	Private and Public Clous
+
+Atomic commits			Snapshots No rollback		Snapshots with rollback
+
+File renames			Manual renames 			Automatic and cross-repository
+				Single repository		
+
+Branches, tags, and		Supported as folders		First-class branches, tags, merge, rebase
+Merging				Single-merge
+
+Big files			Limited only by file-system	2 GB practical limit
+
+Replication			Mirroring only			Master-slave
+								Master-master
+								Peer-to-peer
+
+
+
+Git vs Subversion Security
+
+		Channel Security	Authentication			Fine-grained security		Permission Model
+
+Subversion	PKI, SSL, SSH		Basic Auth, X.509		Tag, path; branch		ACLs, RBAC
+					Kerberos, SSH, LDAP/AD,
+					SSO
+
+
+Git		SSL, SSH		No auth, OS User, SSH		Only full repo R/W		OS file permmissions
+
+
+
+
+Differences Between Git and SVN
+
+Directory Structure
+	Subversion	
+		Trunk- represent the latest stable release
+		Branches-activates features are developed in the subdirectories.
+
+	
+	Git
+		Project are stored in single directory
+		Master - contains the latest stable release
+		branch - active features are developed in separate branches.
+		Directory structure remains the same, but file content may change depending on the branch
+
+
+
+
+
+Directory Structure
+
+
+This is how an SVN directory structure look
+
+Project ----> trunk -------> Current Sources
+  |	\
+  |	 \   
+  |	  \ branches ------> Feature Branch
+  |		     ------> Feature Branch 1
+  |		     ------> Feature Branch 2
+  |			O     O     O
+  |		     ------> Experimental Brach	
+  |
+  |
+   Tags ------> V1.0-beta1
+	------> V1.0-rc1
+	------> V1.0-RTM
+		O   O    O
+	------> V2.7.101
+		
+
+
+
+
+Comparison of Commands
+
+Initial Checkout
+
+Get a copy of the last revision from repository				Keep a copy of the entire repository
+Can grab any particular path in the repository				Can grab only the entire respository
+
+	
+		SVN Repository							git central repository
+		/								/
+	       / Checkout						       /clone	
+	      /								      /
+	  dev A		dev B						  dev a 		dev B
+
+$ svn checkout							$ git clone
+
+
+
+Adding file
+
+Used for adding new files				Used for adding new files and saving modification to existing files
+							
+
+	
+		SVN Repository							git central repository
+		/								
+	       / add						 	   __    clone	
+	      /								  |  |  
+	  dev A		dev B						  dev a 		dev B
+	path/file1.txt							path/file1.txt
+
+$ svn add path/file1.txt					$ git add path/file1.txt
+
+
+Status
+
+Tracks unversioned, new, deleted, modified files				Track unversioned, new ,deleted, modified, and modified but not 'add'-ed
+							
+
+	
+		SVN Repository							git central repository
+		/								
+	       / 						 	   __    
+	      /								  |  |  
+	  dev A		dev B						  dev a 		dev B
+	path/file1.txt							path/file1.txt
+
+$ svn status								$ git status
+
+
+
+
+
+
+Commit
+
+Send changes to remote repository					Only commit to local repository
+Revision number is incrementing integer					Revision number is hash of the commit		
+
+	
+		SVN Repository							git central repository
+		/								
+	       / commit						 	   __  commit 	
+	      /								  |  |  
+	  dev A		dev B						  dev a 		dev B
+	path/file1.txt							path/file1.txt
+
+$ svn commit -m "Add file1"					$ git commit -m "Add file1"
+$ svn log -q								$ git log -oneline
+r3382 | eperez | 2017-05-12 14:04:34...								4ef8563 Add file1
+
+
+
+
+Push
+
+Send changes to remote repository				Send changes to the central repository
+							
+
+	
+		SVN Repository							git central repository
+		/								
+	       /commit						 	   __  push	
+	      /								  |  |  
+	  dev A		dev B						  dev a 		dev B
+	path/file1.txt							path/file1.txt
+
+$ svn commit -m "Add file1"						$ git push
+
+
+
+
+
+Compare
+
+Compare file with central repository				Show the difference of local files
+							
+
+	
+		SVN Repository							git central repository
+		/								
+	       / diff						 	   __ diff
+	      /								  |  |  
+	  dev A		dev B						  dev a 		dev B
+	path/file1.txt							path/file1.txt
+
+$ svn diff path/file1.txt						$ git diff path/file1.txt
+
+
+
+
+Reverting
+
+Revert changes in the working copy				Checkout a version of the last committed change
+							
+
+	
+		SVN Repository							git central repository
+		/								
+	       / revert						 	   __  checkout	
+	      /								  |  |  
+	  dev A		dev B						  dev a 		dev B
+	path/file1.txt							path/file1.txt
+
+$ svn revert path/file1.txt					$ git checkout path/file1.txt
+
+
+
+
+
+
+Updating
+
+Bring changes from repository into working copy			Fetch from and integrate with another repository
+							
+
+	
+		SVN Repository							git central repository
+		/	\							/		\
+	       / update	 \ commit					 	       / pull		 \ push
+	      /		  \						      /   		  \
+	  dev A		dev B						  dev a 		dev B
+	path/file1.txt							path/file1.txt
+
+$ svn update								$ git pull
+
+
+
+
+
+
+Branching
+
+Making changes immediately to remote repository				Local repository only
+									Needs push to send to remote
+
+	
+		SVN Repository							git central repository
+		/								
+	       / copy						 	   __ checkout -b	
+	      /								  |  |  
+	  dev A		dev B						  dev a 		dev B
+	path/file1.txt							path/file1.txt
+
+$ svn copy .								$ git branch newbie
+http://example.com/repo/branch/newbie					$ git checkout newbie
+$svn switch -relocate
+http://example.com/repo/branch/newbie
+
+
+
+Example: Git workflow
+# Clone and create "develop" branch
+$ git clone ssh://user@host/path/to/repo.git
+$ git checkout -b develop origin/develop		C2
+
+
+# Create branch for new feature
+$ git checkout -b some-feature develop
+$git push -u origin some-feature			C3
+
+
+#Feature is developed
+$ git pull origin develop
+$ git checkout develop
+$ git merge --no-ff some-feature
+$ git push origin develop
+
+$ git branch -d some-feature
+
+
+# Prepare a release, cleanup, test,...
+$ git checkout -b release-0.1.0 develop			C14
+
+# Finish the release
+$ git checkout master 					C13
+$ git merge --no-ff release-0.1.0
+$ git push
+$ git checkout develop
+$ git merge --no-ff release-0.1.0
+$ git push
+$ git branch -d release-0.1.0
+
+# If you pushed branch to origin
+$ git push origin --delete release-0.1.0
+
+$ git tag -a v0.1.0 master
+$ git push-tags
+
+#If customer found a bug, create a new branch
+$ git checkout -b hotfix-0.1.1 master
+
+
+
+
+
+Summary of Features comparison between svn and git
+
+
+Feature			svn					git
+
+Inital checkout		svn checkout				git clone
+			http://example.com/repo			http://example.com/repo.git
+
+Add file		svn aff path/file1.txt			git add path/file1.txt
+
+Status			git status				git status
+
+Commit			svn commit -m "Add file1"		git commit -m "Add file1"
+
+Push			svn commit -m "Add file1"		git push
+
+Compare			svn diff path/file1.txt			git diff path/file1.txt
+
+Revert			svn revert path/file1.txt		git checkout path/file1.txt
+
+Update			svn update				svn pull
+
+Branch			svn copy:
+			http://example.com/branch/newbie	git checkout -b newbie
+
+Binary Storage		Support exclusive lock.			No support for exclusive lock and Copy-Modify-Merge is not applicable to binary files
+							
+								Not advisable for binary document (MS Word, excel, executable, libraries,...)
+
+History			Keep track of all changes to a file/	Losses history if file is renamed. (Can be tracked in github/gitlab)
+			folder					
+
+
+
+_________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Git Branching
+
+You can seel all the commands available with "show commands" at the terminal
+
+Git Commits
+A commit in a git repository records a snapshot of all the files in your directory. It's like a giant copy and paste, but even better!
+
+Git wants to keep commits as lightweight as possible though, so it doesn't just blindly copy the entire directory every time you commit. It can (when possible) compress a commit as a set of changes, or a "delta", from one version of the repository to the next.
+
+Git also maintains a history of which commits were made when. That's why most commits have ancestor commits above them -- we designate this with arrows in our visualization. Maintaining history is great for everyone working on the project!
+
+It's a lot to take in, but for now you can think of commits as snapshots of the project. Commits are very lightweight and switching between them is wicked fast!
+-git commit
+
+
+
+Git Branches
+Branches in Git are incredibly lightweight as well. They are simply pointers to a specific commit -- nothing more. This is why many Git enthusiasts chant the mantra:
+
+"branch early, and branch often"
+
+Because there is no storage / memory overhead with making many branches, it's easier to logically divide up your work than have big beefy branches.
+
+When we start mixing branches and commits, we will see how these two features combine. For now though, just remember that a branch essentially says "I want to include the work of this commit and all parent commits."
+
+
+
+git checkout <name>
+
+This will put us on the new branch before committing our changes
+
+ex. git checkout newImage; git commit
+
+
+
+Here's a shortcut: if you want to create a new branch AND check it out at the same time, you can simply type 
+git checkout -b [yourbranchname].
+
+
+
+
+
+Branches and Merging
+Great! We now know how to commit and branch. Now we need to learn some kind of way of combining the work from two different branches together. This will allow us to branch off, develop a new feature, and then combine it back in.
+
+The first method to combine work that we will examine is "git merge". Merging in Git creates a special commit that has two unique parents. A commit with two parents essentially means "I want to include all the work from this parent over here and this one over here, and the set of all their parents."
+
+It's easier with visuals, let's check it out in the next view
+
+Here we have two branches; each has one commit that's unique. This means that neither branch includes the entire set of "work" in the repository that we have done. Let's fix that with merge.
+
+We will merge the branch bugFix into master
+
+git merge bugFix
+
+Woah! See that? First of all, master now points to a commit that has two parents. If you follow the arrows up the commit tree from master, you will hit every commit along the way to the root. This means that master contains all the work in the repository now.
+
+Also, see how the colors of the commits changed? To help with learning, I have included some color coordination. Each branch has a unique color. Each commit turns a color that is the blended combination of all the branches that contain that commit.
+
+So here we see that the master branch color is blended into all the commits, but the bugFix color is not. Let's fix that...
+
+
+git checkout bugFix; git merge master
+
+
+Let's merge master into bugFix:
+
+git checkout bugFix; git merge master
+
+Since bugFix was an ancestor of master, git didn't have to do any work; it simply just moved bugFix to the same commit master was attached to.
+
+Now all the commits are the same color, which means each branch contains all the work in the repository! Woohoo!
+
+
+
+To complete this level, do the following steps:
+
+Make a new branch called "bugFix"
+	- git branch bugFix
+
+Checkout the "bugFix" branch with "git checkout bugFix"
+	- git checkout bugFix
+
+Commit once
+	- git commit
+
+Go back to "master" with "git checkout"
+	- git checkout master
+
+Commit another time
+	- git commit
+
+Merge the branch "bugFix" into "master" with "git merge"
+	-git merge bugFix
+	-git merge master
+Remember, you can always re-display this dialog with "objective"
+
+
+
+
+Git Rebase
+The second way of combining work between branches is rebasing. Rebasing essentially takes a set of commits, "copies" them, and plops them down somewhere else.
+
+While this sounds confusing, the advantage of rebasing is that it can be used to make a nice linear sequence of commits. The commit log / history of the repository will be a lot cleaner if only rebasing is allowed.
+
+Let's see it in action...
+
+
+Here we have two branches yet again; note that the bugFix branch is currently selected (note the asterisk)
+We would like to move our work from bugFix directly onto the work from master. That way it would look like these two features were developed sequentially, when in reality they were developed in parallel.
+Let's do that with the git rebase command
+
+git rebase master
+
+Awesome! Now the work from our bugFix branch is right on top of master and we have a nice linear sequence of commits.
+Note that the commit C3 still exists somewhere (it has a faded appearance in the tree), and C3' is the "copy" that we rebased onto master.
+The only problem is that master hasn't been updated either, let's do that now...
+Now we are checked out on the master branch. Let's go ahead and rebase onto bugFix...
+
+git rebase bugFix
+
+There! Since "master" was an ancestor of "bugFix", git simply moved the "master" branch reference forward in history.
+
+
+To complete this level, do the following
+
+Checkout a new branch named "bugFix"
+- git checkout -b bugFix
+
+Commit once
+-git commit
+
+Go back to master and commit again
+-git checkout master
+-git commit
+Check out bugFix again and rebase onto master
+-git checkout bugFix
+-git rebase master
+Good luck!
+
+
+
+
+
+Moving around in Git
+Before we get to some of the more advanced features of Git, it's important to understand different ways to move through the commit tree that represents your project.
+
+Once you're comfortable moving around, your powers with other git commands will be amplified!
+
+
+
+HEAD
+First we have to talk about "HEAD". HEAD is the symbolic name for the currently checked out commit -- it's essentially what commit you're working on top of.
+HEAD always points to the most recent commit which is reflected in the working tree. Most git commands which make changes to the working tree will start by changing HEAD.
+Normally HEAD points to a branch name (like bugFix). When you commit, the status of bugFix is altered and this change is visible through HEAD.
+
+Here we will reveal HEAD before and after a commit.
+
+git checkout C1; git checkout master; git commit; git checkout C2
+
+See! HEAD was hiding underneath our master branch all along.
+
+
+Detaching HEAD
+Detaching HEAD just means attaching it to a commit instead of a branch. This is what it looks like beforehand:
+HEAD -> master -> C1
+
+git checkout C1
+
+And now it's
+HEAD -> C1
+
+
+To complete this level, let's detach HEAD from bugFix and attach it to the commit instead.
+ex.
+- git checkout C4
+Specify this commit by its hash. The hash for each commit is displayed on the circle that represents the commit.
+
+
+
+
+Relative Refs
+Moving around in Git by specifying commit hashes can get a bit tedious. In the real world you won't have a nice commit tree visualization next to your terminal, so you'll have to use git log to see hashes.
+Furthermore, hashes are usually a lot longer in the real Git world as well. For instance, the hash of the commit that introduced the previous level is fed2da64c0efc5293610bdd892f82a58e8cbc5d8. Doesn't exactly roll off the tongue...
+The upside is that Git is smart about hashes. It only requires you to specify enough characters of the hash until it uniquely identifies the commit. So I can type fed2 instead of the long string above.
+Like I said, specifying commits by their hash isn't the most convenient thing ever, which is why Git has relative refs. They are awesome!
+With relative refs, you can start somewhere memorable (like the branch "bugFix" or "HEAD") and work from there.
+Relative commits are powerful, but we will introduce two simple ones here:
+
+Moving upwards one commit at a time with ^
+Moving upwards a number of times with ~<num>
+Let's look at the Caret (^) operator first. Each time you append that to a ref name, you are telling Git to find the parent of the specified commit.
+
+So saying master^ is equivalent to "the first parent of master".
+master^^ is the grandparent (second-generation ancestor) of master
+Let's check out the commit above master here
+
+git checkout master^
+
+You can also reference "HEAD" as a relative ref. Let's use that a couple of times to move upwards in the commit tree
+
+git checkout C3; git checkout HEAD^; git checkout HEAD^; git checkout HEAD^
+
+
+
+To complete this level, check out the parent commit of bugFix. This will detach HEAD.
+
+ex.
+git checkout C4^
+You can specify the hash if you want, but try using relative refs instead!
+
+You can also reference HEAD as a relative ref. Let's use that a couple of times to move upwards in the commit tree
+
+git checkout C3; git checkout HEAD^; git checkout HEAD^; git checkout HEAD^
+Easy! We can travel backwards in time with HEAD^
+
+
+
+The "~" operator
+Say you want to move a lot of levels up in the commit tree. It might be tedious to type ^ several times, so Git also has the tilde (~) operator.
+The tilde operator (optionally) takes in a trailing number that specifies the number of parents you would like to ascend. Let's see it in action
+Let's specify a number of commits back with ~.
+
+git checkout HEAD~4
+
+
+
+Branch forcing
+You're an expert on relative refs now, so let's actually use them for something.
+One of the most common ways I use relative refs is to move branches around. You can directly reassign a branch to a commit with the -f option. So something like:
+git branch -f master HEAD~3
+
+moves (by force) the master branch to three parents behind HEAD.
+
+
+git branch -f master HEAD~3
+
+There we go! Relative refs gave us a concise way to refer to C1 and branch forcing (-f) gave us a way to quickly move a branch to that location.
+Now that you have seen relative refs and branch forcing in combination, let's use them to solve the next level.
+
+To complete this level, move HEAD, master, and bugFix to their goal destinations shown.
+-  git branch -f master C6
+- git checkout Head~1
+-  git branch -f bugfix HEAD~1
+
+
+
+Reversing Changes in Git
+There are many ways to reverse changes in Git. And just like committing, reversing changes in Git has both a low-level component (staging individual files or chunks) and a high-level component (how the changes are actually reversed). Our application will focus on the latter.
+
+There are two primary ways to undo changes in Git -- one is using git reset and the other is using git revert. We will look at each of these in the next dialog
+
+
+
+Git Reset
+git reset reverts changes by moving a branch reference backwards in time to an older commit. In this sense you can think of it as "rewriting history;" git reset will move a branch backwards as if the commit had never been made in the first place.
+Let's see what that looks like:
+
+git reset HEAD~1
+Nice! Git moved the master branch reference back to C1; now our local repository is in a state as if C2 had never happened.
+
+Git Revert
+While reseting works great for local branches on your own machine, its method of "rewriting history" doesn't work for remote branches that others are using.
+
+In order to reverse changes and share those reversed changes with others, we need to use git revert. Let's see it in action
+git revert HEAD
+
+Weird, a new commit plopped down below the commit we wanted to reverse. That's because this new commit C2' introduces changes -- it just happens to introduce changes that exactly reverses the commit of C2.
+With reverting, you can push out your changes to share with others.
+To complete this level, reverse the most recent commit on both local and pushed. You will revert two commits total (one per branch).
+
+-git checkout pushed
+-git revert C2
+-git checkout local
+-git reset Head~1 or git reset local^
+
+Keep in mind that pushed is a remote branch and local is a local branch -- that should help you choose your methods.
+
+
+
+
+Moving Work Around
+So far we've covered the basics of git -- committing, branching, and moving around in the source tree. Just these concepts are enough to leverage 90% of the power of git repositories and cover the main needs of developers.
+That remaining 10%, however, can be quite useful during complex workflows (or when you've gotten yourself into a bind). The next concept we're going to cover is "moving work around" -- in other words, it's a way for developers to say "I want this work here and that work there" in precise, eloquent, flexible ways.
+This may seem like a lot, but it's a simple concept.
+
+
+Git Cherry-pick
+The first command in this series is called "git cherry-pick". It takes on the following form:
+
+"git cherry-pick <Commit1> <Commit2> <...>"
+It's a very straightforward way of saying that you would like to copy a series of commits below your current location (HEAD). I personally love cherry-pick because there is very little magic involved and it's easy to understand.
+Let's see a demo!
+
+Here's a repository where we have some work in branch side that we want to copy to master. This could be accomplished through a rebase (which we have already learned), but let's see how cherry-pick performs.
+git cherry-pick C2 C4
+
+That's it! We wanted commits C2 and C4 and git plopped them down right below us. Simple as that!
+
+
+
+Git Interactive Rebase
+Git cherry-pick is great when you know which commits you want (and you know their corresponding hashes) -- it's hard to beat the simplicity it provides.
+But what about the situation where you don't know what commits you want? Thankfully git has you covered there as well! We can use interactive rebasing for this -- it's the best way to review a series of commits you're about to rebase.
+Let's dive into the details...
+
+All interactive rebase means is using the "rebase" command with the -i option.
+
+If you include this option, git will open up a UI to show you which commits are about to be copied below the target of the rebase. It also shows their commit hashes and messages, which is great for getting a bearing on what's what.
+
+For "real" git, the UI window means opening up a file in a text editor like vim. For our purposes, I've built a small dialog window that behaves the same way.
+When the interactive rebase dialog opens, you have the ability to do 3 things:
+
+You can reorder commits simply by changing their order in the UI (in our window this means dragging and dropping with the mouse).
+You can choose to completely omit some commits. This is designated by "pick" -- toggling "pick" off means you want to drop the commit.
+Lastly, you can squash commits. Unfortunately our levels don't support this for a few logistical reasons, so I'll skip over the details of this. Long story short, though -- it allows you to combine commits.
+Great! Let's see an example.
+
+When you hit the button, an interactive rebase window will appear. Reorder some commits around (or feel free to unpick some) and see the result!
+git rebase -i HEAD~4
+
+Boom! Git copied down commits in the exact same way you specified through the UI
+
+git rebase -i overHere 
+or git rebase -i C1,C3,C4,C5
+
+
+
+Locally stacked commits
+Here's a development situation that often happens: I'm trying to track down a bug but it is quite elusive. In order to aid in my detective work, I put in a few debug commands and a few print statements.
+All of these debugging / print statements are in their own commits. Finally I track down the bug, fix it, and rejoice!
+Only problem is that I now need to get my "bugFix" back into the "master" branch. If I simply fast-forwarded "master", then "master" would get all my debug statements which is undesirable. There has to be another way...
+
+We need to tell git to copy only one of the commits over. This is just like the levels earlier on moving work around -- we can use the same commands:
+
+git rebase -i
+git cherry-pick
+To achieve this goal.
+
+
+
+This is a later level so we will leave it up to you to decide which command you want to use, but in order to complete the level, make sure master receives the commit that bugFix references.
+- git rebase -i C1
+- git branch -f master C4'
+
+
+
+
+Juggling Commits
+Here's another situation that happens quite commonly. You have some changes (newImage) and another set of changes (caption) that are related, so they are stacked on top of each other in your repository (aka one after another).
+The tricky thing is that sometimes you need to make a small modification to an earlier commit. In this case, design wants us to change the dimensions of newImage slightly, even though that commit is way back in our history!!
+
+We will overcome this difficulty by doing the following:
+
+We will re-order the commits so the one we want to change is on top with "git rebase -i"
+We will "commit --amend" to make the slight modification
+Then we will re-order the commits back to how they were previously with "git rebase -i"
+Finally, we will move master to this updated part of the tree to finish the level (via the method of your choosing)
+There are many ways to accomplish this overall goal (I see you eye-ing cherry-pick), and we will see more of them later, but for now let's focus on this technique. Lastly, pay attention to the goal state here -- since we move the commits twice, they both get an apostrophe appended. One more apostrophe is added for the commit we amend, which gives us the final form of the tree
+
+That being said, I can compare levels now based on structure and relative apostrophe differences. As long as your tree's master branch has the same structure and relative apostrophe differences, I'll give full credit
+- git rebase -i HEAD~2
+- git commit --amend
+- git rebase -i HEAD~2 
+- git rebase caption master
+
+
+
+Juggling Commits #2
+If you haven't completed Juggling Commits #1 (the previous level), please do so before continuing
+As you saw in the last level, we used rebase -i to reorder the commits. Once the commit we wanted to change was on top, we could easily --amend it and re-order back to our preferred order.
+The only issue here is that there is a lot of reordering going on, which can introduce rebase conflicts. Let's look at another method with git cherry-pick
+
+
+Remember that git cherry-pick will plop down a commit from anywhere in the tree onto HEAD (as long as that commit isn't an ancestor of HEAD).
+Here's a small refresher demo:
+
+git cherry-pick C2
+
+So in this level, let's accomplish the same objective of amending C2 once but avoid using rebase -i. I'll leave it up to you to figure it out! :D
+Remember, the exact number of apostrophe's (') on the commit are not important, only the relative differences. For example, I will give credit to a tree that matches the goal tree but has one extra apostrophe everywhere
+
+$ git checkout master
+
+$ git cherry-pick C2
+
+$ git commit --amend
+
+$ git cherry-pick C3
+
+
+
+Git Tags
+As you have learned from previous lessons, branches are easy to move around and often refer to different commits as work is completed on them. Branches are easily mutated, often temporary, and always changing.
+If that's the case, you may be wondering if there's a way to permanently mark historical points in your project's history. For things like major releases and big merges, is there any way to mark these commits with something more permanent than a branch?
+
+You bet there is! Git tags support this exact use case -- they (somewhat) permanently mark certain commits as "milestones" that you can then reference like a branch.
+More importantly though, they never move as more commits are created. You can't "check out" a tag and then complete work on that tag -- tags exist as anchors in the commit tree that designate certain spots.
+Let's see what tags look like in practice.
+
+
+Let's try making a tag at C1 which is our version 1 prototype
+
+git tag v1 C1
+
+There! Quite easy. We named the tag v1 and referenced the commit C1 explicitly. If you leave the commit off, git will just use whatever HEAD is at
+
+For this level just create the tags in the goal visualization and then check v1 out. Notice how you go into detached HEAD state -- this is because you can't commit directly onto the v1 tag.
+In the next level we'll examine a more interesting use case for tags.
+-git tag v0 C1
+-git tag v1 C2
+-git checkout C2
+
+
+Git Describe
+Because tags serve as such great "anchors" in the codebase, git has a command to describe where you are relative to the closest "anchor" (aka tag). And that command is called "git describe"!
+Git describe can help you get your bearings after you've moved many commits backwards or forwards in history; this can happen after you've completed a git bisect (a debugging search) or when sitting down at a coworkers computer who just got back from vacation.
+
+
+Git describe takes the form of:
+
+git describe <ref>
+
+Where <ref> is anything git can resolve into a commit. If you don't specify a ref, git just uses where you're checked out right now (HEAD).
+The output of the command looks like:
+
+<tag>_<numCommits>_g<hash>
+
+Where "tag" is the closest ancestor tag in history, "numCommits" is how many commits away that tag is, and "<hash>" is the hash of the commit being described.
+
+Let's look at a quick example. For this tree below:
+
+git tag v2 C3
+
+The command "git describe master" would output:
+
+v1_2_gC2
+
+Whereas git describe side would output:
+
+v2_1_gC4
+
+That's pretty much all there is to git describe! Try describing a few of the locations in this level to get a feel for the command.
+Once you're ready, just go ahead and commit once to finish the level. We're giving you a freebie :P
+
+
+
+Rebasing Multiple Branches
+Man, we have a lot of branches going on here! Let's rebase all the work from these branches onto master.
+Upper management is making this a bit trickier though -- they want the commits to all be in sequential order. So this means that our final tree should have C7' at the bottom, C6' above that, and so on, all in order.
+If you mess up along the way, feel free to use reset to start over again. Be sure to check out our solution and see if you can do it in fewer commands!
+
+- git rebase master bugFix
+- git rebase bugFix side
+- git rebase side another
+- git rebase another master
+
+
+Specifying Parents
+Like the ~ modifier, the ^ modifier also accepts an optional number after it.
+Rather than specifying the number of generations to go back (what ~ takes), the modifier on ^ specifies which parent reference to follow from a merge commit. Remember that merge commits have multiple parents, so the path to choose is ambiguous.
+Git will normally follow the "first" parent upwards from a merge commit, but specifying a number with ^ changes this default behavior.
+Enough talking, let's see it in action.
+
+Here we have a merge commit. If we checkout master^ without the modifier, we will follow the first parent after the merge commit.
+(In our visuals, the first parent is positioned directly above the merge commit.)
+git checkout master^
+
+The ^ and ~ modifiers can make moving around a commit tree very powerful:
+git checkout HEAD~; git checkout HEAD^2; git checkout HEAD~2
+
+Even crazier, these modifiers can be chained together! Check this out:
+git checkout HEAD~^2~2
+
+The same movement as before, but all in one command.
+
+Put it to practice
+To complete this level, create a new branch at the specified destination.
+Obviously it would be easy to specify the commit directly (with something like C6), but I challenge you to use the modifiers we talked about instead!
+
+- git branch bugWork
+- git branch -f bugWork C2
+- git checkout master
+F
+
+
+
+
+Branch Spaghetti
+WOAHHHhhh Nelly! We have quite the goal to reach in this level.
+
+Here we have master that is a few commits ahead of branches one two and three. For whatever reason, we need to update these three other branches with modified versions of the last few commits on master.
+
+Branch one needs a re-ordering and a deletion of C5. two needs pure reordering, and three only needs one commit!
+
+We will let you figure out how to solve this one -- make sure to check out our solution afterwards with show solution.
+
+- git cherry-pick C4
+- git cherry-pick C3
+- git cherry-pick C2
+- git commit --amend
+- git checkout C1
+- git cherry-pick C5
+- git cherry-pick C4'
+- git cherry-pick C3'
+- git cherry-pick C2'
+- git branch -f two C2''
+- git branch -f three C2
+
+
+Git Remotes
+Remote repositories aren't actually that complicated. In today's world of cloud computing it's easy to think that there's a lot of magic behind git remotes, but they are actually just copies of your repository on another computer. You can typically talk to this other computer through the Internet, which allows you to transfer commits back and forth.
+That being said, remote repositories have a bunch of great properties:
+First and foremost, remotes serve as a great backup! Local git repositories have the ability to restore files to a previous state (as you know), but all that information is stored locally. By having copies of your git repository on other computers, you can lose all your local data and still pick up where you left off.
+More importantly, remotes make coding social! Now that a copy of your project is hosted elsewhere, your friends can contribute to your project (or pull in your latest changes) very easily.
+It's become very popular to use websites that visualize activity around remote repos (like Github or Phabricator), but remote repositories always serve as the underlying backbone for these tools. So it's important to understand them!
+Our Command to create remotes
+Up until this point, Learn Git Branching has focused on teaching the basics of local repository work (branching, merging, rebasing, etc). However now that we want to learn about remote repository work, we need a command to set up the environment for those lessons. git clone will be that command
+
+Technically, git clone in the real world is the command you'll use to create local copies of remote repositories (from github for example). We use this command a bit differently in Learn Git Branching though -- git clone actually makes a remote repository out of your local one. Sure it's technically the opposite meaning of the real command, but it helps build the connection between cloning and remote repository work, so let's just run with it for now.
+Lets start slow and just look at what a remote repository looks like (in our visualization).
+
+git clone
+
+There it is! Now we have a remote repository of our project. It looks pretty similar except for some visual changes to make the distinction apparent -- in later levels you'll get to see how we share work across these repositories.
+
+To finish this level, simply git clone your existing repository. The real learning will come in following lessons.
+- git clone
+
+
+
+
+Git Remote Branches
+Now that you've seen git clone in action, let's dive into what actually changed.
+
+The first thing you may have noticed is that a new branch appeared in our local repository called o/master. This type of branch is called a remote branch; remote branches have special properties because they serve a unique purpose.
+Remote branches reflect the state of remote repositories (since you last talked to those remote repositories). They help you understand the difference between your local work and what work is public -- a critical step to take before sharing your work with others.
+Remote branches have the special property that when you check them out, you are put into detached HEAD mode. Git does this on purpose because you can't work on these branches directly; you have to work elsewhere and then share your work with the remote (after which your remote branches will be updated).
+
+What is o/?
+You may be wondering what the leading o/ is for on these remote branches. Well, remote branches also have a (required) naming convention -- they are displayed in the format of:
+
+<remote name>/<branch name>
+Hence, if you look at a branch named o/master, the branch name is master and the name of the remote is o.
+
+Most developers actually name their main remote origin, not o. This is so common that git actually sets up your remote to be named origin when you git clone a repository.
+Unfortunately the full name of origin does not fit in our UI, so we use o as shorthand :( Just remember when you're using real git, your remote is probably going to be named origin!
+That's a lot to take in, so let's see all this in action.
+
+Lets check out a remote branch and see what happens
+
+git checkout o/master; git commit
+
+As you can see, git put us into detached HEAD mode and then did not update o/master when we added a new commit. This is because o/master will only update when the remote updates.
+
+
+To finish this level, commit once off of master and once after checking out o/master. This will help drive home how remote branches behave differently, and they only update to reflect the state of the remote.
+- git commit
+- git checkout o/master
+- git commit
+
+
+
+Git Fetch
+Working with git remotes really just boils down to transferring data to and from other repositories. As long as we can send commits back and forth, we can share any type of update that is tracked by git (and thus share work, new files, new ideas, love letters, etc.).
+In this lesson we will learn how to fetch data from a remote repository -- the command for this is conveniently named git fetch.
+You'll notice that as we update our representation of the remote repository, our remote branches will update to reflect that new representation. This ties into the previous lesson on remote branches
+
+Before getting into the details of git fetch, let's see it in action! Here we have a remote repository that contains two commits that our local repository does not have.
+git fetch
+
+
+There we go! Commits C2 and C3 were downloaded to our local repository, and our remote branch o/master was updated to reflect this.
+What fetch does
+git fetch performs two main steps, and two main steps only. It:
+
+	downloads the commits that the remote has but are missing from our local repository, and...
+	updates where our remote branches point (for instance, o/master)
+git fetch essentially brings our local representation of the remote repository into synchronization with what the actual remote repository looks like (right now).
+
+If you remember from the previous lesson, we said that remote branches reflect the state of the remote repositories since you last talked to those remotes. git fetch is the way you talk to these remotes! Hopefully the connection between remote branches and git fetch is apparent now.
+
+git fetch usually talks to the remote repository through the Internet (via a protocol like http:// or git://).
+
+
+What fetch doesn't do
+git fetch, however, does not change anything about your local state. It will not update your master branch or change anything about how your file system looks right now.
+
+This is important to understand because a lot of developers think that running git fetch will make their local work reflect the state of the remote. It may download all the necessary data to do that, but it does not actually change any of your local files. We will learn commands in later lessons to do just that :D
+
+So at the end of the day, you can think of running git fetch as a download step.
+To finish the level, simply git fetch and download all the commits!
+- git fetch
+
+
+
+
+Git Pull
+Now that we've seen how to fetch data from a remote repository with git fetch, let's update our work to reflect those changes!
+There are actually many ways to do this -- once you have new commits available locally, you can incorporate them as if they were just normal commits on other branches. This means you could execute commands like:
+
+git cherry-pick o/master
+git rebase o/master
+git merge o/master
+etc., etc.
+In fact, the workflow of fetching remote changes and then merging them is so common that git actually provides a command that does both at once! That command is git pull.
+Let's first see a fetch and a merge executed sequentially
+
+git fetch; git merge o/master
+
+Boom -- we downloaded C3 with a fetch and then merged in that work with git merge o/master. Now our master branch reflects the new work from the remote (in this case, named origin)
+What would happen if we used git pull instead?
+
+git pull
+
+The same thing! That should make it very clear that git pull is essentially shorthand for a git fetch followed by a merge of whatever branch was just fetched.
+
+
+We will explore the details of git pull later (including options and arguments), but for now let's try it out in the level.
+Remember -- you can actually solve this level with just fetch and merge, but it will cost you an extra command :P
+- git pull
+
+
+
+
+Simulating collaboration
+So here is the tricky thing -- for some of these upcoming lessons, we need to teach you how to pull down changes that were introduced in the remote.
+That means we need to essentially "pretend" that the remote was updated by one of your coworkers / friends / collaborators, sometimes on a specific branch or a certain number of commits.
+In order to do this, we introduced the aptly-named command git fakeTeamwork! It's pretty self explanatory, let's see a demo...
+The default behavior of fakeTeamwork is to simply plop down a commit on master
+
+git fakeTeamwork
+
+There we go -- the remote was updated with a new commit, and we haven't downloaded that commit yet because we haven't run git fetch.
+You can also specify the number of commits or the branch by appending them to the command
+
+git fakeTeamwork foo 3
+
+With one command we simulated a teammate pushing three commits to the foo branch on our remote
+The upcoming levels are going to be pretty difficult, so we're asking more of you for this level.
+
+Go ahead and make a remote (with git clone), fake some changes on that remote, commit yourself, and then pull down those changes. It's like a few lessons in one!
+$ git clone
+
+$ git fakeTeamwork 2
+
+$ git commit
+
+$ git pull
+
+
+
+
+Git Push
+Ok, so I've fetched changes from remote and incorporated them into my work locally. That's great and all... but how do I share my awesome work with everyone else?
+Well, the way to upload shared work is the opposite of downloading shared work. And what's the opposite of git pull? git push!
+git push is responsible for uploading your changes to a specified remote and updating that remote to incorporate your new commits. Once git push completes, all your friends can then download your work from the remote.
+You can think of git push as a command to "publish" your work. It has a bunch of subtleties that we will get into shortly, but let's start with baby steps...
+note -- the behavior of git push with no arguments varies depending on one of git's settings called push.default. The default value for this setting depends on the version of git you're using, but we are going to use the upstream value in our lessons. This isn't a huge deal, but it's worth checking your settings before pushing in your own projects.
+Here we have some changes that the remote does not have. Let's upload them!
+
+git push
+
+There we go -- the remote received commit C2, the branch master on the remote was updated to point at C2, and our own reflection of the remote (o/master) was updated as well. Everything is in sync!
+To finish this level, simply share two new commits with the remote. Strap in though, because these lessons are about to get a lot harder!
+- git commit 
+- git commit
+- git push
+
+
+
+
+Diverged Work
+So far we've seen how to pull down commits from others and how to push up our own changes. It seems pretty simple, so how can people get so confused?
+
+The difficulty comes in when the history of the repository diverges. Before discussing the details of this, let's see an example...
+Imagine you clone a repository on Monday and start dabbling on a side feature. By Friday you are ready to publish your feature -- but oh no! Your coworkers have written a bunch of code during the week that's made your feature out of date (and obsolete). They've also published these commits to the shared remote repository, so now your work is based on an old version of the project that's no longer relevant.
+In this case, the command git push is ambiguous. If you run git push, should git change the remote repository back to what it was on Monday? Should it try to add your code in while not removing the new code? Or should it totally ignore your changes since they are totally out of date?
+Because there is so much ambiguity in this situation (where history has diverged), git doesn't allow you to push your changes. It actually forces you to incorporate the latest state of the remote before being able to share your work.
+
+So much talking! Let's see this situation in action
+
+git push
+
+See? Nothing happened because the command fails. git push fails because your most recent commit C3 is based off of the remote at C1. The remote has since been updated to C2 though, so git rejects your push
+How do you resolve this situation? It's easy, all you need to do is base your work off of the most recent version of the remote branch.
+
+There are a few ways to do this, but the most straightforward is to move your work via rebasing. Let's go ahead and see what that looks like.
+Now if we rebase before pushing instead...
+
+git fetch; git rebase o/master; git push
+
+Boom! We updated our local representation of the remote with git fetch, rebased our work to reflect the new changes in the remote, and then pushed them with git push
+Are there other ways to update my work when the remote repository has been updated? Of course! Let's check out the same thing but with merge instead.
+Although git merge doesn't move your work (and instead just creates a merge commit), it's a way to tell git that you have incorporated all the changes from the remote. This is because the remote branch is now an ancestor of your own branch, meaning your commit reflects all commits in the remote branch.
+Lets see this demonstrated...
+Now if we merge instead of rebasing...
+
+git fetch; git merge o/master; git push
+
+Boom! We updated our local representation of the remote with git fetch, merged the new work into our work (to reflect the new changes in the remote), and then pushed them with git push
+Awesome! Is there any way I can do this without typing so many commands?
+Of course -- you already know git pull is just shorthand for a fetch and a merge. Conveniently enough, git pull --rebase is shorthand for a fetch and a rebase!
+Let's see these shorthand commands at work.
+First with --rebase...
+
+git pull --rebase; git push
+
+Same as before! Just a lot shorter.
+And now with regular pull
+
+git pull; git push
+
+Again, exact same as before!
+
+This workflow of fetching, rebase/merging, and pushing is quite common. In future lessons we will examine more complicated versions of these workflows, but for now let's try this out.
+
+In order to solve this level, take the following steps:
+
+	Clone your repo
+	Fake some teamwork (1 commit)
+	Commit some work yourself (1 commit)
+	Publish your work via rebasing
+
+
+-git clone
+-git fakeTeamwork 1
+-git commit
+-git pull -rebase
+-git push
+
+
+
+
+Merging feature branches
+Now that you're comfortable with fetching, pulling, and pushing, lets put these skills to the test with a new workflow.
+
+It's common for developers on big projects to do all their work on feature branches (off of master) and then integrate that work only once it's ready. This is similar to the previous lesson (where side branches get pushed to the remote), but here we introduce one more step.
+
+Some developers only push and pull when on the master branch -- that way master always stays updated to what is on the remote (o/master).
+
+So for this workflow we combine two things:
+
+	integrating feature branch work onto master, and
+	pushing and pulling from the remote
+Let's see a refresher real quick of how to update master and push work.
+
+git pull --rebase; git push
+
+We executed two commands here that:
+
+	rebased our work onto new commits from remote, and
+	published our work to the remote
+
+
+This level is pretty hefty -- here is the general outline to solve:
+
+	There are three feature branches -- side1 side2 and side3
+	We want to push each one of these features, in order, to the remote
+	The remote has since been updated, so we will need to incorporate that work as well
+:O intense! good luck, completing this level is a big step.
+
+$ git fetch
+
+$ git rebase o/master side1
+
+$ git rebase side1 side2
+
+$ git rebase side2 side3
+
+$ git rebase side3 master
+
+$ git push
+
+
+
+Why not merge?
+In order to push new updates to the remote, all you need to do is incorporate the latest changes from the remote. That means you can either rebase or merge in the remote branch (e.g. o/master).
+
+So if you can do either method, why have the lessons focused on rebasing so far? Why is there no love for merge when working with remotes?
+
+There's a lot of debate about the tradeoffs between merging and rebasing in the development community. Here are the general pros / cons of rebasing:
+
+Pros:
+
+	Rebasing makes your commit tree look very clean since everything is in a straight line
+Cons:
+
+	Rebasing modifies the (apparent) history of the commit tree.
+For example, commit C1 can be rebased past C3. It then appears that the work for C1' came after C3 when in reality it was completed beforehand.
+
+Some developers love to preserve history and thus prefer merging. Others (like myself) prefer having a clean commit tree and prefer rebasing. It all comes down to preferences :D
+For this level, let's try to solve the previous level but with merging instead. It may get a bit hairy but it illustrates the point well.
+
+$ git checkout master
+
+$ git pull
+
+$ git merge side1
+
+$ git merge side2
+
+$ git merge side3
+
+$ git push
+
+
+
+
+
+Remote-Tracking branches
+One thing that might have seemed "magical" about the last few lessons is that git knew the master branch was related to o/master. Sure these branches have similar names and it might make logical sense to connect the master branch on the remote to the local master branch, but this connection is demonstrated clearly in two scenarios:
+	During a pull operation, commits are downloaded onto o/master and then merged into the master branch. The implied target of the merge is determined from this connection.
+	During a push operation, work from the master branch was pushed onto the remote's master branch (which was then represented by o/master locally). The destination of the push is determined from the connection between master and o/master.
+
+Remote tracking
+Long story short, this connection between master and o/master is explained simply by the "remote tracking" property of branches. The master branch is set to track o/master -- this means there is an implied merge target and implied push destination for the master branch.
+You may be wondering how this property got set on the master branch when you didn't run any commands to specify it. Well, when you clone a repository with git, this property is actually set for you automatically.
+During a clone, git creates a remote branch for every branch on the remote (aka branches like o/master). It then creates a local branch that tracks the currently active branch on the remote, which is master in most cases.
+Once git clone is complete, you only have one local branch (so you aren't overwhelmed) but you can see all the different branches on the remote (if you happen to be very curious). It's the best of both worlds!
+This also explains why you may see the following command output when cloning:
+local branch "master" set to track remote branch "o/master"
+
+
+Can I specify this myself?
+Yes you can! You can make any arbitrary branch track o/master, and if you do so, that branch will have the same implied push destination and merge target as master. This means you can run git push on a branch named totallyNotMaster and have your work pushed to the master branch on the remote!
+
+There are two ways to set this property. The first is to checkout a new branch by using a remote branch as the specified ref. Running
+
+git checkout -b totallyNotMaster o/master
+
+Creates a new branch named totallyNotMaster and sets it to track o/master.
+Enough talking, let's see a demonstration! We will checkout a new branch named foo and set it to track master on the remote.
+
+git checkout -b foo o/master; git pull
+
+As you can see, we used the implied merge target of o/master to update the foo branch. Note how master doesn't get updated!!
+This also applies for git push
+
+git checkout -b foo o/master; git commit; git push
+
+Boom. We pushed our work to the master on the remote even though our branch was named something totally different
+
+
+Way #2
+Another way to set remote tracking on a branch is to simply use the git branch -u option. Running
+
+git branch -u o/master foo
+
+will set the foo branch to track o/master. If foo is currently checked out you can even leave it off:
+
+git branch -u o/master
+Let's see this other way of specifying remote tracking real quick...
+
+git branch -u o/master foo; git commit; git push
+
+Same as before, just a more explicit command. Sweet!
+
+
+Ok! For this level let's push work onto the master branch on remote while not checked out on master locally. I'll let you figure out the rest since this is the advanced course :P
+
+$ git checkout -b side o/master
+
+$ git commit
+
+$ git pull --rebase
+
+$ git push
+
+
+
+Push arguments
+Great! Now that you know about remote tracking branches we can start to uncover some of the mystery behind how git push, fetch, and pull work. We're going to tackle one command at a time but the concepts between them are very similar.
+First we'll look at git push. You learned in the remote tracking lesson that git figured out the remote and the branch to push to by looking at the properties of the currently checked out branch (the remote that it "tracks"). This is the behavior with no arguments specified, but git push can optionally take arguments in the form of:
+
+git push <remote> <place>
+
+
+What is a <place> parameter you say? We'll dive into the specifics soon, but first an example. Issuing the command:
+
+git push origin master
+
+translates to this in English:
+Go to the branch named "master" in my repository, grab all the commits, and then go to the branch "master" on the remote named "origin." Place whatever commits are missing on that branch and then tell me when you're done.
+By specifying master as the "place" argument, we told git where the commits will come from and where the commits will go. It's essentially the "place" or "location" to synchronize between the two repositories.
+Keep in mind that since we told git everything it needs to know (by specifying both arguments), it totally ignores where we are checked out!
+
+Let's see an example of specifying the arguments. Note the location where we are checked out in this example.
+
+git checkout C0; git push origin master
+
+There we go! master got updated on the remote since we specified those arguments.
+What if we hadn't specified the arguments? What would happen?
+
+git checkout C0; git push
+
+The command fails (as you can see), since HEAD is not checked out on a remote-tracking branch.
+Ok, for this level let's update both foo and master on the remote. The twist is that git checkout is disabled for this level!
+
+Note: The remote branches are labeled with o/ prefixes because the full origin/ label does not fit in our UI. Don't worry about this... simply use origin as the name of the remote like normal.
+
+$ git push origin master
+
+$ git push origin foo
+
+
+
+
+<place> argument details
+Remember from the previous lesson that when we specified master as the place argument for git push, we specified both the source of where the commits would come from and the destination of where the commits would go.
+You might then be wondering -- what if we wanted the source and destination to be different? What if you wanted to push commits from the foo branch locally onto the bar branch on remote?
+Well unfortunately that's impossible in git... just kidding! Of course it's possible :)... git has tons and tons of flexibility (almost too much).
+
+Let's see how in the next slide...
+
+
+In order to specify both the source and the destination of <place>, simply join the two together with a colon:
+
+git push origin <source>:<destination>
+
+This is commonly referred to as a colon refspec. Refspec is just a fancy name for a location that git can figure out (like the branch foo or even just HEAD~1)
+Once you are specifying both the source and destination independently, you can get quite fancy and precise with remote commands. Let's see a demo!
+Remember, source is any location that git will understand:
+
+git push origin foo^:master
+
+Woah! That's a pretty trippy command but it makes sense -- git resolved foo^ into a location, uploaded whatever commits that weren't present yet on the remote, and then updated destination.
+What if the destination you want to push doesn't exist? No problem! Just give a branch name and git will create the branch on the remote for you.
+
+git push origin master:newBranch
+
+Sweet, that's pretty slick :D
+For this level, try to get to the end goal state shown in the visualization, and remember the format of:
+
+<source>:<destination>
+$ git push origin master^:foo
+
+$ git push origin foo:master
+
+
+
+
+Git fetch arguments
+So we've just learned all about git push arguments, this cool <place> parameter, and even colon refspecs (<source>:<destination>). Can we use all this knowledge for git fetch as well?
+You betcha! The arguments for git fetch are actually very, very similar to those for git push. It's the same type of concepts but just applied in the opposite direction (since now you are downloading commits rather than uploading).
+Let's go over the concepts one at a time...
+
+The <place> parameter
+If you specify a place with git fetch like in the following command:
+
+git fetch origin foo
+
+Git will go to the foo branch on the remote, grab all the commits that aren't present locally, and then plop them down onto the o/foo branch locally.
+
+Let's see this in action (just as a refresher).
+By specifying a place...
+
+git fetch origin foo
+
+We download only the commits from foo and place them on o/foo
+You might be wondering -- why did git plop those commits onto the o/foo remote branch rather than just plopping them onto my local foo branch? I thought the <place> parameter is a place that exists both locally and on the remote?
+
+Well git makes a special exception in this case because you might have work on the foo branch that you don't want to mess up!! This ties into the earlier lesson on git fetch -- it doesn't update your local non-remote branches, it only downloads the commits (so you can inspect / merge them later).
+
+"Well in that case, what happens if I explicitly define both the source and destination with <source>:<destination>?"
+If you feel passionate enough to fetch commits directly onto a local branch, then yes you can specify that with a colon refspec. You can't fetch commits onto a branch that is checked out, but otherwise git will allow this.
+Here is the only catch though -- <source> is now a place on the remote and <destination> is a local place to put those commits. It's the exact opposite of git push, and that makes sense since we are transferring data in the opposite direction!
+That being said, developers rarely do this in practice. I'm introducing it mainly as a way to conceptualize how fetch and push are quite similar, just in opposite directions.
+Let's see this craziness in action:
+
+git fetch origin foo~1:bar
+
+Wow! See, git resolved foo~1 as a place on the origin and then downloaded those commits to bar (which was a local branch). Notice how foo and o/foo were not updated since we specified a destination.
+What if the destination doesn't exist before I run the command? Let's see the last slide but without bar existing beforehand.
+
+git fetch origin foo~1:bar
+
+See, it's JUST like git push. Git made the destination locally before fetching, just like git will make the destination on remote before pushing (if it doesn't exist).
+No args?
+
+If git fetch receives no arguments, it just downloads all the commits from the remote onto all the remote branches...
+
+git fetch
+
+Pretty simple, but worth going over just once.
+
+Ok, enough talking! To finish this level, fetch just the specified commits in the goal visualization. Get fancy with those commands!
+
+You will have to specify the source and destination for both fetch commands. Pay attention to the goal visualization since the IDs may be switched around!
+$ git fetch origin master~1:foo
+
+$ git fetch origin foo:master
+
+$ git checkout foo
+
+$ git merge master
+
+
+
+
+
+Oddities of <source>
+Git abuses the <source> parameter in two weird ways. These two abuses come from the fact that you can technically specify "nothing" as a valid source for both git push and git fetch. The way you specify nothing is via an empty argument:
+
+git push origin :side
+git fetch origin :bugFix
+Let's see what these do...
+What does pushing "nothing" to a remote branch do? It deletes it!
+
+git push origin :foo
+
+There, we successfully deleted the foo branch on remote by pushing the concept of "nothing" to it. That kinda makes sense...
+Finally, fetching "nothing" to a place locally actually makes a new branch
+
+git fetch origin :bar
+
+Very odd / bizarre, but whatever. That's git for you!
+This is a quick level -- just delete one remote branch and create a new branch with git fetch to finish!
+
+git push origin :foo
+git fetch origin :bar
+
+
+
+
+Git pull arguments
+Now that you know pretty much everything there is to know about arguments for git fetch and git push, there's almost really nothing left to cover for git pull :)
+
+That's because git pull at the end of the day is really just shorthand for a fetch followed by merging in whatever was just fetched. You can think of it as running git fetch with the same arguments specified and then merging in where those commits ended up.
+
+This applies even when you use crazy-complicated arguments as well. Let's see some examples:
+Here are some equivalent commands in git:
+
+git pull origin foo is equal to:
+
+git fetch origin foo; git merge o/foo
+
+And...
+
+git pull origin bar~1:bugFix is equal to:
+
+git fetch origin bar~1:bugFix; git merge bugFix
+
+See? git pull is really just shorthand for fetch + merge, and all git pull cares about is where the commits ended up (the destination argument that it figures out during fetch).
+
+Lets see a demo:
+If we specify the place to fetch, everything happens as before with fetch but we merge in whatever was just fetched
+
+git pull origin master
+
+See! by specifying master we downloaded commits onto o/master just as normal. Then we merged o/master to where we are, regardless of what was currently checked out.
+Does it work with source and destination too? You bet! Let's see that:
+
+git pull origin master:foo
+
+Wow, that's a TON in one command. We created a new branch locally named foo, downloaded commits from remote's master onto that branch foo, and then merged that branch into our currently checked out branch bar. It's over 9000!!!
+
+Ok to finish up, attain the state of the goal visualization. You'll need to download some commits, make some new branches, and merge those branches into other branches, but it shouldn't take many commands :P
+$ git pull origin bar:foo
+
+$ git pull origin master:side
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

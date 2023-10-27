@@ -143,6 +143,1799 @@ Monitoring and controlling
 		 <----   
 	Closing
 
+____________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Project Management Overview
+
+Project Management – Definition of Terms
+PMBOK® guide definition
+
+Project
+A temporary endeavor undertaken to create a unique product, service, or result.
+
+Project Management
+Application of knowledge, skill, tools and techniques to project activities to meet project requirements.
+
+Project Stakeholders
+Persons and organizations such as customers, sponsors, performing organization, and the public, that are  actively involved in the project, or whose interests may be positively or negatively affected by execution or completion of the project.
+
+
+5 Main Phases of the Project Life Cycle
+
+Monitoring And Controlling
+Initiating
+Planning
+Executing 
+Closing
+
+
+Project Planning
+Purpose: 
+	To develop a plan that enables the project to be executed and controlled. Planning defines the overall parameters of a project and to establish the appropriate project management and quality environment required to complete the project. 
+
+
+Project Manager
+(Accountable / Responsible)
+
+Project Planning activities are:
+
+Definition and scope of the project
+Identification of development phases or software development cycle (SDLC)
+Identifying necessary resources 
+Defining project organization
+Estimates and Project schedule
+Identifying project processes
+Identification of related plans (Quality Plan, Test Plan, CM Plans)
+
+
+
+
+
+Project Scope
+
+Scope refers to work that must be done to deliver a product with the specified features and functions
+
+Project requirements
+Deliverables (internal and external)
+Development phases to be carried out
+	Required input and output of each phase
+Support Activities
+	Configuration Management
+	Reviews
+	Trainings 
+
+
+
+Project Resources and Organization
+They can be people, equipment, facilities, funding, or anything else capable of definition (usually other than labour) required for the completion of a project activity. 
+
+
+
+Human Resources
+	Manpower needed
+	Knowledge and Skills necessary 
+Organizational responsibilities and work assignments
+Organizational and technical interfaces between different groups
+Equipment, Software, Facilities, Tools
+	Availability
+	Make, buy or reuse
+	Budget for purchase
+	When to buy, when is it needed
+
+
+
+
+Quality Plans
+
+Quality planning is identifying which quality standards are relevant to the project and determining how to satisfy them
+
+
+Quality Targets
+Processes
+	rules, practices and conventions
+	templates, procedures and guidelines
+	tools and techniques
+
+Quality Assurance and Control Activities
+	Reviews
+	Testing
+	SWQC
+
+
+Engineer’s Role in Planning
+
+Project member
+Project Planning is the PM / PL’s responsibility. So What is my role in project planning ?
+
+
+Project Manager
+Basically you are expected to do the following:
+Provide inputs for estimation
+Inform PM of your skills
+Accept roles and responsibilities assigned
+Inform PM of any concerns or issues that you think should be considered in planning
+Give PM your commitment to the project plan
+Note: Commitments are obtained during Project Kick-off
+
+
+
+Project Control
+
+Control is the process whereby the project manager determines the degree to which the project plan is being met.
+
+Control reduces the difference between project plan and reality.
+
+
+When to Exercise Project Control
+
+When there is still time for corrective action
+
+Throughout the project life cycle
+
+
+
+
+Monitoring and Controlling Activities
+
+Gather information			------>   Evaluate information and do corrective actions as needed
+ Meetings
+ Reports	
+
+
+
+
+What to Monitor and Control in Projects
+
+Scope
+	Project Objectives
+	Project Deliverables
+	Project Requirements
+Project Schedule
+Project Cost
+Risks
+Issues
+Quality
+Project Performance
+Project Changes
+Commitments
+Support Activities such as Planning, CM, Requirements Manageme
+
+
+
+
+Project Status Report
+Reporting period (From / To)
+Tasks and % Completion
+Actual Start and Finish Dates
+QCD Data
+Size of deliverable
+No. of Defects / Bugs
+Man-hours for creation, review, rework
+Review status and coverage
+Tasks scheduled for next reporting period (Planned start and finish dates)
+New or unplanned risks
+Issues / problems (Impact on project, recommended solution)
+
+
+
+Project Scope
+Scope refers to work that must be done to deliver a product with the specified features and functions
+
+Project requirements
+Deliverables (internal and external)
+Development phases to be carried out
+Required input and output of each phase
+Support Activities
+Configuration Management
+Reviews
+Trainings 
+
+Project Resources and Organization
+
+They can be people, equipment, facilities, funding, or anything else capable of definition (usually other than labour) required for the completion of a project activity. 
+Human Resources
+Manpower needed
+Knowledge and Skills necessary 
+Organizational responsibilities and work assignments
+Organizational and technical interfaces between different groups
+Equipment, Software, Facilities, Tools
+Availability
+Make, buy or reuse
+Budget for purchase
+When to buy, when is it needed
+
+
+Quality Plans
+Quality planning is identifying which quality standards are relevant to the project and determining how to satisfy them
+
+Quality Targets
+Processes
+rules, practices and conventions
+templates, procedures and guidelines
+tools and techniques
+
+Quality Assurance and Control Activities
+Reviews
+Testing
+SWQC
+
+
+Project Planning is the PM / PL’s responsibility. So What is my role in project planning ?
+Basically you are expected to do the following:
+Provide inputs for estimation
+Inform PM of your skills
+Accept roles and responsibilities assigned
+Inform PM of any concerns or issues that you think should be considered in planning
+Give PM your commitment to the project plan
+Note: Commitments are obtained during Project Kick-off
+
+
+Control is the process whereby the project manager determines the degree to which the project plan is being met.
+
+Control reduces the difference between project plan and reality.
+
+
+What to Monitor and Control in Projects
+Scope
+Project Objectives
+Project Deliverables
+Project Requirements
+Project Schedule
+Project Cost
+Risks
+Issues
+Quality
+Project Performance
+Project Changes
+Commitments
+Support Activities such as Planning, CM, Requirements Management
+
+
+
+Reporting Guides
+Submit reports on time
+Follow reporting schedules of the group (daily/weekly)
+Determine if the task are on-schedule or delayed
+If delayed provide the following information:
+[cause]		: what is the cause of the delay?
+[countermeasure]	: how to cope with the delay and when is it 			  achievable.
+Inform PM/PL early for any issues or concerns with the task. (e.g task is delayed) This will give the PM/PL enough time to make necessary countermeasures to solve issues
+Follow the group’s reporting guidelines, status or percentage reporting guides
+
+
+Solution?
+Define what is a meant by ”a task completed”, e.g.
+Design and Coding:
+100% = Work product has been reviewed and approved
+Testing
+100% = All test items are executed and all bugs are fixed and confirmed
+
+Control on deliverables:
+0-100 rule:
+task completion is 0%, unless
+the task is finished = 100% complete
+0-50-100 rule:
+task completion is 0% initially,
+50% when someone is working on it, and
+100% when the task is finished
+
+
+0-25-50-75-100 rule:
+task completion is 0% initially,
+25% when someone is working on it, and
+50% when output is done and is ready for review
+75% work product has been reviewed and is currently being updated
+100% defects has been confirmed and approved
+
+
+Guidelines for Project Team Operation
+Review and approval of Project Work Products 
+Approval of Leaves, Overtime and Undertime 
+Transferring/acquiring team members to/from another project or DC
+Project Teams performance of the company operation activities
+
+
+
+
+
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+SOFTWARE DEVELOPMENT LIFE CYCLE (SDLC)
+
+A carefully outlined engineering approach to the development of software.
+It facilitates management control of the product development.
+
+
+Why is SDLC is needed?
+Because of the complexity of software products, software development must be carried out in a disciplined manner
+To minimize the problems that usually occur during software development
+To maximize customer satisfaction
+
+SDLC  Model
+Waterfall Model
+V-Model
+W-Model
+Iterative/Incremental
+Prototyping
+
+
+
+Tailoring NSP Software Process
+Phase Merger / Phase Exclusion:  Certain phases will be merged or skipped.
+Scope of requirements to develop or work identified by the client
+Input documents from client
+Schedule of development
+Size of the project
+Note: When merging test phases, test viewpoints must be properly identified.
+
+BD document is already provided by client, so BD phase is skipped.
+Merging of FD & BD or UT & IT
+Software Integration & Integration testing will be performed by client.
+
+
+Task Details:  Expected input/output work product and task details is different from the standard.
+Certain task details is different or not needed to be performed (as requested by the client).
+Client may already provide certain work products as input.
+Client may require different output work products to be delivered.
+
+E.g. SOW is not needed since the project is a maintenance project.
+E.g. “Source Code Release” will not be performed since source codes is not a deliverable.
+E.g. “PHS for all UT bugs” is not needed, project equivalent is online Bug Tracking Tool.
+
+
+
+Describe where?
+
+Process List – SWD Process
+Usage value is: “Tailored from NSP” for the following task:
+Phase Merger
+Usage value is: “N/A” if certain task is not performed or work products is not a deliverable.  Process waiver is required.
+Project Planning 1 – Development Life Cycle sheet
+List down only the phases that the project will perform.
+Identify only the work products that are deliverables or that the project intend to create.
+
+
+Tailored Review Process (1/2)
+Review Types:  The Project define a more detailed or add review types from NSP defined types: Team, Group and User reviews. (E.g. Team review = Buddy, PL, PM reviews)
+Review Methods:  Projects can add Review Methods for their project provided that they describe each method in detail and that it is not similar to an existing NSP defined review method.  The added review method must be clearly understood by all project stakeholders.
+Review Criteria:  The Project has their own specific review criteria defined in the Review Checklist for the different Review Objects to be reviewed.
+Review Objects:  The Project can define levels of review for each review object base from their identified Review Types.
+Review Management:  The Project has their own define Review Management where they identify their review schedules, monitoring and control of reviews and data (e.g. bug count, bug types, bug severity, etc). They may choose not use the NSP defined Review Management Sheet.
+
+
+Describe where?
+
+Process List – Reviews
+Review Criteria usage value is: “Project”
+Plan and Monitor Reviews usage value is: “Project”
+Note: Process Waiver is needed
+Project Planning 1 – Review Plan
+Review Types
+Review Methods
+Review Criteria
+Review Objects / Work Products to be reviewed
+Review Management
+
+
+Tailored Testing Process (1/2)
+Test Viewpoints:  The Project will identify their UT and IT viewpoints wherein certain mandatory test types will not be performed.  This depends on the Project requirements and Test requirements from the client.
+Test and Bug Management:  The Project has their own defined tool in monitoring and controlling the testing activities and managing of bugs.
+Test Tools and Execution:  The Project can define their own testing method and test tools to use.
+Integration and Integration Testing:  The Project can introduce an integration phase between UT and IT where in setup of build environment and assemble of software product is performed.  And Function Test (FT) and System Test (ST) may also be performed.
+
+
+Describe where?
+
+Process List – Testing
+Monitor Test and Integration: “Project”
+Plan and Monitor Reviews usage value is: “Project”
+Note: Process Waiver is needed
+Project Planning 1  
+Development Life Cycle
+Integration Plan
+Test Plan 
+Test Approach
+Test Viewpoints
+Items to be Tested
+Test Tools
+Test Management Tools
+Test Completion Criteria
+Bug Tracking and Management
+Top-Level WBS
+
+
+
+
+What is Software Engineering?
+“The application of a systematic, disciplined, quantifiable approach to the development, operation, and maintenance of software; that is, the application of engineering to software.” SWEBoK 2004 – IEEE Computer Society
+Designing, building and maintaining software products...  
+...in a timely fashion...  
+...and in a reliable process...  
+...and cost-effectively
+
+
+The Process Management Premise
+The quality of a (software) system is largely governed by the quality of the process used to develop and maintain it.
+
+The premise implies focus on process as well as product.
+
+It implies process thinking!
+
+
+Absence of Process Focus
+
+The absence of a focus on the process could very well result in what W. Edwards Deming calls the “fire fighting syndrome”
+One gets a good rating for fighting a fire. The result is visible, can be quantified.
+If you do it right the first time, you are invisible. You satisfied the requirements. That is your job.
+Mess it up, and correct it later, you become a hero.”
+- (Deming 1986)
+
+
+Process Discipline (1/2)
+
+“System of rules used to maintain control or order over a group of people.” Concise Oxford Dictionary
+A disciplined process has rules that result in behavior consistent with them.
+
+Characteristics of Process Discipline (2/2)
+Process is documented
+Process training exists, is scheduled, and is conducted
+Process is followed as normal “part of the job”
+Process is monitored and enforced
+
+
+
+NSP Software Processes
+
+Project Management
+Project Initiation
+Project Planning
+Project Monitoring and Control
+Kick-off
+Project Closure
+
+
+
+Software Development
+Requirements Analysis
+Basic Design
+Detailed Design
+Coding
+Unit Testing
+Integration Testing
+Release
+
+
+
+
+Quality Assurance and Control
+Reviews
+Phase Evaluation
+Wrap-up
+SWQC
+Process and Product Quality Audits
+Measurement and Analysis
+
+
+Support Processes
+Configuration Management
+Project Registration
+
+
+
+Kickoff Meeting 
+A meeting held at the beginning of the project 
+to align peoples' understanding of project objectives, procedures and plans, and 
+to begin the team-building process. 
+
+
+This meeting allows the project managers/leaders to energize the group, set proper expectations and establish guidelines that will help the project finish on schedule.
+
+The following individuals should attend the kick-off meeting.
+Project manager
+Project leader
+Project team members
+SQA representative
+Client representative
+
+
+Your Role in Kickoff meetings . . .
+Attend the kickoff meeting.
+Note down items important to you.
+Raise questions on unclear items.
+When asked to:
+Discuss your roles and responsibilities accurately
+Discuss your expectations
+Express your commitment to the plan:
+Schedules
+Task assignments
+Roles and responsibilities
+Requirements
+Check minutes of meetings
+
+
+Outputs of Kick-off meetings	
+Meeting Minutes
+Updated Project Plans
+Commitments
+
+
+_________________________________________________________________________________________________________________________________________________________________
+
+
+Requirements Engineering
+
+Requirements Engineering is a disciplined, process-oriented approach to the
+definition, documentation, and maintenance of software requirements throughout 
+the software development life cycle. The two major processes are requirements development and requirements management.
+
+Requirements Management (REQM)
+    Establishing and maintaining an agreement with the customer on the requirements for the software project.
+    The management of all requirements received by or generated by the project, including both technical and nontechnical requirements as well as those requirements levied on the project by the organization.
+
+When Requirements Management is not done well…
+
+Requirements are accepted by staff from any source they deem to be authoritative
+The project experiences a high level of requirement changes.
+There are high levels of rework throughout the project.
+There is an inability to prove that the product meets the approved requirements.
+Lack of requirements traceability often results in incomplete or incorrect testing of product.
+
+NSP’s Requirements Management Process
+Purpose:  1. To ensure that project requirements are managed, understood, validated
+                      tracked and agreed upon by the stakeholders of the project. 
+
+          2. Modification Requests are implemented and modified work products
+                      are baselined.
+
+
+
+
+Requirements Management Planning
+The REQM Plan is included in the Project Plan and will ensure that requirements are validated, tracked and agreed upon by the stakeholders of the project.  This will be used as the basis for estimation, planning, execution and monitoring of the project.
+The Project Manager or Project Leader is responsible for creating and monitoring the REQM plan.
+
+
+Requirements Analysis / Development(RA/RD)
+The determination of product-specific performance and functional characteristics based on analyses of customer needs, expectations, and constraints; operational concept; projected utilization environments for people, products, and processes; and measures of effectiveness.
+
+
+
+Requirements Analysis/Development
+When Requirements Development is not done well…
+
+Unstated requirements or poorly stated requirements lead to confusion among staff and customers.
+Design, implementation, and test work products inconsistently interpret the requirements.
+It takes an inordinary long time to get agreement on product design.
+There is an increased potential for higher costs to meet customer expectations.
+
+
+
+Requirement Analysis Guideline
+Provides a guide on the activities to be carried out during the Requirements Analysis activity of the project including verification and validation activities.
+Definition of Terms
+
+
+
+Requirements Analysis Activities
+
+			Balance Requirements
+			with Stakeholders Needs
+
+Requirements -----> 	Develop				------> Baseline RA ------> Requirements 
+Elicitation	    Customer & Product Requirements 		documents		Management
+
+
+
+Requirements Elicitation
+Purpose: The Project Manager/Project Leader ensures that all stakeholder needs, expectations, constraints, and interfaces for all phases of the product lifecycle are identified and has a common understanding between Requirements Provider and Project Team.
+
+Activities
+Identify the stakeholders and their corresponding roles and responsibilities.
+Solicit and identify the needs and expectations of each stakeholders.
+Study, analyze, and translate the input documents.
+Discuss and validate correctness of understanding the input documents or requirements.
+
+Output
+Requirements Management Plan 
+Meeting Minutes
+List of stakeholder’s needs
+Discussion, clarification and agreements
+Filled up Q&A Monitor
+Validated translation of input documents *
+Software Prototype * 
+DAR Form *
+
+
+* If necessary 
+Eliciting Stakeholders Needs
+Basic questions to ask to get the stakeholders needs:
+Who are the stakeholders involved in this project?
+What are the work products or output per phase?
+What are the expectations per stakeholder for each output per phase?
+How to satisfy the expectations of the stakeholders (validation method)?
+
+Additional guide questions to elicit stakeholders needs:
+What is the purpose of the software product and what will it be used for?
+Are there other subcontractors that will provide input to NSP or NSP’s output will be given to?
+What are the input documents to be provided?
+What are the functional and non-functional requirements?
+What are the operational scenarios applicable to the system?
+
+
+Develop Customer & Product Requirements
+Purpose:  To establish the Customer Requirements, that answers the customer and other stakeholder’s needs and expectations.  And to establish the Product Requirements, that defines the product functions and product components that will be the basis for creating a solution or the detailed design on how the product will be implemented.
+
+Activities
+Extract necessary information from the input documents.*
+Discuss and clarify with Requirements Provider unclear/undefined items.
+Agreement on the requirements to develop.
+Record discussion and agreements.
+Create the SOW and RL based on agreement.
+Create the product functions and product components.
+
+Output
+Filled up RA Checklist
+Minutes of the meeting
+Discussions and agreements
+Commitments
+SOW, Requirements List (RL)
+SRS / BD / Investigation Reports
+DAR Form
+
+
+RA Checklist
+
+Checkpoints
+
+Project Background
+Skills Requirement
+Scope of Work
+Project Schedule
+Organizational Structure
+Development Process
+Product Overview System Summary
+System Architecture
+Software Components or Functional Blocks
+System Features: Functional
+System Features: Non-Functional
+	Performance Requirement
+	Usability
+	Reliability
+	Efficiency
+	Maintainability
+	Portability
+	Safety Requirements
+	Security Requirements
+
+External Interfaces
+	User Interface*
+	Hardware Interface
+	Software Interface
+	Communication Interface
+Operational Scenarios
+	User Types and Characteristics*
+	Use Case
+	Screen Transition Diagram*
+	Operation Sequence Diagram
+	State Transition Diagram*
+System Environment
+Hardware and Software Requirements
+Technologies and Middleware
+Availability of Simulator(s)*
+User Manual Creation*
+Assumption and Constraints
+Limitation(s)*
+
+Statement of Work
+SOW Contents
+
+Project Background
+Skills Requirement
+Scope of Work
+	High Level Requirements
+	Development Lifecycle
+Overall Project Schedule
+Organizational Structure
+File Management Plan
+Required Hardware and Software Resources
+Progress Management
+Development Standards
+
+
+Requirements List
+RL Contents
+
+Requirements ID
+Feature
+Requirements Description
+Priority
+Status
+Change Mode
+Change Date
+Reference Documents
+
+
+Priority
+Essential
+Conditional
+Optional
+
+
+Status
+Open
+Active
+Deferred
+Cancelled
+Completed
+Released
+Accepted
+
+
+Change Mode
+Initial
+Added
+Modified
+Change Priority
+
+
+Software Requirement Specification
+SRS Contents
+
+Product Overview
+External Interface Requirements
+	User Interface
+	Hardware Interface
+	Software Interface
+	Communication Interface
+Operational Concepts
+Target Environment
+User Documentation
+Assumptions and Constraints
+System Features
+	Functional Requirements
+	Non-Functional Requirements
+		Performance
+		Usability
+		Reliability
+		Efficiency
+		Maintainability
+		Portability
+		Safety Requirements
+		Security Requirements
+		Software Quality Attributes
+
+
+Balance Requirements with Stakeholder Needs
+Purpose: To reconcile conflicting requirements from stakeholders. And to review and balance what the stakeholder needs with what the Project Team can deliver.
+
+Activities
+PM/PL should weigh and analyze all the requirements with all stakeholder needs and constraints.
+	functionality
+	priorities
+	reusable components
+	maintainability
+	risk
+	conflicting requirements
+	technology
+	budget/cost
+	schedule/time
+	product or project performance
+
+If necessary, consult relevant stakeholder to determine priorities and what changes may be needed.
+Identify, address and resolve risks and issues as a result of balancing stakeholder needs.
+
+
+Output
+Minutes of the meeting
+	Discussions and agreements
+	Commitments
+Risk List
+Issue Monitoring
+DAR Form
+
+
+
+Making SMART Requirements
+Requirements should follow the “SMART” criteria:
+
+Specific
+	Unambiguous and not confusing
+	Not in conflict with other requirements
+	Does not pose a specific solution on design (i.e. implementation free)
+Measurable
+	It can be determined, via testing, that the system meets the requirement
+Attainable
+	Can be accomplished within cost and schedule
+Relevant
+	Is inline with customer needs
+Timely
+	Is inline with current technological trends and industry standards
+
+
+Example of Bad Requirements
+	The system must have good usability (Not Specific)
+	The system shall work just like the previous one, but on a new platform (Not Specific)
+	Response time should be less than X seconds (Not Measurable)
+	Round-the-clock availability (Confirm if Attainable)
+	The system must be accessible to mobile devices (Confirm if Relevant)
+	The system shall run on Windows 98 (Not Timely)
+
+
+Requirements Verification and Validation
+	Verification is the project teams review of Requirements documents they had created. (Requirements documents: SOW, RL, SRS)
+	Validation is the client review of the Requirements documents created by the project team. (Requirements documents: SOW, RL, SRS)
+	The following Requirements Elicitation activities are also Validation:
+		Prototypes created by the Project Team
+		Demonstration to the client by the Project Team
+		Q&A between the client and the Project Team
+
+
+Baseline RA Documents
+Purpose:  To establish the agreed requirements to develop.
+Activities
+Project Manager ensures that Customer and Product Requirements are agreed and approved by both Requirements Provider and Project Team before moving to the next phase.
+Project Manager ensures that all risks and issues to balance stakeholder needs are identified and will be monitored until closure.
+Project Manager approves the RA documents as discussed and agreed with Requirements Provider. 
+
+Output
+Approved Customer Requirements:
+	SOW
+	Requirements List (RL), 
+Approved Product Requirements:
+	SRS / BD / Investigation Reports
+Minutes of the meeting
+	Discussions and agreements
+	Commitments
+Risk List
+Issue Monitoring
+
+
+Requirements Management
+Purpose:  To ensure that all requirements are identified, managed and controlled throughout the development lifecycle.  And all baselined requirements are only changed through Modification Request Process.
+
+Activities
+Manage requirements through RL.
+Use RTM to ensure traceability of requirements.
+Control requirements changes.
+
+Output
+Requirements List (RL)
+Requirements Traceability Matrix (RTM)
+Modification Request Log
+Modification Request Form
+Risk List & Issue Log
+DAR Form
+
+
+Requirements Traceability
+	Forward Trace
+	Backward Trace
+
+Benefits of Requirements Traceability
+Make obvious to the client that the software is being developed as per the requirements. 
+To make sure that all requirements included in the test cases. 
+To make sure that developers are not creating features that no one has requested. 
+Easy to identify the missing functionalities. 
+If there is a change request for a requirement, then we can easily find out which test cases need to update.
+The completed system may have “Extra” functionality    that may have not been specified in the design specification, resulting in wastage of manpower,          time and effort.
+
+
+Requirements Traceability Matrix
+
+The RTM template will help track the requirements traceability as each requirement is implemented in the different phases of the SDLC. 
+
+
+Input	 ------>  Requirements ---> Design ----> Implementation ------> Testing
+Documents
+
+
+
+Modification Request
+Modification Request (MR) – are the changes in requirements, or changes that needs to be implemented in the project, that may occur at any time during the project development.  MR’s usually come from external and internal project stakeholders.
+
+MR is related to the CM Process’s Change Control activity for work products affected by changes to the requirements.
+
+Modification Request Procedure
+	Shows the flow on how to perform the 
+     		Modification Request.
+
+
+Modification Request Procedure 1/2
+Workflow
+	
+	Entry Criteria 
+		A modification request has been received from the Client (e.g. e-mail, verbal through meetings)
+		A requirement modification has been requested by the Development team
+		A modification request has been identified by Development team from new or modified input documents by client.
+
+
+
+	Exit Criteria 
+		Client Acceptance section in the MR template has been filled-up. 
+			If the client has accepted the Impact Analysis and MR Assessment information in the MR template:
+				The modification plan is integrated in the overall 
+     					project plan.
+				MR Log is updated. 
+			Otherwise, 
+				MR Log is updated. 
+
+
+
+Modification Request Templates
+The MR template is composed of two major sections:
+	1.  Modification Request section which contains a detailed  information about the modification request and its impact analysis.
+	2.  Modification Assessment section contains the details of the configuration items affected and the activities that needs to be done in order to implement this MR.
+The MR Log document is a list of all the MR’s of the project.  All MR’s must be logged even if it is not approved or accepted by the stakeholders of the project.
+
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+Software Development Life Cycle
+
+
+Verification and Validation through Reviews
+
+
+What is a Review?
+Reviews involve a methodical examination of work products by the reviewers to identify defects for removal and to recommend other changes that are needed.
+Review is an important and effective verification method implemented via walkthroughs and desk review.
+Reviews are applied to work products developed by projects, but can also be applied to documentation and training work products.
+
+
+Importance of Reviews
+Ascertain that the tasks accomplished meets the project requirements.
+Determine premature errors to avoid rework or time consuming alterations in succeeding phases.
+To consider the risks of proceeding to the next stage of development even though there are unresolved deficiencies.
+To learn from mistakes so that the same errors can be avoided next time.
+Ensure quality of the overall project condition.
+
+
+Negative Attitudes Toward Reviews
+Not enough time for an extra activity like reviews, too busy in project development.
+Some people get offended when defects are found in their work.
+Some people think reviews are a waste of time because defects are easily found during testing.
+Some people think they do not need reviews because they are very proficient technically and they rarely (if ever) commit mistakes.
+
+REVIEW GUIDELINES
+Review Types
+Review Objects
+Review Materials
+Levels of Review
+Review Methods
+Criteria for Reviews
+Bug Types and Severity
+Analysis of Review Data
+Review Ethics
+Tips of Effective Review
+Review Tailoring
+
+
+Definition and Terms
+
+Reviewee - The author of the review object.
+
+Reviewer- A person who is knowledgeable enough to review the review object.
+
+Review Coordinator - The person who plans, monitor and control the review activities of the project.
+
+Review Management Sheets - Sheets used to record the Review Plan and Actual: schedule, total defects, reviewer, reviewee, review record card.
+
+Review Record Card (RRC) - A sheet used to record the defects and comments found during the review.
+
+Work Product -This can include files, documents, products, parts of a product, services, process descriptions, specifications, and invoices. A key distinction between a work product and a product component is that a work product is not necessarily part of the product.
+
+
+
+
+Review Types
+Team Review
+	Review performed within the project group only.
+	This is to verify the work product reviewed meet the specified requirements.
+
+Group Review
+	Review performed with other groups / stakeholders not part of the project group
+	This is to verify the work product reviewed meet the specified requirements.
+
+
+User Review
+	Review performed with the client or any stakeholder who will use the work product.
+	This is to validate the work product reviewed meet the user needs and expectations.
+
+	
+
+Review Objects
+	This refers to the material(s) to be reviewed.
+
+	Requirements Document
+		SOW, SRS, RL, RTM
+	Project Plan
+		PP 1&2, Quality Plan, CM Plan, Test Plan
+	High Level Design
+		Basic Design, Function Design
+	Detailed Design
+	Test Specification
+		UT Specs, IT Specs
+	Source Codes
+	Project Procedure/Template/Checklist
+	Other documents which the group deemed necessary
+
+
+Levels of Review
+	The number of review a review object has to go through by different stakeholders.
+
+To ensure that the stakeholders viewpoints and needs are properly captured or satisfied in the work products created by the project team.
+
+
+Sample viewpoints of review
+
+Review Object			Who			Review Type		Purpose														Priority
+																					
+Requirements			Project Team		Team Review		To ensure that the project team has a common understanding on the customer needs and requirements.		Mandatory
+ Documents			Client			User Review		To ensure that all customer needs and requirements were listed and documented. 					Mandatory
+(SOW, RL, RTM, SRS)		Tester/Test Team	Group Review 		To check the testability of the requirements.									Recommended
+										To check that the document is enough for the test team to create a test plan and test specifications.
+
+
+Review Methods
+Walkthrough
+The review object will be discussed in a face-to-face meeting.
+	The Reviewee will present the review object.
+	Using a defined criteria to guide in the review, the Reviewer will inspect the review object and identify the defects found.
+
+Desk Review
+The review object will be checked by the Reviewer in his/her desk.
+	Reviewee sends the review object to Reviewer.
+	Using a defined criteria to guide in the review the Reviewer will inspect the review object and identify the defects found.
+
+Desk Review
+The creator of the review object will do a self-review.  This is usually done before a Reviewee will request a walkthrough or desk review to a Reviewer.
+	A defined criteria is used to help in the review.
+
+
+
+Purpose of Criteria for Reviews
+To guide the Reviewer during the review.
+To have a consistent review process.
+	No matter who the reviewer is, view points or items that will be checked is consistent.
+These are the view points to consider during the review (e.g. completeness, correctness, conformance to requirements, traceability and others).
+
+
+
+
+Criteria for Reviews
+Review Entry Criteria
+	To determine when to begin the review (e.g. review object is created, self check of review object is finished).
+Review Criteria
+	To determine what are specific items that will be checked in reviewing the review object. These criteria is specified in the Review Checklist for each Review Object.  (see next slide for details)
+Re-review Criteria
+	To determine if after the confirmation or modification a review object will be reviewed again.
+Review Exit Criteria
+	To determine if review is completed (e.g. RRC is updated, all review bugs are closed, RTM is updated)
+
+
+
+Review Criteria (Review Checklist)
+
+Project Plan		Standards		Completeness and Correctness		Consistency
+			Clarity
+
+
+Requirements		Standards		Correctness				Traceability
+			Completeness		Non-Functionality
+
+
+
+Architecture		Structure		Standards and Traceability		Interfaces
+			Correctness			Logic				Clarity
+			
+
+High Level Designs	Data			Correctness and Completeness		Interfaces
+			Structure		Standards and Traceability		Robustness
+
+			
+Designs			Data			Correctness and Completeness		Robustness
+			Structure		Standards and Traceability
+
+			
+Source Codes		Structure		Arithmetic Operations			Interface
+			Documentation		Loops and Branches			Variables
+						Defensive Programming
+
+			
+Test Specifications	Standards		Correctness, Completeness and Traceability
+
+
+
+
+Review Criteria Sample
+Below are the sample criteria for Requirements Document Review:
+Completeness
+	To ensure that all requirements have been stated explicitly based on the agreed scope.
+Correctness
+	To ensure that the interpretation of requirements have consistent and single meaning. 
+Traceability
+	To ensure the source (origin) of the requirements is known and can be referenced/located throughout the system. 
+		
+
+
+			
+Review Bug Types
+Purpose
+	To have a common understanding and consistent classification of defects found during the review.
+	To help the project analyze and identify improvements on their QCD or processes.
+Sample Bug Types for Design Review
+
+
+Lacking functionality		
+	A functionality described in input document/s is not included the design.
+
+Unnecessary functionality
+	A functionality NOT described in input document/s is included in the design. An unnecessary function and process was added.
+
+Wrong functionality
+	The functionality described in the design is not consistent with the input documents. 
+
+
+Lack of maintainability
+	Non-optimal design from the maintainability point of view. Design is not flexible. Tightly coupled design.
+
+
+
+
+Bug Severity
+
+Purpose
+	To have a common understanding and consistent classification of the severity of the defects found during the review.
+	To help the project analyze and identify improvements on their QCD or processes.
+
+Sample Bug Severity for Design Review
+
+Critical
+	 Lacking Functionality
+ 		Functionality described in input document is not included in the design.
+ 	Wrong Functionality
+ 		Functionality is not the same as the input documents.
+
+
+Minor
+	Unnecessary functionality found during review.
+ 	Maintainability
+ 		Not optimal design from maintainability point of view.
+ 		Not too flexible.
+ 		Tightly coupled design
+
+	
+Review Activities (1/5)
+	Review activities are performed for specific project work products for review, throughout the software development life cycle of a project.
+
+
+Review 		------>	Actual -----> Rework ---> Review
+Preparation		Review			Confirmation
+
+
+
+
+Review Activities (2/5)
+
+
+Review 		------>	Actual -----> Rework ---> Review
+Preparation		Review			Confirmation
+
+
+Review Coordinator plans the review, which includes:
+	Review Types
+	Review Objects
+	Levels of Review
+	Review Methods
+	Review Criteria and Checklist
+	Review Materials
+	Review schedules
+
+
+
+Reviewee prepares the review materials
+	Do a self-check on the review object
+	Make sure RTM is updated
+Reviewee requests for review
+
+Input: Review Plan, Review materials, Review Object, RTM
+Output: Initial review comments, review schedule
+
+Prepare the review materials includes checking of the RTM
+Show the following documents:
+Review Plan Sheet
+Review Management Sheet
+
+
+
+
+Review Activities (3/5)
+Review 		------>	Actual -----> Rework ---> Review
+Preparation		Review			Confirmation
+
+
+Reviewer performs actual review, depending on the review method selected.
+Use the review criteria to guide in the review (e.g. Review Checklist)
+Check for traceability of requirements
+Record defects and comments in RRC
+Decide for re-review or review confirmation
+Review Coordinator updates the Review Management Sheets
+
+
+
+Input: Review Object, RTM
+Output: Review checklist, RRC, Review Management Sheets
+
+Show the following documents:
+Review Checklist
+RRC
+ Review Management Sheet
+
+Demo how to use review management sheet
+
+
+
+
+Review Activities (4/5)
+Review 		------>	Actual -----> Rework ---> Review
+Preparation		Review			Confirmation
+
+Reviewee updates the review object base on the defects found.
+Reviewee inputs the necessary fields in the RRC. (e.g. solution/countermeasure, bug types, etc)
+The Reviewee requests for review confirmation
+
+
+Input: RRC
+Output: Updated Review Object, Updated RRC
+
+Add who will perform
+Update review object base on the defects found (first item)
+Update RRC
+   -solution/countermeasure
+   -bug types
+   -etc
+
+
+Review Activities (5/5)
+Review 		------>	Actual -----> Rework ---> Review
+Preparation		Review			Confirmation
+
+
+
+Reviewer checks and confirm the RRC in a walkthrough or desk review
+Reviewer inputs the Confirmation column of the RRC
+Revise RRC and review object if necessary
+Reviewee completes the RRC
+Make sure all fields are filled up (e.g. Bug Type, Bug Severity, size of review object, Confirmation, etc)
+Reviewee informs Review Coordinator review status
+Reviewee submits the RRC and review data to the Review Coordinator
+
+
+
+Input: Updated Review Object, Updated RRC
+Output: Complete RRC, Reviewed Review Object, 
+              Review Management Sheet, Review Data
+
+
+
+
+Verification and Validation through Reviews
+
+
+Verification and Validation through Reviews
+
+Verification
+	Verification ensures that selected work products meet their specified requirements. CMMI for Dev. v.1.2
+	To review and check that the selected work product is created according to the requirements and will work according to the specification or requirements.
+Validation
+	Validation demonstrates that a product fulfills its intended use when placed in its intended environment. CMMI for Dev. v.1.2
+	This is to review and check if the selected work product will satisfy the customer needs and will work on its intended use and environment. 
+
+
+
+Verification 								Validation
+Check if you build it right						Check if you build the right thing
+
+
+Check if it was built according to the requirements			Check if it was built based on the need of the client
+
+
+Check if it works based on specification or requirements		Check if it does work based on intended use
+
+
+									Check if it solves or addresses the problem to which the system was created for
+
+
+Importance of VER and VAL in Project Planning Review
+
+
+The project team will perform reviews on the project plans to verify if all plans are correct, complete and it does not conflict with each other.
+The Client will validate if the plans created by the project team meet their targets (e.g. schedule, quality, etc)
+
+
+
+
+Importance of VER and VAL in Requirements Analysis
+
+The project team will review the Requirements Analysis documents (e.g. RL, SRS) to verify if all requirements provided is enough to develop the product.
+The Requirements Provider will then validate if they have a common understanding with the project team and if it satisfy their needs through reviewing the RL and SRS.
+
+
+Importance of VER and VAL in Design Review
+
+The project team will review the design documents (e.g. Basic Design, Functional Design, Detailed Design) to verify the correctness and completeness of the design.
+The Client will perform review on design documents to validate if all features required are included in the design.
+Both project team and Client will review the high level designs to check if all requirements has an equivalent design.
+In the Test Group/Tester point of view, design are reviewed to validate if design documents are enough to create the test specification.
+
+
+
+Importance of VER and VAL in Test Specs Review
+
+
+The project team will perform review on the Test Specification created to verify that all required features has an equivalent test item.
+The Client will perform review to validate if the required features has an equivalent test item and it conforms to the intended environment.
+
+
+
+Importance of VER in Coding
+
+
+The project team will perform reviews in coding to verify that the design is implemented correctly.
+This is also to verify that all required features is implemented.
+
+
+
+
+Analysis of Review Data
+
+This is to evaluate the result of the reviews (e.g. # of bugs found, bug types, bug severity, productivity, etc)
+Purpose
+	To analyze the possible cause of the issues / defects found during review.
+	To determine possible countermeasures or action items.
+	To avoid issues / defects from happening again.
+	To determine if quality targets are met.
+	For historical data that can be used in future reviews.
+	To find strength and weaknesses of the process.
+	To identify and prioritize process improvement that can result to improvement of QCD.
+
+
+
+Review Tailoring
+
+The following are the tailoring for the review process:
+Selection of review objects.
+	This depends on the development life cycle of the project and deliverables per phase identified.
+Levels of review per review object.
+	The project can define their own levels of review depending on the identified review objects and stakeholders. This will be defined in the Review Plan.
+Review Method
+	The project can define their own review method that will be more appropriate for project.  This will be defined in the Review Plan.
+Review Procedure
+	The project can define their own review procedure, given that it is defined and informed to all stakeholders.
+Review Criteria
+	The project can define their own review criteria or use the client’s defined criteria that is more suitable for their project.
+	Make sure that all required criteria is identified. (e.g. review checklist for project planning review, requirements review, design review and etc)
+
+
+
+Tailored Review Process (2/2)
+
+
+Describe where?
+
+Process List – Reviews
+	Review Criteria usage value is: “Project”
+	Plan and Monitor Reviews usage value is: “Project”
+Note: Process Waiver is needed
+Project Planning 1 – Review Plan
+	Review Types
+	Review Methods
+	Review Criteria
+	Review Objects / Work Products to be reviewed
+	Review Management
+
+
+
+
+Review Ethics
+	Review the object, not the reviewee.  
+	Review sessions should be on track and on schedule.  
+	Avoid spending too much time on a particular issue.
+	Review sessions are limited to finding defects, not solutions.
+	The group should end the activity properly.  Never leave unresolved issues behind.
+	Review sessions should be limited to at most 2 hours.  
+
+
+Reviewers should address issues professionally and objectively.  
+See to it that uttered comments do not get personal.  
+The reviewee should get the feeling of being helped not criticized.
+2. Reviews should start on time unless a major problem is encountered.
+3. If time allotted is not enough, schedule another review session.  
+This will avoid disrupting earlier scheduled reviews.
+
+
+Tips for Effective Reviews
+	Include the review in the project schedule.
+	Define the goals to be accomplished through review.
+	Use a review checklist.
+	Make use of review records.
+	Focus on the review targets.
+	Perform a self-check on your own output.
+	Discuss the defects found during review and NOT the solution.
+	Keep useful records.
+
+
+Workshop 2: Review Planning
+
+Provided are the following:
+	WBS
+	Review Plan Template
+Create a Review Plan based on the WBS.
+Refer to the Reviews Workshop section.
+
+
+
+
+
+____________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Configuration Management Overview
+
+
+Common Problems in Configuration Management
+Product shipped contained the wrong version of the source code.
+	Difficulty in recreating a reported problem
+	Reoccurrence of fixed bugs
+	Inability to obtain the same version that our customers have
+	Lost/misplaced source files
+Simultaneous Update
+	Modification made in a file was overwritten
+Double Maintenance
+	Need to update both copies of the same files in two directories for different releases
+Share Code / Share Data
+	Some are not notified of bug fixes in code shared by several engineers.
+= Confusion and lack of control which would result to waste of time and effort.
+
+
+What is Configuration Management?
+
+Is the discipline of identifying the configuration of a system at distinct points in time for the purpose of systematically controlling changes to the configuration, and maintaining the integrity and traceability of the configuration throughout the system life cycle.
+
+ The key is to have a control system that answers the following questions:
+ 	What is my current software configuration?
+	What is its status?
+ 	How are changes to my configuration controlled?
+	 How do I inform everyone else of my changes?
+	 What changes have been made to my software?
+	 Do anyone else’s changes affect my software?
+
+
+
+Configuration Management Principles
+
+Integrity
+	The existence and correctness of the configuration items stored in the repository.
+Traceability
+	The ability to trace or monitor the changes made to the configuration items in the repository.
+	The ability to trace or monitor the relationship between the software and all other related software products.
+
+
+
+
+Configuration Management Activities 
+
+
+To establish and maintain the integrity of work products using:
+Configuration Identification
+Configuration Control
+	Baselines
+	Change Control
+	Releases
+	Backup
+Configuration Status Accounting
+Configuration Audits
+
+
+
+As a member what is your responsibility to help maintain the integrity and traceability of your configuration items?
+	You help implement and perform the configuration activities planned by the CM-in-charge.
+
+
+
+NSP Standard Directory Strcuture
+	Know wher to locate/put the work products.
+
+	[ ]<Product name>
+		|.....Baseline Map.xls
+		|.....Work Product Resgistry.xls
+		|.....[ ] 01 Project Management
+		|	|....[ ] 01 Initiation
+		|	|....[ ] 02 PPMC
+		|	|....[ ] Closing
+		|.....[ ] 02 Engineering
+		|	|.... [ ] 01 Requirements
+		|	|.... [ ] 02 Coding
+		|	|.... [ ] 03 Coding
+		|	|.... [ ] 04 Testing
+		|	|.... [ ] 05 User Documentation	
+		|	|.... [ ] 06 Release
+		|	|.... [ ] 07 Libraries
+		|.....[ ] 03 Support
+			|....[ ] 01 QA
+			|....[ ] 02 Communication
+			|....[ ] 03 References
+			|....[ ] 04 Tools
+
+
+Document Control
+
+
+
+Document registration
+A unique document identifier.
+					       /-----> RRC Series
+					      /
+			SWD10-05100-PLN008-001 
+				/	\
+		Project Registration No. \
+				          Document Type & Series
+
+
+
+Versioning
+A unique instance of a configuration item which is distinct in some way from the different instances of the same configuration item.
+
+					XX.YY.ZZ  ----> Draft Version
+					/   |
+		Final Copy / Major Revision |
+					    |
+					Minor Revision
+
+
+Revision History
+Records the changes made from one version to another.
+
+
+
+
+Samples of Revision History
+
+								Bad Practice							Good Practices
+
+Updating design document dure to review comments		-Updated section 5						Updated based on review #01;
+								-Retrieval of neType is not indicated in page 8.			- Corrected Recovery Time and Hold-off Time in 
+																Section 5 Scenario Value Pattern
+																-Added retrieval of neType in Section 7 interface
+
+
+Updating design document due to requirements change		Modified Window Image, Window Specifications, Event and  	Removed function related to LO X-CON in sections: Windows Image, Window Specifications, Event and Interface based on MR#012
+								Interface
+								_______________________________________________________________________________________________________________________________________________________________________________________________
+								svn log sample:							svn log sample:
+								Updated file Based on MR					Updated file Based on MR#012
+
+
+
+Modifying source Code due to bug fix				Modification in source code is not accounted in revision 	2010/12/15 by M. Bean - Modified to fix bug #01:
+								history								Removed function related to LO X-CON
+
+								___________________________________________________________________________________________________________________________________
+								svn log sample:							svn log sample:
+								Modified file due to bug fix					Modified file for bug fix #01
+																Removed function related to LO X-CON
+
+Removing file from repository					svn log sample:							svn log sample:		
+								Removed File							Removed testdata10.zip
+																Reason: Unnecessary data due to MR#143
+
+
+
+
+
+
+
+
+
+						
+Revision History Tips						
+Purpose of revision history
+Traceability of changes
+	To know what was changed from the previous version
+
+
+
+Tips in writing revision history
+	Be descriptive
+	Be brief
+	Be precise / specific
+
+
+
+
+Naming Convention							
+
+
+									File Extension
+									/
+				SWD10-05100-PLN008-001_Project Plan 1.xls
+						|		   |
+			Document Registration No.		Document Name
+
+
+Purpose of Naming Convention
+To uniquely identify each configuration item
+To structure and organize the configuration items
+To provide consistent naming of configuration items
+To make it easy to navigate through the configuration items
+To provide a common language for identifying configuration items
+
+
+
+Repository Check in/Check out
+
+The activity of putting/retrieving work products into/from the repository using a version control application.
+Purpose:
+To be able to follow the standard procedure in accessing the repository.
+To have a consistent access logging guideline.
+To be able to control the levels of access to the repository.
+
+
+
+Tips:
+Make sure that the files will be placed in the correct directory of the repository.
+When checking-in source codes, make sure that the checked-in code will not contain or introduce errors when the whole system is compiled/built.
+Be sure to check-in all work products before weekends or long vacations.  If possible, check-in work products at the end of the day.  This will keep the work product updated even if the responsible person will be absent on the next day.
+
+
+Repository Access (1/2)
+Features of a version control system
+Trunk
+	Used for the main directory for the development.
+Branch
+	Used to isolate changes onto a separate line of development.
+Tag
+	Used to mark particular revisions (e.g. a release version), so you can, at any time, recreate a certain build or environment. 
+	Used to create a static snapshot of the project at a particular stage. 
+
+
+
+Repository Access (2/2)
+Demonstration of Tortoise svn
+	Check-in / Check-out
+	svn lock
+	Commit
+	Revision log
+	Delete, Move, Rename
+
+
+Tips:
+Before updating a document make sure to get the latest version. (“svn update”)
+To avoid document conflict, lock the document that will be updated. (“get lock”)
+Do not delete/move/rename files in your local copy, instead use the RepoBrowser
+
+
+
+
+Baselines
+A set of specifications or work products that has been formally reviewed and agreed on, which thereafter serves as the basis for further development, and which can be changed only through change control procedures. CMMI for Dev. v.1.2 
+
+Configuration Item Baseline
+An instance of a configuration item that has been formally reviewed and agreed upon, that thereafter serves as the basis for further development, and that can be changed only through formal change control procedures.
+Configuration Milestone Baseline
+May consist of one or multiple configuration item baselines that will serve as an approved snapshot of the system at appropriate points in the project lifecycle. (e.g Release)
+
+
+
+Importance of Baselines
+
+A baselined Requirements List indicates what features of the product will be developed by the group.
+A baselined Design Document indicates that it supports the required features (in RL) and will be the basis for the implementation of the product.
+A baselined Source Code will be the basis for the testing activities to check if all required features are implemented and supported.
+
+
+Tip:
+When creating a work product make sure that the referenced document used is the latest baseline.
+
+
+Change Control
+To manage the changes of the baselined configuration items.
+
+
+Without Change Control
+An engineer could make an important change to a configuration item or its interfaces without a lot of extra work and red tape.
+	But no record would be kept for:
+		What the change was and why the change was requested
+		Who wanted the change made
+		Who approved the change
+		Who made the change
+		Who verified the change
+		
+Is this what we want???
+
+
+Without Change Control
+And it would be hard to find out…
+	“Why doesn’t my software link this morning? It linked last night!?”
+	“Why does this regression test fail now? It worked yesterday!”
+	“Why does the product behave this way now? It didn’t before!”
+	Why are we running out of memory now? We did not have that problem yesterday?”
+
+
+
+Importance of Change Control
+
+To manage configuration items that are affected by the changes (requirements, design, reviews, etc..)
+To assess impact of changes to the baselines.
+To maintain traceability of the configuration items.
+To ensure integrity of configuration items.
+
+
+
+Change Control Process
+	_________________________________________________
+	|	Issue Change Request		   	|	<-----------	Triggers
+	|		|				|		Modification Request (Client/Developer)
+	|						|			Changes in requirements
+	|	Analyze, Propose, Review, and Approve	|			Changes in design
+	|	MR Procedure, Bug Report, RRC		|			Changes in behavior
+	|		|				|		Bug fix
+	|	Implement Modification			|		Reviews
+	|		|				|		
+	|		|				|		 _______|\
+	|		|				|		|	| \
+	|	Confirm Modification			|		|_______| /	Monitored, Managed and Controlled by CM-In-charge
+	|		|				|			|/
+	|	Release Changes				|
+	|_______________________________________________|
+
+
+
+
+Other CM Activities
+Planning
+Release
+Configuration Audits
+Backup
+Configuration Status Accounting
+
+
+
+Related Documents
+
+Configuration Management Plan
+Work Product Registry
+Release Procedure
+Document Registration Code, Version Number and File Naming Guideline
+Directory Structure Guideline
+CM Audit Guideline
+CM Audit Checklist
+Release Notes and Guidelines
+Release Checklist
+CM Plan Review Checklist
+
+___________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

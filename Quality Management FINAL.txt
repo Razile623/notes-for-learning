@@ -1,0 +1,2297 @@
+Every Project has to balance scope, cost, time, and quality to achieve project success
+		Time and cost can be checked against the project schedule and budget
+
+
+What is quality?
+Quality is "the degree to which a set of inherent characteristics fulfills requirements" - (ISO9000:200)
+Other experts defien quality based on:
+
+	Conformance to requirements: The project processes and product meet written specifications
+	Fitness for use: A product can be used as it was inteded
+
+
+Quality vs Grade
+
+Quality is defined as the degree to which characteristics meet requirements
+
+Grade is a category  assigned to product that have similar functional uses but different technical characteristics.
+	grade covers the number of features present in a product or servi
+
+
+Precision vs Accuracy
+
+Precision - Refers to how close measurements of the same item are to each other.
+Accuracy - refers to how close a measurements is to the true or accepted value
+
+
+Precision is independent of Accuracy 
+That means it is possible to be very precise but not very accurate, and it is also possible to be accurate without being precise.
+
+
+
+Example: Decision in relatin to Accuracy, Precision,Quality, Grade
+
+Important Metrics in NSP
+	
+	QCD - Quality Cost Delivery
+	CS - Customer Satisfaction
+
+In NSP, how do we measure Quality?
+	We Measure Quality in terms of bugs detected
+		At each phase (During reviews and testing)
+		In upstream and downstream phases
+		In post-release
+
+
+Cost - the total amount spent for goods or services including money, time, and labor.
+In NSP, how do we measure COST?
+Direct Manhours
+
+Hours spent on project-related activities. 
+Also includes overtime.
+
+Ex. CD Creation Manhours
+	Manhours spent in creating the source code
+	Note: Manhours means number of hours multiplied by the number of engineer joining or involved in the activity
+
+
+Rework Manhours
+	Hour spent correcting the work products of a work product type
+
+Ex. Bug Fixing
+	Updating design documents after review
+
+
+
+
+Productivity
+	Measures the efficiency by which we produce an application expressed in terms of size specifically LOC/manhr
+
+Productivity = Total LOC / Total Direct Manhours
+
+
+Turn Around Time
+Hours spent form receiving of bug reports to the repoting of initial response
+
+
+What is delivery?
+Delivery - the voluntary transfer of something (software) from one party to another (customer)
+	Example
+		Release software products to NCOS
+
+
+What is Customer Satisfaction?
+	Customer Satisfaction - a measure of how products amd sevices supplied by a company meet or surpass customer expectation.
+		Example
+			Receives commendation email from customer
+			High score in the customer satisfaction survey
+
+
+
+
+Quality – Cost - Delivery (QCD) Relationship
+Cost
+Quality
+Delivery
+
+These three are related. A change in one can affect the others.
+
+What is Quality Control (QC)?
+A process employed to ensure a certain level of quality in a product or service
+
+Actions necessary to provide control and verification of certain characteristics of a product or service
+
+
+
+QC Goal
+To ensure that products, services, or processes provided meet specific requirements before they are released to customer
+Examples of QC activities in NSP
+Review of design documents and source codes
+Testing ( UT, IT)
+
+
+What is Quality Assurance (QA)?
+Means of monitoring the software engineering processes (NSP standard processes) and methods used to ensure quality. 
+
+The methods by which this is accomplished are many and varied, and may include ensuring conformance to one or more standards, such as ISO 9000 or a model such as CMMI. 
+
+
+
+
+Task:  Conduct PPQA Evaluation
+
+What is Process and Product Quality Assurance (PPQA)?
+
+A process area that provides specific practices for objectively evaluating performed processes, work products and services against the applicable process descriptions, standards, and procedures.
+
+
+What is PPQA Evaluation?
+Checking of actual work products if they were created following the standard process ( NSP and project procedures, guideline, templates).
+
+Checking of actual process performed if they were according to standard process ( NSP and project procedures, guideline, templates).
+
+
+
+When is evaluation done?
+
+   Evaluations are done during the entire project development cycle from the time the project is registered to SQA until the project closes.
+
+
+
+How does QA perform evaluation?
+
+Evaluate project if they followed NSP standard processes
+
+Send issues for noncompliance/unpracticed process
+
+Monitor and evaluate countermeasure of issues
+Report results to Top Management
+
+
+
+What is your role during evaluation?
+
+
+Understand the standard processes.  
+	Ex. Review process
+           Source Coding standards
+
+2.  See to it that you are following the NSP standard processes when performing development activities. 
+     
+    Ex. Perform review according to standard procedure.
+
+
+
+
+Task: Collect and analyze data
+
+Why we collect and analyze data?
+
+  - To measure how the project is in relation to the NSP goals and the project plans
+  - To create countermeasures to resolve issues and prevent further problems
+
+
+When to  collect and analyze data?
+
+Every end of each activity
+     Every end of creation, review, rework of work product.
+End of Phase: 
+	Before a development phase ends to serve as input during projects’ (Phase Evaluation)
+Monthly: 
+	Consolidate all collected phase data for reports to Top Management
+Fiscal Year: 
+	Consolidate all data of closed projects as historical data. These serves as reference for estimates and target setting.
+
+
+
+What is your role during data collection?
+
+Correct man hours is inputted in DTS for every development task.
+Correct bug counts during review
+Understand measures to ensure correctness and soundness of data
+
+
+
+Task: Support SWQC activities of projects
+
+SoftWare Quality Control
+
+NSP’s problem solving process.
+It is based from PDCA cycle (Plan-Do –Check-Act)
+SWQC is based on the KAIZEN method.
+continuous incremental improvement activity
+
+
+
+How is SWQC done in NSP?
+1. Identify QCD problems
+2. Prioritize problems
+3. Determine root cause
+4. Set measurable targets
+5. Make action plan
+
+6. Implement and monitor action plans
+7. Evaluate results
+
+8. Standardize process
+9. Make SWQC Report
+
+
+
+
+Quality Control and Quality Assurance Concepts
+What is Quality Management is all about 
+	Identifying and following quality requirements,
+	Auditing the results of quality control measurements and 
+	Using quality measurements to control quality
+	Recommending project changes if necessary
+
+Quality Management has 2 goals:
+	1. Ensuring a quality end-product.	
+	2. Ensuring that all of the process involved during the project lifecycle are carried out efficiently.
+
+
+Why Quality Management?
+	Project or products with unnecessary features can be too expensice to meet the business need
+
+	Prevention is much cheaper than inspection, build quality in early to minimize cost/maximize quality
+		Quality should be planned, designed, and built into the project's deliverables.
+		It should not be inspection driven.
+
+
+
+Project Quality Management
+1. Plan Quality
+	This involves identifying the quality requirements for both the project and products and documenting how the project can show it is meeting the quality requirements.
+	
+	It provides guidance and direction on how quality will be managed and validated throughout the project.
+	
+	Outputs:
+		Quality Management Plan,
+		Quality Metric, 
+		Quality Checklists
+		Process Improvement Plan.
+
+	Tools and Techniques
+		Benchmarking
+		Cost-benefit analysis (CBA)
+		Cost of Quality (CoQ)
+		Statistical Sampling
+		Meetings
+
+
+2. Perform Quality Assurance
+	Applying the planned, systematic quality activities to ensure that the project employs all processes needed to meet requirements.
+		Process-centric
+		Proactive
+		Focused on preventive action
+	It facilitates the continuous quality improvement
+
+	Tools and Techniques
+		Quality Audits
+		Problem Solving
+		Root cause analysis
+		Quality improvement methods
+
+
+
+
+3. Perform Quality Control
+	Monitoring and recording results of executing quality activities to assess performance and to determine whether they comply with relevant quality standards and identifying ways to eliminate causes of unsatistfactory performance.
+		Product- Centric
+		Reactive
+		Focused on finding/ Correcting defects
+	It facilitates the improvement of quality processes
+	
+	Tools and Techniques
+		7 Basic Quality Tools
+		Root cause analysis
+		Inspection/ Reviews
+		Testing/ Product evaluations 
+		Meetings
+
+__________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Introduction to CMMI
+
+
+The Stability Myth
+"Our defined, documented, trained, and used process is stable, and will remain effective without changes.“
+
+
+This is an "illusion".
+A "stable" process is not necessarily "effective".
+A process left behind by changes in the business will not be not effective. 
+The process should reflect the changes in business, technologies, and methods.
+
+
+
+Improving the Process means…
+… making the process EFFECTIVE.
+
+Making the process effective is also a process…
+
+… the process of achieving PROCESS MATURITY.
+
+
+Implementing SPI	<________________
+Establish the Process			|-------------Monitoring by Support Group
+	Process Definition		|		Progress
+	Process Approval		|		Risk
+					|		Issues
+Institutionalize the process		|		Status
+	Publication			|		Stakeholders
+	Training			|
+	Deployment			|			|
+					|			|
+Feeback					|		Report Status to Top Management
+	Lessons Learned			|
+	Best Practice			|
+	Issues				|
+					|
+Process Improvement   -------------------
+
+
+
+
+
+
+Critical Success Factors of SPI (1/2)
+
+Alignment with business strategy and goals
+
+Consensus and buy-in from all stakeholders
+
+Senior management and middle management support
+
+Dedicated resource to manage the implementation and coordination process improvement activities
+
+
+
+Critical Success Factors of SPI (2/2)
+
+Sensitivity to the organizational context
+
+Management and Prioritization of change
+
+Creation of support infrastructure
+
+Monitoring the results of SPI
+
+Learning from feedback results
+
+
+
+What is a Process Model?
+
+
+A process model is a structured collection of practices that describes the characteristics of effective processes.
+
+Practices included are those proven by experience to be effective.
+
+
+
+How is a Process Model Used?
+
+A process model is used
+
+To help set process improvement objectives and priorities.
+To help ensure stable, capable and mature processes.
+As a guide for improving project and organizational processes.
+With an appraisal method to diagnose the state of an organization’s current practices.
+
+
+
+Why is a Process Model Important?
+A process model provides
+
+A place to start improving.
+The benefit of a community’s prior experiences.
+A common language and a shared vision.
+A framework for prioritizing actions.
+A way to define what improvement means for an organization.
+
+
+
+
+Misunderstanding the Models
+
+
+A model is NOT a process.
+The model shows what to do, NOT how to do it nor who does it.
+
+A model is NOT absolute. 
+The model must be interpreted in the context of the organization.
+The application of the model must be tailor-fitted to the specific needs of the organization.
+
+
+
+
+Losing Sight of the Objective
+
+The Rating Game
+Real process improvement produces significant long-term benefits for the organization and for its members.
+
+However, many organizations are being enticed to settle for an expensive piece of paper typically referred to as “certificate” because
+ it seems “painless”
+ it is “quick (and dirty)”
+
+But we should remember the sayings
+ No pain, no gain!
+ “easy come, easy go… if it was there at all.
+
+
+
+CMMI for Process Improvement
+
+Capability Maturity Model Integration (CMMI)
+Use CMMI in process improvement activities as a
+
+Collection of best practices.
+Framework for organizing and prioritizing activities.
+Support for the coordination of multi-disciplined activities that might be required to successfully build a product.
+Means to emphasize the alignment of the process improvement objectives with organizational business objectives.
+   
+
+ CMMI incorporates lessons learned from use of the SW-CMM, EIA-731, and other standards and models.
+
+
+
+
+
+What is CMMI
+
+What It Is
+
+A Measurement and Rating System of Process Capability
+A Set of Best Practices for Software & Systems Engineering
+An Industry Standard
+An Operational Foundation for Success
+A Guideline for Continuous Improvement
+A Risk Indicator
+
+
+It Specifies What is Necessary to be Performed
+
+
+
+What It Is NOT
+
+A “Certification”
+Methodology 
+A Silver Bullet
+A Guarantee of Success
+Easy to Implement
+Easy to Achieve Levels
+Only for the Federal Government
+Only used in the USA
+A Risk Mitigator
+
+It Does Not Specify How to Perform the Activities
+
+
+CMMI Level Framework (Staged)
+Level			Focus				Process Areas
+5 Optimizing		Continuous Process		Organizing Performance Management
+			improvement			Causual Analysis and Resolution
+
+4 Quantitatively	Quantitative			Organizational Process Performance
+   Managed		Management			Quantitative Project Management
+
+3 Defined		Process				Requirements Development
+			Standardization			Technical Solution
+							Product Integration
+							Verification
+							Validation
+							Organizational Process Focus
+							Organizational Process Definition
+							Organizational Training
+							Integrated Project Management
+							Risk Management
+							Decision Analysis And Resolution
+
+2 Managed		Basic Project			Requirements Management
+			Management			Project Planning
+							Project Monitoring and Control
+							Supplier Agreement Management
+							Measurement and Analysis
+							Process and Product Quality Assurance
+							Configuration Management
+
+1 Initial			
+
+
+
+
+CMMI Level Framework (Continuous)
+Level			Engineering		Process Management			Project Management			Support
+3 Defined		Requirements		Organizational				Project Planning			Measurement and Analysis 
+			Management		Process
+						Focus
+			
+			Requirements		 Organizational Process			Project Monitoring			Process and Product Quality Assurance
+			Development		Definition				and Control
+
+
+2 Managed		Technical		Organizational Training			Supplier Agreement Management		Configuration Management
+			Solution
+
+			Product			Oragnizational				Integrated Project Management		Decision Analysis and Resolution
+			Integration		Process Performance
+
+1 Performed		Verification							Risk Management				
+
+
+0 Incomplete		Validation		Organizationl Performance 		Quantitative Project 			Causual Analysis and Resolution
+						Management				Management
+
+
+
+
+Technical Solution (TS) – Level 3
+Purpose
+	Design, develop and implement solutions to requirements. Solutions, designs and implementations encompass products, product components and product related lifecycle processes either singly or in combinations as appropriate.
+
+When Technical Solution is not well done…
+An ineffective solution is chosen.
+Products may not meet technical performance requirements or user needs.
+Increased testing and rework is required to resolve design issues.
+The product may not be able to accommodate technology upgrades and future growth if the technical solution is not well conceived.
+
+
+
+
+Technical Solution (TS) – Level 3
+
+Specific Goal and Practice Summary
+
+SG 1 Select Product Component Solutions
+	SP 1.1	Develop Alternative Solutions and Selection Criteria
+	SP 1.2	Select Product Component Solutions
+
+SG 2 Develop the Design
+	SP 2.1	Design the Product or Product Component
+	SP 2.2	Establish a Technical Data Package
+	SP 2.3	Design Interfaces Using Criteria
+	SP 2.4	Perform Make, Buy or Reuse Analysis
+
+SG 3 Implement the Product Design
+	SP 3.1	Implement the Design
+	SP 3.2	Develop Product Support Documentation
+
+
+
+
+Technical Solution (TS) – Level 3
+Sample Mapping against NSP Software Development Process
+
+
+Technical Solution (CMMI PA)						NSP Software Development Process
+SG 2 Develop the	SP 2.1 						Procedures: Design Guidelines (BD,FD, DD)
+Design			Design the product or product Component		Tools: Office, Astah (UML), BD/FD/DD retemplate
+									Output:	
+										BD Documents
+										FD Documents
+										DD Documents
+
+			SP 2.3
+			Design Interfaces using Criteria		Procedures: Design Guideline
+									Tools: Interface Spec template
+									Output:
+										Interface Spec Document
+
+
+SG 3 Implement 		SG 3.1						Coding Guideline/ Convention
+the Product Design	Implement the design				Check Style, Find Bugs
+									Output:
+										Source Code
+
+			SG 3.2
+			Develop Product Support Documentation		Procedure: User Documentation Guideline
+									Tool: Office, User Doc Template
+									Output:
+										User Manual
+										Installation Manual
+										Troubleshooting Guide
+									Format: Online Help, Txt File, Word Document
+
+
+Cost and Benefits of CMMI
+Costs May Vary
+
+	The cost of CMMI adoption is highly variable depending on many factors, including organizational
+
+Goals
+Size
+Culture
+Structure
+Processes
+
+
+	Regardless of the investment, organizations generally experience a respectable return on their investment.
+
+
+
+Performance Measures - CMMI
+The performance results in the following table are from 30 different organizations that achieved percentage change in one or more of the six categories of performance measures below.
+
+Performance Category			Median Improvement
+Cost					34%
+Schedule				50%
+Productivity				61%
+Quality					48%
+Customer Satisfaction			14%
+Return of Investment			4:1
+
+
+CMMI Can Benefit You
+
+CMMI Provides
+
+Guidance for efficient, effective improvement across multiple process disciplines in an organization.
+
+Improvements to best practices incorporated from the earlier models.
+
+A common, integrated vision of improvement for all elements of an organization.
+
+
+
+
+SPI Infrastructure
+
+STAC 
+(Software Technologies Administration Center)
+
+
+SEPG										Design Centers
+-create/maintain process Asset						Provides Improvement Information
+-Process Improvement							Uses and Tailor Process Assets
+
+SQA
+-Monitor Process Implementation				<------
+-QCD collection and Analysis
+
+ITNA
+-Provides HW & SW resources				------>
+-Maintain Network Infra
+
+PMO
+-PMO Project Review
+-Project Status Monitoring
+
+TTDG
+-Technical Training
+-Training Needs
+-Plan and deliver training
+|			|
+|			|_____________> Process Asset Library
+HR					NSP Process Assets
+-Behavioral Trainings
+-Training needs
+-Coordination with TTDG
+
+
+
+
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+
+Software Testing Level 1 Course Outline
+Software Testing Overview
+	Software QA vs. Testing
+	Testing and Quality
+	Testing Objectives
+	Causes of Software Defects
+	Principles of Software Testing
+	Testing Phases
+	Test Types vs. Testing Phases
+	Testing Techniques
+
+Testing Activities
+	Integration and Testing Activities WBS
+	Developer and Tester Meetings  
+	Test Specs creation
+	Test Environment preparation
+	Test Execution
+	Bug Management
+	Bug Reporting
+	Debugging Techniques
+
+
+
+Software QA vs. Testing
+
+Software QA is based on “prevention”
+	Quality Assurance is applying the planned, systematic quality activities to ensure that the project employs all processes needed to meet requirements
+	Make sure that standards (processes, procedures, guidelines) are followed
+	Ensure that problems are checked and dealt with
+
+Software Testing is based on “detection”
+	The process of executing a program with the intent of finding errors 
+	Check the software if it does what it is supposed to do and what it’s not supposed to
+	Software testing is a critical process to assure that the software functions correctly
+
+
+
+
+Testing and Quality
+
+Testing makes it possible to measure the quality of software in terms of defects found, for both functional and non-functional software requirements and characteristics (e.g. reliability, usability, efficiency) 
+
+Testing can give confidence in the quality of the software if it finds few or no defects.
+
+When testing does find defects, the quality of the software system increases when those defects are fixed.
+
+Lessons should be learned from previous projects. 
+      By understanding the root causes of defects found in other projects, processes can be improved, which in turn should prevent those defects from reoccurring and, as a consequence, improve the quality of future systems. 
+     
+      This is an aspect of quality assurance.
+
+
+
+Testing Objectives
+
+Finding Defects
+
+Gaining confidence about the level of quality and providing information
+
+Preventing defects
+
+
+
+Causes of software defects
+
+	Error or  problem in Requirements
+	Programming Errors
+	Wrong Designs
+
+Defects occur because human beings are fallible and because there is time pressure, complex code, complexity of infrastructure, changed technologies, and/or many system interactions.
+
+
+
+Principles of Software Testing (1/2)
+
+General Testing Principles
+	- provide a standard framework to testers for conducting tests and discovering defects
+
+     Principle 1: Testing shows presence of defects 
+            - absence of defects does not mean that the software is defect free		 
+     Principle 2: Exhaustive testing is impossible
+            - when the application uses complex logic and requires a lot of user input
+
+     Principle 3: Confusing an absence of errors with product fit is a fallacy
+            - the absence of errors in testing does not mean that the software is suitable
+              for customer
+
+
+
+Principles of Software Testing (2/2)
+
+
+Applied Software Testing Principles
+    - provide a standardized format for creating test plans, and acts as a guide to effective testing
+
+    Principle 1: Early testing
+		       - testing should begin as early as possible in SDLC
+
+    Principle 2: Defect clustering 
+                       - based on Pareto principle which states that about 80% of 
+                         defects will be found in approximately 20% of the modules
+
+    Principle 3: Pesticide Paradox
+                     - using the same set of tests over and over again, the tests will 
+                       cease to uncover bugs
+
+    Principle 4: Testing is context-dependent
+                    - need to vary testing efforts depending on the circumstances
+
+
+
+
+Testing Phases – Unit Testing 1/2
+	A phase in software testing in which software verification is performed by programmers to test if individual units of source code are fit for use.
+
+ 	A unit is the smallest testable part of an application. It may be an individual procedure or function. 
+
+	Test is performed if it meets the detailed design specification 
+
+	Source code is evaluated if it is ready for integration and integration testing
+
+
+
+
+Testing Phases – Unit Testing 2/2
+
+	Stubs, Test drivers and simulators are usually created to perform the test.
+
+	Test cases are derived from work products such as specification of the component, the software design (detailed design) or the data model.
+
+	One approach to component testing is to prepare and automate test cases before coding. This is called test-first approach or test-driven development.
+
+	Can use testing tools in this phase such as JUnit, Code Joker, Cobertura, C++Test 
+
+
+
+Testing Phases – Integration Testing 1/2
+
+			Integration Activities + Testing Activities
+
+
+ 	A phase in software testing in which individual software modules / components are built and combined to produce the software product and resulting software product is tested.
+
+	Testing is performed on the software product to check for correctness of the interfaces between internal and external components
+
+	To test the software product if it meets the basic design and requirements
+
+
+
+
+Testing Phases – Integration Testing 2/2
+
+
+			Integration Activities + Testing Activities
+
+	To validate the software product if it meets the needs of the client
+
+	Testing of specific non-functional requirements (e.g. performance)
+
+	Simulators or test drivers may be necessary to test connectivity between external components of the system.
+
+”Ideally, testers should understand the architecture and influence integration planning. If integration tests are planned before components or systems are built, they can be built in the order required for most efficient testing.”
+				- from Certified Tester Foundation Level Syllabus by ISTQB
+
+
+
+
+Testing Phases - System Testing
+
+	Is concerned with the behaviour of a whole system/product as defined by the scope of a development project
+
+	The test environment should correspond to the final target environment or production environment
+
+	System Testing should investigate both functional and non-functional requirements of the system.
+
+	An independent test team often carries out system testing
+
+
+
+Testing Phases - Acceptance Testing
+	Testing to verify and validate a software product if it meets customer specified requirements.
+
+	A customer usually does this type of testing on a product that is developed externally.
+
+	Software product is usually deployed to the field and tested.
+
+	Acceptance testing may assess the system’s readiness for deployment and use, although it is not necessarily the final level of testing.
+
+
+Test Types vs Testing Phase
+The table shows the relationship between Test Types and Testing Phase:
+
+ 		   \
+ Type/Method of     \Phase		Unit Test Phase			Integration Test Phase		Priority
+  testing	     \
+
+
+Black Box Testing				/				/			Optional for UT
+													Recommended for IT
+White Box Testing				/							Recommended
+Sanity Testing									/			Recommended
+Interface Testing								/			Mandatory
+Functional Testing								/			Mandatory
+Regression Testing				/				/			Recommended
+Load Test									/			Recommended
+Stress Test									/			Recommended
+Performance Testing								/			Recommended
+Usability Testing								/			Optional
+Install/uninstall Testing							/			Mandatory
+Recovery Testing								/			Recommended
+Security Testing								/			Optional
+Compatibility Testing								/			Optional
+System Testing									/			Recommended
+Known Bugs Test									/			Recommended
+Acceptance Testing			Usually Acceptance Testing is performed after IT		Mandatory
+													Note: if part of project phase
+
+
+
+Testing Techniques (Black Box, White Box)
+Balanced among Viewpoints
+
+
+				     User View
+					|  /
+					| /
+		    Specification  _____|/_____ Design View
+			   View	       /|
+			    	      /	|
+			             /	|
+				    /   Fault View
+				   /
+          Black Box Testing	  /
+				 /  White Box Testing
+	
+		
+		Viewpoints: 
+			User View
+      				 - to think about user’s behaviour
+			Specification View
+     				  - to analyze specification
+			Fault View
+    				   - to think what kind of bugs you  
+          					 want to detect
+			Design View
+      				 - to think about design
+
+
+
+Testing Techniques – Black-Box Testing    (1/6)
+	To check if the external behavior of a program is met   with the specification 
+	No concern on the internal structure of the program 
+	Test data are created based on the specifications
+	Tester checks the input and output of the software
+	Commonly used techniques of Black-Box Testing are:
+		Equivalence Partitioning 
+		Boundary-Value Analysis 
+		Decision table testing
+		State transition technique
+		Use case testing
+
+
+
+Black-Box Testing  (2/6)Testing Techniques
+
+Equivalence Partitioning 
+
+    - Divides the input domain of program into classes of data from which test cases can be derived 
+     - Includes both valid and invalid partitions
+     - Valid partitions consist of valid values that invoke the correct output  expected from the software
+     - Invalid partitions on the other hand, includes values that are not specified  to be checked, but can be entered within the system. 
+     The system would process these values to provide an error response.
+
+Question: You want to write a test case for software that tracks the discount provided for photocopying in bulk. According to the discount chart, up to nine copies cost 10 cents each. Further, ten copies or more cost 9 cents each, while 8 cent per copu is the cost for 100 copies or more and 6 cents each for 1000 copies or more. What valid equivalence partitions would you identify for this test case?
+	- 10 to 99
+	- 1 to 9
+
+Black-Box Testing  (3/6)Testing Techniques
+
+Boundary-Value Analysis  
+                                                     
+     - tests the values at the edge of an equivalence partition
+     - identify the lower boundary values and upper boundary values for each partition.
+     - is applied to values such as numbers, text, date, time and currency
+
+Question:
+	You want to prepare a test case for the software that tracks the discount provided for bulk photocoping. According to he discount chart, up to nine copies cost 10 cent each. Ten copies or more cost 9 cent each. 100 or more copies cost 8 cent each while an order of 1000 copies or more cost 6 cent each. Four partitions based on the number of copies to be photocopied are identified for this test case: 1 to 9, 10 to 99, 100 to 999, and 1000 to a theoretical maximum value. You now want to identify the three boundary values for these partition taking into consideration the Summation value.
+
+Conditions		Partitions		Lower boundary Values			Upper Boundary Values
+10 Cents		1 to 9			0,1,2					8,9,10
+9 cents			10 to 99		9,10,11					98,99,100
+8 cents			100 to 999		99, 100, 101				998, 999, 1000
+6 cents			1000 to max		999,1000,1001				max-1, Max,max +1			
+
+
+
+Sample UTS for Black Box: Boundary Value Analysis
+							Test cases
+Item No.	Item			Sub-item no.		Sub-item			Precondition			Procedure				Expected Result
+1. 	   fComputeTenCents(nCopies)	1			Lower Boundary value check	1. Code is finished  		1. Execute fComputeTenCents(0)		1. fComputeTenCents() will not be executed.
+									for nCount=0		2. The program is running
+												3. nCopies =0
+					
+					2.			Lower Boundary value check	1. Code is finished  		1. Execute fComputeTenCents(1)		1. Assigned nCost.
+									for nCount=1		2. The program is running							value =10
+												3. nCopies =1
+
+					3.			Lower Boundary value check	1. Code is finished  		1. Execute fComputeTenCents(2)		1. Assigned nCost
+									for nCount=2		2. The program is running							value =20
+												3. nCopies =2
+
+					4.			Upper Boundary value check	1. Code is finished  		1. Execute fComputeTenCents(8)		1. Assigned nCost.
+									for nCount=8		2. The program is running							value =80
+												3. nCopies =8
+
+
+					5.			Upper Boundary value check	1. Code is finished  		1. Execute fComputeTenCents(9)		1. Assigned nCost.
+									for nCount=9		2. The program is running							value =90
+												3. nCopies =9
+
+
+					6. 			Upper Boundary value check	1. Code is finished  		1. Execute fComputeTenCents(10)		1. fComputeTenCent() will not be executed
+									for nCount=10		2. The program is running							
+												3. nCopies =10
+
+
+Note: a. fNumOfCopies(nCopies) calls fComputeTenCents (nCopies) if nCopies value is >0 & <10
+      b. fComputeTenCents() computes and assigns the nCost value as nCopies * 10
+
+
+
+
+Black-Box Testing (4/6)Testing Techniques
+
+Decision table testing
+
+     - validates system requirements that contain logical conditions with associated actions
+      - list all conditions and expected actions and then calculate the number of test cases using this formula: x^y
+        (where x = number of condition entry values , y = number of conditions)
+
+
+Decision Table = Exercise 1
+Question: Using a decision table, you're testing an application that allows users appropriate access tp database based on their position in the company. What result should you expect from the application when you test it as a junior employee with no administrative rights?
+	-You should be able to read and edit files
+
+
+
+Black-Box Testing (5/6)Testing Techniques
+
+State transition technique
+     
+     - helps create the test cases that are based on an event that cause different states in the software
+     - analyze and test each transition of state
+
+
+Black-Box Testing (6/6)Testing Techniques
+Use case testing       
+                                                               
+      - a use case is a scenario that contains of a realistic tasks that end users will frequently perform
+      - moreover, use cases include the outcome expected from the system for each tasks, then write the possible error handling methods
+      - uncovers defects in the process flows of a system
+
+
+Testing Techniques – White-Box Testing  (1/5)
+	To check each logic in a program
+	Test data are created by investigating internal logic of the program
+	Four techniques of White-Box Testing are:
+		Statement Coverage
+		Decision Coverage
+		Condition Coverage
+		Multiple-Condition Coverage
+
+
+
+White-Box Testing (2/5)Testing Techniques
+
+Statement Coverage
+    - measures the percentage of statements exercised by a test case suite    during statement testing 
+     - statement testing is testing the individual lines of code in a program
+     - effective and efficient test case suites should aim for 100% statement coverage
+     - a test case suite cannot be considered complete and exhaustive unless each line of code is exercised at least once
+
+Question: You have written a code to calculate the mesian of three integers. Create the test sets necessary to achieve 100% statement coverage for the median program.
+
+Answer:
+	To achieve  100% statement coverage, you need four test sets with three integer values each.
+	Four test sets with values:
+	10,20,30;
+	10,30,20;
+	20,10,30;
+	and 30,10,20
+
+Sample UTS for White Box: Statement Coverage
+							TEST CASES
+Item No.	Item			Sub-item no.		Sub-item			Precondition			Procedure						Expected Result
+1. 	  	Median			1			a.10				1. Code is finished  		1. Input the integer a,b and c based on column 		1. a,b and c integer values are displayed.
+								b.20				2. The program is running	    Sub-item.						2. 20 is displayed as median.
+								c.30								2.  Check the output.
+
+					
+1.					2.			a.10				1. Code is finished  		1. Input the integer a,b and c based on column 		1. a,b and c integer values are displayed.
+								b.30				2. The program is running	    Sub-item.						2. 20 is displayed as median.
+								c.20								2.  Check the output.
+
+
+1.					3.			a.20				1. Code is finished  		1. Input the integer a,b and c based on column 		1. a,b and c integer values are displayed.
+								b.10				2. The program is running	    Sub-item.						2. 20 is displayed as median.
+								c.30								2.  Check the output.
+
+
+1.					4.			a.30				1. Code is finished  		1. Input the integer a,b and c based on column 		1. a,b and c integer values are displayed.
+								b.10				2. The program is running	    Sub-item.						2. 20 is displayed as median.
+								c.20								2.  Check the output.
+
+
+
+
+
+
+White-Box Testing (3/5)Testing Techniques
+
+
+Decision Coverage
+    - measures the percentage of decision outcomes exercised by a test suite
+     - decision points in a program are depicted using IF statements
+     - all decisions in the program must be exercised
+     - 100% decision coverage guarantees 100% statement coverage
+
+Question: Consider a program that eads 2 integers. The progran set the values of both integers and prints them. You want 100% decision testing for the program so you need to create some test sets. What will be the test sets that will meet 100% decision coverage?
+
+Answer:
+	100% Decision coverage would mean testing both outcomes of the decision point. So there will be 2 test sets. (Sample test sets: 1,2 and 2,1)
+Sample UTS for white Box: Decision Coverage
+							TEST CASES
+Item No.	Item			Sub-item no.		Sub-item				Precondition			Procedure						Expected Result
+1. 	  	PrintNum		1			Test Set 1 (path that passes		1. Code is finished  		1. Set a to 1						1. A:3, B:2
+								inside IF decision)			2. The program is running	2. Set b to 2    						
+																	
+
+					
+					2.			Test Set 2 (path that passes		1. Code is finished  		1. Set a to 2						1. A:2, B:1
+								outside IF decision)			2. The program is running	2. Set b to 1  						
+												
+
+
+
+White-Box Testing (4/5)Testing Techniques
+
+Condition Coverage
+   - checks and evaluates the outcomes of each individual condition
+    - measures the percentage of conditional outcomes exercised by a test suite
+    - typically condition coverage is performed after decision coverage
+    - to achieve 100% condition coverage, each condition in the decision should be tested for both true and false outcomes
+
+Question: You've ceated a program that prints the maximum of the three integers. You want to achieve 100% condition coverage for the program so you need to create some test sets. What will be the test set that will help you achieve 100% condition coverage?
+
+Answer:
+	To achieve 100% cindition coverage, you need four test sets with three integer values each.
+	The ff are the sample test set in order to achieve 100% condition coverage:
+	3,2,1 (TRUE TRUE for decision point 1 , and TRUE for decision point 2)
+	2,1,3 (TRUE FALSE for decision point 1, and FALSE for decision point 2)
+	2,3,1 (FALSE TRUE for decision point 1, and TRUE for decision point 2)
+	1,2,3 (FALSE FALSE for decision point 1 , and FALSE for decision point 2)
+
+
+Sample UTS for white Box: Condition Coverage
+
+
+							TEST CASES
+Item No.	Item			Sub-item no.		Sub-item			Precondition			Procedure						Expected Result
+1. 	  	MaxNum()		1			TRUE TRUE for decision		1. Code is finished  		1. Set a to 3 						1. Print a
+								point 1, and TRUE for 		2. The program is running	2.Set b to 2						
+								decision point 2						3. Set c to 1	
+
+					
+					2.			TRUE FALSE for decision		1. Code is finished  		1. Set a to 2 						1. Print c
+								point 1, and FLASE for 		2. The program is running	2.Set b to 1						
+								decision point 2						3. Set c to 3
+
+					3.			FALSE TRUE for decision		1. Code is finished  		1. Set a to 2 						1. Print b								
+								point 1, and FLASE for 		2. The program is running	2.Set b to 3						
+								decision point 2						3. Set c to 1
+
+					4.			FALSE FALSE for decision	1. Code is finished  		1. Set a to 1 						1. Print c								
+								point 1, and FLASE for 		2. The program is running	2.Set b to 2						
+								decision point 2						3. Set c to 3
+
+
+
+
+
+White-Box Testing (5/5)Testing Techniques
+
+Path/Multi-condition Coverage
+    - most comprehensive testing technique; it is usually reserved for critical sections of code (safety-critical system such as medical software where even a single instance of system failure is unacceptable)
+    - 100% path coverage implies both 100% decision coverage and 100% statement coverage
+    - the test is rigorous and exhaustive, maximizes the probability of detecting errors
+
+
+
+
+Testing Techniques – Experienced-Based Testing
+
+
+Primarily rely on the tester’s skill and previous experience 
+Also referred to as ad hoc and reactive testing 
+Two types of experience-based testing are:
+
+	Error guessing – Need to understand how the software system works, make an educated guess about the possible weak points, and design & execute test cases on those points
+	Exploratory testing – design test cases, execute them, and log test results based on a test charter within a time box.
+
+
+
+Summary
+
+Testing can give confidence in the quality of the software if it finds few or no defects.
+General Testing Principles provide a standard framework to testers for conducting tests and discovering defects.
+Applied Software Testing Principles provide a standardized format for creating test plans, and act as a guide to effective testing.
+There are several test viewpoints (test types) to consider for Unit Test, Integration Test, System Test and Acceptance Test  phase.
+Three testing techniques based on ISTQB are : 
+     Black-box testing technique (also known as specification-based)
+     White-box testing technique (also known as structured-based)
+     and Experience-based testing technique
+
+
+
+
+
+
+NSP Testing Activities – Developer & Tester Meetings
+Developer and Tester Meetings
+
+
+Meetings between Dev Team and Test team in RA and Design Phase to discuss requirements and designs
+Reviewing the test basis (such as requirements, architectures, designs, interfaces)
+Evaluating the testability of the test basis and test objects
+
+Who performs: Development Team and Test Team
+
+Test Specs Creation
+
+Test cases are identified based on test approach
+Test items are identified for each test case
+Test procedures, input conditions and expected results for each test item are documented
+Test Data are created
+Who performs: Developer / Tester
+
+
+Test Specifications
+Test Spec Creation
+
+Contains:
+	Test Cases
+	Test Items
+
+Creating Test Cases
+	A Test Case defines input data, procedures, and output
+	A good test case is one that has high probability of finding yet undiscovered error
+	The degree of detail depends on the organization/project
+	Developing test cases allow us to thoroughly think of the behavior of a program
+	Very helpful in finding problems in the requirements/design
+	Should be prepared early in the development cycle
+
+
+Test Specifications
+Test Spec Creation
+
+Using the Test Viewpoint List
+	The UT/IT test viewpoint list can be used to determine the most common UT/IT test cases and test items needed for the specific software to be developed.
+1. All types of project can use the following test viewpoint list since it covers the most common test viewpoint for any type of software project.
+	Common UT/IT Test Viewpoint list (for both UT/IT testing)
+	Integration Test Viewpoint list (additional test viewpoint for Integration Testing only) 
+2. You may additionally use the following test viewpoint lists for your specific project type.
+	Java Test Viewpoint list  (for Java UT/IT)
+	C/C++ Test Viewpoint list  (for C/C++ UT/IT) 
+	Client/Server Application Test Viewpoint list  (for Client/Server applications UT/IT) 
+	Web Application Test Viewpoint list  (for Web Applications UT/IT)
+
+
+
+
+Test Specifications
+Test Spec Creation
+Tips for Writing Test Specifications:
+
+1. Keep it simple but not too simple; make it complex but not too complex.
+	Keep all the steps of Test Cases atomic, precise with correct sequence and with correct mapping to expected results. 
+2. After documenting Test cases, review once as Tester 
+	Think rationally and try to dry run your Test Cases. Evaluate that all the Steps are clearly understandable, and expected results are in harmony with those steps. 
+3. Bound as well as ease the testers 
+	Do not leave test data on testers, give them range of inputs especially where calculations are to be performed or application’s behavior is dependent on inputs. 
+4. Be a Contributor 
+	Never accept the Design Documents as it is. Suggest the drop-down-lists, calendar controls, selection-list, group radio buttons, more meaningful messages, cautions, prompts, improvements related to usability etc.  
+5. Never Forget the End User 
+	During the identification of test scenarios, never overlook those cases which will be mostly used by the user or are business critical even of less frequent use. 
+
+
+Prepare Test Environment
+
+
+	HW and SW needed to perform the test are prepared
+	HW and SW are installed and configured to meet the required test environment
+
+Who performs: Test Coordinator / Tester
+
+
+Test Execution
+
+Test is performed in accordance with the test plan and test specifications
+
+Who performs: Tester / Developer
+
+
+
+Bug Management
+
+When Too Many/Critical Bugs are Found
+	Perform the reporting process even if too many bugs or critical problems occur
+	Focus on critical bugs
+	Remember:
+		These situations have significant impact on schedules
+		May indicate deeper problems such as poor testing, bad design, poor coding skills, lack of code/design reviews, etc.
+		Inform managers and provide sufficient evidence
+
+Always determine the root cause of the bug. 
+
+
+Bug Reporting – PHS 1/4Bug Management
+PHS Fields				Description							Responsible Person
+		PHS#			Unique identifier for the bug.
+				
+		Date reported		Date the bug was reported.
+			
+			
+		Reported to		Name of person to whom the bug is reported to.
+					This is to the development team.
+		
+Heading		Priority		Priority of the bug						Tester/Test Coordinator
+					Priority dictates the level of importance in terms of when 
+					the bug should be fixed.
+					Values are: High, Medium, Low
+		
+		Target Fix Date		Date the bug is requested to be fixed.
+					(as requested by test team)			
+		
+		Target Version		The next release version to which the bug must already fixed.
+		
+		Bug Summary		A brief summary about the bug
+					
+
+
+Bug Reporting – PHS 2/4Bug Management
+PHS Fields				Description									Responsible Person
+		Discovered by		Name of the Person who found the bug.
+		by		
+		
+		Date 			Date the bug was detected.
+		Discovered
+			
+		Affected Module		Module where the bug was found.
+		
+		Version			Version of the module or system where the bug occur.
+			
+		Confirmed by:		Person Who confirmed that it is indeed a bug.
+
+Cause/		Phase the bug		Current Phase where the bug was detected			
+Investigation	was  found
+		
+		Test Case No.		Reference to the test case and test item where the bug was detected
+		
+		
+		Description		Complete description about the bug:
+						1. Reference to test item or test case
+						2. Input Conditions
+						3. Procedure how to make the bug occur
+						4. Expected output
+						5. Actual Output (bug)
+		
+		Severity		Severity of the bug.
+					Refer to NSP Definition for Bug Severity
+
+
+
+
+
+
+
+Bug Reporting – PHS 3/4Bug Management
+PHS Fields				Description							Responsible Person
+		Investigated		Person assigned to investigate the bug
+		by		
+		
+		Investigation		Start Data of when the bug was investigated.
+		Date	
+			
+		Investigation		Number of man-hours used to investigate the bug
+		Man hours
+		
+Cause/		Escaped from		Phase where the bug should have been detected			Developer/Development Team
+Investigation	Phase
+		
+		Affected Modules/	Module, files, function which is affected by the bug.		
+		Files			
+		
+		Cause			Explain the root cause of the bug
+		
+		Bug type		Type of bug.
+					Refer to NSP Definition for Bug Types	
+
+
+
+
+Bug Reporting – PHS 4/4Bug Management
+
+PHS Fields				Description									Responsible Person
+		Fixed by		Person who fixed the bug.
+		Date Fixed		Date when the bug was fixed
+		Fixed Modules/		Modules, files, functions which were modified to fix the bug
+		files modified		
+Solution	Bug fix man-hour	Number of man-hours used to fix the bug.
+		Date	
+		Solution		Explain the solution implemented for the bug.
+		
+		
+		Version			The release of the module or software where the bug has been confirmed		Tester / Test Coordinator
+
+		
+Confirmation	Confirmed by		Person who confirmed that the bug was fixed					Tester / Test Coordinator
+		
+		
+		Confirmation date	Date the bug was confirmed fix.
+		
+		
+
+Bug ReportingBug Management
+Bug Management Tools used in NSP
+	Redmine
+
+Bug Management Tools used by Customer
+	Henkou Kanri
+	Process Creator
+
+	
+Bug ReportingBug Management
+
+Tips on how to make a bug report
+	Bug report is a technical document written to describe the symptoms of a bug for the purpose of communicating its impact and circumstances.
+	Key elements of Bug report
+		Describe the symptom of the bug in the bug summary concisely. Be written in passive-voice sentence.
+		Write down the exact test procedure that will trigger the problem. Be written in active-voice sentence.
+		Describe the actual result- what really occurred? and the expected result- what is expected to happen?
+		Include additional information – containing other observations which are useful for easy debugging of developer.
+	Capture screen shots and collect logs as evidences
+
+
+
+Devil’s Guide to Debugging 1
+
+Find the defect by guessing
+Don’t waste time trying to understand the problem
+Fix the error with the most obvious fix
+
+
+“In Dante’s vision of hell, the lowest circle is reserved for Satan himself. In modern times, Old Scratch has agreed to share the lowest circle with programmers who don’t learn to debug effectively. He tortures programmers by making them use these common debugging approaches.”
+
+
+
+Debugging Techniques
+	Scientific Method of Debugging
+		Stabilize the error
+		Locate the source of the error 
+			1. Gather the data that produces the defect
+			2. Analyze the data and form a hypothesis about the defect
+			3. Determine how to prove or disprove the hypothesis either by testing the program or examining the code
+			4. Prove or disprove the hypothesis by using the procedure is 3
+		Fix the defect
+		Test the Fix
+		Look for similar errors.
+
+
+Fixing a Defect
+	Understand the problem before fixing it
+	Understand the program, not just the problem
+	Confirm the defect diagnosis
+	Relax
+	Fix the problem, not the symptom
+
+
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Software Testing Overview, Testing Activities & Integration Activities
+
+
+Software Testing Level 1 Course Outline
+
+Software Testing Overview
+	Software QA vs. Testing
+	Testing and Quality
+	Testing Objectives
+	Causes of Software Defects
+	Principles of Software Testing
+	Testing Phases
+	Test Types vs. Testing Phases
+
+Testing Activities
+	Integration and Testing Activities WBS
+	Developer and Tester Meetings  
+	Test Specs creation
+	Test Environment preparation
+	Test Execution
+	Bug Management
+	Bug Reporting
+	Debugging Techniques
+
+
+Integration Activities
+	Check work products for build
+	Integration/Build Activities
+	Prepare Build Environment
+	Build and assemble
+	Package and Release
+
+
+
+Software QA vs. Testing
+
+
+Software QA is based on “prevention”
+	Quality Assurance is applying the planned, systematic quality activities to ensure that the project employs all processes needed to meet requirements
+	Make sure that standards (processes, procedures, guidelines) are followed
+	Ensure that problems are checked and dealt with
+
+Software Testing is based on “detection”
+	The process of executing a program with the intent of finding errors 
+	Check the software if it does what it is supposed to do and what it’s not supposed to
+	Software testing is a critical process to assure that the software functions correctly
+
+
+
+Testing and Quality
+
+Testing makes it possible to measure the quality of software in terms of defects found, for both functional and non-functional software requirements and characteristics (e.g. reliability, usability, efficiency) 
+
+Testing can give confidence in the quality of the software if it finds few or no defects.
+
+When testing does find defects, the quality of the software system increases when those defects are fixed.
+
+Lessons should be learned from previous projects. 
+      By understanding the root causes of defects found in other projects, processes can be improved, which in turn should prevent those defects from reoccurring and, as a consequence, improve the quality of future systems. 
+     
+      This is an aspect of quality assurance.
+
+
+
+Testing Objectives
+Finding Defects
+
+Gaining confidence about the level of quality and providing information
+
+Preventing defects
+
+
+
+Causes of software Defects
+	Errors or problems in requirements
+	Programming Errors
+	Wrong Designs
+
+
+Principles of Software Testing (1/3)
+
+General Testing Principles
+	- provide a standard framework to testers for conducting tests and discovering defects
+
+Applied Software Testing Principles
+    - provide a standardized format for creating test plans, and acts as a guide to effective testing
+
+
+
+
+
+Principles of Software Testing (2/3)
+
+
+General Testing Principles
+	
+     Principle 1: Testing shows presence of defects 
+            - absence of defects does not mean that the software is defect free		 
+     Principle 2: Exhaustive testing is impossible
+            - when the application uses complex logic and requires a lot of user input
+
+     Principle 3: Confusing an absence of errors with product fit is a fallacy
+            - the absence of errors in testing does not mean that the software is suitable
+              for customer
+
+
+
+Principles of Software Testing (3/3)
+
+Applied Software Testing Principles
+
+    Principle 1: Early testing
+		       - testing should begin as early as possible in SDLC
+
+    Principle 2: Defect clustering 
+                       - based on Pareto principle which states that about 80% of 
+                         defects will be found in approximately 20% of the modules
+
+    Principle 3: Pesticide Paradox
+                     - using the same set of tests over and over again, the tests will 
+                       cease to uncover bugs
+
+    Principle 4: Testing is context-dependent
+                    - need to vary testing efforts depending on the circumstances
+
+
+
+
+Testing Phases – Unit Testing 1/2
+
+A phase in software testing in which software verification is performed by programmers to test if individual units of source code are fit for use.
+
+ A unit is the smallest testable part of an application. It may be an individual procedure or function. 
+
+Test is performed if it meets the detailed design specification 
+
+Source code is evaluated if it is ready for integration and integration testing
+
+
+
+
+Testing Phases – Unit Testing 2/2
+Stubs, Test drivers and simulators are usually created to perform the test.
+
+Test cases are derived from work products such as specification of the component, the software design (detailed design) or the data model.
+
+One approach to component testing is to prepare and automate test cases before coding. This is called test-first approach or test-driven development.
+
+Can use testing tools in this phase such as JUnit, Code Joker, Cobertura, C++Test 
+
+
+
+Testing Phases – Integration Testing 1/2
+
+		Intergration Activities  + Testing Activities
+
+
+A phase in software testing in which individual software modules / components are built and combined to produce the software product and resulting software product is tested.
+
+Testing is performed on the software product to check for correctness of the interfaces between internal and external components
+
+To test the software product if it meets the basic design and requirements
+
+
+
+Testing Phases – Integration Testing 2/2
+
+		Intergration Activities  + Testing Activities
+
+
+
+
+To validate the software product if it meets the needs of the client
+
+Testing of specific non-functional requirements (e.g. performance)
+
+Simulators or test drivers may be necessary to test connectivity between external components of the system.
+
+
+
+
+Testing Phases - System Testing
+	Is concerned with the behaviour of a whole system/product as defined by the scope of a development project
+
+	The test environment should correspond to the final target environment or production environment
+
+	System Testing should investigate both functional and non-functional requirements of the system.
+
+	An independent test team often carries out system testing
+
+
+
+Testing Phases - Acceptance Testing
+Testing to verify and validate a software product if it meets customer specified requirements.
+
+A customer usually does this type of testing on a product that is developed externally.
+
+Software product is usually deployed to the field and tested.
+
+Acceptance testing may assess the system’s readiness for deployment and use, although it is not necessarily the final level of testing.
+
+
+
+
+Test Types vs Testing Phase 1/2
+Legend:
+	Mandatory	 : This type of testing is mandatory to be performed for a project.
+	Recommended : This type of testing is generally recommended to be  performed.
+                             Additional criteria might need to be defined on how to performthis type 
+                             of test.
+	Optional		 : This type of testing may or may not be performed by the project.
+
+
+		   \
+ Type/Method of     \Phase		Unit Test Phase			Integration Test Phase		Priority
+  testing	     \
+
+
+Black Box Testing				/				/			Optional for UT
+													Recommended for IT
+White Box Testing				/							Recommended
+Sanity Testing									/			Recommended
+Interface Testing								/			Mandatory
+Functional Testing								/			Mandatory
+Regression Testing				/				/			Recommended
+Load Test									/			Recommended
+Stress Test									/			Recommended
+Performance Testing								/			Recommended
+Usability Testing								/			Optional
+Install/uninstall Testing							/			Mandatory
+Recovery Testing								/			Recommended
+Security Testing								/			Optional
+Compatibility Testing								/			Optional
+System Testing									/			Recommended
+Known Bugs Test									/			Recommended
+Acceptance Testing			Usually Acceptance Testing is performed after IT		Mandatory
+													Note: if part of project phase
+
+
+
+Test Types vs Testing Phase 2/2
+	The Table shows the relationship  between test types and testing phases:
+
+		   \
+ Type/Method of     \Phase		Unit Test Phase			Integration Test Phase		Priority
+  testing	     \
+
+
+Performance Testing								/			Recommended
+Usability Testing								/			Optional
+Install/Uninstall Testing							/			Mandatory
+Recovery Testing								/			Recommended
+Security Testing								/			Optional
+Compatibility Testing								/			Optional
+System Testing									/			Recommended
+Known Bugs Test									/			Recommended
+Acceptance Testing			Usually Acceptance Testing is 						Mandatory
+					performed After IT						Note: If part of project phase
+
+
+Notes: In most cases, above priorities applies to any type of project, there are however certain projects which needs specific types of testing. In these special cases, some types of testing identified here as “Recommended” or “Optional” may become “Mandatory”. These has to be properly identified in the Test Approach and Test Completion section of the test plan.
+
+
+
+Verification and Validation definition
+
+Verification 
+	ensures that selected work products meet their specified requirements.[1] Testing is performed to check behavior of the system against the requirements. 
+Validation 
+	demonstrates that a product fulfills its intended use when placed in its intended environment.[2] Quite similar to verification but requires that the test environment is the same as target environment. Testing is performed in actual defined target environment. Checking for quality attributes or non-functional requirements are forms of validation and helps ensure that the software will run in intended environment. 
+
+
+
+Test Viewpoints- Types of Testing 
+Sanity Test
+    - Testing to determine if a new software version is performing well 	
+		enough to accept it for major testing effort. 
+     - If application is crashing for initial use then system is not stable 	
+		enough for further testing and build or application is assigned to fix.
+
+
+
+Verification
+	a. Stability of software (readiness for performing other tests)
+
+Validation
+	N/A
+
+
+
+Test Viewpoints- Types of Testing 
+
+Interface Testing
+    - Type of integration testing where the interfaces between system components are tested.
+
+Verification	
+a. Connectivity between 2 modules or applications of the system
+b. Connectivity with external interfaces like:
+    -> equipment, external modules, external systems or applications
+
+Validation
+
+a. Connectivity with external interfaces like:
+    -> equipment, external modules, external systems or applications (same viewpoint as Verification b) 
+Note: 
+   - Test environment must be same as target environment
+   - Test is performed using actual target environment
+
+
+
+Test Viewpoints- Types of Testing 
+
+Functional Testing
+    - This type of testing ignores the internal parts and focus on the 	output is as per requirement or not. Black-box type testing geared to functional requirements of an application.
+
+
+Verification
+	a. Conformance to requirements
+	b. Conformance to features and functions of the software
+	c. Fault Tolerance
+	d. Boundary/Range Values
+
+
+Validation
+	a. Conformance to features and functions of the software
+	b. Fault Tolerance
+Note: Test Environment must be same as target environment
+
+
+
+
+Test Viewpoints- Types of Testing 
+
+Regression Testing
+    - Testing the application as a whole for the modification in any module or functionality. 
+    - Difficult to cover all the system in regression testing so typically automation tools are used for these testing types.
+
+
+Verification
+	a. Check for bug fixes
+	b. Check for degrades or side effects introduced by modifications or bug fixes.
+
+
+Validation
+	N/A
+
+
+Test Viewpoints- Types of Testing 
+
+Load Test
+    - Its a performance testing to check system behavior under load.
+    - Testing an application under heavy loads, such as testing of a web site under a range of loads to determine at what point the system’s response time degrades or fails.
+
+Verification
+	N/A
+
+
+Validation
+	a. Operability and stability in high load
+
+
+
+
+Test Viewpoints- Types of Testing 
+Stress Test
+    - System is stressed beyond its specifications to check how and when it fails. 
+    - Performed under heavy load like putting large number beyond storage capacity, complex database queries, continuous input to system or database load.
+
+
+Verification
+	N/A
+
+
+Validation
+	a. Operability and stability in overload
+
+
+Test Viewpoints- Types of Testing 
+Performance Testing
+    - Term often used interchangeably with ’stress’ and ‘load’ testing. 
+    - To check whether system meets performance requirements. 
+    - Used different performance and load tools to do this.
+
+
+Verification
+	Performance or system.
+	Ex. Alarms per second, Transaction per seconds.
+
+Validation
+	Performance od system.
+	Ex. Alarms per second, Transaction per seconds.
+
+
+
+Test Viewpoints- Types of Testing 
+Usability Testing
+    - User-friendliness check. 
+    - Application flow is tested, Can new user understand the application easily, Proper help documented whenever user is stuck at any 	point. 
+    - Basically system navigation is checked in this testing.
+
+Verification
+	N/A
+
+Validation
+	a. Ease of use
+	b. Correctness of User and Help manuals
+	c. Consistency of User Interfaces
+
+
+Test Viewpoints- Types of Testing 
+
+Install/Uninstall Testing
+    - Tested for full, partial, or upgrade install/uninstall processes on different operating systems under different hardware, software 	environment.
+
+
+Verification
+	a. Testing of Installers
+	b. Correctness of installation manual
+
+Validation
+	a. Testing of installers
+	b. Correctness of installation manual
+	c. Installation time
+	d. Simplicity of installation
+
+
+
+
+Test Viewpoints- Types of Testing 
+Recovery Testing
+    - Testing how well a system recovers from crashes, hardware failures, or other catastrophic problems.
+
+
+Verification
+	a. Fault Tolerance
+	b. Data Integrity
+
+Validation
+	a. Fault Tolerance
+	b. Data Integrity
+
+
+
+Test Viewpoints- Types of Testing 
+
+Security Testing
+    - Can system be penetrated by any hacking way. 
+    - Testing how well the system protects against unauthorized internal or external access. 
+    - Checked if system, database is safe from external attacks.
+
+
+Verification
+	a. Security
+	b. Log-in, Log-out
+	c. Access Level/Rights
+	
+Validation
+	a. Security
+
+
+
+Test Viewpoints- Types of Testing 
+
+Compatibility Testing
+    - Testing how well software performs in a particular hardware/software/operating system/network environment and 	different combinations of above.
+
+
+Verification
+	a. Backward compatibility with older systems (HW, SW, etc)
+	b. Compatibility with different systems (ex. OS, HW, SW)
+	c. Compatibility with different browsers
+
+
+Validation
+	a. Backward compatibility with older systems (HW, SW, etc)
+	b. Compatibility with different systems (ex. OS, HW, SW)
+	c. Compatibility with different browsers
+
+
+
+Test Viewpoints- Types of Testing 
+
+System Testing
+    - Entire system is tested as per the requirements. 
+    - Black-box type testing that is based on overall requirements specifications, covers all combined parts of a system.
+
+
+
+Verification
+	a. Conformance to requirements
+	b. Conformance to features and functionality
+
+Validation
+	a. Conformance to features and functionality
+
+
+
+Test Viewpoints- Types of Testing 
+
+Acceptance Testing
+    - Testing to verify a product meets customer specified requirements. 
+    - A customer usually does this type of testing on a product that is developed externally.
+
+
+Verification
+	N/A
+
+Validation
+	a. Conformance against requirements by the client customers
+
+
+Test Viewpoints- Types of Testing 
+Known Bugs Test
+    - To test a system against known bugs which were found and fixed in previous testing activities performed.
+
+Verification
+	a. Check fir degrades
+	b. Check for sides effects of modification made.
+
+Validation
+	N/A
+
+
+Summary
+
+	Testing can give confidence in the quality of the software if it finds few or no defects.
+	General Testing Principles provide a standard framework to testers for conducting tests and discovering defects.
+	Applied Software Testing Principles provide a standardized format for creating test plans, and act as a guide to effective testing.
+	There are several test viewpoints (test types) to consider for Unit Test, Integration Test, System Test and Acceptance Test  phase.
+	
+
+Test Specs Creation
+
+	Test cases are identified based on test approach
+	Test items are identified for each test case
+	Test procedures, input conditions and expected results for each test item are documented
+	Test Data are created
+Who performs: Developer / Tester
+
+
+Test Specifications
+Test Spec Creation
+
+Contains:
+	Test Cases
+	Test Items
+
+Creating Test Cases
+	 Test Case defines input data, procedures, and output
+	A good test case is one that has high probability of finding yet undiscovered error
+	The degree of detail depends on the organization/project
+	Developing test cases allow us to thoroughly think of the behavior of a program
+	Very helpful in finding problems in the requirements/design
+	Should be prepared early in the development cycle
+
+
+
+Test Specifications
+Test Spec Creation
+
+Using the Test Viewpoint List
+	The UT/IT test viewpoint list can be used to determine the most common UT/IT test cases and test items needed for the specific software to be developed.
+1. All types of project can use the following test viewpoint list since it covers the most common test viewpoint for any type of software project.
+	Common UT/IT Test Viewpoint list (for both UT/IT testing)
+	Integration Test Viewpoint list (additional test viewpoint for Integration Testing only) 
+2. You may additionally use the following test viewpoint lists for your specific project type.
+	Java Test Viewpoint list  (for Java UT/IT)
+	C/C++ Test Viewpoint list  (for C/C++ UT/IT) 
+	Client/Server Application Test Viewpoint list  (for Client/Server applications UT/IT) 
+	Web Application Test Viewpoint list  (for Web Applications UT/IT)
+
+
+
+Test Specifications
+Test Spec Creation
+
+Tips for Writing Test Specifications:
+
+1. Keep it simple but not too simple; make it complex but not too complex.
+	Keep all the steps of Test Cases atomic, precise with correct sequence and with correct mapping to expected results. 
+2. After documenting Test cases, review once as Tester 
+	Think rationally and try to dry run your Test Cases. Evaluate that all the Steps are clearly understandable, and expected results are in harmony with those steps. 
+3. Bound as well as ease the testers 
+	Do not leave test data on testers, give them range of inputs especially where calculations are to be performed or application’s behavior is dependent on inputs. 
+4. Be a Contributor 
+	Never accept the Design Documents as it is. Suggest the drop-down-lists, calendar controls, selection-list, group radio buttons, more meaningful messages, cautions, prompts, improvements related to usability etc.  
+5. Never Forget the End User 
+	During the identification of test scenarios, never overlook those cases which will be mostly used by the user or are business critical even of less frequent use. 
+
+
+
+
+Prepare Test Environment
+
+HW and SW needed to perform the test are prepared
+HW and SW are installed and configured to meet the required test environment
+
+Who performs: Test Coordinator / Tester
+
+
+Test Execution
+
+
+
+Perform Testing
+Test is performed in accordance with the test plan and test specifications
+
+Who performs: Tester / Developer
+
+
+
+Bug Management
+When too many/critical bugs are found
+	Perform the reporting process even if too many bugs or critical problems occur
+	Focus on critical bugs
+	Remember:
+		These situations have significant impact on schedules
+		May indicate deeper problems such as poor testing, bad design, poor coding skills, lack of code/design reviews, etc.
+		Inform managers and provide sufficient evidence
+
+Always determine the root cause of the bug. 
+
+Bug Management Tools used in NSP
+	Eventum
+	Mantis
+	Issue Tracker
+
+Bug Management Tools used by Customer
+	Henkou Kanri
+	Process Creator
+
+
+Tips on how to make a bug report
+	Bug report is a technical document written to describe the symptoms of a bug for the purpose of communicating its impact and circumstances.
+	Key elements of Bug report
+		Describe the symptom of the bug in the bug summary concisely. Be written in passive-voice sentence.
+		Write down the exact test procedure that will trigger the problem. Be written in active-voice sentence.
+		Describe the actual result- what really occurred? and the expected result- what is expected to happen?
+		Include additional information – containing other observations which are useful for easy debugging of developer.
+	Capture screen shots and collect logs as evidences
+
+
+Devil’s Guide to Debugging 1
+
+Find the defect by guessing
+Don’t waste time trying to understand the problem
+Fix the error with the most obvious fix
+
+Debugging Techniques
+
+	Scientific Method of Debugging
+		Stabilize the error
+		Locate the source of the error 
+			Gather the data that produces the defect
+			Analyze the data and form a hypothesis about the defect
+			Determine how to prove or disprove the hypothesis either by testing the program or examining the code
+			Prove or disprove the hypothesis by using the procedure is 3
+		Fix the defect
+		Test the Fix
+		Look for similar errors.
+
+
+Fixing a Defect
+	Understand the problem before fixing it
+	Understand the program, not just the problem
+	Confirm the defect diagnosis
+	Relax
+	Fix the problem, not the symptom
+
+
+
+Integration Planning
+
+1.  Identify Integration Strategy and Schedules
+2.  Identify Criteria for Integration
+3.  Determine the Integration/Build Environment
+4.  Determine Build Procedures
+5.  Identify Evaluation and Testing
+
+    OUTPUT: Integration Plan, WBS with schedules of build
+
+
+
+
+Check work products for buildUnit Testing Activity
+This activity determines if the work products / modules are ready for integration. 
+	This refers to the “Criteria for Integration” which was defined in the Integration Plan 
+	Status of source codes are checked (e.g. 100% finished)
+	Evaluation of the results of Unit Testing phase is performed to determine readiness
+	Execution of Phase Evaluation Activities
+
+
+
+
+Prepare Build EnvironmentIntegration Testing Activities
+
+Prepare Build Environment
+	HW and SW are installed and configured based on integration plan
+
+
+Prepare Integration Test Environment
+	Refer to Test Plan for Test Environment
+
+
+Build and assemble 
+Integration Testing Activity
+
+Integrate all product components 
+	Based on planned items to be integrated
+	Based on build procedures
+	Use of build scripts
+
+Create installers
+	For deployment to testing
+
+
+
+
+Deploy and Test
+Integration Testing Activities
+
+Install integrated product in the test environment
+
+Perform Testing
+	Perform testing to check readiness for a full Integration Testing(IT)
+		Interface check / Sanity Test
+	Perform verification and validation activities based on Integration Plan/Test Plan
+		Refer to Test Execution
+
+
+
+Guides for Integration
+
+1. Define internal and external interfaces early in the design or requirements analysis phase
+	Document the interfaces
+2. Always manage changes to interfaces
+	Most integration problems such as compilation errors are caused by incorrect interfaces used during coding
+	Common bugs found in IT are caused by incorrect interfaces
+3. Consider in your design and implementation schedules the dependencies between modules
+	This prevents problems later during integration
+	Allows for incremental builds to be executed early.
+4. Include in your schedules build activities
+	Most projects only explicitly schedule test execution activities
+	They fail to account the amount of time needed for the build/compile of the software
+	Delays in Test execution are sometimes due to delays or problems in the build activity.
+
+
+Package and Release
+Integration Testing Activities
+
+Evaluate Testing Activity
+	Check status and results of testing activity
+	Evaluate readiness for release
+		Passed IT Completion criteria in Test Plan
+		Filled up Test Result and Release Evaluation checklist
+
+Perform Release Procedures
+Release to client
+
+Always follow your groups baseline procedures
+
+
+
+
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+Integration and Testing Activities WBS
+
+
+
+	
+	NSP Software Development Process			Integration and Testing Activities		:	Output
+	  (based on NSP Toplevel WBS)										:
+														:
+	Planning ______________________________________________Create Integration Plan				:	Integration Plan
+			|______________________________________Create Test Plan					:	Test Plan
+														:	
+	Requirements Analysis(RE)______________________________Developer & Tester Meetings			:	Schedules
+														:
+	----------------------------------------------------------------------------------------------------------------------------------
+														:
+	Basic Design(BD)/ Functional Design(FD)________________Create Test Specifications			:	IT Specs
+	Detailed Design(DD)____________________________________Create Test Specifications			:	Unit Test Specs
+	CD													:	RRC
+	Unit Testing(UT)_______________________________________Prepare Test Environment				:	
+				|______________________________Perform Testing					:	Test Results & Reports
+				|______________________________Submit Bug Reports				:	Phase Eval Report
+				|______________________________Debugging Activities				:	PHS/Bug list
+				|______________________________Evaluate Testing					:		
+				|______________________________Phase Evaluation					:
+				|______________________________Check work products for build			:	Additional Outputs:
+														:	Test Scripts/data Simulators
+	Integration Testing(IT)________________________________Integration/Build Activities			:	
+				|					|___Prepare Build Environment		:	
+				|					|___Build and Assemble			:	SW Product
+				|______________Prepare Test Environment						:
+				|______________Perform Testing		  /|		Monitor and Control	:	Test Result &
+				|______________Submit Bug Reports	 / |________	  Monitor Progress	: 	Reports
+				|______________Debugging Activities	/  |	    |	  Monitor Risk/Issues	:	Test Result
+				|______________Evaluate Testing		\  |________|	  Create Test Report	:	Evaluation
+				|______________Phase Evaluation		 \ |		  Track and Manage Bugs	: 	Phase Eval Report
+				|					  \|					:
+				|										:
+				|______________Package and Release						: 	SW Product Release Notes
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

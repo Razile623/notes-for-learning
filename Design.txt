@@ -1,0 +1,292 @@
+
+
+Software Development Life Cycle
+Design
+
+
+Basic/Function Design Phase
+
+Entry Criteria: Requirements Analysis output documents such as Requirements List and Software Requirement Specification are already baselined.
+
+
+Activities
+	
+	Identify, investigate and evaluate ----> Create Basic/Function Design Document ----> Review and Modify
+	possible solutions									|
+												|
+	Create Integration	------> Review and Modify	--------------------------------|-----------> Approve
+
+
+Description: It presents a solution to the problem. It describes how the system works to meet the requirement specifications. There may be many solutions to the problem and the basic design focuses on the best solution decided. Whatever the solution is, the two basic needs are: it should work and it should do the required job well.
+
+
+Activities:
+
+Check client requirements for any specified technology or framework
+
+Identify possible technologies and framework to use that can help address the requirements
+
+Technologies and framework include the following but not limited to: OS, Programming Language, Software Framework, Communication Protocols, Middleware, Design patterns, Methodology, Techniques, Peripherals / Hardware Components
+
+Create prototypes, if necessary, to test solutions being considered
+
+
+
+Basic / Function Design Phase
+
+Activities: [continued: Identify, investigate and evaluate possible solutions]
+
+Conduct design meetings to come up with possible software architectures
+ 
+Perform make, buy or reuse analysis
+Identify components to be created
+Evaluate if the components will be created, reused from previous projects or buy it off the shelf.
+
+Set criteria to use to evaluate and select solutions
+
+Evaluate each proposed solution based on criteria
+
+Select best solution
+
+Document results of evaluation and selection
+
+Outputs:
+Prototypes
+Minutes of meetings
+Study documents or results of investigations
+Proposed solutions
+Design Evaluation and Selection document
+
+
+Activity:
+Create the basic design based on the selected solution.
+
+
+Activities:
+Review the Basic Design and Function Design documents
+Modify and update the BD and FD documents based on results of review
+Confirm changes made to BD and FD documents
+
+Refer to: NSP08-00000-GDL019_Review Guideline.doc
+
+
+
+Activity:
+Create Integration Test Specification document based on requirements, basic design and function design
+
+Refer to: NSP08-00000-GDL018_Testing Guideline.doc
+
+
+
+Activities:
+Review the Integration Test Specifications document
+Modify and update the ITS based on the results of review
+Confirm changes made to ITS documents
+
+Refer to: NSP08-00000-GDL019_Review Guideline.doc
+
+
+Activity:
+Approve the Basic Design, Function Design, and Integration Test Specification. 
+
+
+Outputs:
+Baselined BDD, FDD, ITS
+RRC’s
+Review Checklists
+Basic/Function Design Phase Evaluation Report
+
+
+
+Design Evaluation and Selection Document Guide
+This document records the alternative solutions considered to address the requirements as well as the evaluation performed and the decisions and rationale behind the solution selected. Its contents are the ff:
+
+Document Sections		Description
+
+Problem Domain			Describe briefly the problem or condition to be addressed. It could be to evaluate technologies to be used, third party libraries or system architecture.
+
+Solution Approaches		Describes the alternative solutions identified and being considered.
+
+Evalutation 			Presents the criteria and the resilt of the evaluation of each solution.
+
+Conclusion			Present the solution selected and the rationale of the decision.
+
+
+
+
+Sample: Design Evaluation and Selection Document
+
+SWD09-06400-TLS002_INMS-NML Rel4.0 Design Evaluation for Manual.doc 
+     – this is a sample for the use of DES for Make, Buy Analysis.
+SWD09-05100-DED111-01 ChassisViewMgr.xls 
+     – this is a sample for the use of DES for a solution to a  design/ implementation problem.
+
+
+Note: Please refer to the above sample DES documents for reference on how it is used by the INMS project.
+
+
+
+Basic Design Document Guide
+	The Basic Design Document should contain all the non optional sections as described below.
+
+Document Sections 			Description
+System overview				Describes th system to be developed. Each of the major components of the system is listed with a description of its major functionalities.
+
+System Environment			Describe the different environment that will be used for this system software. It is usually divided into 2 sections as follows:
+						Target Environment
+						Development Environment
+
+System Architecture			This is the diagram of the system architecture of the system to be developed which includes:
+						Each component of the system.
+						The Interface/Communication/ access/relationship between the different components of the system.
+
+Software Components/ Functional Block	This display the diagram of the Software Compomemts of the System. Functional block can also be illustrated in this section, depending on the software design.
+
+User Interface[Optional]
+Screen Transition Diagram[Optional]
+Operations Sequence Diagram[Optional]
+Limitation List
+
+
+Interface Specification Document Guide
+
+The Interface Specification Document should contain all the non optional sections as described below.  
+     
+Document Sections			Description
+System Interfaces			This describes the external and internal system interfaces of the system.
+						Inteface to other machines or computers
+						Interface to other systems or networks
+
+Interface Definition Language (IDL) [Optional]
+Inter Process Communication (IPC) [Optional]
+System Files [Optional]
+External Data Files[Optional]
+Message List[Optional]
+Error Message List[Optional]
+Log Files [Optional]
+
+
+
+Function Design Document Guide 1/4
+
+The Function Design Document should contain all the non optional sections as described below.  
+
+
+
+Document sections			Description
+
+Module Overview				Module Description - A brief description of the major function of processing of the module
+					Module diagram - a diagram that show this module's, sub-module interface/communication/ file access/ network connection etc.
+
+
+External Interfaces			External Functions - the content of the External Functions are usually written in table format containing the Function identifier, function summary, return value and description
+					Interfaces - contains the declaration argument name/ type/detail, return value name/ type/ detail
+					class - contains the interfaces classes provided for each module.
+
+
+
+Function Design Document Guide 2/4
+
+
+
+Document sections			Description
+
+Data Composition [Optional]
+
+User Interface Image			An illustration or a screenshot of the user interface for a particular module or operation.
+					For GUI:
+						a. A screenshot or illustration of the window to be displayed.
+						b. Contains the window title and layout of the GUI components in the window
+					For Console-based:
+						a. A screenshot of the console may be shown.
+						b. A text-based illustration of the user interface
+
+User Interface Specification 1/2	Each user interface must have an equivalent specification
+					Usually this is presented in tabular form. The following are the list of user interface specifications necessary to be provided.
+					For Console-based:
+						List of valid command line inputs
+						Valid input parameters for each command
+						Valid output displayed for each command operation
+						Description of the operation of the command
+
+
+
+Function Design Document Guide 3/4
+
+Document sections			Description
+
+User interface Specifications 2/2	For GUI (window-based):
+						Window title
+						Maximize and Minimize capabilities
+						Tab order of GUI components
+						Type of GUI components (e.g. Button, List, etc)
+						Valid input values for GUI components that prompts for user input (e.g. Text Field, text area)
+						Valid output values for GUI components that shows and prompt for users for selection (e.g. List, Combobox, Spinners)
+						Label for GUI components
+						Operation of GUI components (e.g. action when button is clicked or item in combobox is selected)
+						Default states of GUI components (e.g. enabled, disabled, selected)
+						State transitions of GUI components (e.g. enabled to disabled when radio button is selected)
+			
+					For GUI (menu-based)
+						List of menus and submenus
+						Description of each menu
+						Labels for each menu
+						Operation of each menu (e.g. when selected display login window)
+						Menu Transitions
+						Component Type of menu (e.g. plain menu item, checkbox menuitem)
+
+
+
+
+
+
+Function Design Document Guide 4/4
+
+Document Sections					Description
+						
+Error, Warnings And Information Messages		List of all the error, warnings and information meddages of the module. Usual contents of the messages are the following:
+								Message Code
+								Message Displayed
+								Solution for Warning or error Messages
+
+Logs [Optional]
+
+
+
+
+Design Activities
+
+Detailed Design 
+Phase
+
+Detailed Design Phase
+Entry Criteria: Basic Design outputs such as Basic / Function Design documents are already baselined.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

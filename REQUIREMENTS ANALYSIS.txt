@@ -1,0 +1,28 @@
+
+WHAT WE NEED IN REQUIREMENTS ANALYSIS;
+
+1. Identify stakeholders: Identify all stakeholders who are involved in the project and understand their needs and                           expectations.
+
+2. Define goals and objectives: Clearly define the goals and objectives of the software system or product.
+
+3. Gather and document requirements: Gather all requirements from the stakeholders, and document them clearly and                                      precisely. Use techniques like interviews, surveys, and brainstorming sessions                                      to gather requirements.
+
+4. Prioritize requirements: Prioritize requirements based on their importance and urgency.
+
+5. Identify constraints: Identify any constraints that could impact the project, such as budget, time, or                          technological constraints.
+
+6. Define use cases: Define the use cases or scenarios that the software system or product should support.
+
+7. Verify and validate requirements: Verify and validate requirements to ensure that they are complete, consistent,                                      and accurate.
+
+8. Create a requirements traceability matrix: Create a requirements traceability matrix to track the progress of                                               each requirement through the development process.
+
+9. Review and get approval: Review the requirements with stakeholders and get their approval before moving to the         	                   next stage of development.
+
+
+In addition to the requirements document, other outputs of requirements analysis may include:
+
+1. Use cases or scenarios that describe how the software product or system will be used
+2. User stories that describe the needs and expectations of end-users
+3. Diagrams, such as flowcharts or entity-relationship diagrams, that help to illustrate the requirements
+4. Requirements traceability matrix that links each requirement to specific design, development, and testing    activities.

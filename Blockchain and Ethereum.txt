@@ -1,0 +1,424 @@
+Blockchains & Ethereum: Introduction
+
+Prerequisite Software and Skills
+	Fundamental understanding of distributed computing
+	Basic knowledge of data structures
+	Familiarity with application developnent will be helpful
+
+Ethereum
+	a decentralized, open-source, public blockchain-based platform fearuring smart contract functionality
+
+Smart Contract
+	A protocol to digitally specify, verify, or enforce the terms of a contracts
+
+Ethereum Virutal Machine
+	enables the execution of the smart contract code.
+
+Blockchain
+	is list of records that are stored across a sequence of blocks that are chained together using cryptography.
+
+Blockchain Characteristics
+	Continously growing
+	Maintained by a network of nodes
+	Mechanism for node to reach consensus
+	Records are immutable (cannot editted or remove)
+	Records are verifiable
+
+Ethereum Characteristics
+	Blockchain-based platform
+	Community of developers
+	Anyone can join network
+	Mechanism to work with untrusted node (proof of work consensus algorithm)
+	EVM to run smart contracts
+	
+Ethereum bytecode is what you obtain when you compile a smart contract, it is the EVM that run the ethereum bytecode.
+
+What is a smart contract?
+	A piece of executable code
+	Defines contractual terms
+	Deployed to a blockchain network
+	Can be self-executing and self-enforcing
+	Invokes transactions
+
+Mining
+	The process of solving a complex mathematical puzzle in order to earn the privilege of adding a block of transactions to the blockchain.
+
+	Mining nodes verify transactions
+	Uses significant amounts of compute resources
+	Miners need to be compensated 
+
+Ether 
+	The crypto-fuel for the Ethereum network
+
+	Cryptocurrency for Ethereum
+	1 Ether = 10^18 Wei = 10^9 Gwei
+	Can be traded like regular(fiat) currencies
+	Transaction originator pay a fee in Ethers to miner
+	Fee proportional to complexity of transaction
+	Complexity measured in terms of gas
+
+Chaining the blocks
+	Each block contains
+		Cryptographic has of previous block
+		Timestamp
+		Transaction Data
+
+	Cryptographic link - any transaction data in that block can't be altered after-the-fact
+				Except by altering all subsequent blocks, which is complicated and requires consensus
+
+	Each transaction is:
+		Verifiable
+		Permanent
+
+Blockchain
+	A distributed ledger that can record transactions in a manner that is immutable and verifiable
+
+	Immutability and verifiability assured due to cryptographic link
+
+What does the nodes in the ethereum network need to do?
+	Each nodes runs the Ethereum Virtual Machine(EVM)
+
+EVM is runtime environment responsible for 
+	Executing contract code
+	Calculationg transaction complexity(gas consumption)
+	Verifying transactions
+
+Nodes that participate in the Ethereum network ?
+	Not only run the Ethereum virtual machine but
+		Associated with Each node has a key pair
+			Private key: Used to sign(encrypt)
+			Public key: used to verify(decrypt)
+		
+		Private key of each node is private
+		Public key of each node is public
+
+Keys actually represent accounts in a blockchain network.
+	Each account is linked with one private and one public key.
+	
+	It is possible for multiple key pairs or accounts associated with a single node.
+
+Accounts in Ethereum are two types
+	Externally Owned Accounts (EOAs)- associated with individuals and nodes
+	Contract accounts - accounts belong to smart contracts
+
+EOA
+	Have an Ether balance
+	Can send transactions
+	Are defined by private key
+	Have no associated code
+	Include an account nonce
+	
+Contract Accounts
+	Have an Ether balance
+	Have associated code
+	Code can be executed
+	Can modify their own state
+
+Records == Transactions (Most common use case)
+
+Transactions
+	interactions between accounts
+	
+Contents of Transactions
+	Recipient Address
+	Sender Address
+	Value of assets sent to recipient
+	Gas price: Incentive for Tx to be processed
+	Gas limit: ceiling on transaction cost
+
+These transaction need to be verified and reflected in the state of all nodes in the network
+
+Initialized transaction request are broadcast to the entire blockchain network
+The initiated transactions are entered into a pool of unverified transactions
+
+To incentivize miners to accepts a transaction, the initiator must pay a fee.
+
+
+GAS
+	Computation work to execute a transaction is measured in gas
+	Each transaction includes a gas price that the initiator is ready to pay
+	Transaction initiator can set a limit on the gas consumption
+	
+	Every node must be running the ethereum virtual machine
+	EVM is a common runtime environment
+	Runs during verification protocol
+	EVM measures gas consumption
+
+Miner's Price
+	TxCost = gasUsed x gasPrice
+	Newly minted Ether
+
+Transaction with higher gas price have a greater chance of being picked up
+
+Transaction Verification
+	Verify sender identity
+	Confirm transaction integrity
+	Check that sender owns assets they are sending over
+	
+
+Ethereum is distributed system
+Nodes need to agree what the contents of the blockchain should be
+
+
+Consensus Algorithms
+	consensus must be reached even through nodes don't trust each other
+	The system must ensure malicious actors are not rewarded
+
+		
+
+Consensus
+	Many transactions may be broadcast simultaneously
+	Many miners might pick these transactions up in differing order
+	Order is determined via a consensus algorithm
+
+
+Type of Consensus Algorithm
+	Proof of work - currently used in ethereum to achieve trusless consensus
+	Proof of stake - Ethereum actively moving to use the algorihtm instead
+
+
+Consensus by Proof of Work
+	The process of generating proof of work is called mining and the participants are called miners
+
+	
+
+TotalCost = gasUsed x gasPrice
+The miner that verifies a transaction collects this prize
+This miner also determines the next block added to the chain
+
+The miners compete to verfiy transactions in order to win transaction prizes
+	Verifying transactions == determining order and state of each node's blockchain
+	Verifying transactions is intentionally made very difficult
+	Miners must incur significant costs to do so 
+	Deters malicious agents seeking to control state of system
+	
+
+What's the work?
+	Work: find the proof of work nonce
+		Each miner has to find a nonce that satisfies an arbitrary, difficult condition can only be achieved by trial-and-error
+
+Find proof of work Nonce
+	_____________________________
+	|-Proof of work nonce      -|
+	|-Previous block hash	   -|
+	|-Current transaction hash -|------> block hash < Target hash
+	|-Other metadata	   -|
+	|___________________________|
+	      Hashing Function
+
+
+Nonce (Number Used Once)
+	A one-off-something meant to use exactly once
+
+
+Transaction Nonce
+	A unique integer ID, incremented by 1, that identifies each transaction initiated from a particular account
+	
+The proof of Work Nonce
+	A random number used while computing the hash of a block to satisfy an arbitrary, difficult condition
+
+
+Distributed Ledger
+	Include hash of each record while computing has of next record
+	Divide ledger into block to simplify
+	Ledger is now a chain of blocks
+	Hence named "Blockchain"
+
+Chain of Blocks
+	
+	1st Block				2nd block				3rd Block
+					Current transaction block		Current transaction hash
+	Current transaction hash --->				-------------->			
+			       |---->	Hash of 1st block	      |------>	Hash of 2nd block
+	1st hash---------------|	2nd Hash ---------------------|		3rd Hash
+
+
+
+Generation of Block Hash
+	____________________________
+	| Current trasaction hash  |
+	| Hash of N-1 block	   |
+	| Other metadata	   |--------> Hash Function -----> Block hash
+	| Proof of work nonce	   |
+	|__________________________|
+
+Target hash > Block hash
+	
+	The new hash should contain the desired number of Zeros in the prefix
+	
+
+Claiming the price
+	Other nodes receive broadcast claiming prize
+	They cease searching for their own
+	Switch to verifying victory of claimant
+	Update their blockchain accordingly
+
+	Ignoring the message has a cost
+	At risk of falling out of sync with peers
+	Will lose chance of claiming future prices
+	Verification of nonce is almost trivial
+	Finding the nonce is very very hard
+
+
+Flaws of proof of work
+	Small numbers of miners controls the consensus
+		Can "corner" the process
+			If the control > 51%, they could emit and verify fraudulent transactions
+	
+	Every miner seeks the nonce	
+	Waste tremendous energy doing so
+	All but one waste all their effort
+	
+
+
+Proof of stake
+	Ethereum will soon switch to this consensus algorithm
+	Meant to be less vulnerable to centralization
+	Details beyond scope of this course
+
+Blockchain capabilities
+	Allows multiple parties to initiate transactions
+	There is no need for a trusted, central authority
+	Includes mechanisms to ensure transaction are verified and secure
+	
+	Transactions are immutable and can be verified independently
+	Each participant in the network has access to the shared ledger
+	
+Smart contracts are tiny computer programs that are stored inside a blockchain
+	
+Notion behind Smart Contracts
+	Kickstarter - a fund-raising platform
+			is a third-party that sits between the product team and supporters
+			Product team goes to kickstarter, creates a project
+				If project gets successfully funded, product team expects kickstarter to give them their money
+
+	Supporters
+	Product team
+
+
+Smart Contracts are programmed using special programming language called SOLIDITY
+
+Solidity programming language
+	is a high-level language whose code compiles to ethereum bytecode and that can be executed on any node running the ethereum virtual machine
+
+Sequence of Execution of Solidity
+	Solidity
+	Ethereum bytecode
+		compile to
+	Ethereum VM
+		executed on
+	
+
+Solidity
+	Comments - single and multi-line commnets supported, syntax is similar to java language
+	Types - like any traditional language, it supports booleans, integers and strings
+	      - No current support for floating point variables 
+	      - Also supports structs and enumerations, as well as byte arrays that can hold data of any type
+	      - Solidity support mappings are in essence key-value stores
+	Events - are how transaction logs are accessed in Solidity
+	Functions - two types constant and transactional
+	Function modifiers - are used to change the behavior of a function
+			   - used to check if a condition is satisfied before a fucntion can be executed
+			   - modifiers are inheritable properties of functions
+			   - each function can belong to multiple modifiers
+
+	Inheritance(OOP) - similar to other programming languages, solidity supports inheritance
+
+
+Bytecode - an instruction executed by a software interpreter
+	- understood by ethereum VM
+Opcode - low-level human readable instructions of the program
+	- have their hexadecimal counterparts
+
+Any operation in blockchain run as a transaction and for every transaction there is an associated cost
+
+Gas- the measure of complexity of transactions
+
+Gas is a unit to measure the computational complexity of an operation
+
+Every operation in EVM requires a pre-defined amount of gas
+
+Transaction that run out of gas are reverted
+Transaction still included in a block, but fee is paid
+
+Solidity bytecode and Opcode
+	Gas price - the amount that the sender is willing to pay per unit of gas in order for transaction to execute
+		  - Once can also pay less for their transaction by varying the gas price
+		  - also determines the final cost or the transaction cost
+		  - is not fixed
+		  - expressed in a unit called Ether
+
+	Gas limit - is the maximum limit of gas the sender is willing to set for a particular transaction
+		  - by default, the minimum gas limit for all transactions is 21000 gas
+		  - Sending Ether from one account to another - 21000 gas
+
+Ether is the name of the currency used within Ethereum
+It is used to pay for computation within the EVM
+
+wei is the subunit for Ether currency
+	1 Ether = 10^18 wei
+
+
+
+	
+
+
+	
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

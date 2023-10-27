@@ -1,0 +1,7 @@
+To run and compile the c code in Visual Studio Code
+
+gcc .\<filename>
+.\a.exe (or the generated .exe of the code)
+
+
+

@@ -1,0 +1,1843 @@
+
+
+Potential Risk in JavaScript and HTML5
+
+Potential for:
+	Bad Data
+	Poor error handling
+	Usability issues
+	Poor runtime performance
+	Security Vulnerabilities
+		Injection attacks
+		Denial of Service
+		Insecure communication
+
+Specific Risk Areas:
+	Shared hosting
+	Web Messaging
+	Click Jacking
+	XSS
+	CORS and CSRF
+	Browser security issues:
+		DOM based XSS
+		Plug-ins
+	Web storage
+	WebSockets and Webworkers
+
+
+
+
+Why Do Risks Exist in JavaScript and HTML5?
+	
+	Program often rely on external data:
+		User, databases, web servives can all provide "bad" data 
+		Poor input validation checking
+	Often a failure to account for and handle errors properly 
+	Failure to implement proper software design:
+		Time and Budget constraints
+	Failure to perform origin checks
+	Local storage not used enough:
+		Not just cookies
+		Many APIs enable this
+	HTML5 increases chance of attack:
+		<canvas>
+		<video>
+	Cross-Origin JavaScript Requests
+
+
+Browser Security for JavaScript and HTML5
+
+Defensive Coding for JavaScript and HTML5
+	Also referred to as "secure" coding
+	Attempts to ensure that software still functions under adverse or unforseen circumstances
+	Assumes mistakes will be made:
+		Tries to prevent then and plan for them
+		Make sure that errors are visible so they can be detected and dealt with 
+
+Strategies for Defesive Programming:
+	Be wary of input
+	Plan for success
+	Stop errors before they happen
+	Develop clean code
+	Test early and test often:
+		Be sure to perform cross browser checks
+	
+	
+	
+	
+Preventive Planning in JavaScript and HTML5
+
+Proper design can prevent many potential problems:
+	Iterative design
+	Use pseudo code before actually writing code
+	Avoid using code prone to vulnerability
+	Utilize test cases where possible 
+	Perform inpections
+	Use proper error handling techniques
+	Include proper input validation
+	Plan for proper secure storage of data
+	
+
+
+Using Escape in HTML5 and JavaScript
+
+Cross-Origin Resource-Sharing Policy
+Event Handlers and Untrusted Data
+Securing Web Storage in JavaScript and HTML5
+Securing Web Messaging in JavaScript and HTML5
+
+
+Introduction to Testing
+	Need software to be dependable
+	Testing lets us assess its robustness
+	Prevent problems before deployment
+	Budget for testing until roll out:
+		Failure to test more costly
+	Write testable code
+	Unit Testing
+
+
+Software Testing Process
+	
+	Test Planning --> Test Analysis --> Test Design --> Construction & Verification --> Testing Cycle --> Final Testing --> Post Presentation
+
+
+
+Cross-Browser Testing for JavaScript and HTML5
+	Testing lets us assess its robustness
+	Prevent problems before deployment
+	Can test manually or use variety of testing tools
+	Need to know how your web application performs in more than one browser
+
+Tools for Cross Browser Testing
+	IDEs:
+		Web Matrix, Visual Studio
+	Open Source Testing Tools:
+		Selenium
+		Apache JMeter
+	Windows Based Tools:
+		Test Studio
+		CSE HTML Validator
+		Ranorex
+
+
+Writing Testable Code for JavaScript and HTML5
+Unit testing for JavaScript and HTML5
+Defensible Methods in JavaScript and HTML5
+Parameters and Return Values in JavaScript and HTML5
+Variable in JavaScript and HTML5
+Using Null Values in JavaScript and HTML5
+If and Switch Statement in JavaScript and HTML5
+
+CONCLUSION:
+
+What are the key reasons of risks being a recurring issue for software applications?
+Certain multimedia aspects of HTML5
+Poor input validation
+Weak software design
+Bad data from databases or web services
+Local storage is not used enough
+
+
+
+ Which of the following are important strategies for parameters and return values in defensive code in JavaScript?
+Parameters are given default values
+Parameters are given meaningful names
+Return values are of correct data type
+
+
+
+Which of the following are important features of methods in defensive code?
+Exception handling
+Input data validation
+Meaningful names
+
+
+
+
+Which of the following actions can help prevent problems at planning stage?
+Using pseudo-code before writing any code
+Using an Iterative design process
+Planning for proper and secure storage of data
+Using proper error-handling techniques
+Having others review your code
+
+
+
+
+Which of the following are benefits of the betterCORSRequest function for Cross-Origin Resource Sharing?
+Can allow for browser differences
+Uses credentials
+
+
+
+Which of the following event-handler strategies are recommended to account for and prevent untrusted data in JavaScript?
+Validate data just before submitting
+Record errors as they occur
+
+
+
+
+Which of the following considerations apply when testing your code for multiple browsers?
+Prevent problems before deployment
+Use automated testing tools wherever possible
+Assess robustness of code
+Confirm that all browsers give the same results
+
+
+
+Which of the following are the features of testable JavaScript or HTML5 code?
+There is obvious logical flow
+Code is well-indented
+Variables have meaningful names
+
+
+
+Which of the following are the features of testing JavaScript or HTML5 code on Visual Studio?
+Right-click an item in the code and select the test option you need
+Online add-ons and extensions are available to increase test functionality
+
+
+
+Which of the following considerations are important when using variables in defensible code?
+Updates to a global variable should be in keeping with data type
+Default values clarify what data type is intended
+
+
+
+What can you do using the null value defensible code?
+Clear global data
+Alert to data not found
+Validate data entry
+
+
+
+ Identify strategies for secure web messaging in JavaScript and HTML5.
+Use an encrypted channel always
+Check the origin always
+Use regular expressions to remove or flag inappropriate data
+
+
+
+What are the key features of defensive coding?
+It is assumed that users will make mistakes
+Code is clean and readable
+
+
+
+What are three main areas of potential risks faced by software applications?
+Browser issues
+Shared hosting
+Security
+
+
+Which of the following alternatives can be used instead of the Escape method to pass special characters in JavaScript?
+encodeURIcomponent
+encodeURI
+
+
+
+When should if...else and switch statements be used in defensive programming?
+To check that input data matches valid options
+To validate input data types
+
+
+ Identify the features of Webstorage with HTML5.
+localStorage allows you to set an item for Persistent Storage
+Use getItem method to call a key and return the value
+Store data as key-value pairs
+sessionStorage object allows you to set an item for Session Storage
+
+____________________________________________________________________________________________________________________
+
+
+Error Handling for JavaSctript and HTML5
+Error:
+	Come from a variety of Sources
+	Source of many bugs
+	Can often cause program to stop
+
+Defensive Error Handling
+	Utilize exceptions
+	Errors code and messages
+	Global objects
+	Handle errors locally
+
+
+Utilizing Exceptions in JavaScript and HTML5
+
+Error Codes and Messages in JavaScript and HTML5
+Global Objects in JavaScript and HTML5
+Handling Errors Locally in JavaScript and HTML5
+Anticipating Errors in JavaScript and HTML5
+
+Exercise:
+
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<TITLE>Clean Testable Methods</TITLE>
+	<script type="text/javascript">
+		function Calculate(cost, rate, weight, qty)
+		{
+			try
+			{
+				var temp=(cost * qty);
+				var tax= temp * rate;
+				document.sampleform.total.value = temp + tax;
+				var shippindate = document.getElementByID("shipdate");
+				// not this can be sent to a web service, written to a database, or stored however 					you wish
+			}
+			catch(err)
+			{
+				alert(err.message);
+			}
+		}
+	
+		function validate()
+		{
+			try
+			{
+				//Remove anything but digits
+				document.sampleform.basecost.value = documement.getElementByID				("basecost").value.toString().replace( /[^0-9]/, '');
+				document.sampleform.weight.value = documement.getElementByID								("weight").value.toString().replace( /[^0-9]/, '');
+
+				var cost = document.sampleform.basecost.value;
+				var rate = document.sampleform.taxrate.value;
+				var weight = document.sampleform.weight.value;
+				var qty = document.getElementByID("qty")value;
+				
+				if (isNaN(cost))
+				{
+					alert("Enter a valid number for inital cost");
+					return;
+				}
+				else if (isNaN(rate))
+				{
+					alert("Enter a valid number for initial cost");
+					return;
+				}
+				else if (isNaN(weight))
+				{
+					alert("Enter a valid number for inital cost");
+					return;
+				}
+			
+				//else process data// including a deeper check for  valid job
+				Calculate(cost,rate,weight,qty);
+
+
+		}
+		catch(err)
+		{
+			alert(err.message);
+		}
+	   	}
+</SCRIPT>
+</HEAD>
+
+
+CONCLUSION:
+
+Which of the following attributes of the global error object are used for defensive programming in JavaScript?
+Description
+Number
+
+
+
+How can exception handling be applied for defensive programming in JavaScript?
+Validation
+Error handling
+
+
+Why is local error handling recommended for defensive programming in JavaScript?
+To prevent problems from cascading
+To help the user identify the source of an error
+
+
+Which of the following strategies is recommended for defensive programming in JavaScript?
+Anticipate data errors
+
+
+Which of the following recommendations for error handling will help you write a defensive code?
+Use global objects to enhance error handling where possible
+Have meaningful error codes and messages
+Utilize try - catch exception handling
+
+
+Which of the following statements allow you to create a meaningful error message?
+alert
+throw
+
+____________________________________________________________________________________________________________________
+
+Defensive Coding for JavaScript and HTML5
+
+
+DOM Issues in JavaScript and HTML5
+	Possible Issues:
+		Cross Site Scripting(XSS)
+		Cross Site Request Forgery (CSRF)
+		DOM Manipulation
+		Cross-Origin resource Sharing
+
+	Potential for:
+		Security vulnerabilities
+			Injection attacks
+			Denial of service
+			Insecure communication
+			Social Jacking
+			Client side trust issues
+
+
+Cross-site Scripting and Cross-site Request Forgery
+	Cross Site Scripting:
+		Also known as XSS or CSS
+		Uses vulnerabulities in web application:
+			Inject malicious code
+			Gather information about a user
+		Threats include:
+			Account hijacking
+			Changing of user settings
+			Cookie theft/poisoning
+			False advertising
+
+	Cross Site Request Forgery
+		Also known as CSRF or "sea surf"
+		Website vulnerability:
+			Attack trick user to perform sensitive actions
+			Target state changing requests:
+				Change personal data	
+				Compromise web application
+
+	
+DOM based XSS
+
+<!DOCTYPE html>
+<HTML>
+<HEAD>
+	<TITLE>DOM Base XSS</TITLE>
+<script type="text/javascript">
+function continue()
+{
+//first validate the txt to prevent DOM based XSS
+//method one removes the script tag
+document.emailform.txttest.value = document.getElementById("txttest").value.toString().find('script').remove();
+
+//second method removes html tags
+document.emailform.txttest.value = document.getElementById("txttest").value.toString().replace(/(<([^>]+)>)/ig,"");
+	
+return confirm("Click OK to mail this information")
+}
+
+</script>
+</head>
+<BODY BGCOLOR = White>
+<FORM NAME =emailform ACTION="mailto:chuckeasttom@yahoo.com" METHOD="post" ENCTYPE="text/plain" onSubmit="return 	continue()">
+	<INPUT TYPE=text id="txtmail" Value - "Put Message Here><BR>
+	<INPUT TYPE=button VALUE="Send Mail">
+
+</FORM>
+</BODY>
+</HTML>
+
+
+
+Social Jacking
+	Tricks users
+	Mixture of click jacking and social engineering
+	A clickjacjed page trick a user into performing undesired actions by clicking on a concealed link
+	One technique loads vulnerable page in in iframe and hides some elements
+
+What to do
+	Disable Scripts
+	Disable Frames
+	Gazelle is a Microsoft Secure Web Browser
+	Browser Security
+
+
+
+Information and Trust Issues in JavaScript HTML5
+	Client Side Issues:
+		Client side inputs checking not enough
+			Information may change by the time it gets to the server
+			Attackers can trap request in proxies
+			Attackers can inject malicious code into querystrings prior to getting to server
+			Browser Cashe can be manipulated to keep sensitve user info
+			Client trust can be exploited to gain sensitive info:
+				Password recovery hints
+			Scripts can be disabled:
+				Potentially overrides input checking
+
+
+Cross-origin Resource Sharing and HTML5
+	Cross-Origin Resource Sharing (CORS):
+		W3C specification
+		Uses XMLHttpRequest object
+		Lets browser communicate across domains:
+			One site can access information from another site if supported
+			Client and server need to work together
+		HTML5 extends supports for CORS
+	
+	CORS Policy:
+		Validate all URLs sent to XMLHttpRequest
+		Access-Control-Allow-Origin
+			Look out for sensitive information that might be of use to attackers
+			Don't use the header for the whole domain, just URLs that need to be accessed
+			Allow only trusted domain headers:
+				Easier to created a list of allowed vs. not
+			Ensure that server sill prevent CSRF from occuring:
+				CORS cannot check for this
+			Use application-level protocols for data protection:
+				CORS request can be spoofed
+
+
+
+HTML5 Media
+
+Web Workers and HTML5
+<!DOCTYPE html>
+<html>
+<head>
+	<Title>HTML5 Web Workers</Title>
+	<script type="text/javascript">
+	/* the following is demo code to show parts of the issues
+	//basically threads
+
+	//declare web server
+	  var worker - new Worker('task.js');
+	//Start web worker
+	  worker.postMessage();
+	//Check worker support
+	if (typeof(Worker) !== "underfined")
+	{
+		// you have support do code here
+	}
+	else
+	{
+		//no web worker support
+	}
+	// get messages
+	workers.onmessage =function(e){
+	alert(e.data);}
+	//stop
+	worker.close();*/
+	
+	//now an example
+	</script>
+</head>
+<body BGCOLOR =White>
+
+<p>Count numbers: <output id="result"></output></p>
+<button onclick="startWorker()">Start Worker</button>
+<button onclick="stopWorker()">Stop Worker</button>
+
+<script type="text/javascript">
+	
+	var w;
+
+	function startWorker()
+	{
+		try
+		{
+			if(typeof(worker) !== "undefined)
+			{
+				if(typeof(w) == "undefined")
+				{
+					w = new Worker("82790counter.js");
+				}	
+				w.onemessage = function(event)
+				{
+					document.getElementById("result").innerHTML = event.data;
+				}
+			}
+			else
+			{
+				document.getElementById("result").innerHTML = "Web worker are not supported";
+			}
+		}
+		catch(err)
+		{
+			stopWorker();
+		}
+	}
+	
+	function stopWorker()
+	{
+		w.terminate();
+		w.undefined;
+	}
+
+
+
+Securing HTML5 Elements
+
+Key ways to Secure HTML5
+
+	X-Frame-Option
+		X-Frame-Options: same-origin
+		X-Frame-Options: DENY
+	Check Origin when receiving web messages
+	Use session and local storage safely
+	Use HTTPS when possible
+	Always validate input
+	Secure Messaging
+	Careful with CORS
+
+
+CONCLUSION:
+
+Which of the following potential vulnerabilities do arise because of the Document Object Model or DOM?
+Injection attacks
+Social jacking
+Denial of service
+
+
+Which of the following are the main considerations for secure use of HTML5 Web Workers?
+Avoid using external files with Web Workers
+Filter return data from Web Workers
+
+
+Which of the following defensive programming steps can you take to mitigate Cross-Origin Resource Sharing or CORS attacks?
+Control access by only allowing certain origins to access the resources
+Take steps to make sure the server is preventing Cross-Site Request Forgery
+Validate all URLs that are sent to an XMLHttpRequest
+If possible, find a different way to communicate the sensitive information
+
+
+How can you help prevent Document Object Model or DOM-based Cross-Site Scripting attacks?
+Strip out HTML tags from entered data
+
+
+Which of the following statements summarize information and trust issues for JavaScript and HTML5 development?
+Cross-site request forgery can change information by the time it gets to the server
+Attackers can trap and alter requests in an intermediate proxy
+
+
+How can you best help prevent Document Object Model or DOM-based social jacking attacks?
+Advise users to click with caution
+
+
+Match the threats with the corresponding web site attack methods.
+Cross-Site Request Forgery
+	Can trigger user into uploading data to the web server
+	Can be executed when there is a state change in the web site
+	Can be used to changing personal data
+
+
+Cross-Site Scripting
+	Can be used to change cookie settings
+	Can be executed where users enter text that is displayed to others
+	Can be used to inject malicious code
+
+
+
+Which of the following are the main precautions should you take to prepare secure HTML5 code?
+Whenever possible, only use authenticated messaging
+Make sure you're storing data safely and securely
+Always check the origin when receiving web messages
+Use Hypertext Transfer Protocol SSL or HTTPS for any communication
+Always check the origin of cross-origin requests
+
+
+____________________________________________________________________________________________________________________
+
+Defensive Coding, APIs, and Security
+
+DOM manipulation
+	The DOM is very useful
+		Window
+		Document
+		History
+	Can be misused
+
+What to do?	
+	HTML5 iframe Sandbox
+	Filter input:
+		Stop XSS particularly
+
+APIs and Third Party Risks
+	Risks:
+		Many run on client side in browser
+		Potential to access client files and information	
+	Communication APIs:
+		Web Messaging
+		Cross Origin Resource Sharing
+		WebSockets	
+		Server-Sent Events
+	Storage APIs:
+		Offline Storage:
+			Cross Site Scripting has potential to steal data
+			Cross Site Scripting has potential to inject malicious info
+		Client-Side Databases:
+			Vulnerable to SQL Injection attacks
+			Cross Site Scripting can be used to steal or corrupt data
+		Geolocation APIs:
+			Permission is required in most applications
+
+
+
+JavaScript and CSS
+Client Trust Issues and JavaScript
+Browser and Plugin Issues
+	Malicious Browser Extensions
+	Some are necessary:
+		Java
+		Flash
+		QuickTime
+	Even legitimate plugins can have bugs
+	Not always updated
+
+What to do
+	Only use plugins if absolutely necessary
+	Check for updates
+	You can also enable "Click to play" support in Chrome
+	
+
+	
+
+Sandbox Implementation Risks
+	
+SVG Exploits and JavaScripts
+
+What is SVG
+	Scalable Vector Graphics
+	Example:
+		<svg width="350" height="150">
+		 <rect x="50" y="20" width="150" height="150" style="fill;blue;stroke:pink;stroke-		 width:5;opacity:0.5">
+		 Sorry, your browser does not support inline SVG.
+		</svg>
+
+	SVG is vulnerable to many things HTML is 
+	XML attacks
+	DOM attacks
+	
+What is the solution?
+	Don't treat SVG like an image, think about it like HTML
+	Consider sandboxing
+
+
+Securing JavaScript Code
+	To protect intellectual property
+	To add security
+	To abfuscate functionality
+
+What to do
+	Use jscrambler http://jscrambler.com/en/
+	Use jxcore http://jxcore.com/jxp/
+	Use server side separate files
+
+
+Introduction to JSON
+JavaScript Object Notation(JSON)
+	Text based open data format
+	Similar to XML
+	Syntax same as code used to create JavaScript objects:
+		Written as name: value pairs
+		Separated by commas
+		Easier to understand for developers
+	Can be used by many different languages:
+		Not just JavaScript
+	
+JSON Advantages:
+	Shorter than XML
+	Faster to read and write
+	Doesn't need a parser like XML
+	Better suited to work with AJAX than XML
+
+JSON example:
+	<script>
+	var team=[
+		  {"firstName":"John", "lastName":"Doe"},
+		  {"firstName":"Gina", "lastName":"Santiago"}
+		];
+	</script>
+
+
+
+JSON Risks
+
+Key Risks with JavaScript Object Notation(JSON)
+	JSON contains data that is sent to and from a server.
+	Cross Site Scripting can expose JSON data
+		JSON Hacking
+
+
+What to do
+	Don't use top level JSON arrays
+	Wrap JSON data
+	Only send sensitive data if authenticated
+	Use POST not GET
+
+
+JSON Input Validation
+JSON Data and Eval
+
+CONCLUSION:
+
+Why is JSON.parse preferable to eval for converting JavaScript Object Notation or JSON text into a JavaScript object?
+eval will compile and execute any JavaScript it finds
+The parser is faster
+
+
+
+Select the key features of JavaScript Object Notation or JSON hacking.
+Data can be better protected if POST is used rather than GET
+Cross-site scripting injects a script in a web site to ultimately grab JSON data
+
+
+
+Select the key features of JavaScript Object Notation or JSON.
+JSON is easy to read and understand
+JSON is fast to read and write
+The syntax for JSON is name: value pairs
+JSON can be read directly into many programming languages
+
+
+Which of the following is the only robust and virtually guaranteed solution to protect Scalable Vector Graphics or SVG code?
+Sandbox any page that uses SVG
+
+
+
+Which of the following methods can be used to protect JavaScript code from an attack?
+Use tools like jxcore to obfuscate your code
+Store code in separate files on the server that are referenced by the source
+
+
+Which type of third-party application program interface or API is most vulnerable to cross-site scripting?
+Storage
+
+
+
+Which of the following attributes would always be recommended for any implementation of iframe sandbox ?
+allow-same-origin
+
+
+What is the most common way of executing Document Object Model or DOM manipulation?
+Cross-site scripting
+
+
+
+What can a developer do to alleviate the threat of malicious browser plugins?
+Only use plugins if absolutely necessary
+Advise users to keep browsers up to date
+
+
+Page manipulation attacks through cascading style sheets or CSS can be prevented in the same way as which other attacks?
+Cross-Site Scripting
+
+____________________________________________________________________________________________________________________
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

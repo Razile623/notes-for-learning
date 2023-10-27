@@ -1,0 +1,867 @@
+Fundamentals of the C Language: Variables & Datatypes
+The C programming language is statically typed, which means that all variables have an associated type specified in the code. The C compiler will rigorously check that values stored in these variables match the declared types. In this respect, C differs from popular languages such as Javascript and Python where the types of variables can be inferred at runtime. You will start this course by learning the basics of variables in C. Learn about the data types that can be stored in those variables and how to use arithmetic operators to perform mathematical operations between literals and on variables. Discover basic arithmetic operators, then progress to unary and assignment operators. Finally, explore relational and logical operators in C and discover how to use relational operators to compare two numbers, and logical operators such as AND, OR, and NOT to combine predicates.
+Table of Contents
+    1. Video: Course Overview (it_cpfcladj_02_enus_01)
+
+    2. Video: Introducing Variables in C (it_cpfcladj_02_enus_02)
+
+    3. Video: Viewing Limits on Shorts, Integers, and Longs in C (it_cpfcladj_02_enus_03)
+
+    4. Video: Exploring Signed and Unsigned Variables in C (it_cpfcladj_02_enus_04)
+
+    5. Video: Understanding Variable Conventions and Syntax in C (it_cpfcladj_02_enus_05)
+
+    6. Video: Understanding Variables and Constants in C (it_cpfcladj_02_enus_06)
+
+    7. Video: Using Arithmetic Operators in C (it_cpfcladj_02_enus_07)
+
+    8. Video: Using Relational Operators in C (it_cpfcladj_02_enus_08)
+
+    9. Video: Performing Equality Checks for Floating-point Types (it_cpfcladj_02_enus_09)
+
+    10. Video: Using the and, or, and not Logical Operators in C (it_cpfcladj_02_enus_10)
+
+    11. Video: Understanding the ++ Operator in C (it_cpfcladj_02_enus_11)
+
+    12. Video: Performing Math Operations with Assignment Operators (it_cpfcladj_02_enus_12)
+
+    13. Video: Course Summary (it_cpfcladj_02_enus_13)
+
+    Course File-based Resources
+
+1. Video: Course Overview (it_cpfcladj_02_enus_01)
+
+discover the key concepts covered in this course
+[Video description begins] Topic title: Course Overview [Video description ends]
+Hi, and welcome to this course getting started with the C language. My name is Vitthal Srinivasan and I will be your instructor for this course. A little bit about myself first. I did my master's from Stanford University and have worked at various companies, including Google and Credit Suisse. I presently work for Loonycorn, a studio for high quality video content.
+
+[Video description begins] Your host for this session is Vitthal Srinivasan. He is a software engineer and big data expert. [Video description ends]
+
+The C programming language is statically typed, which means that all variables have an associated type specified in code. The C compiler will rigorously check that value stored in these variables match the declared types.
+
+In this respect, C differs from popular languages such as JavaScript and Python, where the types of variables can be inferred at runtime. We will start this course by understanding the basics of variables in C. You will also learn about the data types that can be stored in those variables. You will then use arithmetic operators in order to perform mathematical operations between literals and on variables. You will start by using arithmetic operators, then progressing to unary and assignment operators. Finally, you will learn about the use of relational and logical operators in C. You will use relational operators to compare different numbers and logical operators such as AND, OR and NOT in order to combine predicates.
+
+By the time you finish this course, you will be able to understand the basics of variables, datatypes, and operators in C. And we'll be ready to move on to creating arrays, accepting input, and returning output.
+
+2. Video: Introducing Variables in C (it_cpfcladj_02_enus_02)
+
+During this video, you will learn how to introduce variables in C programming.
+introduce variables in C
+[Video description begins] Topic title: Introducing Variables in C. Your host for this session is Vitthal Srinivasan. [Video description ends]
+Let's plunge right into our next demo. On screen now, you can see that we have a file called datatypes.c and within this file on lines 7 and 8, you can see that we've defined our first two variables.
+
+[Video description begins] A Visual Studio Code window is opened. The left EXPLORER pane displays source files under the DATATYPES folder. The C datatypes.c file displays underneath the DATATYPES folder. Line 1 reads: # include<stdlib.h>. Line 2 reads: # include<stdio.h>. Line 4 reads: int main (). Line 5 reads: {. Line 7 reads: int int_variable_1 = 10;. Line 8 reads: int int_variable_2 = 20;. [Video description ends]
+
+These are named int_variable_1 and int_variable_2 respectively. And each of these variable names is preceded by the type of the variable. The type in both of these instances is int, and these two lines of code drive home why C is called a statically typed language. Every variable needs to declare its type in code, and what's more, the type is going to be checked and enforced statically by the compiler that is at compile time rather than at runtime.
+
+Let's keep going with this theme. On screen now, we can see that we have the two variables int_variable_1 and 2, and each of these holds an integer value. Then if we'll scroll down and a little bit to the right, you can see that we print the values of these two variables, making use of printf and some rather peculiar syntax. Within the invocation of printf, we first have a string,
+
+[Video description begins] Line 10 reads: printf("Printing the value of the first integer variable:%d \n",int_variable_1);. Line 11 reads: printf("Printing the value of the second integer variable:%d \n",int_variable_2);. Line 13 reads: return EXIT_SUCCESS;. Line 14 reads:}. [Video description ends]
+
+and that string reads, Printing the value of the first integer variable, and then comes that little symbol %d, that %d is a placeholder for what comes next and that is the variable int_variable_1. The choice of the d after the % symbol here is important as well. int_variable_1 is an integer variable, and that's why we've got to specify a placeholder which is of type int, and that's why we have the %d in there.
+
+Let's quickly compile and run this code in the usual way. We open up a TERMINAL, invoke clang on datatypes.c. The compilation goes through without any problem.
+
+[Video description begins] He enters the following command in the Terminal pane: clang datatypes.c. [Video description ends]
+
+We then run our code using a.out and we can see
+
+[Video description begins] The Terminal pane displays the following command: . /a.out. [Video description ends]
+
+from the two statements which have been printed out that variables 1 and 2 do indeed have the values 10 and 20. So far so good. Let's now work with another kind of variable, that's the float. We can see that we've modified our code and now on lines 7 and 8, we have two different variable declarations. These variable declarations now are of type float rather than of type int.
+
+[Video description begins] He edits the following lines of code. Line 7 now reads: float float_variable_1 = 10.11;. Line 8 now reads: float float_variable_2 = 20.22;. [Video description ends]
+
+And if we look carefully, we can see that on the right-hand side of the equal to sign the values that we specify are numeric and they now have values after the decimal point. That's the meaning of float in contrast to an int, a float can hold values after a decimal point as well.
+
+The basic structure of this program is very similar to the one we had a moment ago, but if we look closely we can see that the printf invocations differ in one significant respect. Now instead of %d,
+
+[Video description begins] Line 10 now reads: printf("Printing the value of the first float variable:%f \n",float_variable_1);. Line 11 now reads: printf("Printing the value of the second float variable:%f \n",float_variable_2);. [Video description ends]
+
+we have %f and its float_variable_1 and float_variable_2, that we are passing in as the placeholder replacements. So again %d is what you use as a placeholder for ints and %f is what you use as a placeholder for floats while invoking printf. Let's try and run this code using clang and then check the output using a.out and once again we can verify that this code does what we expect. If we look closely at the output, we can see that float_variable_1 was defined to be just 10.11 on line 7, when it's printed out in the output down below, there are many additional zeros after the 11.
+
+float_variable_2 had been initialized as 20.22, but when it's printed out, it actually shows up as 20.21 followed by a number of 9s. Both of these little details are worth keeping in mind because while comparing floating point numbers, these little details can lead to field equality comparisons. We'll have more to say on this in demos down the road. Let's now turn our attention from floats to character datatypes. On screen now, we have two variables called char_variable_1 and char_variable_2. Note, how each of these has been preceded by the type, which is char.
+
+[Video description begins] Line 7 now reads: char char_variable_1 = 'C';. Line 8 now reads: char char_variable_2 = 'd';. [Video description ends]
+
+As you might imagine, char is short for character, and a character variable can hold exactly one character. And in C, a single character needs to be enclosed within single quotes. char_variable_1 corresponds to an C. char_variable_2 corresponds to a d.
+
+Now it's worth keeping in mind that these different data types can actually be converted from one type to another. That goes a little further than we want to go right now, but please do keep this in mind. Down below, we have two printf statements as before. This time, the placeholder that we use is neither %d
+
+[Video description begins] Line 10 now reads: printf("Printing the value of the first char variable:%c \n",char_variable_1);. Line 11 now reads: printf("Printing the value of the second char variable:%c \n",char_variable_2);. [Video description ends]
+
+nor %f, instead it's %c. This is the appropriate placeholder while invoking printf with character variables. Let's compile our code using clang and then run it using a.out and doing this confirms that character variables 1 and 2 do indeed contain the C and the d, respectively. Before we go any further, let's take a moment to see what happens if we try and printout these two character variables.
+
+But instead of using the %c placeholder, we instead use the %d placeholder. Remember that %c is the placeholder in printf for character variables. %d is the placeholder for int variables. We've made the changes to our code,
+
+[Video description begins] He edits the following lines of code. Line 10 now reads: printf("Printing the value of the first char variable:%d \n",char_variable_1);. Line 11 now reads: printf("Printing the value of the second char variable:%d \n",char_variable_2);. [Video description ends]
+
+so we still have the variables defined as being of type char on lines 7 and 8. But then in the printf statements on lines 10 and 11, we've changed the placeholders to read %d rather than %c. We invoke clang on our code and we'll run it, and we find somewhat to our surprise that there's no warning or error. And instead the output, this time is in the form of integer values. Instead of the uppercase C and the lowercase d, we see the integer values 67 and 100, respectively.
+
+What's going on here? Well, it turns out that characters are actually represented using numeric values in C, and this is a well-known trick, it's been used for decades, and it's possible to interchangeably go from characters to integer values. Well, to be precise, we'd like to go from character to unsigned integer values, but more on that in a moment. Let's keep going with this duality of character variable types. On screen now, we have the two variables corresponding to A and a. Note again that both of these variables are of type char
+
+[Video description begins] He edits the following lines of code. Line 7 now reads: char char_variable_1 = 'A';. Line 8 now reads: char char_variable_2 = 'a';. [Video description ends]
+
+and we've printed them out on screen using printf with the placeholder %d. In other words, we are printing out these two characters as ints. Let's run this code and see what we get.
+
+The compilation goes through successfully, no warnings or errors. And then when we run this code we can see that the A character corresponds to 65 and the a corresponds to 97. You should be aware that we can also go in the other direction. We've now changed our code so that on lines 7 and 8, we have two variables which are of type int. int_variable_1 which is 65, int_variable_2 which is 97.
+
+[Video description begins] Line 7 reads: int int_variable_1 = 65;. Line 8 reads: int int_variable_2 = 97;. [Video description ends]
+
+And then on lines 10 and 11, we use printf to print these out. But this time, the placeholder is of type %c
+
+[Video description begins] Line 10 now reads: printf("Printing the value of the first char variable:%c \n",int_variable_1);. Line 11 now reads: printf("Printing the value of the second char variable:%c \n",int_variable_2);. [Video description ends]
+
+and the variable passed in is of type int. Will this work? Let's go ahead and find out. We compile our code and no problems there. And then when we run it we see that these constants do indeed appear as the character values uppercase and lowercase a, respectively.
+
+Please note that not all integer values can be represented as human-readable characters. On screen now, we've got two variables. These are integer variables with the values 128 and 130. We attempt to print these out as characters using the %c placeholder.
+
+[Video description begins] Line 7 reads: int int_variable_1 = 128;. Line 8 reads: int int_variable_2 = 130;. [Video description ends]
+
+However, as we can see from the output down below, these characters are not human readable.
+
+[Video description begins] He highlights various outputs in the Terminal pane. [Video description ends]
+
+Binary characters like these were what we had seen when we had tried to examine a.out using the nano text editor. That gets us to the end of this little demo, in which we introduce the concept of variables and their corresponding data types, and we saw how C is a statically typed language. Every variable must declare its type, and that type is checked and enforced at compile time.
+
+3. Video: Viewing Limits on Shorts, Integers, and Longs in C (it_cpfcladj_02_enus_03)
+
+Learn how to apply limits on the sizes of shorts, integers, and longs.
+demonstrate limits on sizes of shorts, integers, and longs
+[Video description begins] Topic title: Viewing Limits on Shorts, Integers, and Longs in C. Your host for this session is Vitthal Srinivasan. [Video description ends]
+Let's pick up right from where we left off at the end of the last demo. There we had seen how C is a statically typed language
+
+[Video description begins] A Visual Studio Code window is opened. The left EXPLORER pane displays two source files under the DATATYPES folder. They are: a.out and C datatypes.c. The datatypes.c file displays the following lines of code. Line 1 reads: # include<stdlib.h>. Line 2 reads: # include<stdio.h>. Line 4 reads: int main (). Line 5 reads: {. Line 7 reads: int int_variable_1 = 128;. Line 8 reads: int int_variable_2 = 130;. Line 10 reads: printf("Printing the value of the first char variable:%c \n",int_variable_1);. Line 11 reads: printf("Printing the value of the second char variable:%c \n",int_variable_2);. Line 13 reads: return EXIT_SUCCESS;. Line 14 reads:}. [Video description ends]
+
+and how variables need to declare their types at compile time. Now C is often used for low level programming, and in that context it's important for us to know exactly how much space is used to represent a variable of a given data type. In this context, you should be aware that the memory size of the basic data types changes based on the operating system. This demo is being written and executed on a 64-bit operating system. However, the sizes and the capacities of variables will vary based on the underlying OS.
+
+Let's go ahead and see how these ideas play out in practice. On screen now, you can see that we have on lines 8 and 9, two variables of type short. short_min, which is initialized to have the value SHRT_MIN
+
+[Video description begins] He edits the lines of codes of the existing program. Line 8 now reads: short short_min = SHRT_MIN;. Line 9 now reads: short short_max = SHRT_MAX;. [Video description ends]
+
+all in uppercase and short_max which has the value SHRT_MAX all in uppercase as well. Now we are familiar with the idea of numeric constants and these are numeric constants that are defined in the limits library. In order to use these, we need to have another # include that's visible on line 3 up above, where we have a # include of limits.h. Then on lines 11, 12 and 13,
+
+[Video description begins] Line 3 reads: # include<limits.h>. [Video description ends]
+
+we printout the values of short_min and short_max, and finally we invoke the sizeof operator on the variable short_max. sizeof is an important operator in C and C++.
+
+[Video description begins] Line 11 now reads: printf("Minimim value of short:%hd \n",short_min);. Line 12 now reads: printf("Maximum value of short:%hd \n",short_max);. Line 13 now reads: printf("Printing the size of short:%lu \n",sizeof(short_max));. [Video description ends]
+
+This is available when we include stdio.h, which you can see up above on line 2. sizeof is a unary compile time operator. We pass in a single operand into sizeof and that gives the number of bytes. That is, the amount of memory allocated to the corresponding variable or data type. Here we have invoked sizeof passing in a variable that's short_max, and we are using that to printout the number of bytes allocated to that variable. Let's also take a close look at the placeholders in our printf invocations. For short_min and short_max on lines 11 and 12 the placeholders that we have are %hd.
+
+%hd is used to denote a short int here the h before the d is a modifier. Remember that %d when used as a modifier in printf is used to refer to int values by adding the h, we are qualifying the int with short. So again %hd is the placeholder for short int variables. Then while using the sizeof operator, the placeholder this is on line 13 is %lu and lu can be thought to represent a long unsigned variable. sizeof returns an unsigned long variable, and that's why the placeholder we go with is %lu. Now that we have a handle on the code, let's go ahead and compile it.
+
+[Video description begins] He enters the following command in the Terminal pane: clang datatypes.c. [Video description ends]
+
+We open up the TERMINAL window, use clang, and then invoke a.out.
+
+[Video description begins] The Terminal pane displays the following command: . /a.out. [Video description ends]
+
+When we do this, we see from the output that the minimum value of the short in this particular system on which we are executing this code is -32768. Likewise, the maximum value that a short can hold on this particular platform is 32767. The size of our short variable is 2 bytes. These numbers all tied together. The size of our short is 2, that's 2 bytes. Remember that 1 byte holds 8 bits. That means 2 bytes is equivalent to 16 bits. That is 16, 0 or 1 values. This in turn means that the total number of unique combinations of bits is 2 raised to 16.
+
+Now 2 raised to 16 is 65536. That's the total number of unique values that we could squeeze into a short. However, there's more. This number of unique values can be used to express both positive and negative values, as well as the value 0. And that's how when we break it down, the minimum value of a short is -32768, the maximum value is 32767 and there are a total of 65536 possible values for a short. And finally, please remember that all of these refer to the particular platform on which this code is being executed, and this happens to be a 64-bit platform. Next, let's see what happens if we perform a similar experiment with int_max and int_min.
+
+We can see that we've defined a couple of variables and assigned in the corresponding limits. We've done that on lines 17 and 18, and then as before, we've made use of printf in order to printout the values of
+
+[Video description begins] Line 17 reads: int int_max = INT_MAX;. Line 18 reads: int int_min = INT_MIN; [Video description ends]
+
+int_min and int_max. The placeholder now is simply the %d. We've dropped the modifier h because we no longer wish to represent short ints, it's just regular ints that we are interested in. Then on line 22, we have our third printf and that printf
+
+[Video description begins] Line 20 reads: printf("Minimim value of int:%d \n",int_min);. Line 21 reads: printf("Maximum value of int:%d \n",int_max);. [Video description ends]
+
+has the placeholder %lu, representing the size of the int_max. Once again, sizeof returns a long unsigned int and we're using it to see how many bytes are allocated to a variable of type int.
+
+[Video description begins] Line 22 reads: printf("Printing the size of int:%lu \n",sizeof(int_max));. [Video description ends]
+
+Let's compile and run our code. In the output, we scroll past the output for the shorts and we get to the bottom where we have the output for the ints and we can see that the minimum and maximum values for the ints are a lot larger in magnitude. Also, the size of the int is 4 bytes. 4 bytes is equivalent to 32 bits, that in turn means that 2 raised to 32 unique combinations can be expressed using these 4 bytes. And those 2 raised to 32 combinations are split across negative and positive values.
+
+There's also the one combination corresponding to 0 and that's how we arrive at the minimum and maximum values of int. Let's plow right on and try a similar experiment with variables of type long. On lines 26 and 27, we have two variables long_min and long_max assigned to be the same constants which again are expressed in uppercase.
+
+[Video description begins] Line 26 reads: long long_min = LONG_MIN;. Line 27 reads: long long_max = LONG_MAX;. [Video description ends]
+
+As before, we print these out using printf, notice this time that we make use of the modifier l in front of the d. So the placeholders for these two long variables are %ld. The l of course stands for long. As before, the placeholder when we invoke the sizeof operator is %lu.
+
+[Video description begins] He adds the following lines of code. Line 29 reads: printf("Minimim value of long:%ld \n",long_min);. Line 30 reads: printf("Maximum value of long:%ld \n",long_max);. [Video description ends]
+
+And when we run this code and examine the output,
+
+[Video description begins] Line 31 reads: printf("Printing the size of long:%lu \n",sizeof(long_max));. [Video description ends]
+
+we can see that the size of the long is 8 bytes. 8 bytes corresponds to 64 bits, that means the 2 raised to 64 possible values can be expressed as a really large number of values, and that's why the minimum and the maximum values
+
+[Video description begins] He highlights various outputs in the Terminal pane. [Video description ends]
+
+of these long variables are so large. That gets us to the end of this demo, in which we understood how the sizeof operator works and how the size of a particular variable expressed in bytes can be used to calculate the maximum and the minimum values which can be contained in a variable of that type. Along the way, we also saw, how limits.h allows us to access constants which hold these maximum and minimum values.
+
+4. Video: Exploring Signed and Unsigned Variables in C (it_cpfcladj_02_enus_04)
+
+During this video, you will learn how to differentiate between signed and unsigned variables.
+differentiate between signed and unsigned variables
+[Video description begins] Topic title: Exploring Signed and Unsigned Variables in C. Your host for this session is Vitthal Srinivasan. [Video description ends]
+In the previous demo, we created variables of type long, short, int, and float and used the sizeof operator to see how many bytes each of these variables is allocated. If we look closely at the Minimum value of the long, which is currently visible towards the bottom of the screen, we can see that it's a very large and negative value. It's negative because it's got a negative sign in front of it and that negative sign tells us that this is a signed value. This is an important topic in C data types. By default, all data types in C are signed, which means that they can be used in order to represent both negative and positive values. In a moment, we'll see how we can explicitly define a variable as being unsigned, but before that, let's make use of the signed keyword.
+
+Let's scroll back to the top of our program and make a very small tweak to it. Before we make that tweak, please keep your eyes focused on line 8, there we have a variable short short_min.
+
+[Video description begins] The file labeled datatypes.c appears underneath Visual Studio Code window . It contains various lines of codes in the editor pane. He highlights line 8: short short_ min = SHRT_MIN;. [Video description ends]
+
+Now, let's go ahead and make our tweak, so we paste in a modified version of the code and now if we look closely at line 8, we see that we still have a variable called short_min and it's still of type short. But there's one additional word before the type
+
+[Video description begins] The codes are modified with additional commands. Line 8 now reads: signed short short_ min = SHRT_MIN;. [Video description ends]
+
+and that additional word is signed. In this version of the code that you now see on screen, we've explicitly made each of the variables in the code signed.
+
+[Video description begins] He highlights the next set of lines. Line 8 reads: signed short short_ min = SHRT_MIN;. Line 9 reads: signed short short_ max = SHRT_MAX;. Line 17 reads: signed int int_ max =INT_MAX;. Line 18 reads: signed int int_ min =INT_MIN;. Line 26 reads: signed long long _ min = LONG_MIN;. Line 27 reads: signed long long_ max = LONG_MAX;. [Video description ends]
+
+We're going to run this code, and when we do so, we will see that the output does not change at all.
+
+All of the outputs remain the same as they were in the previous demo. And that drives home the point that by default all variables and data types in C are signed. You can see that we've added in the signed qualifier on lines 17 and 18, those apply to the INT_MIN and INT_MAX variables. And then down below, on lines 26 and 27, we now have signed long_min and signed long_max. Let's run this code and satisfy ourselves that the outputs remain the same.
+
+[Video description begins] The output pane appears at the bottom of the editor pane. It contains the following sections: PROBLEMS, OUTPUT, DEBUG CONSOLE, and TERMINAL. He highlights various outputs in the TERMINAL section. [Video description ends]
+
+When we do, we can see from the output down below, that the Max and Min values representable in short_min remain the same as they were in the previous demo. Negative 32768 is the Minimum value of short, positive 32767 is the Maximum value of short and the size of the short type is 2.
+
+In similar fashion, we can scroll down through the output and verify that in each instance, the output has remained the same. Adding in the keyword signed as a qualifier for each of our variables did not change any of the output. Now, let's modify the code yet again. And in the version of code that you now see on screen, we've changed our code, so that we have fewer variables, just one of each type, but each of those variables is qualified by or preceded by the keyword unsigned. For instance, on line 8, we now have an unsigned short variable called ushort_max. On line 15, we have an unsigned int, on line 22, we have an unsigned long.
+
+[Video description begins] Line 8 reads: unsigned short ushort_max =USHRT_MAX;. [Video description ends]
+
+[Video description begins] Line 15 reads: unsigned int uint_max =UINT_MAX;. Line 22 reads: unsigned long ulong_max =ULONG_MAX;. [Video description ends]
+
+And in each of these cases, we assign the corresponding maximum value from limits.h.
+
+[Video description begins] Line 3 reads: # include <limits.h>. [Video description ends]
+
+However, now the maximum values which we assign all are preceded by an uppercase U.
+
+For instance, on line 8, on the right-hand side of the equal to sign, we now have USHRT_MAX, while working with the signed versions, we just had SHRT_MAX. The additional uppercase U, else see that we are interested in the unsigned short_max rather than simply the signed short_max. Then down below, we print out the maximum value as well as the output of the size of operator.
+
+[Video description begins] Line 10 reads: printf("Maximum value of unsigned short:%hu \n", ushort_max);. Line 11 reads: printf("Printing the size of unsigned short:%lu \n",sizeof( ushort_max));. Line 13 reads: printf("\n-----------------------------\n\n");. Line 17 reads: printf("Maximum value of unsigned int:%u \n", uint_max);. Line 18 reads: printf("Printing the size of int:%lu \n", sizeof(uint_max));. Line 20 reads: printf("\n-----------------------------\n\n");. Line 24 reads: printf("Maximum value of unsigned long:%lu \n", ulong_max);. Line 25 reads: printf("Printing the size of unsigned long:%lu \n", sizeof( ulong_max));. Line 27 reads: printf("\n-----------------------------\n\n");. [Video description ends]
+
+If we look closely at the placeholder in the printf, we now see that we have the qualifier u appear in every placeholder. For instance, on line 10, where we print out the Maximum value of the unsigned short, the placeholder is %hu, h is used for the short and u indicates that it's an unsigned short.
+
+On the line right below it, the placeholder is %lu, l indicates that it's a long and u again indicates that it's an unsigned long. The reason we use %lu with sizeof, is because the sizeof operator which is a compile time unary operator, has a return type of unsigned long. Let's run this code and examine the output. In the TERMINAL window down below, we see that the Maximum value of the unsigned short is now 65535. The size of the unsigned short is unchanged, that's still 2, but the maximum value has changed. Previously, it was positive 32767, whereas it's now 65535. What accounts for this increase? Well, remember that a short, whether it's an unsigned short or a signed short, holds 2 bytes on this particular platform. 2 bytes is equivalent to 16 bits, and that in turn means that 2 raised to 16 unique values can be represented using this variable.
+
+2 raised to 16 is 65536, while working with unsigned shorts, these 65536 values were split across positive and negative values. And that's why the largest negative value was negative 32768 and the largest positive value was positive 32767. Now, however, we've specified that this is an unsigned variable, which in turn means that the first bit does not need to be used to represent the sign. That in turn means that all 65536 combinations are possible. These start from 0 and that's why the maximum unsigned short value is 65535, which is what you see on screen now. If you look at the lines of output below that, we can see that a similar phenomenon has occurred with the int. The size of the unsigned int variable continues to be 4.
+
+We see that from the output, that output tells us that 4 bytes are contained within an unsigned int. However, the Maximum value of the unsigned int is now a lot larger, and that's because negative values need no longer be represented using this variable. If we scroll down, we'll see that something similar has occurred with the long_max as well. This little example so far has taught us something important. By default, numeric variables in C are signed. We can, however, explicitly make them unsigned by preceding their types with the keyword unsigned, and when we do this, we effectively increase the largest positive value that can be stored in a variable of that type. Of course, in return for this increase in capacity, we are decreasing or constraining the capacity of the variable, so that no negative values can be represented by these data variables. For completeness, let's take a quick moment to work with floating-point variables.
+
+On screen now, you can see that we have two variables, float_max and double_max. Once again, on the right-hand side of the equal to sign, on lines 8 and 15, we have constants FLT_MAX and DBL_MAX respectively.
+
+[Video description begins] Line 8 reads: float float_max = FLT_MAX;. Line 15 reads: double double_max = DBL_MAX;. [Video description ends]
+
+These constants are not taken from limits.h which we were using so far, rather they come from float.h, that's a header file which we've included up above on line 3. This gives us a clue that the floating-point data types work differently
+
+[Video description begins] Line 3 now reads: # include <float.h>. [Video description ends]
+
+than the integral data types, such as long, short, and int. The floating-point data types represent numbers according to a specific IEEE convention, and one implication of this is that there are no unsigned types when it comes to floats or doubles. This in turn means that both positive and negative values up to the maximum magnitude can be represented using the floating-point data types.
+
+Let's run this code and examine the output. As usual, we invoke clang and then run a.out and we can see that the Maximum representable values of floats and doubles are both really very large indeed. These large values aren't all that interesting to us. What is interesting to us is the fact that C does not have unsigned floats or unsigned doubles. If you're working with a variable of type float or of type double, then you can specify positive or negative values up to these magnitudes which you now see on screen. Let's round out this demo by performing similar operations on variables of type char. On screen now, we have char_min and char_max. We've gone back to hash including limits.h on line 3,
+
+[Video description begins] Line 8 reads: char char _min = SCHAR_MIN;. Line 9 reads: char char _max = SCHAR_MAX;. [Video description ends]
+
+so we no longer have float.h in there.
+
+[Video description begins] Line 3 now reads: # include <limits.h>. [Video description ends]
+
+And then we make use of char_min, char_max, and sizeof to print out these values using printf.
+
+[Video description begins] Line 11 reads: printf("Minimim value of signed char:%d \n",char _min);. Line 12 reads: printf("Maximum value of signed char:%d \n",char_max);. Line 13 reads: printf("Printing the size of char:%lu \n",sizeof(char_max));. [Video description ends]
+
+The placeholders remain %d for char_min and char_max and %lu for the output from sizeof. When we run this code, we can see that the size of a char is 1. 1 byte is equivalent to 8-bits, 8-bits is equivalent to 256 unique values, and those are ranged between negative 128 and positive 127. This tells us that the char variable by default is a signed char. If we look closely at the right-hand side of the equal to signs on lines 8 and 9, we can see that in each case we have an uppercase S in front of CHAR_MIN and CHAR_MAX.
+
+So, a char behaves very much like a short or an int or a long. That in turn means that we can also specify a char to be an unsigned char, that's what we've now done on screen, where we have the modifier unsigned in front of our variable names. Notice also how the minimum value is 0
+
+[Video description begins] Line 8 reads: unsigned char char _min = 0 ;. Line 9 reads: unsigned char char _max = UCHAR_MAX;. [Video description ends]
+
+and the maximum value is the constant UCHAR_MAX. Note the uppercase U instead of the uppercase S before CHAR_MAX. And when we now rerun the code, the output from sizeof remains the same, that's 1. However, now the Minimum value has changed, it's 0 and the Maximum value is now 255.
+
+5. Video: Understanding Variable Conventions and Syntax in C (it_cpfcladj_02_enus_05)
+
+In this video, you will learn about variable conventions and syntax.
+demonstrate variable conventions and syntax
+[Video description begins] Topic title: Understanding Variable Conventions and Syntax in C. Your host for this session is Vitthal Srinivasan. [Video description ends]
+In this demo, we are going to focus on three important concepts in C, variables, literals, and constants. We have a file of that name, variables_literals_constants.c and we begin by pasting in a simple little program. We can see here that we have two variables on lines 7 and 8. These are both of type int, they're called income and expenses. Before we go any further, let's hone in on lines 7 and 8,
+
+[Video description begins] The editor pane labeled variables_literals_consts.c appears in Visual Studio Code window . It contains various lines of codes. Line 7 reads: int income = 100000;. Line 8 reads: int expenses = 67000;. [Video description ends]
+
+there, income and expenses are variables because as their names would suggest, their values vary. We can change the values that are stored in these variables. On the right-hand side of the equal to sign, in each case, we have a value which does not vary. On line 7, that value is 100000 and on line 8, that value is 67000.
+
+These two values on the right-hand side of the equal to sign, are literals. Now, let's say that we had qualified these two variable names with the keyword const, that would have converted these from variables into constants. We'll get to constants really soon, but a sneak peak of what they are, is simply variables which can be assigned once and then never again. With this context in mind, let's quickly go ahead and run this program to make sure that everything is in place. The compilation as well as the execution go through successfully. We invoke clang and we then call a.out, the Initial income is indeed 100000 and the Initial expenses are 67000.
+
+[Video description begins] The output pane appears at the bottom of the editor pane. It contains the following sections: PROBLEMS, OUTPUT, DEBUG CONSOLE, and TERMINAL. He highlights various outputs in the TERMINAL section. [Video description ends]
+
+So far so good. Next, let's add on to our program, a few more lines of code where we change the values of those variables, income, and expenses.
+
+[Video description begins] He highlights the next set of codes. Line 15 reads: printf("********Updating variables\n\n");. Line 17 reads: income = 110000;. Line 18 reads: expenses = 75000;. Line 20 reads: printf("Updated income:%d \n",income);. Line 21 reads: printf("Updated expenses:%d \n",expenses);. Line 23 reads: printf("\n-----------------------------\n\n");. [Video description ends]
+
+We can now see that initially the values are a 100000 and 67000, but then down below on lines 17 and 18, we assign new values into those same variables. If we look closely at lines 17 and 18, you can see that we no longer specify a type before them. And that's because what we have on lines 17 and 18 are merely reassignments of existing variables, while what we have on lines 7 and 8 up above, are declarations and initializations of new variables. This distinction is an important one. Up top in the first two lines of our program, we are declaring two new variables and that's why we have to specify their type which is int. We are also initializing those variables with their initial values.
+
+Those initial values are the literals 100000 and 67000. Down below, on lines 17 and 18, we are reusing these existing variables. We are simply swapping in two new literals in place of the old literals that we had in there previously. And the fact that this is possible, is why these two variables are called variables because their values vary. Let's compile and execute this code to make sure that nothing goes wrong, and indeed everything works as expected. The compilation has no warnings and no errors,
+
+[Video description begins] He highlights various outputs in the TERMINAL section. [Video description ends]
+
+and we can see that the initial and updated values of the variables are exactly as we expect. By this point, we have a good grasp over what a variable is, as its name would suggest, it's something that can change in value. In other words, a variable is akin to a container, and you can place different values in that container.
+
+Please note that this is a really basic introduction. It turns out that there is a lot of theory behind variables. There are variables of different storage classes, such as automatic, register, static, extern, and so on. There are also global and local variables. We'll get to all of those topics in turn. However, for now, let's just keep going with the basics. Let's explore a few rules of naming variables. On screen now, you can see that we've named our variables using uppercase characters and when we compile and run our code,
+
+[Video description begins] He highlights the following codes. Line 7 reads: int My_Income1 = 100000;. Line 8 reads: int My_Expenses1 = 67000;. [Video description ends]
+
+you can see that everything works just fine. This tells us that uppercase characters and the underscore character are perfectly fine when it comes to variable names.
+
+Next, let's try again with an underscore character at the very start of the variable name. We can now see on lines 7 and 8 that our variable names begin with an underscore. Will this work?
+
+[Video description begins] Line 7 now reads: int_Income1 = 100000;. Line 8 now reads: int_Expenses1 = 67000;. [Video description ends]
+
+Well, let's find out. We call clang, no errors or warnings, and then we invoke a.out and once again everything works as expected. This tells us that it's perfectly acceptable to start a variable name with an underscore character. Let's try a few more variations. On screen now, we've attempted to begin our variable names with numbers.
+
+[Video description begins] Line 7 reads: int 123_Income1 = 100000;. Line 8 reads: int 123_Expenses1 = 67000;. [Video description ends]
+
+And it turns out from the red underlining that this is not OK. If we invoke clang on this code, we can see that the C compiler has complained error expected identifier or '('.
+
+This tells us that in C, it's not OK to begin your variable names with numbers, underscores are fine, alphabets are fine, but numbers are not. In similar fashion, the dash or hyphen or minus character is not allowed either. Here you can see that on line 7 and 8,
+
+[Video description begins] Line 7 reads: int Income-1 = 100000;. Line 8 reads: int Expenses-1 = 67000;. [Video description ends]
+
+we've attempted to use a dash in a variable name, but that is not OK. When we invoke clang, we get an error stating expected ';' at end of declaration. What happened here was that the C compiler interpreted that dash or hyphen as a minus sign and it was confused to find that minus sign on the left-hand side of the equal to sign. So again, hyphens are not allowed in variable names. That does it for variable names, let's turn our attention now to literals. On screen now, we have two innocuously named variables, income and expenses.
+
+[Video description begins] Line 7 reads: long income = 100000l;. Line 8 reads: long expenses = 67000L;. [Video description ends]
+
+So, there's nothing controversial about the variable names here.
+
+On the right-hand side of the equal to sign on lines 7 and 8, we have the literals 100000 and 67000. But there's also something new now, we have the character l appearing after the literal, and that l is a way of specifying that this is a long value that we'd like to store in this variable. Please note that the case does not matter, so both lowercase and uppercase L are equivalent to specifying a literal of type long. Let's try and compile this code using clang, no warnings or errors, and then when we invoke a.out, once again, everything works as expected. This was a simple use of character, while specifying the literal in order to ensure that it was of type long.
+
+Next, let's see what happens if we specify a different set of characters, ul instead of simply l.
+
+[Video description begins] Line 7 reads: long income = 100000ul;. Line 8 reads: long expenses = 67000UL;. [Video description ends]
+
+This will also compile and work just fine. There are a couple of little points worth keeping in mind here though. The first is that the order does not matter, so we could have specified lu instead of ul, just as we could have specified uppercase UL and lower case ul. Another point worth keeping in mind is that we've not modified the type of the variable that continues to be signed long, because remember by default all of these numeric types in C are signed. However, we have only modified the literal, which is on the right- hand side of the equal to sign. This is an important distinction, the ul here applies only to the literal, which is on the right of the equal to sign, not to the variable type which is on the left of the equal to sign.
+
+There, we have not specified unsigned and so by default, these variables are going to be of type signed long. Let's make sure that this code compiles and runs, we'll do this as usual via a TERMINAL. We invoke clang, no warnings or errors, and then we invoke a.out and we can see that income and expenses, both are as we expect them to be. It's worth keeping in mind, however, that there is a potential mismatch between the values on the left and the right of the equal to sign. On the right of the equal to sign, we have a literal, which is an unsigned long and it is possible that this unsigned long might be simply too large to be stored in a signed long variable. So, while making use of these type specifiers, such as ul, we've got to keep in mind the sizes and the limitations on the min and max values for signed and unsigned variables.
+
+6. Video: Understanding Variables and Constants in C (it_cpfcladj_02_enus_06)
+
+Learn how to compare variables and constants.
+compate variables and constants
+[Video description begins] Topic title: Understanding Variables and Constants in C. Your host for this session is Vitthal Srinivasan. [Video description ends]
+Let's pick up right from where we left off at the end of the last demo. There we had made use of the characters ul, that's in both uppercase and lowercase, in order to specify that the literals on the right-hand side of the equal to sign were unsigned longs. Please note that we had saved these in variables of type long. This in turn opened the door to the possibility of an overflow. It turns out that there are many little problems and fine points associated with variables, we will not discuss these in detail for now. Let's move on and see how we can specify literals in octal and hexadecimal
+
+[Video description begins] The editor pane labeled variables_literals_consts.c appears in Visual Studio Code window. The output pane appears at the bottom of the editor pane. It contains the following sections: PROBLEMS, OUTPUT, DEBUG CONSOLE, and TERMINAL. The editor pane contains various lines of codes. Line 1 reads: # include <stdlib.h>. Line 2 reads: # include <stdio.h>. Line 4 reads: int main(). Line 5 reads: {. Line 7 reads: long income = 100000ul;. Line 8 reads: long expenses = 67000UL;. Line 10 reads: printf("Initial income:%ld \n",income);. Line 11 reads: printf("Initial expenses:%ld \n",expenses);. Line 13 reads: printf("\n-----------------------------\n\n");. Line 15 reads: return EXIT_SUCCESS;. Line 16 reads:}. [Video description ends]
+
+based notation. By default, all of the numbers that we have been working with so far have been decimal numbers. However, it's easy enough to specify a literal in octal or hexadecimal form. On screen now, we've specified a literal with a leading 0.
+
+This is the leading 0 on the right-hand side of the equal to sign on line 7.
+
+[Video description begins] Line 7 reads now: long income = 0100000;. [Video description ends]
+
+And that leading 0 has the surprising effect of expressing that literal in octal form. Octal numbers use 8 as the base for their notation, so that only the digits between 0 and 7 are allowed. It might seem like the literal on line 7 corresponds to $100000, but that's not the case. This octal notation is particularly confusing because it's easy to mistake such a number for a decimal number with a leading 0. On line 8, we have yet another variable, that's expenses. This one has the literal, which is on the right-hand side of the equal to sign preceded by 0x, and that 0x is a way of telling C
+
+[Video description begins] Line 8 reads: long expenses = 0x67000;. [Video description ends]
+
+that this is expressed in hexadecimal form. Hexadecimal numbers use 16 as the base of their number system, and once again, this means that expenses is not $67000.
+
+The easiest way to see what decimal numbers these octal and hexadecimal numbers correspond to, is by running this code. And when we do so, we can see that the octal number 01 followed by five 0s corresponds to the decimal number 32768. And the hexadecimal number 67 followed by three 0s corresponds to the decimal number 421888. This little example shows how confusing octal and hexadecimal literals can be. This is especially true for octal literals because they are merely delimited by a leading 0. It's generally a good idea to have comments in your code
+
+[Video description begins] He highlights various outputs in the TERMINAL section. [Video description ends]
+
+making it absolutely clear if you are making use of one of these base number systems. Next, let's turn our attention from the integral numeric types to the floating-point types. On screen now, we've defined three float variables.
+
+Each of these has various digits after the decimal point.
+
+[Video description begins] He highlights the next set of codes. Line 7 reads: float income = 97456.340000;. Line 8 reads: float expenses = 45678.230000;. Line 9 reads: float bank_balance = -100.7;. [Video description ends]
+
+If we now go ahead and print these out, we can see from the output down below that the exact values displayed in the output are not exactly the same as the literal values which we specified on the right-hand side of the equal to sign. For instance, we've defined income to hold the literal 97456.34 followed by four 0s. However, in the output down below, income is 97456.343750. In similar fashion, the values of expenses and bank balance are also ever so slightly different from the literals which we specified on lines 8 and 9 respectively. This is an important point, while making use of floating-point literals, you should be aware that precision issues like these can arise. The exact reason behind this mismatch is a little hard to explain, it has to do with precision in float data types.
+
+But suffice it to say that you should never be testing two floating-point values for perfect equality using the double equals operator. You've always got to make allowance for the possibility that there is a mismatch like the one you now see on screen. Next, let's see how C allows us to define numbers using scientific notation. On screen now, we have a snippet of code in which we've changed the manner in which we've defined income, expenses, and bank_balance. We now have the scientific or the exponent notation, the e,
+
+[Video description begins] He highlights the next set of codes. Line 7 reads: float income = 1.24e5;. Line 8 reads: float expenses = 4.5e4;. Line 9 reads: float bank_balance = -10.5E -2;. [Video description ends]
+
+which could be either uppercase or lowercase, stands for the powers of n, that we multiply the preceding number by. So, for example, on line 7, the literal we specify is 1.24e5. This means that income is equal to 1.24 multiplied by n, raised to five. Or in other words, our income here is $124000. On line 8, we have 4.5e4, this is equivalent to 4.5 multiplied by n, raised to 4, which is $45000.
+
+And finally, the exponent on line 9 is a negative number. You can think of negative exponents as dividing by a power of 10. Here, for instance, we have -10.5E-2. This is equivalent to -10.5 divided by 10 raised to 2, in other words, -0.105. We print out all of these values using printf and then we invoke
+
+[Video description begins] Line 11 reads: printf("Initial income:%f \n",income);. Line 12 reads: printf("Initial expenses:%f \n",expenses);. Line 13 reads: printf("Initial bank balance :%f \n",bank_balance);. [Video description ends]
+
+clang on our C program and use a.out to examine the output. As expected, we can see that the first number, which is 1.24e5 is indeed equivalent to 1.24 multiplied by 10, raised to five, and that's why it's equal to one $124000. Similarly, 4.5e4 is equal to $45000. And -10.5E-2, is the same as -0.105. This little example showed how e can be used with the floating-point types to specify exponents that is scientific notation.
+
+Next, let's quickly turn our attention to character literals. On screen now, we have 3 character variables, letter, escape_seq_char, and ascii_char. The first of these has the literal Q enclosed within single quotes.
+
+[Video description begins] Line 7 now reads: char letter = 'Q';. Line 8 now reads: char escape_seq_char = '\n';. Line 9 reads: char ascii_char = 66;. [Video description ends]
+
+Any character literal needs to be enclosed in single quotes, if you use double quotes, it's going to be treated as a string literal, and strings are very different, a much more complex data type in C. Let's turn to the next character variable. This is also a string literal enclosed within single quotes, but it has the escape character, that's the backslash.
+
+\n is a very common escape character, and this is used to represent the special character for a new line. Other common such characters include \t, that's for a tab and \r for a carriage return. Our third variable, called ascii_char, has a literal which is encoded in the form of an integer.
+
+Remember that a char is pretty much equivalent to a 1 byte signed integer value. Here we have three different types of character literals. Two of these make use of the single quotes, one of them simply uses the numeric form. Now, we go ahead and print out these three characters using printf. Notice how in each of these printf invocations, on lines 11, 12, and 13,
+
+[Video description begins] Line 11 reads: printf("Letter:%c \n",letter);. Line 12 reads: printf("Escape sequence character:%c \n",escape_seq_char);. Line 13 reads: printf("ASCIIcharacter:%c \n",ascii_char);. [Video description ends]
+
+we make use of the same placeholder, which is %C. And when we run this code, we see firstly that the compilation goes through smoothly, so the code is correct, and then the output reveals something quite interesting.
+
+The Letter is the uppercase Q, no surprise there. 66 is the numeric value corresponding to the ASCII character uppercase B. And the most surprising of these is the newline character, you can see that there's no output except for that one blank line. And this is why you've used the newline character in the form of the \n all the time while using printf. Let's round out this demo by introducing the const keyword and seeing what constants are. First, you can see on screen now, that we have a simple snippet of code where on lines 7 and 8, we declare two variables called income and expenses, both of these are of type float.
+
+[Video description begins] Line 7 now reads: float income = 101000.23;. Line 8 reads: float expenses = 67500.76;. [Video description ends]
+
+Those are the types, and both are assigned to hold floating-point literal values. Then on lines 17 and 18, we reinitialize new values into these variables.
+
+Again, please remember that what we see on lines 17 and 18 are reinitializations of existing variables.
+
+[Video description begins] Line 17 now reads: income = 110000;. Line 18 reads: expenses = 75000;. [Video description ends]
+
+And we know that because on lines 17 and 18, we do not specify any types. So far so good. We know from code that we've previously written that this program will work correctly. However, if we now modify ever so slightly, the code on lines 7 and 8, by adding in the keyword const before the variable type,
+
+[Video description begins] Line 7 now reads: const float income = 101000.23;. Line 8 reads: const float expenses = 67500.76;. [Video description ends]
+
+we find that this throws a compiler error. In fact, there are two compiler errors, these are indicated by the bits of red underlining on lines 17 and 18. And the problem here is that we are attempting to reinitialize values into a const.
+
+If you hover over this, we can see that the error message reads, expression must be a modifiable value. Why was this variable not a modifiable value? Well, because we had preceded the variable with the keyword const. We can confirm that by attempting to compile our code using clang. And there the error message is pretty explicit, cannot assign to variable 'income' with const-qualified type 'const float'. This gets us to the end of this little demo in which we worked with different types of literal specifications and also introduced and demonstrated the const keyword.
+
+7. Video: Using Arithmetic Operators in C (it_cpfcladj_02_enus_07)
+
+Learn how to perform math operations with arithmetic operators.
+perform math operations with arithmetic operators
+[Video description begins] Topic title: Using Arithmetic Operators in C. Your host for this session is Vitthal Srinivasan. [Video description ends]
+In this little demo, we're going to introduce arithmetic operators in C. Let's start as usual with a single file into which we paste in our code. Here on lines 6 and 7, we initialize a couple of variables,
+
+[Video description begins] The Visual Studio Code window is opened. The left EXPLORER pane displays a source file under the ARITHMETIC_OPERATORS folder. The name of the file is C arithmetic_operators.c. It displays multiple lines of code in the editor pane. [Video description ends]
+
+both of which are of type int. Then on the subsequent lines, we apply various arithmetic operators
+
+[Video description begins] He highlights the following lines of code. Line 6 reads: int num_1 = 90;. Line 7 reads: int num_2 = 5;. [Video description ends]
+
+to these two variables. We save the results of all of these arithmetic operators in another variable called result. On line 11, we make use of the + operator to compute the sum
+
+[Video description begins] Line 9 reads: int result;. [Video description ends]
+
+of num_1 and num_2.
+
+[Video description begins] Line 11 reads: result = num_1 + num_2;. Line 12 reads: printf(" Sum: %d\n", result);. [Video description ends]
+
+On line 14, we use the - operator, that's the difference between these two numbers.
+
+[Video description begins] Line 14 reads: result = num_1 - num_2;. Line 15 reads: printf("Difference: %d\n", result);. [Video description ends]
+
+On line 17, we make use of the * that's the * operator to multiply the numbers together.
+
+[Video description begins] Line 17 reads: result = num_1 * num_2;. Line 18 reads: printf("Product: %d\n", result);. [Video description ends]
+
+Then on line 21, we make use of the / operator to perform a division.
+
+[Video description begins] Line 21 reads: result = num_1 / num_2;. Line 22 reads: printf("Quotient: %d\n", result);. [Video description ends]
+
+Now division can be performed for both integral and floating-point types. This means that the / operator can be used for integers, shorts, longs, as well as for floats and doubles. In contrast to the / operator, the remainder operator which we use on line 25, that's the % operator, can only be used for the integral data types.
+
+[Video description begins] Line 25 reads: result = num_1 % num_2;. Line 26 reads: printf("Remainder: %d\n", result);. [Video description ends]
+
+So, we can compute the quotient by dividing one number by another, whether those numbers are integers, floats, doubles, longs, et cetera does not matter. However, if we'd like to compute the quotient, then the two operands of the % operator need to be both integral types. This code is simple enough, let's go ahead and compile it and run it. We invoke clang on arithmetic_operators.c.
+
+a.out appears in the top left and we can now invoke it preceding it by a dot and a forward slash. As expected, the Sum of 90 and 5 is 95, the Difference is 85, we got that by subtracting 5 from 90, 5 multiplied by 90 is just a Product 450. The Quotient that's 90 divided by 5 is 18, and the Remainder is 0. No surprises here. This was a very quick run through of the common arithmetic operators in C. Now, please note that all of these arithmetic operators were binary, which means that they take in two input arguments. Let's try with different values for our integers. We have now modified our codes that num_1 is a 100 and num_2 is 13.
+
+[Video description begins] He highlights the following lines of code. Line 6 reads: int num_1 = 100;. Line 7 reads: int num_2 = 13;. [Video description ends]
+
+When we go ahead and make these changes and rerun our code, we find that everything still works just fine. Of course, the values of the Sum, Difference, Product, and Quotient are now different, but that's to be expected.
+
+Let's take a moment to focus on the Remainder. Here, num_1 is a 100 and num_2 is 13. When we divide 100 by 13, we get a number which has a fractional component and that's because 100 is not a multiple of 13. However, you can see from the Quotient down below, that the fractional component has been lost. The Quotient which shows up is simply 7. This tells us that when both of the operands are integers, the division operator is going to return an integer quotient. This is an important point, it's worth keeping in mind. The Remainder here is 9 because 7 multiplied by 13 is 91 and 91 plus 9 equals a 100. Now, in many use cases, we would not be happy to see the Quotient of a 7, when we divide 100 by 13. And in order to get a more accurate value, what we need to do is to change the types of num_1 and num_2, so that they are float or double rather than int.
+
+Let's go ahead and try that. On screen now, you can see on lines 6 and 7, that the types of the variables num_1 and num_2 are both float.
+
+[Video description begins] He edits the following lines of code. Line 6 now reads: float num_1 = 145.345;. Line 7 reads: float num_2 = 10.111;. [Video description ends]
+
+Also, on Line 9, we've changed the type of the result to be float as well. This is more likely to give us the correct quotient
+
+[Video description begins] Line 9 reads: float result;. [Video description ends]
+
+when we perform the division, but before we get to that, there's another problem that we have to deal with. When we scroll down, we see a little bit of red underlining on line 25. That's where we've tried to make use of the % operator, which gives the remainder when we divide num_1 by num_2. And that little red underlining is because the remainder operation is only valid with integral types. It's worth noting here that there are two separate bits of red underlining under num_1 and num_2.
+
+We hover over num_1, and the error there tells us expression must have integral type C/C++. And we see from the first line of this tooltip, that this error message applies to the variable float num_1. This tells us that the first operand that is the operand which comes to the left of the % operator, needs to be an integral type. In similar fashion, if we hover over num_2, we see that there is a separate and different error, float num_2 also must be of integral type. What we learn from this little example is that the % operator requires both of its operands to be of integral types. Let's see if we can ignore this error message and try and compile our code. We do this by opening up a TERMINAL window and invoking clang, but, of course, that's not going to work, clang complaints and we can also see that arithmetic_operators.c shows up in red on the top left.
+
+We have an error, this is the error that invalid operands have been passed in to a binary expression. In addition, we also have a warning in there and that warning is because by oversight, we specified %d as the placeholder in the printf statement on line 26. And that caused a warning because %d is a placeholder for int. However, the argument passed in which is result has type float. And this is why we see the warning in the purple font down below, format specifies type 'int' but the argument has type 'float', one warning and one error. Let's eliminate this invocation of the % operator and now everything else seems to be fine.
+
+This code does indeed compile, and when we run it, we see that the Sum, Difference, Product, and Quotient all appear in floating-point form. And this tells us that if we'd like to get a quotient which has a non-integral or a fractional component, it's important that all of the variables involved be of type flow. Let's round out this demo by quickly seeing how operators can be chained together and how operator precedence works. On line 10, we have the result of the computation 10 + 20 + 3 * 4.
+
+And then on lines 13, 16, and 19,
+
+[Video description begins] Line 10 reads: float result = 10 + 20 + 3 * 4;. Line 11 reads: printf("Result of 10 + 20 + 3 * 4: %.2f\n\n", result);. [Video description ends]
+
+we have other operations where we make use of parentheses in some cases before printing out the intermediate results.
+
+[Video description begins] He highlights the following lines of code. Line 13 reads: result = (10 + 20 + 3) * 4;. Line 16 reads: result = 10 - 20 + 3 * 4 / 2;. Line 19 reads: result = 10 - (20 + 3 * 4 ) / 2; [Video description ends]
+
+Let's compile and run this code and then quickly understand the output. The result of 10 + 20 + 3 * 4 is 42, and that's because the * operator was evaluated first. Parantheses take precedence over the * operator, and that's where 10 + 20 + 3 within parentheses, multiplied by 4, gives us a 132. In similar fashion, the division operator has precedence over addition and subtraction. However, we can change their precedence using parentheses, and that's what we've done in the last two operations visible on screen now. This gets us to the end of this little demo, in which we quickly run through the arithmetic operators in C.
+
+8. Video: Using Relational Operators in C (it_cpfcladj_02_enus_08)
+
+In this video, you will learn about the use of the ==, !=, <, > relational operators.
+demonstrate the use of ==, !=, <, > relational operators
+[Video description begins] Topic title: Using Relational Operators in C. Your host for this session is Vitthal Srinivasan. [Video description ends]
+In previous demos, we spent quite a bit of time discussing different data types in C. One type that may or may not have struck you by its absence was a logical boolean type. It turns out that C does not have a built-in type used to represent true or false values. There are indeed true and false values and types included in a specific header file, which we will get to in a future demo. But for now, just keep in mind that C lacks explicit types and values, built-in types and values representing true and false.
+
+[Video description begins] A Visual Studio Code window is opened. The left EXPLORER pane displays a source files under the RELATIONAL_OPERATORS folder. The name of the file is C relational_operators.c. [Video description ends]
+
+This point assumes a lot of significance when we are discussing relational operators. And that's the subject of this demo.
+
+Let's go ahead and get started. On screen now, you see we have a single file called relational_operators.c. Then we have three variables of type int.
+
+[Video description begins] The relational_operators.c file displays multiple lines of code. He highlights the following lines of code. Line 6 reads: int num_1 = 63;. Line 7 reads: int num_2 = 22;. Line 8 reads: int res;. [Video description ends]
+
+These are named num_1, num_2, and res. Note that num_1 and num_2 are assigned values, 63 and 22 respectively. res on the other hand is not assigned a value. Now, res as you might have guessed by this point, is going to be used to store the result of relational comparisons performed on num_1 and num_2. res always ought to contain either a true or a false value. In other words, res is a binary categorical variable. But because C does not have a built-in type to hold true and false values, we've assigned res to be of type int. Please note that C++, in contrast to C, does indeed have built-in boolean types.
+
+The relational comparisons start from line 10. There, on line 10, we make use of the == operator. This is testing for equality between num_1 and num_2. Line 10 is an important line,
+
+[Video description begins] Line 10 reads: res = num_1 == num_2;. [Video description ends]
+
+here on the right-hand side of the single equal to sign, we have a relational comparison, that's num_1 == num_2. The == operator is going to return either 0 or 1. If num_1 is indeed equal to num_2, then the value 1 will be saved in the variable res. On the other hand, if num_1 is not equal to num_2, then the value 0 will be saved in res. It's important to note that the == operator is used for logical or relational comparison. The single = operator, which we also see on line 10 is used for assignment.
+
+Then on line 13, we make use of the != operator. This is the exclamation sign followed by the equal to sign.
+
+[Video description begins] Line 13 reads: res = num_1 != num_2;. [Video description ends]
+
+Once again, we save the result of this relational comparison into the int variable res. In similar fashion, on line 16, we test whether num_1 > num_2.
+
+[Video description begins] Line 16 reads: res = num_1 > num_2;. [Video description ends]
+
+On line 19, we make use of the < operator.
+
+[Video description begins] Line 19 reads: res = num_1 < num_2;. [Video description ends]
+
+On line 22, we use the >= operator.
+
+[Video description begins] Line 22 reads: res = num_1 >= num_2;. [Video description ends]
+
+Note that the greater than sign comes before the equal to sign. And on line 25, we use the <= operator. Once again, the less than sign comes before the equal to sign.
+
+[Video description begins] Line 25 reads: res = num_1 <= num_2;. [Video description ends]
+
+We've written a bunch of code. Let's now go ahead and compile and run this program.
+
+[Video description begins] The following command displays in the Terminal pane: clang relational_operators.c. [Video description ends]
+
+We use clang, the compilation goes through successfully. And we call a.out. The results of our relational operations appear down below.
+
+[Video description begins] The Terminal pane displays the following command: . /a.out. [Video description ends]
+
+Is num_1 equal to num_2?
+
+Well, in this case num_1 and num_2 are not equal to each other and that's why the value of the variable res is equal to 0. That first line of output confirms that the == operator returns 0, when the two operands are not equal to each other. The next line is where the num_1 is not equal to num_2. And this one returns 1. That, of course, is because num_1 is indeed not equal to num_2, and that logical operation evaluates to true. C does not have a built-in true type, but the value returned here is 1 and that's why we have 1 in the second line of the output.
+
+In similar fashion, on line 16, where we test whether num_1 > num_2, this operation returns true, which in the world of C corresponds to the value of 1. And that's why we see that the third line of the output, num_1 greater than num_2? Appears with the value 1 next to it. Is num_1 < num_2? That's what we try and find out on line 19. The result of that is false, num_1 is not less than num_2 and that's why we see a 0 in the fourth line of the output. In similar fashion, num_1 is indeed greater than or equal to num_2 and num_1 is not less than or equal to num_2, that explains the last two lines of the output.
+
+Next, let's scroll up to the top and change the values of num_1 and num_2, so that this time, num_1 is indeed less than num_2.
+
+[Video description begins] He edits the existing program. Line 6 now reads: int num_1 = 34;. Line 7 now reads: int num_2 = 156;. [Video description ends]
+
+Please note that we continue to have both num_1 and num_2 be ints, num_1 is now 34, num_2 is 156. We compile this code and rerun it. And we can see from the output down below that once again every relational operation which evaluates to true returns a 1 and every operation which evaluates to false returns a 0. For instance, we check whether num_1 is equal to num_2. That evaluates to false, there is not a built-in false type in C, and that's why what's returned is 0. num_1 is not equal to num_2, and that's why the second line of the output is a 1. num_1 is not greater than num_2, that's why the third line of the output returns is 0, and so on. Let's try and rerun this code yet again, but this time we have num_1 and num_2 both actually equal to each other.
+
+Both of them have the integral value 100.
+
+[Video description begins] Line 6 now reads: int num_1 = 100;. Line 7 now reads: int num_2 = 100;. [Video description ends]
+
+We compile our code with clang and run it and examine the output closely. This time, unlike in the previous two invocations, the first line in the output has printed a 1 because num_1 is indeed equal to num_2. The inequality relational operator that's !=, returns false in this instance, and that's why the second line of the output reflects the value 0. At this point, we have a good handle on the basics of the relational operators. The key point for us to keep in mind is that these relational operators evaluate to either true or false, but because C does not explicitly have true and false values, it does not have a boolean type. Any operation which evaluates to true is going to return 1 and any operation which evaluates to false is going to return 0. Please keep this in mind and in the demo coming up ahead, we will sharply focus on the difference between the single and the double equal to operators.
+
+9. Video: Performing Equality Checks for Floating-point Types (it_cpfcladj_02_enus_09)
+
+In this video, you will learn how to check for equality between non-integer types.
+demonstrate how to check for equality between non-integral types
+[Video description begins] Topic title: Performing Equality Checks for Floating-point Types. Your host for this session is Vitthal Srinivasan. [Video description ends]
+In the previous demo, we saw how relational operators in C return either 0 or 1. Each relational operator looks for a specific type of relationship. If the relationship does hold between the operands, the relational operator will return 1, which is a shorthand for the value true. If the relationship does not hold, then the value 0 is returned instead. Now let's hone in on the = operator and the == operator, you can see both of these on screen now, on line 10.
+
+[Video description begins] A source file named C relational_operators.c. is opened. It contains a program of multiple lines of code. Line 4 reads: int main (). Line 5 reads: {. Line 6 reads: int num_1 = 100;. Line 7 reads: int num_2 = 1000;. Line 8 reads: int res;. Line 10 reads: res = num_1 == num_2;. Line 12 reads: printf("num_1:%d\n\n", num_1);. Line 13 reads: printf("num_2:%d\n\n", num_2);. Line 15 reads: printf("num_1 equal to num_2? :%d\n\n", res);. Line 17 reads: return EXIT_SUCCESS;. Line 18 reads:}. [Video description ends]
+
+This particular code snippet is almost identical to code which we had in the previous demo. On line 6, we have num_1 which is of type int, it holds the value 100, on line 7, we have num_2 which is a 1000. Then on line 10, on the right-hand side of the = operator, we'll test whether num_1 is equal to num_2 or not, and we save the result of this relational operator in the result.
+
+Nothing too new, we go ahead and compile our code using clang and then run it and as expected, we find that res has the value 0. We know because on line 15, we use printf in order to print out the value of res. Note how we use the %d placeholder and that's because res is of type int. Now, if we look closely at line 10, we are going to make an important little change there, instead of making use of the == operator, on the right-hand side of the first = operator, we now have a chained assignment operation.
+
+[Video description begins] He highlights the following line of code. Line 10 reads: res = num_1 = num_2;. [Video description ends]
+
+The new version of line 10 reads, res = num_1 = num_2.
+
+Before we run this code, let's see if we can work out what the output is going to be. This line is going to be evaluated from right to left. On the right of the first = operator, we have num_1 = num_2. This operation is going to take the value of num_2 and store it in the variable num_1. And then, the result from this = operator is going to be stored in the value res. If our understanding of the = operator is correct, then when we print out the values of num_1, num_2, and res. All three of them should have the value of num_2, that is 1000. Let's compile and run our code and see whether this is indeed the case. We run clang and then examine what we get from a.out, and indeed, all three print statements display the value 1000.
+
+And again, this is because on line 10, going from right to left, the = operator, which is the assignment operator, took the value in num_2 and placed that in the variable num_1. So, by this point, num_1 was equal to a 1000 and then that same value was taken from num_1 and placed in the variable res, so that became 1000 as well. And that's why the following print statements on lines 12, 13, and 15, all print out the value 1000. This is an important little example because it drives home how the = operator and the == operator look very similar to each other. And because there is not a built-in boolean type, situations like the one on screen might occur when you do not want them to. It's entirely possible that in this case, line 10 might be the result of a typo.
+
+You might have wanted a == operator rather than a = operator and you would be quite surprised to see the output that we have on screen now. Another important point here is the fact that the == operator does not always work as you would expect, especially for floating-point values. On screen now, you can see that we've changed num_1 and num_2, so that each of them is of type float.
+
+[Video description begins] Line 6 now reads: float num_1 = 100.245;. Line 7 now reads: float num_2 = 100.245;. [Video description ends]
+
+We also seem to assign identical values into these two variables, both num_1 and num_2 have the literal 100.245 on the right-hand side of the equal to sign. Then we use an int variable called res to store the result of num_1 == num_2.
+
+[Video description begins] Line 8 reads: int res;. Line 10 reads: res = num_1 == num_2;.[Video description ends]
+
+Let's go ahead and compile and run our code and see whether that is indeed the case.
+
+We compile using clang and then use a.out and we find to our relief that res is indeed equal to 1. Both num_1 and num_2 do indeed seem to have the exact same values within them. However, we shouldn't rush to celebrate, because if we look really closely, we can see that both num_1 and num_2 seem to have slightly different values in the output than the literals we specified in code on lines 6 and 7. On lines 6 and 7, we had specified the values 100.245, however, in the output window down below, we can see that these values seem to be 100.245003. And indeed, it's purely coincidental that in this particular case, res evaluated to 1.
+
+We'll prove how unreliable the == operator is, when it comes to floating-point types with a simple experiment. We're only going to change one word in our program, we're going to change the type of the variable num_2, so that it's now of type double rather than of type float.
+
+[Video description begins] Line 7 now reads: double num_2 = 100.245;. [Video description ends]
+
+Please note that we continue to have the same literal values 100.245 on the right-hand side of those equal to signs. However, this time when we rerun our code, the output is different. We can see that num_1 and num_2 have different values contained within them, and more importantly, the res variable evaluates to 0. This clearly is not what we would want. The literals look the same in code and we would expect this use of the == operator to return 1. It has returned 0, and that's because of issues associated with floating-point numbers.
+
+This little example has an important lesson, when comparing floating-point numbers for equality, it's never a good idea to make use of the == operator. That should exclusively be used with integral data types. The correct way to test two floating-point numbers for equality is using the fabs function and the concept of tolerance, you can see this on screen now.
+
+[Video description begins] Line 11 reads: res = fabs(num_1 - num_2) < 1e-4;. [Video description ends]
+
+On line 3, we have a # include, we've included math.h.
+
+[Video description begins] Line 3 reads: # include<math.h>. [Video description ends]
+
+And then on line 11, we invoke the function fabs passing in num_1 - num_2. This is going to compute the difference between num_1 and num_2 and compute the absolute value of that difference. And if that absolute value is smaller than 10 raised to negative 4, then we treat the values as being equal to each other. How do we have 10 raised to negative 4?
+
+Well, because the literal on the right-hand side of the greater than sign is 1e-4. Remember that the e here is used to represent an exponent, which is the power of 10, 1e raised to -4 is the same as 1 divided by 10000, that is 10 raised to negative 4. Before we run this code, let's ask ourselves, is this choice of 10 raised to negative 4 coincidental? Well, it's not. If we look closely at the variables num_1 and num_2, we can see that each of them has three significant digits after the decimal point, 2, 4, and 5. What we'd like to do is to only compare the first three significant digits after the decimal point and ignore all subsequent digits. And that is achieved by using a tolerance value of 10 raised to negative 4.
+
+This concept of tolerance is a very important and useful one while comparing floating-point numbers for equality. Let's go ahead and compile and run this code and see whether it works as we expected, and indeed it does. We can see from the output of a.out that num_1 and num_2 are both printed in slightly differing fashion, but num_1 equal to num_2? evaluates to 1, that is, it evaluates to true. This exemplifies the correct way of testing two floating-point numbers for equality, we should subtract 1 from the other and then use the absolute value of that difference to check against the tolerance. Here, that tolerance was 10 raised to negative 4. That gets us to the end of our quick exploration of relational operators in C. In the demo coming up ahead, we'll move on to logical operators.
+
+10. Video: Using the and, or, and not Logical Operators in C (it_cpfcladj_02_enus_10)
+
+In this video, you will learn about the use of the logical operators AND, OR, and NOT.
+demonstrate the use of logical operators
+[Video description begins] Topic title: Using the and, or, and not Logical Operators in C. Your host for this session is Vitthal Srinivasan. [Video description ends]
+Relational operators were great for testing whether relationships such as greater than, less than, equal to, or not equal to hold between a pair of operands. In this demo, we're going to have a quick look at logical operators. These are logical and, or, and not the logical operators can be used to combine conditions, and they become extremely important while working with if-else statements as well as for and while loops.
+
+[Video description begins] A source file named C logical_operators.c. is opened. It contains multiple lines of code. [Video description ends]
+
+We'll get to those control structures later, but for now, let's understand how the logical operators work. We start by defining a couple of variables, num_1 and num_2.
+
+These hold the values 23 and 78. Then on lines, 9, 12, 15, and 18,
+
+[Video description begins] He highlights the following lines of code. Line 6 reads: int num_1 = 23;. Line 7 reads: int num_2 = 78; [Video description ends]
+
+we have various relational operators where we chain together the results of those relational comparisons using the && operator and you can see that && operator, that's the logical and operator on each one of those line numbers 9, 12, 15, and 18. Let's compile and run this
+
+[Video description begins] Line 9 reads: int res= (num_1 > 10) && (num_2 > 10);. Line 12 reads: res = (num_1 > 10) && (num_2 > 100);. Line 15 reads: res = (num_1 > 100) && (num_2 > 10);. Line 18 reads: res = (num_1 > 100) && (num_2 > 100);. [Video description ends]
+
+code and then compare the output to the source code up above. As we see, the && operator does exactly what we would expect it to. Take for instance line 9 of code. Let's read this line from left to right.
+
+On the extreme left of this line, we have the variable res that's followed by an equal to sign and then to the right of the equal to sign we have two relational comparisons, combined with the logical and operator, that's the &&. The two relational operations on the right of the equal to sign are going to be evaluated in order from left to right. C makes use of something known as short-circuit evaluation, and so if the first relational operator evaluates to false, C will not bother evaluating the second.
+
+Here num_1 and num_2 are both indeed greater than 10, and that's why each of these will indeed be evaluated. And then the logical and of these two conditions will be taken, because the logical and will only return 1, if each of its operands evaluates to 1. That is to true. In this case, res takes the value 1, and that's what we see down below. Then on line 12, we first test whether num_1 > 10, it is. We then test for the num_2 > 100, it is not.
+
+And that's why the logical and of these two relational operators is false, that is 0, and that's what we see in the second line of the output. In similar fashion, each of the other logical and operators that we have in lines 15 and 18 return false, that is 0. For instance, on line 15, the first relational operation num_1 > 100 evaluates to false. The second evaluates to true. A logical and of one true value and one false value is false, and that's why the output of the printf on line 16 is 0. The logical and operator only evaluates to true, if each of its two operands is true. In contrast, the logical or operator will return true, if either of its operands is true.
+
+On screen now, you can see that we've made use of the logical or operator in C.
+
+[Video description begins] Line 9 now reads: int res = (num_1 > 10) || (num_2 > 10);. [Video description ends]
+
+This logical or operator is denoted with a pair of pipe symbols. This time, before running the code, let's see if we can work this out for ourselves. Feel free to grab a paper and pencil, if you need to. On line 9, we have the logical or of two relational operations, num_1 > 10, that evaluates to true. Then we don't even need to consider the second operation. res on line 9 is going to evaluate true, that is the value 1. The operation on line 9 made use of short-circuit evaluation, and so it did not need to evaluate the second greater than operator and this also happens to be true of the operation on line 12.
+
+[Video description begins] Line 12 now reads: res = (num_1 > 10) || (num_2 > 100);. [Video description ends]
+
+There, the first logical or operation evaluates to true. This short-circuits the evaluation of the second operand and we expect the printf on line 13 to print 1 as well.
+
+[Video description begins] Line 13 reads: printf(" (num_1 > 10) || (num_2 > 100)? %d\n\n", res);. [Video description ends]
+
+Line 15 is a little trickier because the first operation evaluates to false.
+
+[Video description begins] Line 15 reads: res = (num_1 > 100) || (num_2 > 10);. [Video description ends]
+
+Short-circuit evaluation will not work this time around. C is going to evaluate the second relational operation as well, that's num_2 > 10. This one does evaluate to true, and that's why we expect the third printf statement to also return 1.
+
+[Video description begins] Line 16 reads: printf(" (num_1 > 100) || (num_2 > 10)? %d\n\n", res);. [Video description ends]
+
+And now the last printf statement, we expect that to return 0, because on line 18, both of our operands are compared to the number 100.
+
+[Video description begins] Line 18 reads: res = (num_1 > 100) || (num_2 > 100);. Line 19 reads: printf(" (num_1 > 100) || (num_2 > 100)? %d\n\n", res);. [Video description ends]
+
+And we know that neither of them is > 100.
+
+This means that each of the conditions on line 18 is going to return false. The logical or of two false operations is false, and we expect the output to be 0. Putting all of this together, we expect the output to be of the form 1110. Let's verify this. We go ahead and compile our code and execute it, and we do indeed find that the first 3 printf statements have returned 1 only the last, the 1, on line 19 has returned 0. This tells us that we have a good hold over the logical or operator. It's time to introduce the third logical operator.
+
+That's the logical negative or negation operator, and this is denoted with the ! sign. Let's work through some simple examples. First on line 9, we test whether num_1 > 10.
+
+[Video description begins] Line 9 now reads: int res = (num_1 > 10);. [Video description ends]
+
+We can see up above on line 6 that num_1 is 23 and that's why we expect res to hold the value, true, that is 1. We can confirm that this is indeed the case. We're looking at the output down below. Then on line 12, we introduce the exclamation mark, which is the logically negation operator. Here we are computing the negation of the logical relationship num_1 > 10.
+
+[Video description begins] Line 12 now reads: res = !(num_1 > 10);. [Video description ends]
+
+num_1 > 10, so that evaluates to true.
+
+The negation of true is false, and that's why the second line of the output is 0. Remember that the value 0 corresponds to false in C. In similar fashion on line 15, we have a logical and of two conditions and we can see from the output down below the third line of the
+
+[Video description begins] Line 15 reads: res = (num_1 > 10) && (num_2 > 10);. [Video description ends]
+
+output that this evaluates to 1. Now if we negate one of the conditions, we can see that the output corresponds to 0. The negation operator takes precedence over either the logical and, or, the logical or, and that's why it's very important to use parentheses correctly while using the exclamation point.
+
+We can work through some of these other examples visible on screen now,
+
+[Video description begins] He edits the following lines of code. Line 21 now reads: res= (num_1 > 100) || (num_2 > 100);. Line 22 reads: printf(" (num_1 > 100) || (num_2 > 100)? %d\n\n", res);. Line 24 reads: res = !((num_1 > 100) || (num_2 > 100));. Line 25 reads: printf(" !((num_1 > 100) || (num_2 > 100))? %d\n\n", res);. [Video description ends]
+
+but hopefully by this point we've thoroughly understood the logical operators that gets us to the end of this demo, in which we quickly show how the logical and, or, and not operators work.
+
+11. Video: Understanding the ++ Operator in C (it_cpfcladj_02_enus_11)
+
+Learn how to apply the use of pre- and post-increment operators.
+demonstrate the use of pre- and post-increment operators
+[Video description begins] Topic title: Understanding the ++ Operator in C.Your host for this session is Vitthal Srinivasan. [Video description ends]
+In this demo, we are going to talk about a couple of important operators in C. These are the unary auto-increment operators. These operators are known as unary because they operate on a single operand and they return a result that is the original
+
+[Video description begins] A source file named C unary_operators.c. is opened. It contains multiple lines of code. Line 1 reads: # include<stdlib.h>. Line 2 reads: # include<stdio.h>. Line 4 reads: int main (). Line 5 reads: {. Line 6 reads: int num_1 = 90;. Line 7 reads: int num_2 = 90;. Line 9 reads: printf(" original num_1: %d\n\n", num_1);. Line 11 reads: num_1++;. Line 13 reads: printf(" (updated num_1: %d\n\n", num_1);. Line 15 reads: printf(" original num_2: %d\n\n", num_2);. Line 17 reads: ++num_2;. Line 19 reads: printf("updated num_2: %d\n\n", num_2);. Line 22 reads: return EXIT_SUCCESS;. Line 23 reads:}. [Video description ends]
+
+operand with one added to it. On screen now, you can see the unary auto-increment used on a couple of different lines. Once on line 11, and then again on line 17. As you can tell by looking at these two lines of code, the unary auto-increment comes in two flavors. The one that's been used on line 11 is the unary post-increment operator and the one on line 17 is the unary pre-increment operator.
+
+[Video description begins] He highlights the following lines of code. Line 11 reads: num_1++;. Line 17 reads: ++num_2;. [Video description ends]
+
+The easiest way to understand the difference between these two is to run our code and examine the output.
+
+Let's go ahead and get started. We invoke clang as usual from a TERMINAL window down below. Compilation goes through successfully without any errors or warnings. And we use a.out in order to examine the output. Now let's turn our attention to the code on lines 6 and 7 up above. There we declare 2 variables, num_1 and num_2 both of which are ints, and we initialize both of those variables to hold the value 90.
+
+[Video description begins] Line 6 reads: int num_1 = 90;. Line 7 reads: int num_2 = 90;. [Video description ends]
+
+Then on line 9, we print out the value of num_1. That's before we use the ++ operator on line 11.
+
+[Video description begins] Line 9 reads: printf(" original num_1: %d\n\n", num_1);. [Video description ends]
+
+And then on line 13, after having invoked the ++ operator, we go ahead and printout the value of num_1 again.
+
+[Video description begins] Line 13 reads: printf(" updated num_1: %d\n\n", num_1);. [Video description ends]
+
+If we now look to the output down below, we can see that the printf statement on line 9 printed the value of 90.
+
+The printf statement on line 13 printed the value of 91. So far so good. The unary operator on line 11, took the value of num_1 incremented it by 1, and then saved that incremented value back in num_1. Now let's look at lines 15 and 19.
+
+[Video description begins] He highlights the following lines of code. Line 15 reads: printf(" original num_2: %d\n\n", num_2);. Line 19 reads: printf("updated num_2: %d\n\n", num_2);. [Video description ends]
+
+There again, we have a couple of printf statements, both of which printout the values of num_2. On line 15, it's the original value. On line 19, it's the updated value. And sandwiched between those two printf statements on line 17, we apply the unary pre-increment operator to num_2. So it's ++num_2.
+
+Now if you look at the output of the two print statements on lines 15 and 19, we see that the original value of num_2 was 90 and the updated value is 91. Now looking at this output on screen, it's pretty clear that both versions of the unary auto-increment operator add 1 to the value of the variable. However, from looking at this output, it's not clear that there is any other difference between them. And the reason that in this example, the two versions of the ++ operator seem to be identical is that we don't actually save the return value from the ++ operator anywhere. In other words, on lines 11 and 17, we don't have any variable into which we save the returned values. Here on screen now is that snippet of code. You can see that we've changed line 11, so that the result of the post-increment operator applied to num_1 is saved in a new variable called result_1.
+
+[Video description begins] Line 11 now reads: int result_1 = num_1++;. [Video description ends]
+
+And in similar fashion down below on line 18, we've saved the result of the pre-increment operator on num_2 into the variable result_2.
+
+[Video description begins] Line 18 now reads: int result_2 = ++num_2;. [Video description ends]
+
+Turning our attention to the printf statements, you can see that as before, we printout the original and updated values of num_1 those are on lines 9 and 13 and then of num_2 on lines 16 and 20.
+
+[Video description begins] He highlights the following lines of code. Line 9 reads: printf(" original num_1: %d\n\n", num_1);. Line 13 reads: printf(" updated num_1: %d\n\n", num_1);. [Video description ends]
+
+[Video description begins] He highlights the following lines of code. Line 16 reads: printf(" original num_2: %d\n\n", num_2);. Line 20 reads: printf(" updated num_2: %d\n\n", num_2);. [Video description ends]
+
+However, in addition, we now also printout the values of result_1 and result_2.
+
+[Video description begins] Line 14 reads: printf("result_1: %d\n\n", result_1);. Line 21 reads: printf("result_2: %d\n\n", result_2);. [Video description ends]
+
+Let's go ahead and compile and run this code and examine the output. As before, the original value of num_1 is 90 and the updated value of num_1 is 91. In similar fashion, the original value of num_2 is also 90 and the updated value of num_2 is also 91. So far the output is identical to what we had from the previous program.
+
+However, things are a lot more interesting once we turn our attention to the values of result_1 and result_2. If we look closely, we can see that result_1 is 90, but result_2 is 91. Why this difference in their values? Well, let's first look at line 11, where result_1 is initialized to be num_1++. And this is where the exact working of the post-increment operator comes into play. The reason that this post-increment operator is called the post-increment is because the value of the variable is first used in whatever expression it is in, and then after it's been used in that expression, the value of the variable is incremented by 1.
+
+So effectively on line 11, the value of num_1 is placed into the variable result_1, before the value of num_1 is increased by 1. And that's why the value of result_1 printed out to screen down below is 90. On the other hand, if we look at result_2. On line 18, result_2 is initialized to be ++num_2. And that version of the auto-increment operator is called the pre-increment and the reason for that name is that the increment happens before it's used in the expression. Here for instance num_2 is first going to be incremented from 90 to 91 and then that updated value of 91 is going to be stored in result_2, which is on the left-hand side of the equal to sign.
+
+And that's why the printf statement on line 21 shows that the value of result_2 is 91. And this is a very quick introduction to the pre-increment and the post-increment operators in C. You should be aware that C also has the pre and post-decrement operators. There we just make use of -- instead of ++. The mechanics of the pre and post operations are exactly the same for pre-increments and post-increments as they are for pre-decrements and post-decrements. The usage of the unary operators can get really complex, but as far as quick and simple introduction goes, we are done. Let's now move on to another demo in which we will talk about assignment operators in C.
+
+12. Video: Performing Math Operations with Assignment Operators (it_cpfcladj_02_enus_12)
+
+In this video, find out how to perform math operations on variables using assignment operators.
+perform math operations on variables with assignment operators
+[Video description begins] Topic title: Performing Math Operations with Assignment Operators. Your host for this session is Vitthal Srinivasan. [Video description ends]
+In this demo, we are going to study C assignment operators. As their name might suggest, assignment operators accept 2 operands. They perform an expression evaluation and then they store the result of that evaluation in the operand on the left.
+
+[Video description begins] The Visual Studio Code window is opened. The left EXPLORER pane displays the following file: C assignment_operators.c. [Video description ends]
+
+So the left-hand side operand of an assignment operator is what gets updated as a result. Let's go ahead and see how these work in practice. On screen now is code in which we make use of many different assignment operators. On line 9, we make use of the += operator.
+
+[Video description begins] The C assignment_operators.c. contains a program that include multiple lines of code. Line 1 reads: # include<stdlib.h>. Line 2 reads: # include<stdio.h>. Line 4 reads: int main (). Line 5 reads: {. Line 6 reads: int num = 50;. Line 7 reads: int test_num = 50;. Line 9 reads: num += 30; [Video description ends]
+
+On line 14, the -= operator and so on.
+
+[Video description begins] Line 14 reads: num -= 10;. [Video description ends]
+
+The best way to make sense of this code is by running it and comparing the output to the expressions on screen, we go ahead and do that. And we can now on lines 6 and 7, we start by initializing a couple of variables, num and test_num. Both of which have the value of 50.
+
+On line 9, we make use of the assignment operator +=, num += 30. The += operator is going to take its 2 operands and perform the addition operator on them. Then it will store the result in the operand on the left. Here num += 30 is equal to 50 plus 30, which is 80 and then that is going to be stored in the variable on the left, which is num. On line 10, we perform the same operation but using the regular = and + operators.
+
+[Video description begins] Line 10 reads: test_num = test_num + 30;. [Video description ends]
+
+And then on lines 11 and 12, we printout the values of num and test_num.
+
+[Video description begins] Line 11 reads: printf("num after adding 30: %d\n", num);. Line 12 reads: printf(" test_num after adding 30: %d\n\n", test_num);. [Video description ends]
+
+When we look at the output down below, we can see that both of these values are the same. That is, both are equal to 80. And this tells us that lines 9 and 10 are equivalent to each other.
+
+Let's scroll down just a little bit on lines 14 and 15, we compare the effects of the -= operator with equal to and minus view separately. On line 14, we have num -= 10, and on line 15,
+
+[Video description begins] Line 14 reads: num -= 10;. Line 15 reads: test_num = test_num -10;. [Video description ends]
+
+we have test_num = test_num - 10. We printout their values and once again, we can compare the output down below. Both have the same value. num and test_num are both equal to 80. Before these lines are executed and both are equal to 70 after those lines are executed. In similar fashion, on line 19, we make use of the *= operator. This has the effect of multiplying num by 2 and storing the result in num.
+
+[Video description begins] Line 19 reads: num *= 2;. [Video description ends]
+
+At the start of this operation, num is 70, num multiplied by 2 is 140. A similar operation is carried out on test_num and that's why down below both num and test_num are equal to a 140 after multiplying by 2.
+
+[Video description begins] Line 20 reads: test_num = test_num * 2;. [Video description ends]
+
+In similar fashion on line 24, we make use of the /= operator which is the assignment operator where the operand is divided by 5.
+
+[Video description begins] Line 24 reads: num /= 5;. [Video description ends]
+
+And on line 29, we make use of the %= operator which computes the remainder of a division and stores that remainder in the operand on the left.
+
+[Video description begins] Line 29 reads: num %= 6;. [Video description ends]
+
+We can see that when line 29 is about to be executed, the value of num is 28, because that's what we obtained after dividing num by 5 in the previous operation. When 28 is divided by 6, we get a quotient of 4 and a remainder of 4. That remainder of 4 is saved in the operand on the left, which is num, and that's why write down below num after computing remainder has the value 4. And we get a similar result with test_num.
+
+[Video description begins] He highlights the following line of code. Line 30 reads: test_num = test_num % 6;. [Video description ends]
+
+Let's now run through another example in which what we have on the right of the assignment operator is an expression rather than a literal. Here, for instance, we have num += 30 / 2.
+
+[Video description begins] He edits the existing program. Line 6 reads: int num = 50;. Line 8 reads: num += 30 / 2;. Line 9 reads: printf("num after adding 30 / 2: %d\n\n", num);. [Video description ends]
+
+The question that we'd like to answer is which of these operations will be performed first?
+
+In other words, will 30 / 2 be evaluated first, or will the += operator be evaluated first? Let's run this code and find out. From the output down below, we can see that the printf statement on line 9 has printed the value of 65. And we can see here what's happened 30 / 2 has been evaluated first that gives the number 15. 15 is treated as the right-side operand of +=, num is initially equal to 50. 50 += 15 gives the value of 65 and that's why that print statement displays num equal to 65. Then on line 11, we make use of the -= operator. Here again on the right of that operator, we have 10 + 2 that's evaluated first.
+
+[Video description begins] Line 11 reads: num -= 10+2;. Line 12 reads: printf("num after subtracting 10+2: %d\n\n", num);. [Video description ends]
+
+10 +2 = 12.
+
+num -= 12, evaluates to 65 -= 12, which in turn is equal to 53, and that's why the output of the second printf is 53. Let's quickly work through the last example as well. That's the one on line 17, num /= 2 + 1.
+
+[Video description begins] Line 17 reads: num /= 2+1;. Line 18 reads: printf("num after dividing by 2+1: %d\n\n", num);. [Video description ends]
+
+2 + 1 will be evaluated first, that gives us 3. Now before the execution of this line, we can see that num = 159. We can see that from the second last line of the output down below. And 159 /= 3 gives us 53, and that's why that's the last value printed on screen. This gets us to the end of our quick look at how the assignment operators work in C.
+
+13. Video: Course Summary (it_cpfcladj_02_enus_13)
+
+db6c3636-4aea-43b0-87c9-84ba2adb92a0
+summarize the key concepts covered in this course
+[Video description begins] Topic title: Course Summary [Video description ends]
+We have now come to the end of this course, variables and data types in C. We started this course by introducing variables that are used to hold data. We saw how C is a statically typed language, which means that the type of every variable needs to be declared upfront and the compiler will check against these types. We explore different primitive data types in C such as int, float, char, long, double, and short.
+
+And discuss, the difference between signed and unsigned variables. We noted the number of bytes occupied by different data types as well as limits on values that can be held within variables of those types. We also understood the difference between literals, variables and constants. Next, we moved on to various arithmetic operators to perform math operations on literals and variables. We began by using basic arithmetic operators to performed math operations between literals and covered the unary pre-increment and post-increment operators as well as the assignment operators such as plus equal to.
+
+Finally, we explored the use of relational operators to compare two different numbers. We use these with both integral types and floating point types, noting that the double equals relational operator was unreliable when used with floating point types. We then saw the correct way of comparing floating point numbers to a specified degree of precision before moving to the logical operators and, or, and not.
+
+Now that you have reached the end of this course, you have a solid foundation in the primitive data types in C as well as in working with variables. You are now ready to move on to arrays as well as user input in the course, creating arrays, accepting input, and returning output coming up next.
+
+Course File-based Resources
+•	Introducing Variables in C
+Topic Asset
+
+•	Viewing Limits on Shorts, Integers, and Longs in C
+Topic Asset
+
+•	Exploring Signed and Unsigned Variables in C
+Topic Asset
+
+•	Understanding Variable Conventions and Syntax in C
+Topic Asset
+
+•	Understanding Variables and Constants in C
+Topic Asset
+
+•	Using Arithmetic Operators in C
+Topic Asset
+
+•	Using Relational Operators in C
+Topic Asset
+
+•	Performing Equality Checks for Floating-point Types
+Topic Asset
+
+•	Using the and, or, and not Logical Operators in C
+Topic Asset
+
+•	Understanding the ++ Operator in C
+Topic Asset
+
+•	Performing Math Operations with Assignment Operators
+Topic Asset
+© 2023 Skillsoft Ireland Limited - All rights reserved.

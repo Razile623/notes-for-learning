@@ -1,0 +1,615 @@
+Functions and Memory in C: Using Variable Scopes, Storage Classes, & Structs
+A vital part of programming is being able to reuse codes in an efficient and effective way. Using variable scopes, storage classes, different user-defined types like structs, unions and enums allow programmers to scale their programs and create meaningful structures. Begin by exploring variable scope and learn how to input argument scoping and redefine variables. Discover how to work with storage classes and access them in file scope, local scope, and across files. Finally, take a look at different user-defined types in C. Upon completion of this course, you will be able to confidently leverage variable scopes and storage classes to define values, scope, and visibility.
+Table of Contents
+    1. Video: Course Overview 
+
+    2. Video: Accessing File-scope Variables from Functions 
+
+    3. Video: Creating and Accessing Variables from Inner Scopes 
+
+    4. Video: Scoping Input Argument Variables 
+
+    5. Video: Redefining Global Variables in Local Scopes 
+
+    6. Video: Using the Automatic and Register Storage Classes 
+
+    7. Video: Creating Static Global and Local Variables 
+
+    8. Video: Accessing Variables from Multiple Files 
+
+    9. Video: Creating Static and External Functions 
+
+    10. Video: Using Pass-by-value and Pass-by-reference 
+
+    11. Video: Creating and Instantiating Structs 
+
+    12. Video: Creating and Instantiating Unions 
+
+    13. Video: Representing Categories Using Enums 
+
+    14. Video: Course Summary 
+
+    Course File-based Resources
+
+1. Video: Course Overview 
+
+discover the key concepts covered in this course
+Topic title: Course Overview.
+Hi and welcome to the course: Using Variable Scopes, Storage Classes, and Structs in C. My name is Vitthal Srinivasan  Your host for this session is Vitthal Srinivasan. He is a Software Engineer and Big Data Expert.and I will be your instructor for this course.
+
+A little bit about myself first. I did my master's from Stanford University and have worked at various companies, including Google and Credit Suisse. I presently work for Loonycorn, a studio for high quality video content. There are four storage classes in C: automatic, register, static and extern.
+
+These govern how the variables are stored, as well as their life cycle and accessibility. These topics are also related to the semantics of parameter passing in C, specifically pass-by-value and pass-by-reference. The behavior of simple types differs from that of more complex types, while on the topic of types, C supports user defined types, such as structs, unions and enums, that is enumerated types.
+
+We'll start this course by creating variables of the different storage classes and experimenting with accessing them in file scope, local scope and across files as well. After that you will be introduced to the concept of pass-by-value and pass-by-reference. As you will learn, data types such as integers, characters and floats are passed-by-value, however, arrays and pointers are effectively passed-by-reference.
+
+You will understand the concept of structs, unions and enums, which are all user-defined types in C. Structs are used to represent records and contain fields of different types. Unions are very similar, but only allocate enough space for one field at a time. You will also create enums, or enumerated data types, to represent categorical fields such as days of the week.
+
+By the time we finish this course, you'll have a good grasp of variable scope storage classes, structs and enums in C.
+
+2. Video: Accessing File-scope Variables from Functions 
+
+In this video, find out how to create variables with file scope.
+create file scope variables
+Topic title: Accessing File-scope Variables from Functions. Your host for this session is Vitthal Srinivasan.
+As we've already seen, C is a statically typed language. This means that every variable must have its type explicitly declared in code. The compiler will then use this type in order to check assignments or initializations of that variable. This means that every variable in C needs to be explicitly declared. And this time, we will return now to a related question.
+
+Given that a variable has been declared in one part of the program, when can that variable be accessed? That, in turn, is going to lead to a discussion about scopes in C. The scope of a variable refers to that part of a program where a variable can be accessed. On screen now, we have a really simple C program.  Line 1 reads # include <stdlib.h>. Line 2 reads # include <stdio.h>.  We have a main() function, and within that main() function we have a number of printf statements.
+
+However, note that we have a couple of variables, which have been declared as well as initialized, outside the main() function. These variables, float num_1 and float num_2, are global variables with file scope, and by file scope we mean that they can be used anywhere in this file, called variable_scopes.c. Variables which are global with file scope need to be declared inside a file, but outside of all functions.
+
+And that's exactly how num_1 and num_2 have been declared, as well as initialized here on lines 4 and 5. These variables are going to be available for use inside all functions inside this file. Line 4 reads float num_1 = 10.3. Line 5 reads float num_2 = 20.5.  Main() is a function inside this file, and that's why we can make use of the values of num_1 and num_2, as we've done in the printf statements on lines 9 through 12. Let's try and compile this code. When we do, we find that the compiler is fine with it.
+
+There are no warnings or errors when we invoke clang on variable_scopes.c, and then when we run it the printf statements give us the correct results for each of our operations. The output reads: num_1 + num_2: 30.80. num_1 - num_2: -10.20. num_1 * num_2: 211.15. num_1 / num_2: 0.50. We've now introduced global variables with file scope. Next, let's add yet another function to this program.
+
+We still have our two global variables with file scope. These are float num_1 and num_2 defined on lines 4 and 5. However, notice that we now do not actually initialize them, we merely declare them on lines 4 and 5. Then within the program itself, we have two functions. The first is called enter_values() starting on line 7, and the second is the main() function starting line 15.
+
+Notice that inside the enter_values() function we prompt the user for values for num_1 and num_2 and read those in, using the scanf() function. This enter_values() function is then invoked from inside the main() function on line 17. That means that by the time we reach line 19, enter_values() would have prompted the user for values for num_1 and num_2 and set those values.
+
+Then on lines 19 through 22 we perform the same arithmetic operations on num_1 and num_2. We compile our code, there are no warnings or errors, clang is fine with this code as it now stands, and then when we run it we are prompted for values for num_1 and num_2.
+
+We enter the value 10 for num_1 and 20 for num_2, and then we get the printf statement's outputs, which have the results of the arithmetic operations. The output reads: num_1 + num_2: 30.00. num_1 - num_2: -10.00. num_1 * num_2: 200.00. num_1 / num_2: 0.50. This little demo proves that we can have multiple functions inside a file. Those multiple functions can both get and set the values of global variables with file scope inside the file, and those functions will all be able to use those variables that are global with file scope, because those variables, such as num_1 and num_2, are defined outside all of those functions.
+
+We can extend this idea to any number of functions inside the same file. As long as the variables are declared in that file but outside all of those functions those variables will still remain accessible. Let's prove this with another little experiment.
+
+Let's create a new function called perform_arithmetic_operations(), and this function is going to contain the printf statements that we previously had in the main() function. And then we tweak the main() function so that it merely invokes our two functions, enter_values() and perform_arithmetic_operations(). Finally, we also have a couple of additional printf statements within the main() function, just to check that num_1 and num_2 are still accessible in there.
+
+Let's compile and run this code, we invoke clang on variable_scopes.c, there are no warnings or errors, and then when we run our program, it all works as we expected. We enter the values 10 for num_1 and 20 for num_2 and then down below we get the printed output corresponding to those perform_arithmetic_operations() functions, as well as the two printf statements that still live in the main() function. We've now seen how we can define variables that are global but a file scope. These are variables which are defined outside any function inside a file.
+
+Such variables will remain accessible to all functions in the file. One quick word before we move on. Such variables are going to be accessible from the point where they are declared down to the end of the file. And that's why such variables are almost invariably declared at the top of the file. You can see here that we've declared variables num_1 and num_2 at the top of the file on lines 4 and 5. This makes them accessible to all of the functions in that particular file.
+
+3. Video: Creating and Accessing Variables from Inner Scopes 
+
+In this video, you will learn how to work with variable scope.
+work with variable scopes
+ Topic title: Creating and Accessing Variables from Inner Scopes. Your host for this session is Vitthal Srinivasan. 
+In the previous demo, we discussed global variables, which have file scope. These exist outside any of the functions in a file. In this demo, we are going to turn our attention to local variables which have scope inside a function or a block. On screen now we have a simple main() function. Notice that we do not have any global variables in this file. There are no variables declared outside the main() function.
+
+Then inside the main() function we see something a little strange. We have a pair of curly braces on lines 6 and 12, and it turns out that these curly braces also define a scope. In fact, pretty much any time you see a pair of curly braces in C, you should be looking for variables which are defined only inside that scope.
+
+This is true, not only for scopes like this one that you see on screen now, but also for for loops, while loops, if blocks, and so on. Here on line 7, we have a printf statement which reads, this is a block within {}. Then on line 9, we declare, as well as initialize a variable called name, this is a character array holding the string "Julie".
+
+And then on line 11, we print out the value of name using the format specifier %s. And this is done to prove that the name variable is accessible within this block. Then, on line 12 we close the curly braces, in other words, our block ends; this is the block which started on line 6, and then on line 14 we have a return statement.
+
+We are going to run this code and we will see first of that this syntax is correct. The compiler is perfectly fine with the use of curly braces, as you now see on screen, and within this scope the variable named Julie is indeed available. The next question that we want to answer is whether the variable Julie is accessible outside the scope defined on line 6 through 12.
+
+In order to find out, let's add in a new printf statement on line 14, which attempts to print out the variable name. And this time we don't even need to compile our code. We can see from the red underlining under the variable name on line 14 that we have a problem. And when we hover over that, we see the error message identifier "name" is undefined.
+
+We can confirm this by attempting to compile and run our code. The compilation will fail with the same error: use of undeclared identifier 'name'. What we learned from this little demo is that if we define a variable inside a scope, that variable has local scope and cannot be used outside that scope.  The host clears the screen.  Let's try another little experiment to try and drive the same point home.
+
+On screen now we continue to have a main() function. Within this, we have one inner scope. This one starts on line 6 and ends on line 14. Notice the delimiting curly braces. Then on line 8 we have yet another inner scope and this scope terminates on line 13. In this way, our main() function defines a total of three scopes. The first scope starts on line 5 and ends on line 17.
+
+That's the scope of the function main() as a whole. Then there is another scope which starts on line 6 and ends on line 14, let's call this the outer scope, and then the innermost scope, which extends from lines 8 through 13. On line 7, that's in the outer scope, we have declared and initialized a variable called outer_var.  Line 7 reads int outer_var = 100;.Then on line 9 we have a similar variable.
+
+This one is declared and initialized to be 200 inside the innermost scope. Now on lines 11 and 12 we attempt to access the variables outer_var and inner_var. There's no red underlining, and if we attempt to compile this code we find that compilation goes through successfully as well. We run our code and everything works as expected.
+
+How do we account for the fact that outer_var is accessible inside the innermost scope? Well, that's easy enough to work out. Outer_var is declared inside the scope which starts on line 6 and ends on line 14. And this means that outer_var will remain accessible anywhere within that scope, even within a further inner scope.
+
+The variable outer_var is thus accessible inside the inner scope. Will the inner_var variable be accessible in the outer scope? Let's try and find out. Now we've added in a couple of printf statements between lines 13 and the end of the outer scope. These printf statements are on lines 15 and 16, and straight away you can see that we have some ominous red underlining.
+
+The red underlining does not appear under outer_var. Outer_var remains accessible in this outer scope. However, inner_var is no longer accessible and that in turn, is because inner_var was defined inside the scope, which started on line 8 and ended on line 13. It's no longer accessible or in scope by the time we get to lines 15 and 16. We can confirm that this is indeed the case by clicking on the tooltip to view the problem.  The error message reads: identifier "inner_var" is undefined C/C++(20). 
+
+And if we take things further and try to force clang to compile our program, it will complain in the same fashion. We have an error corresponding to the use of the undeclared identifier 'inner_var'. In fact, we are even asked: did you mean 'outer_var'? Let's now try a further experiment.
+
+Remember that in this program, we have the outer scope and then we have the inner scope. Our printf statements are currently inside the outer scope, but they are not yet inside the main scope of the function. Let's move those two printf statements so that they lie outside the closing curly braces of the outer scope. We see that we now have the red underlining under not just one, but under both of our printfs.
+
+Both inner_var and outer_var now show up as undefined. And the reason for this is that the outer_var variable also was in scope only between lines 6 and 14. By moving these printf statements outside that outer scope and into the main() function scope we no longer can access either of these variables, and we can confirm this by compiling our code.
+
+We get now two errors for the use of undeclared identifier, one of these is for inner_var and the other is for outer_var. This gets us to the end of this little demo in which we saw the rules for local variables whose scope is inside the closest enclosing scope; that's typically the closest enclosing pair of curly braces. In the demo coming up ahead we will turn to the scope of function parameters known as formal parameters.
+
+4. Video: Scoping Input Argument Variables 
+
+Upon completion of this video, you will be able to recall input argument scope.
+recall input argument scoping
+ Topic title: Scoping Input Argument Variables. Your host for this session is Vitthal Srinivasan. 
+In the previous demos, we've explored global variables with file scope as well as local variables. In this demo we will turn our attention to the scope of function parameters. On screen now, you can see that on line 4 we have a function prototype or an explicit declaration of the function print_os_details on line 4.
+
+Then we have a main() function and then below the main() function we have the definition of the function print_os_details. Notice that the names of the parameters in the function prototype on line 4 are different from the names in the function definition on line 17. For instance, on line 4, the first parameter is called os_name.
+
+On line 17, it's just called name. Similarly, the second is called os_version in the prototype or just version in the definition. In other respects, the function prototype exactly matches the function definition. We've already seen that the names of the parameters can be different in the prototype versus in the definition. Then inside the main() function, notice that we define variables called name and ver.
+
+These variables are declared on lines 8 and 9 and these are local in scope and only exist inside the main() function.  Line 8 reads char name[] = "MacOS";. Line 9 reads float ver = 10.14;.  On line 11 we then invoke the print_os_details function passing in name and ver as the actual input parameters. Before we attempt to go any further, let's try and compile and run this code.
+
+We invoke clang on variable_scopes.c, and we have no errors or warnings. Then we run our code and we can see that the values of name and ver defined inside the main() function do indeed get passed in to our print_os_details function, and that's why the printf statements on lines 19 and 20 show up the values Mac OS and 10.14.
+
+These printf statements on lines 19 and 20 make use of the variable names from the function definition on line 17. Name on line 19 refers to the name on line 17, and version on line 20 also refers to the version variable name on line 17.
+
+When this function print_os_details was invoked up above on line 11, the value of the local variable name from line 8 was passed in and that's how it became available inside the print_os_details function. Now, let's try our first tweak to this code. Notice that in the printf statements on lines 19 and 20, we have referred to the variable names from the function definition on line 17.
+
+What happens if we instead try and reference the names from the function prototype on line 4? We can tell right away from the red underlining that this won't work. We can see here that os_name, which is the variable we've attempted to use on line 18, matches the os_name[] in the function declaration on line 4, but that's not good enough.
+
+We have an error stating identifier "os_name" is undefined. What this little example proves is that if we have a difference in the names of the formal parameters in the function definition versus in the function declaration, it's the function definition, the one on line 17, that wins out. And this problem exists for both the os_name and the os_version. We can try and force compilation, but that will only confirm the same compiler errors.
+
+We will have errors for undefined identifiers os_name and os_version.  The host clears the screen.  Let's very quickly run through another example concerning local variables before we return to the idea of the scope of function parameters. On screen now, you can see that we've tweaked our code so that we have two functions, main() and print_os_details(), but print_os_details no longer accepts any inputs.
+
+It's no longer a parameterized function. Inside the function print_os_details we have two variables, name and version. These are now local variables, and therefore they are only going to be available inside the scope of the function print_os_details.  Line 15 reads char name[] = "MacOS";. Line 16 reads float version = 10.14;.We can quickly verify that this is indeed the case by compiling this code.
+
+Everything goes through smoothly and it runs smoothly as well. This was to be expected. We weren't trying anything complicated so far. Next, let's try a little experiment. Let's see if inside the main() function we can access the values of the variables name and version.
+
+Now, this idea is not quite as random as it might seem, because on line 8 you see that we've actually invoked the print_os_details function. Could it be that the variables name and version now become accessible inside the scope of the main() function as well, just because we've invoked print_os_details? Let's try and find out. Well, from the red underlining on lines 10 and 11 it's clear that the answer is no.
+
+We cannot access these variables from inside the main() function. The variables name and version in this example are local to the function print_os_details. They were defined on lines 18 and 19. That means that they are local to print_os_details, and they are not available inside the main() function. That's true, even though the main() function has invoked the print_os_details function.The host clears the screen.
+We now clearly understand the scope of local variables defined inside a function. Let's move on and examine the scope of the parameters which are defined in the function definition. On screen now, we have print_os_details, again as a parameterized function. It takes in the two input arguments, name and version.
+
+This time, there's no mismatch in the names of the formal parameters in the declaration on line 4, versus in the definition on line 14. The parameters are called name and version in both of these. Notice now that inside the main() function we invoke print_os_details by passing in a pair of literals, the string "MacOS" within double quotes, and the floating point value 10.14.
+
+Because these are literals, we don't actually have variables to hold these values. Then inside print_os_details of course, we reference name and version, and from this we can clearly see that the parameters defined in the function definition signature, that's the one on line 14, are going to be available for use inside the function, for instance on lines 16 and 17.
+
+We attempt to compile and run this code, and everything works just fine, no compilation errors or warnings, and running the code also correctly displays the values of the name and the version.
+
+Now let's try a tweak, and the tweak is going to be: we will attempt to access the variables name and version inside the main() function. Will these be accessible? Well, let's find out. We can tell right away from the red underlining that the answer is likely to be no.
+
+Indeed, when we hover over these red underlinings, we find that the identifier name and version are undefined and we get confirmation of this if we try and actually compile our code. What this little demo showed is that when we have parameter names, these parameter names which are a part of the function definition will be in scope inside that function, but they will not be in scope in any other part of the file or program.
+
+Therefore, for all practical purposes, the function parameters can be thought of as local in scope to that particular function. This gets us to the end of our conversation about variable scopes. We discuss global variables with file scope. These exist outside any of the functions in a file. We then spoke about local variables which are available inside their scopes, and then we discuss the scopes of function parameters.
+
+5. Video: Redefining Global Variables in Local Scopes 
+
+During this video, you will learn how to redefine variables in different contexts.
+redefine variables in different scopes
+ Topic title: Redefining Global Variables in Local Scopes. Your host for this session is Vitthal Srinivasan. 
+Now that we have some familiarity with the concept of scopes in C, we can think about situations in which variables in different scopes have the same name, then which variable wins out. That's what this demo is all about. The host launches redefining_variables.c. Let's go ahead and plunge right in. In the code on screen now, you can see that on lines 4 and 5 we have two global variables.
+
+These are called float num_1 and num_2, and each of these has scope at the file level. Num_1 and num_2 are going to be accessible within all functions in this file, after lines 4 and 5. So again, num_1 and num_2 are global variables with file scope. float num_1 = 10.3 and float num_2 = 20.5.  Then we have a main() function and inside that main() function we again have a couple of variables called num_1 and num_2.
+
+These are defined on lines 12 and 13. This set of num_1 and num_2 variables is local in scope and is only in existence within the pair of curly braces on lines 8 and 17. int num_1 = 100 and int num_2 = 200. Then, within this main() function, we have four printf statements.
+
+Two these are on lines 9 and 10, that is before the declaration of the local variables num_1 and num_2, and two of them are after the definitions of the local variables num_1 and num_2. The first point worth noting is that this code will compile. We can invoke clang on this file and we see that there are no warnings or errors.
+
+This tells us that what we've attempted in the code is definitely acceptable to the compiler. We can have global variables and local variables which have the same name, as well as having different types. So far, so good. Now let's run this code and see what the output looks like. And that output confirms that the local variables hide the global variables.
+
+How do we know this? Well, if we look closely at lines 9 and 10 in code, the output down below reads: Global variable num_1: 10.3, Global variable num_2: 20.5. So clearly, these are the global variable values that are being referenced. Those are the values specified on lines 4 and 5. Then on lines 12 and 13 we re-declare variables called num_1 and num_2.
+
+These are now local variables. They are of type int and they have values 100 and 200. And that's why the printf statements on lines 15 and 16 result in the output down below: Redefined variable num_1: 100 and Redefined variable num_2: 200. These are the values that we assigned on lines 12 and 13.
+
+What this little demo has proven is that we can have global and local variables which have the same names, and in such a situation, as soon as the local variables are created, they mask or hide the global variables. However, as we can tell from the printf statements on lines 9 and 10 even within the local scope, in that portion of the scope before the local variables are recreated, it's still the global variables which are visible.
+
+Let's set up another simple little experiment where we've added another function to our code. This function has its prototype up top on line 7, it's called other_function, and its definition is down below. On lines 4 and 5 we continue to have our two global variables, num_1 and num_2, and those global variables are referenced in other_function on lines 25 and 26.
+
+Now, let's turn our attention to the main() function. There, we begin with the same two printf statements, we print out the values of num_1 and num_2, and these are going to be the global variables num_1 and num_2. Then on lines 14 and 15 we redefine num_1 and num_2 to be ints with the values 100 and 200. On lines 17 and 18, once again, we have printf statements where we print out num_1 and num_2, but this time it's going to be the local variables, the once defined on lines 14 and 15, that are going to be printed out to screen.
+
+Everything up to line 18 in the main() function is identical to the demo we saw a moment ago. What's different now, is our invocation of other_function on line 20. Other_function is being invoked at a point where in the calling function, that is in the main() function, we have the global variables num_1 and num_2 hidden by the local variables num_1 and num_2.
+
+Now the question is, when we run this code, will the other_function print the values of num_1 and num_2 from lines 4 and 5 or from lines 14 and 15? Let's compile our code and first make sure that it even compiles. Clang has no problem with this code. No warnings or errors.
+
+When we run the code, we see that the output is, as we expect for the first 4 lines, the first two printfs have the global variable values 10.3 and 20.5, the next two have the redefined variable values 100 and 200 but then the real interesting bit is in the last two lines of the output. Our function other_function has printed out the global variable values of num_1 and num_2.
+
+And from this, we conclude that when we have global as well as local variables which conflict, within a scope like the main() function here, any other functions which are invoked from that scope will still only reference the global variables and not the local variables. This stands to reason.
+
+After all, the local variables num_1 and num_2 defined on lines 14 and 15, do not exist once control passes into the scope of other_function. They only exist in the scope of the function main(), and that's why the last two lines of the output read as they do. Now, let's go back to our code and look at lines 14 and 15. These two lines are where we redefine the variables num_1 and num_2. Now, at this point, you might be wondering how does the C compiler know that we mean new local variables called num_1 and num_2?
+
+How does it know that we do not just want to change the values of the global variables num_1 and num_2? And the answer is because we've declared the types of these variables. It's the words int on lines 14 and 15 which cause the C compiler to treat these two lines as declaration, as well as initialization, of these two new variables.
+
+If we change these two lines of code to just get rid of the types; note how we only eliminated the words int from lines 14 and 15, now the effect of these two lines of code is very different. Now it's as if we are merely reassigning or changing the values of num_1 and num_2. We are no longer creating new local variables, which hide the global variables defined up above. At this point, we no longer have any local variables called num_1 and num_2.
+
+All references to num_1 and num_2 in this program now, are to the global variables defined on lines 4 and 5. Let's compile our code, compilation goes through smoothly, and then let's run it. The output reveals that on lines 11 and 12, we have still the values 10.3 and 20.5, which we assigned while declaring the variables on lines 4 and 5.
+
+Then, on lines 14 and 15 of the code, we change the values of the existing variables num_1 and num_2 to read 100 and 200. And that's why the printf statements on lines 17 and 18 display these values. Then after that within the main() function, we invoke other_function and inside other_function, when we print out the values of the global variables num_1 and num_2, we find that we have the updated values.
+
+Again, we have the updated values of 100 and 200 and not the initial values which had been specified while declaring the variables.  The host clears the screen except for lines 1 and 2.  Now, just as we can have global variables which are hidden by local variables, we can have local variables in different scopes which also might hide each other.
+
+On screen now, we no longer have any global variables, however, inside the main() function on line 6 we have a float variable, main_var, initialized with 10.5. Then we have an inner scope that's defined by the curly braces on lines 8 and 16.
+
+Within this inner scope, we start out by printing the value of the variable main_var, and on line 9 this is going to pick up the value initialized on line 6. Then on line 11, we redefine a new variable called main_var. We know this is a new variable because we specify the type, float. The value of this new local variable main_var is 111.1, and note again that this variable is local to the scope between lines 8 and 16.
+
+Then we have another printf on line 15 where we again print out main_var. This time it's going to be the redefined variable version from line 11 that's displayed to screen. On line 16, the inner scope ends and then on line 20 we again print out main_var.
+
+Because this is in the outer scope on line 20, the main_var that is going to be printed out is the one from line 6. That's the outer scope version. Let's go ahead and confirm our induction. We compile our code, everything goes through smoothly and when we run it, we do indeed find that the printf on line 9 displays the value 10.5, then the printf on line 15 displays the value 111.1, and then the printf on line 20 displays the value 10.5 again.
+
+From this, we learn that it's perfectly possible to have two local variables in different scopes, where the one in the inner scope hides the one in the outer scope. And in this case, as well, if we change line 11 to eliminate the type, so that line 11 simply reads main_var = 111.1, the C compiler will now treat this line as the reassignment of the existing variable from line 6, rather than as the creation of a new variable inside the local scope.
+
+And this time, when we recompile and rerun our code, the printf on line 9 continues to display 10.5, the printf on line 15 also continues to display 111.1, but what's new is that the final printf, the one on line 20, now displays 111.1 rather than 10.5. And that's because the statement on line 11 changed or updated the value of main_var, specified on line 6.
+
+6. Video: Using the Automatic and Register Storage Classes 
+
+After completing this video, you will be able to recognize the different storage classes.
+recognize storage classes
+Topic title: Using the Automatic and Register Storage Classes. Your host for this session is Vitthal Srinivasan.
+One of the reasons that the C programming language has retained its relevance almost 5 decades since it first came into existence, is that it's one of the few languages which allows the programmer to work really closely with the underlying hardware. An integral part of this is C's support for storage classes.
+
+As the name would indicate, the storage class of a variable helps guide the C compiler as to how to store the data in that particular variable. The storage class is also relevant for determining the scope, that's the visibility, and the lifetime of variables. There are four possible storage classes: automatic, register, static and extern. Let's go ahead and see how these four storage classes differ. On screen now, we have a really simple C program in which we have two local variables, num_1 and num_2.
+
+Each of these is of type int, and then even before the type int, we have the keyword auto. Now it turns out that in this particular case, there actually was no real need to explicitly add in that keyword auto because by default, all local variables have storage class auto. The use of the auto keyword here merely makes that choice of storage class explicit.  num_1 = 100 and num_2 = 1000. 
+
+Let's compile our code to make sure that the C compiler likes this keyword, it does, and then when we run our code, as expected, we have num_1 + num_2 summing up to be 1100. Virtually everything that we've learned so far about variables applies to auto variables. On screen now, we again have two variables declare the storage class auto.
+
+We prompt the user to enter values for them and then compute the sum. We compile this code and run it. We are prompted for the values for num_1 and num_2,  The host enters the value of 50 for num_1 and 50 for num_2.  and as expected, we get back the sum. The output reads num_1 + num_2: 100. This little example is just meant to drive home that you can change the values of auto variables. They are just typical ordinary variables. Next, let's tweak our code so that we have an inner scope.
+
+Notice now that we have the curly braces on lines 5 and 20. These define the function level scope for the function main(), and then we have another pair of curly braces, which define another inner scope from lines 6 through line 17. Within this inner scope we have two variables, num_1 and num_2. These again have storage class auto. We've made use of the word auto explicitly on lines 7 and 8. No change in the rest of the program, and then we go ahead and run this code.
+
+Everything compiles just fine and it runs in the same manner as well. We are prompted for the values, we type in a couple of values and get back the sum. The host enters the value of 50 for num_1 and 100 for num_2. The sum reads 150.  Now we've been at bins to emphasize that it's only local variables that have storage class auto by default.
+
+How about global variables? The host clears the screen except for lines 1 and 2. On screen now, we've defined a couple of global variables. These have file-level scope. These are on lines 4 and 5. Note that we've attempted to use the storage class specifier auto, on each of these lines.
+
+Will this work? Let's try and compile our code, and this time we encounter an error: illegal storage class on file-scoped variable, and note that we have the same error appear twice, once for each of the times that we attempted to use the keyword auto. It turns out that file-scoped variables, that is global variables, have a different storage class that's static.
+
+We'll come back to this in just a moment. For now, just keep in mind that all local variables by default have storage class auto. However, global variables by default have storage class static. The static storage class is actually quite an interesting one and we'll take a bit of time to discuss it in detail. But before that, let's talk about the register storage class really quickly.
+
+On screen now, you can see that we've specified storage class register for our local variable counter. When we declare a local variable as being of type register, we are requesting the compiler to try and place this variable in a register rather than in a memory location. Why might we do something like this?
+
+Well, if we need this particular variable for a lot of fast computations. Please note that this storage class specifier is a request. We can't be sure that C is going to be able to fit our variable into a register. It's going to try its best, but again, no promises. So there is a chance that this variable is going to simply reside in a memory location, like an auto variable.
+
+In the simple program on screen now, we have our variable counter. This is a loop variable, it's incremented 5 times and printed out to screen. This code will compile just fine, and it will run just fine as well.
+
+No compiler warnings or errors, and when we run it, we simply get the value of counter, ranging from 0 through 4. Now, when a variable has storage class register, there are certain important constraints on what you can do with such a variable. Most importantly, you cannot make use of the ampersand operator in order to access the address of the memory location in which this variable is stored. That's because, of course, this variable is meant to be stored in a register, and so it will not have a memory location.
+
+Where have we encountered the ampersand operator? Well, every time we attempt to scanf, we are making use of that ampersand operator. You can see an example of this right here on line 10. We attempt to use scanf in order to prompt the user for the number of times the loop should execute.
+
+Will this work? Let's try and compile our code, and when we do, we see that we have a compilation error: address of register variable requested. That gets us to the end of this little demo in which we introduced the idea of the storage class. We saw how local variables by default have storage class auto.
+
+Along the way, we also noted that global variables do not have the storage class auto, rather it's static by default, and then we explored the register storage class. We saw that with variables which have the storage class, we cannot make use of the ampersand operator to access the memory location of the variable.
+
+7. Video: Creating Static Global and Local Variables 
+
+Learn how to create variables that do not change.
+create static variables
+Topic title: Creating Static Global and Local Variables. Your host for this session is Vitthal Srinivasan.
+In the previous demo, we had introduced the concept of the storage class and discussed how local variables by default have storage class auto. Then, we had attempted a little experiment in which we had created a couple of global variables and tried to specify their storage class as auto.
+
+We can see the code of this experiment on screen now, and you might recall that when we had compiled this code we had gotten a compilation error: illegal storage class on file-scoped variable. We conclude from this that global variables do not have storage class auto and indeed the correct storage class here is static.
+
+That does it for the recap, and let's jump into an entirely new demo, and you can see here that on lines 4 and 5 we have two global variables, num_1 and num_2, and this time around we've specified their storage classes as static. Then we have a function called enter_values within which we prompt the user to enter values for num_1 and num_2, and then read in those values using scanf.
+
+Notice that we make use of the ampersand operator on lines 9 and 12. That's going to be perfectly acceptable for static variables that only was not acceptable for variables whose storage class was register. Then on line 15 we have our main() function within which we invoke enter_values, and after that invocation on lines 19 through 22 we perform various operations with num_1 and num_2.
+
+Because num_1 and num_2 are global, it's perfectly acceptable for us to input their values in one function, that's enter_values, and then to use those values in another function, that's the main() function. Let's compile this code to make sure that there are no surprises lurking and there are none.
+
+Clang is fine with this code, no warnings or errors. We run the code, we are prompted for the values of num_1 and num_2, we enter 12 for num_1 and then 2 for num_2, and this gives us the printf statements with the results of all those arithmetic operations. The output reads: num_1 + num_2: 14.00. num_1 - num_2: 10.00. num_1 * num_2: 24.00. num_1 / num_2: 6.00.  So far in this little demo, we've seen that global variables by default have storage class static.
+
+We've also seen that it's possible to use the ampersand operator with static variables. Now, global variables have storage class static, but that does not mean that only global variables can have storage class static. We are going to talk about local variables which have storage class static, and they have some truly interesting behavior. Let's lead up to that.
+
+On screen now, you can see that we have code for a function called increment_and_print_counter(). This initializes a variable called counter to 0, increments its value, and then prints it out. Then within the main() function, we invoke this increment_and_print_counter() function three times in a row.
+
+There's nothing particularly remarkable about this code, we compile it using clang, no compiler warnings or errors follow, and then we run it. From the output we can see that each invocation of increment_and_print_counter() displays the same counter value, which is 1.
+
+This is not surprising because the function increment_and_print_counter initializes counter to be 0 on line 5 and then increments it on line 7 using the post increment operator before printing it our on line 9. So there's absolutely no surprise in the output here. Now, please note that the variable counter defined on line 5 is local to the function increment_and_print_counter which means that its storage class is the default, i.e. auto.
+
+What if we were to instead change the storage class of counter to be static instead? This would have a really interesting effect on the output of this program. Well, we've made the change now. You can see on line 5 that we've made use of the keyword static.
+
+This also shows us that local variables can also have storage class static. Without further ado, we compile and run our code and in the output, we now see that the value of the counter is incremented from 1 to 2, and then from 2 to 3. Somehow, our variable counter, inside the function increment_and_print_counter, remembers what its value was the last time the function was invoked.
+
+And this is a really interesting aspect of static local variables and in specialized use cases like this one, it can prove incredibly useful. There's a bit of fine print that you have to keep in mind when working with static local variables, however. Specifically, they can only be initialized using constant literals. In the code on screen now, you can see that we've attempted to initialize our static int counter using an input argument passed in.
+
+This will not do. From the red underlining we can see that we have a compile error. That compile error tells us that the expression must have a constant value. Let's try our luck and force clang to compile this code, by invoking it on storage_classes.c, but we still have the same problem. Error: initializer element is not a compile-time constant.
+
+This tells us that static variables need to be initialized using constant literals and not expressions. In this demo, we introduced the concept of the static storage class and we saw how static variables could either be global or local. Static variables which are defined inside a function, that is local static variables, do not disappear when the function is no longer active. Static local variables will hold their values, that is, their values persist across multiple invocations of the same function.
+
+8. Video: Accessing Variables from Multiple Files 
+
+Find out how to use external variables.
+use external variables
+Topic title: Accessing Variables from Multiple Files. Your host for this session is Vitthal Srinivasan. 
+At this point, we've discussed storage classes auto, register and static, and this time we're going to talk about the last remaining C storage class, which is extern. This is also going to give us an opportunity to run our first multi-file program.
+
+Let's begin by creating a new file. We do this in VS Code by clicking on that little icon you see on the top left. The tooltip tells us that this is the icon to create a New File. Clicking on this allows us to add in a New File, and we name this file math_util.c. Within this file, math_util.c, we simply define a pair of global variables, float pi and float e.
+
+We assign values to each of these and we have a semicolon at the end, that means these are legitimate lines of C syntax, but other than these two lines, we have nothing else in this file. pi = 3.14159 and e = 2.71828. Then let's switch back to our original file, storage_classes.c. There, you'll see that we have a couple of # include statements <stdlib.h> and <stdio.h>, but we do not have any # include statement for math_util.c.
+
+In any case, we then type in some additional code and that code includes the keyword extern. On lines 4 and 5 you can see that we've declared variables float pi and float e, and each of these is declared as having the storage class extern. This is the fourth storage class, and extern is a way of telling the compiler that these values already exist somewhere out there.
+
+For a minute, never mind where they exist, just assume that they exist somewhere, and so you don't need to assign or allocate memory to them, by using the extern keyword here, we are ensuring that the compiler will not actually create memory locations to store the variables pi and e. Then in the main() function all we do is reference these variables pi and e and print out their values using printf.
+
+Will this code even compile? We can't be sure. After all, we don't seem to have any # includes for the files containing the values pi and e. However, when we invoke clang on these files, we now compile not one, but two files. We invoke clang on storage_classes.c, as well as on math_util.c, and this is how the C compiler knows that it's got to compile both of these files at one go and create one final executable.
+
+The linker is going to be involved in this process. You might recall that linking involves resolving external references from one file to another, and you find that the compilation goes through successfully. Now, we can run our executable in the usual manner. This is simply a.out as usual, and the output of a.out is correct.
+
+It matches the values that we had placed in math_util.c. We can verify that by switching over to math_util.c and comparing the values on screen there to those in the TERMINAL down below. Now, these values of pi and e are effectively global variables which are accessed in another file. Global variables can certainly be modified.
+
+Let's see what happens if we try and modify the values of pi and e in storage_classes.c. We still have the keyword extern applied to each of these, indicating to the compiler that they are defined somewhere out there and that there's no need to allocate memory or register space for them, pi = 3.14 and e = 2.72. but now we also have the reassignments.
+
+The compiler isn't entirely happy with this. When we invoke clang, this time we get a couple of warnings telling us that we have extern variables within initializer. In general, it's just a really bad practice to change the values of constants that you pull in, using extern. This is what the const keyword was added to the C language in order to prevent.
+
+We'll get to the const keyword later, but for now, you should just know that what you see on screen right now only throws a compiler warning, but that warning needs to be taken seriously. The warning reads: 'extern' variable has an initializer [-Wextrn-initializer].In any case, let's move on now and see whether we can use the extern keyword for local variables as well.
+
+Right now on screen, we have the extern keywords applied to global variables. Let's move those definitions into the main() function. So on lines 6 and 7 we declare the variables pi and e. We precede these with the keywords extern. Then on lines 9 and 10 we reassign new values into pi and e. Again, this is a bad practice. This is being done here merely to show that it's possible.
+
+And then on lines 12 and 13, we print out the values of pi and e. We compile this code, this time there are neither compiler warnings nor errors. We run the code, and the values of pi and e are the ones that we set on lines 9 and 10. In this last little example, what we learn is that it's perfectly acceptable to use extern for local variables.
+
+It need not only be applied to global variables. And there's nothing wrong with what you see on lines 6 and 7. However, what you see on lines 9 and 10 is not so innocuous. What's done on lines 9 and 10 is not something you should be doing. It's never a good idea to reassign extern values. So lines 9 and 10 are not OK, but lines 6 and 7 are OK.
+
+Unfortunately, the compiler has not flagged lines 9 and 10 with a warning or an error. In any case, let's delete those two lines and rerun our code. When we do this, we see that we still continue to have the values of pi and e, that were pulled in from math_util.c. We confirm that by switching over to math_util.c and comparing the values there with the output down below.
+
+And this drives home the point that we can use extern to decorate local variables as well as global variables and the C compiler will figure out, if possible, where those variables need to be pulled in from externally, without allocating memory to them.
+
+9. Video: Creating Static and External Functions 
+
+In this video, find out how to use the static and extern keywords with variables.
+use the static and extern keywords with functions
+Topic title: Creating Static and External Functions. Your host for this session is Vitthal Srinivasan.
+By this point, we are familiar with the use of the static storage class, as well as with the use of the extern keyword, in order to tell the C compiler not to allocate memory for a variable because it's been defined somewhere in a different file. In this demo, we are going to focus on the static keyword yet again, but this time we will be applying it to functions rather than to variables.
+
+As we shall see, this has an entirely different meaning. Let's go ahead and get started. As before, this example is going to involve two files. On screen is the first file called math_util.c. You can see that in this file, we define one value, that's the float pi on line 2, and we initialize this to hold the value 3.14159. Then we define a couple of functions: compute_circle_area and compute_circle_circumference.
+
+Each of these takes in a float and returns a float. They do exactly what their names would suggest. Notice also that they each make use of the value pi, and this is perfectly acceptable because pi has been defined as a global variable, that is with file scope on line 2. This does it for the first file in our little example. Let's switch to the second file.
+
+Note that this one is called extern_and_static_functions.c. We start with two # includes and then we have the extern keyword applied to two function prototypes. And these two function prototypes correspond to the functions that we defined in math_util.c. This proves that we can apply the extern keyword not just to variables, but to functions as well.
+
+Now, of course, the compiler is going to look for functions which have exactly these function signatures, so it's important that the extern keyword be used along with signatures, which exactly match the actual definitions. Here, both of our functions have return type float, and they take in one single input argument each, which is also of type float.
+
+Then on line 9, we have our main() function within which we create a local variable radius.  Line 11 reads float radius = 10.2;. Then on lines 13 and 14, we invoke the functions compute_circle_area and compute_circle_circumference. In each case, we pass in the radius as an input argument. This code ought to compile. Let's first check that it does.
+
+We invoke clang on two files, extern_and_static_functions.c, as well as math_util.c, and when we do this, the compilation goes through successfully. We run our code and we do indeed get the correct values for the area and circumference of a circle that has radius 10.2.Area of the circle = 326.851044. Circumference of the circle = 64.088440.So far, so good.
+
+Now let's go back to math_util.c and make a very small change to the code there. We have the functions compute_circle_area and compute_circle_circumference. We just add on the keyword static before each of these function definitions. You can see here the keyword static on line 4, as well as on line 8.
+
+This is the first time that we've applied the keyword static to a function. So far, we've applied it to variables. Those variables could have been global, or they could have been variables defined inside a function, but again, this time we are applying static to a function. This is the only change we've made to the code of either file. Now, let's try and recompile the same code.
+
+We invoke clang on both files, clang extern_and_static_functions.c and math_util.c. This is the exact command we had successfully run a moment ago, but this time when we try this command, we get an error, specifically a linker error: linker command failed with exit code 1.
+
+Remember that the linker is responsible for resolving external references, so this error implies that the linker found some external references, it tried to resolve them, but it failed to do so. And the undefined symbols are visible in the linker error "compute_circle_area" and "compute_circle_circumference". Note how each of these is preceded with an underscore. Never mind the underscore.
+
+That's a little bit of extra syntax added in there during the compilation process, but what's really happened here is that we marked those two functions as static in the math_util.c file, and that is what has caused this linker error. The static keyword, when applied to a function, is a way of telling the C compiler that we would like that function to only be available within that file.
+
+Now, in terms of the compilation process, each file is compiled into object code. This object code is often stored in a file with the same name as the original source file, but a dot or extension. The use of the static keyword on a function is a way of telling C to restrict the invocation of a function to only within the same object file.
+
+Now, if this is what the static keyword does, then we should be able to copy paste all of the code from extern_and_static_functions.c into math_util.c, and it should work there. Let's try that little experiment. We go to extern_and_static_functions.c and we copy all of the code there, and then we comment the contents of this file.
+
+This can be done in VS Code using the menu or the shortcut Ctrl A /, or Cmd A /, on a Macintosh platform. We then switch back over to math_util.c and paste in everything that we just copied into the clipboard. And at this point, we can see that we have the static keyword still applied to our function's compute_circle_area and compute_circle_circumference. However, we now have the main() function defined within the same file down below starting line 14.
+
+In addition to all of the code that we copy pasted in there, we also now need the # includes which we have on lines 1 and 2. Line 1 reads # include <stdlib.h>. Line 2 reads # include <stdio.h>.  Now let's compile this code. We invoke clang only on math_util.c because there's nothing required in extern_and_static_functions.c anymore. The compilation goes through successfully, so we've eliminated the linker error, and then we run the code using a.out, and that works as well.
+
+Clearly, the static keyword when applied to the functions in this file did not prevent those functions from being invoked from within the file. This gets us to the end of our exploration of the static keyword as applied to functions in C.
+
+10. Video: Using Pass-by-value and Pass-by-reference 
+
+In this video, learn how to differentiate between pass-by-value and pass-by-reference.
+differentiate between pass-by-value and pass-by-reference
+ Topic title: Using Pass-by-value and Pass-by-reference. Your host for this session is Vitthal Srinivasan.
+In this demo, we are going to talk about the semantics of parameter passing. As we shall see, there are pass-by-value and pass-by-reference semantics for different types of input arguments into a function. This topic is particularly important because it's a lead into the topic of pointers, which show how memory allocation governs the behavior of variables of different types.
+
+Let's go ahead and get started. On screen now, is a simple program in which on line 4 we have the prototype of a function increment_value(). This function has a void return type and takes in a single input of type int. That's the function prototype or the explicit function declaration. Then down below on line 19, we have the definition of this function.
+
+As you can see, increment_value() takes in the input argument var, it adds 10 to var, that's done on line 21, and then it prints out the value of var after this update. That's done on line 23. Let's now turn our attention to the main() function. On line 8 we define a variable called first_var and initialize it to hold the value 3. On line 10 we print out the value of first_var.
+
+This, of course, is going to be 3 as well. Then we invoke the increment_value() function passing in first_var. And now the big question is, when on line 14 we print out the value of first_var AFTER the function call, is the value of first_var going to be 3 or is it going to be 13?
+
+Let's go ahead and compile and run this code and find out. When we do, we see that the first two lines of the output hold no surprises. The printf statement on line 10 has led to the value 3 being printed out. That's the value BEFORE the function call.
+
+Then, within our function increment_value(), we add 10 to the variable passed in and then print out its value, and that's why the value IN function after increment is 13. And then the printf statement on line 14 yields the value 3. This has an important little lesson. It tells us that when we pass an input argument of type int into a function, any changes which are made to that input argument are not reflected when we come back to the calling function.
+
+The reason for this is that arguments of type int are passed in by value. This means that a copy is being made of the variable first_var, and that copy is what's actually being sent in to the increment_value() function. Any changes that are made are going to be made to the copy. That copy ceases to exist when the called function increment_value() terminates and returns control to the calling function, that's main().
+
+And that's why the changes, the addition of 10 to the first_var variable, are lost by the time we get back out into the main program. Let's quickly see whether the names of the function arguments have anything to do with it.
+
+Let's change the definition of increment_value() so that that input argument is called first_var so that it exactly matches the name of the variable in the calling function. You can see first_var is also the variable name on line 8. However, this turns out to not make any difference. When we compile and run this code the output remains the same.
+
+The value AFTER the function call is still 3. Next, let's try a similar experiment, but this time, let's change the type of the variables we're dealing with, from int to float. You can see the change made in the function prototype on line 4, the function definition on line 19, where the input argument is now float first_var, and then on line 8, where the variable type of first_var is also float.
+
+Everything else in the program remains the same, including the output. The value BEFORE the function call is still 3, the value IN function after increment is still 13, and the value AFTER function call is also still 3. Clearly floats are also passed in by value, just like variables of type int. Let's quickly also repeat this experiment with type char.
+
+You can here see that on line 8 we've defined first_var to be of type char. It holds the character literal uppercase A enclosed within single quotes, and we also made the corresponding changes to the function prototype on line 4, and the function definition on line 19. Line 4 reads void increment_value(char);. Line 19 reads void increment_value(char first_var){. Once again, when we compile and run this code, we find that the character type has also been passed in by value.
+
+The first printf statement yields the character literal uppercase A, the value IN the function after the increment is an uppercase K, that's because K comes ten places after A in terms of ASCII values, however, the value AFTER the function call has reverted to the uppercase A. Char, float and int are all clearly pass-by-value. Now, for an important test.
+
+Instead of working with individual int, float or char variables, let's switch to working with an array. On screen now, you can see the code reflecting this experiment. This time, we have not one, but two helper functions. On line 4, we have the prototype for print_array, which takes in an integer array, as well as the length of that array, and then on line 6 we have another helper function call update_array which just takes in one input parameter of type integer array. Within the main(), on line 10 we define a local variable lap_times[], and this is an array initialized to hold six integer values. The values are: 10, 11, 13, 9, 12, 14. 
+
+Let's scroll down a bit and understand the helper functions first. The print_array helper function simply prints out the values of all elements in the array by iterating over them using a for loop. And that for loop has as its terminating condition i < len. That's why we need to pass in the length of the array as an input argument.
+
+The other helper function update_array is a lot simpler. It just has one line of code, it updates the 0th element to hold the integer value 1000. Let's turn our eye back to the top of the screen. This is the main() function that you see there. On line 12 we print the value BEFORE the update function call, and then we invoke print_array on lap_times. The value passed in is 6. On line 15, we invoke update_array.
+
+This is where the 0th element of lap_times is going to be set to 1000. And then on line 17 and 18 we print the value of lap_times AFTER the update function. The basic structure of this program is very similar to the one where we had the int variable. The only difference is that here we have an array, and we are updating an element of the array, specifically the 0th element. Now, when we compile and run this code, we find the output is a little different than we might have expected.
+
+The values BEFORE the update function call are 10 11 13 9 12 14, however, the values AFTER the update function call are identical, with the exception of the 0th element which is now 1000. This teaches us an important lesson about arrays. Unlike int, float or char variables, arrays are passed-by-reference.
+
+When we pass in an array as an input argument into a function, updates which are made to elements of that array inside that function will continue to be reflected even when control returns to the calling function. In the interest of brevity, we will not go through and repeat this experiment with float and char arrays, but you certainly ought to do so if you feel it would help you convince yourself that all arrays are reference types.
+
+You will find that if you try the same experiment with a float array or a char array, you will get the same result. In other words, updates made to an int, float or char array in a function, will continue to be reflected in the calling function. Arrays are passed-by-reference, in contrast to int, float, char variables, which are pass-by-value.
+
+This distinction is actually so fundamental that in Java these types are actually known by different names. Primitive types such as int, float, char, long, double and byte are known as value types because they are passed by value, and other types, including arrays, strings and objects, are referred to as reference types. And that, again, is Java nomenclature, it's not C nomenclature. Even so, the idea is relevant to C as well.
+
+11. Video: Creating and Instantiating Structs (it_cpdtmmdj_02_enus_11)
+
+In this video, you will learn how to create and instantiate structures.
+create and instantiate structs
+Topic title: Creating and Instantiating Structs. Your host for this session is Vitthal Srinivasan. 
+In this demo, we are going to introduce the concept of a struct in C. Structs can be thought of as precursors to classes from the world of object-oriented programming. They allow a user to combine together many different variables into a single composite data type. The programmer can then instantiate variables of this composite data type.
+
+We've yet to get to the topics of pointers and memory management, but a struct allows all of the data corresponding to a particular user-defined data type to sit together in a contiguous location in memory. And this makes for very efficient memory access. Let's go ahead and get started. On screen now we have a simple little program in which we define our first struct.
+
+You can see on line 6 the syntax for this construct, the keyword struct, followed by the name of our data type. Here that data type is called Student, with the uppercase S. Please note that struct is a C language keyword, but Student is our choice of data type name. Then, starting line 7 you can see that we have many variable declarations.
+
+It's important to note that these variables all exist inside a single struct Student. This is our way of asking C to create a new data type called struct Student where each student has an id, that's an int, a name, that's a character array, and then a math_score and an english_score where both of these are floats.
+
+At the end on line 11 you can see that we have a closing curly brace and then comes that identifier, student_1, followed by a semicolon. Now, in this particular case, we are just creating one single instance of our struct, that is just one struct Student variable, and that variable is called student_1. This is what the syntax on screen now does.
+
+In effect, the code on lines 6 through 11 defines a new data type, that's the struct Student data type, and it declares a variable of that data type, that's student_1. Then, in the lines that follow, we print out the size of the different fields within the struct. You can see how we've made use of the dot operator following the name of the identifier student_1.
+
+For instance, on line 13, we print out the size of the student ID using student_1.id, and that's what we've passed into the sizeof operator. Remember that the sizeof operator returns the number of bytes occupied by a variable or data type. This is done in the form of an unsigned int. In the printf we have the format specifier %lu for this number of bytes.
+
+In similar fashion, we then print out the size of Student.name Student.math_score, Student.english_score, and then most interestingly on line 17, we invoke sizeof on student_1 as a whole.
+
+In other words, we are trying to calculate the number of bytes occupied by each individual field within the struct Student, that's done on lines 13 through 16, and then on line 17 we try to print out the number of bytes occupied by the Student variable as a whole. Let's compile and run this code. No warnings or errors, so this syntax is clearly acceptable.
+
+When we run it, you can see that the size of the Student.id field is 4, the size of Student.name is 20, that's to be expected, because up above on line 8 we've declared the Student.name field as a 20-byte character array.
+
+The math_score and the english_score are both 4-byte floats, and then we also see that the size of the entire struct is 32 bytes. 32 bytes is also what we get if we add up the sizes of the individual fields: 4 plus 20 plus 4 plus 4 gives 32. At this point, we've successfully defined the struct Student type and created one struct Student.
+
+Next, let's see how we can tweak the syntax so that we can create not one, but multiple struct Student variables. You can see on screen now that we've modified our struct Student definition just a little bit. The start is the same as it previously was. On line 7, we have the keyword struct, followed by the data type name Student.
+
+However, on line 12, where we have the closing curly brace, we do not have any variable names right after that. Instead, we just have the semicolon. On lines 14 and 15 we now declare two variables, student_1 and student_2, each of which is of type struct Student. Then you can see that on lines 17 through 20 we set the fields of student_1.
+
+So for instance, student_1.id is 111, student_1.name is set to "Janice" by using the strcpy library function. By the way, notice up top on line 3 that we have a # include of <string.h>. That's what allows us to invoke strcpy on line 18. Line 19 reads student_1.math_score = 67.78;. Then on lines 22 through 25, we print out the values of those fields, which we just set up above.
+
+All of this is being done for student_1. Scrolling down a little bit, starting line 27 we correspondingly set values for student_2.Line 27 reads student_2.id = 222;. Line 28 reads strcpy(student_2.name, "Joseph");. Line 29 reads student_2.math_score = 55.23;. For instance, we set the english_score of student_2 to be 89.11. Note that on line 20, we had set the english_score of student_1 to be 64.23. What we can tell from this code is that student_1 and student_2 each have their own distinct memory locations allotted to them, and that in turn allows us to individually set the fields for student_1 and student_2.
+
+Let's compile this code, and when we do, we find that we have no errors or warnings. Clang is fine with this code as it stands, and when we run it, we can see that the field values for student_1 and student_2 are indeed as we had set them. If we scroll up in the code a little bit, we can confirm that this is indeed the case.
+
+For instance, student_1's ID is 111. We have set that on line 17, and we see that reflected in the output down below. Likewise, student_2's ID is 222, and that's also what we see on screen. This gets us to the end of this little demo in which we saw how we can define structs in C.
+
+We also saw how the struct can be thought of as a composite data type, which allows the user to define new data types and then to declare variables of those new user-defined data types, as well as to actually set the field values within those variables. Please again, keep in mind some of this terminology. The struct is a composite data type. Users can use structs in order to create user-defined data types, and the individual variables inside a struct are referred to as fields. These can be accessed using the dot operator as you can see on screen now.
+
+12. Video: Creating and Instantiating Unions 
+
+Learn how to work with labor unions.
+work with unions
+Topic title: Creating and Instantiating Unions. Your host for this session is Vitthal Srinivasan. 
+In the previous demo, we introduced structs, which are composite data types in C. In this demo, we are going to turn our attention to a closely related concept, that of a union. You can think of unions as also being composite data types in C. The syntax and usage are very similar to that of structs. The key difference is that unions are extremely space efficient, although they achieve that space efficiency by making a very restrictive assumption about their data. The host launches struct_union.c. 
+
+On screen now, is our first union. At first glance, the syntax looks almost identical to that for structs. Pretty much the only difference is that we use the keyword union in place of the keyword struct. For instance, on line 6 we define the union Score. That's done using the keyword union. Our score seems to contain two variables: short marks and float gpa.
+
+Then on line 11 where we declare a variable of type union Score, again, we just make use of the keyword union. On line 7 and 8 we have the fields that our union contains, and these fields are marks which is a short, and gpa which is a float. These fields look identical to the fields in a struct, but there is one important difference. C will only allocate space for either the marks or the gpa, but not both.
+
+In other words, our union can contain marks or it can contain a gpa, but it can't contain both simultaneously. This leads to a great deal of space saving. Now, if you're wondering where a concept like a union might come in handy, do keep in mind that C is often used in settings such as on mobile devices and in OS kernel programming, where space is truly at a premium.
+
+We can prove this particular property of the union by invoking the sizeof operator on the individual fields, as well as on the union as a whole. On lines 13 and 14, we invoke sizeof on score_1.marks and score_1.gpa, and then on line 15 we invoke sizeof on score_1 as a whole.
+
+Remember that we had performed a similar experiment in the case of a struct, and there, the size of the struct as a whole was equal to the size of the individual fields within it. However, when we compile and run this code, we see that that's not true in the case of a union. Here the size of Score.marks is 2 bytes, which is to be expected because that's of type short, the size of Score.gpa is 4 bytes because that's of type float, but then notice how the size of the union as a whole is 4, which is the max of 2 and 4, it's not the sum of 2 and 4.
+
+Had this been a struct rather than a union the last field would have read 6 bytes at a minimum rather than 4. Again, this drives home the point that a union has enough room for exactly one of its constituent fields, but not all.
+
+Now those fields within the union can be of different data types, and that's why the C compiler has to allocate enough space for the largest of those fields. Here, the largest field is float, and that's why the size of Score has to be at least equal to the size of a float. Next, let's actually use a union. On screen now, we continue to have a union Score.
+
+Then on line 13, we set the marks field in our union to be 87, and then on lines 15 and 16 we attempt to access the marks and gpa fields of our score_1 variable. Please note that what we're doing on line 15 is perfectly legitimate.
+
+We are accessing score_1.marks after having set score_1.marks on line 13, but what we are attempting on line 16 isn't entirely correct because we are trying to access score_1.gpa even though our union actually has its marks field set rather than its gpa field. Notice that this code will compile without warnings or errors, and when we run it, we will get back the value that we were expecting for score_1.marks.
+
+However, score_1.gpa shows up as 0. That's why it doesn't make sense to try and make sense of the value 0 that's displayed for Score.gpa. What this little example so far has shown was that we can instantiate a variable of a union type and set a field within it. And in fact, there's also nothing preventing us from accessing the other fields, including the ones that we have not set in the union, even though that's not strictly correct.
+
+Let's now try another little experiment. This time we are going to set the gpa field rather than the marks field in our union Score variable.  Line 13 reads score_1.gpa = 4.66;.  Remember that the union will definitely have enough memory for the larger of the two fields. We compile our code, it goes through successfully, and when we run it, we can see that the value of the gpa is indeed set to 4.66.
+
+Note, however, that we are also able to print out the value of the marks field, even though we had not set it, and this contains a value which is effectively gibberish. This example again illustrates that while using a union, we've got to keep track of which of the fields in the union we are actually using.
+
+Let's move on to another example, and in this one, we have combined the ideas of a struct and a union. We have a struct, it's called Student, and within our struct Student we have a union called Score. Let's take a minute to parse the syntax here. On line 6 we make use of the keyword struct, that's followed by the name of our struct, which is Student. On line 12 we have the closing curly brace followed by the semicolon.
+
+Within this, on line 8, we have the union keyword, followed by the name of our union and then on line 11 we have the closing curly brace, followed by the identifier score. Because we are defining our union Score inside the scope of the struct Student, it's important for us to have the name of the variable, that's the field name, after the closing curly brace, and that's why that score with the lowercase s on line 11 is actually very important here.
+
+Now, every variable of type struct Student will have two fields: name and Score. Score itself is a union, and that in turn means that Score itself has two further fields: marks and gpa. Then on line 14, we declare a variable of type struct Student, and this variable is named student_1.
+
+We continue to make use of the dot operator in order to access these fields. On line 16, for instance, we use the dot operator to access the name field from our struct student_1. We've passed this in to the sizeof operator as before.
+
+Then on lines 17 and 18 we access the score field from within student_1, that's done with the first use of the dot operator, and then we again make use of the dot operator in order to access the marks and gpa fields from the score field of student_1. We've used the sizeof operator in order to compute the sizes of the individual fields; those are student_1.name, student_1.score.marks, and student_1.score.gpa, and then finally we use the sizeof operator on the entire struct variable student_1.
+
+Let's compile and run our code. The compilation goes through fine without errors or warnings, and when we run this code we see that the size of Student.name is 20. That's expected because on line 7 we declare name to be a 20-character array. Score.marks is a short, and that's why it takes up 2 bytes, score.gpa is a float, which takes up 4 bytes, and then the struct Student as a whole takes up 24 bytes.
+
+From this, we can infer that the Score union occupies 4 bytes. This isn't keeping with what we had previously said about how a union is going to try and use as little space as possible. The union Score has room for exactly one out of gpa and marks. Because gpa is the larger of the two fields, the union allots 4 bytes for this field.
+
+Before we wind up, you should note that a union might sometimes have a little more space than simply the max of its fields, and that might have to do with alignment along word boundaries. In any case, that gets us to the end of this demo in which we introduced unions and saw how they can be used along with structs in the C language in order to achieve storage that is as memory efficient as possible.
+
+13. Video: Representing Categories Using Enums 
+
+In this video, you will learn how to create enums.
+create enums
+Topic title: Representing Categories Using Enums. Your host for this session is Vitthal Srinivasan. 
+In this demo, we are going to take a very quick look at support in C for enums. Enum is short for enumerated type, and enums are a programming language construct common across many languages, including C, C++, Java and others, which allow us to define predefined constant values where each of those values has a name. And those names together constitute an enumerated type.
+
+Examples of enumerated type include days of the week, genders, months of the year and so on. Let's get started and see how we can define enums in C. On screen now we have a main() function within which we have on line 6 the enum keyword. This is followed by the name of our enumerated type, which in this case is Weekday.
+
+Then, within curly braces, we have a number of names. Notice that each of these looks like a string, but it's not enclosed within either single or double quotes. And these are the named values that our enumerated type accepts. As you can see, these are the days of the week, Sunday through Saturday. What you see starting line 6 and ending line 14 is known as the definition of the enum.
+
+You can see that the syntax looks similar to the syntax that we use for structs and unions. Also, notice the semicolon after the closing curly brace on line 14. Once we've defined our enum, we can go ahead and declare variables of this enumerated type. We've done that on lines 16 and 17.
+
+The two variables day_1 and day_2 are both initialized to hold different days of the week. Notice how on the right-hand side of the equal to sign, we make use of Sunday and Saturday without any kind of qualification. We use Sunday and Saturday as if they are predefined constants, which in fact they are.
+
+We've defined them up above, on lines 7 and 13 respectively. Now that we've declared and defined our two variables day_1 and day_2; these are defined to hold the value Sunday and Saturday, notice that we print their values out to screen using printf. And here's what's interesting. The format specifier that we make use of is %d, and this gives us a clue as to how enums are implemented under the hood.
+
+The enumerated values are all integers. %d, of course, is the format specifier for an int. When we run this code, you can see that the value for Sunday is printed as 0 and that for Saturday is printed as 6. This little experiment tells us that by default, enumerated values start from 0 and are incremented by 1.
+
+C does allow us to customize the values that we associate with each of these constants. For instance, on screen now, you can see that we've tweaked the definition of our enum so that Sunday is initialized to be 1. And as you can see, we've done this by using the equal to sign, followed by the integer value 1.
+
+We've only made this change to the value for Sunday. We've not assigned any constants for the other days of the week. Now, with the rest of the code unchanged, when we attempt to compile our code, we find that everything goes through fine, and then when we run it we can see that Sunday is now displayed as 1 and Saturday is now displayed as a 7.
+
+This little experiment proved that we could choose to initialize our enums so that they begin from a number other than 0. On screen now we've tried yet another experiment where we have explicit values associated with each day of the week. Sunday now is 10, Monday is 20 and so on. Tuesday = 30, Wednesday = 40, Thursday = 50, Friday = 60, and Saturday = 70.  Let's see whether the compiler is OK with this. We invoke clang on enum.c and no problems follow.
+
+No compiler warnings or errors. And when we run this code we can see that Sunday is indeed displayed as 10 and Saturday is indeed now displayed as 70. This gets us to the end of our very quick look at enums or enumerated types in C.
+
+As we saw in this demo, we can first define enums using syntax very similar to that which we use for structs and unions, and then we can define variables which are of that enumerated type. We also saw how under the hood, enums are effectively represented as integers. They can be printed out using printf with the %d format specifier, and we can exercise control over each enum value while defining the enum.
+
+14. Video: Course Summary 
+
+
+summarize the key concepts covered in this course
+ Topic title: Course Summary. 
+You have reached the end of this course, Using Variable Scopes, Storage Classes and Structs in C. You started this course by creating variables in the file scope. This means that a variable can be accessed anywhere in the code file where it is created. After creating variables of file scope you created variables using curly braces and attempted to access variables from inside and outside those scopes.
+
+Then you explored the scopes of local variables. Local variables are created in an invoke function and cannot be accessed within an invoking function. You also redefined file scope variables within local scopes and viewed the variables in different scopes. Next, you moved on to storage classes. There are four storage classes in C: automatic, register, static and extern.
+
+You began by creating variables with the automatic storage class, which is the default storage class for local variables and cannot be used with files scope variables. You also learned that the register storage class attempts to store variables in registers rather than on the stack. Then you used the static storage class, which is the default storage class for file scope variables, and can also be used with local scope variables with very interesting effects.
+
+In order to use the value for variable created in another file, you used the extern storage class as well. After that, you moved to the semantics of parameter passing in C and were introduced to the concept of pass-by-value and pass-by-reference. As you learned, data types such as integers, characters and floats are passed by value. In other words, whenever a variable of one of these types is passed in as an input argument to a function, it is a copy of the variable that's passed in.
+
+However, arrays are passed in by reference, meaning that they are directly passed into the function. Finally, you understood the concept of structs, unions and enums, which are all user-defined types in C. Structs are used to represent records and contain fields of different types.
+
+Once a struct is defined, variables of that struct can be instantiated, and each such variable will have its own values for the variables within the struct. If you're thinking that structs are very similar to objects of classes, you are absolutely right. Unions are similar to structs in many ways, but only allocate enough space for one field at a time.
+
+You also created enums or enumerated data types, which allow you to represent categorical fields such as the days of the week. Each category in an enum is associated with an integer. You now have a solid understanding of variable scopes, storage classes and structs and unions in C. This sets you up nicely for creating pointers in the course Getting started with pointers in C, coming up ahead.
+
+Course File-based Resources
+•	Accessing File-scope Variables from Functions
+Topic Asset
+
+•	Creating and Accessing Variables from Inner Scopes
+Topic Asset
+
+•	Scoping Input Argument Variables
+Topic Asset
+
+•	Redefining Global Variables in Local Scopes
+Topic Asset
+
+•	Using the Automatic and Register Storage Classes
+Topic Asset
+
+•	Creating Static Global and Local Variables
+Topic Asset
+
+•	Accessing Variables from Multiple Files
+Topic Asset
+
+•	Creating Static and External Functions
+Topic Asset
+
+•	Using Pass-by-value and Pass-by-reference
+Topic Asset
+
+•	Creating and Instantiating Structs
+Topic Asset
+
+•	Creating and Instantiating Unions
+Topic Asset
+
+•	Representing Categories Using Enums
+Topic Asset
+© 2023 Skillsoft Ireland Limited - All rights reserved.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

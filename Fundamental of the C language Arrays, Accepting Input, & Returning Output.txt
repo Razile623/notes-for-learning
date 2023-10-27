@@ -1,0 +1,460 @@
+Fundamentals of the C Language: Arrays, Accepting Input, & Returning Output
+Arrays in C are important data structures that provide a convenient way to access multiple elements of the same data. C arrays are indexed using integers starting from 0 and reside in a contiguous chunk of memory. Arrays are also closely related to pointers, another important building block in the C language. Start this course by learning how to create, populate, and access elements of arrays. Discover how to declare variables of array types, initialize those arrays with data, and get and set the values of elements of arrays. Create multidimensional arrays and work with strings as arrays of characters. Next, learn how to print values using output functions such as printf, putchar, puts, and fprintf. Explore the different format specifiers used to represent data types in printf and how to enumerate the strengths and weaknesses of these different output functions. Finally, learn about accepting user input using library functions such as scanf, gets, fgets, and getchar.
+Table of Contents
+    1. Video: Course Overview (it_cpfcladj_03_enus_01)
+
+    2. Video: Understanding Array Datatypes in C (it_cpfcladj_03_enus_02)
+
+    3. Video: Creating Two-dimensional Arrays in C (it_cpfcladj_03_enus_03)
+
+    4. Video: Using the printf() Function (it_cpfcladj_03_enus_04)
+
+    5. Video: Accepting Input with the scanf() Function (it_cpfcladj_03_enus_05)
+
+    6. Video: Using Functions to Accept Input and Return Output (it_cpfcladj_03_enus_06)
+
+    7. Video: Reading and Writing Data to Output (it_cpfcladj_03_enus_07)
+
+    8. Video: Course Summary (it_cpfcladj_03_enus_08)
+
+    Course File-based Resources
+
+1. Video: Course Overview (it_cpfcladj_03_enus_01)
+
+Objectives
+discover the key concepts covered in this course
+[Video description begins] Topic title: Course Overview [Video description ends]
+Hi and welcome to this course, getting started with the C language. My name is Vitthal Srinivasan and I will be your instructor for this course. A little bit about myself first.
+
+[Video description begins] Your host for this session is Vitthal Srinivasan. He is a software engineer and big data expert. [Video description ends]
+
+I did my master's from Stanford University and have worked at various companies including, Google and Credit Suisse. I presently work for Loonycorn, a studio for high quality video content. Arrays in C are important data structures that provide a convenient way to access multiple elements of the same data type in a highly efficient manner.
+
+C arrays are indexed using integers starting from zero and reside in a contiguous chunk of memory. They are closely related to pointers, another extremely important building block in the C language. You will start this course by learning how to create, populate, and access elements of arrays. You will see how to declare variables of array types as well as how to initialize those arrays with data and get and set the values of elements of arrays. You will also create multidimensional arrays and work with strings as arrays of characters.
+
+You will then learn how to print values out to screen using output functions such as printf, putchar, puts, and fprintf. You will explore the different format specifiers used to represent data types in printf and be able to enumerate the strengths and weaknesses of these different output functions. Finally, you will learn about accepting user input using library functions such as scanf, gets, fgets and getchar.
+
+By the time you finish this course, you will be able to create arrays to hold multiple values of the same data type and access those values using indexes as well as know how to accept input from the user and print values of variables out to screen.
+
+2. Video: Understanding Array Datatypes in C (it_cpfcladj_03_enus_02)
+
+In this video, you will learn about array datatypes in C.
+Objectives
+identify array datatypes in C
+[Video description begins] Topic title: Understanding Array Datatypes in C. Your host for this session is Vitthal Srinivasan. [Video description ends]
+So far, we've been working with individual variables. In this demo, we are going to turn our attention to our first data structure. That's the array. An array can be thought of as a container or a data structure
+
+[Video description begins] The Visual Studio Code window is opened. The EXPLORER pane on the left side displays a file named ARRAYS. The ARRAYS file contains a program named C arrays.c. [Video description ends]
+
+in which we specify the type of the elements in the array as well as the number of elements in the array up front. Then, these elements will all be available in one contiguous block of memory. We can access those elements by indexing into the array using integer indexes that start from 0. Let's go ahead and see how arrays work in action in C. On screen now is our first little program that makes use of an array.
+
+[Video description begins] He selects the C arrays.c program. An editor pane opens in the main pane. It displays multiple lines of codes. Line 1 reads: # include <stdlib.h>. Line 2 reads: # include <stdio.h>. Line 4 reads: int main(). Line 5 reads: {. [Video description ends]
+
+You can see on line 7 that we have declared an array, it's called scores and as we discussed a moment ago, we have declared the type of the elements in the array as well as the number of elements in the array right up front.
+
+Neither of these can be changed after we've declared them.
+
+[Video description begins] Line 7 reads: int scores[3];. [Video description ends]
+
+This array scores has 3 elements of type int. Now, let's go ahead and invoke the sizeof operator on our scores array. We've done that on line 10.
+
+[Video description begins] Line 10 reads: printf("size of integer array is: %lu\n" ,sizeof(scores));. [Video description ends]
+
+And then to contrast the array with one individual int, we've also initialized a variable of type int, and then we've invoked sizeof on that variable.
+
+[Video description begins] He highlights the code given on line 6. It reads: int one_score;. [Video description ends]
+
+So again on line 6, we have one_score.
+
+[Video description begins] Line 9 reads: printf("size of integer is: %lu\n" ,sizeof(one_score));. [Video description ends]
+
+On line 7, we have an array of 3 scores. Then on lines 9 and 10, we invoke sizeof on one_score as well as on scores. Let's compile and run this code, and in the output down below, we can see that sizeof has returned 4 for the size of the integer and 12 for the size of the integer array, and this confirms what we said a moment ago. When we have an array with three elements,
+
+memory is allocated for all three elements in one contiguous block. The size of 1 integer is 4. The size of an array of 3 integers is 12. The same idea holds for arrays of other types. On screen now, we've repeated our experiment for floats.
+
+[Video description begins] He highlights the following lines of code. Line 6 reads: float one_score;. Line 7 reads: float scores[5];. Line 9 reads: printf("size of float is: %lu\n" ,sizeof(one_score));. Line 10 reads: printf("size of float array is: %lu\n" ,sizeof(scores));. [Video description ends]
+
+And when we run this code, we can see that the size of 1 float is 4 and the size of our scores array is 20. And the reason it's 20 is because if you look up at line 7, you can see that scores is set to contain 5 floats, so 5 multiplied by 4 gives us 20. Again, please note that we have specified the type as well as the number of elements in the array up front, and these cannot be changed after the fact. Let's repeat this experiment a third time, this time with characters, so we have a single character, one_char, and then an array called many_chars.
+
+[Video description begins] He highlights the following lines of code. Line 6 reads: char one_char;. Line 7 reads: char many_chars[20];. Line 9 reads: printf("size of char is: %lu\n" ,sizeof(one_char));. Line 10 reads: printf("size of char array is: %lu\n" ,sizeof(many_chars));. [Video description ends]
+
+The type is specified up front to be char.
+
+The number of elements is specified up front to be 20 As before when we invoke sizeof on one_char and on many_chars, we see in the output down below, that the size of one_char is 1 and the size of many_chars is 20. We've now seen how to initialize an array and how to measure the size of the array using the sizeof operator. Next, let's see how we can use the indexing operator in order to access individual elements in an array. On screen now, you can see that we've defined an array scores, that's done on line 7. Then we've used square brackets
+
+[Video description begins] He edits the editor pane again. And, highlights the following line of code. Line 7 reads: int scores[3];. [Video description ends] along with integer indexes starting from 0, to access the individual elements of the array. Remember that arrays in C are indexed starting from 0.
+
+This means that on line 11, when we index into our scores array with the integer 0, we are actually accessing the first element in the array. We have this on the left-hand side of the equal to sign
+
+[Video description begins] Line 11 reads: scores[0]= 23;. [Video description ends]
+
+and on the right, we have the literal 23 which we wish to store in the array. In similar fashion, we set the values of the second and the third elements in our array will be 44 and 66, using the indexes 1 and 2 respectively. On lines 11, 12, and 13, we are setting the values in our array.
+
+[Video description begins] Line 12 reads: scores[1]= 44;. Line 13 reads: scores[2]= 66;. [Video description ends]
+
+Then on lines 17, 18, and 19, we are getting those values which we have just set. And, in both cases, we are making use of square brackets.
+
+[Video description begins] Line 17 reads: printf("score[0]: %d\n" , scores[0]);. Line 18 reads: printf("score[1]: %d\n" , scores[1]);. Line 19 reads: printf("score[2]: %d\n" , scores[2]);. [Video description ends]
+
+These square brackets are called the indexing operator and between those square brackets, we pass in the zero-based indexes. Again, remember that the first element in an array will be accessed with the index 0 and the last element in the array will be accessed with the index length minus 1.
+
+If the length of the array is 3, the last element will be found at index position 2. Let's go ahead and run this code, and when we do in the output down below, we can see that we have indeed correctly set the values of three elements in our arrays to be 23, 44, and 66. Now, in this example, we declared our array on line 7, but we only initialized the values in that array on lines 11, 12, and 13. Let's now jump into another example where we initialize the values in our array,
+
+[Video description begins] Line 7 reads: int scores[3];. [Video description ends]
+
+right at the point where we create the array. The syntax for this is visible now on line 6. There we have the integer array scores. Notice how we no longer explicitly specify the number of elements in this array. So we simply have a pair of square brackets next to the array name scores.
+
+Instead, we have an equal to sign and on the right of the equal to sign within curly braces, we have the actual values that we would like placed into this array. The C compiler will infer the length of this array from the number of values within the curly braces. Here there are five such values, and that's why C is going to create an array with five elements. We can then access those five elements using the indexes 0 through 4,
+
+[Video description begins] Line 6 reads: int scores[] = {45, 56, 56, 98, 44};. [Video description ends] and that's exactly what we've done in the printf statements starting on line 8. Remember again that arrays in C are indexed starting from 0,
+
+[Video description begins] Line 8 reads: printf("score[0]: %d\n" , scores[0]);. Line 9 reads: printf("score[1]: %d\n" , scores[1]);. Line 10 reads: printf("score[2]: %d\n" , scores[2]);. Line 11 reads: printf("score[3]: %d\n" , scores[3]);. Line 12 reads: printf("score[4]: %d\n" , scores[4]);. [Video description ends]
+
+so the first element is at index position 0 and the last element is at index position length minus 1. Here the length of the array is 5 and that's why the last element is at index position 4.
+
+We run this code and we can see in the output down below that our array has indeed been initialized with the value specified on line 6. The value at index position 0 is 45, at index position 1 is 56, and so on. When we initialize an array in this manner, we can continue to update individual elements as before. Here you can see that on line 6, we've initialized the array to contain 5 elements.
+
+[Video description begins] Line 6 reads: int scores[] = {45, 56, 56, 98, 44};. [Video description ends]
+
+Then on lines 15 and 16, we have updated two of those five elements. We print out all of the values before the updates,
+
+[Video description begins] Line 15 reads: scores[0]= 99;. Line 16 reads: scores[4]= 22;. [Video description ends]
+
+that's done on lines 9 through 13, and then again after the updates on lines 19 through 23.
+
+[Video description begins] Line 9 reads: printf("score[0]: %d\n" , scores[0]);. Line 10 reads: printf("score[1]: %d\n" , scores[1]);. Line 11 reads: printf("score[2]: %d\n" , scores[2]);. Line 12 reads: printf("score[3]: %d\n" , scores[3]);. Line 13 reads: printf("score[4]: %d\n" , scores[4]);. [Video description ends]
+
+[Video description begins] Line 19 reads: printf("score[0]: %d\n" , scores[0]);. Line 20 reads: printf("score[1]: %d\n" , scores[1]);. Line 21 reads: printf("score[2]: %d\n" , scores[2]);. Line 22 reads: printf("score[3]: %d\n" , scores[3]);. Line 23 reads: printf("score[4]: %d\n" , scores[4]);. [Video description ends]
+
+When we run this code, we can see that the initial values are all taken from the initialization that's on line 6 and then the updated values reflect the two changes. For instance, we can see that the updated value at index position 0 is 99, and similarly at position 4, the initial value is 44, but the updated value is 22, and that matches what we see on line 16 up above.
+
+Let's see what happens if we try and access elements beyond the end of an array. Here on screen, you can see that we have a scores array with five elements and then on line 15, we try and access the sixth element by specifying index 5. Again, remember that arrays in C are index starting from 0,
+
+[Video description begins] Line 6 reads: int scores[] = {45, 56, 56, 98, 44};. Line 15 reads: scores[5]= 22;. [Video description ends] and so the largest valid index for an array is the number of elements or the length of the array minus 1. Here our array has five elements and so when we try an index into our array with value 5, that's not valid. When we compile this code, we can see that a warning results, array index 5 is past the end of the array (which contains 5 elements). You can also see, however, that what we have on our hands is a warning and not an error. An a.out file has been generated and we actually will be able to run this code, but it will result in a crash, an unexpected program performance. This feature of arrays makes them rather risky to use and you always should be making careful checks on all accesses into an array. That gets us to the end of this little demo in which we introduced arrays in C. In the demo coming up ahead, we will switch our attention to character arrays.
+
+3. Video: Creating Two-dimensional Arrays in C (it_cpfcladj_03_enus_03)
+
+Learn how to create multidimensional arrays.
+Objectives
+create multi-dimensional arrays
+[Video description begins] Topic title: Creating Two-dimensional Arrays in C. Your host for this session is Vitthal Srinivasan. [Video description ends]
+In the previous demo, we saw how to create an array, set individual elements in the array, initialize the array, and access elements using the indexing operator. In this demo, we will move on two more topics, character arrays and two-dimensional and multidimensional arrays. On screen now, you can see that we have created a character array.
+
+[Video description begins] He highlights the code given on line 6. It reads: char char_array[] = {'B', 'l', 'u','e'};. [Video description ends]
+
+This is done on line 6 where we initialize the array right at the point of declaration. Note how every one of the elements in our character array is a single character literal enclosed within single quotes.
+
+The C compiler will infer that this is an array with four elements. Then on lines 8 through 11, we index into our array with the indexes 0, 1, 2, and 3. In the code on lines 6 through 11,
+
+[Video description begins] Line 8 reads: printf("char_array[0]: %c\n" ,char_array[0]);. Line 9 reads: printf("char_array[1]: %c\n" ,char_array[1]);. Line 10 reads: printf("char_array[2]: %c\n" ,char_array[2]);. Line 11 reads: printf("char_array[3]: %c\n" ,char_array[3]);. [Video description ends]
+
+there's very little difference between a character array and say, an integer array. However, on line 16, we'll do something that's pretty interesting. We printout the value of our character array
+
+[Video description begins] Line 16 reads: printf("char_array: %s\n", char_array);. [Video description ends]
+
+using the format specifier %s.
+
+In other words, we are treating our character array as a string. And in fact, when we compile and run our code, we see that there's no compiler error or warning, and in the output, we can see from the last line of the output, that our character array is indeed printed out as a string. This is a very important little demo because it shows that strings in C are really just character arrays. Now this is actually a pretty advanced topic because it has to do with pointers and other topics which will come up in upcoming learning paths, but it's worth keeping in mind. A C string is really a character array.
+
+Let's quickly move on from the topic of character arrays to multidimensional arrays. On screen now you can see on line 6, that we have declared an array called marks and this array has not one but two dimensions. Pay close attention to the syntax here,
+
+[Video description begins] Line 6 reads: int marks [2][4];. [Video description ends]
+
+we make use of two pairs of square brackets. The first pair contains a number of rows. The second contains the number of columns. So here we are declaring marks to be an array with two rows and four columns.
+
+On line 8, we invoke the sizeof operator on this array, and when we run our code, we will see that this array is eight times the size of an int.
+
+[Video description begins] Line 8 reads: printf("size of array is: %lu\n\n" ,sizeof(marks));. [Video description ends]
+
+More on that in a bit. Let's then turn our attention to how we can set and get values from this array. On lines 10 through 13, we access the elements in the first row because this is the first row, the first index position is 0. The elements that we are accessing are in column positions 1 through 4,
+
+[Video description begins] Line 10 reads: marks[0][0] = 28;. Line 11 reads: marks[0][1] = 77;. Line 12 reads: marks[0][2] = 34;. Line 13 reads: marks[0][3] = 20;. [Video description ends]
+
+which means that the second index is going to vary from 0 to 3.
+
+And then in similar fashion, on lines 15 through 18, we are accessing elements in the second row and that's why the first index now has the value 1, but in the second index position, we still have the integers 0 to 3. We can see from this that when we declare a two-dimensional array, the numbers in the declaration serve as the lens along each dimension. So, on line 6 where we declare marks to be an array with dimensions
+
+[Video description begins] Line 15 reads: marks[1][0] = 71;. Line 16 reads: marks[1][1] = 48;. Line 17 reads: marks[1][2] = 31;. Line 18 reads: marks[1][3] = 89;. [Video description ends]
+
+2 and 4. 2 serves as the length of the first dimension, and that's why on lines 10 through 18, the first index must be an integer value of 0 or 1.
+
+The second dimension on line 6 is 4 and that's why in lines 10 through 18, the second index must be an integer of 0 through 3. Then starting from line 20, we access the elements in our marks array using the same double indexing operator. To see how the output looks, let's compile and run our code,
+
+[Video description begins] Line 20 reads: printf("student 1 marks in math: %d\n" ,marks[0][0]);. Line 21 reads: printf("student 1 marks in english: %d\n" ,marks[0][1]);. Line 22 reads: printf("student 1 marks in history: %d\n" ,marks[0][2]);. Line 23 reads: printf("student 1 marks in physics: %d\n" ,marks[0][3]);. Line 24 reads: printf("\n" );. Lines 26 to 30 display a similar pattern of codes. [Video description ends]
+
+and when we do this, we note first off that the size of the array has come back as 32, and that's to be expected because the size of 1 int is 4 bytes and our array has 8 elements. How 8 elements? Well, there are 2 rows and 4 columns. 2 multiplied by 4 is 8. 8 multiplied by the size of each element gives us 32.
+
+The remaining lines of output are also as we expect. We can see that the double indexing operator is the correct way of getting as well as of setting the elements in a multidimensional array.
+
+4. Video: Using the printf() Function (it_cpfcladj_03_enus_04)
+
+In this video, you will print out floating point types.
+Objectives
+print out floating-point types
+[Video description begins] Topic title: Using the printf() Function. Your host for this session is Vitthal Srinivasan. [Video description ends]
+In this demo, we're going to see how various input and output related operations can be performed in C. As the name would suggest, this has to do with accepting input from the user and displaying output to the screen. We will not be discussing file INPUT_OUTPUT in this demo. Let's go ahead and get started. We click on input_output.c in the top left and the corresponding code file is visible in the center of our screen. We paste in the code and as usual, we start
+
+[Video description begins] A file labeled input_output.c appears in the Visual Studio Code window. It contains various lines of code. He highlights the following lines of code. Line 1 reads: # include <stdlib.h>. Line 2 reads: # include <stdio.h>. [Video description ends]
+
+with the required include statements. Here, we are including two header files, stdlib.h and stdio.h. stdio is a header file which has most of the functionality that we are going to require in this demo.
+
+On screen now, you can see that we invoke the printf function multiple times. Now we've made extensive use of the printf function so far, but we've never really talked about it in a lot of detail. printf is a C library function which is pulled in from the stdio header and which can be used to printout strings to the standard output, that is to the screen. You should know that there are three streams which are usually available to programs. Standard output, standard error, and standard input. Standard output is what printf writes out to, standard error is used for error and warning messages, and standard input is where user input is taken in. printf displays a formatted string to standard output and that formatted string is the first argument to the printf function. Now, here for instance on line 6, you see that we have a format string which reads, Let's print an integer %d\n.
+
+%d here is a placeholder and it's a placeholder for what comes after the format string, which is a literal 56. The way printf works, the C compiler will go through the format string. That's the first input argument and it will replace every one of those placeholders with variables or literals which come after that. Here, there's just the one placeholder that's %d,
+
+[Video description begins] Line 6 reads: printf("Let's print an integer: %d\n" ,56);. [Video description ends]
+
+and that's why C will just replace it with the one literal that's 56. Now, one important little note, we've been referring to these little tokens as placeholders all through, and that's correct. However, there is a technical term for these placeholders. These are called format specifiers. In a printf invocation or a scanf invocation, anytime you see a token which begins with the % symbol, you should know that this is a placeholder for something which comes after the format string, and with this placeholder is technically referred to as a format specifier.
+
+There are different types of format specifiers for different types of variables. For instance, on line 6, the format specifier for the integer literal 56 is %d. On line 7, the format specifier is %c, and that's used for the character literal H.
+
+[Video description begins] Line 7 reads: printf("Let's print a character: %c\n" ,'H');. [Video description ends]
+
+On line 8, we have the format specifier %s which corresponds to the string literal, Hello. Note, how Hello on line 8 is enclosed within double quotes because it's a string literal rather than a character literal. Character literals are encoded using single codes rather than double quotes.
+
+[Video description begins] Line 8 reads: printf("Let's print a string: %s\n" ,"Hello!");. [Video description ends]
+
+In similar fashion, on lines 12 and 13, we have format specifiers for a floating point variable. On line 12, for instance, we print out the value 23.909
+
+[Video description begins] Line 12 reads: printf("Let's print a float: %f\n" ,23.909);. Line 13 reads: printf("Let's print a float truncated to 1 decimal point: %.1f\n" ,23.909);. [Video description ends]
+
+and the format specifier for this is %f. While displaying floating point values, we often would like to format or control the number of decimal points that are displayed and the way to do this can be seen on line 13.
+
+Here, the format specifier is %.1f. And that's a way of requesting the C compiler to use a format in which only one digit is displayed after the decimal point. Then on lines 17 and 18, we display doubles, and for this we make use of the format specifier %lf. And as you can see, we can also make use of the dot
+
+[Video description begins] Line 17 reads: printf("Let's print a double: %lf\n" ,23.909e27);. Line 18 reads: printf("Let's print a double truncated to 2 decimal points: %.2lf\n" ,23.909e27);. [Video description ends]
+
+followed by the number of significant digits to control how many decimal points are displayed for doubles. We've done that here on line 18. Now that we've written all of this code and tried out different format specifiers with printf, let's go ahead and compile and run our code.
+
+As usual, we do this by opening up a TERMINAL window, right here inside VS Code. We then invoke clang on our source file input_output.c,
+
+[Video description begins] At the bottom of the file, a section opens. It displays various tabs: PROBLEMS, OUTPUT, DEBUG CONSOLE, and TERMINAL. Currently, the TERMINAL tab is active. It contains the following code: ~/Desktop/projects/input_output>. [Video description ends]
+
+the compilation goes through successfully without any errors or warnings,
+
+[Video description begins] The following command displays: -->clang input_output.c. [Video description ends]
+
+and we see in the top left corner that the output file a.out has been generated as well. Let's run this file using the ./a.out syntax and examine the output.
+
+[Video description begins] The left EXPLORER pane displays a new file named a.out. [Video description ends]
+
+Line 6 in code printed out an integer using the format specifier %d and we can see in the first line of the output that the integer has indeed been displayed 56. In similar fashion, on line 7, the format specifier is %c, and that's why the second line of output corresponds to a character literal H. On line 8, we have the format specifier, %s and that's why the third line of output is the string, Hello. Then we come to the print statements for the floating point values. We printed out the same value twice, the first time around with the format specifier %f and that has displayed all of the significant digits in our floating point number.
+
+On the next line, however, we've tried again, this time limiting the number of digits after the decimal point to 1. We've done that using the format specifier %.1f and that's why the output appears as simply 23.9. And finally, we print out the double and then the double truncated to two decimal points. If we look closely at lines 17 and 18, we can see that even though we've specified the double using scientific notation, that is, we have the lowercase character e, followed by the exponent, which is 27. The printf output has the number in regular decimal notation. There are ways to print out doubles using this exponential notation as well, and they require the use of the format specifier e. One final note here, you can see that while printing out a floating point value, the format specifier we use is %f. While printing out the double value, we use %lf as the format specifier.
+
+This is important to keep in mind the l before the f indicates that it's a long float, and indeed a double can be thought of as a long float. If we were to change this l from lowercase to uppercase, that would represent an even larger data type, which is called the long double. We now have a good grip on the format specifiers that are typically used with printf. In the demo coming up ahead, we will turn our attention to the close cousin of printf, which is scanf. That's a function which is used to accept input from a user.
+
+5. Video: Accepting Input with the scanf() Function (it_cpfcladj_03_enus_05)
+
+Learn how to use the scanf function.
+Objectives
+demonstrate the use of the scanf function
+[Video description begins] Topic title: Accepting Input with the scanf() Function. Your host for this session is Vitthal Srinivasan. [Video description ends]
+On screen now you see a simple little program in which we accept user input using the scanf library function. scanf is defined in the stdio header file and it's an inbuilt library function.
+
+[Video description begins] An editor pane labeled input_output.c appears in Visual Studio Code. It contains various lines of code. Line 1 reads: # include <stdlib.h>. Line 2 reads: # include <stdio.h>. Line 4 reads: int main(). Line 10 reads: scanf("%d", &quantity);. Line 13 reads: scanf("%f", &price);. [Video description ends]
+
+You can see that we've invoked scanf on two separate occasions here on lines 10 and 13. The way this program is set up, we have two variables, quantity and price. Then on line 9, we prompt the user for the quantity
+
+[Video description begins] Line 6 reads: int quantity;. Line 7 reads: float price;. [Video description ends]
+
+and we accept user input and we store that user input
+
+[Video description begins] Line 9 reads: printf("Enter the quantity you purchased: \n");. [Video description ends]
+
+into the variable quantity.
+
+[Video description begins] Line 10 reads: scanf("%d", &quantity);. [Video description ends] Then we prompt the user for the price and we store that input into the price variable.
+
+[Video description begins] Line 12 reads: printf("Enter the price you paid: \n");. Line 13 reads: scanf("%f", &price);. [Video description ends]
+
+It's interesting to note how a scanf function also has a format string followed by various variables. If we look closely at the format specifiers in lines 10 and 13, those format specifiers seem identical to those in printf.
+
+On line 10, we have a format specifier %d, and that's because quantity is an int variable. On line 13 the format specifier is %f, and that's because price is a float. So far, a scanf and printf have many similarities, but there is one very important difference. And to identify that, focus on the little ampersand sign before the name of the variable, this is visible on both line 10 and line 13. On line 10, for instance, we have an & before the name of the variable quantity and on line 13, we have an & before the name of the variable price. This & in C is a very important operator, this is the address of operator.
+
+Without going too deep into the details of pointers and addresses in C, you should know that scanf requires the variable specified to be preceded by the &, so that C can copy the value passed in by the user into the address or the memory location occupied by that variable. Again, we do not require the & operator, while specifying variables to printf. We do require the address operator, that's the & in scanf. Let's compile and run this program to see how it works. We do this in the usual fashion and when we invoke a.out, you can see that first the message printed out is Enter the quantity you have purchased and then the program pauses.
+
+[Video description begins] The output pane appears underneath the editor pane. It contains the following tabs: PROBLEMS, OUTPUT, DEBUG CONSOLE, and TERMINAL. He highlights various outputs in the TERMINAL tab. [Video description ends]
+
+At this point, the C program is waiting for us, the user to enter our input. Anything that we type in is going to be sent back in, on the standard input stream, and the contents of that standard input stream will be read by scanf and the corresponding value will be picked off and written into the quantity variable.
+
+Here you can see that the program waited for a while, and then we finally entered our user input, which is the value 10, and this value was saved or stored in the variable quantity. This allowed the program execution to proceed. And the next message printed out was Enter the price you paid. Again, the program waited for our input, we typed in the number 23.56. Note that this is a floating point number. This was passed in to our C program on the standard input stream, scanf read the contents of the standard input stream, it read a floating point value and saved that in the variable price. And this again allowed the program execution to resume and the total bill amount was displayed. This total bill amount is the product of price and quantity.
+
+Notice how on line 17 the format specifier is %0.2f and that's why in the final line of the output
+
+[Video description begins] Line 17 reads: printf("Your total bill amount is :%0.2f \n",price*quantity);. [Video description ends]
+
+we have just 2 digits after the decimal point. Let's run the program one more time. Once again, we use a.out. Once again, we are prompted for the quantity we purchased, we type in the number 5, followed by Enter. Then we are prompted for the price, we type in 100.65 followed by enter, and the total bill amount is displayed. Again, please note that scanf will continue waiting for user input until we type something out followed by the Enter key. The Enter key is the trigger that scanf requires in order to move on and resume program execution.
+
+Let's try giving scanf output that it doesn't quite expect. Let's rerun our program and this time when we are prompted for the price, let's enter a floating point value 24.4. We hit Enter and we find that scanf has reacted to this unexpected input by skipping ahead and exiting the program. We see from this that the scanf does not handle failure very gracefully. If you type in a value which is not what it was expecting, the results are unexpected as well. Let's try this one more time, let's rerun our code this time when prompted for the quantity we enter an integer value 10, so no problem so far. But then when prompted for a price, we enter the string W, rather than entering in a floating point value. Once again, this unexpected input causes the output to be unexpected as well.
+
+The total bill amount is displayed as 0. Let's move on to another example in which we see how we can accept structured input using a format string in scanf. Here you can see on line 9, that we invoke scanf, in order to read input from the user in a specified format.
+
+[Video description begins] Line 9 now reads: scanf("%d/%d/%d",&day,&month,&year);. [Video description ends]
+
+On line 8, we see what that format is,
+
+[Video description begins] Line 8 reads: printf("Please enter your birth date in this format d/m/y: \n");. [Video description ends]
+
+Please enter your birth date in this format d/m/y. Next, let's look closely at the format string, passed into scanf on line 9. There we have three format specifiers, %d. Each of those format specifiers is separated from the next by a forward slash. And then, we read in the values of three variables, day, month, and year. As before, each of these variable names is preceded by the address operator.
+
+Then after accepting these variable values, we print out the birthday, that's done using printf on line 13.
+
+[Video description begins] Line 13 now reads: printf("Your birthday is on%d/%d/%d\n",day,month,year);. [Video description ends]
+
+Let's compile and run this code and try and pass in user input. Initially we do this in exactly the manner that the program asked for. We type out 2 followed by a forward slash, followed by 8, followed by another forward slash, followed by 1987. This user input is passed in to our C program on the standard input stream, scanf takes all of that input until the first new line or enter character and it then parses that input, it looks for an integer followed by a forward slash followed by another integer, followed by yet another forward slash, and a third integer. That's what it looks for, and that's what it finds. The first integer is 2, then comes the forward slash.
+
+The second integer is 8, then comes another forward slash, followed by the third integer 1987. scanf finds what it was looking for, it takes those three integer values, parses them and places them in the three variables and that's why the program execution resumes successfully and the date of birth is printed out correctly as well. Let's try running this program one more time. Once again, we pass in the input exactly as the program wanted, 21 followed by forward Slash, followed by 4, followed by 2010. scanf is able to interpret this, and it correctly picks up the values of day, month, and year. Now let's try again, and this time we will intentionally not use forward slashes as asked for by scanf. You can see that we've typed in the input with spaces instead of the forward slash character, separating the three integers. This time, however, we see that scanf is not happy, it's not able to parse the input that we passed incorrectly, and that's why the date that's displayed at the bottom is a garbled one as well. That gets us to the end of this little demo, in which we saw how scanf can be used to accept structured user input.
+
+6. Video: Using Functions to Accept Input and Return Output (it_cpfcladj_03_enus_06)
+
+In this video, you will learn how to use the getchar(), putchar(), gets(), and puts() functions.
+Objectives
+demonstrate the use of the getchar(), putchar(), gets(), and puts() functions
+[Video description begins] Topic title: Using Functions to Accept Input and Return Output. Your host for this session is Vitthal Srinivasan. [Video description ends]
+In this demo, we're going to look beyond printf and scanf to some other I/O functions that are available in C and that are easier to use in some ways. printf and scanf are both powerful and versatile, but because of their syntax,
+
+[Video description begins] An editor pane labeled input_output.c appears in Visual Studio Code. It contains various lines of code. [Video description ends]
+
+which involves the format string and then the format specifiers, as well as all of the different combinations of alphabets in those format specifiers, folks often find them quite hard to use. For that reason, folks often prefer to use other functions such as getchar and putchar, and you can see these two functions in the code on screen now. On line 6, we initialize a variable of type char,
+
+[Video description begins] Line 6 reads: char character;. [Video description ends]
+
+then on line 7, we prompt the user to Enter a character.
+
+[Video description begins] Line 7 reads: printf("Enter a character: ");. [Video description ends]
+
+On line 9, we invoke getchar and the return value is saved in our variable. We then print out that variable on line 11 using putchar.
+
+[Video description begins] Line 9 reads: character= getchar();. [Video description ends]
+
+Let's focus on line 9 for a second, here by using getchar instead of scanf,
+
+[Video description begins] Line 11 reads: putchar(character);. [Video description ends]
+
+we can simply accept the user input and pass that user input into a variable using an assignment operator. In scanf on the other hand, we would have had to make use of character along with the address of operator, that's the ampersand. Also, note how there's no need for a format string or a format specifier. You should be aware that putchar and getchar are typically used in loops. That is to read input or write output, one character at a time because we've yet to get to loops, we won't be using these functions in this particular way. But even so, you can see how convenient they can be. Let's compile and run our code and see how it works with different types of input.
+
+[Video description begins] The output pane appears underneath the editor pane. It contains the following tabs: PROBLEMS, OUTPUT, DEBUG CONSOLE, and TERMINAL. He highlights various outputs in the terminal pane. [Video description ends]
+
+We invoke clang and then run a.out. The first time around we enter a single character. This is A.
+
+We hit Enter and we can see that same character is printed back out to screen. Notice however, that putchar does not follow its output with a new line, and that's why that A appears right next to the prompt. Let's rerun our program and this time the character that we enter will be a # symbol. Let's hit Enter and see what happens. Well, this works just fine as well. Again, the # symbol appears. Again there's no new line after it. So special characters like the # work just fine with getchar and putchar. Let's try again. At this time, we enter the number 3 and this also works because 3 here is interpreted as a character and not as an int. What happens if we enter a longer string rather than a single character of input?
+
+Let's find out, this time we type out the string blue, we hit Enter, and we find that only the first character of the input was accepted by getchar. That's the b. This is an important little point. getchar and putchar will only always work on one character at a time. If we type in more than one character, getchar will only accept the first of the characters that's typed in. Let's move from getchar and putchar to gets and puts. Now before we move any further, you should be aware that the gets function is considered quite dangerous because it leaves the door open to a security vulnerability, and that's because gets does not perform bounds checking while accepting user input. And that's a pity because gets is an incredibly convenient function to use.
+
+Let's understand how gets and puts work. But again, you should not be using gets. It is however fine to use its close cousin fgets, which we'll get to, in a moment. In the code on screen, now you can see that we've defined a couple of array variables, name and city.
+
+[Video description begins] Line 6 now reads: char name[10];. Line 7 reads: char city[12];. [Video description ends]
+
+Each of these is a character array. Then on line 9, we use puts in order to display a prompt message. What is your name? Then
+
+[Video description begins] Line 9 now reads: puts("What is your name?");. [Video description ends]
+
+our program waits for user input that is passed into the gets function. puts is very similar to printf.
+
+[Video description begins] Line 10 reads: gets(name);. [Video description ends]
+
+gets is pretty similar to scanf. But gets and puts will both only work with strings, and that's what makes these different from scanf and printf, which can work with pretty much any type, provided you specify the right format specifier.
+
+Let's go ahead and run this code. We invoke clang and then when we call a.out, we see right away the prompt. What is your name? followed by a warning and that warning tells us, this program uses gets(), which is unsafe. This is a warning which is displayed by many good compilers.
+
+[Video description begins] The terminal pane displays the following warning: "this program uses gets (),which is unsafe". [Video description ends]
+
+Here, remember that we are making use of clang, but a similar warning can be seen with GCC on Windows as well. Let's type in a string and that string is the name Deborah. We hit Enter after this and this gets passed in to the character array name. We are then prompted for where we live. We type out New York, notice how whitespace is included in the string New York and despite this, the entire string New York gets taken in and placed inside the city array. We know this because the last line of output correctly tells us
+
+[Video description begins] Line 12 reads: puts("Where do you live?");. Line 13 reads: gets(city);. [Video description ends]
+
+that the name is Deborah and the city is New York.
+
+gets will accept user input up to the new line character. That's how New York was successfully read in here. It's also worth noting that puts, unlike putchar correctly,
+
+[Video description begins] Line 15 reads: puts("Welcome");. Line 16 reads: printf("Hello %s from%s ! \n\n",name, city);. Line 18 reads: return EXIT_SUCCESS;. [Video description ends]
+
+adds a new line while displaying the output. Let's rerun our program and try a few different combinations of input. This time when prompted for the name, we enter a longer string, Deborah Johnson. Note the warning again, prompted for where we live. We again type in a very long city name. We hit Enter and we find that we do have a problem on our hands. This time, as we can tell from the very last line of output, which reads, Abort trap: 6. Our C program has crashed and the reason it crashed is that the user input that we passed in was too long to be held in the character arrays.
+
+For instance, Deborah Johnson is a string which occupies more than 10 characters and the string, Some Very Long City Name is more than 12 characters and that's why the arrays defined on lines 6 and 7 are not large enough to hold the input from gets. When this happens, as you can see, the result is a program crash. This is why gets is considered unsafe. A malicious user might have engineered some kind of attack using this vulnerability.
+
+7. Video: Reading and Writing Data to Output (it_cpfcladj_03_enus_07)
+
+In this video, learn how to use fgets(), fputs(), fscanf(), and fprintf().
+Objectives
+demonstrate the use of the fgets(), fputs(), fscanf(), and fprintf()
+[Video description begins] Topic title: Reading and Writing Data to Output. Your host for this session is Vitthal Srinivasan. [Video description ends]
+Let's pick up right from where we left off at the end of the last demo, where we had demonstrated the use of gets and puts.
+
+[Video description begins] An editor pane labeled input_output.c appears in Visual Studio Code. It contains various lines of code. The output pane appears underneath the editor pane. It contains the following tabs: PROBLEMS, OUTPUT, DEBUG CONSOLE, and TERMINAL. Various lines of outputs appears in the terminal tab. [Video description ends]
+
+As we saw from this, gets and puts have their limitations, but they are also very convenient. In the code that you now see on screen, we've made use of two functions which are closely related to gets and puts. These are fputs and fgets, and these functions are very convenient, and they also eliminate some of the vulnerabilities of gets and puts. As their names would suggest, these functions work with strings from a file source. Now, the interesting little bit to note here is that the standard output stream stdout, and the standard input stream stdin are both considered files. stdout and stdin are available for use in our programs.
+
+You can see for instance on line 9 that we have specified stdout
+
+[Video description begins] Line 1 reads: # include <stdlib.h>. Line 2 reads: # include <stdio.h>. Line 4 reads: int main(). Line 5 reads: {. Line 6 reads: char name[10];. Line 7 reads: char city[12];. Line 9 reads: fputs("What is your name?",stdout);. [Video description ends]
+
+as the source where the string, What is your name? needs to be written out. In similar fashion, on line 10, we use fgets to read in from the file stdin. 10 characters worth of input and place them in the array called name. So when we invoke fgets on line 10 and the first input parameter is name,
+
+[Video description begins] Line 10 reads: fgets(name,10,stdin);. [Video description ends]
+
+that's the array defined on line 6. The second input parameter is the number of bytes of input that we are willing to read in, and that's 10. The third input parameter is the file handle stdin. The reason that fgets is safe while gets was not safe is because we specify the number of bytes that it is safe to read. So in this way, we can see that fgets does perform bounds checking unlike gets, and that's why it's a good idea to use fgets wherever possible. Let's go ahead and run this program when we are prompted for the name, we type in the string Deborah, then when prompted for where we live, we type in the city name London. And we hit Enter.
+
+We can find that the printf output appears correct, but a little awkward. And the reason it looks a little awkward is because
+
+[Video description begins] Line 12 reads: fputs("Where do you live?",stdout);. Line 13 reads: fgets(city,12,stdin);. Line 15 reads: fputs("Welcome\n",stdout);. Line 16 reads: printf("Hello %s from%s ! \n\n",name, city);. Line 18 reads: return EXIT_SUCCESS;. [Video description ends]
+
+fgets is going to read in a new line with every input. In other words, the new line character that we typed in is also included in the string. And the reason why that happens is because fgets is going to read in a fixed number of characters, 10 or 12. It doesn't care whether a new line happens to be one of those characters. In order to make up for this awkwardness, fgets is a lot better when it comes to dealing with unexpectedly long input. Here we have rerun our program. We are typing out the extra long name Deborah Johnson. If you look closely, you'll see that the program did not wait for us to type in the name of any city at all. It simply interpreted Deborah a space and then the J as the name, and then it took the remaining characters starting with o and ending with n, as the name of the city.
+
+And this is how fgets was able to read in the input. It simply split the input stream into 10 and 12 bytes respectively. It placed the first 10 bites into the name array and the remaining bytes into the city array. Of course, this is not entirely correct either. However, it is a lot more robust because as we can see here, our program did not crash. And this also explains why using fgets does not give us the warning, telling us that this is a dangerous library function. gets and puts still have one important limitation though, they only work with strings. What if we'd like to make use of other types of variables such as ints, floats, and so on? We'll have to get back to scanf and printf. However, we can also make use of their close cousins, fscanf and fprintf.
+
+And that's exactly what we've done in the code on screen now. We still have two character arrays, name and city,
+
+[Video description begins] Line 17 reads: fscanf(stdin,"%d",&age);. Line 20 reads: fprintf(stdout,"Hello%d year old %s from%s ! \n\n",age,name, city);. [Video description ends]
+
+but we have a third variable age.
+
+[Video description begins] Line 8 reads: int age;. [Video description ends]
+
+We read in the values of the name and city using fgets. This is done on lines 11 and 14 respectively. However, in order to read in the age, we make use of fscanf on line 17.
+
+[Video description begins] Line 11 reads: fgets(name,10,stdin);. Line 14 reads: fgets(city,12,stdin);. [Video description ends]
+
+[Video description begins] Line 17 reads: fscanf(stdin,"%d",&age);. [Video description ends]
+
+You can see that the first input argument into fscanf is the input file, which is the standard input that's stdin. The second input argument is the format string which consists here of just the one format specifier, %d and the third input argument is the variable age preceded by the address of operator, that's the & that does it for fscanf, on line 17. Then online 20, we printout a message using fprintf.
+
+The first input argument is the file handle,
+
+[Video description begins] Line 20 reads: fprintf(stdout,"Hello%d year old %s from%s ! \n\n",age,name, city);. [Video description ends]
+
+that's the standard output, stdout, then comes the format string and then come the various variables which are going to be sliced into the format string. These are age, name, and city. If you look closely at the format string on line 20, we can see that there are three formats specifiers, %d, %s, and %s. fprintf and fscanf are very similar to printf and scanf with the important difference that they can read in or write out, either to files or to the screen. Let's go ahead and run this code, and when we do, we find that everything works as we expected it to. We type out the name, that's Deborah, the city that's London.
+
+And then when we are prompted for the age, we type out the integer value 25 because we had read in this integer using fscanf and the %d format specifier. This is going to be treated as an int and the final welcome message is also displayed correctly, although as before, fgets continues to include an additional new line character that was typed in by the user. This gets us to the end of our quick look at input and output in C.
+
+8. Video: Course Summary (it_cpfcladj_03_enus_08)
+
+Objectives
+summarize the key concepts covered in this course
+[Video description begins] Topic title: Course Summary [Video description ends]
+We have now come to the end of this course, creating arrays, accepting input and returning output. We started this course by introducing the concept of arrays. In C, arrays are data structures that allow the storage of multiple elements of the same data type in a contiguous block of memory. We learned how to declare variables of array types as well as how to initialize those arrays with data and get and set the elements of arrays. We saw, how elements in arrays can be accessed using square brackets with an integer index enclosed. And how arrays in C are indexed starting from zero. We also learned that strings are just arrays of characters. We then created multidimensional arrays that stored data using rows and columns and needed more than one pair of square brackets to index into.
+
+Next, we use the printf function to return output to the screen and explored the various format specifiers that are used to specify the types of data items that we wish to print out to screen. We also use the putchar function, which is much easier to use than the printf function, but only works with characters. And the puts function which is great for printing out strings but is now deprecated as its behavior is not clearly defined for some forms of input, rendering it vulnerable to security errors. We also use the fprintf function that could either print text to the output or to a file. Finally, we use the scanf function to receive input from the user of a C program. We spent some time understanding the use of the ampersand or address of operator, which is needed in order to accept user input and store it in a variable.
+
+We also use the getchar function to receive input, as we noted, getchar is far easier to use than scanf, but can only receive characters in input, in contrast to scanf which supports all data types via corresponding format specifiers. We discussed the use of the gets function, which can receive user input in the form of strings, but is vulnerable to certain security issues, as well as fgets, which fixes those vulnerabilities while also providing a convenient way to accept user string input. Now that you have reached the end of this course, and indeed this learning path, you have a solid foundation on the fundamentals of the C language. You are now ready to move on to control structures in C, which are coming up ahead.
+
+Course File-based Resources
+•	Understanding Array Datatypes in C
+Topic Asset
+
+•	Creating Two-dimensional Arrays in C
+Topic Asset
+
+•	Using the printf() Function
+Topic Asset
+
+•	Accepting Input with the scanf() Function
+Topic Asset
+
+•	Using Functions to Accept Input and Return Output
+Topic Asset
+
+•	Reading and Writing Data to Output
+Topic Asset
+© 2023 Skillsoft Ireland Limited - All rights reserved.

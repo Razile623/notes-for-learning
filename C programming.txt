@@ -1,0 +1,554 @@
+Fundamentals of the C Language: Getting Started
+The C programming language has retained its relevance for close to 50 years. The code for most major operating systems and performance-critical server code in some leading data solutions continues to be written in the C language. In this course, you will begin by learning about the basic properties of C, the compilation process of the C language, and common IDEs used to write C code. Next, discover how to install the Clang compiler for compiling and running C on Mac and the Visual Studio Code IDE to write C code. Next, set up the minGW compiler for C on Windows. Finally, explore the basic syntax of C code, write and compile code and view its results, and explore the warnings and errors that occur when the syntax is violated.
+Table of Contents
+    1. Video: Course Overview 
+
+    2. Video: Introduction to the C Language 
+
+    3. Video: Differences between the C and C++ Languages 
+
+    4. Video: C Language Compilation Process 
+
+    5. Video: Compilation and Linking Process of the C Language 
+
+    6. Video: Widespread IDEs and Compilers for C 
+
+    7. Video: Setting up C on Mac 
+
+    8. Video: Setting up C on Windows 
+
+    9. Video: Running C Code with Clang 
+
+    10. Video: Understanding the Syntax of C 
+
+    11. Video: Exploring Errors and Warnings in C 
+
+    12. Video: Course Summary 
+
+    Course File-based Resources
+
+1. Video: Course Overview 
+
+Objectives
+discover the key concepts covered in this course
+Topic title: Course Overview 
+Hi, and welcome to this course, getting started with the C language. My name is Vitthal Srinivasan and I will be your instructor for this course.
+
+Your host for this session is Vitthal Srinivasan. He is a software engineer and big data expert. 
+
+A little bit about myself first, I did my master's from Stanford University and have worked at various companies including Google and Credit Suisse. I presently work for Loonycorn, a studio for high quality video content.
+
+The C programming language has been in existence for close to 50 years as of 2022, and has managed to retain its relevance to this day. Even today, the code for most major operating systems on both desktop and mobile platforms, as well as performance critical server code in some leading data solutions continues to be written in the C language.
+
+You will start this course by understanding the basic properties and the compilation process of the C language, as well as some common IDEs that are used to write C code. You will then install the clang compiler for compiling and running C on Macintosh machines, as well as the Visual Studio Code IDE to write C code. You will also set up the mingw compiler for C on Windows and compile and run your first program.
+
+Finally, you will move on to more basic syntactic constructs in the C language. You will write and compile code and view the results of executing that code and explore warnings and errors that result when the syntax is violated. By the time you finish this course, you will be able to understand the basics of the C language and we'll be ready to move on to working with different data types and variables.
+
+2. Video: Introduction to the C Language 
+
+Objectives
+outline the history and features of C
+Topic title: Introduction to the C Language. Your host for this session is Vitthal Srinivasan. 
+Let's start our exploration of the C programming language with a quick introduction and a look at its long and rich history so far. C is a general-purpose programming language that's been in existence for almost 5 decades, as of 2022. It was originally developed in 1972 by a couple of computer scientists at AT&T Bell Labs named Dennis Ritchie and Ken Thompson.
+
+Almost immediately, it became apparent that the C language had capabilities that dwarf those of anything else available at the time. The language was so named because it had some features in common with an existing programming language called B, which never got anywhere close to C in terms of popularity or acceptance. In 1978, Kernighan and Ritchie produced the first publicly available description of C. This is called the K&R standard. By the 1980s, C was extremely popular. It was ubiquitous and used pretty much everywhere. And by 1989, C had been standardized by the American National Standards Institute, as well as by the International Standards Organization.
+
+C has some important attributes which distinguish it from other major programming languages. C is procedural, which means that it is built around the construct of procedures or linear execution of subroutines of code. C is extremely fast and efficient, and it also allows for modular programming via functions that have been written by users as well as present in pre-existing libraries. C is statically typed, which means that variables must declare their types up front, and those types will be checked by the compiler. It has a rich set of both built-in operators and library functions, and these last two attributes make C a preferred choice for developers who need to work closely with the underlying hardware on a platform.
+
+Let's take a moment to understand these attributes in more detail. Let's start with the idea that C is a procedural language. This means that C is fundamentally different from more modern languages, which tend to be either object-oriented or functional. C++ and Java can be thought of as typical object-oriented languages, although, they also include support for functional programming constructs. Scala is a good example of a functional language. Python also is heavily influenced by functional programming features. C differs from these languages in that it's modeled on the idea of a procedure call. A procedure contains a series of competitions that are executed. Control passes from some main program into a procedure. The contents of that procedure are executed and then control comes back to the main program. In contrast, in object-oriented programming languages, classes and objects which are instances of those classes form the primary abstraction in the flow of a program's control.
+
+Next, let's turn to the speed and efficiency of C. C is compiled and provides very low-level access to memory on whatever platform you're using. The downside of this is that C programmers need to understand and take responsibility for the allocation and deallocation of memory, and this can be really quite difficult. To compensate for that complexity, C provides unmatched speed and efficiency. This is why C is considered a middle-level language. It allows you to efficiently manage both hardware as well as low-level and high-level functionality. Moving on, C allows for the writing of very modular code.
+
+Even though C does not support object-oriented programming abstractions such as classes, it allows and even encourages developers to write nice modular code organized into functions. Those functions can then be made available for use by others via libraries. In addition, C has a large set of standard C libraries with a lot of powerful inbuilt functionality. C is a statically typed language. Variables must declare their types up front in code, and these types are going to be checked and enforced at compile time rather than runtime. Statically typed languages are more efficient, and that's because the type checking is performed at compile time rather than at runtime. There's less work to be done at runtime. Next, C has a rich set of inbuilt operators.
+
+This might not seem like a big deal now, but back in the 70s and the 80s, C's built-in operators were a generation ahead of what was on offer in most other programming languages. Proof of this is the fact that the arithmetic, logical, relational, assignment, and binary operators that form the foundation of C's operators continue to pretty much be adopted as is by other programming languages. The next point is something that we've already alluded to, but it's worth repeating. C has important libraries for many bits of functionality. Because of all of the years and decades that developers have been working on C, there are rich libraries with macros, and typedefs, and various other improvements which have taken C forward and kept it relevant.
+
+These include utilities for string manipulation, mathematical operations, I/O processing, and memory management. Over the decades of its lifetime, C has steadily gotten more widely used and standardized. In 1978, Kernighan and Ritchie published the first edition of their book, "The C Programming Language". The C version defined by the book was called K&R C and was for many years considered the standard or lowest common denominator of the language. Over time, different versions began to proliferate based on the different kinds of hardware that they were working on. And consequently, by the late 1980s, ANSI stepped in, and in 1989 a standard version of C, that's called (C89) was defined and adopted by ANSI.
+
+And (C89) with a few changes was adopted by the ISO in 1990. That seems like a really long time ago, but modern C standards have continued to evolve. In the late 1990s, a new C standard was defined, which included inline functions and new data types. This was called C99. In 2011, further new features were added in to a major new standard called the C11 standard. The current C standard is known as C17 and the eagerly awaited next version of C, which is due in 2023, is known informally as C2x. And with that, we've gotten up to speed with the history and the evolution of the C language.
+
+3. Video: Differences between the C and C++ Languages 
+
+Objectives
+compare the C and C++ languages
+Topic title: Differences between the C and C++ Languages. Your host for this session is Vitthal Srinivasan. 
+A perfectly legitimate question to ask these days is, why is C programming still important? This question seems even more appropriate given that in 2022, it's going to be 50 years since the original development of the language. It's a serious question, and it deserves a serious answer. C programming is still extremely important and relevant even today for a number of reasons. Here are some of them. C remains perhaps the best way for developers who need to work closely with the hardware on whatever devices they're working with.
+
+In recent years, computer scientists have spent more and more time in developing and optimizing languages to be easy to use and to be portable and platform agnostic. C is neither very easy to use, nor necessarily platform agnostic, but these attributes remain its core strengths. For applications which involve working closely with hardware, C is probably still your best bet. In keeping with the theme, languages that tend to be very easy to use, tend to have a lot of abstractions and those abstractions in turn can introduce performance overheads. Take for instance the idea of garbage collection in Java. This greatly reduces the demands placed on a programmer who now no longer needs to worry about memory allocation and deallocation. But the garbage collection in Java also imposes a performance penalty. It's exactly the absence of such performance penalties. That makes C, even today, a great choice if you need to write highly efficient and optimized code.
+
+A third important reason why C is still relevant is because it's the foundation of C++. And while C++ has reinvented itself again and again to the point where you can certainly learn C++ without really knowing C, it still helps a lot if you want to get every last bit of performance and power out of C++. And these are some pretty compelling reasons why C is still worth your while to learn today. This is a nice lead-in for a conversation about the similarities and differences between C and C++. Similarities are quite obvious. The two languages have very similar syntax and grammar, and their code structure also can seem quite similar depending on the style of C++ that you're looking at. In recent years, C++ has added many powerful new language features which make C++ code quite different looking from C code, but under the hood, the languages still are very similar.
+
+The compilation and linking processes for the two languages remain similar, and so is the memory model. What resides on the heap? What resides on the stack? How is memory managed? These remain extremely similar in C and C++ to this day. At this point, it's also important for us to talk about some of the differences between C and C++, because these are quite major. Let's start by listing out some of the attributes of the C language, starting with one of its most fundamental attributes. C is a procedural language. Essentially, the code executes linearly, step-by-step, one statement after another. Along the way, multiple functions may be invoked. Control will be transferred into those functions before it returns to the main function, but the idea still remains that code execution is very linear.
+
+Another fundamental difference, and this one is quite likely a limitation, is that C treats data and functions very differently. Functions in C are not first-class citizens in the sense that they are in functional languages, and data and functions are not combined into objects as they are in object-oriented languages. From both these points of view, C is quite old fashioned in the distinction it maintains between data and functions. It follows from these first two points that C does not support object-oriented programming concepts such as encapsulation and inheritance. Likewise, C has constructs which are a subset of the constructs in C++. Or to put it differently, C++ is a superset of C. Everything that you can do in C.
+
+You can also do in C++, but in addition, you can also do a lot more. Finally, from the perspective of portability and ease of use, memory management is notoriously difficult in C. It's really quite complex getting memory allocation and deallocation right, particularly as your code has greater and greater levels of indirections, i.e., pointers and pointers to pointers. Let's now contrast these attributes with those of C++. To begin with, C++ is inherently object-oriented.
+
+The basic building block in C++ is a class and objects of that class and objects encapsulate data and behavior into one coherent whole. And again, it follows from these that C++ is built around the concepts of object-oriented programming, although in recent years it's also added substantial support for functional programming constructs as well. C++ is most definitely a superset of C, it has many capabilities that go beyond C, and these include a lot of indirections and abstractions which help with memory management.
+
+With all of this context out of the way, let's turn back to our question. Why is the C language still important? Well, you should know that many of the most important pieces of software that are used by billions of users around the world today still rely on C. For instance, the operating system kernels of Windows, Linux, and other important platforms. Perhaps the greatest proof of C's relevance is that even mobile OS kernels are written in C. This is true for both the iOS and for Android. Also, very powerful database technologies such as the servers for Oracle, MySQL and so on, also tend to be coded in C, as do embedded systems and Internet of Things software. From this list, it's pretty clear that C still has its own niche, and at this point, because a lot of attention in computer science is directed towards features such as portability and ease of use, C looks likely to retain its niche appeal in those areas precisely because it intentionally deemphasizes portability and ease of use.
+
+4. Video: C Language Compilation Process 
+
+Objectives
+recall the compilation process of C
+Topic title: C Language Compilation Process. Your host for this session is Vitthal Srinivasan. 
+C is a compiled language and it works with its native hardware at a very low level. For this reason, it makes sense for us to try and understand in depth, the process that a C program undergoes when it's being converted from source code that's being typed by a developer, right down to an executable file that can actually run on a platform.
+
+At this point, it's probably worth our understanding the difference between source code, assembly code, and machine code. Source code in this context refers to C code which has been typed out by a C programmer using an IDE. Maybe something like VS Code. Source code is of course, human readable, and it has all of the syntactic elements that we are used to seeing.
+
+Next, in terms of complexity, is assembly code. You can think of assembly as a low-level programming language that communicates directly with hardware. However, assembly programs are still human readable. They include opcodes for specific instructions that can be interpreted by the hardware on a platform. Different platforms will work with different kinds of assembly code. And then even one level further down from assembly code, is machine code. Machine code is not human readable and directly uses the instruction set architecture of a given platform. Now, of course, developers will prefer to create or write code in high-level languages, and that will need to be translated into assembly code and then into machine code.
+
+And this translation is carried out by software known as compilers and interpreters. Compilers and interpreters are two different types of tools or technologies, but they both accomplish the same end purpose. They both take in high-level code written by developers, apply various processing transformations to that code, and output executable code that is binary or machine code that can be understood and executed directly by a computer. Functionally, compilers and interpreters have the same purpose, but they differ from each other in some very fundamental ways. Compilers take the source code and translate it to binary or machine code via a series of steps. This transformation is performed one off.
+
+However, interpreters work with the high-level source code, one instruction at a time. This in turn means that code that has been compiled can then be executed several times without the need for recompilation. However, code that requires interpretation will need to be interpreted each time it needs to be executed. And as you might imagine, this gives compiled languages a performance advantage over interpreted languages. C and C++ are both compiled languages. While common examples of interpreted languages include Python and JavaScript, Java has its own even more complex process, which involves a combination of compilation and interpretation. For now, our focus is on the C language and you should remember that C is a compiled language.
+
+The source code is converted to the binary code one off, and that binary code which is packaged into an executable file that can be repeatedly run. At a high-level, there are four important stages in the compilation and running of C code. The first of these is carried out by something known as the pre-processor. This performs some preparatory operations such as expanding macros and header files. The second is performed by the C compiler itself. This converts the high-level source code, please note this is the pre-processed source code, into assembly code. Remember, now that assembly code is still human readable. It needs one further level of translation down to machine code which can actually be executed and this is performed by the assembler.
+
+And after that comes the linking step. The linker is a piece of software which will combine together different bits of assembly. These might be different libraries and help to resolve symbols, where one program calls a function that resides in another library. Taken together, these four steps are involved in compiling and running C code. Each of these steps takes in certain types of files and generates different kinds of files. And if we change our perspective and focus on the files involved in the compilation process, we can see that this is an even more involved process. Over on the left, we start with the source code that's been typed out by a developer. Then after the pre-processing phase, we have pre-processed code. This is still source code, but it's going to involve expansion of header files and some other steps which mean that the pre-processed code will be quite hard to read.
+
+This pre-processed code will be fed into the compiler, which in turn will output assembly code. Assembly code will involve various opcodes, which can still be read and interpreted by a human. The assembly code then goes into an assembler and the output from that is the object code. This is an important term. Object code refers to the actual machine language instructions which are understood by a processor. As we've already discussed, programs extensively make use of library calls, and those libraries will have their own object files. There needs to be some stage in which we link together the object code from our program with the object code of all of the libraries that are referenced by our program, and that process is known as linking. And this process culminates in the creation of either an executable file which can be run directly, or a library file which can then be referenced by other libraries or programs.
+
+5. Video: Compilation and Linking Process of the C Language 
+
+Objectives
+identify steps of C’s compilation and linking processes
+Topic title: Compilation and Linking Process of the C Language. Your host for this session is Vitthal Srinivasan. 
+By this point, we have a good top-level understanding of the compilation process in C. Let's double click and try and understand some of these steps in a little more detail. Let's start with the first step, which is the role of the pre-processor. Remember that the pre-processor takes in source code that was typed out by the developer, and it outputs source code as well.
+
+So the input into the pre-processor is source code. The output is also source code. The important difference, of course, is that the output is pre-processed source code. Let's turn our attention to the steps performed by the pre-processor. You can think of the main job of the pre-processor as taking the source code typed out by the user and getting it ready for compilation.
+
+An important part of this process is looking through the code for pre-processor directives. Anytime you see a bit of code in a C program which starts with the # symbol, you should know that this is a pre-processor directive. In other words, this is code which is meant to be interpreted and handled by the pre-processor, it won't make it to the compiler at all. Perhaps the most common type of pre-processor directive is a #include. Virtually every C program starts with a #include, this specifies header files that are referenced by this particular program. Other common examples of pre-processor directives include #define, as well as #if, #else and #elif. All of these directives again are pre-processor directives.
+
+They never even make it to the compiler stage. Before that, the pre-processor will take all of these pre-processor directives and replace them by some actual C code. The output of the pre-processor will be different from the input file. This output will often have a .i extension. The job of the pre-processor also includes removing comments from the source code. Comments, after all are never going to be compiled. In addition, C programs can include macros, and these macros will be expanded and replaced by the corresponding source code. Finally, the pre-processor will also include or exclude code that is conditionally compiled. This is done by processing the directive, such as #if, #else, #ifndef, and #endif.
+
+The output of the pre-processor is then fed into the compiler and the output of the compiler is assembly code. Remember again that assembly code is not quite the same as machine code. Assembly code, rather, this is a very low-level programming language relying on opcodes. These opcodes are not directly understood by the machine, and in fact, are still human readable. The output of a compiler consists of assembly instructions and is often a file with a .s extension. That assembly code now needs to be translated into the object code or the machine code, which can be directly executed on a native platform.
+
+This process is carried out by the assembler. The assembler will take in code in assembly language which has opcodes that are still human readable, though they are very low-level, and it will output object code. Object code files typically have a .o extension and these files contain actual machine language which can be executed on a platform. This object code is almost ready to be executed, but before that, the linking process needs to be completed. Linking involves tying together libraries or other object files which are referenced by this object file and that in turn is performed by the linker. The output of the linker is actually an executable or a library. As its name would suggest, the linker is the piece of software that ties it all together. The output of the linker is an executable which references external libraries and frameworks and resolves dependencies.
+
+The linker will also throw an error, if it finds that the object code refers to a function in some external library, and that library happens to not be available. Putting it all together, you can see that there are many different types of files involved in the process of building an executable. To begin with, there are header files, these header files are then brought in or included into the source code by the pre-processor. The pre-processed files are then passed into the compiler which outputs assembly language code with the .s extension. That goes into the assembler, which translates the assembly language to machine code. And finally, many different machine code modules.
+
+All of these are object files, are tied together by the linker to create the executable, and that executable is something that we actually can run.
+
+6. Video: Widespread IDEs and Compilers for C 
+
+Objectives
+explore the available IDEs and compilers for C
+Topic title: Widespread IDEs and Compilers for C. Your host for this session is Vitthal Srinivasan. 
+Let's take a moment to understand the IDEs and compilers that we are going to be using in the demos coming up ahead. Let's start by understanding the term IDE. This is an acronym for integrated development environment. You've probably encountered this term before. It refers to any software or package which makes writing code or developing code easier. The term integrated refers to the fact that IDEs combine many development tools into one UI. Typically, an IDE includes tools that help you to type out your source code, such as a nice editor optimized for coding, ways to build, that is to compile and run your code, as well as tools for debugging based for instance to set breakpoints and to examine the values of variables at runtime during program execution.
+
+These are all pretty standard capabilities in IDEs these days, and virtually every programming language in widespread use has at least one powerful and popular IDE. Now, C and C++ have, of course, both been around for a really long time and as a result there's no shortage of IDEs for these languages. Here are a few. VSCode that's short for Visual Studio Code is a Microsoft IDE that was developed for Windows, but it's also available for use on Linux and Mac platforms. VSCode is free and a very thorough and good IDE. Eclipse is another powerful IDE. It's commonly used for Java, but you can use Eclipse for C and C++ as well. Eclipse is free and open-source and has multi-platform support.
+
+A third popular IDE is Code::Blocks. This was developed using C++ and once again, works on Windows Linux as well as Mac systems. Let's take a moment to talk about running C on Linux. Virtually any popular IDE will work on Linux. Now you could choose to compile and run your code from within the IDE. Or alternatively, you could choose to use an external compiler, and that's what we will be doing in the upcoming demos. The most popular compiler in widespread use is GCC. GCC supports various C standards as well as other programming languages. GCC is a portable compiler, which means that it runs on most platforms available today and can produce output for many types of target processors. Remember that the job of a compiler is to take pre-processed source code and output assembly code. Assembly code is not the same as machine code, so you might be wondering why the output of a compiler needs to be compatible with the processor.
+
+Well, this is because there is usually a one is to one relationship between an assembly code and a machine code. And this is why it's important for a compiler to be compatible with the platform it's working on. Next, let's turn to running C on Windows. One extremely popular choice, of course, is Microsoft Visual Studio. This is not quite the same as VSCode. Visual Studio is a much more powerful and heavyweight IDE than VSCode. Visual Studio can also integrate with third-party compilers such as minGW. minGW intern is a minimalist GNU for Windows. You can think of MinGW as GCC for Windows. It's a native Windows port of the GNU compiler. All of MinGW software will execute on 64-bit platforms. You might also be trying to run C on Macintosh based systems, and in this case, you are most likely to want to use Xcode.
+
+Xcode is Apple's development environment. It works across Apple platforms such as macOS, iOS, and so on. Xcode comes packaged with the source code and compiler for both C and C++. In most of the demos coming up ahead, we will be running C on macOS and the compiler that we will be using is going to be Clang. Without going into too much detail about Clang, you should be aware that this is the default compiler for macOS. Clang is an LLVM native C/C++ compiler. LLVM intern is a collection of modular and reusable compiler technologies. This has given us a good overview of the tools and options available for running C programs on Windows, Linux, and Macintosh based systems. It's now time for us to go ahead and plunge into some actual coding.
+
+7. Video: Setting up C on Mac 
+
+Objectives
+set up the C compiler and download VSCode for mac
+Topic title: Setting up C on Mac. Your host for this session is Vitthal Srinivasan. 
+In this video, we will begin our exploration of the C programming language by getting started with the C compiler on a Macintosh system. Here, we find ourselves before a Terminal window. This is a Terminal window on a macOS based machine. The compiler that we will be using on the macOS based machines is going to be Clang. At this point, let's see whether the Clang compiler is already available. We start by typing out the command, clang --version. The output of this command, which is visible on screen now, tells us that clang is not available, and as that message also tells us, that in turn is because xcode has not been installed.
+
+Now, Xcode is an Apple IDE. It's available on pretty much all macOS based machines and clang, that's the C language compiler that we will be using, comes built-in as one of the elements of xcode. So, let's first install xcode and then make sure that we have clang up and running.
+
+The Terminal window is opened. He enters the following line of code: xcode-select --install. 
+
+The command that we use here is xcode-select --install. This kicks off the installation process for xcode. We are taken to a screen with a license agreement. We click on Agree in the bottom right. The download of the Xcode utility package commences and in just a moment, we are informed that The software was installed. At this point, Xcode is available on our macOS machine. Let's switch back to the Terminal window and retry our clang --version command. And this time, we can see from the output that clang is indeed available. As the output informs us, we are making use of Apple clang version 12.0.0.
+
+Now that we have a C language compiler available, the question is, how do we actually start typing out our C code? For this, of course, we need an IDE or integrated development environment, and the IDE that we are going to go with is VS Code.
+
+He opens the Visual Studio Code web page. It contains a download button named Download Mac Universal, Stable Build. 
+
+We open up a browser and navigate to the URL code.visualstudio.com. As the web page informs us, VS Code is free and open-source. It's also multi-platform. That's why it says here that it Runs everywhere. We click on the large blue button that reads Download Mac Universal. This is a Stable Build, and this causes a zip file to be downloaded to our machine. Simultaneously, we are redirected to the documentation page where as you can see, we are informed that Visual Studio Code is a lightweight but powerful source code editor. It works for many different languages and on many different platforms.
+
+As this page tells us, VS Code works on Windows, macOS and Linux. And indeed, this is why we have chosen to download and use VS Code. We could just have gone with Xcode, but then that would have been Apple specific. In any case, let's switch over to a Finder window. Here, we've navigated to the Downloads folder and in that downloads folder, you can see that we have not only the zip file which we just downloaded, but we've also extracted the contents of that zip file by double clicking on that zip file, and that in turn has given us the application file, Visual Studio Code. Now we drag and drop that application file into the Applications folder, which we have conveniently pinned over to the sidebar on the left. Doing this has the effect of installing Visual Studio Code. All pretty simple and convenient. Let's close this Finder window and head back to a Terminal prompt.
+
+This is the same Terminal prompt where we had confirmed that Clang was available. Next, let's navigate into a folder of our choice.
+
+He enters a command in the Terminal window. It reads: cd Desktop.
+
+We navigate into the Desktops folder, create a projects folder on the desktop,
+
+He enters the following command: mkdir projects. 
+
+create another subfolder there called installation.
+
+He enters the following command: mkdir installation. 
+
+We do this using the mkdir command. cd into that folder in turn and then finally run the command code ..
+
+The pane displays the following command: cd installation. 
+
+code is the command that we use to kick off VS Code, and . refers to the current directory. The effect of running this command is to open up VS Code with the current directory set as the base directory. All of our source code files and other executable files are going to exist in this directory. VS Code opens up. We have a splash screen asking whether we trust the authors of the files in this folder.
+
+The Visual Studio Code window opens. On the left side, the window has a pane labeled EXPLORER. It displays a file named INSTALLATION. The main pane displays the Get Started page. It has three sections: Start, Recent, and Walkthroughs. The Start section further displays three options: New File, Open, and Clone Git Repository. 
+We answer in the affirmative and then we go ahead and get started. And we do this by adding an extension to VS Code for C and C++.
+
+The side menu bar of the window contains various icons. He selects the Extensions icon. 
+
+The little tooltip tells us that this is indeed the button to open up the Extensions menu. That in turn leads us to a set of extensions.
+
+A list of multiple menu options opens under the following sections: INSTALLED, POPULAR, and RECOMMENDED. The POPULAR section displays the following options: Python, Jupyter, C/C++, Pylance, and ESLint. 
+
+There is a search bar on top and then we can see that there are three sections, Installed extensions, Popular extensions, and Recommended extensions. Under the Popular section, we see an icon which reads C/C++. This is IntelliSense.
+
+The Extension: C/C++ page opens. It has 3 tabs namely, Details, Feature Contributions, and Changelog. The Details tab further contains the following tabs: Repository, Issues, Documentation, Code Samples, and Offline Installers. The page also has the Install button. 
+
+Let's click on IntelliSense and Details about it appear in the main pane. Let's click on the little blue Install button and that in turn causes this extension to be added to our VS Code. You can see that the buttons now change so that we have the ability to Disable or Uninstall this extension. Now that we have the C/C++ extension, we can click on the top left icon. This will allow us to add in a new source file. The little tooltip in the top left tells us that we click on that button to add a New file.
+
+We have prompted for the name of the file and we go with hello_world.c. The .c extension is a clue to VS Code that this is, of course, a C language program whose source code we are typing out. hello_world .c appears in the main pane and we can start typing out our code. We are ready to write and run
+
+He creates a new file underneath the INSTALLATION file. It is named as hello_world.c.
+
+our hello_world program and here indeed is the code for Hello World.
+
+He highlights the following lines of code. Line 1 reads: # include<stdio.h>. Line 3 reads: int main (void). Line 4 reads: {. Line 5 reads: printf("Hello World! \n");. Line 7 reads: return 0;. Line 8 reads: }.
+
+On line 1, we have an include statement. This is a #include, followed by the name of the header file, stdio.h. Notice how that header file name is enclosed within a pair of angle brackets. On line 3, we have our main note, how the main returns in int and has an input type of void. Within this simple program on line 5, use a printf command to output a message Hello World, and then on line 7, we return 0.
+
+We'll have more to say on the topic of return codes, but 0 indicates that the program has executed successfully. We now have our Hello World code. The question is how do we run it? Well, there are a few different ways of going about this, but for now we'll open up a TERMINAL window from right here, within VS Code.
+
+At the bottom, a new pane opens. It displays 4 tabs: PROBLEMS, OUTPUT, DEBUG CONSOLE, and TERMINAL. The TERMINAL tab displays the following command: ~/Desktop/projects/installation>. 
+
+We've done this using a shortcut. This is the keyboard shortcut Ctrl+` and if you'd like to do this using the menus, you can navigate into the view menu and there, there will be an option to open a new TERMINAL window. Again here, in this instance, we've simply made use of the keyboard shortcut Ctrl+`. A Terminal appears in the lower part of our screen and we can start typing out shell commands. We start by orienting ourselves by running the ls command and there we see the contents of the folder Desktop/projects/installation. At this point, there's just the one file in this folder and that is hello_world.c.
+
+This is our source file with the .c extension. Let's compile it using clang. Remember, again, the clang came as a part of the Xcode installation, so we are not making use of a compiler from within VS Code.
+
+The following command displays: clang hello_world.c. 
+
+The way to compile our code is simply to run clang followed by the name of our source code file, which here is hello_world.c. Now, before we run this code, look carefully at the set of files visible over on the top left, there's just one file, hello_world.c. However, when we run our clang command, a new file appears there, and that file is called a.out.
+
+The left EXPLORER pane displays a new file named a.out. 
+
+We can further confirm the existence of this file by running the ls command and in this directory, we now see that there are two files. There is the source file hello_world.c and then there is the output file a.out. a.out is an executable file.
+
+It represents the final output after the compilation and the linking process. Because this is an executable file, we can run it simply by typing out the file name. However, do notice that we precede that file name with a dot and a forward slash. That's a way of making sure that a.out from this directory is picked up.
+
+The following command displays: . /a.out. 
+
+And in this way, we've managed to run our first C program. As you can see, the output of this program is the string Hello World. And that brings to a successful culmination, this first demo, in which we got up and running with the C language on a Macintosh based system.
+
+8. Video: Setting up C on Windows 
+
+Objectives
+install mingw and VSCode on Windows
+Topic title: Setting up C on Windows. Your host for this session is Vitthal Srinivasan. 
+In the previous video, we got up and running on a macOS based system. In this video, we're going to do something similar on Windows. We have here before us, a Command Prompt and we first start by trying out the gcc compiler, which we're going to be making use of in the demos up ahead, gcc --version. And at this point, as we can see from the output, gcc has not been installed. That's why we have the message telling us that gcc is not recognized as an internal or external command. gcc on Windows is the compiler that we will be using. This is analogous to clang, which we were using on macOS. Now, in order to install GCC, we're going to make use of a little package called MinGW. It turns out that GCC stands for GNU Compiler Collection. MinGW stands for Minimalist GNU for Windows.
+
+He opens a web page labeled SOURCEFORGE. It displays the details of the following software: MinGW -. Minimalist GNU for Windows. It has three buttons: Download, Get Updates, and Share This. 
+
+This is a small little package which allows us to make use of various compilers including GCC. And that's why we've navigated to the URL sourceforge.net/projects/mingw. Here we have a large green Download button which allows us to download and install MinGW. We can see that a .exe file has been downloaded. It's visible at the bottom left. We click on that executable file and the setup process begins. This is the MinGW Installation Manager Setup Tool. We click on the Install button towards the bottom right. We then have to choose the Installation Directory, which by default is C:\MinGW. We go ahead with the choice. The process rolls forward and, in a moment, we are taken to a screen where we are prompted for which components we'd like to install.
+
+A window titled MinGW Installation Manager opens. The menu bar has three elements: Installation, Package, and Settings. The window displays a list of various packages under the following headers: Package, Class. Installed Version, Repository Version, and Description. 
+
+You can see here that there is a list of packages in the center screen and there are checkboxes next to each of those packages. Here we are interested in mingw32-base, that's the second. So, we right-click on it and choose the Mark for Installation option.
+
+A drop-down menu appears. It has the following menu options: Unmark, Mark for Installation, Mark for Upgrade, and Mark for Removal. 
+
+We then also want to do something similar for mingw32-gcc-g++. We right-click on that as well and again choose Mark for Installation. Finally, we perform a similar step on msys-base. That's a last package that we can see currently on screen. Once we've marked these three packages for installation, we make use of the menu. We click on the Installation menu item over on the top left.
+
+The Installation element opens and displays the following options: Update Catalogue, Mark All Upgrades, Apply Changes, and Quit. 
+
+There we choose the Apply Changes option. We are prompted for confirmation that we can indeed proceed and apply these changes.
+
+We click on Apply. The download process zips forward and at the end, we have g++ installed and available for use. We hit the Close button, then close out of the MinGW Installation Manager and head backward to a Command Prompt. Here, we again try gcc --version. We had tried this command a moment ago. It hadn't worked then, but we are more optimistic now. To our surprise, however, we still have the same returned message, gcc is not recognized as an internal or external command. What gives? Well, the problem is that even though we've downloaded and installed gcc, we haven't yet made the requisite changes to our path environment variable, and that's what we are going to have to do before we can actually make use of GCC. The specific addition that we need to make to the path environment variable is the folder MinGW/bin. So, let's navigate into the Local Disk (C:).
+
+There we find MinGW and we can confirm there that we do indeed have a bin directory. Let's click on bin. We take a moment to see what it contains. There are a whole lot of different files in here. Some of these are executable files. Some of these are DLLs. In any case, this is the folder that we need to add in to our path variable. To get the exact path that we need to add, let's click on the file name and there as soon as we click on it, you can see that it gets expanded into C:\MinGW\bin. Next, we right-click and Copy this path, switch back over into a Windows prompt. There, at the bottom left, we click on the toolbar and type out the word path. Very helpfully, Windows gives us different ways in which we can edit the path variable. The best match is Edit the system environment variables from the Control Panel and that's what we are going to do.
+
+Clicking on that first option opens up the System Properties dialog and there you can see that it's the Advanced tab that's currently selected.
+
+The System Properties box opens. It has various tabs namely, Computer Name, Hardware, Advanced, System Protection, and Remote. The Advanced tab is active. It displays three sections: Performance, User Profiles, and Startup and Recovery. 
+
+At the bottom right of this tab, you can see a little button which reads Environment Variables. Let's click on that button and a new dialog opens up this one titled Environment Variables and you can see that we have two sets of Environment Variables.
+
+The Environment Variables dialog box opens. It has two sections: User variables for Administrator and System variables. Both the sections display their list under 2 column headers: Variable and Value. 
+
+Up top, we have User variables that's for the user administrator and then down below, we have System variables. Towards the middle of the User variable section, you can see that we have the Path in there. Let's click on Path and then next click on the little Edit button towards the center right of the screen.
+
+The Edit environment variable box opens. It displays a list on the left side. Beside the list, it contains various buttons namely, New, Edit, Browse, Delete, and Edit text. 
+
+This in turn allows us to add New entries into the environment variable, so we click on the New button over on the top right and Paste in the path C:\MinGW\bin. We have now successfully edited our path environment variable and we click OK a couple of times and this now allows us to retry our gcc command.
+
+He enters the following command: gcc --version. 
+
+We go back to a Command Prompt and we try gcc --version yet again and this time we finally experience success. You can see the gcc is available, the version that we're using is 6.3.0. We now have the gcc compiler available for use on Windows. The next step is for us to download Visual Studio Code. This is something that we had already done on the macOS based system. Let's now do the same on Windows.
+
+He opens a web page with the following URL: code.visualstudio.com. The page has a download button named Download for Windows, Stable Build. 
+
+We navigate to code.visualstudio.com. You can see that the browser correctly infers that our OS is now Windows based and that's why that big blue Download button reads Download for Windows. From here on, in the install process is pretty self-explanatory.
+
+An exe file gets downloaded to our machine, we click on it in the bottom left corner and that in turn launches the installation dialog. This is going to install VS Code on our Windows machine. We run through this process accepting the agreements and hitting OK wherever appropriate, and pretty quickly we have VS Code available on Windows as we already did on Mac. At this point, VS Code opens up and we could choose to get started right here,
+
+The Get Started web page opens. It displays various radio button options under the heading Get Started with VS Code. They are: Choose the look you want, Sync to and from other devices, One shortcut to access everything, Rich support for all your languages, and Open up your code. It also has a button named Mark Done. 
+
+but instead we are going to first create a directory structure which mirrors the one that we had on the Mac machine.
+
+ As he selects the Mark Done button, a new page opens. It has three sections: Start, Recent, and Walkthroughs. 
+
+So let's exit out of VS Code temporarily, switch back over to a Command Prompt and recreate that directory structure.
+
+ He opens the Command Prompt window and highlights the following commands. First line reads: C:\Users\Administrator\Desktop\projects> mkdirinstallation. Second line reads: C:\Users\Administrator\Desktop\projects> cd installation. 
+
+Once we are done doing so, we can relaunch VS Code using the same command that we had on the Mac based system. Code followed by a dot. Code is the executable to launch VS Code, and dot refers to the directory that's got to be used as the working directory in VS Code.
+
+From here on in, the steps are virtually identical to those on the Mac. Let's close out of this Get Started dialogue and click on the INSTALLATION pane over in the left.
+
+The installation - Visual Studio Code[Administrator] page opens. The left EXPLORER pane displays a file named INSTALLATION. Beside the file, the pane has various buttons. 
+
+There you can see that there is a button which allows us to add in a New File. We click on it. We are prompted for the file name. We again choose a file name with the extension .c, this is hello_world.c. Before we get started with our code, let's really quickly also install the extension for C/C++. We'll do this by clicking on the little Extensions icon over in the left that shows the center of the screen.
+
+The side menu bar of the window contains various icons. He selects the Extensions icon. 
+
+The Extensions dialog opens up.
+
+A list of multiple menu options opens under the following sections: INSTALLED, POPULAR, and RECOMMENDED. The POPULAR section displays the following options: Python, Jupyter, C/C++, Pylance, and ESLint. 
+
+Once again, we see the C/C++ extension towards the middle left of the screen. We click on the little blue Install button that we see up top there,
+
+The Extension: C/C++ page opens. It has 3 tabs namely, Details, Feature Contributions, and Changelog. The Details tab further contains the following tabs: Repository, Issues, Documentation, Code Samples, and Offline Installers. The page also has the Install button.
+
+and the C/C++ IntelliSense extension gets added to VS Code on our Windows machine. Let's close the extension and return to our source code file hello_world.c, where we've pasted in a little snippet of C code.
+
+He highlights the following lines of code. Line 1 reads: # include<stdio.h>. Line 3 reads: int main (void). Line 4 reads: {. Line 5 reads: printf("Hello World! \n");. Line 7 reads: return 0;. Line 8 reads: }. 
+
+This code is identical to that which we had on the Mac based system. We'll come back to this kind of code in more detail, but for now, just notice that it prints out a Hello World message. Next, to run this code, we again open up a TERMINAL window right here from within VS Code. Again, there are two ways of doing this. We can either use the Ctrl+` extension or we can make use of the Terminal command up top and choose the new terminal option from within it. In the Command Prompt, which opens down below, we make use of gcc and we specify the name of the source code file that we'd like to compile.
+
+He enters the following command: gcc .\hello_world.c
+
+That's hello_world.c. Notice how we disambiguate or qualify the path by using the dot followed by the backslash before the name of the file. As soon as we run this command, gcc will compile and link our code, and the output file is going to be a.exe.
+
+You can see a.exe appears in the pane on the top left.
+
+The left EXPLORER pane displays a new file named a.exe.
+
+Remember that by default, on a Linux or macOS based system, the output file is called a.out. On a Windows based system, it's called a.exe. Let's run the dir command in our TERMINAL window in order to view the details of these two files in this current folder. Once we've satisfied ourselves that these two files do indeed exist here, let's clear the screen using cls and then execute our code by running a.exe. As before, we preface it with the dot and the backslash. This runs our little Hello World! program and that welcome message appears on screen. And with this, we've successfully come to the end of this demo in which we installed all of the necessary compiler and IDE tools required for us to run C programs on a Windows based system.
+
+9. Video: Running C Code with Clang 
+
+Objectives
+demonstrate writing, compiling, and running C code on mac and windows
+Topic title: Running C Code with Clang. Your host for this session is Vitthal Srinivasan.
+Remember that C, unlike some other languages such as Python or JavaScript, is a compiled language. This means that C source code is first compiled and then linked. The output of this compilation plus linking process is an executable file which can be run. In this video, we will see how to compile and run C code. We will now run C code from a TERMINAL window, which is completely independent of VS Code. We'll also see how we can control the name of the executable file, and we'll see that compilation leads to different executable files each time it occurs. Let's plunge a write in. We are still in VS Code, but this time we are in a different folder.
+
+That folder which you can see named up on the top left is RUNNING_IN_TERMINAL. The first little code file that we're going to work with is identical to the one that we left off with.
+
+A file named hello_world.c opens in the VS Code window. It displays the following lines of codes. Line 1 reads: # include<stdio.h>. Line 3 reads: int main (void). Line 4 reads: {. Line 5 reads: printf("Hello World! \n");. Line 7 reads: return 0;. Line 8 reads: }. 
+
+We have a simple printf which prints out Hello World to screen. As before, we make use of the control backtick shortcut to open up a TERMINAL. And we now run ls -l.
+
+At the bottom of the VS Code window, the Terminal pane displays the following command: ls-l.
+
+We are currently on a Mac based system. At this point, we have just the one file in our directory and that's hello_world.c. Let's make a small tweak to this code. We change the output of the printf, so that instead of reading Hello World, it now reads Welcome to C Programming.
+
+Line 5 now reads: printf("Welcome to C Programming! \n");.
+
+This is a pretty small change. We make this change and then we switch over to a TERMINAL window. Please note that this TERMINAL window is entirely independent of VS Code.
+
+We have not made use of the terminal within the code editor this time around. The first command that we've got to run is the clang command. This is going to compile our source file and give us an executable,
+
+He enters the following command: clang hello_world.c. 
+
+clang hello_world.c. And when we now rerun the ls -l command, we can see that we have not one but two files in this folder. As before, we still have hello_world.c, but we now also have a.out, a.out is an executable file. We can see this because in the output of ls -l for a.out, we have the flags and those flags contain the letter x three times around. And that letter x in there indicates that a.out is an executable file.
+
+The following output is highlighted: -rwxr-xr-x 1 loonycorn staff 49424 Dec 27 16:15 a.out. 
+
+If you look at the corresponding flags for hello_world.c, we can see that the letter x does not appear there.
+
+The following output is highlighted: -rw-r--r-- 1 loonycorn staff 103 Dec 27 16:14 hello_world.c. 
+
+The Unix or POSIX flags give good indications of whether a file is read only, readable as well as writable, or readable writable and executable. a.out is executable and that in turn means that we can run it. We do this right here from the TERMINAL as before we preface
+
+ The following command displays: . /a.out. 
+
+a.out with the path qualifier dot followed by a forward slash. Running this displays the message that we had in our modified code, which was Welcome to C Programming. What this little example so far has proven is that when we change our code and then recompile and re-run, the output changes in sync with the code. Now let's try another little experiment. Let's switch back over into VS Code and change Line 5, so that instead of printing out Welcome to C Programming, it now prints out the message, Code changes require recompilation. Please note that we've changed our source code, this is hello_world.c.
+
+We now switch back over to a TERMINAL window and we rerun the clang command. We again specify the name of the source file which is hello_world.c. But this time we also specify an additional argument. This is the -o argument, -o followed by hello_world is telling client that we like the executable file to be named hello_world without an extension.
+
+He enters the following command: clang hello_world.c -o hello_world. 
+
+Let's run this clang command, it goes through successfully. We then re-run the ls -l and at this point we find that our folder has not two but three files. And the three files are, a.out, hello_world without an extension and hello_world.c. If we look over on the left, we can see that a.out as well as hello_world are both executable files. We can see that from the presence of the character x in the POSIX flags.
+
+It's interesting to note that the timestamp of a.out has not changed, it still reads 16:15. However, the timestamp for hello_world as well as hello_world.c are more recent. Next, let's try running these two executables. Let's first run hello_world, that's a new executable. We do this using dot followed by a forward slash, followed by the executable name and the message that appears on screen is Code changes require recompilation. If we try a similar experiment with a.out, the message that we see is different, it simply says Welcome to C Programming. This little example drives home an important point. Each time we change our source code and then recompile our code, a new executable file is created.
+
+If we have different copies of different executable files, each of those executable files corresponds to the output of compiling different source code. In a simple example like this one, it's easy enough to keep track of which source code led to which output file. However, in complicated real-world situations, conflicts and confusion can arise, and this in turn is why it's so important to have robust build and source code management systems. In any case, let's very quickly recreate this demo, this time on a Windows platform. So, we switch over to our Windows machine and we go through pretty much the same steps.
+
+He moves to the Visual Studio Code window. The left pane displays the following file: hello_world.c. 
+At this point, we have source code that's hello_world.c. We change the source code, so that instead of printing out Hello World, it prints out Welcome to C Programming.
+
+Line 5 now reads: printf("Welcome to C Programming! \n");. 
+
+Next, we compile and run this code. We are careful to do this not from within VS Code, but rather from an entirely independent Command Prompt. We start by using the gcc command. Remember, that we were making use of gcc plus VS Code on Windows, gcc followed by the name of the source code file hello_world.c leads to our code being compiled and the executable file a.exe being created.
+
+He opens the Command Prompt window and enters the following command: gcc hello_world.c. 
+
+We can verify that a.exe has come into existence by using the dir command and indeed here it is. The .exe extension indicates that this is an executable file, so we can go ahead and invoke it right here from the Command Prompt. We run a.exe and the output trades, Welcome to C Programming. Let's switch back to our source code and change the print statement.
+
+Once again, we change it to read Code changes require recompilation. We've changed the source code.
+
+He edits the code given on line 5 in the VS Code window. It now reads: printf("Code changes require recompilation \n");. 
+
+Let's head back to a Command Prompt window and re-run gcc. This time we make use of the -o flag. Remember, that we had made use of the -o flag with clang that was on a Linux or Unix based system. Here, we've made use of the -o flag with gcc.
+
+He opens the Command Prompt window again and enters the following command: gcc hello_world.c -o hello_world.
+
+The -o flag works with pretty much any C compiler. We use this flag to indicate that we'd like the output to be named hello_world. Let's run this command, it runs through successfully. Let's then verify that the output file has come into existence using the dir command, and here we notice something interesting. As expected, we have two executable files, we have a.exe from the previous compilation and then we have hello_world.exe from the latest compilation.
+
+The interesting bit is that even though we had explicitly specified only the words hello_world while invoking gcc with the -o flag, the output file that was created had the full name hello_world.exe. The .exe extension is added automatically on a Windows based system. Let's run hello_world.exe and we'll do this as usual by qualifying it with dot and the backslash. The output of hello_world.exe is the string Code changes require recompilation. And if we try and run a.exe, we can see that the output as expected is different, this is Welcome to C Programming. We've now implemented this little demo both on Windows and on macOS based systems. Going forward we will stick to just one platform. However, the point remains pretty much everything that we demonstrated in this demo as well as in the upcoming videos, will work pretty much as is irrespective of the platform.
+
+10. Video: Understanding the Syntax of C 
+
+Objectives
+run C code and view its results
+Topic title: Understanding the Syntax of C. Your host for this session is Vitthal Srinivasan. 
+This demo is going to be a simple little demo in which we understand some of the different aspects of a basic C program. As before, we find ourselves inside VS Code. We have a single source file that's called hello_world.c, and at this point this source file is blank. Let's go in and type in the most minimal C program that we can imagine.
+
+The hello_world.c file is opened. He enters the following lines of code. Line 1 reads: int main (). Line 2 reads: {. Line 3 reads: return 0;. Line 4 reads:}. 
+
+On screen, now you see that we've defined a single function called main and inside this function we have a single line of code which reads return 0. There are a number of little points here worth noting. Main is a function, we'll have a lot more to say on what exactly functions are, main has a return type of int, that's indicated by the word int, which appears before the name of the function that's main. The body of the function is delimited by a pair of curly braces, these are visible on lines 2 and 4 respectively.
+
+The actual body of the function consists of a single line of code, which is a return statement and that return statement reads return 0 followed by a semicolon. The syntax of C is notoriously hard, however, you should know that it just takes some getting used to. Here we have our main function and we have a basic C program. Let's go ahead and run it. You open up a TERMINAL window right here inside VS Code. We make use of clang in order to compile hello_world.c and then we run a.out.
+
+He enters the following command: clang hello_world.c. 
+
+The following command displays: . /a.out. 
+
+And we see that there is no output at all. What then happened to that return value of 0, which we returned on line 3 of the code up above? Well, it wasn't lost, we'll come back to how we can examine it from the TERMINAL window in just a moment. Before that, let's tweak our code in a simple way and see how the output changes.
+
+On screen now we still have a function called main, however, this time its return type is void, rather than int.
+
+He enters the following lines of code. Line 1 reads: void main (). Line 2 reads: {. Line 3 reads:}.
+
+We also now no longer have any code at all between the curly braces, we've eliminated the return 0. Let's open up a TERMINAL window and invoke clang on this modified code and see what happens, and we find that we have a warning. Please note that this is not an error, it's something a little less serious. It is a warning. The warning reads return type of 'main' is not 'int'. We can also see the exact line of code which through this warning it's hello_world.c and its line 1 position 1. We can look a little more closely at the output and there is a suggestion, note: change return type to 'int'.
+
+So, the C compiler is suggesting that we replace the void which appears before the function name main with the word int. You can see how int appears in that bright green font. This little example has proven that the C compiler expects our main function to have a return type of int, and it expects some integer value to be returned, if it doesn't find that this is the case, it will flag a warning. Let's give in and let's now try another experiment. Let's see what happens if we replace the function called main and instead call it something else, like some_other_name. On screen now, we have modified hello_world.c,
+
+The file displays the following lines of code. Line 1 reads: int some_other_name (). Line 2 reads: {. Line 3 reads: return 0;. Line 4 reads:}. 
+
+so that we still have a really simple function. This one does indeed have a return type of int, and it does indeed return 0, that's on line 3. But we do not call this function main and instead we call it some_other_name.
+
+Do you think this will work? Well, you probably know enough, to know that it won't. When you try and invoke clang on this we get an error and that error tells us that main is a special function name which is used by the C compiler, when it's seeking an entry point into a C program. Well, the error message is a little hard to make sense of. The precise error message reads Undefined symbols for architecture x86_64:"_main", referenced from: implicit entry/start for main executable. And we also see that there is an error this time, it's flagged in bold red font rather than in the poppy font used for warnings, and this is an error from the linker, linker command failed with exit code 1. You can see from this error message just why C error messages tend to be feared amongst programmers.
+
+However, the cause of this error is simple enough. It's simply because we do not have a function called main in our program. We can confirm that no executable file has been generated. There are two ways to do this, the first is to merely try and run a.out. The other is to glance at the contents of our directory structure on the top left, we see that there isn't any a.out present there, there's only hello_world.c. As you can see from the output in the TERMINAL window towards the bottom of the screen, bash is telling us that it could not find a file called a.out. This was an error, not a warning, and that's why we did not get any executable produced when we tried to compile our code using clang. We learn from this that a C program that's invoked must have a main function.
+
+We recreate a simple main function which returns 0 and now when we try clang from the TERMINAL, everything goes through successfully, a.out appears in the top left. We execute a.out from the TERMINAL, no output appears. However, this time we are going to explicitly capture the returned integer. And how do we do that? Well, we make use of a little unique strict. We run a.out, and then we immediately follow that invocation of a.out by a semicolon, and then we have the code echo $?. This is a way of chaining the output from a.out into the next command, which is the echo $? and $? is a special variable which holds the returned value of the last command and when we run this we can see that the output is 0.
+
+Let's change the code to return 204 rather than returning 0. We've now done that in the code up top on line 3.
+
+Line 3 now reads: return 204;. 
+
+If we reinvoke clang and we reinvoke our commands, such as a.out followed by echo $?, we can see that the output is no longer 0, it's now 204. This confirms that the echo $? method can indeed be used, in order to view the precise return value from a C program. Let's quickly run through a couple of more experiments. First, let's see what happens if we specify a return type in the function signature, but omit the return statement from the body of the main function. That's what we've now done on screen, on line 1, we have the word int indicating that main returns an integer. But then within the body of the main function we don't have a return statement anymore.
+
+Will this work?
+
+He enters the following lines of code. Line 1 reads: int main (). Line 2 reads: {. Line 3 reads:}. 
+
+Let's go ahead and find out. We invoke clang and then run our code using a.out, there's no output that's expected. But if we now try the echo $? method, we see that we still have the value 0 returned. What we learned from this example was first, that when we omitted the return statement while specifying the return type, which was int, no warning or error was thrown. The clang compiler detected that the return value was missing and it automatically inserted a return 0. And that's the second point, which is proven by the output from the echo $?, the implicit return value from a C program is 0.
+
+By convention, successful execution of a C program tends to return 0. Any other value which is non-zero or typically negative indicates an error. We've now spent a bit of time talking about the return value from the main function, let's talk about the input arguments. Here, main is followed by a pair of parentheses with nothing in between. This indicates that the main function does not take in any input arguments. Another way of making this more explicit is using the keyword void. On screen now we've modified our program, so that main is followed by a pair of parentheses, but this time with the keyword void between those parentheses.
+
+He enters the following lines of code. Line 1 reads: int main (void). Line 2 reads: {. Line 3 reads: return 0;. Line 4 reads:}. 
+
+Absolutely nothing changes, we've just made it explicit that there are no input arguments, and if we compile and run this code, the output remains as before. That gets us to the end of this little demo, in which we took a quick look at the structure of a basic C program.
+
+11. Video: Exploring Errors and Warnings in C 
+
+Objectives
+identify compiler and linker errors in C
+Topic title: Exploring Errors and Warnings in C. Your host for this session is Vitthal Srinivasan.
+In this demo, we will conduct a series of little experiments to demonstrate various compiler and linker errors. Let's go ahead and get started with a simple program which we know works. Or does it? On screen now, we have code which looks very similar to the code we had a moment ago.
+
+The Visual Studio Code window is opened. The left EXPLORER pane displays the hello_world.c source file underneath the following file: COMPILING_AND_LINKING. He enters the following lines of code. Line 1 reads: int main (). Line 2 reads: {. Line 3 reads: return 0. Line 4 reads:}. 
+
+However, if we look really closely at line 4, we can see that there is a little bit of red underlining under the closing curly brace. Let's hover over that little red underlining and we can see the error.
+
+The following error displays: expected a ';' C/C++(65). 
+
+A semicolon is expected. There are two options there View Problem and Quick Fix. Let's try and click on View Problem and a helpful message appears right here inside VS Code. This error confirms that a semicolon is required at the end of the return statement. What happens if we try and compile this code. In the TERMINAL down below we invoke clang, and we find that we have the red font of an error message, and this time the error message is pretty clear. expected ' ; ' after return statement.
+
+There's also a bright green highlight telling us where that semicolon ought to be right after the 0. At this point, the compilation process has failed. We can see this from the error message. We can see this by looking at the top left corner of the screen where hello_world.c now appears in a red font, and we can also infer that a.out was not created. This tells us that when our code has an error, compiling that code does not result in the creation of an executable output file. We can further confirm this by running the ls -l command in the TERMINAL window at the bottom and we can see there that there's only the one file hello_world.c, a.out does not appear.
+
+Now, let's see what happens if we change this code, but this time, we have another error that we've intentionally introduced. And that error is that we've made
+
+He enters the following lines of code. Line 1 reads: int main (). Line 2 reads: {. Line 3 reads: returned 0;. Line 4 reads:}. 
+
+use of statement returned 0, rather than return 0. We can see from the red underlining right away that a syntax error has appeared. Let's try and ignore that red underlining and compile our code using clang, and this confirms that this is indeed not fine. Return is a special C language keyword. However, 'returned' is an undeclared identifier, and that's what we see in the error message. Undeclared identifier errors are also pretty common, especially for new C programmers. Next, we introduce another kind of error. This time, we've intentionally skipped using the curly braces to delimit our main function.
+
+He enters the following lines of code. Line 1 reads: int main (). Line 2 reads: return 0;. 
+
+Using somewhat Python style syntax, we simply have indented code, return 0 following the name of our function.
+
+This will not work in C, when we try and compile this code, we can see that we get a compiler error. The exact syntax of this error is expected function body after function declarator. The C compiler was looking for an opening curly brace, it did not find one and that's why we have this error on our hands. Please note that all through this process of introducing errors, hello_world.c has appeared in a red font over on the top left. Now, however, we change the code so that hello_world.c contains correct code and immediately the
+
+He enters the following lines of code. Line 1 reads: int main (). Line 2 reads: {. Line 3 reads: return 0;. Line 4 reads:}. 
+
+color in the top left changes, it goes from being a red bold to just being ordinary black font. We now have a valid C program. Let's go ahead and compile it using Clang, and we also see now that the output file a.out has been created.
+
+The left EXPLORER pane displays a new file named a.out. 
+
+We see it there in the top left. Let's try and examine the contents of a.out. We first use the ls -l command to confirm that a.out has indeed been generated and we can see from the output that this is indeed the case.
+
+We can run this as usual by simply typing a.out preceded by a dot and a forward slash, and then we try something even more interesting. We try and make use of the nano editor to examine the contents of a.out.
+
+The Terminal pane displays the following command: nano a.out. 
+
+However, this doesn't seem to be very interesting. The output looks like gibberish, and that's because a.out is a binary file. It's not human readable, and trying to read the contents of a.out using a text editor like nano, does not yield anything human readable. Let's keep going and tweak our function main. You can see that we now have on line 1, an include statement.
+
+Line 1 reads: # include<stdio.h>. 
+
+This has a very particular syntax. It begins with the # symbol followed by the keyword include and then within a pair of angle braces, we have stdio.h. The .h makes it clear that this is a header file and the fact that this is enclosed within angle braces, indicates that this is a built-in header.
+
+We'll have more to say on this topic in the demos and learning paths coming up ahead. Suffice it to say for now that stdio is a library, and by referencing this header file, we can then invoke functions from that library. And that's exactly what we've done inside the body of our main method where we now have invoked the printf function.
+
+He adds the following line of code. Line 5 reads: printf("Hello World! \n");. 
+
+We've encountered printf before, that was when we ran our Hello World code. Let's compile this code using clang and then run the created output file. Doing so echoes the message Hello World output screen. All of this works successfully. Now, let's try a little experiment. Let's see what happens if we get rid of the first line in our program. We leave the rest of the code unchanged, but we no longer have the #include on line 1.
+
+He removes the following code from line 1: # include<stdio.h>. 
+
+Will this work? Well, let's go ahead and find out. Well, when we run clang on hello_world.c, we get an error. We have the bright red font and the error tells us that we are implicitly declaring a library function, printf. This isn't the easiest to understand error in the world, but what's actually happening here is that the C compiler knows about printf. It's aware that there is a library function called printf. It notes that we have attempted to invoke printf without the #include, and it thinks that we are implicitly declaring a new version of printf. We know that, that doesn't work. Now, let's try another experiment. On screen, we've added back the #include on line 1. However, now on line 5, you can see that we've invoked printf, but this time printf has two fs rather than one.
+
+He enters the following lines of code. Line 1 reads: # include<stdio.h>. Line 3 reads: int main (). Line 4 reads: {. Line 5 reads: printff("Hello World! \n");. Line 6 reads: return 0;. Line 7 reads:}. 
+
+Will this work? Let's try and invoke clang, and we see from the error message that this does not work. What's interesting is that in addition to the error implicit declaration of function, printf is invalid. We also have a compiler hint.
+
+You can see that the compiler is asking, did you mean printf with a single f? This tells us that the compiler does indeed know that printf is a standard C library function. This little example proves that we can include, invocations of library functions provided, we include the correct header.
+
+He enters the following lines of code. Line 1 reads: # include<stdio.h>. Line 2 reads: # include<stdlib.h>. Line 4 reads: int main (). Line 5 reads: {. Line 6 reads: printf("Hello World! \n");. Line 7 reads: return EXIT_SUCCESS;. Line 8 reads:}. 
+
+It turns out that libraries can contain not only functions but also constants, that is, data. On screen now, we have not one but two #include statements. The first one is #include stdio.h and the second is #include stdlib.h. If we look closely, we now see that the return statement on line 7, returns the simple EXIT_SUCCESS. What exactly is the symbol? Well, let's try and compile and run our code and find out. We invoke clang, there's no warning or error, so this clearly worked. And now when we run our program a.out, we can see that Hello World is echoed. No error or problem seems to result. Let's examine the output using the echo $? method and when we do this, we confirm that EXIT_SUCCESS has the value 0.
+
+Where did this come from? Well, it turns out that EXIT_SUCCESS is a constant which is defined inside the library stdlib. Because we have a #include statement which pulls in stdlib that's on line 2, within the body of our code, we were allowed to reference that constant EXIT_SUCCESS and that in turn, is why this output looks as it does. Just like stdlib has EXIT_SUCCESS, it also has another constant EXIT_FAILURE. Let's tweak our return statement to return EXIT_FAILURE rather than EXIT_SUCCESS.
+
+He edits the program under the hello_world.c source file. Line 7 now reads: return EXIT_FAILURE;. 
+
+And when we do this and retry examining the output, we can now see that the output of our program is 1 rather than 0, and this confirms that the constant EXIT_FAILURE defined in the library stdlib has the value 1. To confirm that these constants are indeed pulled in from stdlib, let's eliminate the #include statement on line 2, and we immediately see red underlining appear under the constant EXIT_FAILURE. That gets us to the end of this little demo, in which we saw various common compiler errors, and we also saw how it's possible for us to include a library and pull in functions as well as constants from that library.
+
+12. Video: Course Summary 
+
+Objectives
+summarize the key concepts covered in this course
+Topic title: Course Summary 
+We have reached the end of this course getting started with the C language. We began this course with a brief exploration of the history of C. As we learned, C was created in 1972 at AT&T Bell Labs. It is a procedural and statically typed language unlike more modern languages such as Python. We also contrasted C and C++ mentioning that they are very similar in their syntax, compilation, and memory model. However, they also differ in several important respects that we briefly touched upon. Next, we spent some time understanding the role of the compiler in C.
+
+We explored the main steps of the compilation process before moving on to the software that is commonly used for compilation in different platforms. We also briefly discussed which IDEs or integrated development environments are commonly used with C. After that we began the demos in this course. We started by setting up the commonly used Clang compiler on our Macintosh machine. We then downloaded Visual Studio Code to write C code. We also downloaded the MinGW compiler and the VS Code IDE for writing C code and running it on Windows as well. Then we began to run C programs. We started by using Clang to compile code and create an executable file on a Mac system. We then implemented the same process with the MinGW compiler on a Windows system.
+
+Finally, we explored some basic syntax in C and the errors and warnings that result when that syntax is violated. You now have a solid foundation on the basics of the C language. You are now ready to move on to working with variables and data types in the course of that same name coming up ahead.
+
+Course File-based Resources
+•	Setting up C on Mac
+Topic Asset
+
+•	Setting up C on Windows
+Topic Asset
+
+•	Running C Code with Clang
+Topic Asset
+
+•	Understanding the Syntax of C
+Topic Asset
+
+•	Exploring Errors and Warnings in C
+Topic Asset

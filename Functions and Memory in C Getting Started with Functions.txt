@@ -1,0 +1,340 @@
+Functions and Memory in C: Getting Started with Functions
+In C, as in other programming languages, the term function refers to a named and parameterized block of code that can be invoked repeatedly. Functions allow monolithic programs to be split into modular chunks, greatly facilitating code reuse and simplifying and improving the logical structure of programs. Explore C functions and learn how they are defined, declared, and invoked. Next, move on to built-in functions and discover how to convert strings to integers, floats, or longs. Then, you will create your own functions to accept input arguments from and return output to the invoker of the function. Finally, you will study the difference between the declaration and the definition of a function. After completing this course, you'll be able to define and invoke functions, understand implicit and explicit function declarations, and use both library functions and user-defined functions.
+Table of Contents
+    1. Video: Course Overview 
+
+    2. Video: Functions in C 
+
+    3. Video: Create Functions 
+
+    4. Video: Using Library Functions 
+
+    5. Video: Using Utility Functions for Integers and Strings 
+
+    6. Video: Defining and Invoking Functions 
+
+    7. Video: Returning Data from and Accepting Input to Functions 
+
+    8. Video: Comparing a Function's Declaration and Definition 
+
+    9. Video: Course Summary 
+
+    Course File-based Resources
+
+1. Video: Course Overview 
+
+discover the key concepts covered in this course
+ Topic title: Course Overview. 
+Hi and welcome to this course, getting started with functions in C.  Your host for this session is Vitthal Srinivasan. He is a Software Engineer and Big Data Expert.  My name is Vitthal Srinivasan, and I will be your instructor for this course. A little bit about myself first. I did my Master's from Stanford University, and have worked at various companies, including Google and Credit Suisse.
+
+I presently work for Loonycorn, a studio for high-quality video content. In C, as in other programming languages, the term function refers to a named and parameterized block of code that can be invoked repeatedly. Functions are great because they allow monolithic programs to be split into nice modular chunks. They greatly facilitate code reuse and simplify and improve the logical structure of programs.
+
+Functions can return a value using the return statement and take in parameters of pre-specified types. We will start this course by seeing how C allows functions to be defined, declared and invoked. The definition of a function consists of the actual block of code that is to be invoked, the declaration only specifies the name, return type and order, and types of parameters.
+
+Next, you will move on to using built-in functions. You will begin by converting numeric types represented using the string type to be of their appropriate numeric types using functions from the stdlib.h library, such as atoi(), atof() and atol(). You will also make use of the rand() function to generate random numbers as well as the floor and ceiling functions. After that, you will define and invoke your own functions.
+
+You will create some basic functions which print out values and then invoke those functions. Finally, you will study the difference between the declaration and the definition of a function.
+
+2. Video: Functions in C 
+
+In this video, you will learn how to define and list the advantages of functions.
+define and list the advantages of functions
+Topic title: Functions in C. Your host for this session is Vitthal Srinivasan. 
+C is a procedural language, which means that the basic building blocks of large C programs are functions. This video is going to talk about functions in C, and it'll help us to get on the same page with regard to certain important terms, which will keep coming up throughout the demos.
+
+Let's get started with what a function is. It's a group of statements that perform a task and that form a logical division of code. What do we mean by a group of statements that form a logical division of code? Well, it's a group of statements that has a name.
+
+If you'd like all of the statements in that group of statements to be executed, you can call or invoke the function using its name. And that group of statements can be parameterized, which means that a function can have input parameters. A program can comprise of many functions, and indeed, C as a procedural language is built around the idea of functions just as object-oriented languages such as C++ and Java are built around the idea of objects and classes.
+
+In C programs, there is a typically linear flow of control. Execution starts from a main function of some file, control passes from one statement to another until a function is invoked. At that point, control passes into the invoke function. It passes linearly throughout the invoke function until further function invocations occur.
+
+And when the function returns, control is transferred back to the calling program, and that's how a program can consist of a large number of functions. This makes it clear that a function has certain characteristics. It's a self-contained block of code, which performs a specific task. It's encapsulated in terms of code, but not in terms of data. The code of the function is clearly defined, which means effectively that the function knows the steps that it needs to execute to perform that task.
+
+A function can be parameterized, which means that it can take in information from the outside world in the form of input parameters. The actual values of those input parameters will be specified by whichever function calls or invokes this function. A function may or may not have any input parameters, and in similar fashion, the function may or may not have a return value.
+
+If it does, that's a way for the function to return information to the outside world, that is to the calling function, once it's done with its execution. Functions are extremely powerful abstractions.
+
+And in fact, there are functional programming languages such as Python and Scala, and even object-oriented programming languages such as Java and C++ have added extensive support for functions and functional programming. And this, in turn, is because functions have a large number of very important advantages. For one, functions break down a large, monolithic program into more manageable little chunks.
+
+If you have a program with no functions and just a linear flow of execution of code, making changes to that program or even understanding its working can be very challenging. On the other hand, functions are self-contained, and if you'd like to change what a function does, you merely change it in one place, and then all of the invocations of that function will receive the new behavior.
+
+So the first advantage of functions is that they make monolithic programs much more modular. In addition, they also greatly simplify programming. and they increase the readability, maintainability, and debuggability of programs. Functions can be put together into libraries, and those libraries can then be used by other folks, other than the ones who wrote them in the first place.
+
+And this, in turn, allows for programmers to delegate tasks who can rely on system-built or other library functions for tasks that are too complex for you to perform correctly, but which are important for your program to work. These advantages of functions apply to all programming languages, and in C in particular, there is an especially rich and large set of library functions.
+
+The C standard library has a large number of functions. These are available by performing hash include statements on various common header files such as stdio.h, stdlib.h, and so on. All you as a developer need to do is have a hash include of required header file, and you are then free to use the functions which are defined or declared in that header file.
+
+In the demos that we will be working on, we will make extensive use of library functions such as printf(), scanf(), fabs(), strlen() and so on. Printf() and scanf() are related to printing out values to screen and reading and/or accepting user input. Fabs() is from the mat library and helps to compute the absolute value of a floating-point number.
+
+This comes in handy while performing comparisons on floats and doubles. Strlen() is a string-related function, which returns the length of a string. In addition to library functions, which come pre-defined and are available for use by all C programmers, C programs typically also contain a large number of user-defined functions.
+
+As the name would suggest, a user-defined function is one written by a C developer. programmers, including that same programmer, can then use that function for the appropriate use case. And in this way, user-defined functions can be put together to create user-defined libraries, and these libraries will then be available for use, maybe by folks within the same enterprise or organization, or maybe open source and available for use by all.
+
+3. Video: Create Functions 
+
+After completing this video, you will be able to recognize the process and syntax of a function.
+recognize the process and syntax of a function
+Topic title: Create Functions. Your host for this session is Vitthal Srinivasan. 
+Let's now turn to some of the mechanics of working with functions. You can think of there being three steps required for you to finally invoke or use a function. First, someone needs to have declared that function. Next, someone needs to have defined that function. And finally, you will be able to invoke that function or make use of the functionality within that block of code. The declaration of a function merely declares or announces to the world that the function exists.
+
+This may be along with the definition of the function, or more likely, it's done at a different point. The declaration, for instance, will typically be in a header file, that's one with a .h extension. The definition on the other hand, which includes the actual code that makes up the function is likely to exist in a .c file. The declaration announces the signature or the prototype, which specifies the information that the function accepts as well as its return value.
+
+So this includes the number and type of the input parameters and the return value. The definition will also have to include this information and the definition and the declaration must, of course, match or agree on these details. Then the invocation of the function is where a user calls the function so that the code within it can be performed.
+
+When the function is invoked, any input parameters that the function takes in need to also be specified, and the calling function will then also accept the values returned from the function and perhaps store them in a variable. Let's make sense of these terms with a simple example. On screen now is a simple function which adds two numbers and the first line, which is currently highlighted, constitutes the function's signature.
+
+You can see that this includes the return type, which is int, the function name, which is add, as well as the number and type of the input arguments. Here, the name of the function is the single word add. None of the other details are a part of the name. Then the return type has data type int. This is specified upfront while declaring a function. Within the parentheses, come the input arguments and their data types. Here, there are two input arguments. Each is of type int.
+
+As a side note, the names of the formal parameters, which here are a and b, do not technically constitute a part of the function prototype or the function signature. So, the fact that this function takes in two input arguments, both of type int, that fact is a part of the function signature, but the mains a and b aren't really a part of the function signature.
+
+Then enclosed within curly braces comes the function body, which here has two lines of code, and the function body is enclosed within the curly braces, as you can now see on screen. This particular function happens to have a return value, and that return value must be of type int because that's what we've declared in the function signature. The return value is distinguished by the use of the return keyword.
+
+This is the function definition. It includes the function signature as well as the function body. Now, we might also have a function declaration placed in a header file or before the function is actually defined. And the function declaration is on screen now. This is also known as the function prototype.
+
+You can see that it has the name of the function, the type of the return value, as well as the types of the input parameters, but it does not have the formal parameters, a and b. Once the definition and declaration have been split up, this function can be used more widely because the linker will be available to resolve references to the function, and invocations of the function will take the form that you see on screen now.
+
+We use the name of the function, we pass in actual values, which correspond to the input values that are specified in the function signature, and we also accept the return value from the function. The function reads int result = add(3, 5). 
+
+4. Video: Using Library Functions 
+
+In this video, you will learn how to convert strings to integers using the atoi() library function.
+convert strings to integers using the atoi() library function
+Topic title: Using Library Functions. Your host for this session is Vitthal Srinivasan. 
+One of the chief attractions of C when it was first released several decades ago, was the presence of its powerful libraries. This remains an important attraction today. C has many libraries which allow users and developers to invoke library functions to get many important little operations done. Let's plunge into a series of little examples to see how handy these libraries can be.On screen it reads: library_functions.c. 
+
+On screen now is a simple little program in which we invoke the library function, a-t-o-i or atoi. Atoi is short for ASCII to integer, and atoi is available for use from the stdlib.h file. You can see that we use atoi in order to take in a character array and output an int. Now, this character array has a specific value. It's the string, "12345."
+
+Notice how that a string literal is enclosed within double quotes. So a-t-o-i or atoi is going to take in a string, which represents a number. parse that and return the corresponding number. Let's go ahead and compile our code using clang, and then run it using a.out. And when we do, we can see from the output that atoi has returned 12345. That's the integer. How do we know it's the integer?
+
+Well, because on line 8, we have the type int associated with the left-hand side, and on the right-hand side of that equal to sign is the atoi function. On line 12, we compare first integer to the integer literal 12345. Notice how on line 12, 12345 is not enclosed within quotes; on line 6, it is enclosed within double quotes. This is our first interaction with a C library function, and it shows just how handy these functions can be.
+
+Let's make a few little tweaks to our program. To begin with, let's delete the # include statement on line 1. Remember that any statement beginning with the hash symbol is a preprocessor directive. Here we've deleted the preprocessor directive, asking the compiler to include the contents of stdlib.h. And now when we attempt to compile our code, you can see that we encounter a warning and an error.
+
+The warning has to do with the implicit declaration of the function atoi. This tells us that we are attempting to use atoi without having declared it first. There's also an error associated with the symbol EXIT_SUCCESS, which we use on line 16. This is a constant that's defined in stdlib.h.
+
+In case you're wondering why we have a warning, but not an error for the use of the atoi, that's because C has been successfully able to find atoi indirectly through stdio.h. However, the correct practice here is to include it in stdlib. Let's run through a few more experiments to show how the C library functions work.
+
+On screen now, we've tweaked our character array on line 6 so that we now have some leading white space. This white space does not confuse the atoi function at all. When we run our program, you can see that the equality comparison on line 12 still succeeds. Atoi was able to strip out the white space and extract the integer 12345 just fine.
+
+Next let's tweak the string on line 6 by adding some characters over after the digits so that now it reads 12345abcd. We continue to have the leading white space in there. We compile and run our program, and once again, we find that atoi was able to extract the numeric portion, 12345. Not only has it stripped out the leading white space, it has also stripped out the trailing characters, abcd.
+
+Let's try again to confuse atoi by now adding some trailing white space. We now have blanks on either side of the literal 12345. Compiling and running this code indicates that this too has been successfully managed by the library function. The printf on line 10 was displayed, indicating that atoi return the integer 12345. What happens if we introduce characters into the middle of the literal?
+
+So we now have the literal 123a45. We compile and run our code, and we find now that atoi has returned the integer 123. In other words, atoi looked for integers for as long as it could. As soon as it encountered a non-integer character, it bailed out and returned what it had so far. Another important point to note about functions is that they are very particular about the types of their input arguments.
+
+On screen now, we've attempted to invoke atoi, passing in not a character array, but rather an integer 12345. Do you think this will work? Well, it doesn't. We have a warning on our hands, incompatible integer to pointer conversion, passing 'int' to parameter of type 'const char *'.
+
+We won't discuss this warning in a lot more detail because it involves pointers which we've yet to discuss, but suffice it to say that atoi recognized, that the input argument passed in, was not of the correct type. Atoi requires a string literal, however, here we've passed in an integer literal. Atoi is just one member of a family of utility functions, all included from stdlib.h.
+
+On screen now, you can see that we've invoked the close cousin of atoi, and that's atol, as the type on the left-hand side of the equal to sign will tell you, atol returns a long rather than an int. You can also see that the character array that you've defined on line 6, is a much larger integer literal.  It reads: "1234578902384". On line 10, we print out the value of long using the format specifier %ld, where the L stands for long.
+
+Let's compile and run this code and from this we can see that atol did indeed return a long. Let's quickly try out yet another member of the same family. On screen now, we've invoked atof. And this time, the return type is a float. We can see that from the words on the left on line 8.
+
+The character literal that we pass in is also a floating point literal "1234.5678." Notice also how in the printf on line 10, we've changed the format specifier to %f. We compile and run this code, and this works as well. Not only are we able to extract the float successfully from atof, we are also able to perform arithmetic operations on this float. For instance, we've added 100 to it. That gets us to the end of this little demo in which we had our first glimpse of how powerful and easy to use C library functions can be.
+
+5. Video: Using Utility Functions for Integers and Strings 
+
+In this video, you will learn how to use different utility functions.
+demonstrate how to use different utility functions
+Topic title: Using Utility Functions for Integers and Strings. Your host for this session is Vitthal Srinivasan. 
+In the previous demo, we introduced our first C library function. In this demo, we are going to quickly run through a series of little examples meant to give you a flavor of other library functions available in C. Here on line 9, we've invoked the rand function, which, as you might imagine, returns a random integer. In order to use the rand function, we need to pull in this function by # including <time.h>, which we've done up above on line 3.
+
+In the code that follows starting line 11, we check whether this random number is even or odd, and print out a message accordingly. And all of this is done in a for loop which has 10 iterations. Let's compile and run our code. The compilation goes through smoothly. And when we run it, we find that we have a sequence of 10 random numbers, starting with 16807. So far, so good.
+
+Now, let's try and rerun our program, and we find somewhat to our surprise, that again, the first random integer is 16807. Is this a coincidence? Let's try rerunning yet again, and we find that it's most definitely not a coincidence. This random number generator is picking up the same seed, and in order to change that seed and change the sequence, we will need to change our code just a little bit.
+
+The way we'll do this is by adding a new line of code up top on line 7. This time we're invoking the function srand and passing in yet another function, time with the input argument NULL. This is also our first introduction to NULL, which is a special key word in C. More on this later. Now, when we rerun our code, we can see that the random numbers that are generated truly follow a different sequence.
+
+Each time around, they have a different starting point. We rerun the same program a couple of more times to satisfy ourselves that this is the case, before moving on and tweaking our code to include a different C library function. To begin with, up top, on line 3, we have a # include of <math.h>. Then, in the body of our code, on line 8, we invoke the function ceil; this is short for ceiling.Line 8 reads float ceil_var_1 = ceil(var_1);. 
+
+On line 12, we invoke the function floor,Line 12 reads float floor_var_2 = floor(var_2);.  and then on lines 16 and 17, we invoke the round functions. Line 16 reads float round_var_1 = round(var_1);. Line 17 reads float round_var_2 = round(var_2);.Let's quickly compile and run this code. That's the easiest way to understand what these functions do. The compilation is successful, and we can see how these library functions have all done what we expected them to. The ceiling function is going to return the smallest integer larger than a floating point number passed in.
+
+We've passed in 6.4 and the ceiling of 6.4 is 7. Floor returns the largest integer that's smaller than a floating point number. Here we've passed in 6.8 and the floor of 6.8 is 6. Round, on the other hand, will return the integer that is closest to the floating point number passed in.Original reads 6.400000 and round reads 6.000000. Original reads 6.800000 and round reads 7.000000.
+
+Now, at this point, you might recall that while working with floating point numbers, we had actually made use of a library function, and that was the fabs function, which you can see invoked right here on lines 10 and 11. Line 10 reads float abs_var_1 = fabs(var_1);. Line 11 reads float abs_var_2 = fabs(var_2);.  Once again, we've pulled in math.h with a # include statement on line 3. Then on lines 10 and 11, we invoke the function fabs, which is going to return the absolute value of a floating point number passed in. Down below on lines 20 and 21, we invoke the pow function, which is going to return the exponent of a number passed in.
+
+Then on lines 23 and 24, we invoke the sqrt function. As the name would suggest, this computes the square root of the number passed in. And then on line 26, we have another function from math.h, isnan. We can see that we use this to test for the square root of a negative number.  The value passed in is -10. Let's now go ahead and compile and run this code.
+
+And when we do, we can see that the output is as we expect it to be. We can see that when we pass in negative 15.234, the absolute value that's returned is positive 15.234. If we pass in a positive number, the absolute value is the same as the number itself. That's what happens for 25.658. We get the correct values for 5 to the power 4, and 4 to the power -2.  5 to the power 4 is = 625.000000. 4 to the power -2 is = 0.062500. 
+
+We also get the correct square roots for 15.234 and 5. The square root of 15.234000 is = 3.90 and the square root of 5 is = 2.24. And finally, on line 26, we can check and see that the sqrt function, when passed a negative argument, returns a NaN value. NaN is short for Not a Number, and we test for this using the isnan function on line 26. Let's quickly move from floating point numbers to strings. On screen now, we perform a # include of <string.h>.
+
+Then on line 7, we define a string array called full_name holding the string "Deborah Summerhouse". On line 9, we invoke the strlen function in order to get back the length of the string. We compile and run this code. Clang goes through successfully, no warnings or errors, and strlen tells us that the length of the string is 19. So far so good.
+
+Now, let's tweak the declaration of our array and give it explicitly the length 50. We've now done this on line 7. Now, will strlen return 50 or will it still return 19? Let's find out by compiling and running our code. We find that the library function strlen still returns 19. So it's not the declared length of the array that matters to strlen, rather, it's the actual number of characters in the array that have been used to represent a string.
+
+The strlen function can be used to iterate over the contents of a string. Here you can see that we have a for loop with the loop variable i, which is initialized to be 0. The condition for the for loop is i < strlen(full_name). And then, within the body of the for loop, we simply print out the corresponding character by indexing into our character array with the index i.
+
+Note the space following the %c in the printf. We compile and run this code, and we find that we are indeed able to iterate over the characters in the string. This little example showed how we can combine library functions with control structures, such as for loops, in order to get very interesting output. Let's move on to another example where we make use of the strcpy library function.
+
+This has been done on line 15, and we are using this to copy from the character array book_name, that's the second operand, into the character array, book_name_ copy, that's the first operand. You can see that book_name_copy is declared, but not initialized, and it has 100 characters. Book_name, on the other hand, is declared and contains the string "Harry Potter and the Goblet of Fire"
+
+When we run this program, we can see that before the invocation of the strcpy on line 15, the original book name variable is populated. The copy is blank. However, after the copy operation, they both contain the same string. Strcpy has clearly successfully copied the contents of one character array into another. Now, one little note here.
+
+This copy operation went through successfully because the destination, that's book_name_copy had enough space in order to receive the contents of the source. What if we tweak the declaration of book_name_copy so that instead of being 100 character array, it's now only a ten character array? Will strcpy still work? Let's find out. Well, we compile our code, and that goes through just fine. There's no compilation issue, but there is a runtime issue. You can see that our program has crashed.
+
+We know that from the output Illegal instruction: 4, and the program never even gets to the printf statements towards the bottom of the program. This gets us to the end of this demo, in which we quickly ran through several handy C utility functions. The C built-in libraries are very powerful, and you should leverage them every chance you get.
+
+6. Video: Defining and Invoking Functions 
+
+In this video, you will create your own functions.
+create user-defined functions
+Topic title: Defining and Invoking Functions. Your host for this session is Vitthal Srinivasan.
+We now have some experience of making use of functions which have been defined in pre-existing C libraries. Let's take things one step further and see how to define our own functions. Such functions are called user-defined functions and in the code that you now see on screen, we have our first example of a user-defined function.
+
+This function is defined on line 8. As the comments on lines 5, 6 and 7, tell us this constitutes both a function declaration and the function definition. We'll get to the distinction between these two ideas in just a little bit. For now, let's focus on line 8. There, we first have the keyword void.
+
+This is the return type from our function, and void here indicates that our function does not return anything. Then comes the name of the function, which is hello_fn and then a pair of parentheses. As we shall see, if we had a parameterized function which took in input arguments, we would specify the names and the types of those input arguments between those parentheses.
+
+Here, however, our function does not take in anything and it does not output anything. And that's why we have the void before the function name and we just have a pair of empty parentheses. Then on line 9, we have the opening curly brace that indicates the start of the function body. On line 11 is the corresponding clausing delimiter. Within those two curly braces comes the body of the function. Here, the body of our function consists of just a single line of code, a printf statement which goes Hello - how are you?
+
+What we've done on lines 8 through 11 is to define and declare our function hello function. Down below starting line 14, you can see that we still have our usual main. Note how the return type for main is int, and that's because we have the return statement on line 18, which indicates return EXIT_SUCCESS. The return type from hello function is void because it does not have a return statement in there.
+
+In any case, coming back to the main, you can see that in this particular main function, we just have a single printf. We are not yet actually invoking the hello function that we defined up above. This little example indicates that it's perfectly fine to define and declare a function, but not to invoke it.
+
+Let's ensure that the compiler is actually OK with this. We proceed to try and compile our code using clang. That goes through OK. And then when we run our code, you see that we just have the one printf, which reads NOT invoking the hello function yet. So far, so good. Now let's tweak our main function so that we do invoke the hello function.
+
+On line 16, we have a printf BEFORE invoking the hello function and on line 20 we have a similar printf AFTER invoking the hello function. The most interesting bit here, though, is on line 18, where we actually invoke or call the hello function that we defined up above. The syntax for doing so is pretty simple. We just have the name of the function, followed by a pair of parentheses and then a semicolon.
+
+This function hello function does not accept any input arguments, but we still need to specify the parentheses there on line 18. Let's use clang to compile our code. That process goes through smoothly. And then when we run our code, you can see that we now have all three printfs executed: BEFORE invoking the hello function, then, the statement Hello - how are you? That's the printf inside hello function on line 10 up above.
+
+And finally, the third printf: AFTER invoking the hello_fn(). Please note that the function invocation must exactly match the function definition. Else, we get an error. On screen now, on line 18, we've intentionally tweaked our function invocation. We are attempting to invoke the function hello_FN with the fn in uppercase. That's different from the function name in the declaration up above on line 8. Will this work? Let's try and find out. Clang seems to have a problem. Up top, we have a warning that says something about an implicit declaration. And then down below we can clearly see that there is an error. Specifically, that error is a linker error. Linker command fail with exit code 1.
+
+We'll come back to what that warning up above is all about. But for now, please just note that it's very important that we invoke a function using the exact syntax that's the function name, as well as the number, type and order of any input parameters into the function. Else, we'll get an error like the one we see on screen now. Let's go ahead and define a few more functions. On screen now you can see that in addition to hello function which is defined starting line 5, we also define a couple of more functions goodbye function and birthday-wish function, starting lines 10 and 15, respectively. If we scroll down, we see that in the main, we now invoke hello function as well as goodbye function but we are not invoking the birthday_wish function. Let's compile this code and see what we get.
+
+The compilation goes through smoothly. And then when we run our code, you see that we have the BEFORE and AFTER printfs between which we have the hello as well as the goodbye greetings. Notice that we do not have any message corresponding to the birthday wish. This tells us that functions do not get executed until they are invoked.
+
+The act of defining and declaring a function does not cause the code inside the body of the function to actually be executed. In order to get that code to execute, we've got to actually invoke the function. Now let's add in an invocation to the birthday wish function. That's what we have now done on screen. And now at this point, when we rerun our code we do indeed see the birthday wish greeting as well. It reads A very happy birthday to you! 
+
+This gets us to the end of this little demo in which we had our first experience of defining and declaring a user-defined function. We also saw how we can invoke user-defined functions, and we learned along the way that functions will only execute when they are actually invoked.
+
+7. Video: Returning Data from and Accepting Input to Functions 
+
+Learn how to return values and accept input arguments in functions.
+return values and accept input arguments in functions
+Topic title: Returning Data from and Accepting Input to Functions. Your host for this session is Vitthal Srinivasan.
+Let's pick up right from where we left off at the end of the last demo. There we saw how to define and invoke our own user-defined functions. In this demo, we'll see how functions can have return values as well as accept input arguments. Let's go ahead and get started. On screen now, we've added in a couple of functions called compute_add and compute_subtract.
+
+What's different about these two functions relative to the functions in the previous demo, is that each of them actually has a return value. In the first line, which is also called the function signature, you can see that the first word is now the keyword int. This is true on both line 5 and line 12. That's because each of these functions has a return statement. The return statement for compute_add is on line 9, that for compute_subtract is on line 16.
+
+Notice how the return statement in each instance has the return keyword, followed by a variable name. That variable is result. And as you can see, result has type int both. You can see that on lines 7 and 14. Please note that the return statement need not return a variable. It could also return a literal.
+
+Also, you should be aware that the C compiler is actually going to check that the return type in the function signature, for instance, on lines 5 and 12, matches the type that's returned from the return statements on lines 9 and 16. Line 5 reads int compute_add(). Line 12 reads int compute_subtract(). We've now defined a couple of functions, which have return types, and then down below we invoke those functions. Inside the main function, you can see that on line 21, we invoke the function compute_add, and on line 24, we invoke compute_subtract.
+
+There's another new element in this program. You can see that the function invocations are now on the right-hand side of an equal to sign. And on the left-hand side, we have a variable. On line 21, that variable is called result_add, and on line 24, it's called result_subtract.
+
+Notice how we could have these functions, compute_add and compute_subtract on the right-hand side of the equal to sign, only because they have return statements. If a function has a void return, then it cannot be found on the right-hand side of an equal to sign. So we invoke these functions and save their return values in variables, and then print out those variables to screen. Let's compile this code using clang. There are no errors or warnings, which means that our syntax was fine.
+
+And then when we run our code, we get the results for the simple operations, 100 + 1000 and 100 - 1000. There's absolutely nothing preventing us from having functions that return floats or doubles rather than ints. On screen now, you can see that we've modified the functions compute_add and compute_subtract so that their return types are now doubles. Down below, when we invoke these functions, we also need to have a double variable in order to save the return values.
+
+Let's quickly attempt to compile and run this code. Compilation goes through successfully and when we run our code, we see that the return values from the functions are now floating point numbers. This is because all of our variables and return types are now double rather than int.The output reads: 100 + 1000 = 1100.870000. 100 - 1000 = -900.410000. Next, let's further modify our functions so that we return literals rather than variables.
+
+On screen now, we've modified our functions so that the return statements on lines 6 and 11 directly compute the addition and subtraction operations. We no longer have variables of type double defined inside those functions.  Line 6 reads return 100.23 + 1000.64;. Line 11 reads return 100.23 - 1000.64;.  And compiling and running this code continues to work as before. Now, at this point, you might be thinking that these functions, which we just defined, aren't really very useful.
+
+After all, what's the point of having functions, which always just perform the same computation? And that's an extremely valid point. The real power of functions can be unlocked if we allow our functions to take in input parameters, and we're going to do exactly that next. On screen now, you can see that we have parameterized our functions compute_add and compute_subtract.
+
+What do we mean by that term, parameterization? Well, these functions that you now see on screen accept two input arguments, num_1 and num_2, and the value that they return is some function of num_1 and num_2. In the case of compute_add, that function is num_1 plus num_2. In the case of compute_subtract, it's num_1 one minus num_2. We've effectively changed the signature of our functions. The signature consists of the name of the function, the type of its return value, as well as the order and type of its input arguments.
+
+By adding two input arguments, we've changed the function signatures, and that in turn means that we've got to change how we invoke these functions as well. If we scroll down a little, we can see that on line 25, we've now invoked compute_add specifying two input arguments, first_num and second_num. In similar fashion, on line 28, we've invoked compute_subtract passing in the same two input arguments.
+
+These variables, first_num and second_num, were declared on line 17. You can see that their declared types are double. We then read in the values of first_num and second_num by prompting the user. This is done with the scanfs on lines 20 and 23.
+
+It's important to note that the type on line 17 must match the types specified in the function signatures on lines 5 and 10. We'll see in a moment what happens if this is not the case. In short, the C compiler will flag an error because C is a statically typed language. We'll get to that in a moment.
+
+But first, let's just compile and run this code, in which we don't anticipate any error because the input types match the function signature types. And indeed, clang goes through without warnings or errors. And now, when we run the code, we are prompted to enter the first and second numbers. We type in the values 100.34 and 67.456, and the correct results from the addition and subtraction operations appear on screen.  The output reads 100.340000 + 67.456000 = 167.796000. 100.340000 - 67.456000 = 32.884000. 
+
+We have successfully invoked our two parameterized functions. Next, let's quickly run through some of the checks that the C compiler performs. You can see on screen now that we've changed line 25 of code so that we intentionally attempt to invoke the compute_add function passing in just one input argument instead of two. And then we repeat this experiment with the invocation to compute_subtract.
+
+Do you think this will work? Well, it won't. Remember that C is a statically typed language. When we now try to invoke clang on our program, we get a couple of errors, both of which read too few arguments to function call, expected 2, have 1.
+
+During the compilation process, the C compiler checks whether the manner in which we are invoking our function is consistent with the function signature. Let's now try another experiment where we attempt to pass in three input parameters instead of two. On screen now, we've again tweaked the two lines of code where we invoke these functions. That's lines 25 and 28.
+
+This time, we invoke these functions, we try and invoke clang on this program, and this does not work either. Once again, we have an error. This one reads too many arguments to function call expected 2, have 3. Once again, we can see that the C compiler is very vigilant about how we invoke functions.
+
+We've now experimented with invoking functions with too few and too many parameters. Let's try a new experiment where we pass in the correct number of parameters, but where their types don't agree with the function signatures. On screen now, you can see that we've defined a couple of character arrays, first_name and last_name.Line 17 reads char first_name[] = "Harry";. Line 18 reads char last_name[] = "Potter";.
+
+And then we've attempted to invoke the compute_add and compute_subtract functions passing in these character arrays. You can see that there is a clear mismatch between the types of the input arguments that we pass in. On lines 17 and 18, first_name and last_name are both declared as being of type character array. But then on lines 5 and 10, you can see that the input arguments to compute_add and compute_subtract are of type double.
+
+Will this work? Let's find out. We invoke clang, and we find that this does not work either. We again have a couple of errors on our hands: passing 'char [6]', the parameter of incompatible type 'double'. With that we've come to the end of this little demo in which we saw how our user-defined functions can take in input parameters of differing types, and can also have return values that are of different types. We also noted how C is a statically typed language in which the compiler enforces various checks on the function signatures and the manner in which those functions are being invoked.
+
+8. Video: Comparing a Function's Declaration and Definition 
+
+In this video, learn how to contrast the declaration and definition of a function.
+contrast the declaration and definition of a function
+Topic title: Comparing a Function's Declaration and Definition. Your host for this session is Vitthal Srinivasan. 
+In this demo, we are going to introduce a formal distinction between the declaration of a function and the definition of that function. This is a concept that's best understood by directly plunging into a demo. The host launches declaration_and_definition.c.  On line 4, we have a user-defined function called greet_by_name. Then on line 10, we have the main function, and within that main function on line 17, we invoke the user-defined function, greet_by_name.
+
+Let's focus for a moment on the variable, char name,  The value passed in is 50.  that's defined on line 12. You can see that this variable is used on line 15. Do you think that we would have been able to reference the variable name on line 15, had we not declared it on line 12? Well, the answer is that you would not have been able to.
+
+In C, the only way that you can use a variable is if that variable has already been declared, and if its type is known to the compiler upfront. A similar restriction applies to functions as well. The only reason we are able to invoke the function greet_by_name on line 17 is because it's been defined as well as declared up top on line 4. We'll get to the distinction between the definition and the declaration in a moment.
+
+This particular code is going to compile successfully. We can confirm that by using clang. It will also run as expected. We will be prompted with the question, What is your name? and whatever name we are going to type out is going to be repeated in the greeting, Good morning. Next, let's make a small tweak to our function, greet_by_name.  The host types Emily. 
+
+Let's change its function signature so that the input argument is no longer a 50 character array. Let's just make it a generic character array. You can see how this is done on line 4. We've deleted the 50 from between the square brackets. Let's try and compile this code. The compilation goes through smoothly, and we're also able to run it.
+
+So clearly, the small change that we made to our function signature did not cause any problems. We'll have more to say on this when we get to the topic of pointers.Under the Terminal, next to the question What is your name?, the host types Jennifer. It returns Good morning, Jennifer. Since the compiler was so forgiving this time around, let's try with a more ambitious change. We are now going to try and move the definition of the function greet_by_name, so that it appears after the main function rather than before.
+
+This time when we try and compile our code, we see that we have a problem on our hands. We have both a warning and an error. The warning reads implicit declaration of function 'greet_by_name' is invalid in C99, and the error reads, conflicting types for 'greet_by_name'. And if you look closely, the warning is thrown by line 12. That's where we try and invoke the function.
+
+The error is thrown by line 18, which is where we declare and define the function. And if you scroll down, you can also see that there is something about a previous implicit declaration here, and that again refers to line 12. These errors and warnings seem a bit mysterious. What's actually happening is that when C attempts to compile this code, it first encounters the invocation of the function greet_by_name.
+
+This is on line 12, and this is the first time that the C compiler has heard of this function. What it then does in order to try and be helpful is add on an implicit declaration. In other words, it assumes that there is a function called greet_by_name that exists somewhere out there.
+
+This was added to C compilers in the early 90s, but in recent years, and specifically after the introduction of C99, relying on these implicit declarations is considered a bad practice. Instead, you are better advised to explicitly declare your functions. We'll get to how that's done in a moment. Coming back to this error, the problem with this implicit declaration is that the C compiler tries to make an educated guess about the function signature, but that educated guess does not actually match the function signature of our function.
+
+The C compiler assumes that greet_by_name is going to return an int, but our function returns a void, and that's where all of these errors and warnings come from. How do we clean this up? Well, the answer is simple. We add an explicit declaration, also known as a function prototype, up at the top of our file, and that's exactly what we have now done on line 4.
+
+You can see here that we've added the function signature, so there's the return type void, followed by the name of the function, greet_by_name, then the parentheses, as well as the types of the function input arguments. The actual name is also something that we have in there, but it wouldn't actually hurt if we didn't have the name in there.
+
+Now, when we compile and run this code, everything works fine. There are no warnings and no errors, and when we attempt to run it, the output is as expected. We are prompted for our name. We enter the string James, and that's echoed back to us in the form of the greeting, Good morning, James.
+
+It's really important to note that this will only work with the declaration and the definition agreeing exactly on the return type, the function name, and the type and order of the arguments. Let's see what happens if we tweak the return type in the declaration that's the one on line 4, so that it reads int. We don't change the actual definition down below on line 19.
+
+Now there's a mismatch, and if we attempt to compile this code, we get an error: conflicting types for 'greet_by_name'. In the declaration on line 4, we've declared the return type of greet_by_name as int. However, in the definition, which starts on line 19, we have the return type as void, and that's why we have this compiler error on our hands. It's not only the return type which matters, the order and types of the input arguments matter as well. Now, let's try and eliminate the square brackets from line 4.
+
+So in the declaration on line 4, our function takes in an input argument of type char in the function definition. On line 19, it takes in a char array. This is not going to work either. When we compile this code, we find that we have a new error, conflicting types for 'greet_by_name'. And up above, we can also see a little more detail: warning: incompatible pointer to integer conversion.
+
+The exact meaning of this will become more clear when we talk about pointers. But for now, suffice it to say that char and char array are not compatible. Let's try a few more tweaks. On line 4, we've now reverted the return type of greet_by_name to be void. So in terms of return type, the declaration on line 4 and the definition on line 19 now agree.
+
+However, in the declaration on line 4, the one input argument is an int array, but in the definition down below, that input argument is a char array. Will this work? Well, you guessed it, it doesn't. The C compiler is very unforgiving in these matters. We have a similar error to the one we experienced a moment ago, incompatible pointer types passing 'char [50]' to parameter of type 'int *.'
+
+However, there is another kind of mismatch which the C compiler is totally okay with. And that is a mismatch in the name of the input arguments in the functions declaration versus in the definition. Here you can see on line 4 that the input argument is named other_name, and then down below on line 19, it's just called name. Note that in all other respects, the declaration and the definition match perfectly.
+
+The return types are the same. The name of the function is the same, greet_by name, and the type of the input argument is also the same. These are char arrays. This time when we attempt to compile our code, we find that everything works just fine.
+
+This gets us to the end of this little demo in which we saw how we can split the definition and the declaration of a function, and we can have declarations so that our functions can be used before they are defined. However, as we saw, the C compiler requires that the function declaration and the function definition must agree on important details, such as the return type, the name of the function, and the types and order of the input arguments. The names of the input arguments need not exactly match.
+
+9. Video: Course Summary 
+
+summarize the key concepts covered in this course
+ Topic title: Course Summary. 
+You have reached the end of this course, getting started with functions in C. You started by introducing the concept of a function in C as in other programming languages. The term function refers to a named and parameterized block of code that can be invoked repeatedly. Functions are great because they allow monolithic programs to be split into nice modular chunks.
+
+They greatly facilitate code reuse and simplify and improve the logical structure of programs. Functions can return a value using the return statement and take in parameters of pre-specified types. You saw how C allows functions to be defined, declared, and invoked. The definition of a function consists of the actual block of code that is to be invoked. The declaration only specifies the name, return type, and order, and types of parameters.
+
+You learn how the return type, name, and parameter type information collectively form what is known as the function prototype or function declaration. Then code can invoke the function by passing in actual values for the parameters, and receive and use the return value. As you noted, a function can choose not to return anything, in which case, its return type is set to be void. These are tools which allow you to greatly simplify your code by splitting logical divisions of code into workable programs.
+
+You also learned about library functions, which are functions that are written by other developers and stored for our use within header files such as stdio.h. Then you learned that user-defined functions are functions, which are defined by the programmer for her own usage. Next, you moved on to using built-in functions.
+
+You began by converting integers represented using the string type to be of the integer type using the atoi function from the stdlib.h library. You also invoke some other function similar to atoi, such as atof to convert floats and atol to convert logs. Then you use some other common functions, including the rand function to generate random numbers, the flow function to round the floating point number to the nearest integer smaller than it, effectively truncating the fractional portion, and the ceiling function to round the floating point number to the closest integer higher than it.
+
+After that, you defined and invoked your own functions. You created some basic functions, which printed out values and invoked those. Then you created functions which would accept input arguments from, and return output to the invoker of the function, noting that C executes rigorous safety checks on the number and type of input parameters. Finally, you studied the difference between the declaration of a function and the definition of the function.
+
+A function can be invoked after it's declared, even if it's not defined. However, the function must be defined in the program at some point, and that definition must be accessible during the compilation and linking of the code that's invoking it. You now have a solid foundation on functions in C. This sets you up nicely to learn about variable scoping and storage classes in the course with that same title coming up ahead.
+
+Course File-based Resources
+•	Using Library Functions
+Topic Asset
+
+•	Using Utility Functions for Integers and Strings
+Topic Asset
+
+•	Using Utility Functions for Integers and Strings
+Topic Asset
+
+•	Returning Data from and Accepting Input to Functions
+Topic Asset
+
+•	Comparing a Function's Declaration and Definition
+Topic Asset
+© 2023 Skillsoft Ireland Limited - All rights reserved.

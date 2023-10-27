@@ -1,0 +1,735 @@
+﻿Control Structures in C: Looping & Unconditional Control Structures
+The three main types of looping control structures in C are for loops, while loops, and do-while loops. This course provides demos for how to work with looping and unconditional control structures in C. You will begin by creating a for loop which iterates over a block of code for as long as a certain condition is true. You will then experiment with the loop condition, the value of the loop variable, and the update expression for the loop variable, before moving on to iterating over arrays using for loops. You will also create nested for loops. Next, you will use while loops to execute some code while a condition is satisfied. You will explore the loop variable and iterate over arrays, then move on to do-while loops. Finally, you will learn about the unconditional control structures such as break, continue, goto, and return keywords. These are typically used with other control structures. After completing this course, you'll be able to implement while loops, for loops, do-while loops, break statements, and continue operators.
+Table of Contents
+    1. Video: Course Overview 
+
+    2. Video: Introducing C's Boolean Type 
+
+    3. Video: Understanding Loops in C 
+
+    4. Video: Creating for Loops in C 
+
+    5. Video: Experimenting with for Loops in C 
+
+    6. Video: Understanding Quirks of for Loops in C 
+
+    7. Video: Iterating over Arrays in C 
+
+    8. Video: Using Nested for Loops in C 
+
+    9. Video: Creating while Loops in C 
+
+    10. Video: Experimenting with while Loops in C 
+
+    11. Video: Introducing do-while Loops in C 
+
+    12. Video: Using the break Keyword in C 
+
+    13. Video: Creating while Loops with Break Statements in C 
+
+    14. Video: Introducing the continue Operator in C 
+
+    15. Video: Using the continue Operator with while Loops in C 
+
+    16. Video: Skipping to Parts of Code Using goto 
+
+    17. Video: Course Summary 
+
+    Course File-based Resources
+
+1. Video: Course Overview 
+
+Objectives
+discover the key concepts covered in this course
+ Topic title: Course Overview. 
+Hi and welcome to this course, Looping and Unconditional Control Structures. Your host for this session is Vitthal Srinivasan. He is a Software Engineer and Big Data Expert. My name is Vitthal Srinivasan and I will be your instructor for this course. A little bit about myself. First, I did my master's from Stanford University and have worked at various companies, including Google and Credit Suisse.
+
+I presently work for Loonycorn, a studio for high quality video content. Loop-based control structures are extremely important in any programming language. And the three main types of loops in C are for loops, while loops, and do-while loops. For loops execute some code a certain number of times based on a loop variable.
+
+While loops will execute code for as long or while a condition is satisfied. And finally, do-while loops, which are similar to while loops but check that the condition is satisfied after rather than before executing the code block. We will start the demos in this course by creating a for loop which iterates over a block of code for as long as a certain condition is true. You will experiment with the loop condition, the value of the loop variable and the update expression before moving on iterating over arrays and using nested for loops.
+
+After that, you will use while loops to execute code while a condition is satisfied. You will explore the loop variable and iterate over arrays before moving on to do-while loops. These execute their block at least once, even if the loop condition is false at the outset. Whereas while loops might execute zero times if their loop conditions are false to begin with. Finally, you will learn about the unconditional control structures such as break, continue, goto and return.
+
+These are typically used with other control structures. By the time you finish this course, you will have a solid understanding of control structures in C and will be ready to move on to functions and memory management.
+
+2. Video: Introducing C's Boolean Type (it_cpcsfcdj_02_enus_02)
+
+Objectives
+illustrate the creation and use of variables of the Boolean type in C
+Topic title: Introducing C's Boolean Type. Your host for this session is Vitthal Srinivasan.
+This demo is about the bool type in C. As we've discussed in passing on a few different occasions, the C language in its original form did not have an explicit type for Booleans. However, in 1999, the C99 version did indeed add Booleans. These were not made a part of the standard C language, that was done in order to not break backward compatibility, but instead a new header file stdbool was added to the language.
+
+And within this header file, we have definitions such as type, defs, and constant definitions, which basically allow the use of a Boolean type in C. Let's see how we can introduce this type into our programs and make use of it to simplify our lives. On screen now we have a really simple program. On line 3, we have a #include. And this #include refers to the header file stdbool.h.
+
+Notice how each of these header files is enclosed within angle braces, and those angle braces indicate that these are standard headers. Then coming to the body of the program, The names of the other two files are stdlib.h and stdio.h. you can see that on line 7 we have a variable which is declared as being of type bool. Notice the spelling of bool, it's b, double o, l, and the b is lowercase. It's also interesting to note that on the right-hand side of the equal to sign, we have the value true. This is all in lowercase, and if you look closely, you can see that both the words bool and true appear in a dark blue shade.
+
+That's the same shade of font that's used up above on line 5 for the word int, which, of course, is a data type. This is a further hint that bool and true are both recognized by VS Code as being a part of some version of C. Let's try and compile and run our program. When we invoke clang on this file boolean.c, we can see that there are no warnings or errors.
+
+Let's run the program using a.out, and the printed value is 1. Now, let's take a minute to look closely at the two printf statements on lines 10 and 12. You can see that the format specifiers in both cases, for our bool variable is %d. In other words, we are still treating our bool variable as an int when it comes to printing out its value using printf. This is an important little point.
+
+There is no format specifier for bool in the C language and we've got to make use of %d. There's another point here worth paying attention to. If you look closely at line 9, you can see that we've used some_value in an if construct. And this bool value evaluates to true, and that's why we see the printf statement on line 10 has been executed saying some_value is true.
+
+Let's tweak this code. Let's change the right-hand side of line 7 so that our variable is initialized to be false rather than true. This allows us to use the other acceptable value for bool variables. We try re-compiling and re-running the code. The compilation goes through successfully, no errors or warnings. And then when we rerun the code, we now find that it's the printf on line 12 that's been executed.
+
+This reads, some_value is false. And it also confirms that some_value appears as the int value 0. Again, note that the format specifier in both of the printfs is %d because there's no explicit format specifier for the bool type in the C language. So far, so good. We've not encountered any compilation problems. Let's now see what happens if we get rid of the #include statement on line 3.
+
+We've highlighted the line where we have performed a #include on stdbool.h and deleted it. And at this point, if we try and re-compile our code, we find that the compiler is not happy. What's more, these aren't just warnings, these are actually errors. The errors read use of undeclared identifier 'bool', and then use of undeclared identifier 'some_value'.
+
+Clearly, the #include of stdbool.h is absolutely critical if we hope to use the bool data type in our C programs. Next up, let's try and write some programs where we actually use the bool type to do something interesting. On screen now we have a program where we have two variables a and b. We prompt the user to enter values for a and b, and then read those values in using scanfs on lines 11 and 14. Line 11 reads scanf("%d", &a);. Line 14 reads scanf("%d", &b);. 
+
+Then on line 16, we make use of the ternary operator, which we just learned about in the previous demo to compute the value of a variable called a_greater_than_b. And then in the printf on line 18, we print out the value of this variable. We do this using the format specifier %s. Now you might be wondering at this point how we could make use of that format specifier, which is reserved for strings.
+
+But then if you look closely at the second argument into the printf, you can see that we've again made use of the ternary operator. We perform an equality comparison between our variable a_greater_than_b and the boolean value true. This is all in lowercase on line 18, followed by the question mark. After the question mark, we have the string "true".
+
+Please note that this is the string "true", and we know it's a string because it's enclosed within double quotes. So the string literal true, that's true within double quotes is very different from the bool literal true, which you see up above on line 16. Then comes the colon operator, that's the second part of the ternary operator, after which we have the string literal "false".
+
+This is the string "false", all lowercase, enclosed within double quotes. Once again, please carefully note the difference between the word "false" in double quotes on line 18 and the false without double quotes on line 16. On line 16, those are bool literals, on line 18, those are string literals.
+
+Let's compile and run this program. We use clang on boolean.c, no errors or warnings. And then when we run the program, we are prompted for the values of a and b. Let's first enter the value of 10 for a and 4 for b. At this point, 10 is indeed greater than 4, and that's why what's printed out is a greater than b? followed by true.
+
+Our ternary operator on line 16 has done its job, and so has the ternary operator on line 18. Let's run the code again, and this time let's reorder the values. This time we specify a to be 7 and b to be 12. So a is not greater than b, and that's why when we hit Enter, we see that it's the value false that's printed out.
+
+If you're following along very closely, you might realize there is some redundancy here. We don't really need the ternary operator on line 16 because we are already making use of a ternary operator on line 18. So let's select that ternary operator and delete it. Our line 16 is now a lot simpler.
+
+We leave the rest of the code unchanged, and now when we run it, let's again try with the same inputs, first with a equal to 10 and b equal to 4. The output of the program is correct. a greater then b? is followed by true. Let's try it yet again. This time we specify a equal to 7 and b equal to 12. And once again, the output is correct.
+
+This gets us to the end of this little demo in which we saw how convenient and simple it is to use a #include of stdbool.h, which in turn allows us to introduce the bool type into our C programs. That's an incredibly convenient feature to have.
+
+3. Video: Understanding Loops in C 
+
+Objectives
+illustrate how loop control structures work in C
+ Topic title: Understanding Loops in C. Your host for this session is Vitthal Srinivasan.
+Let's continue our exploration of control structures in C. We will now focus on iterative or loop control structures. Let's take a moment to place where we are in the big picture. Remember that any programming language construct which alters the flow of control in a program is a control structure.
+
+In the context of our exploration of C, there are three categories of control structures that we are interested in right now. We've already discussed the conditional control structures, such as if, if/else if, and switch. We are now going to turn our attention to the iterative or loop control structures, which allow us to execute a block of code a repeated number of times. Let's start with the most common and powerful of them all, which is the for loop.
+
+Every for loop can be thought of as consisting of three components. There's an initialization expression which you see up top, there's a condition which is evaluated that's the diamond, and then there is an update expression at the bottom of the for loop. That update expression, especially in C, usually consists of incrementing or decrementing a loop variable. And that's why it's been called incr/decr. And then within the body of the for loop, we have a statement that refers to a block of code that's going to be executed repeated number of times.
+
+This is the basic anatomy of a for loop, and this is used in order to repeat a loop for as long as a condition is true. Again, this is important, the for loop will keep repeating so long as the condition that's evaluated in the diamond evaluates to true.
+
+As soon as that condition evaluates to false, we'll take the code path over on the right and that short circuits out of the statement, as well as the update expression and back over to the end of the for loop. As its name would suggest, a for loop is typically used to execute a block of code, that's the statement on the slide for a specific number of iterations.
+
+A for loop is logically equivalent to a while loop. However, the while loop is a distinct construct in C and in most languages. A while loop as a condition as well as the statement. That statement can be thought of as the block of code to be executed for as long as the condition is true. So again, the while loop, like the for loop, is going to evaluate the condition right up top.
+
+If the condition evaluates to false, both the for loop and the while loop will short circuit out and not execute the statement at all. On the other hand, if the condition evaluates to true, then the statement, that's the body of the while loop, will indeed be executed. And this process will repeat for as long as the condition evaluates to true.
+
+Now, while talking about for loops, we had explicitly separated the for loop into an initialization expression and an update expression. We don't show those as distinct entities because there's no explicit place in the C while loop to specify these as part of the loop. But every while loop must still have an update expression. Otherwise, the condition will always be true and we'll be stuck in an infinite loop.
+
+So somewhere along the line, the statement that's executed if the condition is true must change something and that something will eventually cause the condition to evaluate to false. And that's when we exit the while loop. So a while loop like a for loop will evaluate the condition up top.
+
+And if right up front the condition evaluates to false, the body of the loop is not executed at all. And in this respect, both the while loop and the for loop differ from another C control structure, which is the do-while loop. On screen now you can see the flow chart for the do-while loop. And the most obvious difference is that the statement is executed before the condition is evaluated. And this implies that the statement is going to be executed at least once.
+
+Again, because the condition is evaluated at the end of the statement, we can be sure that the loop will at least execute once. Then once the condition is evaluated, it might work out to either be true or false. If it evaluates to true, then we go back up and re-execute the statement. In this respect, the do-while loop is similar to both the for loop and the while loop.
+
+The loop will be repeated for as long as the condition is true. And the loop will be exited when the condition is false. This is the anatomy of a do-while loop. Again, it's closely related to the while loop, as well as the for loop, with the important difference that the condition is evaluated at the end of the loop, guaranteeing execution of the loop body at least once.
+
+4. Video: Creating for Loops in C 
+
+Objectives
+create for loops in C
+ Topic title: Creating for Loops in C. Your host for this session is Vitthal Srinivasan.
+Remember that a control structure is any programming language construct which changes the flow of control in a program. So far, our focus was mostly on conditionals. These are decision making control structures such as if, if else, and switch.
+
+We are now going to turn our attention to another category of control structures. These are the iterative or loop control structures. These include for loops, while loops, and do-while loops. Let's go ahead and get started with a very basic example involving for loops. You can see our first for loop on screen now. As usual, we have the #includes right up top.  Line 1 reads # include <stdlib.h> and line 2 reads # include <stdio.h>.  And then within our very simple main, we have a for loop on line 6, with the body of the for loop enclosed within a pair of curly braces.
+
+Those curly braces are on lines 6 and 8 so the body of the for loop is in effect line 7 of this code. Let's focus on line 6 for a moment. There we have the syntax of the for loop, and that syntax has three distinct components. There's the initialization expression, which reads int index = 0, then we have a conditional evaluation index < 5. And finally, we have an update expression index ++.
+
+As you can see, the initialization expression, the conditional evaluation and the update expression, are all separated from each other by semicolons. And the three of these are enclosed within parenthesis to form a unit. This is a fairly typical structure for for loops in C, C++, and Java. Please notice also that the variable index is declared for the first time right here within this initialization expression. It's also initialized to hold the value 0.
+
+You can think of this as the setup, which is going to be performed before the for loop starts its first execution. Then the for loop is going to be executed iteratively. Each execution will first check for the condition. So each execution will first check whether index is less than 5. If yes, control will pass into the body of the for loop. Here, that body just includes the single printf statement.Line 7 reads printf(" %d. Hello World \n", index);.  And then at the bottom of the loop, right where the closing curly brace is on line 8, you can imagine that the update expression is going to be executed.
+
+So once the printf statement on line 7 is executed, after that, implicitly, the update of index happens. And that is done using the auto increment operator. Index will be incremented from 0 to 1. Control will then pass back to the top of the for loop. This time because this is the second iteration and not the first, the initialization expression will be ignored.
+
+However, the condition will be checked again. Index will be compared to 5. If index is indeed less than 5, then control once again passes back into the body of the for loop and the cycle repeats. If the condition is not satisfied, that is if index happens to be greater than or equal to 5, then the body of the for loop is skipped, and control passes out of the for loop to line 10.
+
+And that brings the program to a close. This is a high-level overview of the syntax of a simple for loop. Let's now compile this code and run it and examine the output. As usual, we invoke clang on our C file, and then run it using a.out. By looking at the output, we can see that the body of the for loop, that is, the printf statement on line 7, was executed five times. Why five? Well, because the value of index, which is printed next to the greeting ranges from 0 through 4, giving us a total of five instances.
+
+Notice that at the end of the last iteration, index would have been incremented from 4 to 5, then control would have gone back to the top, that is to line 6 of the code here. And then when the condition was evaluated index < 5, it would have been found that index is now equal to 5. And at that point, control would have passed directly to line 10. And at that point, the execution of the loop would have terminated. That's why we do not see a line here with index equal to 5.
+
+Let's quickly run through many little variations on the simple for loop. On screen now we've tweaked the code so that in the initialization expression, we initialize the values of not one but two variables. One of these is still index, the other is called some_variable.
+
+As you can see, index is initialized to be 0, some_variable is initialized to be 2002. If we look carefully, we find that the variable some_variable is not referenced in either the update or in the condition. It is, however, referenced inside the body of the for loop, that is, on line 7 inside our printf statement where we print out its value. When we now run this code, we can see that there is no change in the value of index.
+
+Index continues to range from 0 through 4. However, some_variable, which is also printed out, retains the same value through every iteration, it remains 2002. This second little example showed that the initialization expression in a for loop can be used to initialize multiple variables. It need not only initialize the loop variable index in this case.
+
+In this context, it's also worth keeping in mind the term loop variable. Every for loop has at least one variable, which is used in the conditional evaluation and which is typically updated in the update expression. In this example on screen now, you can see that index is a loop variable.
+
+The other variable, some_variable, is not a loop variable because it's not updated and it's not checked as a part of the conditional evaluation. So in this little example on screen now, index can be thought of as the loop variable. Now, many, in fact most C compilers, are perfectly okay with the loop variable being initialized before the loop even begins.
+
+Therefore, it's not strictly required that we use the initialization block of the for loop to initialize the loop variable. An example of this is visible on screen now. Here, we can see that on line 6 we declare the variable index. However, we do not initialize it on line 6. The initialization still happens inside the loop on line 8 where we initialize index to be -4. As an aside, this is also an example of how the initial value as well as the condition can be pretty much anything at all.
+
+Here, the index is initialized to be -4, and the condition that's checked is index < 5. Can you guess before we compile and execute this code how many times this loop will be executed? Well, if you guessed nine, the answer is correct. The first iteration will feature index = -4, and the last iteration will feature index = +4.
+
+And when we compile and run our code, we find that this is indeed the output that we see down below. Now, in this little example on screen now, we declared the loop variable before the loop began, but we only initialized it in the loop. However, the compiler will also allow us to initialize it before the loop even begins.The host clears the screen. 
+
+On screen now on line 6, we not only declare the variable index, we also initialize it to hold the value -1. And that in turn allows us to have an empty initialization expression in our for loop. Such an empty initialization expression consists of just the semicolon, the condition that's index < 5, and the update expression, that's index++ remain unchanged from the previous example.
+
+If we try and compile this code, we can see that there are no warnings or errors. So the C compiler is perfectly happy with this syntax. And when we run this code, we can see that the value of index ranges from -1 to 4. In other words, this loop is executed six times.
+
+This gets us to the end of this demo in which we introduced the for control structure. We saw how for loops have three components. Each for loop has an initialization expression, the condition to be evaluated, and an update expression. In the demo coming up ahead, we'll continue to explore some of the finer points of C's for loops.
+
+5. Video: Experimenting with for Loops in C (it_cpcsfcdj_02_enus_05)
+
+Objectives
+demonstrate the effects of changes to the loop variable and update expression in for loops
+ Topic title: Experimenting with for Loops in C. Your host for this session is Vitthal Srinivasan. 
+At the end of the previous demo, we had run a little example in which we initialized our loop variable outside the body of the for loop. You can see it here on screen. On line 6 we initialized the loop variable index to be -1. As we can see from the output down below, clang, that is the C compiler, was okay with this.
+
+But you should be aware that this is not a very good practice. And the reason for that is it's easy to forget to initialize the loop variable or to mis-initialize it to some other value other than what you really want at the start of your for loop and then the result can be quite unpredictable. Let's go ahead and check out an example of this. In the code on screen now, we have inadvertently left out the initialization of the variable index.
+
+So we declare the variable index. We do this on line 6. But we now no longer initialize it at all. And if you look closely at the for loop on line 8, we still have a blank initialization expression, just the semicolon there. The result of this program execution is now unpredictable. It depends on what value happens to be present.
+
+And this is entirely random in the variable index, that is, in the memory corresponding to the variable index. Because we've declared our variable index before the for loop began, it will still be available after the for loop ends. And that in turn means that we can print out its value on line 12.
+
+On the other hand, had we declared and initialized the loop variable index inside the for loop on line 8, we would not have been able to make use of it after the for loop ended on line 10. Just a little point worth keeping in mind. This has to do with the scoping of variables in C, a topic we will not get back to for quite some time. In any case, we now compile and run our code.
+
+The compilation goes through smoothly. You can see that there's no warning, the compiler has not been able to detect that we have an uninitialized loop variable. When we run our code, you can see that the value of index now printed out by the printf statement on line 12 is pretty much a gibberish value.
+
+This is a random value corresponding to whatever happened to be in that memory location before we ran our program. You can also see from the output that our loop did not execute at all. And that's because of the value contained in the loop variable index, because we had not initialized it the very first time that the condition was checked. Index was already greater than 5, and that's why the body of the for loop never got executed at all. And that's why we don't see any output corresponding to the printf on line 9.The value of index reads 78327845.
+
+This little demo proves that it's always a good idea to initialize the loop variable inside the for loop. This is why the for loop has an explicit space syntactically for the initialization, and we should make use of it. Okay, let's move on to another example in which we will experiment with using a loop variable, which is of type float. As we shall see, the compiler will allow this, but this is not a recommended practice at all.
+
+On screen now, we've attempted to change the type of our loop variable from int to float. You can see there on line 7. We've attempted to initialize index to be 0, and we've declared it to be a variable of type float. We also update the format specifier in the printf to be %f rather than %d.
+
+Will this compile? Let's find out. We invoke clang on our code file and we find that there are no errors or warnings. The compiler is fine with this. And in fact, when we try and run this code in this particular instance, it works just fine. The value of index ranges from 0 through 4, every one of the integer values there has been hit.
+
+Even though in this particular example, things seem to work fine, this is not a good practice at all. And the reason for that is in all of the digits of precision, which we see printed out in the output. As we've already discussed in the context of float variables, we can have unpredictable effects due to all of the digits after the decimal point in a float.
+
+For instance, you might imagine that the increment of our loop variable might take our loop variable to just under the value 5. And in that case, the conditional evaluation of index < 5 might not fail or stop when we want it to. It's always a good idea to stick to integer variable types for loop variables, even though the compiler will allow float variables. Let's switch back to having an int as our loop variable.
+
+And in the code you now see on screen, we've tweaked the update expression so that we explicitly set index = index + 1 rather than making use of the post increment operator ++. We run this code and we see that everything works exactly as before.The output reads 0, 1, 2, 3, 4.  Now, if we can update our loop variable by 1, there's nothing to prevent us from updating it by 3.
+
+In the code now on screen, you can see that the update expression reads index = index + 3, and the condition to be evaluated has also been tweaked. It now reads index < 15. We compile and run the this code, no errors or warnings, and in the output we can see that index takes the values 0, 3, 6, 9 and 12.
+
+The value 15 is not printed because, of course, when index is equal to 15, the condition check index < 15 will fail, and at that point, control will pass to out of the for loop. Let's try another little experiment in which we tweak the initial value so that it's greater than the final value. Here, index is initialized to be 5, and then the update expression is index--.
+
+So we are decrementing the value of index rather than incrementing it. We also need to update the conditional expression so that it reads index > 0, which means that when we run this code, the values printed out will start at 5, will decrease by 1 with each iteration, and the last iteration will feature index = 1. We've previously seen that the initialization expression can be moved to outside the for loop.
+
+In similar fashion, the update expression can also be moved, but this update expression cannot be moved to outside the for loop. Rather, it can be moved to within the loop body. On screen now you can see that we've tweaked our for loop so that the update of the loop variable index no longer happens on line 6. Instead, it happens within the body of the for loop where we decrement it using the -- operator.
+
+When we try and compile and run this code, we find that everything goes through smoothly. There's no compiler error or warning, and running the code also gives the expected output. Index starts out at 5 and it ranges all the way down to 1.
+
+Now, just as it was a little risky and not recommended to move the initialize expression to outside the for loop, in similar fashion, it's not recommended that you move the update expression out of the first line of the for loop. There's a reason that C and C++ and Java and most of these languages have one unit of code in which we combine the initialization expression, the conditional evaluation and the update expression.
+
+What if we forget to include the update expression at the bottom of the for loop? To mimic this, we've now deleted the line of code from line 9 and our code is now going to yield an infinite loop. That's because we've initialized index to be 5. Our condition is index > 0. But then we never decrement the value of index. Notice that the compiler doesn't catch this.
+
+It's only when we run our code that we'd run into the infinite loop. And to exit that loop, we use the Ctrl + C shortcut. It's Cmd + C if you're on a mac-based machine. The lesson from this demo so far is that while it is possible to initialize your loop variable before the start of the for loop and it is possible to update your loop variable inside the body of the for loop, neither of these is usually a good idea. You're usually best off just sticking to the standard syntax and having a for loop with an initialize expression, the condition to be evaluated, and the update expression, all encapsulated neatly into one line of code.
+
+6. Video: Understanding Quirks of for Loops in C 
+
+Objectives
+demonstrate several possible gotchas of for loops
+Topic title: Understanding Quirks of for Loops in C. Your host for this session is Vitthal Srinivasan.
+In the previous demo, we experimented with different ways of specifying the initialization expression as well as the update expression. Let's now turn our attention to the condition that is evaluated at the start of each iteration of the for loop. This condition can be anything which returns a Boolean, that is, a true or false value.
+
+On screen now we've gone back to a simple for loop in which we initialize the loop variable index to be 0, our update expression increments index using the post increment operator, and then the condition that we check is index <= 5. How many times will the body of this loop be executed? The answer is six. We can confirm that by compiling and running our code. And we can see that index ranges from 0 through 5.
+
+In case you're not clear on why this loop executed six times, focus your attention on the condition that is checked at the start of each iteration. That condition now reads index <= 5. And this condition is going to return true even when index is actually equal to 5. Each time this condition returns true, the body of the for loop is going to be executed.
+
+When index becomes equal to six, that's finally when the condition will return false, and that's why we have iterations ranging for index = 0 to index = 5. That's a total of six iterations. Let's try another variant of this loop. Now you can see that we initialize index to be 0, and the update is the auto decrement operator. So we are reducing the value of ιndex using index--.
+
+We also need to accordingly update our condition, and that condition now reads index >= -5. Do keep in mind how the >= operator works with negative numbers. -1 is greater than -2, even though 1 is less than 2. That's because as negative numbers increase in magnitude, they become smaller. Let's go ahead and run this code. And when we do, we can see that the code runs through again six times. The first iteration features index = 0, and the last iteration features index = -5.
+
+That's a total of six iterations. At the end of that last iteration, index holds the value -6. So when control goes back to the top of the for loop on line 6, when -6 is compared to -5, the relationship index >= -5 no longer holds because -6 is smaller than -5. And that's why at that point, the body of the for loop is not executed and control skips out to the bottom, that is to line 10.
+
+It's tricky working with loop variables that feature negative numbers. It's really easy to have a small mistake or a typo in the condition, and that in turn can easily lead to an infinite loop. On screen now you can see that we've initialized index to be 0, and our update condition is the post decrement operator index--. The problem now is that we've changed our update condition to read index <=5. The problem here is that 0 and all negative numbers are less than or equal to 5, because 5 is a positive number.
+
+And that in turn means that this condition is always going to return true, which in turn means that our loop is going to be an infinite loop. Infinite loops are not going to be detected or flagged by the compiler. When we compile this code using clang, we get a clean bill of health, no warnings or errors. When we run our code however, you can see that an infinite loop results.
+
+And to exit out of that loop, we've got to make use of the Ctrl + C or Cmd + C shortcut. Just like the initialization expression, as well as the update expression were optional, the condition that we specify in the for loop is optional as well. Here you can see that we've selected the condition on line 6 and we have now deleted it. So we just have an empty semicolon for the conditional expression.
+
+This code will also compile and it'll also run, and it will also lead to an infinite loop. There's no condition that's got to be checked at the top of the for loop, and that in turn means that the body of the for loop will always be executed. Again, what we take away from this little example is that the condition is optional.
+
+But if you ommit the condition, there needs to be something inside the body of the for loop to break out of it, else an infinite loop results. And on the subject of breaking out of a for loop, this is a perfect time to introduce the break keyword. This is a keyword which is used to do exactly what its name would suggest, which is to break out of an enclosing loop.
+
+Here it is in action on screen now. You can see on line 9 that we have an if statement. We check the condition if (index < 5), and if that is indeed the case, control passes to line 10, where we have the keyword break. Break is going to break out of the nearest enclosing loop. And here that nearest enclosing loop is the one that begins on line 6.
+
+Breaking out of that loop will send control out to line 15. That's at the bottom of the for loop. We'll have a lot more to say on the break statement. This is just a sneak preview. But in this instance, this break statement is enough to eliminate the problem of the infinite loop. And that problem was introduced because, as you can see on line 6, we still have omitted the conditional expression.
+
+Before we compile and run this code, try and work out for yourself how many times the body of this for loop is going to be executed. And if you guessed 5, well, that's wrong. When we compile and run the code, we see that the body of the for loop was only executed the one time. And that's because index was initialized to be zero. There was no condition specified in the for loop on line 6, and so the body of the for loop was executed.
+
+That led to the first printf statement on line 7 where index is indeed equal to 0. Then we got to the if check. And the condition there was, if (index < 5). Now 0 is less than 5, and that's why we hit the break statement. Break sent control out of the for loop to the end of the program, and that's where things ended.
+
+The break also made the update condition index-- irrelevant for this example. The host clears the screen. Next, let's move on and see what happens if we have multiple conditions in our for loop. Here, on line 6, you can see that we initialize a couple of variables, index and some_value.
+
+You can also see on line 8, that the update expression updates both of those variables, index++, as well as some_value++. However, on line 7, we'll do something which seems to make a little less sense. We have two conditions, index < 3 and some_value < 5. Even without attempting to compile or run this code, this strikes us as odd.
+
+It's perfectly reasonable to have multiple conditions in there, but we would expect those conditions to be linked up in some way with a logical operator such as the AND or the OR operators. Neither of those has been used in this case. We just have a comma separating the two conditions on line 7. Let's try and compile our code, and we find that we have a warning on our hands.
+
+The warning reads: relational comparison result unused. And the green highlighting tells us that it's the first of the two conditions that's going to be ignored. When there are multiple such conditions specified in the for loop, it's going to be the last one that's going to be evaluated and used to determine when the loop termination ends. So some_value < 5 is going to determine when our loop stops executing.
+
+The condition index < 3 is simply ignored. We can confirm this by running this code. And as we can see, index ranges from 0 through 4. This clearly means that the condition index < 3 on line 7 is being ignored. Some_value, on the other hand, ranges from 0 through 4 as well, which means that the terminating condition was some_value < 5.
+
+If we do really want to have multiple conditions in our for loop, it's easy enough to link them up using a logical operator. Here on screen, we've done this using the logical AND operator. You can see the use of the double ampersand on line 7. Now our for loop will only execute for as long as both of these conditions are satisfied. (index < 3) && (some_value < 5). This will terminate when index becomes equal to 4. And indeed, that's what we can see in the output down below.
+
+We have print statements for index equal to 0, 1, and 2. We can also make use of the logical OR operator, as you now see done on line 7. This will cause the loop to run for as long as either one of these conditions is true. And as we can see from the output down below, this leads to our loop being executed five times corresponding to some_value equal to 0 through 4.
+
+7. Video: Iterating over Arrays in C 
+
+Objectives
+demonstrate how to iterate over arrays with for loops
+Topic title: Iterating over Arrays in C. Your host for this session is Vitthal Srinivasan.
+In this demo, we will run through a series of quick examples to show some of the capabilities of for loops. Perhaps the most common use of a for loop is to iterate over a set of numbers or of other variables of other types. Then within the for loop, we select some subset of those variables to actually do something with. That's what we've now done in the example on screen.
+
+We have a for loop where the loop variable i is initialized to 0, and the update is i++. This loop is going to execute for as long as the condition i < 50 is satisfied. That, in turn, means that the body of the for loop is going to be executed for every value of i from 0 through 49. Within that body however, we're only interested in those values of i which are multiples of 10.
+
+On line 7, we have an if check where we make use of the % operator to find whether i is a multiple of 10. We do this by testing whether the remainder when i is divided by 10 is equal to 0. If the answer is yes, control passes to line 8. This is inside the body of the for loop but it's also inside the if block. And that's where we print that i is a multiple of 10.
+
+Let's go ahead and compile and run this code. When we do, we find that our printf statement on line 8 is only executed for the values of i equal to 0, 10, 20, 30 and 40. This is a pretty common pattern for a for loop, where the for loop has within it an if conditional which restricts those elements over which an operation is performed. Another common pattern is to have a for loop in which we perform one set of operations on elements which satisfy a condition and another different set of operations on those which don't.
+
+As you might imagine, an if else block is perfect for this kind of logic. On screen now, we iterate over all of the values of i between 0 and 50, not including 50. Within the body of the for loop as before, we first test whether i is a multiple of 10. If that is the case, we print that out, else, we have another if check.
+
+And we now check whether i is a multiple of 5. When we compile and run this code, we can see that we have one print statement displayed for all multiples of 10. For instance, 0 is a multiple of 10, 10 is a multiple of 10 and so on. And we have a different print statement displayed for multiples of 5 that are not multiples of 10 such as 5, 15, 25, and so on. And for those values of i that are neither multiples of 5 nor multiples of 10, we don't perform any operations at all.
+
+This is yet another common way in which for loops are setup. Changing gears, another common use of for loops is to iterate over the elements of an array. On screen now you can see that we've defined an array of floats that's done on line 6 and weève called this lap_timings. Notice how we've made use of the initialization where we have the values in the array enclosed within curly braces on the right-hand side of the equal to sign.  The values read 12.3, 15.4, 11.2, 9.8, 13.5, 12.1. 
+
+Also notice that on line 8, we've have declared the variable lap_length to be of type size_t. Size_t is a type which is used to represent the size of objects in bytes. You can think of this as an alias for the unsigned int type. When you see a variable of type size_t, you should expect to see invocations to the sizeof function in the near vicinity.
+
+And indeed, that's the case here as well. You can see that lap_length is computed as the ratio of the sizeof(lap_timings) to the sizof(lap_timings[0]). In other words, size_t lap_length is giving us the size of one element in the lap_timings array in bytes. And now coming to the for loop itself, we initialize our loop variable i to be 0, the update condition is the post increment i++, and the condition that we check is i < lap_length.
+
+Within the body of the for loop, we print out the value of the corresponding elements of the array down to two decimal places. That's done using the format specifier %.2f. Let's go ahead and compile and run this code. And when we do, we see that we do indeed have the values of each of our array elements displayed down below. Now, in this example, we iterated over every one of the elements in the array. But there's absolutely nothing which prevents us from iterating over only a subset.
+
+On screen now, we've changed the for loop on line 10 so that we only print out the values of the first three elements. We'll do this by modifying the condition so that it's now i < 3. When we compile and run this code, we can see from the output down below that the printf statement only has the values of the first three elements, 12.3, 15.4, and 11.2.
+
+Remember that arrays in C are indexed starting from 0 of course. Next, let's tweak our for loop to change the initial value of i. Now, when we run this code, we will still get the values of three elements in our array, but these will no longer be the first three. Rather, as we can see, the values printed out to screen are 11.2, 9.8 and 13.5. 11.2 appears at index position 2.
+
+And that's because on line 10, we've changed the initial value of i to be i = 2. Using a for loop to iterate over the elements of an array The rest of the output reads Element 3 of the array lap_timings is: 9.80 and Element 4 of the array lap_timings is: 13.50. is one of the most common use cases out there. Unfortunately, it's also really common to encounter problems where we iterate one too far. Here for instance, you can see that we have i initialize to be 0. The condition that we check is i < 8. However, our array only has six elements.
+
+And this, in turn, means that our for loop, which begins on line 10, is going to access memory locations which run past the end of our lap_timings array. In a language like Java, this would have attracted an exception an ArrayIndexOutOfBounds exception. But this is not how C works. In C, this code will not only compile, note, how there are no warnings or errors, but it will also run.
+
+The rub is that in the output, you can see that the last two values, the ones which read Element 6 and Element 7, do not reflect values in our array. And these are effectively random memory locations which happen to lie just after the end of our array. Element 6 is -0.00, Element 7 is a very large floating point number, and again, both of these are pretty much random values.
+
+We should be really careful with accessing arrays using for loops in C precisely because problems like this one will not be detected at compile time.
+
+8. Video: Using Nested for Loops in C (it_cpcsfcdj_02_enus_08)
+
+Objectives
+demonstrate how to create nested for loops
+Topic title: Using Nested for Loops in C. Your host for this session is Vitthal Srinivasan. 
+In this demo, we will pick up right from where we left off at the end of the last one and run through a few more examples of how arrays and for loops can be used together. This time it's a character array that we are iterating over. Remember that a character array is very closely linked to a string in C.
+
+And on line 6 we have a character array holding the string "Adam Smith". On line 8, we find the length of this string and we do this by performing our division. In the numerator, we have the sizeof(name), and in the denominator we have the sizeof the first element in that name. This is a pretty standard way of finding the number of elements in an array. Remember that size_t is a type which represents or corresponds to the unsigned int type.
+
+The return value from the sizeof operator is of type size_t. That's why we have it in there. Then we have a for loop where we have a loop variable i initialized to be 0. We iterate over the values of i from 0 to name_length. The update condition is i++. The body of the for loop prints out the corresponding characters. Notice how we make use of the character specifier %c, that's the format specifier for the character type.
+
+We compile and run this code. And in the output, we can see that every one of the characters in the string "Adam Smith" appears followed by a pipe symbol. This shows how easy it is to make use of a for loop in order to iterate over the characters in a string. It's also really common to have nested for loops. In a nested for loop, we have one for loop enclosed within another. On screen now you can see an example of a nested for loop.
+
+On line 6, we have a for loop with loop variable i. And on line 7, we have another for loop contained within the outer for loop. The inner for loop has loop variable j. The outer for loop is going to be executed for i =1 to i < 3. And the inner for loop is going to be executed for j = 1 and j < 4.
+
+This, in turn, means that the total number of iterations of the inner for loop is going to be the product of the number of iterations of each of the nested loops. Let's compile and run our code and see what the output looks like. From the print statements, we get a good sense of the values of i and j. Here, we can see that i takes the values 1 and 2, j takes the values 1, 2, and 3. The total number of iterations is six.
+
+And that's because there are two iterations of the outer for loop, each of which has three iterations of the inner for loop. And that gives us 2 multiplied by 3 equal to 6 executions of the printf statement contained within the inner for loop. Let's round out this demo with a quick look at a nested for loop,The host clears the screen. where we iterate over the elements of not one but two arrays. Here on line 6, we have a character array holding the string "ABCD". On line 7, we have an integer array with three elements 100, 200, and 300.
+
+On line 9 we have an outer for loop, which iterates over the elements in the character array. We do this using the loop variable letter_index which starts at 0, and is incremented using the ++ operator for as long as letter_index < 4. On line 11 we have the inner for loop. Here we initialize the second loop variable number_index to be 0, we increment it in each iteration using the ++ operator again, and we execute the inner for loop for as long as number_index < 3.
+
+On line 13, we have a printf statement which lies within the body of the inner for loop, and here we print out the letter_index element of the letters array, as well as the number_index element of the numbers array. Let's go ahead and run this code. Before we do that, note that there are four elements in letters and three elements in numbers. And that means that we are going to have 4 multiplied by 3, that's 12 printf statements executed in all. Let's compile and run the code and confirm this.
+
+And indeed, we can see that A, B, C and D are each printed three times. So, for instance, A is printed along with the integers 100, 200, and 300. This is then repeated for every one of the characters in A, B, C, and D giving us a total of 12 iterations.
+
+This gets us to the end of this little demo in which we saw how we can use for loops to iterate over the elements of a string array. And we also saw how it's possible to nest one for loop inside another to achieve a double loop.
+
+9. Video: Creating while Loops in C (it_cpcsfcdj_02_enus_09)
+
+Objectives
+demonstrate how to create while loops
+Topic title: Creating while Loops in C. Your host for this session is Vitthal Srinivasan. 
+In this demo, we'll move on from for loops to while loops. The while loop is another important control structure in C and in many other such languages such as C++ and Java. Like the for loop, the while loop features a condition which is tested at the top of the loop. If the condition evaluates to true, the body of the loop is executed.
+
+Otherwise, control passes beyond the end of the loop. Let's go ahead and see our first while loop in action. The code is visible on screen now. On line 8, we have the while keyword, followed by a condition enclosed within parenthesis. This condition is simply i < 6. Notice that unlike with the for loop, we do not have an initialization expression or an update expression within these parentheses. Where then are the initialization and the update expression?
+
+They've got to be somewhere. Well, if you look up above on line 6, that's where the initialization occurs. int i = 0 is where we both declare and initialize the loop variable i. The update expression explicitly appears at the bottom of the loop on line 12, where we have i++. And then the rest of the body of the loop consists of a single line of code, a printf statement.
+
+As with the for loop, we have a pair of curly braces delimiting the loop body. You can see the opening curly brace on line 8 and the closing curly brace on line 14. All of the code between these curly braces is going to be executed for as long as the condition on line 8 remains true. Then on line 16, we have another print statement and this one prints out the value of the loop variable i after the loop has finished terminating.
+
+Note that because the loop variable was initialized before the loop even began, it remains in scope and available for use even here on line 16. We go ahead and compile and run our code, and from the output we can see that we have the loop execution for i = 0 all the way through i = 5. And then the last printf, the one on line 16, reveals that the value of i at the end of the loop is 6.
+
+Next, let's see what happens if we apply a small tweak to our initialization expression on line 6. Let's change that so that instead of initializing i to be 0, we initialize it to be 10. Before we proceed to compile and run this code, let's try to figure out what the output will be. i is initialized to be 10, that means that on line 8, when the condition is checked, i is not less than 6.
+
+And because i is not less than 6, we never enter the body of the while loop at all. Control passes directly from line 8 all the way down to line 16.  Line 16 reads printf("\nValue of i at the end of the loop %d\n", i);. And that's why when we compile and run this code, we only get one line in the output, telling us that the value of i at the end of the loop is 10.
+
+What we learned from this last little demo is that if we don't set up our initialization correctly, it's possible that the loop body will never be executed at all. In this way, a while loop is similar to a for loop, where, again, it's entirely possible that the body of the for loop never gets executed at all, depending on the initial value and the loop condition. Next, let's tweak our code yet again.
+
+We have another slightly tweaked version of the code on screen now. We have the loop variable, which is initialized to 0 on line 6. We have the condition. This is on line 8 next to the keyword while. The condition reads i < 6. We then commence the body of the while loop within which we have a single line of code, printf,
+
+This is loop followed by the format specifier %d and the value of i. You might be wondering where the update expression for i is. If we look closely, we can see it's right there on line 10. Notice how we've made use of the post increment operator so that that value of i reads i++. Remember that the post increment operator will first make use of i in whatever expression or context it's currently in, and then it will update the value of i by 1.
+
+In this way, we have a valid update expression in this code. Let's go ahead and compile and run this code, and we can see that it works fine. There's no infinite loop. The loop values of i are 0 through 5. And then the last printf, the one on line 14, reveals that the value of i at the end of the loop is 6.
+
+This little example also highlights one of the key differences between while loops and for loops. In a for loop, we have an explicit syntax which combines the initialization expression, the loop condition, and the update expression into one line of code. That's the default, although even with the for loop, we could choose to not include all of them in that one line.
+
+In a while loop however, the initialization and the update expression must be placed in different points with the initialization expression before the start of the while loop and the update expression somewhere within the body of the while loop. Here, the update expression is i++, but it's really easy to imagine a little typo in which someone edits this code and eliminates the ++.
+
+Let's go ahead and make that little change. We've edited the line 10. And now if we try and compile our code, we get no warning that there's any problem at all. However, when we try and run this code, we encounter a pretty serious bug that is an infinite loop.The output reads: This is loop 0.Now we've encountered infinite loops before with for loops, but as this little example might tell you, it's actually a lot easier to run into an infinite loop with a while loop than with a for loop.
+
+And that's because of how the update expression needs to be embedded within the body of the while loop code. This gets us to the end of this little demo in which we introduced while loops and saw how the initialization expressions and the update expressions need to be specified. In the demo coming up ahead, we will continue our exploration of while loops and run through a few more common use cases.
+
+10. Video: Experimenting with while Loops in C 
+
+Objectives
+demonstrate how to work with while loops
+ Topic title: Experimenting with while Loops in C. Your host for this session is Vitthal Srinivasan. 
+In the previous demo, we introduced the while loop, and we saw how easy it is to inadvertently create an infinite loop while working with while loops. In this demo, we will continue working with while loops in more standard ways. Let's jump right into a simple example.
+
+On screen is a while loop where we have a loop variable i. We can see on line 8 that we have the keyword while followed by the condition i < 12. This means that the body of the while loop will be executed as long as this condition is satisfied. The loop variable i is initialized up above on line 6 to be 0. The update expression, which is at the bottom of the loop on line 12 is i += 3. Now let's compile and run the code and examine what's printed out.
+
+We can see that i gets printed out for the values 0, 3, 6, and 9. And then the printf on line 15, which is outside the while loop prints out the value of i, which is 12. What we learn from this little example is that the update expression can perform any operation at all on the loop variable. Here, that operation was to increment the loop variable by 3. All our while loops so far have counted up.The host clears the screen. Let's now have a while loop, which counts down.
+
+On screen now we have a while loop with the loop variable i and the loop condition is i >= 0. Up above, i has been initialized to be 10. And then on line 12, we update i in each iteration of the while loop by decrementing it by 1. Remember that a while loop, like a for loop, checks the condition at the top of the loop.
+
+And that's why when we run this code, we can see that the initial value printed out is 10, and then we subsequently get lower values all the way down to 0. And then the value of i at the end of the loop is -1. The last time when the condition was checked, i would have been -1, that would not satisfy the condition i >= 0, and that's why control would not enter the loop and it would instead pass to the last printf, whose output we see at the bottom of the screen. Like with a for loop, the condition that's evaluated in a while loop can consist of multiple predicates linked by a logical operator.
+
+Here, you can see on line 8 that we have two predicates i < 1000 and i > 1. And these have been connected using the logically AND operator, that's the double ampersand that you see there on line 8. Note also that we initialize i to be 2 and we update i on line 12 to be the square of i. So i = i * i. Also note that we've initialized i to be 2.
+
+The output displays the numbers 2, 4, 16 and 256. Note that each of these values is printed out from within the while loop, then 256 multiplied by 256 is clearly greater than 1000, which is why we break out of the while loop and the value of i at the end of the loop is 65536, which we see at the bottom of the screen. While working with for loops, we saw how useful for loops can be for iterating over the elements in an array.
+
+It turns out that while loops can be used in a similar manner. On screen now we have an array of integers called scores. We've initialized this array on line 6 to hold eight values. The values are 45, 57, 68, 23, 89, 72, 34, 85. Then on line 8, we have the loop variable i initialized to be 0. On line 10 we have a variable called scores_len. Note how this one is declared to be of type size_t.
+
+As we've discussed, any time we see a size_t type variable, we should expect to see an invocation of the sizeof function somewhere nearby. And indeed, scores_len is used to calculate the number of integers in the scores array. Then we have the while loop starting line 12. The loop condition is i < scores_len. On line 14, we check whether the ith element of the scores array is greater than 50, and if yes, we print it out.
+
+Then on line 19, we have the update expression i++. On line 22, which is past the end of the while loop, we print out the value of i at the end of the loop. Let's go ahead and compile and run this code. And when we do, we can see that the output only has those elements of the scores array, which are greater than 50 printed out to screen. This is why we see the scores 57, 68, 89, 72, and 85. The final line of the output contains the value of i at the end of the loop, which is 8.
+
+Let's take a moment to understand why i is 8 at the end of this program. Our array has eight elements, and those elements are indexed or numbered, starting from 0. That means that the index position of the last element is going to be 7. That, in turn, means that the last time we evaluate the loop condition, i is going to be 8.
+
+That's because the update at the end of the seventh iteration would have changed the value of i from 7 to 8. Once i is equal to 8, it no longer satisfies our condition that i should be less than the number of elements in the array. And that's why we don't have any output from inside the loop for i equal to 8, but that transfers control to the bottom of the program where we print out the value of i, and that's 8.The host clears the screen. 
+
+Finally, while loops are also a great way of accepting user input until a specific condition is met. On screen now is exactly such a program. We have a loop variable called num, which we initialize to be 0. Then we have a while loop where we test for the condition num != -1. So as long as num is not equal to -1, we will enter the while loop and there we will first print out a message. Please enter a positive number to compute its square. And within parenthesis, (-1 to exit). That's followed by a scanf to accept user input.
+
+And we then pass the value that's typed in by the user into the variable num. On the line that follows, we print out the value of num as well as its square. Then outside the while loop, we print out the value of num at the end of the loop. This program, when it's run, will keep prompting the user for user input until the user types in the number -1, at which point, the program will exit.
+
+Let's compile and run this code. As expected, we are prompted for a number, that's a positive number. Let's start by entering in the integer 5. The square of 5 is 25, and that's what our program prints out. The loop continues, we are prompted for another number, we'll type in the integer 3. Its square is 9, which is printed out to screen.The host types 4 and its square reads 16. This process goes on for as long as we do not type in -1.
+
+And as soon as we do, we find that the while loop terminates. And that's because -1 does satisfy the condition on line 8 num equal to -1. This gets us to the end of this little demo in which we explored some more interesting ways of working with while loops in C. In the demo coming up ahead, we'll turn our attention to the close cousin of the while loop, that's the do-while loop.
+
+11. Video: Introducing do-while Loops in C (it_cpcsfcdj_02_enus_11)
+
+Objectives
+demonstrate the use of do-while loops
+Topic title: Introducing do-while Loops in C. Your host for this session is Vitthal Srinivasan.
+In this video, we will talk about do-while loops, which are another control structure in C. Do-while loops are iterative control structures just like for loops and while loops. The difference is that in while loops and for loops, the loop condition is evaluated at the top of the loop, i.e., before the first execution of the loop body.
+
+In a do-while loop on the other hand, as its name would suggest, we first perform the body of the loop at least once before the loop condition is ever evaluated. And this guarantees that in a do-while loop, the body of the while loop will execute at least once no matter what. Let's go ahead and see how this control structure can be used in practice. On screen now we have a simple do-while loop. Note the use of the keyword do on line 8 followed by the opening curly brace of the do loop body.
+
+The corresponding closing curly brace is on line 14. And then after the closing curly brace comes the keyword while and that is then followed by the loop predicate. The loop predicate is contained within parenthesis, it reads i < 6, and then in another bit of somewhat unusual syntax, we have the semicolon after that loop condition. The syntax of the do-while loop takes a little bit of getting used to. Again, the keyword do comes first. Then comes the loop body within curly braces, then the keyword while, then the loop condition and a semicolon.
+
+The body of the do-while loop here is simple enough, we print out the value of the loop variable i, the update of i happens at the bottom of the loop on line 12 where we increment i using the ++ operator, and we've initialized i up top on line 6 to be 0. For completeness, we also print out the value of i at the end of the loop, there on line 16.
+
+We compile and run this code and when we do, we find that the output has the value of i printed from inside the loop. And this value ranges from i = 0 all the way down to i = 5. It's important to note that the value i = 6 is not printed from within the do-while loop. Remember that i is going to be updated at the bottom of the loop, that's on line 12.
+
+And that's right before the loop condition is checked. So in the last iteration of the loop, when we enter the loop i = 5, then on line 12, i is updated to be 6. That leads to line 14, where we check the condition while (i < 6) that condition no longer holds because because i is now equal to 6, and control breaks out of the loop and goes to line 16.
+
+Next, let's tweak the initial value of i on line 6. We've changed it so that i is initialized to be 9 rather than 0. The rest of the code remains the same. What do you think the output of this program is going to be? Well, let's run it and try and find out. We can see that we have one print statement from inside the loop that's printed out, which states This is loop 9. And then we have the print statement from outside the loop, which is also printed out, Value of i at the end of the loop 10.
+
+This little example drives home a really important point. Even though we had initialized i to be 9, because the do-while loop first executes the loop body and then checks the loop condition, our loop body still got executed once. And this again drives home that do-while loops differ from both while loops and for loops in this important respect.
+
+They check the loop condition after the execution of the loop body not before. Let's move quickly into an example of a do-while loop which counts down rather than up. On screen now, you can see that we initialize i to be 8, that's on line 6. Our do-while loop prints out the value of i, and it then decrements the value of i.
+
+We can see that on line 12 where we have i--. On line 14, we have the keyword while, followed by the while loop condition i >= 2. And when we print this out, we can see that our loop is going to execute for the values of i which range from 8 all the way down to 2. We can also see that the value of i at the end of the loop is equal to 1.
+
+In the previous demo, we had seen that while loops are particularly vulnerable to the problem of infinite looping. And that was because the update expression in a while loop needs to be placed somewhere inside the body of the while loop. This vulnerability extends to do-while loops as well. You can see here that the update expression i-- is at the very end of the do-while loop code.
+
+It's very easy to introduce a typo where we inadvertently delete that update condition. Let's delete that one line of code and see what happens. At this point, we no longer have an update expression in our do-while loop. And so when we compile and run our code very predictably, we encounter an infinite loop. i is initialized to be 8, and our do-while loop will execute for as long as i >= 2.
+
+And the only way to break this loop is using the Ctrl + C or Cmd + C keyboard shortcut. Next, let's quickly jump into another example where we have two loop variables, and we update each of these loop variables inside the do-while loop. In the while loop predicate, we link predicates on each of these loop variables using the logical AND operator. You can see the code for this example on screen now.
+
+The two loop variables are initialized on lines 6 and 7. These are called a and b. On lines 13 and 14, we update the values of a and b.  a= 8 and b = 3.On line 16, we have the while keyword followed by the loop condition.  a = a * 2, and b = b * 3.  And that condition is, while (a < 100 && b < 1000). Notice the use of the logical AND operator with the double ampersands. Then as usual, on line 18, we print out the values of a and b at the end of the loop.
+
+Let's run this code and when we do, we can see that our loop terminates as soon as either of these conditions is false. As long as a is smaller than 100 and as long as b is also smaller than 1000, the loop continues. The values for a are: 8, 16, 32, 64. The values for b are: 3, 9, 27, 81. But eventually a reaches the value of 128, which is greater than 100.
+
+And so even though b is still smaller than 1000, note that b is 243 at the end of the loop, the while loop stops executing. Do-while loops can thus use logical operators for their terminating conditions, just like while loops or for loops. For completeness, let's also quickly demonstrate the use of the logical OR operator. That's done now on line 16, where we've replaced the two ampersands with the two pipe symbols.
+
+This do-while loop will now continue to run for as long as either one of these conditions is true. And this time the loop will run a lot longer. As we can see from the output below, we only break out of the loop when the value of a has reached 512 and the value of b has reached 2187. The values for a are: 8, 16, 32, 64, 128, 256, 512. The values for b are: 3, 9, 27, 81, 243, 729.  And this only happened because a exceeded 100 and exceeded 1000. And that's why the loop terminated.
+
+A do-while loop can be used to iterate over the contents of an array just as a while loop can. On screen now we have an array of ints called scores.  The scores are: 45, 57, 68, 23, 89, 72, 34, 85.  We make use of a variable scores_len, which is of type size_t in order to determine the number of elements in the array. And then we have a do-while loop in which we iterate over the elements in the array, and if any of the scores is less than 60, we print it out.
+
+Note how we initialize i to be 0 on line 8, we update i using i++ on line 17, and the do-while loop will execute while i is less than scores_len. You can see that on line 18. When we compile and run this code, everything works just fine. We iterate over all of the elements in the array, and every element that's less than 60 it's printed out. These scores include 45, 57, 23, and 34. All seems well here.
+
+But now, if we make a small tweak to the initial value of i, and we change it from i = 0 to i = 22, we can see that our program is going to have a bug. Let's try and run this code and identify the bug. Remember that a do-while loop will not test the loop condition before executing the while loop body. And as a result, now when we run our code, even though i = 22, we are going to try and access the element at index position 22 in our array.
+
+That, of course, is wrong. In a language like Java, this would trigger an ArrayIndexOutOfBounds exception. Had this been a while loop, the condition would have been checked right up top and this bug would not have resulted.
+
+But because this is a do-while loop, we can see that we have indeed accessed a random memory location and printed out a random value to screen down below.  The random value reads -524179464.  This gets us to the end of this little demo in which we demonstrated the use of the do-while loop in C. As we noted, the do-while loop is very similar to the while loop with one important difference. The body of the do-while loop is executed first before the loop condition is ever evaluated.
+
+12. Video: Using the break Keyword in C 
+
+Objectives
+demonstrate how to exit loops with the break statement
+Topic title: Using the break Keyword in C. Your host for this session is Vitthal Srinivasan. 
+In this demo, we will come back to the break statement, which we have already encountered on a couple of occasions in the past. The first time was while working on the switch construct. We had seen how inserting a break statement at the end of each case prevented code from falling through into the next case.
+
+We had also encountered the break statement while talking about loops. We had seen how a break can be used to prematurely exit out of a loop. Let's now come back and study the break statement in more detail. break is a control structure because, of course, it alters the flow of program control. And we'll now be focused on the use of break to prematurely terminate loops.
+
+On screen now is a simple such example. We can see that we have a for loop with a loop variable i. We initialize it to be 0. The condition for the loop to continue executing is i <= 6, and the update expression here is i++. Within the body of the for loop, we have an if check. if (4 == i) then we break.
+
+That break statement is encountered on line 10. And then down below line 13, we print out the value of i. Remember that when we encounter the break statement, control will break out of the enclosing loop. And that in turn means that control will be transferred to line 17, and the program will exit. Let's compile and run this code and examine the output.
+
+And when we do, we find that the output consists of the integers 0, 1, 2, and 3. You can see that 4 is not printed and neither are 5 and 6. Let's work through why this might have happened. When the for loop began execution, i was 0. That's what it was initialized to be. The if check on line nine did not pass, and that's why the value 0 got printed out by the printf on line 13.
+
+Then we reached the bottom of the loop where the update occurred, and i was incremented from 0 to 1. In similar fashion, i got printed out for the values 1, 2, and 3. Then when i was equal to 4, the if check on line nine did pass and control entered the if block. It encountered the break statement on line ten, and that in turn caused the loop to be prematurely exited.
+
+Control shifted out of the for loop and down to the end of the program. That's why the integers 4, 5, and 6 never got printed. What would be interesting, though, is to see what the output would be if we had print statements within the for loop, both before and after the break. Let's go ahead and try that experiment. On screen now we've modified our program just a little bit so that we have a printf at the top of the loop on line eight.
+
+This is before the break statement and then we have the same printf on line 14 after the break. In both cases, we are printing out the values of i. When we now compile and run our code, we find that the 'Before break' print statement is executed for the values 0, 1, 2, 3 and 4, but the print statement after the break is only executed for the values 0, 1, 2 and 3.
+
+This output further confirms that it's the break statement on line 11, which caused us to prematurely exit out of the for loop. break statements are very handy program constructs and one of their common use cases is to iterate through our data structure, such as an array and break out of the for loop as soon as we find a specific type of element. Here is such a use case on screen now.
+
+We have an array of integers called scores. The scores are: 45, 57, 68, 23, 97, 72, 34, 85. We compute the number of elements in the array, that's done on line nine. We divide sizeof(scores) by the size of the 0th element in the scores array. Then we have a for loop. This begins on line 11 where we iterate between 0 and scores_len.
+
+On line 12, we print out the value of the current element. Notice how we index into the scores_array using square brackets and the loop variable i. And then line 14, we check whether the current element is less than 40. If yes, we print out a message stating that we've FOUND a failing score. And then we have a break statement on line 16.
+
+Down below, we have a printf statement outside the loop. The effect of this program is to iterate over the scores in order starting from the first element, the one at index position 0. And as soon as we find a score that's lower than 40, our program will print out that score, flag it as a failing score, and exit the loop. We can see from our data that there is indeed such a score, and that's 23, that's the first failing score.
+
+There is also a second failing score later on in the array, that score is 34. However, because of the break statement, we will only encounter the first failing score 23. we'll never get to 34 at all. We compile and run our code, and when we do so, we find that indeed our program exits and that the last score it printed out before exiting was the failing score 23.
+
+If we look closely, we can also see that the printf statement on line 12 is executed for the elements at positions 0, 1, 2 and 3. These are the scores 45, 57, 68 and 23. However, the printf for line 15 is only executed once, and that's for element 3, which is 23. And then the next printf indicates that we are outside of the loop now.
+
+And in this way, we've used the break statement here in order to bail out of execution of the for loop as soon as we find an element which is smaller than 40. Also note that we never got to the second failing score of 34 because we had broken out of the for loop by that point. Let's tweak the numbers in our scores array so that we have a failing score at an earlier index. On screen now you can see that we've modified the second element.
+
+This is the one at index position 1 so that it now reads 15. When we now recompile and rerun our code, we find that our for loop breaks out even earlier. At this point, we can see that the score at element 0 is 45. The score at element 1 is 15, and that immediately triggers the message stating that we've found a failing score.
+
+Iterating through a data structure until we find a match on some criterion is one common use of the break statement. Another common use involves intentionally setting up an infinite loop and within that infinite loop, embedding a break statement which is triggered only when a specific condition is met. On screen now is an example of break being used in this manner. Let's start by looking at line 11, where we have a for loop, which has neither an initialization expression nor a loop condition, nor an update expression.
+
+We just have a semicolons within the parenthesis next to the keyword for. Within the body of this for loop, we first employ the scanf function in order to read in a character from the user. A little point to note here within the scanf function, note that we have some trailing whitespace before the format specifier %c.
+
+That little whitespace is a way of telling C that we'd like ignore any trailing white space in the user's input, and that whitespace might include new line characters typed out by the user. The format specifier %c is used to read in one character and that character is stored in the variable called response. We can see that response has been declared up above on line seven.
+
+We also have another variable declared up above, that's called fav_letter, and that's also been initialized to be lowercase 'u'. Note that it's a character literal enclosed within a single quotes. Line 9 reads printf("\nGuess my favorite letter to escape this infinite loop of boredom:\n").  Now, our infinite for loop is going to terminate under one specific circumstance.
+
+If the response typed in by the user is equal to the favorite letter, then the if conditional on line 15 will evaluate to true, control will pass down into line 17, where that letter will be printed out to screen, and then the break statement on line 19 will be encountered.
+
+On the other hand, if the user types in any character other than lowercase 'u', the condition on line 15 will evaluate to false, and the loop will continue after printing out a statement which you see on line 22. Line 22 reads: printf("BORED...zzzzz \n");.  In this manner, the program is an infinite loop, which will only terminate if the user of the program is able to correctly guess the favorite letter.
+
+And their favorite letter is lowercase 'u'. We compile this code and run it. No compilation warnings or errors. We are prompted for the favorite letter. We try typing out a single character d. That does not get us very much further.It returns BORED...zzzzz. We try with r, no luck.
+
+And this process continues until we finally hit upon the favorite character, which is the lowercase 'u'. When we hit the lowercase u, the message printed out to screen is u does happen to be my favorite! and that causes the termination of the program because a break statement was encountered.
+
+13. Video: Creating while Loops with Break Statements in C (it_cpcsfcdj_02_enus_13)
+
+Objectives
+demonstrate how to use the break statement with while loops
+Topic title: Creating while Loops with Break Statements in C. Your host for this session is Vitthal Srinivasan.
+In this demo, we're going to continue working with the break statement, and we're going to see how it can be used with while loops, do-while loops, and for loops. The semantics of the break statement are pretty much identical for all of these kinds of loops.
+
+In each case, a break statement will cause premature termination of the loop, and control will be transferred to the statement just beyond the end of the loop. On screen now we have a while loop and this while loop contains within it a break statement. Let's take a moment to orient ourselves with the code. Right up top, we have variables called num_guesses, response and guessed_right.
+
+These are of types int, int, and bool. We can also see that on line 3, we have a #include of stdbool.h. Line 7 reads int num_guesses = 3, i = 0;. Line 8 reads int response;. Line 9 reads bool guessed_right = false;. And that's what allows us to use bool as a type in this program. On line 11, we have our while loop and the condition that's checked at the top of this while loop is i < num_guesses. The loop that follows is going to be executed for as long as this condition is evaluated to true.
+
+We print a message prompting a user to enter a number divisible between 5 and 7, and then read that number in using scanf. Then on line 16, we have an if condition which checks whether the response that was entered by the user is divisible by 5 and divisible by 7. The way we do that is by making use of the % operator, which checks for the remainder.
+
+These two conditions are linked by the logical AND operator, which is a pair of ampersands on line 16. If both of these conditions are satisfied, control enters the body of the if block and we set guessed_right = true on line 17, and then we break out of the while loop on line 18. Else on the other hand, we print out a message reading 'Try again...', and we increment the value of i.
+
+The body of our while loop closes on line 25 where we have the closing curly brace. Then on line 27, we have an if, which checks whether we exited the loop because the number was guessed correctly, in which case, we print out You are right %d is divisible by 5 and 7!
+
+Else, we print a message stating I'm afraid you've run out of guesses. And in this way we will know when we get to line 27 whether we got to that point because the user had entered the correct number and whether we had encountered the break statement, or because the user had been unable to enter the right number and had simply run out of guesses.
+
+This while loop on screen now, is an example of one which has a terminating condition. That's the one where i becomes equal to num_guesses. But it also has a way to short circuit the loop evaluation, and that's if the user guesses the number correctly. Let's go ahead and compile and run this code.
+
+When we do, we are prompted first to enter a number divisible by 5 and 7. The first time we are prompted we type out 5. We are asked to try again. The second time around we type 7. We are asked to try again yet again. The third time we try typing out 35. And that is the number that the program was looking for.
+
+And the loop hits the break statement on line 18 and we exit out. 35 is indeed divisible by both 5 and 7. This particular code path that the program took resulted in our exiting the loop via the break statement on line 18. And that in turn, was because 35, the number we typed in last, was indeed divisible by both 5 and 7. Let's now try and rerun our code, and intentionally enter numbers which are not divisible by 5 and 7.
+
+num_guesses is set to 3. So if we first try and type out the number 6, we are asked to try again. Let's try again with the number 89, also not divisible by 5 and 7. And we try a third time, with the number 22. No dice. And at this point we see that the program terminates. We are told, I'm afraid you've run out of guesses. This time the program exited through a different code path, and that code path never encountered the break statement on line 18.
+
+This shows that we can use break statements with while loops and not every time a break statement is included in the loop does it mean that we are going to actually hit it. Let's jump in to another quick example, which shows the use of a break statement with a do-while loop. On screen now we have a do-while loop with the do keyword on line 8.
+
+The opening curly brace is also on line 8, the closing curly brace is on line 18, the while keyboard appears right after the curly brace. And then we see that the condition for the while loop is simply the integer expression 1. This is always going to evaluate to true. That means that our do-while loop is going to be an infinite loop unless we have a break statement contained within it.
+
+And indeed, if we look closely, we find that on line 13, we do indeed have a break statement. That break statement is going to be encountered if the value of the variable num == -1. num, in turn, is a read in from the user using a scanf on line 10. Down below on line 16, we print out num as well as its cube, and we are only going to get to line 16 if num is not equal to minus -1.
+
+This little bit of code shows that we can use break statements, with do-while loops just as we can with for loops. Let's compile and run this code. We are prompted to enter a positive number to compute its cube, and we are also told that we can enter -1 to exit. We now go through and enter in a succession of integers. All of these are positive integers.
+
+So we first enter 5, the cube is 125. We try next with 9, 9 cube is 729. Then we type out 11, the cube of 11 is 1331. And finally, once we've satisfied ourselves that this works, we type out -1. And as soon as we'll do so, you can see that we encounter the break statement on line 13, and the program terminates. The printf beyond the do-while loop tells us that the value of num at the end of the loop is -1.
+
+That gets us to the end of this demo, in which we saw how the break statement can be used to exit out of while loops as well as do-while loops. And in the previous demo, we extensively seen the break statement with for loops. We can now move on to yet another related control structure, which is the continue statement. That's coming up in the demo ahead.
+
+14. Video: Introducing the continue Operator in C 
+
+Objectives
+demonstrate how to use the continue operator in different scenarios
+Topic title: Introducing the continue Operator in C. Your host for this session is Vitthal Srinivasan. 
+We will now turn our attention from the break statement, to its close cousin, the continue statement. The continue statement is similar to the break statement in that it's usually used in the context of a loop, and it also changes the execution of the loop. But it differs from the break in one important way; continue sends control back to the top of the loop rather than breaking out of the loop entirely.
+
+In the context of a for loop, when we encounter a continue statement inside the body of the loop, that's going to send control back to the top of the for loop, but not before the update expression has been executed. This last bit is worth keeping in mind. Let's see how this all plays out in action. On screen now is a simple for loop with an embedded continue statement. The for loop has an initialization expression, int i = 0. It has a condition i < 6.
+
+Remember that in a for loop this condition will be evaluated at the top of the loop, and then it has an update expression, i++. Remember that this is implicitly going to be executed at the bottom of the loop. Then, within the body of the for loop, we have an if conditional where we check whether 4 == i. And if yes, we encounter the continue, that's on line 10.
+
+On line 13, we have a print statement to indicate the value of i. Let's compile and run this code and see what we get in the output. We look closely at the output and we conclude that every one of the integers between 0 and 5 has been printed out, with the exception of 4. So we see the values of 0, 1, 2, 3 and then 5. Let's try and piece together what happened when i was equal to 4. There on line 9, the if condition evaluated to true.
+
+Control passed into the body of the if block, and the continue statement on line 10 was encountered. That continues statement sent control right back to the top of the for loop. But before doing so, clearly, it applied the update expression i++. How do we know? Because the next time around, the value of i that got printed out was i = 5.
+
+So what we conclude from this is that when we encounter continue within a for loop, the current iteration of the for loop is short circuited. However, the update expression is still executed, following which control goes back to the top of the for loop. It'll be interesting to have another print statement before we encounter the continue. And that's what we've done in the code on screen now.
+
+You can see that once again, this is a for loop. Our loop variable is still i, it's still initialized to be 0, and it's still auto incremented using i++. The condition that's checked, however, now is i < 5. Within the body of the for loop we have two print statements, one before and one after the if block that you see on line 10. And that if block checks whether i == 2, and if yes, we have a continue statement in there.
+
+Let's compiling and run our code. And when we examine the output closely, we can see that the print statement from before the continue is displayed for values 0, 1, 2, 3 and 4. However, if we look closely, the print statement from after the continue is displayed for 0, 1, 3 and 4, but it's not displayed for i = 2.
+
+This implies that when i was equal to 2, the print statement on line 8 was printed out because it was encountered before the continue statement. Then on line 10, the condition evaluated to true because i was indeed equal to 2. That continue statement sent control back to the top of the for loop, but not before applying the update expression, which incremented the value of i from 2 to 3.
+
+As a result of this short circuiting of the rest of the for loop after the continue statement, the print statement on line 14 was not executed when i was equal to 2. And that's why in the output down below, we have a line stating Code executed BEFORE continue i: 2. And then the next line reads Code executed BEFORE continue i: 3. Next, let's move on to another common use case of the continue statement.The host clears the screen. 
+
+In the context of the break statement, we had commented on how break is often used while iterating over a data structure such as an array. Break allows us to break out of the loop as soon as we find an element which meets a certain condition. Continue is also used in a related context. But where you would use break in order to exit the loop entirely when you find some search key, you'd use continue to skip over specific elements which do not require processing of some sort.
+
+Here on screen now is an example of such a program. We have on line 7, a character array called grades holding the grades of 'A', 'B', 'D', 'F', 'C', 'B', and 'A'. We compute the number of elements in the array on line 9 and then we iterate over the elements in the array starting line 13. Within the body of this for loop, we compare the current element to the single character literal 'F' note 'F' enclosed within single quotes.
+
+If this grade is an F, then we continue. Else, we print out that this element achieved a passing grade. That's done on line 18. Let's compile and run our code. And when we do, we see that every one of the elements of the grades array is printed out with the exception of the lone F.
+
+So we see A, B, D, F is skipped, and then C, B and A. The continue statement on line 15 was triggered, when the grade was equal to F. And that's why the print statement, which comes below the continue statement, was never reached at all. This is a good example of how you can use a continue statement while iterating over a data structure to skip processing specific elements.
+
+Next, let's switch to an example where we make use of both a continue and a break statement. You can see here that we've gone back to our infinite loop where we asked the user to guess our favorite letter. The infinite loop is a for loop, you can see it there on line 11. We have no initialization expression, no condition to be evaluated, and no update expression either.
+
+Within the body of this for loop, we read in a character from the user using the scanf. And then we proceed to break out of the loop only if that character entered by the user was indeed equal to the lowercase 'u'. However, we do this in a slightly roundabout fashion. If the character that the user entered is not equal to a lowercase 'u', then we print out a message stating that we are BORED and then we have a continue statement.
+
+This is on line 19. Below this if block, we have a print statement stating, You got it, u is indeed my favorite letter! And then we have a break, that's on line 24. The net effect of this code is that as long as the user types in a character other than lowercase u, the continue statement is going to be hit, and consequently, the break statement will never be hit.
+
+As soon as the user types in a lowercase 'u', the continue statement will be bypassed because the condition on the if on line 15 will evaluate to false, the break will be hit and the program will exit this infinite loop of boredom. We go through and compile and run this code. And as expected, we are prompted for user input.
+
+We find that as long as we are typing in characters other than a lowercase 'u', we remain in this loop, the same message is displayed. We try typing in t and y and various other characters. But then as soon as we type out the lowercase 'u', that terminates the loop. That gets us to the end of this little demo in which we saw how the continue statement can be used in order to short circuit the execution of the current iteration of a for loop.
+
+As we saw, when continue is used with a for loop, the conditional test, as well as the update expression of the for loop, will still be executed, even though the contents of the for loop after the continue are going to be short circuited.
+
+15. Video: Using the continue Operator with while Loops in C 
+
+Objectives
+demonstrate how to use the continue operator with while loops
+Topic title: Using the continue Operator with while Loops in C. Your host for this session is Vitthal Srinivasan. 
+In this demo, we will continue working with the continue statement. However, this is now going to be in the context of while and do-while loops rather than for loops. Let's get started right away. On screen is a simple program featuring a while loop and that while loop is going to continue to execute for as long as count is less than num_tickets.
+
+We can see up top that count is initialized to 0 on line 6, num_tickets is initialized to 3 on line 7, and we also have a variable called age. Within the body of the while loop, we prompt the user for the age, we read that in using scanf. If the age is less than 12, we print a message stating: Sorry, this is a movie for 12 and over. And then we have a continue statement on line 19.
+
+Please note again that this continue statement will only be hit if the age that was entered in this particular iteration of the while loop is less than 12. Otherwise control moves on beyond and the age is incremented after printing out a message.  The message reads: "Here is your ticket - number: %d\n". Finally, outside the while loop on line 26, we have another print statement.  Line 26 reads: printf("Outside of the loop now - sold %d tickets!\n", count);. When a continue statement is encountered inside a while loop, that statement sends control back to the very top of the while loop.
+
+Unlike in a for loop, there's no mechanism for an implicit update on the loop variable. This is an important difference between continue in the context of a while loop and in the context of a for loop. Let's see how this plays out. Let's compile and run our code and then start to enter in some ages. The first time we are prompted, we enter the age 14.
+
+This is not less than 12, and as a result, we are successfully issued a ticket. That ticket number is 0, and then we are prompted for our age again. This time, let's enter a smaller number, let's enter 5. This is not acceptable. We get the message stating: Sorry this is a movie for 12 and over. And no ticket is issued. We try again with the integer 7, and again, no ticket results.
+
+We are prompted yet again, and this time we enter the number 45. This goes through, the ticket number issued is 1. And when we are prompted one more time, we enter the age 34, and again, a ticket is successfully issued. And at this point, we get the message stating that we are outside the for loop because we are out of tickets. This little example is important because it shows that when we entered an age which was less than 12 and encountered the continue statement, the count++ statement on line 23 was not hit.
+
+We entered five ages in total 14, 5, 7, 45 and 34. Two of these were smaller than 12 and hit the continue statement. And that's why the count of the tickets printed out at the bottom of the screen is 3. 3 being 14, 45 and 34. In a while loop, when a continue statement is encountered, control goes straight back up to the top of the while loop.
+
+For completeness, next, let's move to an example with a continue statement in the context of a do-while loop. Here it is on screen now. We have a function which features a do-while loop starting line 8. You can see that the while portion of this loop is on line 23. And the condition on the while portion is simply the integer expression 1. That's always going to evaluate to true.
+
+In other words, this is going to be an infinite loop unless we find some way to break out of the loop from within the body of the do-while. Within the do-while loop, you can see that we print out a message stating that we are computing the squares of odd numbers and will ignore even numbers. Also, the user should type 0 to exit. Then we have a scanf to read in numbers typed in by the user.
+
+If the number is 0, then we have a break statement right off the bat there on line 13. If we even get to line 16, then we know that the number typed in was not 0. Because if the number was 0, the break would have been hit and control would have been transferred out of the do-while loop back down to line 25. If we do get to line 16, we now test whether the number is divisible by 2.
+
+We do that using the % operator and checking whether the remainder is 0. If yes, we print that you've entered an even number which is being ignored, and then we have a continue statement on line 18. This continue statement will send control back to the top of the loop, i.e., to line 8. Control then goes down to line 21.
+
+If we've reached this point at all, we know that the number entered by the user was an odd number, and we also know that it wasn't 0. On line 21, we then print out the number as well as its square. Let's go ahead and run this code and see how it works with different types of user input. The first time around when we are prompted for a number, we type in 7. This is indeed an odd number.
+
+And this falls all the way through down to the bottom of the loop where its square is displayed, that's 49. Next, let's try and enter an even number 2. This tells us that also does not hit the break statement, and so the loop continues. We are prompted again. This time let's try typing an even number 2, another even number 4. Both of these even numbers are ignored because they hit the continue statement on line 18.
+
+We try with odd numbers and we find that the squares are displayed, with even numbers, they are ignored. And finally, if we hit 0, that hits the break statement on line 13, and that indeed triggers the end of the program. That gets us to the end of this demo in which we saw how the continue statement can be used to transfer control back to the top of a while loop or a do-while loop.
+
+16. Video: Skipping to Parts of Code Using goto (it_cpcsfcdj_02_enus_16)
+
+Objectives
+demonstrate how to use the goto operator
+ Topic title: Skipping to Parts of Code Using goto. Your host for this session is Vitthal Srinivasan. 
+In this demo, we are going to talk about the C goto construct. As its name would suggests, goto is an unconditional jump statement. Goto statements are frowned upon and almost never used in contemporary programming. However, when the C language was first developed, gotos were an integral part of many programs architecture.
+
+Let's see how the goto statement works. It will also give us the opportunity to see how to create a label in C. Let's go ahead and get started. Here on screen now is a simple example. On line 6, we initialize a variable called number, and then we print out a message, prompting the user to enter a number.  Line 8 reads: printf("Please enter a number to print out its multiplication tables: ");. Then on line 9, we use scanf in order to read in the user input and store it in the variable number.
+
+On line 11 we make use of our goto statement. You can see that this involves the use of the keyword goto, followed by a label. That label, multiplication_tables refers to a specific location in our code. To see where that location is, look down at line 16. There you can see that we have a for loop, but that for loop has been labeled with the label multiplication_tables on line 15.
+
+This idea of labeling a location in code and then using the goto statement to jump to that location unconditionally is frowned upon in programming these days, and it has been frowned upon for several decades. Even so, it's handy to know how the goto statement works. On line 16, we have a for loop and in that for loop, we just print out the different multiples of whatever number happen to be typed in.
+
+In this instance, the goto statement has just allowed us to skip over one line of code. And that line of code is the printf statement on line 13, which reads, This code here will NOT be executed! Let's compile and run this code. We find that invoking clang on this file works fine. No warnings or errors. And when we run the code, we are prompted for a number to print out its multiplication tables.
+
+Let's type out the integer 3. And indeed, the 3 times table appears on screen. Please note that the printf statement on line 13 does not appear on screen, exactly what we expected.  The host clears the screen.  Back in the old days when the goto statement was commonly used in programming, its most common use was to set up loops. On screen now is an example of a loop that's been set up using a goto statement.
+
+If you look closely, you can see that we've changed the printf statement on line 8. This now reads, "Please enter a number to print out its multiplication tables (-1 to exit):" We then read in a number as before, and then on line 11 again, we have the goto statement exactly as before. That goto statement refers to the label multiplication_tables, which is defined down below on line 15.
+
+Where this program differs from the previous one is after the for loop that ends on line 18. You can see, for instance, that on line 20, we again prompt the user to please enter another number and -1 to exit. A scanf follows. Then on line 23, we check whether that number is equal to -1, in which case we exit the program using the return statement on line 24.
+
+And if that number was not equal to -1, control passes down to line 27, where we have another use of the goto statement. And that reads goto multiplication_tables. In other words, if control does get to line 27, we will go back up to the multiplication_tables label on line 15. This program is actually a fairly typical sample of how the goto is meant to be used. And you can also see that it's led to some pretty ungainly code. Why is this code ungainly?
+
+Well, look carefully at lines 8 and 9 and then at lines 20 and 21. You can see, first off, that these lines are very similar. We have needlessly duplicated the code that prompts the user to enter a number and reads it in using scanf. Next, turn your attention to the if statement on line 23. This if statement provides the only path for our program to terminate.
+
+That's why the return statement on line 24. However, that's a rather counterintuitive location for the last line of a program. After all, you would expect code to be executed in linear fashion, one line after another, starting from the top and exiting at the very bottom. This return statement on line 24 makes it hard to trace the program's control flow.
+
+And this is the real problem with the use of the goto statement. Once you start using goto statements, you start writing code in a manner which is hard to trace and follow. In any case, now that we know how the goto statement is used, let's go ahead and compile and run our code. You can see that the compiler has no problems with the use of the goto statement. No warnings or errors.
+
+We now run our code, we are prompted for numbers to view their multiplication tables. Let's start by entering in the number 4, that causes the 4 times table to be displayed. We have prompted for another number. This time we type in 7, 7 times table appears, and in this fashion, the program continues until we type out -1. And as soon as we hit -1, we see that our program exits. And that's because the if conditional on line 23 has evaluated to true.
+
+And that, in turn, has transferred control to the return statement there on line 24. This little example also showed how the return statement in a C program or a C function, which we've yet to discuss, can exist anywhere within the body of the program. You can also see how in this program, we've achieved the same effect as a while loop purely using two goto statements.
+
+And this gives us yet another insight. It turns out that pretty much any program that makes use of goto statements can achieve the same effect. In other words, it can be rewritten to have the same output without the gotos. And that's why the use of the goto statement is considered an anti-pattern in C programming these days.
+
+It doesn't get you anything that you can't get with other constructs, such as if or while conditionals, but it just muddies up the flow of control in your program. One final note, while making use of the goto statement we've got to avoid forward references. To see what a forward reference is, please consider the code on screen now. You can see that here we have defined our label right up top on line 6.
+
+That label is called some_label. That label refers to a specific statement, which is the printf statement on line 7. In that printf, we make use of a reference to the variable number. However, the variable number hasn't yet been declared. That declaration only comes on line 9. And then after that variable declaration, on line 11, we have a goto statement which unconditionally jumps back to some_label.
+
+Finally, on line 13, we have a printf statement which reads "This code here will NOT be executed!" And the reason for that is that before we get to line 13, we have unconditionally jumped back to the top of the program. Now this program, if at all it did run, would have resulted in an infinite loop. But as it happens, it's not going to run. And that's because when we attempt to compile this program, we get an error, use of undeclared identifier 'number'.
+
+This is an important little example because it also shows that while defining labels in code so that we can jump to them using goto, we've got to be very careful to avoid forward references. This use of the variable 'number' on line 7 is a forward reference because the variable has yet to be declared. That declaration only comes on line 9.  The host clears the screen.  In any case, it's easy enough to eliminate this compilation error.
+
+And we've done that in the code on screen now. We continue to have our label called some_label defined on line 6. This is used to label the statement printf Hello word! On line 9, we declared the variable number, on lines 11 and 12, we prompt the user for the value of number, and then read in the user's input using scanf. And finally on line 14, if the number is not equal to -1, we jump to the label some_label.
+
+That's done using the goto statement on line 15. This program will effectively run in a loop for as long as the user does not enter -1. When the user does enter -1, control will pass down to line 17 and the program will exit. Let's quickly compile and run this code and make sure that it does what we think it does. The compilation goes through smoothly, and when we run the code, we are prompted for a number.
+
+We type in the number 3. Hello world! gets displayed and we are prompted for another number, and the process continues until we enter -1. At that point, the program terminates. This gets us to the end of this demo in which we explored the use of the goto statement. This is a control structure that provides an unconditional jump to a label statement in our code.
+
+Now it's worth mentioning here that the labels that the goto statement refers to have function scope. That in turn means that the goto must be to another location within the same function.
+
+Because we haven't discussed scopes, we won't dwell on this point a whole lot. But you should keep in mind that you cannot use the goto to jump to an arbitrary location in an entirely different function or library.
+
+17. Video: Course Summary 
+
+Objectives
+summarize the key concepts covered in this course
+Topic title: Course Summary. 
+We have now reached the end of this course, Looping and Unconditional Control Structures. We started this course by understanding the three main types of looping control structures: for loops which execute some code a certain number of times, decided based on the loop variable and condition, while loops which execute some code while a condition is satisfied and finally, do-while loops, which are similar to while loops, but check that the condition is satisfied after rather than before executing the code block.
+
+We started the demos in this course by creating a for loop that executed a block of code for as long as a condition was true. We then experimented with the loop condition, the value of the loop variable, and the update expression for the loop variable.
+
+We also learned how to use for loops to iterate over arrays and print out their values. Finally, we created nested for loops. After that, we used while loops to repeatedly execute some code for as long as or while a certain condition was satisfied. Hence, the name while loop. As we saw, while loops are much more susceptible to infinite loops because the syntax makes it easier to make the mistake of neglecting to update the loop variable.
+
+As with for loops, we explored the loop variable in the while loop and iterated over an array before moving on to do-while loops. The do-while loop is guaranteed to execute at least once even if the loop condition is false at the outset. In contrast, a while loop might execute zero times if its loop condition is false to begin with. Finally, we came to the unconditional control structures, such as the break, continue, goto and return keywords, all of which are typically used with some other form of control structure, such as a for loop or a function.
+
+The break keyword is used within a loop and will immediately exit the loop when executed. The continue keyword is also used within a loop. But it will merely skip the current iteration of the loop, causing execution to pick up from the top of the loop for the next iteration.
+
+The goto keyword is used to unconditionally skip to a place in your code, and is not recommended as it causes code where program control jumps around in a hard-to-trace fashion. You have now reached the end of this course and indeed this learning path. The knowledge that you have just acquired sets you up nicely for functions and memory management in C which are coming up ahead.
+
+Course File-based Resources
+•	Introducing C's Boolean Type
+Topic Asset
+
+•	Creating for Loops in C
+Topic Asset
+
+•	Experimenting with for Loops in C
+Topic Asset
+
+•	Understanding Quirks of for Loops in C
+Topic Asset
+
+•	Iterating over Arrays in C
+Topic Asset
+
+•	Using Nested for Loops in C
+Topic Asset
+
+•	Creating while Loops in C
+Topic Asset
+
+•	Experimenting with while Loops in C
+Topic Asset
+
+•	Introducing do-while Loops in C
+Topic Asset
+
+•	Using the break Keyword in C
+Topic Asset
+
+•	Creating while Loops with Break Statements in C
+Topic Asset
+
+•	Introducing the continue Operator in C
+Topic Asset
+
+•	Using the continue Operator with while Loops in C
+Topic Asset
+
+•	Skipping to Parts of Code Using goto
+Topic Asset
+© 2022 Skillsoft Ireland Limited - All rights reserved.

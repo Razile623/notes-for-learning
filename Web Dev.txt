@@ -1,0 +1,2968 @@
+JavaScript: Introduction
+
+
+The Role in JavaScript in Web Applications
+
+Web Browsers - Know how to display the resources in way that is understood by humans
+Web Servers - Know how to retrieve the right resources and "serve" them to anyone who ask for it
+
+
+HTML
+- Skeleton of your web pages
+- It specifies the content and structure of what your web page will finally look like
+- for this skeleton to look human we need more than that
+- we need skin over the structure
+
+CSS
+- This is the skin of the web page
+- It specifies the look and fell of a web page
+
+JavaScript
+- The brains behind the web pages
+- programming language, which runs inside your browser, that lets you control the behavior of the web page
+- its a full-blown language, as sophisticated as C++, Java, or Python
+- In Includes objects, inheritance, complex function construct, and a whole lot more
+- It is just-in-time compiled and executed by the browser
+- it used to be considered a client-side technology, but it is now very common to have JS run on the server side
+- it can control the apperance, communications, interaction, etc.
+
+TIP: JavaScript client apps should be kept simple Complex operations should be done on the server
+
+
+The Document Object Model (DOM)
+
+HTML page Structure
+	- All HTML pages have a nice hierarchical structure
+	- A browser will parse this HTML hierarchy into a tree
+
+
+
+					HTML
+				  
+				HEAD		BODY
+					H1		P
+
+
+JavaScript can be used to manipulate the DOM
+
+
+
+Fundamental of JavaScript
+
+	JavaScript is a full-fledged programming language, so it has all the usual features you may expect
+	
+JavaScript Features
+	Variables
+	Functions
+	Loops
+	Arrays
+	Objects
+	Input/Ouput
+
+Functions and Variables
+	Creation - functions and variables are created when the page is loaded
+	Destruction - They are destroyes when a new page is loaded in the browser
+	Scope - Will become a complicated topic in JS, but to start with, it is simple.
+
+		Global variables
+			- exist for as long as the page 
+			- they come into existence when the page loads, and cease to exist when the page unloads
+		Local variables
+			- local variable exist inside a function, block, or some specific scope
+
+
+Variables in JS
+	- JS allows variables to be used without being declared first
+	- Undeclared variables end up having a global scope
+	- To enable re-use of variable names in local scopes, they should be declared first
+	- The keyword var, let, and const define the scope and behavior of variables
+
+Scope in JS is fascinating, and very different form other language such as C++, Java, etc.
+This becomes quite apparent when implementing closures
+
+JS properties
+	-weakly and dynamically typed
+	-it may seem very permissive when compared to Java, C++, etc.
+	- There are many implicit type conversions that may  lead to unpredictable results
+	-Enabling "strict" mode alleviates some of these concerns
+
+Strict Mode
+	-prevent the  use of undeclared variables
+	-it does not permit the use of reserved keyword as variable or functions names
+	-it prevent coding practices that get in the way of optimization performed by JavaScript engines 
+	-it throws errors instead of failing silently when unsafe operations are performed
+Enabling "strict" mode is considered more secure when developing apps with JS
+
+
+
+
+JavaScript Arrays and Functions
+
+Arrays
+	-variables containing a sequence of values
+	- content can be heterogeneous
+	-their length are dynamic 
+	-they can be used to create shallow and deep copies
+
+Array Copies
+	Shallow copies
+		are effectively different variables pointing to the same underlying data
+		changing one copy affects all realted shallow copies
+		There are multiple ways to create them in JS
+	
+	Deep copies
+		the copies are entirely independent from each other from the point of creation 
+		modifying one copy has no bearing on the others
+		created using the slice() method
+
+
+Functions
+	treated just like numbers or strings 
+	functions are first-class members
+	
+3 Properties of JS Functions
+	You can have functions take in functions as can arguments
+	You can have a function return a functions
+	You can store a functions in a variable(or array)
+
+First class functions
+	these 3 properties collectively make JS functions "first-class"
+
+A Higher Order Functions
+	Operates on other functions -either by taking them as arguments or by returning them
+	Their use is JS is very common
+
+
+
+JavaScript Objects
+	- a set of key-values pairs, where the values  can also be functions
+	- each key-value pair is called a property of the object
+	- they are similar to maps, dictionaries, and associative arrays
+	-The values can be function or even other objects
+	- objects can inherit from and be created out of other objects
+	
+JSON - JavaScript Object Notation
+
+Copying Objects
+	objects, like arrays, can have deeo and shallow copies
+	when passed as arguments to functions, it is the object reference that is passed
+	this contrasts object from primitive types
+Passing by values and reference
+	function arguments that are primitive types(string, int) are copies of the original data
+	arguments that are object are pointer to the same objects
+
+
+Object Constructors
+	a blueprint of a JS object can be defined using a function constructor (similar to classes)
+	New instances can be created from these blueprints using the new keyword
+
+Classes of JavaScript
+	- it is possible to declare classes in JS, but they are merely syntactic sugar over function constructors
+	- Inheritance can be implemented using the extends keyword
+	- Under the hood, protoype-based inheritance is used (more on that later)
+
+
+
+JavaScript Quirks
+	Strange special values	
+		the values undefined represents a variable that has been declared but not set to any values
+		the value null is explicitly assigned to a variable
+		Nan is often returned when math functions fails
+		Infinity is an acceptable value in JS
+	String and numeric operations
+		JS performs implicit conversion of numbers to string for some operations
+		Addition and comparisons of numbers with strings may produce unexpected results
+	Strange equality operators	
+		== is the equality operator and checks for equal values (and perform conversion if needed)
+		=== is the strict equality operator - it checks for equal values and types
+		== pair with !=
+		=== pairs with !==
+		Type conversion are never done when comparing objects
+		Both equality operator work the same for objects
+	Truthy and falsey
+		Anything that Javascript can convert to a boolean true in considered truthy
+		Non-zero numbers, non-empty strings, non-empty arrays,etc are truthy 
+		Anything JavaScript can convert to a boolean false is falsey
+		0, "",  undefined,null, {}, and [] are all falsey
+
+
+
+
+
+
+JavaScript Closures
+	a closure is a package of a function along with its enclosing environment
+	
+	are important concept in JS
+	they offer ways to get many comflex things done(e.g access modifiers)	
+	JS framework such as JQuery and Node.js are built on top of closures
+	
+Closure variable - access inside the closure
+
+Closure variable supersede those in any outer (or global) scopes
+
+
+
+
+Prototype in JavaScript
+Object- is a set of key-value pairs, where the values can also be functions
+
+
+CONCLUSION:
+	
+
+Which of these statements about JavaScript closures is TRUE?
+	It includes a function along with its enclosing environment
+
+
+
+Which of these statements about JavaScript is FALSE?
+	It is incompatible with most browsers
+
+	
+ At what point do global variables in a JavaScript source file cease to exist?
+	When the page linked to the JavaScript unloads
+
+
+Which of the following array functions can be invoked to create a deep copy?
+	slice()
+
+
+Which of these best describes the relationship between JavaScript and the Document Object Model (DOM) for a web page?
+	JavaScript can manipulate the DOM
+
+	
+Which of these data types in JavaScript, when passed as function arguments, are passed by reference?
+	Objects
+
+
+Given an object constructor called “Vehicle”, which of these lines will set a function “getCurrentValue” as a prototype for it?
+	Vehicle.prototype.getCurrentValue: function(){…};
+
+
+Which of these represents a “truthy” value in JavaScript?
+	25
+
+____________________________________________________________________________________________________________________
+
+JavaScript: Getting Started with JavaScript Programming
+
+A Hello World App in JS
+
+
+
+____________________________________________________________________________________________________________________
+
+API Development: Introduction to APIs
+
+
+Match the API type to its most appropriate definition.
+
+Typically, these APIs are associated with paid services and are available to partners or developers
+Partner APIs
+
+
+These APIs are developed in-house and are largely used to integrate systems together
+Private APIs
+
+
+The batch file of APIs; these APIs have improved performance and speedier execution
+Composite APIs
+
+
+These are publicly available APIs with no restriction; requires the use of an OAuth header
+Open APIs
+
+
+
+ What are the most popular types of public APIs?
+Travel related APIs
+Weather data APIs
+Chatbot APIs
+
+
+
+What are the characteristics of a good API and their importance in a successful deployment and user experience?
+The API should support JSON and REST
+Authorization should be available via the OAuth Open standard
+The API should have good documentation including examples and tutorials
+
+
+
+What are important skills that a developer needs to create APIs?
+Complete understanding of the software development stack
+Strong software development skills
+Able to document and present information
+
+
+
+Even though most public API offerings provide some form of free tier, developers will still need to create and account and sign in. To make APIs calls, what do they need?
+API Key
+
+
+
+Which modern API trend is focused on developers as end-users and aims to creates an easy to use, empathy-based experience for them?
+Developer Experience (DX)
+
+
+What are the common issues and mistakes that a developer can potentially make when developing their API?
+Sending invalid authorization credentials
+Calling an API using HTTP instead of HTTPS
+Not specifying Content-Type or Headers
+
+
+
+In this model of cloud, not only is the hardware handled for you, but the databases (where all your data is) and the middleware (the plumbing that makes everything work) are provided as well. You just provide the application and data you want to be on the platform. This is useful both for development and for deploying custom-built applications that you cannot buy from someone else. What model is this?
+Platform as a Service (PaaS)
+
+
+
+How are APIs beneficial to organizations who adopt and implement them?
+Extending your applications functionality to the web via an API will allow for more efficient customer and vendor engagement
+
+Creating an API for your organization that is used heavily amongst developers will put your organization at a strategic advantage
+
+APIs can integrate many of the organization’s various software applications which will allow for increased efficiency
+
+
+
+
+
+Match the below term with its appropriate definition below.
+The process of testing other components of the API such as network performance
+Non-functional testing
+
+Different environments used for deploying our APIs; can be ‘development’, ‘test’, or ‘production’
+Deployment stage
+
+
+The act of testing multiple functions of the API and testing it as it would be used by an end user
+Functional testing
+
+The course of action or set of decisions used to determine the APIs function and keys to success
+Business strategy
+
+The process of retiring and removing old APIs due to loss of usability or security concerns
+API deprecation
+
+
+
+
+ What is needed to be displayed on a use case diagram to indicate a direct relationship between multiple use cases and to show that the behavior of the included use case is added to the behavior of the base use case?
+<<include>>
+
+
+Match the use case components to their characteristics
+What we expect the system will return when the use case is over
+Post-Condition
+
+
+
+Is the actual process and the steps needed to be taken to reach the goal
+System
+
+
+The user or users that will be using the system and interacting with the process
+Actor
+
+
+Is a successful and positive result from the process that delivers the expected outcome
+Goal
+
+
+Anyone having a vested interest in the success of a use case
+Stakeholder
+
+
+What needs to happen for the scenario in this use case to happen
+Triggers
+
+
+____________________________________________________________________________________________________________________
+
+API Development: Framework Security
+
+
+What Python framework can also be used as a production WSGI server for other frameworks?
+CherryPy
+
+What is the underlying format of the security assessment markup language?
+XML
+
+Match the programming language with its framework.
+JavaScript ---- Express.js
+Java ---------- Spring Boot
+PHP ----------- Laravel
+Python -------- Django
+
+
+What is the parent project for the Lumen PHP framework?
+Laravel
+
+What authentication scheme does SOAP share with REST?
+Basic and digest authentication
+
+
+What major JavaScript framework is built on the MVC object pattern?
+Sails
+
+
+ In what file are compiler dependencies typically specified for a Java REST API project?
+pom.xml
+
+
+ Where is the endpoint method code defined for a .Net API?
+Controller
+
+
+What protocol does REST rely on?
+HTTP
+
+
+What type of framework is the Hibernate project?
+ORM
+
+
+Given a fresh PHP framework, what command is typically needed to pull in dependencies before running the application?
+composer install
+
+
+
+Match the HTTP status code range with its function.
+3XX ------------ Redirection
+4XX ------------ Client error
+2XX ------------ Success
+5XX ------------ Server error
+
+
+
+Final Exam: Web Programmer
+
+ In JavaScript, you need to create a new instance of an object. Which of the following will help you achieve this goal?
+-object constructors
+
+
+In JavaScript, what is the purpose of using this keyword?
+-To reference an object's own property from inside an object
+
+
+In a JavaScript file, you have the following code:
+
+
+01 console .log ("Rounded value of 3.2: ", Math.round (3.2) );.
+02 console .log ("Rounded value of 3.8: ", Math.round (3.8) );.
+03 console .log ("Rounded value of 3.5: ", Math.round (3.5) );
+
+Which of the following are likely to be the output of these statements?
+-3, 4, 4
+
+
+Which scripting language has the ability to modify the elements that are rendered on a page?
+-JavaScript
+
+
+You have the following code in JavaScript:
+
+
+01 “use strict”;
+02
+03 let funcBody = prompt(“Enter the body of your function: “);
+04
+05 let weightedScore = new Function(“verbalScore”, “mathScore”, funcBody);
+06
+
+What will be the outcome of the code on line 5?
+-The function body will be stored as a string in the funcBody variable
+
+
+
+Which of the following accesses the document when a Web browser renders an HTML page and converts it into this document object model (DOM)?
+-JavaScript
+
+
+
+In JavaScript, which of the following represents the logical AND operation?
+-&&
+
+
+
+You have the following JavaScript code:
+
+
+01 “use strict”;
+02
+03 function Car(make, model, price, engine) {
+04
+05 this.make = make;
+06 this.model = model;
+07 this.price = price;
+08 this.engine = engine;
+09 }
+10
+11 let s60Engine = {
+12 cylinders: 4,
+13 displacement: 2000,
+14 horsepower: 250
+15 }
+16
+17 let myCar = new Car(“Volvo, “S60”, 42000, s60Engine);
+18
+
+Which of the following is being created in line 17?
+-Object constructors
+
+
+To which of the following can you assign a variable that you have declared using var?
+-Any type of variable
+
+
+
+
+Consider the following given code:
+
+
+01 “use strict”;
+02
+03
+04 let str_double_quotes = “JavaScript”;
+05 let str_single_quotes = ‘programming language’:
+06
+07 console.log(“Welcome tp “ + str_double_quotes );
+08 console.log(“It is a “ + str_single_quotes);
+09
+
+Where will the output of the given code be displayed?
+-Console
+
+
+
+Which type of syntax uses three dots used to represent a variable?
+-Spread syntax
+
+
+
+Consider the following code:
+
+
+01 “use strict”;
+02
+03 function Vehicle(type){
+04 this.type = type;
+05
+06 this.printDetails = () => {
+07 console.log(“The type of this vehicle is “, this.type)
+08 }
+09 }
+10
+11 function Car(make, model, drivenWheels){
+12 this.make = make;
+13 this.model = model;
+14 this.drivenWheels = drivenWheels;
+15
+16 this.printDetails = () => {
+17 console.log(“This %s is a %s %s.”, this.type, this.make, this.model);
+18 }
+19 }
+
+Which of the following feature of JavaScript is being implemented?
+-Inheritance
+
+
+When a JavaScript enabled Website is loaded in a Web browser, which of the following is responsible for rendering the Webpages?
+-Web browser
+
+
+In a JavaScript code, you are using the document.getElementById function. What purpose this function will serve?
+-Will define the identifier for the element that you need to retrieve
+
+
+
+When working with arrays in JavaScript, which of the following statements are true? [Choose all that apply.]
+-You can create gaps of undefined values
+-The length of the arrays is not fixed
+
+
+Which scripting language serves the skin of a Webpage?
+-CSS
+
+
+Which statements are correct regarding the JavaScript arrays? [Choose all that apply.]
+-Arrays in JavaScript can be heterogeneous
+-There is a sequence of the elements in the JavaScript array
+
+
+You have the following JavaScript code:
+
+
+01 “use strict”;
+02
+03 let addition = function(a, b) {
+04 return a*b;
+05 }
+
+On line 3, what is the significance of the word addition?
+-It is defined as a variable
+
+
+Which of the following is responsible for implementing inheritance in JavaScript?
+-Prototype
+
+
+
+What will be the outcome when the code on line 4 is executed?
+
+
+01 "use strict";
+02
+03 let prices = new Array(10, 20, 36, 40, 47);
+04 let newprices = prices;
+
+-A shallow copy of the array is created
+
+
+
+
+You have the following JavaScript code:
+
+
+01 function validateForm() {
+02
+03 var uname = document.forms["myForm"]["uname"].value;
+04
+05 var age = document.forms["myForm"]["age"].value;
+06
+07 var residentStatus = document.forms["myForm"]["residency"] .value;
+08
+09 var accountType = document.querySelectorAll('input[name=acctype]:checked');
+10
+11 var nationality = document.forms["myForm"]["nationality"].value;
+12
+13 }
+
+What is the role of document.forms in this function?
+-To access the elements within an HTML page
+
+
+
+
+You have the following JavaScript code:
+
+
+01 “use strict”;
+02
+03 const myCar = {
+04
+05 make: “Volvo”,
+06 model: “S60”,
+07 price: 42000,
+08 color: “Grey”,
+09
+10 seats: {
+11 material: “Leather”,
+12 color: “Brown”
+13 }
+14 }
+15
+16 var samsCar = Object.create(myCar);
+17
+
+What will be the outcome with the execution of line 16 in the given code?
+-It will create a new copy of myCar
+
+
+
+In JavaScript, which of the following methods can be used to pass arguments into functions? [Choose all that apply.]
+-By value
+-By reference
+
+
+
+You are writing the JavaScript code. You need to write two functions and invoke one function by passing a second function as an argument. You want the second function to be invoked after the operations performed within the first function.
+
+To be able to achieve this goal, which of the following method should you use?
+-Function callback
+
+
+
+You have written the following code:
+
+
+01
+02 function counter () {
+03
+04 let count = 0;
+05
+06 function incrementCount() {
+07
+08 return count += 1;
+09 }
+10 }
+
+What will be the outcome of this function when it is executed?
+-It will increment the value by 1
+
+
+
+In JavaScript, which of the following keywords can you use to declare variables? [Choose all that apply.]
+-Let
+-CONST
+-Var
+
+
+
+If you alter some text in a textbox, which of the following has taken place in JavaScript?
+-Events
+
+
+When referring to closures in JavaScript, which of the following statements are true about the scope of variables? [Choose all that apply.]
+-The nested functions can also access variables inside the functions
+-The nested functions can also access variables declared within a closure scope
+
+
+
+
+In the given code:
+
+
+01 “use strict”;
+02
+03 const myCar = {
+04
+05 make: “Volvo”,
+06 model: “560”,
+07 price: 42000,
+08 color: “Grey”,
+09
+10 seats: {
+11 material: “Leather”,
+12 color: “Brown”
+13 }
+14 }
+15
+16 var samsCar = Object.create(myCar);
+17
+18 samsCar.seats.color = “White”;
+19
+
+What will be the final outcome?
+-Both myCar and samsCar will have the seat color as white
+
+
+
+Which of the following step is performed next after HTML is loaded into the Web browser?
+-Its elements are rendered in a tree like structure
+
+
+
+When working in JavaScript, which of the following keyword is required to start a function?
+-Function
+
+
+
+You have set values of numLet, NumVar, and NUM_CONST as 10, 20, and 30 in the global scope. However, inside a function, the same variables have been set to values of 100, 200, and 300.
+
+What is likely to be the outcome when you load the file containing the code in the Web browser?
+-The value of the global variables will be displayed
+
+
+
+
+Consider the following code in a JavaScript file:
+
+
+01 “use strict”;
+02
+03
+04 var time = new Date();
+05 console.log(“Current time : \n”, time);
+06
+07 time = new Date(2019, 09, 10, 15, 21, 43);
+08 console.log(“Year, Month, Day, hour, min, sec :\n “, time);
+09
+
+What is the error in this given code?
+-Month defined on line 7 will generate an error
+
+
+
+
+In JavaScript, which of the following defines a set of key and value pairs?
+-Object
+
+
+
+Which of the following represent the absence of a value for a variable? [Choose all that apply.]
+-Undefined
+-Null
+
+
+
+
+You are expecting a particular line of code that may result in an error. You do not want JavaScript to handle this error. What should you do to proactively deal with the error if it occurs?
+-Use a try block
+
+
+
+In the given code, which of the following is being defined?
+
+
+01 "use strict";
+02
+03 let firstItem = {id: 1, name: "laptop", price: 500};
+
+-Object
+
+
+
+
+Which of the following purpose does AJAX fulfil when used?
+-Fetch data from the server in an asynchronous manner
+
+
+
+Which of the following event occurs when a user clicks on an element on a Webpage?
+-onClick
+
+
+
+Consider the following code:
+
+
+40
+41 function myFunction() {
+42 console.log(“’Hello’ will be displayed after 10 seconds….!”);
+43 setTimeout(function(){ document.write(“Hello”); }, 10000);
+44 }
+
+What is the purpose of using setTimeout function?
+-It will execute a function after the defined time
+
+
+
+
+You have written the following code in JavaScript:
+
+
+01 “use strict”;
+02
+03 function Patient(id, name, address, bloodGroup){
+04
+05 this.id = id;
+06 this,name = name;
+07
+08 var _address = address;
+09 var _bloodGroup = bloodGroup;
+10
+11 this.printDetails = function(){
+12 console.log(‘The patient details are:
+13 Patient ID: ${this.id}
+14 Name: ${this.name}
+15 Address: ${_address}
+16 Blood Group: ${_bloodGroup}’)
+17 }
+18 }
+
+Which type of variables are being used in printDetails function?
+-Private
+
+
+
+Which of the following statements is correct about variables in JavaScript?
+The scope of the variables is affected by closures
+
+
+
+
+Consider the following code:
+
+
+01 "use strict";
+02
+03 function mphToKmph(mph).
+04
+05 console.log("MPH value entered:", mph);
+06
+07 return 1.61 * mph;
+08 }
+09
+10 let speedlimit = mphToKmph(65);
+11 console.log("Speed limit in Km/h: ", speedLimit);
+
+What is the purpose of defining the value of 65 in line 10?
+-It is the input that is defined as the value for the speedlimit
+
+
+
+
+You want to remove an element from the DOM structure in a page. Which of the following step should you perform first?
+-Retrieve the element
+
+
+
+
+You have defined an object named thirdItem:
+
+
+01 thirdItem = {id: 3,
+02 name: "headphones",
+03 brand: "Sonical",
+04 price: 84,
+05 priceEUR() { return this.price * USD_EUR;}};
+06
+07 console.log ("Price for ES6 thirdItem in Euros: ", thirdItem.priceEUR());
+
+You want to modify it by adding a new property to it. Which of the following statement should you add for this purpose?
+-thirdItem.mfgCountry= "Canada"
+
+
+
+Consider the following code:
+
+
+01 window.onload = function(){
+02
+03 var incButton = document.getElementById(“incButton”);
+04 var incCount =0;
+05 }
+
+What is the role that the incCount variable is playing?
+-Keeps count of the number of times the increment button has been hit
+
+
+
+
+You have a user registration form in which you have several fields. In this form, you want to define minimum password length and have different rules for each of the fields in the form. You want the user inputs to be validated when the user fills in all the details in the form. The validation must take place before the form is submitted.
+
+What should you do to meet this goal?
+-Use JavaScript for field validation
+
+
+
+Which statement defines the scope of a global variable?
+-It exists as long as the Webpage is loaded in the Web browser
+
+
+
+Which of the following event occurs when a mouse is moved over an element on a Webpage?
+-onmouseenter
+
+
+
+When using JavaScript, when are the variables created?
+-As soon as the HTML page with associated JavaScript is loaded in the Web browser
+
+
+
+Consider the following code:
+
+
+01 a = 5;
+02 console.log("The value of a =",a);
+03 var a;
+
+Which of the following variable declaration method is being used in the given code?
+-Variable hoisting
+
+
+You need to retrieve one element and then retrieve its child elements. Which of the following methods can you use for this purpose? [Choose all that apply.]
+-getElementByID
+-getElementByTagName
+
+
+
+When a user hovers over certain elements in a Webpage, which of the following are these actions treated as?
+-Events
+
+
+
+
+You have the following JavaScript code:
+
+
+28 var hisCar = Object.assign({}, myCar);
+29
+30 hisCar.color = “Red”;
+31 hisCar.seats.color = “Neon Green”;
+32
+33 //console.log(“The effect of Object.assign():”);
+34 //console.log(“His car: “, hisCar);
+35 //console.log(“My car: “, myCar);
+36
+37 var herCar = {…myCar};
+38
+
+In the line 37, which of the following method is being used to create a copy of the given object?
+-Spread syntax
+
+
+
+In which of the cases will an array not have any child nodes?
+-When the array is empty
+
+
+
+Which type of operations in JavaScript are executed in the non-blocking manner? [Choose all that apply.]
+-Database queries
+-API calls
+
+
+
+You have a JavaScript code that contains the following statement:
+
+
+console.log (" 145e-4 = ", 145e-4);
+
+
+What will be the output of this statement?
+-0.0145
+
+
+
+
+
+Consider the following code:
+
+
+49 let empName = Jane Chang";
+50
+51 console.log ("Number of characters in empName is: " + empName.length);
+52 console.log ("Index of h is : " + empName.indexOf (" h " ));
+53 console.log (" ' Ch ' occurs at position : " + empName.search (" Ch " ));
+
+With both indexOf and search, what value will be returned if the substring is not found?
+-A value of minus will be returned
+
+
+
+
+Observe the given code that is given in an HTML file:
+
+
+01 <!DOCTYPE html>
+02
+03 <head>
+04
+05 <meta charset=”UTF-8”>
+06
+07 </head>
+08
+09 <body>
+10
+11 <h2>Accessing the DOM>/h2>
+12
+13 <p id = “numericsection”></p>
+14 <p id = “textsection”></p>
+15
+16 <script src=”AccessingDOM.js”> </script>
+17
+18 </body>
+19 </html>
+20
+
+What happens when the HTML page is loaded into the Web browser?
+-It is first translated into the document object model (DOM)
+
+
+
+Which of the following will you need to use to handle asynchronous code execution, and force some code execution to block, until that asynchronous code has run?
+-Promises
+
+
+____________________________________________________________________________________________________________________
+
+Final Exam: Programmer
+
+
+You are using a common database interface with two classes that need to perform logic for talking to a SQL database and an Oracle database, respectively. You, however, want the client can use that interface without knowing the type of database is being used. Which of the concept of object-oriented programming are you practicing in this scenario?
+-Polymorphism
+
+
+In Behavioral patterns, which of the following encapsulates an algorithm in a class?
+-Strategy
+
+
+Which of the following reasons can cause technical debt? [Choose all that apply.]
+-Poor requirement
+-Lack of documentation
+-Inadequate testing
+-Tight deadline
+
+
+
+Without using microservices in a traditional-styled application, which of the following problems are likely to happen? [Choose all that apply.]
+-A small change may require a major refactoring
+-Making a change in one spot can adversely affect another part of the application
+-Fixing one error can introduce more errors
+
+
+Which of the following are the characteristics of the stateless APIs? [Choose all that apply.]
+-Responses are independent
+-It is the fundamental aspect of the REST API
+-Information is stored locally
+
+
+
+Which of the following examples can be considered as the common use of Application Programming Interfaces (API)? [Choose all that apply.]
+-Performing a payment transaction on a mobile app
+-Retrieving the weather information on a mobile
+-Performing a user login on a server through a mobile app
+
+
+If you are using decoupled microservices with a cloud application and if one microservice fails, what is likely to be the outcome?
+-Other microservices will continue to work
+
+
+
+Which of the following type of testing should you perform to test the contracts of the individual microservices?
+-Acceptance testing
+
+
+Which of the following statements define the principle of SOLID Design? [Choose all that apply.]
+-Interface segregation principle states that a class should never be forced to implement an interface it does not    use
+-Single responsibility principle states that a class should have only one job
+-Liskov substitution principle states that a derived class should be substitutable for base classes
+
+
+
+
+When using the reusable code patterns, which of the following statements can be considered as concerns? [Choose all that apply.]
+-There can be a greater level of dependencies on the code libraries
+-Upgrading third-party libraries may require rework
+-Code libraries may not be fully tested
+-Insecure code can cause issues
+
+
+
+You write an automated test before any production code is written. What is likely to be the outcome when the test is run?
+-The automated test fails without the code
+
+
+
+Which of the following is the first step in the Behavior Driven Development (BDD)? [Choose all that apply.]
+-Select a small unit of work
+
+
+
+You have an API that is used by various customers. You are releasing a new API that provides important enhancements. You have ensured that the new version of the API will not break the customer application.
+Which type of version of the API are you releasing?
+-Minor
+
+
+
+Which of the following reasons are valid for using the mock frameworks? [Choose all that apply.]
+-They are useful for creating fake objects that have a state that is difficult to create
+-They are used as substitutes for real objects that return non-deterministic results
+
+
+
+You are creating a SOAP API in Visual Studio 2019. You have defined the contract on line 11. Once you define this, what is likely to happen if you change the contract?
+
+
+01 Directives
+07
+08 namespace SOAP_API
+09 {
+10
+11 [ServiceContract]
+12 public interface IRectangleService
+13 {
+14 #region Methods
+15
+16 [OperationContract]
+17 double GetArea(doble width, double height);
+18
+19 [OperationContract]
+20 double GetPerimeter(double width, double height);
+21
+22 #endregion
+23 }
+24 }
+
+-The API and callers will have to be recompiled
+
+
+
+
+When creating the unit tests, which of the following best practices should you follow? [Choose all that apply.]
+-Unit tests must be visible as soon as they are available
+-Unit tests must return the same result every time they are run.
+
+
+
+In the context of access control and authorization, which of the following security practices should you implement with the REST APIs? [Choose all that apply.]
+-Use the separation of privileges principle
+-Use complete mediation
+-Use fail-safe defaults
+-Use the least privileges model
+
+
+
+Which type of testing is offered by the Katalon API testing tool? [Choose all that apply.]
+-Regression testing
+-Error-detection testing
+-Load testing
+-Penetration testing
+
+
+
+Which type of Test-driven Development (TDD) design patterns help to avoid duplication and separate concepts?
+-Structural design patterns
+
+
+
+You need to access a database using multiple connections, which you know will take many system resources. You want to share a connection to the database even though you will be performing different operations.
+
+
+Which of the following design pattern should you use in this case?
+-Singleton
+
+
+
+
+Which of the following statements describe the importance of an Application Programming Interface (API)? [Choose all that apply.]
+-Allows the use of existing code
+-Provide an interface for the clients
+-Provides integration with other systems
+
+
+
+Which of the following statement describe a stub?
+-Are fake methods that can replace or override an existing method
+
+
+
+
+In SOAP, which of the following transfer protocols can be used? [Choose all that apply.]
+-SMTP
+-HTTP
+-FTP
+-TCP
+
+
+
+Which of the following statements are the goals of component-based development? [Choose all that apply.]
+-Using premade components saves development time and costs
+-High-quality component improve the overall quality of your software
+-Testing components increases fault detection in the system
+
+
+
+Which of the following statements are true for code refactoring? [Choose all that apply.]
+-It can help you clean your code
+-It makes your code more efficient and maintainable
+-It improves time management
+
+
+
+
+In the given code, as the SOLID Design principle, which of the following principle is violated?
+
+
+12
+13 private readonly double _radius;
+14 private readonly string _type;
+15 private readonly double _width;
+16
+17 #endregion
+18
+19 #region Initializers & Finalizers
+20
+21 public ShapeNotOpenClosed(double width, double radius, string type)
+22 {
+23 _width = width;
+24 _radius = radius;
+25 _type = type;
+26 }
+27
+28 #endregion
+29
+30 #region Methods
+31
+32 public double GetArea()
+33 {
+34 switch (_type)
+35 {
+36 case “square”:
+37 return Math.Pow(_width, 2);
+38 case “circle”:
+39 return Math.PI * Math.Pow(_radius, 2);
+40 }
+41
+42 return 0;
+43 }
+
+-Open closed principle
+
+
+
+
+You need to create a visual of a use case. Which of the following programming language can be used for this purpose?
+-UML
+
+
+
+Which of the following characteristics belong to the Test Driven Development (TDD)?
+-Tests small pieces of functionality in isolation
+
+
+
+Which type of Creational Design pattern lets you create instances of related objects without specifying their concrete classes?
+-Abstract Factory
+
+
+
+
+In the given code, as the SOLID Design principle, which of the following principle is violated?
+
+
+08 namespace Single_Responsibility_Principle
+09 {
+10 public class WidgetRepository
+11 {
+12 #region Fields
+13
+14 private readonly ICollection<Widget> widgets;
+15
+16 #endregion
+17
+18 #region Methods
+19
+20 public void AddWidget(Widget widget)
+21 {
+22 _widgets.Add(widget);
+23 }
+24
+25 public void ChangeWidgetName(Widget widget, string newname)
+26 {
+27 widget.Name = newname;
+28 }
+29
+30 public Widget CreateWidget(string name) => new Widget {Name = name};
+31
+32 public Widget GetWidgetByName(string name)
+33 {
+34 return _widgets.FirstOrDefault(x => x.Name == name);
+35 }
+36
+37 public void RemoveWidget(Widget widget)
+38 {
+39 _widgets.Remove(widget);
+40 }
+
+-Single responsibility principle
+
+
+
+
+Which of the following type of testing is not impacted by code refactoring?
+-Unit testing
+
+
+
+Which of the software refactoring method is most useful when you have a large amount of refactoring to do?
+-Abstraction
+
+
+
+In the Test First development process, which of the following step should be performed first?
+-The developer writes the tests
+
+
+
+
+
+You have the following code in Spring Boot:
+
+
+15 <description>Demo project for Spring Boot</description>
+16
+17 <properties>
+18 <java.version>1.8</java.version>
+19 </properties>
+20
+21 <dependencies>
+22 <dependency>
+23 <groupId>org.springframework.boot</groupId>
+24 <artifactId>spring-boot-starter-web-services</artifactId>
+25 </dependency>
+26
+27 <dependency>
+28 <groupId>org.springframework.boot</groupId>
+29 <artifactId>spring-boot-starter-data-jpa</artifactId>
+30 </dependency>
+31
+32 <dependency>
+33 <groupId>com.h2database</groupId>
+34 <artifactId>h2</artifactId>
+35 <scope>runtime</scope>
+36 </dependency>
+37
+38 <dependency>
+39 <groupId>org.springframework.boot</groupId>
+40 <artifactId>spring-boot-starter-test</artifactId>
+41 <scope>test</scope>
+42 </dependency>
+43 </dependencies>
+44
+45 <build>
+
+Which of the following layer is being worked up in Spring Boot?
+-Application layer
+
+
+
+Which of the following statement describes the business use cases
+-Describe the steps that need to be taken to see positive results
+
+
+
+
+
+Consider a scenario in which you have created several conditions that check the validity of each parameter in a given piece of code. Using several conditions has added complexity to the code.
+
+
+Which of the following method should you use to remove the complexity?
+-Consolidate the conditions into a single expression
+
+
+
+Which of the following application is likely to use the offset pagination?
+-SQL database
+
+
+Which of the following two layers are connected with a database API?
+-Application and data layers
+
+
+
+Which layers are included in the multi-tier software architecture? [Choose all that apply.]
+-Application layer
+-Presentation layer
+-Data layer
+
+
+
+In the Test Last Development (TLD), at which stage of the software development are the tests written?
+-After complete code is written
+
+
+
+Which of the following are the features of the Acceptance Test-driven Development (ATDD)? [Choose all that apply.]
+-It focuses on capturing system requirements
+-Tests are written in plain and simple English
+
+
+
+When creating the user stories, which of the following best practices must be considered? [Choose all that apply.]
+-The users who will use the product must be identified before writing the user stories
+-Written user stories should be clear and precise and should be written in an active voice
+-Personas should be created to represent groups of users with defined characteristic and behavior
+-User stories need to be created collaboratively with the product owner and the team
+
+
+
+Which of the following statements describe the importance of code refactoring? [Choose all that apply.]
+-Improved maintenance
+-Increased reusability
+
+
+
+
+Which of the following is the first step in the Test Drive Development (ADD) API Design process?
+-Tests are written based on scenarios and required functionality
+
+
+
+Of the given choices, which of the following uses the batch operations rather than bulk operations on its resources?
+-Facebook
+
+
+
+In the test-driven development, at which stage of the software development are the tests written?
+-Before the code is written
+
+
+
+
+Which of the following tool can you use for the Behavior Driven Development?
+-Cucumber
+
+
+
+When working with the user stories, which of the following considerations should be kept in mind? [Choose all that apply.]
+-Each user story must be considered as a step in a larger process
+-Feedback from the users can capture the problem in their words
+-User stories that take weeks or months should be clubbed into an epic
+
+
+
+In the API Lifecycle Management process, after you plan the API business strategy, which of the following step should you perform next?
+-Design and develop the API services
+
+
+
+When using the reusable code, which of the following best practices should you follow? [Choose all that apply.]
+-Code should be written with high cohesion
+-Code should be modular in design
+-Unit tests should be created for each class and method
+
+
+
+Which of the following statements describe the common issues with the Application Programming Interface (API)? [Choose all that apply.]
+-Calling an API method using HTTP instead of HTTPS
+-Providing incorrect authentication credentials
+-Passing incorrect content type or header
+-Returning invalid content types when an error occurs
+
+
+
+Which of the following considerations should be used when using Test Driven Development (TDD) for microservices? [Choose all that apply.]
+-Creating libraries will be time-consuming and resource extensive
+-The environment should be ready to use TDD
+-Testing will be more efficient with the reusable code
+-Tested libraries can be used as a benchmark when creating new microservices
+
+
+
+In which of the following situations should you avoid code refactoring? [Choose all that apply.]
+-When there is a time constraint in developing an application
+-When you are revamping or re-engineering an application
+
+
+
+In an API, which of the following is the recipient of the resources sent by the endpoint?
+-Web browser
+
+
+
+Which of the following are back-end REST API development frameworks? [Choose all that apply.]
+-Express.js
+-Laravel
+-Spring Boot
+-Django
+
+
+
+In the user story mapping process, you have captured the customer’s problem that needs to be solved. What should be your next step to proceed in the user story mapping process?
+-Identify the audience for the product
+
+
+
+In an API, you are using the static string method for authentication. Which type of attacks can take place with this method? [Choose all that apply.]
+-Eavesdropping
+-Man-in-the-middle (MITM)
+
+
+
+
+In Visual Studio Code, you have executed the following command in the terminal window:
+
+
+dotnet new webapi -o weatherapi
+
+
+A folder named weatherapi is created with several files. One of the files contains the following code:
+
+
+09
+10 namespace weatherapi
+11 {
+12 public class Program
+13 {
+14 public static void Main(string[] args)
+15 {
+16 CreateHostBuilder(args).Build().Run();
+17 }
+18
+19 public static IHostBuilder CreateHostBuilder(string[] args) =>
+20 Host.CreateDefaultBuilder(args)
+21 .ConfigureWebHostDefaults(webBuilder =>
+22 {
+23 webBuilder.UseStartup<Startup>();
+24 });
+25 }
+26 }
+27
+
+Which of the file that serves as the main entry point into the application?
+-Program.cs
+
+
+
+
+Which type of Structural design pattern separates an object's interface from its implementation?
+-Bridge
+
+
+
+In the context of the security, which of the following advantages does SOAP have over the REST APIs? [Choose all that apply.]
+-It has WS-Security along with Secure Socket Layer (SSL)
+-It has built-in error handling
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,581 @@
+
+
+Defensive Coding Fundamental for C/C++
+
+
+Potential Software Risks in C/C++
+
+Potential for:
+	Bad data
+	Poor error handling
+	Usability issues
+	Poor runtime perfomance
+	Security vulnerabilities
+
+Why do risk exist in C/C++?
+
+	Program often rely on external data
+		User, databases, web services can all provide "bad" data
+	Often  a failure to account for and handle errors properly
+	Failure to implement proper software design 
+		Time and budget constraints
+
+
+
+Defensive Coding in C/C++
+
+Also referred to as "secure" coding
+Attempts to ensure that software still functions under adverse or unforseen circumstances
+Assumes mistakes will be made
+	Tries to prevent them and plan for them
+	Make sure that errors are visible so the can be detected and dealt with
+
+
+
+Strategies for Defensive Programming
+	Be wary of input
+	Plan for success
+	Stop errors before they happen
+	Develop clean code
+	Test early and test often
+
+
+Preventive Planning in C/C++
+	Proper desing can prevent many potential problems 
+		Iterative design	
+		Use pseudo code before actually writing code
+		Avoid using code prone to vulnerabilities
+		Utilize test cases where possible
+		Perform low level design inspections
+		Uses proper error handling techniques
+
+
+
+Employing Iterative Design for C/C++
+
+	Iterative Design
+		A cyclic process
+		Involves prototyping
+		Several models
+
+	Typical Process
+		Complete and initial Design
+		Present the Design to sevaral test users
+		Note any problems	
+		Correct issues
+		Repeat until all issues are addressed
+
+
+
+Assertion in C/C++
+Pre and Post Condition in C/C++
+
+Pre-condition- is a statement or set of statement that outline some condition that should be true or series of 		condition that should be true when the operation is called.
+Post-condition- is  a statement or statements describing what will be true when the operation is done.
+
+
+
+Low-Level Design Inspection for C/C++
+
+	Inspections	
+		Remove problems at a reduces cost
+			Cheaper to fix now than later
+		Do not prevent problems from happening
+			Get rid of them as they occur
+		Provide value regardless of language or development methodology
+		Effective and efficient
+
+
+
+Introduction to Testing for C/C++
+
+	Need software to be dependable
+	Testing lets us asses its robustness
+	Prevent problems before deployment
+	Budget for testing until roll out
+		Failure to test more costly
+	Write testable code
+	Unit Testing
+
+
+					Test Process
+	Test Planning ---> Test Analysis ---> Test Design ---> Construction & Verification ---> Test Cycle ---> Final Testing ---> Post Implementation
+
+
+
+Writing Testable Code for C/C++
+	Test-driven development
+	An object should do exactly one thing
+	Interface Segregation Principle
+	Constructor should not do more than initialize
+	Readable
+
+Bad Signs
+	Object not fully initialized after the constructor finishes
+	Anything more than field assignment in constructors
+	Static fields or static methods
+
+
+Unit Test for C/C++
+	Unit Testing
+		Tests to see if code what it is supposed to do
+		Test functionality to discover discrete testable behaviors
+			Test these as individual units
+		Test the behavior and report the results
+
+	Testing Tools Include
+		Google Test
+			Open Source testing tools from google
+		Boost Test Library
+			Provides Boost Test Library Unit Test Framework
+		CppUnit
+			Port of Junit Testing framework
+		Variety of open source testing tool exist
+
+
+CONCLUSION:
+	
+
+Which of the following could potentially cause your program to crash?
+	- Bad Data
+	- Poor Error handling
+	- Security Vulnerabilities
+
+
+When writing testable code, which element should have no functionality beyond possible data validation?
+	- The interface
+
+
+What is defensive programming also referred to as?
+	- Secure Coding
+
+
+What type of design gets other developers, stakeholders, and end users to comment on it?
+	- Iterative Design
+
+Which of the following is not considered as an example of clean code?
+	- Color Coding
+
+Which of the following statements describes the condition that will be true when the operation has completed its task?
+	- Post-condition
+
+
+Rank in order the process you would follow when developing a test plan using a low-level design inspection for C/C++.
+	- Test Plan
+	- Document Inpsection
+	- Test Implementation
+	- Code Inspection
+	- Test
+
+Which of the following is the most common reason that risks exists in C/C++?
+	- Bad Data
+
+
+Which of the following is used to ensure if the condition is true, to continue the rest of the code, if it is false, the function will not execute beyond that point?
+	- Assertion
+
+
+Sequence the steps throughout the test process.
+	- Test Planning
+	- Test analysis
+	- Test Design
+	- Construction and Verification
+	- Test cycle
+	- Final Testing
+
+
+Sequence the typical process of iterative design.
+	- Complete an initial design
+	- Present the  design to several test users
+	- Note any problems
+	- Correct issues
+	- Repeat until all issues are addressed
+
+
+Which of the following techniques can allow you to write code quicker because you are able to think through the process before writing out your code?
+	- Pseudocode
+
+
+Which of the following unit testing tools is a part of the Junit testing framework?
+	- CppUnit
+
+____________________________________________________________________________________________________________________
+
+Defendable Code and Errors
+
+Defensible Methods in C/C++
+
+Method Parameters and Return Values in C/C++
+Variable in C/C++
+If and Switch Statements in C/C++
+Error Handling in C/C++
+
+	Errors
+		Comes from a variety of sources
+		Sources of many bugs
+		Can often cause program to stop
+			Knock on effect of slowing down project development
+
+	Defensive Error Handling
+		Utilize exceptions
+		Errors code and messages
+		Global objects
+		Handle error locally
+		
+	
+Utilizing Exceptions in C/C++
+Error Codes and Messages in C/C++
+Error Processing and Global Objects in C/C++
+Handling Errors Locally in C/C++
+Anticipating Errors in C/C++
+
+
+Exercise:
+
+
+#include <stdio.h>
+#include <iostream>
+#include <exception>
+
+using namespace std;
+
+class bank
+{
+protected:
+	float balance;
+public:
+        bank()
+	{
+	 //constructor only initializes fields
+	balance = 1234.55f;
+	}
+	void menu()
+	{
+		try
+		{
+		   //use default values
+		   int menuchoice=0;
+		   float amount=0;
+                              //This first section simply displays the users choices then
+		   //prompts the user to make a selection.
+		  std: :cout << "1. Withdraw Money \n";
+		  std: :cout << "2. Deposit Money \n";
+		  std: :cout << "3. Check Balance \n";
+		  std: :cout << "4. Exit \n";
+		  std: :cout << " \n Please enter the number of your selection \n";
+		
+		  std: :cin >> menuchoice;
+
+		  //first validate the input
+		 //check for integer option one
+ 		 if (std: :cin.fail())
+		 {
+			std: : cout<< "Invalid input, please enter an integer";
+			menu();
+		 }	
+		
+		//check for integer option 2
+		if(!isdigit(menuchoice))
+		{
+			std: :cout<< "Invalid input, please enter an integer";
+			menu();
+		}
+
+
+		//This next section uses a switch case statement to determine the course of action
+		//Based on what the user choose.
+
+
+		switch (menuchoice)
+		{
+		
+		case 1: //withdraw
+			std: :cout << "How much would you like to withdraw \n";
+			std: :cin >> amount;
+			cout<< "New balance is: "<< withdraw(amount);
+			break;
+		case 2: //deposit
+			std: :cout << "How much would you like to deposit \n";
+			std: :cin >> amount;
+			cout<< "New balance is: " << deposit(amount);
+			 break;
+		case 3:// Check balance
+			std: :cout << "Balance is: " << check_balance();
+			break;
+		case 4: //exit
+			return;
+		default:
+			std: :cout << "Sorry, that was not a valid entry, Please try again \n";
+			menu(); //it redisplay the menu
+		} //end of switch
+		
+		
+		menu();//redisplay, the menu
+	}
+	catch (int e)
+	{
+		cout << "An exception occured. Exception Number: " <<e << '\n';
+	}// end of the function
+
+
+CONCLUSION:
+
+With defensive programming, what should you do when error handling in C/C++?
+	Handle error code and messages
+	Handle errors locally
+	Utilize exceptions
+
+
+Which rule specifies that if you are creating a banking program that you should choose banking terminology?
+	Program in the vocabulary of the problem domain
+
+
+Which of the following variables would you use if the files are likely to be large with a large number of bytes?
+	long
+
+
+How do you exit an application if you have exception handling in the main() function?
+	return(0)
+	exit(0)
+	abort(0)
+
+What do you use if you wish to pass a constant into a function as opposed to using a global constant value and you want to ensure that the value does not get changed?
+	const
+
+
+Which of the following are examples of errors that C++ won't catch?
+	Uninitialized variables
+	= or ==
+	division by zero
+
+
+What type of error compiles, runs, and behaves normally, but produces the incorrect result?
+	logic
+
+At which level does defensive programming advocates exception handling?
+	local
+
+What is the major difference between an if statement and switch case ?
+	default
+ 
+____________________________________________________________________________________________________________________
+
+
+Potential UI Application Risk in C/C++
+	Potential Risks
+		Bad Data
+		Poor error handling
+		Usability issues
+		Poor runtime performance
+		Security vulnerabilities
+
+Buffer Overflow is C/C++ Applications
+	Buffer overflows:
+		Attackers injects too much data and ties up memory
+		Attackers hijacks machine and injects malicious code
+		Preventable, but common in many languages:
+			-C and C++ most common
+		Need to check user input before processing
+
+	How to manage:
+		Be very careful in memory management
+		Always use the 'sizeof' operator
+		Pointer should be used sparingly and carefully
+
+
+Preventing Buffer Overflow in C/C++
+Code Injection Attacks in C/C++
+	
+	Malicious users "inject" code
+		Attackers look for bugs or vulnerabilities and exploit it
+		Overwrite "interesting" memory locations
+		Copy code in binary form into memory of a program
+		Use vulnerabilities in program to execute injected code
+
+	Typical Code Injection Attacks
+		Heap-based buffer Overflow
+		Off by one errors
+		Dangling Pointer references
+
+
+Mitigating Code Injection Attacks in C/C++
+	Command Injection
+		Define what dangerous input is
+		Define what valid input is
+		Make sure to check strings and other data
+			-E.g. Integers
+		Don't trust any users input without checking
+
+
+Format String Attacks in C/C++
+
+Preventing DLL Highjacking in C/C++ Applications
+	Windows has a searach path for DLLs
+	The attackers discoveres what DLLs a program requests without an absolute path
+	The attacker places their hostile DLL higher up the search path so it'll found before the real DLL is found
+
+Stopping DLL Hijacking
+	Use absolute paths
+	Disable DLL loading from remote network shares
+	Create MD% Checksum of the DLL and hardcode the hash in the application
+	Use only signed DLL's 
+	Microsoft released a tool that blocks the loading of DLLs from remote directories
+	On client machines there are tools such ad DIIHijackAuditor
+
+
+____________________________________________________________________________________________________________________
+
+Pointer is simply a variable that points to another variable
+
+In C++, a smart pointer is implemented as a template class that mimics, by means of operator overloading, the behaviors of a traditional (raw) pointer, (e.g. Dereferencing, assignment) while providing additional memory management features. The shared_ptr type is a smart pointer in the C++ standards
+
+
+Secure Coding Practices for C/C++
+Top practices include:
+	Input validation
+	Pay attention to compiler warnings
+	Implement and enforcce security policies
+	Simplify design as much as possible
+		Complexity is not necessarily a good thing
+	Deny access by default
+		Only allow when needed, not the reverse
+
+
+	Least Privilege
+		Only give permissions necessary for the job
+		Bare minimum
+	Data sanitization
+		Clean the data before passing it around
+	Employ multiple defense strategies to mitigare risk
+		One may not be enough
+
+	Use threat modelling to identify and categorize potential risks
+	Implemting good QA practices
+	Define security requirements and adopt a secure coding guideline
+
+
+
+
+#include <iostream>
+#include <exception>
+
+using namespace std;
+
+class overloadexample
+{
+private:
+	int count;
+public:
+	overloadexample():count(10){ }
+	
+	int GetCount()
+	{
+		return count;
+	}
+	void SetCount(int value)
+	{
+		count = value;
+	}
+	void operator ++()
+	{
+		count= count * count;
+	}
+	void display()
+	{
+		cout<<"Count: "<<count;
+	}
+};
+	
+int main()
+{
+	try
+	{
+		float dataentry;
+		
+		cout << "Please enter a number \n";
+		cin >> dataentry;
+	
+		//old C style cast to Integer
+		int iNum = (int) dataentry;
+	
+		cout<< "The cast result is " << iNum;
+		
+		//static cast
+		//static_cast performs no runtime checks. This should be used if you know that you refer to an 			object of a specific type
+		float fNum2 + static_cast<float>(dataentry);
+		
+		cout<< "The static cast result is " << iNum;
+		char* dataentered;
+	
+		cout << "Please enter a number \n";
+		cin >> dataentered;
+
+		//reinterpret_cast is the ultimate cast, which diregards all kinds of types safety, allowing you to 				cast anything to anything else 
+
+		int e = reinterpret_cast<int>(dataentered);
+		overloadexample objOverload;
+		// using overloaded operator
+		++ objOverload;  /*Operator function void operator ++() is called */
+		objOverload.Display();
+		
+		return 0;
+	}
+	catch (int e)
+	{
+		cout << "An exception occurred. Exception Nr. " << e << \n;
+	}
+	
+}
+void dyn_cast_example()
+{
+	class B { };
+	class C : public B { };
+	class D : public C { };
+	D* prtD;
+
+	C* pc = dynamic_cast<C*>(ptrD);
+	B* pb = dynamic_cast<B*>(ptrD);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

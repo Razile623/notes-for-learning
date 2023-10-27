@@ -1,0 +1,839 @@
+Control Structures in C: Getting Started with Control Structures
+A control structure in C is any code construct that changes the flow of control, such as the order of execution in a program. The three main types of control structures in C are decision-making control structures, looping control structures, and unconditional control structures. Decision-making control structures include if-else blocks and switch statements. You will start this course by working with the if statement control structure. This checks whether a condition is satisfied or not, and returns an output based on that. You will then use the if-else-if ladder to create multiple conditions that will be checked in order. The code block associated with the first condition that is satisfied will be executed, and subsequent conditions will not even be checked. Finally, you will learn about the ternary operator, which makes use of the ? and : symbols to create an if-else block and store the result in a variable. Upon completion of this course, you'll be able to work with control structures to change the flow of execution of a C program, use if and else conditions, and employ the ternary operator in assignments and expressions
+Table of Contents
+    1. Video: Course Overview 
+
+    2. Video: Understanding C Control Structures 
+
+    3. Video: Using if Statements in C 
+
+    4. Video: Using Relational Operators with if Statements in C 
+
+    5. Video: Chaining Relational Operators with Logical Operators 
+
+    6. Video: Exploring Quirks of if Statements in C 
+
+    7. Video: Using if-else Conditional Blocks in C 
+
+    8. Video: Creating Nested if-else Blocks in C 
+
+    9. Video: Exploring Nested if Statements in C 
+
+    10. Video: Introducing the else-if Block in C 
+
+    11. Video: Using the if-else-if Ladder in C 
+
+    12. Video: Understanding the switch Statement in C 
+
+    13. Video: Running Code with the switch Statement in C 
+
+    14. Video: Using switch Statements for Various Situations in C 
+
+    15. Video: Exploring Nuances of switch Statements in C 
+
+    16. Video: Shortening if-else Blocks Using Ternary Operator 
+
+    17. Video: Course Summary 
+
+    Course File-based Resources
+
+1. Video: Course Overview 
+
+Objectives
+discover the key concepts covered in this courseTopic title: Course Overview 
+Hi and welcome to this course, getting started with control structures in C. My name is Vitthal Srinivasan and I will be your instructor for this course. A little bit about myself first. I did my master's from Stanford University and have worked at various companies including Google and Credit Suisse. I presently work for Loonycorn, a studio for high quality video content.
+
+Your host for this session is Vitthal Srinivasan. He is a software engineer and big data expert.
+
+A control structure in C is any code construct that changes the flow of control. That is, the order of execution in a program. The three main types of control structures in C are decision making control structures, such as if-else conditionals, looping control structures such as for loops, while loops, and do while loops. And finally, unconditional control structures which include keywords such as go to, break, continue, and return.
+
+You will start this course by working with the if statement control structure. This checks whether a condition is satisfied or not and returns an output based on that condition. You will use relational and logical operators to create predicates for an if statement. You will then use the if-else-if ladder. This is a way to create multiple conditions that will be checked in order. You will also use the switch statement which is a concise syntactic construct used to execute different blocks of code, based on the value of an expression that takes an int or char value. Finally, you will learn about the ternary operator, which makes use of the ? and : symbols to create an if-else block and store its result in a variable or expression. This uses 3 operands: The condition, the value if the condition evaluates to true, the value if the condition evaluates to false. By the time you finish this course, you will be able to understand the decision making control structures in C and will be ready to move on to the looping and unconditional control structures coming up ahead.
+
+2. Video: Understanding C Control Structures 
+
+Objectives
+outline three types of control structures used in the C language
+Topic title: Understanding C Control Structures. Your host for this session is Vitthal Srinivasan. 
+The order in which the statements of a program are executed constitutes the flow of control in the program and any type of statement which can alter the flow of control is known as a control structure. We are now going to talk about various control structures in the C programming language. There are many categories of control structures in programming languages, but for the purposes of our current conversation, let's focus on three. First of these are decision making constructs. These include if-else and switch constructs. The basic idea in each of these decision making constructs is that a condition is evaluated. And depending on what the result of that evaluation is, a different code path is chosen.
+
+Decision making constructs might revolve around a single choice of decision variable value such as an if construct or we could have many different code paths corresponding to many different outcomes, such as in a switch statement. Decision making constructs are a great way to alter the flow of program execution based on variables in your program. The next category that's what we're talking about is that of loops and iterative control structures. These include for loops, while loops, and do-while loops, and the distinguishing property of these control structures is that they cause some block of code to be executed a number of times iteratively. How often and under what conditions, well, that varies based on the specific control structure. A for loop, for instance, happens to have three important components.
+
+It has an initialization expression, a condition that's evaluated each time to decide whether to iterate over the for loop one more time, and then it has an update expression. Depending on the interplay of the initialization expression, the condition and the update expression, the program might execute the body of the for loop one more time. The third category of control structures that we wish to talk about here are unconditional control statements. These include break, continue, goto, and return. The exact semantics of these vary widely. For instance, the break statement can be used with a switch construct, which is a decision making control structure as well as with the iterative control structure, such as for, while, and do-while. Continue on the other hand, is almost exclusively associated with the iterative control structures.
+
+goto is in a category of its own, and its use is frowned upon in modern programming. return is actually associated with another kind of control structure, which we do not include in this conversation, which is the function. We are going to explore each of these categories in detail and let's start with the first, decision making constructs such as if-else and switch. Let's start with the most common of these, which is the if condition. A flow chart representing how the if construct works in C is visible
+
+A slide titled if Condition appears. An arrow emanates from the starting point and connects to a diamond-shaped box below it labeled Condition. A vertical arrow marked True pointing downward starts from the Condition box and connects to a rectangular box labeled if code. Another vertical arrow starts from the if code box and connects to a rectangular box labeled "After if". This arrow is also connected to an incoming arrow marked False which starts from the Condition diamond box. The last arrow emanates from the "After if" box and connects to the end-point.
+
+on screen now. This flow chart will also apply to the if construct in most C like languages including C++ and Java. In C, C++, and Java, the if construct includes the keyword if along with the condition. This condition is going to be a binary predicate, which means that it will be evaluated and will either return True or False. Now, C does not actually have an explicit type for True and False.
+
+Zero is treated as False and any non zero value is treated as True. So at runtime, when our program encounters an if condition, it will evaluate that condition and if that condition evaluates to any non zero value that's treated as True, the result of that is that the downward arrow in this flow chart will be followed. What then follows is something known as the if code or the if block. This if code or if block consists of one or more statements which are only going to be executed if the condition evaluated to True. And then after the if code has been executed, the bits of code which come after the if are, of course, going to be executed as usual. That does it for the case where the if condition evaluated to True. On the other hand, let's say that the if condition evaluated to False. In such a case, the if code is bypassed. As you can see, the solid arrow which leads out from the right is going to bypass the if code and go directly to the After if code.
+
+And so the if construct in C is a great way of checking whether a condition is satisfied, and if yes, making sure that some code is executed. In this slide, that code is referred to as the if code. One drawback of the if construct is that there is no way of specifying an alternate code that you would like to execute if the condition evaluates to False. And it's precisely to mitigate this weakness that C has something known as the if-else control structure.
+
+A slide titled if-else Condition appears. An arrow emanates from the starting point and connects to a diamond-shaped box below it labeled Condition. A vertical arrow marked True pointing downward starts from the diamond box and connects to a rectangular box labeled if code and an arrow marked False pointing to the right connects to a rectangular box labeled else code. Another vertical arrow starts from the if code box and connects to a rectangular box labeled "After if". This arrow is also connected to an incoming arrow which starts from the else code box. The last arrow emanates from the "After if" box and connects to the end-point. 
+
+The if-else control structure differs from the if, in that we now have two separate blocks of code, there's the if code block which is executed if the condition evaluates to True, and then there's the else code block which is executed only if the condition evaluates to False. The if code block and the else code block are mutually exclusive. There's no situation in which both of these are going to be executed.
+
+So at runtime, if our program encounters an if-else block, it will evaluate the condition. If that condition evaluates to True, it's the if code block that's going to be executed, and the else code block will be bypassed. On the other hand, let's say that that condition evaluated to False. Then it's the if block that would be bypassed and the else code block that would be executed. In either case, the After if block is going to be executed because both the if code block and the else code block lead in to this common path. And that's where the two code paths converge again after the condition's evaluation. Please again remember that C does not have built-in standard types corresponding to True and False. Any zero value is treated as False and any non zero value is treated as True. In particular, please remember that even negative non zero values are treated as True.
+
+3. Video: Using if Statements in C 
+
+Objectives
+demonstrate the use of basic if statements
+Topic title: Using if Statements in C. Your host for this session is Vitthal Srinivasan.
+Remember that a control structure is any construct in a programming language that alters the flow of program control. Let's go ahead and start with our first control structure, which is a conditional. As before, we will continue with writing out our code using the VS Code editor
+
+The Visual Studio Code window is open. The EXPLORER pane on the left displays a source file under the following folder: IF_CONDITIONS. The name of the source file is C if_conditions.c. 
+
+that you now see on screen and then running our code from a TERMINAL window which will be at the bottom of the screen. We compile our C code using clang
+
+The if_conditions.c source file appears in the editor pane. It displays multiple lines of code. The pane at the bottom displays the following tabs: PROBLEMS, OUTPUT, DEBUG CONSOLE, and TERMINAL. The TERMINAL tab is active.
+
+and then run it from right here within the TERMINAL. When we run ./a.out, we can see that the output consists of a single line.
+
+The following command displays: clang if_conditions.c.
+
+The condition if (1) evaluates to true. Now that we see the output, let's turn our attention back to the code
+
+He enters the following command in the Terminal pane: ./a.out. 
+
+that resulted in this output.
+
+We can see within our main function that on line 6, we have one if construct and then on line 10, we have another if construct.
+
+Line 1 reads: #include <stdlib.h>. Line 2 reads: # include<stdio.h>. Line 4 reads: int main(). Line 5 reads: {. Line 6 reads: if (0) {. Line 7 reads: printf("The condition if (0) evaluates to true\n");. Line 8 reads: }. Line 10 reads: if (1) {. Line 11 reads: printf("The condition if (1) evaluates to true\n");. Line 12 reads: }. Line 14 reads: return EXIT_SUCCESS;. Line 15 reads: }. 
+
+Each of these follows the basic outline. The keyword if, followed by a condition. This is enclosed within parentheses, and that condition is going to evaluate either to true or false. Now remember that C does not explicitly have true or false values. However, any zero value is going to be treated as false and any non zero value is going to be treated as true. So, here on line 6, the if condition evaluates the integer expression 0. Zero is, of course, a 0 value, and so that's treated as a false. And as a result, code present on line 7 is not executed. That's why down below, in the output, we do not see the printf statement.
+
+The condition if (0) evaluates to true. We don't see that statement because, of course, zero is not true. Then the if statement on line 10 is reached. Here, the condition that's evaluated is the integer expression 1. Any non zero expression is treated as true, 1 is non zero and that's treated as true and that's why the code inside the if block does get executed. And that in turn is why we have the printf statement displayed down below, The condition if (1) evaluates to true. A few points worth paying attention to here before we go any further. Notice, first off, how the condition must be enclosed within parentheses. That's done on both lines 6 and 10. Then notice also that the code expression that follows is enclosed within a pair of curly braces.
+
+These curly braces are not strictly essential if that code expression consists of just a single line of code. Now, even though here the code expression within the curly braces is just one statement. Using the curly braces is highly highly recommended, and that's because if in subsequent iterations of the code, another programmer or you yourself came in and added additional lines of code. In the absence of curly braces, only the first line would be treated as the conditional block. We'll have more to say on this in a bit. For now, do note that the curly braces enclose the if block code. Also note that 0 evaluates to false and 1 evaluates to true. Let's try with a different code snippet.
+
+On screen now is a very similar code snippet. We have multiple if conditionals, but this time there are three instead of two. On line 6, we test the condition if (1), on line 10,
+
+ He edits the existing commands. Line 6 now reads: if (1) {. Line 7 now reads: printf("The condition if (1) evaluates to true\n");. Line 8 now reads: }. Line 10 now reads: if (5) {. Line 11 now reads: printf("The condition if (5) evaluates to true\n");. Line 12 now reads: }. Line 14 now reads: if (-234) {. Line 15 now reads: printf("The condition if (-234) evaluates to true\n");. Line 16 now reads: }. 
+
+we test the condition if (5), and on line 14, the condition tested is if (-234). Before we run this code, let's stop and try and predict what the output is going to be. Remember that in C, any zero value is treated as false and any non zero value even a negative value is going to be evaluated as true. Here (1), (5 ), and (-234) are all non zero values and so they all evaluate to true and that's why when we compile our code and run it, we can see in the output down below that each one of these printf statements has been displayed.
+
+Each of the if blocks was executed and that's why the conditions if (1), if (5), and if (-234) all evaluate to true, as we can see in the output down below. We've now experimented with conditions that evaluate to integer values. These included zero, positive, and negative integer values. Let's now try with floating point values. On screen now, you can see that we once again have a simple program with three if constructs. This time, however, each one of those expressions evaluates to a floating
+
+ He edits the existing codes. Line 6 now reads: if (101.4567) {. Line 7 now reads: printf("The condition if (101.4567) evaluates to true\n");. Line 8 now reads: }. Line 10 now reads: if (-1.6789) {. Line 11 now reads: printf("The condition if (-1.6789) evaluates to true\n");. Line 12 now reads: }. Line 14 now reads: if (0.0) {. Line 15 now reads: printf("The condition if (0.0) evaluates to true\n");. Line 16 now reads: }. 
+
+point value. On line 6, it's a positive floating point value 101.4567. On line 10, it's a negative floating point value, -1.6789, and then on line 14, we try with the floating point value 0.0. Let's go ahead and compile this code. And this time we see that we have a couple of warnings.
+
+The warnings read, implicit conversion from 'double' to '_Bool' changes value. And then we can see that the values change from whatever was specified inside the if conditional to true. So on line 6, the value changes from 101.4567 to true, and on line 10, it changes from -1.6789 to true. These warnings give us a sneak peek as to what's happening when our code is compiled. Now, we had said a few moments ago that C does not have built-in types for Boolean values. How then do we account for the implicit conversion warning from 'double' to '_Bool'? Well, it turns out that this '_Bool' which is referenced on screen now, is a type that was added to the C language in the year 1999, and that version is known as C99.
+
+For reasons of backward compatibility, this is kept kind of under wraps. Without going into the exact details of the _Bool type, you should just know that such types do indeed exist in the C standard, as it now exists. However, it did not exist in the older versions of C until 1999, and that's why implicit conversions like this one are still allowed. If you're wondering why it's called _Bool with a capital B, that's because by 1999, the C++ language already had its own Boolean types, which had a different name. In any case, let's now move on and run this code, and when we do, we see that the behavior of this program is as we expected. The floating point expressions on lines 6 and 10 which are non zero, both evaluate to true and that's why the corresponding printf statements are executed and we can see them reflected in the screen down below.
+
+The if statement on line 14, which evaluates the floating point expression 0.0, evaluates to false and that's why we do not see the printf statement on line 15 of code reflected in the output. That gets us to the end of this little demo, in which we introduced the if construct. We saw how the expressions that are passed in as the conditionals to the if construct can be integers or floating point values. We saw how floating point values are implicitly converted to a Boolean type, and that Boolean type is called _Bool with an uppercase B.
+
+4. Video: Using Relational Operators with if Statements in C 
+
+Objectives
+demonstrate the use of relational operators with if statements
+Topic title: Using Relational Operators with if Statements in C. Your host for this session is Vitthal Srinivasan. 
+If you come to see with some programming experience in Python or Java or C++, you might find the absence of an explicit Boolean type a little disconcerting. In particular, you might find it odd that negative expressions are also treated as evaluating to true, but that's just one of the quirks of the C language. However, when it comes to relational operators, you should know that every expression involving relational operators, evaluates only to 0 or 1. In the program on screen now, you can see that we've declared and initialized a couple of variables, num_1 and num_2. On line 8, we also have a third variable called res.
+
+A source file named C if_conditions.c appears in the editor pane. It displays multiple lines of code. Line 1 reads: #include <stdlib.h>. Line 2 reads: # include<stdio.h>. Line 4 reads: int main(). Line 5 reads: {. Line 6 reads: int num_1 = 111;. Line 7 reads: int num_2 = 222;. 
+
+This has been declared but not yet initialized.
+
+Line 8 reads: int res;.
+
+Then in the lines that follow, we compare num_1 and num_2 using different relational operators and we store the results of these comparisons in the variable res and then we printout the value of res.
+
+Note that this program does not have any if statements,
+
+He highlights the following lines of code. Line 10 reads: res = num_1 == num_2;. Line 11 reads: printf("num_1 equal to num_2?: %d\n\n", res);. Line 13 reads: res = num_1 != num_2;. Line 14 reads: printf("num_1 not equal to num_2?: %d\n\n", res);. Line 16 reads: res = num_1 > num_2;. Line 17 reads: printf("num_1 greater than num_2?: %d\n\n", res);. Line 19 reads: res = num_1 < num_2;. Line 20 reads: printf("num_1 less than num_2?: %d\n\n", res);. Line 22 reads: res = num_1 >= num_2;. Line 23 reads: printf("num_1 greater than or equal to num_2?: %d\n\n", res);. Line 25 reads: res = num_1 <= num_2;. Line 26 reads: printf("num_1 less than or equal to num_2?: %d\n", res);. 
+
+it just prints out the value of res, when we compile and run our code, the interesting bit to note here is that res is always equal to either 0 or 1. If the relational comparison operator returns 0, that's going to be treated as a false value for the purposes of an if condition. And if it returns 1, that's going to be treated as a true value. For instance, on line 10, we make use of the == operator to test num_1 and num_2 for equality. These two numbers are not equal to each other, and that's where the == operator returns 0, and that's why the output of the first printf down below is 0. Then on line 13, we make use of the != operator to test the num_1 != num_2.
+
+This time the != operator evaluates to 1 which is treated as true in the context of an if. That in turn explains why the second line in the output num_1 not equal to num_2? is followed by the integer value 1. In similar fashion, if we scroll down through the code as well as through the output, we see that every relational operator returns either 0 or 1. Finally, also note that in every one of these printf statements, we printed out res using the placeholder or the format specifier %d. This tells us that res is an integer value, so the relational operators are returning integer values. However, those integer values can be treated as conditional values. Any zero integer value will be evaluated to false. Any non zero integer value where the positive or negative will evaluate to true. Let's go ahead and make use of these relational operators inside if blocks. On screen now, you can see that we have a series of if blocks.
+
+Each if block consists of the keyword if followed by an expression, that expression is enclosed within parentheses, then curly braces follow. Within those curly braces, we have a printf statement. On line 9, we make use of the double == relational operator. On line 13,
+
+ Line 9 reads: if (num_1 == num_2) {. Line 10 reads: printf("num_1 equal to num_2\n\n");.
+
+it's the != operator and in similar fashion, on lines 17,
+
+ Line 13 reads: if (num_1 != num_2) {. Line 14 reads: printf("num_1 not equal to num_2\n\n");. 
+
+21, 25, and 29, we test the greater than, less than, greater than or equal to and less than or equal to relational operators. Every one of these operators will always evaluate either to 1 or 0.
+
+Line 17 reads: if (num_1 > num_2) {. Line 21 reads: if (num_1 < num_2) {. Line 25 reads: if (num_1 >= num_2) {. Line 29 reads: if (num_1 <= num_2) {. 
+
+Let's compile and run our code, and in the output down below, we can see that every relational operator that evaluated to a 1, has been treated as true by our if statement and that's why the corresponding printf appears in the output down below. For instance, the first line in the output reads num_1 not equal to num_2, and that corresponds to the printf statement on line 14.
+
+The reason this particular printf statement was displayed in the output is because num_1 is indeed not equal to num_2. So the if condition on line 13 evaluated to 1 which was treated as a true. We can see that the printf on line 10 was not printed. We do not see in the output the line num_1 equal to num_2 and that tells us that the condition on line 9 evaluated to false. In that condition, made use of the == operator. Here, num_1 == num_2 returned 0 that was treated as a false, and that's why the corresponding printf was not executed. Next, let's interchange the values of num_1 and num_2. Let's change our code so that num_1 is now equal to 222 and num_2 is now equal to a 111. This will not change the output from the relational operators
+
+Line 6 now reads: int num_1 = 222;. Line 7 now reads: int num_2 = 111;.
+
+for equality and inequality, but it will change the output of the greater than and less than operators.
+
+We compile and run our code and we can now see that the output reads, num_1 not equal to num_2. num_1 greater than num_2, num_1 greater than or equal to num_2. By looking closely at the code we can see, that the only operators that evaluated to true, that is to 1, were the not equal to operator, the greater than operator, and the greater than or equal to operator. Let's try another little tweak where we now initialize both num_1 and num_2 to have the same value, that's 111. You can see that on screen now. This time when we run our code, the only operators that are going to evaluate
+
+Line 6 now reads: int num_1 = 111;. Line 7 reads: int num_2 = 111;.
+
+to true are going to be the equality and the greater than or equal to and the less than or equal to operators. As we can see from the output, num_1 is indeed equal to num_2, num_1 is greater than or equal to num_2, and likewise, num_1 is also less than or equal to num_2.
+
+We can see from this that every relational operator returns a value of either 0 or 1. Values of 0 are treated as false. Values of 1 are treated as true. By looking at the output, we can also see that the strict inequality operators as well as the != operator evaluated to false in this particular case, that is to be expected because the integer values of num_1 and num_2 are indeed equal. That gets us to the end of this demo, in which we saw how relational operators in C always return a value of either 0 or 1. In the demo coming up ahead, we'll move on from relational operators to logical operators, such as and, or, and not.
+
+5. Video: Chaining Relational Operators with Logical Operators 
+
+Objectives
+demonstrate how to use logical operators to chain relational operators
+ Topic title: Chaining Relational Operators with Logical Operators. Your host for this session is Vitthal Srinivasan.
+In this demo, we will turn our attention from relational operators to logical operators. The logical operators such as and, or, and not can be used to chain together multiple conditions and even if I create a compound condition to be used inside an if conditional control structure. Before we make use of these in an if construct,
+
+A source file named C if_conditions.c appears in the editor pane. It displays multiple lines of code. Line 1 reads: # include <stdlib.h>. Line 2 reads: # include<stdio.h>. Line 4 reads: int main(). Line 5 reads: {. Line 6 reads: int num_1 = 11;. Line 7 reads: int num_2 = 111;. 
+
+let's just quickly run through a use of the logical operators in and of themselves. Here is a little code fragment on screen where on line 9, we make use of the logical and operator, that's the &&. On line 12,
+
+ Line 9 reads: int res = (num_1 > 10) && (num_2 > 10);.
+
+we invoke the logical or operator with the two pipe symbols, and then on line 15 we have the exclamation mark,
+
+Line 12 reads: res = (num_1 > 10) || (num_2 > 10);. 
+
+which is the logical negation operator.
+
+The basic structure of the program is very similar to that in the previous demo.
+
+Line 15 reads: res = !(num_1 > 10);. 
+
+We make use of the logical and operator on line 9 in order to check whether two conditions are satisfied simultaneously. The two conditions are num_1 > 10 and num_2 > 10, and the result of this is saved in the variable res. On line 12, once again we have the two conditions, but this time they are linked by a logical or rather than a logical and. And then on line 15, we have just a single condition, num_1 > 10 and we use the exclamation point in order to negate the result of that relational operator. Now remember, that the relational operators are all only going to return 0 or 1 values. With this context in mind, let's see what the logical operators return.
+
+We compile and run our code and from the printf statements below, we can see that the printf statement on line 10 of the code has printed 1 that's effectively a value of true. The printf statement on line 13 has also printed a 1.
+
+Line 10 reads: printf("(num_1 > 10)&&(num_2 > 10)? %d\n\n", res);.
+
+And the one on line 16 has displayed a 0.
+
+Line 13 reads: printf("(num_1 > 10)||(num_2 > 10)? %d\n\n", res);.
+
+We can see from this that the logical negation operator
+
+Line 16 reads: printf("!(num_1 > 10)? %d\n\n", res);.
+
+of the condition num_1 > 10 has caused the return value to be converted to 0, which is going to be treated as false. Notice again, how each of these printfs uses the format specifier %d indicating that the return value from the logical operator is an int. Let's now tweak our code and introduce the if control structure. Now on screen, you can see that we have three if checks. Each of these if checks evaluates the same condition that we had a moment ago.
+
+He highlights the following lines of code. Line 9 reads: if ((num_1 > 10) && (num_2 > 10)) {. Line 10 reads: printf("(num_1 > 10)&&(num_2 > 10) is true \n\n");. Line 11 reads: }. Line 13 reads: if ((num_1 > 10) || (num_2 > 10)) {. Line 14 reads: printf("(num_1 > 10)||(num_2 > 10) is true \n\n");. Line 15 reads: }. Line 17 reads: if (!(num_1 > 10)){. Line 18 reads: printf("!(num_1 > 10)is true \n\n");. Line 19 reads: }. 
+
+The printf is only going to be executed if the corresponding logical operation evaluates to true.
+
+Let's compile and run this code and examine the output and from that output, we can see that two out of three printf statements are indeed executed. And this in turn means that two out of the three if conditions that we see on screen evaluated their conditions to true. Remember that when we have an if construct or control structure, the code in the curly braces that follow will only be executed if the condition evaluates to true. Here, the condition on line 9 did evaluate to true num_1 > 10 and num_2 is also greater than 10. As a result, the if evaluated its condition to true, the contents of the if block were printed out. Those contents consisted only of a single printf, the one on line 10, and that's why we see the corresponding line in the output down below. Similar logic explains the second line of the output.
+
+The if on line 17 had somewhat different behavior, that first check where the num_1 > 10. Now num_1 is 11. We can see that on line 6 up above, so that part evaluated to true. Then came the logical operator. That's the exclamation point, and that negated the result of the relational operator from true to false. And because the condition evaluated to false, the code within the curly braces was not executed, and that's why the corresponding printf is not reflected on screen in the output below. By this point, hopefully we have a good understanding of how the logical and the relational operators interact and how they figure into the conditionals of an if.
+
+On screen now, you can see that we have yet another example. This one is very similar to the one we just worked out. It also makes use of the logic and, or, and not operators. We won't go through this code in the output line by line,
+
+He highlights the following lines of codes. Line 9 reads: if ((num_1 > 100) && (num_2 > 100)) {. Line 10 reads: printf("(num_1 > 100)&&(num_2 > 100) is true \n\n");. Line 11 reads: }. Line 13 reads: if ((num_1 > 100) || (num_2 > 100)) {. Line 14 reads: printf("(num_1 > 100)||(num_2 > 100) is true \n\n");. Line 15 reads: }. Line 17 reads: if (!(num_1 > 100)){. Line 18 reads: printf("!(num_1 > 100)is true \n\n");. Line 19 reads: }. 
+
+but if you are so inclined, of course, please do pause the video and work through this example with paper and pencil. And after that, we will move on to exploring more nuances of the if-else control structure in C.
+
+6. Video: Exploring Quirks of if Statements in C 
+
+Objectives
+identify common gotchas of if statements
+Topic title: Exploring Quirks of if Statements in C. Your host for this session is Vitthal Srinivasan. 
+Let's begin this video by exploring a common gotcha. On screen now, we have a simple fragment of code with an if construct, starting line 9. The condition for this if construct makes use of the == operator with checks for equality. Here on line 9, we test whether num_1 == num_2
+
+A source file named C if_conditions.c appears in the editor pane. It displays multiple lines of code. Line 1 reads: #include <stdlib.h>. Line 2 reads: # include<stdio.h>. Line 4 reads: int main(). Line 5 reads: {. Line 6 reads: int num_1 = 11;. Line 7 reads: int num_2 = 111;. Line 9 reads: if (num_1 == num_2) {. Line 10 reads: printf("num_1 is equal to num_2 \n\n");. 
+
+and if yes, the printf statement on line 10 will be executed. You can see up above on lines 6 and 7 that num_1 and num_2 are initialized to be 11 and 111. In other words, the == operator on line 9 is going to return 0, which is equivalent to a false. So far so good. Let's go ahead and run this code. As we do so, we note really quickly that our program here has three printfs, but only two of those are going to appear in the output down below. And those two are the ones on lines 13 and 14.
+
+Line 11 reads: }. Line 13 reads: printf("num_1: %d\n\n", num_1);. Line 14 reads: printf("num_2: %d\n\n", num_2);. Line 17 reads: return EXIT_SUCCESS;. Line 18 reads: }.
+
+The printf statement on line 10 is not executed because num_1 is not equal to num_2. So far so good. Next, let's introduce a common gotcha in C, which is impossible to run into in a language like Java. You can see on screen now that we've modified line 9 so that instead of the == operator, we only have the = operator. Before we examine the output of this program,
+
+Line 9 now reads: if (num_1 = num_2) {. 
+
+let's first understand what's now happening. In line 9, we have an if statement. The if statement has a conditional and that conditional is an expression. This time the expression is simply num_1 = num_2. This is going to cause the value of num_2 to be assigned into num_1.
+
+And this in turn means that num_1 is going to hold the value 111 at the end of that expression evaluation. Will this be treated as a true or false from the perspective of the if construct? And this is where things get tricky. Remember that C does not really have an explicit built-in Boolean type. It merely shoehorns whatever value it finds in the if condition into a value which is either true or false based on whether it's non zero or zero. Here num_1 = num_2 is going to assign the value of num_2 into num_1, and then it's going to return the value of num_1, that's the new value of num_1. That's non-zero and that's why this is going to evaluate to true. That in turn means that every one of the printfs on screen is going to be displayed.
+
+Now this probably should not be your explicit intent, when you type out the code. Because it's never a good idea to have an assignment statement like this embedded within the condition of an if. Inadvertently though, it's quite easy to omit one equal to sign while trying to make use of the == operator. Now if we compile our code using clang, you can see that the code still compiles. There are no errors. However, in this particular version of C, which is quite recent, we do get a couple of very helpful warnings. These warnings might not appear if you're using a very old version of C before C99 where the _Bool types were yet to be added to the language. The precise wording of the warning is, using the result of an assignment as a condition without parentheses.
+
+This is exactly what we are attempting to do on line 9. We are making use of the assignment that is the = operator rather than the equality check, which is the == operator, and this is something that we are doing without using explicit parentheses. In any case, this warning does not prevent us from running our code. On more recent versions of the C compiler like this one, the helpful warning is probably enough for us to detect and correct our inadvertent misuse of the = operator. But on older versions of C, you might not be so fortunate. We now run this code, we can see in the output that all three printf statements are hit. num_1 is equal to num_2, that's because we've explicitly assigned the value of num_2 into num_1. And likewise, the other two printf statements are executed as well, and these confirm that both of num_1 and num_2 hold the integer value 111.
+
+The lesson to be learned from this little demo so far is, be extra careful while making use of the == operator in the context of a condition such as an if. If you inadvertently miss one of the equal to signs, you might end up with a situation like the one on screen. Next, let's move on to another potentially tricky little point about the if construct. And this has to do with the use of the curly braces in order to hold the if block. In Python, if you happen to be familiar with that language, indentation is enough to indicate the code that forms the if block. That's not how things work in C. In C, if you would like multiple statements to be executed if a condition is true, those multiple statements all need to be enclosed within curly braces.
+
+Here you can see that we have an if construct which starts on line 6 and ends on line 10. The if block code is delimited by a pair of curly braces,
+
+Line 6 reads: if (1) {. Line 7 reads: printf("I am part of this if block\n");. Line 9 reads: printf("Am I a part of the if block?\n");. Line 10 reads: }. 
+
+the ones on lines 6 and 10 respectively. All code within these curly braces is going to be executed if the condition on line 6 evaluates to true. On line 7, we have a printf which reads, I am part of this if block. On line 9, we have another which reads, Am I a part of the if block? Let's compile and run our code and find out, and when we do so, we find that exactly as we expected, both of these printf statements are hit. There are two lines in the output, and this indicates that both lines 7 and 9 are part of the if construct.
+
+No great surprises so far. Next, let's see what happens if we eliminate the curly braces on lines 6 and 10. Now, the if construct on line 6 is followed by two lines of code, both of which are indented. Let's try and compile and run this code. Before we do so, what do we think will happen? Some possible choices from here include, the code might not compile at all. Or maybe one of these statements is in the if block but not the other. Perhaps, neither is in the if block. Well, let's compile our code. No compilation warnings or errors, so there was nothing here in the indentation which the C compiler took note of. Unlike the Python interpreter, the C compiler never cares about indentation. All indentation is just treated as whitespace and ignored. When we run this code, we find again that both of these printf statements are executed.
+
+Now, at this point, we can't tell for sure whether the second printf statement was executed because it's a part of the if block where the if condition evaluated to true or because it was simply executed after the control left the if block. To answer that question, we need to tweak the condition of the if block so that it evaluates to false rather than to true. And that's what we've now done on screen, we've changed line 6
+
+He edits the code given on line 6. It now reads: if (0).
+
+so that instead of reading if (1), it now reads if (0). At this point, the printf statement which immediately follows the if block will not be executed. Let's quickly go ahead and compile and then run this code. The compilation goes through fine, no errors or warnings, and then when we run it, we find that only the print statement on line 9 is executed.
+
+Am I a part of the if block? The answer clearly is no. What this tells us is that if we have curly braces that delimit a block of code after the if condition, that entire block of code is going to be executed if the condition is true. However, if we omit the curly braces, the C compiler will merely find the first statement which follows the condition and treat that one statement as a part of the if block. Unlike in Python, it will entirely ignore whitespace or indentation. And again, this little demo drives home that the curly braces following a condition in if block are not compulsory, but they are highly recommended. Because they help make it very explicit and very clear which code is in the if block and which code is not.
+
+7. Video: Using if-else Conditional Blocks in C 
+
+Objectives
+demonstrate the use of if-else blocks
+Topic title: Using if-else Conditional Blocks in C. Your host for this session is Vitthal Srinivasan. 
+Now a control structure is any programming language construct that can be used to alter the flow of program execution. So far, we were focused on the if control structure where a condition was evaluated and if that condition is true, a bit of code was executed. What if that condition evaluates to false? In the case of an if control structure, we did nothing at all but the if-else control structure, which we now see used on screen, allows us to proactively execute a different block of code based on whether the condition evaluates to true or false. The code of the if-else control structure is very similar to that for the if.
+
+A source file named C if_else_conditions.c appears in the editor pane. It displays multiple lines of code. Line 1 reads: #include <stdlib.h>. Line 2 reads: # include<stdio.h>. Line 4 reads: int main(). Line 5 reads: {.
+
+We now have a condition. This follows the keyword if, you can see there on line 6, then come a pair of curly braces enclosing a single statement.
+
+The interesting bit, however, comes on line 8 after the closing curly brace
+
+Line 6 reads: if (1) {. Line 7 reads: printf("The condition evaluated to true!\n\n");. 
+
+where we have another keyword else and that in turn is followed by yet another pair of curly braces. If we look closely at the words if and else,
+
+ Line 8 reads: } else {. Line 9 reads: printf("The condition evaluated to false.\n\n");. Line 10 reads: }. Line 12 reads: return EXIT_SUCCESS;. Line 13 reads: }. 
+
+we can see that both of these words appear in the same color. These are both keywords. These are both a part of the C language and need to be used together. We can't have a floating else which is not linked to, and if up above it. Let's compile and run this code and when we do, we see that only one line appears in the output and that line reads, The condition evaluated to true! This makes sense, of course, because the condition evaluated on line 6 did evaluate to true because it's a non zero value that caused the printf on line 7 to be executed.
+
+It also caused the entire else block to be entirely skipped, and that's why the printf on line 9 was not executed. Now let's tweak the value on line 6 to be 0 instead of 1. This in turn means that the condition will evaluate to false
+
+Line 6 now reads: if (0) {. 
+
+and now it's the code in the if block curly braces which will be ignored. So the printf statement on line 7 is ignored. The else block is going to be executed in its entirety, and that's why in the output down below we see the printf which reads, The condition evaluated to false. As we can see from this, when we have an if-else block exactly one of the two blocks of code is going to be executed. There will never be a circumstance where both blocks of code are executed together. Now that we have a basic understanding of the if-else block.
+
+Let's go with a different program structure. Here you can see that on line 8, we prompt the user for a number, specifically for a multiple of 5. Then on line 9, we make use of scanf in order to read
+
+He edits the existing program. Line 1 reads: #include <stdlib.h>. Line 2 reads: # include<stdio.h>. Line 4 reads: int main(). Line 5 reads: {. Line 6 reads: int response;. Line 8 reads: printf("Please enter a multiple of 5:");.
+
+in the user's response and save it into a variable called response. Note the use of the & operator on line 9 before the variable name response. This has to do with the need to pass in the address into the scanf function. Then on line 11 comes the if with its conditional.
+
+Line 9 reads: scanf("%d", &response);. 
+
+We make use of the % operator to test whether the remainder of the response divided by 5 is equal to 0. And if that remainder is indeed equal to 0,
+
+Line 11 reads: if (response % 5 == 0) {. 
+
+then we print out the number you entered is indeed a multiple of 5. If not, we print out that the number you entered is not a multiple of 5.
+
+ Line 12 reads: printf("The number you entered, %d, is indeed a multiple of 5! \n\n", response);.
+
+Note here that we have two pairs of curly braces.
+
+Line 13 reads: } else {. Line 14 reads: printf("The number you entered, %d, is not a multiple of 5:-(\n\n", response);. Line 15 reads: }. 
+
+The first is from lines 11 through 13 and the second on lines 13 through 15. And these pairs of curly braces delimit the if and the else blocks respectively. We'll have more to say on these curly braces in a minute. First, let's quickly compile and run our code. We're yet to introduce loops and so our code just prompts the user for one number at a time. Then we are prompted. We type in the number 25. This is indeed a multiple of 5, and that's why we see that the printf statement on line 12 was executed this time around. Let's run our code yet again. And this time we'll type in 8, which of course, is not a multiple of 5. Then the condition on line 11 is checked, 8 divided by 5 leaves a remainder of 3. 3 is not equal to 0 and that's why it's the printf on line 14 which is going to be executed and we read, The number you entered, 8, is not a multiple of 5.
+
+Now, while talking about curly braces, we had commented that curly braces are only strictly required if the if or the else blocks have more than one statement within them. Here, both the if and the else blocks consist of a single statement, one printf each and that in turn means that there's nothing preventing us from deleting all of the curly braces that delimit these two blocks. That's exactly what we've now done. We continue to have the if and the else blocks begin on lines 11 and 13 each consists of a single printf statement. The only thing we've done is remove the curly braces. This code will compile just fine, and in fact it runs just fine as well.
+
+He edits the existing program. Line 11 now reads: if (response % 5 == 0). Line 12 now reads: printf("The number you entered, %d, is indeed a multiple of 5! \n\n", response);. Line 13 now reads: else. Line 14 now reads: printf("The number you entered, %d, is not a multiple of 5:-(\n\n", response);.
+
+There's absolutely nothing wrong with this code. The curly braces are simply recommended. They are not compulsory.
+
+When we now are prompted for a number, the number we enter is 33. 33 is not a multiple of 5, and as expected, we find the printf on line 14 is the one that's printed out, so the output is correct as well. Now in this example so far, the if and the else blocks both had just one line of code. Let's change that, in the code that you'll now see on screen, you can see that the if and the else blocks themselves have three lines of code each. The if block starts on line 12, that's where the opening curly brace figures and then the closing curly braces on line 17. Lines 13 through 16 form the body of the if block.
+
+Line 12 reads: if (first_num % 10 == 0) {. Line 13 reads: printf("Please enter the second number:");. Line 14 reads: scanf("%d", &second_num);. Line 16 reads: printf("Result %d + %d = %d\n\n", first_num, second_num, first_num + second_num);. Line 17 reads: }.
+
+In similar fashion, the else block begins on line 18 with the opening curly brace immediately after the keyword else and then extends all the way right down to line 23 where we see the closing curly brace.
+
+Both the if block and the else block themselves
+
+Line 18 reads: else {. Line 19 reads: printf("Please enter the second number:");. Line 20 reads: scanf("%d", &second_num);. Line 22 reads: printf("Result %d - %d = %d\n\n", first_num, second_num, first_num - second_num);. Line 23 reads: }.
+
+consist of a printf followed by a second scanf followed by another printf. Let's go ahead and run this code. We are prompted for a first number. We type in 20. This is indeed a multiple of 10, and that's why the condition on line 12 evaluates to true and control passes into the body of the if block. We're now prompted for the second number. We enter the number 3, and this causes the result to be 20 + 3, which is 23. This is the output of the printf on line 16. Let's try and run this code yet again. This time the first number that we enter will not be a multiple of 10, so let's go with 23. The condition on line 12 evaluates to false, and that's why control passes to the else block.
+
+When we are now prompted for the second number, we type in 45 and now inside the else block the operation that's performed is to subtract the second number from the first and that's why we can see that the result is 23 - 45, which is -22. Everything's worked so far. Let's now see what happens if we eliminate all of the curly braces and we go through our code one by one and eliminate them.
+
+He removes the curly brackets from lines 12, 17, 18, and 23.
+
+If we now try and rerun our code, we find a compilation error. The error reads, expected expression and this error is found when the keyword else is encountered on line 18. What gave rise to this error? Well, if we look closely at lines 12, 13, and 14, we can see that on line 12 we have an if and that if keyword is not followed by a pair of curly braces.
+
+In the absence of the curly braces, the C compiler looks for the first following statement and assumes that that one statement comprises the if block. Here, that one statement is on line 13, it merely reads, Please enter the second number. Again, in the absence of the curly braces, all of the code which follows is assumed by the C compiler to not be a part of the if block, and that's why the scanf on the next line is treated as being outside the if block and entirely independent of it. Then, when we encounter the else on line 18, the C compiler no longer thinks that it's related to the if block up above, and that in turn is what gave rise to this compilation error. This little demo proves that if we'd like to make use of if-else blocks containing multiple lines of code, it's compulsory to use curly braces. And even if we just have the one line in our if or else blocks, it's still a good idea to use curly braces. It's highly recommended that you do so. Precisely, in order to avoid situations like the one on screen now, where the absence of the curly braces leads to confusion and errors.
+
+8. Video: Creating Nested if-else Blocks in C 
+
+Objectives
+demonstrate the use of nested if-else blocks
+Topic title: Creating Nested if-else Blocks in C. Your host for this session is Vitthal Srinivasan. 
+In this demo, we'll see how we can start putting together if and else blocks in more and more interesting ways. For one, we'll see how we can make use of nested if-else blocks to achieve programs with very complicated flow of control. Again, remember that a control structure is any programming language construct which redirects or affects at flow of program control. Let's go ahead and get started. On screen now, we've started with a simple example where we have two floats. We declare these two float variables on lines 6 and 7, but we don't initialize them. Instead, on lines 9 and 12, we prompt the user and then on lines 10 and 13
+
+A source file named C nested_if_conditions.c appears in the editor pane. It displays multiple lines of code. Line 1 reads: #include <stdlib.h>. Line 2 reads: # include<stdio.h>. Line 4 reads: int main(). Line 5 reads: {. Line 6 reads: float first_num;. Line 6 reads: float second_num;. 
+
+Line 9 reads: printf("Please enter the first number:");. Line 12 reads: printf("Please enter the second number:");. 
+
+we make use of scanf in order to read in the user's input, and that user input is used to initialize the values
+
+Line 10 reads: scanf("%f", &first_num);. Line 13 reads: scanf("%f", &second_num);. 
+
+of those two float variables.
+
+Then on line 15, we have a variable called response where we prompt the user to estimate the product of the two numbers. On line 17, we read in this user response.
+
+Line 15 reads: float response;. Line 16 reads: printf("Please enter an estimate of the product of two numbers:");. 
+
+Depending on how good our user is at multiplication,
+
+Line 17 reads: scanf("%f", &response);. 
+
+we printout a response stating that the answer is correct or unfortunately wrong. Now if you look closely at the manner in which we do this,
+
+He highlights the following lines of code. Line 21 reads: if (response == result) {. Line 22 reads: printf("%f * %f = %f Your answer is %f which is correct! \n\n",. Line 23 reads: first_num, second_num, result, response);. Line 24 reads: } else {. Line 25 reads: printf("%f * %f = %f Your answer is %f which is, unfortunately, wrong. \n\n",. Line 26 reads: first_num, second_num, result, response);. Line 27 reads: }. 
+
+you can see that we rely on the == operator. That's done on line 21 where we compare the response entered by the user. That's what we read in on line 17 to the actual result which we computed on line 19.
+
+Line 19 reads: float result = first_num * second_num;. 
+
+Even before we compile and run this code, we know from what we've studied about data types that this isn't an ideal way of comparing floating point numbers.
+
+We'll get back to that idea in a moment, but for now, let's just run with this simple version. If the response is exactly equal to the result, we print out a message stating that the answer was correct. Let's compile this code and when we do using clang, we see that the compilation shows no warnings or errors. Let's run the code. When we are prompted for the first number, we type in 10.2. When prompted for the second number, we type in 3, which is an integer, but is read in as a float. Because we've made use of %f in the scanf on line 13. And then when prompted for the response, we enter 30.55. And the last printf is exactly the kind of sarcastic response which students have gotten very unaccustomed to these days. The actual product of 10.2 and 3 is 30.6. The answer we typed in is 30.55. You can also see how the floating point formats indicate the precision of these two numbers.
+
+However, we've got to offer our students a little more positive reinforcement. And so we are going to make our program structure a lot more complex by adding in a nested if-else block. This nested if-else block is going to reside entirely within the code of the current if block. The initial parts of the program structure remain the same, but then on line 22, we now make use of the fabs library function in order to compute the absolute value of the difference between the response that was entered by the user on line 18 and the actual result which we computed on line 20. If the magnitude of this difference is < 2,
+
+Line 18 reads: scanf("%f", &response);. Line 20 reads: float result = first_num * second_num;. Line 22 reads: float magnitude_of_difference = fabs (response - result);. 
+
+then we go into the if block which starts on line 24. If the magnitude of difference is greater than or equal to 2,
+
+Line 24 reads: if(magnitude_of_difference < 2) {. 
+
+control will pass into the else block which starts on line 32. If that magnitude of difference is greater than or equal to 2,
+
+Line 32 reads: } else {. 
+
+we simply print out the same response as previously.
+
+Your answer is unfortunately wrong.
+
+Line 33 reads: printf("%f * %f = %f Your answer is %f which is, unfortunately, wrong. \n\n",. Line 34 reads: first_num, second_num, result, response);.
+
+However, if the magnitude of the difference is < 2, then we have a nested if-else block, that nested if-else block begins on line 25 and it goes on through to line 30. On line 25, we further test if the magnitude of the difference is < 0.1,
+
+Line 25 reads: if(magnitude_of_difference < 0.1) {. Line 26 reads: printf("%f * %f = %f Your answer is %f which is correct! \n\n",. Line 27 reads: first_num, second_num, result, response);. Line 28 reads: } else {. Line 29 reads: printf("%f * %f = %f Your answer is %f which is very close to correct!\n\n",. Line 30 reads: first_num, second_num, result, response);. 
+
+and here we now assume that a magnitude of < 0.1 in the difference implies a correct answer. And so on line 26, we print out that the answer was correct. On line 28, we have the else block corresponding to the if condition on line 25. Within this else block on line 29 we print that the answer is very close to correct. Remember also that an else cannot appear in isolation, it always has to be tied to an if. Which if is it going to be paired with though? Because there are a couple of if simply here.
+
+There's an if on line 25 and another if on line 24. Now the C compiler is smart enough to figure out that the else keyword on line 28 is immediately preceded by a closing curly brace, and that closing curly brace is associated with the opening curly brace on line 25, which in turn is associated with the if keyword on line 25 as well. And from this, the C compiler correctly infers that the else on line 28 is associated with the if on line 25. Once we get to the closing curly brace on line 32, which matches with the opening curly brace on line 24, the C compiler again needs to pair up the following keyword, that's the else on line 32, with the preceding if. Once again, it finds which if block ended just before the else keyword. There always will be such an if block, if there isn't, there will be a compiler error.
+
+Here, that if block closes on line 32. It opened on line 24 and the C compiler figures out that the else on line 32 is associated with the if on line 24. You can see from this process of tracing out the if and the else blocks and the nesting of the if and the else blocks, that it's easy to get very complicated control flow using nested if-else blocks. We'll turn our attention from the code to the code output in the demo coming up next.
+
+9. Video: Exploring Nested if Statements in C 
+
+Objectives
+demonstrate how to run code with nested if-else blocks
+Topic title: Exploring Nested if Statements in C. Your host for this session is Vitthal Srinivasan. 
+Let's pick up right from where we left off at the end of the last demo. There we were experimenting with our first nested if-else block, and in this demo, we will compile and run this program and see how the nested if-else changes the flow of program control.
+
+A source file named C nested_if_conditions.c appears in the editor pane. It displays multiple lines of code. He highlights the following lines of code. Line 13 reads: printf("Please enter the second number:");. Line 14 reads: scanf("%f", &second_num);. Line 16 reads: float response;. Line 17 reads: printf("Please enter an estimate of the product of two numbers:");. Line 18 reads: scanf("%f", &response);. Line 20 reads: float result = first_num * second_num;. Line 22 reads: float magnitude_of_difference = fabs (response - result);. Line 24 reads: if(magnitude_of_difference < 2) {. Line 25 reads: if(magnitude_of_difference < 0.1) {. Line 26 reads: printf("%f * %f = %f Your answer is %f which is correct! \n\n",. Line 27 reads: first_num, second_num, result, response);. Line 28 reads: } else {. Line 29 reads: printf("%f * %f = %f Your answer is %f which is very close to correct!\n\n",. Line 30 reads: first_num, second_num, result, response);. Line 31 reads: }. Line 32 reads: } else {. Line 33 reads: printf("%f * %f = %f Your answer is %f which is, unfortunately, wrong. \n\n",. Line 34 reads: first_num, second_num, result, response);. Line 35 reads: }. Line 37 reads: return EXIT_SUCCESS;. Line 38 reads: }.
+
+Let's compile and run our code. When we do so, we are prompted as before, for the first number and the second number. Once again, for the first number, we type in 10.2 and for the second number, we type in the integer 3. This is written as a float because that's what we passed into scanf on line 14.
+
+When prompted for an estimate of the product of the two numbers, let's start with something that's way off. Let's type in 35. At this point, the message that we get back is that our answer is 35, which is, unfortunately wrong. Now, let's see how the flow of control went through this program execution. Program execution started from the main function definition on line 5.
+
+Line 5 reads: int main().
+
+We first encountered the printf on line 10, then the scanf, then the printf on line 13 and the scanf on line 14.
+
+Line 10 reads: printf("Please enter the first number:");. Line 11 reads: scanf("%f", &first_num);. Line 12 reads: printf("Please enter the second number:");. Line 14 reads: scanf("%f", &second_num);.
+
+In linear fashion, control passed down from one statement to another until we came to the if condition on line 24. Now at this point, the magnitude of the difference between our entered input and the actual result was greater than 2. And this means that the condition on line 24 evaluates to false. As a result, all of the code within the if block was bypassed. It was entirely skipped over. Control passed straight to the else statement on line 32, and the printf in there was executed.
+
+That's what we see displayed in the output down below. This control flow reflected one control flow based on the inputs passed in. If we rerun the code, even though our code has not changed, the control flow will take an entirely different path. For instance, now when prompted for the first number, we again enter 10.2. When prompted for the second number, we again enter 3. The difference now is that when asked to estimate the product, we enter 31. Now, 31 minus the correct answer of 30.6 is 0.4, and this in turn means that the magnitude of the difference is indeed less than 2. As a result, the condition on line 24 evaluates to true because the magnitude of the difference is 0.4 which is less than 2. And control now passes into the if block. This takes us now to line 25. This is a different code path than we encountered a moment ago when we entered a different estimate of the product.
+
+Now, on line 25 is another if-else, this is a nested if-else. The magnitude of the difference now is 0.4 and that is not less than 0.1. So, the if condition evaluated on line 25 evaluated to false and this in turn means that control passed to the else portion of this nested if-else. And that's why the print statement on line 26 is not executed. Instead, it's a print statement on line 29 which gets executed and down below, we see that we are told that your answer is 31, which is very close to correct. This little example so far, shows how control structures change the flow of program control. Till we encounter a control structure, program control flows linearly from one statement to the next. But then we might encounter a nested if-else block, like this one, and things can change very quickly. Let's try and run our code a third time. Once again, the numbers that we enter are 10.2 and 3.
+
+However, this time our estimate for the product is going to be 30.61, which is very close to the correct answer of 30.6, and this in turn sends our code down yet another different code path. In that code path, the condition on line 24 is evaluated. The magnitude of the difference is 0.01, which is indeed less than 2. Then control passes into the inner if block. Then the condition evaluated is on line 25. The magnitude of difference now is indeed less than 0.1. That's because the magnitude of this difference is 30.61 minus 30.6, which is 0.01. And as a result, we enter the if block code on line 26. That in turn leads to the message being printed out, which we see down on screen below. Your answer is 30.61, which is correct.
+
+In the code that you now see on screen, we have a nested if-else block and that nested if-else block lies inside the if block of the outer if-else. That's absolutely nothing preventing us from having additional levels of nesting. For instance, we could add a nested if-else block within the else block as well. That's what we've now done in the code you see on screen.
+
+Line 32 reads: } else {. Line 33 reads: if(magnitude_of_difference > 10) {. Line 34 reads: printf("%f * %f = %f Your answer is %f which is, unfortunately, very wrong. \n\n",. Line 35 reads: first_num, second_num, result, response);. Line 36 reads: } else {. Line 37 reads: printf("%f * %f = %f Your answer is %f which is, unfortunately, wrong. \n\n",. Line 38 reads: first_num, second_num, result, response);. Line 39 reads: }. 
+
+This code is unchanged versus the previous code, until we get to line 32. For instance, you can see that on line 24, we check whether the magnitude of difference is less than 2. If yes, we enter the if block starting line 25. There again, we test the magnitude of difference versus another tolerance of 0.1. So far, all the same. Then on line 32, we have the else keyword and then the else block and within this else block, we again check the magnitude of the difference.
+
+But this time we use the greater than operator. If the magnitude of the difference is greater than 10, then we inform the user that her answer is very wrong. If it's not greater than 10, that is, if it is less than or equal to 10, we merely say that it's wrong and we leave out the qualifier very. And in this way, our code now has a nested if-else block within the if block as well as another nested if-else block within the else block. There's absolutely no end to the possibilities. We could continue to build multiple more levels of nesting and make our control flow incredibly complex. Of course, it's never a good idea to make your program so complicated that someone reading or executing our program is utterly incapable of figuring out what code path was actually followed for a set of user inputs. For completeness, we go ahead and compile and run this code a couple of times.
+
+Hopefully by this point, you have a good handle on how nested if-else blocks work. We will turn our attention to another interesting concept. The idea of an if-else ladder, and this in turn will lead into another important and interesting construct in C which is the switch statement.
+
+10. Video: Introducing the else-if Block in C 
+
+Objectives
+outline the if-else if control structure
+Topic title: Introducing the else-if Block in C. Your host for this session is Vitthal Srinivasan.
+The if-else-if ladder is really interesting control structure that we obtain by putting together multiple if-else blocks. The basic architecture of the if-else-if ladder is visible on screen now. As we can see, the if-else-if ladder has no predetermined length.
+
+A flow chart appears with the heading if-else-if Ladder. This chart is displayed in the ladder form. It contains 3 steps in a diamond shape. The top left of the ladder is labeled as: Condition-1. The middle step is labeled as: Condition-2. The next step is labeled as: Condition- n. Each step is connected to the each other by an uni-directional arrow. There are 4 rectangular boxes arranged horizontally underneath each condition. These boxes are labeled as: Statement -1., Statement -2, Statement -n, and Statement- s. Each step is connected to its corresponding statements. These statements are connected to each other by uni-directional arrows. These arrows lead to the next statement. 
+
+The dashed arrow which leads from the diamond Condition-2 to Condition-n indicates that there could be any number of conditions after Condition-2. The if-else-if ladder can get indefinitely long. Assume that program execution flows in from the statement on the top left. That's the little solid circle on the top left there, feeding into the Condition-1 diamond. From there, there is a cascade of condition checks. Condition-1 is evaluated first, and this might again evaluate to either True or False.
+
+If Condition-1 evaluates to True, then we execute Statement-1 and skip on to the Next Statement. If Condition-1 evaluates to True, we have short circuited the if-else-if ladder, so that Condition-2 and Statement-2, Condition-n and Statement-n and Statement-s are all entirely bypassed. On the other hand, let's say that Condition-1 evaluates to False, then we skip over Statement-1, and that's bypassed. Instead, control passes down through the other code path and flows into the Condition-2 diamond. There again, a similar evaluation takes place, this time for condition True. That condition might also evaluate to either True or False. Let's say that Condition-2 evaluates to True.
+
+Please remember that we only reach Condition-2 if Condition-1 evaluated to False. In such a situation, control will pass down to Statement-2 and then from there on to the Next Statement, which comes right after the if-else-if block. In this situation, we've bypassed all of the following conditions and statements, Condition-3 to Condition-n and Statement-3 to Statement-n, as well as Statement-s. All of these were bypassed in favor of Statement-2. And please again remember that this happens when Condition-1 evaluates to False and Condition-2 evaluates to True. In similar fashion, we can also work out the case where Condition-2 evaluates to False. There, we would follow the code part further to the left and control would pass on to the next condition that would be evaluated in turn, and if that condition evaluates to True, it's the corresponding statement that's going to be executed.
+
+We can go on a recursively evaluating conditions indefinitely, and that would take us from left to right on this slide. What if every one of the conditions that we have in our if-else-if ladder evaluates to False? That brings us to Statement-s which we see at the bottom right. But this statement can be thought of as the backup plan. This is only going to be reached if every one of the conditions that we've thought up, evaluated to False. Statement-s will be evaluated and then control will come back to the Next Statement. A couple of points worth noting about the if-else-if ladder. As soon as a condition evaluates to True, all subsequent conditions are bypassed, they are not even going to be evaluated. And secondly, no matter which of these conditions evaluates to True, we can be certain that the Next Statement which we see at the bottom right is going to be executed.
+
+That's where all of the code parts in this if-else-if ladder re converge. In practical terms, we can think of the if-else-if ladder that we now see on screen, as corresponding to a large number of nested if-else-if statements in C. The defining characteristic of such a ladder is that each if condition is immediately followed by the keyword else and that keyword else is again immediately followed by another if-else condition. And this continues all the way down until we finally get to one last else, which is not followed by any if and simply has Statement-s coming after it. The if-else-if ladder is a powerful programming construct. It's related to the switch construct, which we will talk about in just a bit. However, there are important ways in which an if-else-if ladder is more flexible than a switch. For instance, it allows comparisons which are not based on equality, and it's also not tied to specific types such as int or char.
+
+11. Video: Using the if-else-if Ladder in C 
+
+Objectives
+demonstrate how to run code with the if-else-if ladder
+Topic title: Using the if-else-if Ladder in C. Your host for this session is Vitthal Srinivasan.
+In this demo, we will move on from nested if else blocks to a specific construct known as the if-else-if ladder. You can see an example of such a ladder on screen now. Before we turn in detail to the if-else-if ladder,
+
+An editor pane labeled else_if_conditions.c appears in Visual Studio Code. It contains various lines of codes. Line 11 reads: if (score > 90){. Line 12 reads:printf(" Score %d,your grade for this term is %c\n\n", score, 'A');. Line 13 reads: } else if (score > 70){. Line 14 reads: printf(" Score %d,your grade for this term is %c\n\n", score, 'B');. Line 15 reads: } else if (score > 50){. Line 16 reads: printf(" Score %d,your grade for this term is %c\n\n", score, 'C');. Line 17 reads: } else if (score > 40){. Line 18 reads: printf(" Score %d,your grade for this term is %c\n\n", score, 'D');. Line 19 reads: } else {. Line 20 reads:printf(" Score %d,your grade for this term is %c\n\n", score, 'F');. Line 21 reads:}.
+
+also known as the if-else ladder, let's get a big picture understanding of this program. We have a variable called score which is declared but not initialized on line 6.
+
+Line 6 reads: int score;.
+
+Then on line 8, we prompt the user to enter score out of a 100
+
+Line 8 reads:printf(" Please enter your total score out of 100:");.
+
+and we read that score in using scanf on line 9.
+
+Line 9 reads: scanf(" %d",&score);.
+
+Then comes the if-else ladder. The score is compared to 90 and if it's greater than 90, then we print out on line 12 that the grade for this term is A. However, what if the score that was typed in is not greater than 90?
+
+Control will then pass directly from line 11 to the else statement on line 13, and this is where the ladder begins. If you look closely at lines 13, 15, and 17, you will see that on each of these lines we have the word else immediately followed by the word if. And this pretty much is what an if-else-if ladder consists of. We have a condition up top, that's on line 11. If that condition evaluates to true, control passes to the print statement on line 12. If not, we enter a ladder, and, in that ladder, we have a set of else-if constructs, each of which is associated with a condition. At the very bottom on line 19, we have a keyword else by itself and this else is not followed by a condition.
+
+Before we go any further, you should note that the order of the conditions in an if-else ladder matters, it matters a lot. Hold this thought and we'll come back to it. In any case, coming back to this code, which you now see on screen, program execution starts right up top on line 6. One statement is executed after another linearly, till we reach the if condition on line 11. Another defining property of an if-else-if ladder is that the first condition which evaluates to true, triggers all of the code after that condition to be skipped over. For instance, in this code, if the score is, say, 95, the first condition, the one on line 11, will evaluate to true. The printf statement on line 12 will be executed, and all of the code on lines 13 through 21 will be skipped over.
+
+Let's compile and run this code.
+
+An output pane appears underneath the editor pane. It contains 4 sections: PROBLEMS, OUTPUT, DEBUG CONSOLE, and TERMINAL. He highlights various lines of output in the terminal section.
+
+Compilation yields no errors or warnings, and when we run the code, we are prompted for our total score out of 100. Let's start with a really high score 98. 98 is indeed higher than 90. The condition on line 11 evaluates to true. The printf on line 12 is executed and the rest of the ladder is skipped over. As you can see here, the score of 98 corresponds to a grade of A. Let's rerun our code, we don't change the code in any way, we simply rerun it. This time when we are prompted for a score, we enter the score 76. Now the condition on line 11 evaluates to false because the score is not greater than 90. Control then passes to the else-if on line 13. The score is greater than 70 and that means that the condition on line 13 evaluates to true, which in turn causes control to flow into the printf statement on line 14.
+
+And that's why the grade that's printed out is B. Let's try with a different input. This input is the number 65. 65 is not greater than 90, so the condition on line 11 evaluates to false, 65 is not greater than 70, so the first else-if condition on line 13 also evaluates to false. However, 65 is greater than 50, and so the condition in the second else-if on line 15 evaluates to true, and that in turn causes the grade to be assigned as C. That's the printf statement on line 16. You can see the pattern here, when a score is entered, all of the conditions are evaluated one after another, and the first condition that evaluates to true, causes the execution of the corresponding code within its if or else block and all of the subsequent checks and conditions are entirely skipped over.
+
+Let's for completeness round out this particular program execution by trying again with two more scores. We first try with a score of 44 and we can see indeed that our program computes the grade as D. Again, execution started from the top the first time a condition evaluated to true, all of the subsequent conditions were skipped over. We try this program one last time. We enter a score of 20, none of the conditions in our code evaluate to true, and that's why it's the last else, the one without an if, which is executed and the return grade is F. The structure of the if-else-if loop means that the order in which we specify the conditions matters a great deal. On screen now, we've tweaked our code so that the conditions are reversed.
+
+Line 11 now reads: if (score > 20){. Line 12 now reads:printf(" Score %d,your grade for this term is %c\n\n", score, 'F');. Line 13 now reads: } else if (score > 40){. Line 14 now reads: printf(" Score %d,your grade for this term is %c\n\n", score, 'D');. Line 15 now reads:} else if (score > 50){. Line 16 now reads: printf(" Score %d,your grade for this term is %c\n\n", score, 'C');. Line 17 now reads: } else if (score > 70){. Line 18 now reads: printf(" Score %d,your grade for this term is %c\n\n", score, 'B');. Line 19 now reads: } else {. Line 20 now reads:printf(" Score %d,your grade for this term is %c\n\n", score, 'A');. Line 21 now reads:}.
+
+Right up top on line 11, we check whether the score is greater than 20.
+
+Then on line 13, we check whether the score is greater than 40 on line 15, whether it's greater than 50, and so on. The way we set about this, if the score is greater than 20, then control will pass into the print statement on line 12 where we will print out a score of F as this seems. Right? Well, let's run our code and find out for ourselves. When we run it and are prompted for a score, let's enter the score of 97. That's a pretty good grade hopefully, but when we hit Enter, to our surprise, we get back a grade of F. This is not the right answer, and the reason it's wrong is because we've not set up our conditions correctly.
+
+If the score is greater than 20, then our program currently returns the grade F and skips out. It doesn't perform any of the other checks to see, for instance, whether the score is also greater than 90. This reveals a fundamental weakness of the if-else-if ladder, which we've discussed previously in this demo, and that weakness is that the first time a condition evaluates to true, that effectively short circuits the evaluation of the rest of the ladder.
+
+He again highlights various lines of output in the terminal section.
+
+Again, we've run our code and we've entered a respectable score of 83, and again, we've gotten back a grade of F. In any case, hopefully we've learned our lesson about how if-else-if ladders require conditions to be set up in the correct order.
+
+The next set of codes is highlighted. Line 11 now reads: char grade = 'F';. Line 12 now reads: if (score > 90){. Line 13 now reads: grade = 'A';. Line 14 now reads: } else if (score > 70){. Line 15 now reads: grade = 'B';. Line 16 now reads: } else if (score > 50){. Line 17 now reads: grade = 'C';. Line 18 now reads: } else if (score > 40){. Line 19 now reads: grade = 'D';. Line 20 now reads:}. 
+
+Let's quickly take a look at another if-else-if ladder, this one where we have an explicit variable called grade.
+
+We have initialized this variable on line 11 to hold the value F. Then we have an if-else-if ladder where we have our conditions correctly arranged so that on line 12, we test whether score is greater than 90. On line 14, we'll test for the score is greater than 70 and so on. The difference between this code and the code that we had previously, is that now we merely assign the correct grade to our variable of that same name. We print out the grade right at the bottom of the program after we're done with the if-else-if ladder.
+
+Line 22 reads:printf("Score%d,your grade for this term is %c\n\n", score, grade);.
+
+And this little example also shows how we can clean up the code of our if-else-if ladders to make use of code reuse. We can modularize our code so that we do not blindly copy paste code into each one of the legs or wrongs of that ladder.
+
+This code, as you now see it on screen is correct and we can satisfy ourselves of the spec, compiling it and running it. If we enter in a high score like 97, the grade that we get is A. If we try with other scores, for instance ,a score like 83, we'll find that that score is a B, and other combinations work as well.
+
+He again highlights various lines of output in the terminal section.
+
+That gets us to the end of this little demo, in which we saw how if-else-if ladders work. These so as a nicely written into our next topic, which is that of the C switch statement.
+
+12. Video: Understanding the switch Statement in C 
+
+Objectives
+illustrate the mechanics of the switch statement
+Topic title: Understanding the switch Statement in C. Your host for this session is Vitthal Srinivasan.
+Now that we have a good understanding of the architecture of the if-else-if ladder, let's turn to a closely related control structure in C
+
+A flow chart appears with the heading if-else-if Ladder. This chart is displayed in the ladder form. It contains 3 steps in a diamond shape. The top left of the ladder is labeled as: Condition-1. The middle step is labeled as: Condition-2. The next step is labeled as: Condition- n. Each step is connected to the each other by an uni-directional arrow. There are 4 rectangular boxes arranged horizontally underneath each condition. These boxes are labeled as: Statement -1., Statement -2, Statement -n, and Statement- s. Each step is connected to its corresponding statements. These statements are connected to each other by uni-directional arrows. These arrows lead to the Next Statement. 
+
+and that's the switch statement. On screen now, is a flow chart of a switch statement in C. Imagine that program control flows in from a statement represented by the solid circle over on the top left and after going through the switch statement, it's going to flow down to the other solid circle at the extreme bottom right. The question now is between those two solid circles, which are the statements before and after the switch statement, how is the code path going to be selected? If you look closely, you'll see that there are unmistakable similarities between the switch statement and the if-else-if ladder.
+
+However, there is one important difference. In the switch statement, there's just one expression that gets evaluated. You can see that expression over on the top left. That expression will evaluate to any one of many different possible values,
+
+A flow chart appears with the heading switch Statement. On the extreme left 5 diamond shapes are connected to each other in a vertical line. These shapes are as follows: expression, case-1, case-2, case-n, and default. These shapes are connected to each other by the uni-directional arrows, from top to bottom. The case-1 is horizontally leads to a rectangular shape called: Statement-1. It further leads to another rectangular shape called: break. Each case is leading towards its corresponding Statements and breaks by unidirectional arrows. 
+
+so this is not a binary predicate which evaluates to either true or false. Rather, you should think of this expression as returning an integer or character value. That integer or character value can take one of a finite set of values. A character value, for instance, might be a lowercase a, a lowercase b, a lowercase c, an uppercase X, and so on. And these correspond to the cases that you now see on screen. In the C version of the switch construct, every one of the cases is going to check for equality between the return value from the expression and the specific value. Let's say for argument sake that case 1 corresponds to
+
+the integer value 1. If the expression returns 1, case-1 is going to evaluate to true. It's going to be treated as matched, and if that's the case, statement-1 is going to be executed. Now, statement-1 again could be a block of code. In other words, there could be multiple statements enclosed within that block of code. Once we get to the end of statement-1, we will almost certainly add in a break statement. Break is itself a control structure and break in the context of a switch, helps to break out of the switch construct and transfer control right down to the bottom right. On the other hand, let's take the other case where the expression evaluates to a value other than 1. Let's say the expression evaluates to 2, the equality check on case-1 did not result in a match. However, the equality check on case-2 will now result in a match of its own.
+
+Note again that we only get to case-2 if case-1 did not match. In this case, statement-2 will now be evaluated that will end in a break, and that break will transfer control all the way back down to the bottom right. In similar fashion, we can work through the other cases case-2 through case-n. Each of these cases will only be matched if the expression evaluates to the exact value specified in the case, and we'll only get to that particular case if the previous cases have not matched. In every instance, we have a break and that break will transfer control out of the switch construct to the statement in the bottom right. Finally, if we don't have a match with any of the cases, control hits the default case and this default case corresponds to the statement-s. You might recall that there was a similar arrangement in the if-else-if ladder. Note that the default case does not actually perform any checks.
+
+There's no value associated with the default case. In C, this is specified using the keyword default. And again, the default case also has a break and that leads out of the switch construct. Everything that we've discussed so far relied heavily on the assumption that we have a break at the end of each case. What happens if we eliminate all of those break statements? Remember that those break statements are optional. Well, it turns out that a switch statement with no breaks has a very different flow of execution. Here, in the absence of the break statements, as soon as a case is matched, control gets transferred to the corresponding statements. For instance here, let's assume that the expression evaluates to case-1, so we have a match right there. This transfers control to statement-1, but what follows is very different from the switch statement with a break. After statement-1 has been executed
+
+here, control will pass to statement-2, and then to statement-3 and all the way down through to statement-s before finally exiting the switch statement at the bottom right. So again, it's important to note that in the absence of the break, statements 1, 2, 3 and so on, right down to statement-s, were all executed. And this happened even though the match happened only with case-1. You can see that case-2 through case-n were all ignored. The match was assumed, and the corresponding statements were executed. Let's work through another example. Let's say that no match results in case-1. You can see that statement-1 remains unexecuted in this case. Control now passes down to the next case that's case-2. Let's assume for a moment that case-2 actually matches, and that in turn transfers control to the arrow on the right. Statement-2 gets executed, and from there, in the absence of a break statement-3 statement-4, and all of the following statements down to statement-s will be executed.
+
+None of the matches or cases will actually be considered. The statements will be executed regardless of their values. Let's consider a third case. Let's say that neither case-1 nor case-2 matched but case-n, which here is case-3 did happen to match. Well in statement-1 and statement-2 remain unexecuted, control gets transferred to statement-n and from there to statement-s before exiting the switch construct. This is how a switch construct in the absence of the break works. Note that it's also possible that none of the cases match, in which case control flows all the way down to the default case, and it's only statement-s that gets executed in this one particular code path. The switch statement with and without the break end up working in similar fashion.
+
+Let's again contrast the switch statement without a break with the switch statement with a break, as soon as we add a break, control is going to be transferred right down to the bottom right. It will short circuit the execution of all of the following statements in the switch construct.
+
+13. Video: Running Code with the switch Statement in C 
+
+Objectives
+demonstrate how to run code with switch statements
+Topic title: Running Code with the switch Statement in C. Your host for this session is Vitthal Srinivasan. 
+In the last demo, we saw how we can make use of an if-else-if ladder to create a set of cases which are evaluated one after another.
+
+An editor pane labeled switch_statements.c appears in Visual Studio Code. It contains various lines of code. Line 1 reads: # include <stdlib.h>. Line 2 reads: # include <stdio.h>. Line 4 reads: int main(). Line 5 reads:{. 
+
+In this demo, we will build on that to introduce the switch case construct. You can see the use of a switch control structure in the code on screen now. The switch control structure in C allows us to specify a variable, that variable will then be tested against many different values. Those tests will all be for equality and the first of those tests which works out or evaluates to true will cause an associated bit of code to be executed. Here, the variable that we are relying on in our switch construct is response. You can see that on line 12.
+
+Line 12 reads: switch(response){. 
+
+Before we move any further, you should note that the C version of the switch control requires this variable to be of type int or of type char.
+
+It's not OK for us to specify a floating-point or a string variable in a switch statement in C. The variable could also be an enum or instead of a variable, we could have an expression and that expression would be evaluated and compared to each of the cases in the code that follows. With this context in mind, let's go ahead and understand the code. We declare the variable response on line 6.
+
+Line 6 reads: int response;.
+
+We prompt the user to pick a country using the numbers that's on line 8.
+
+Line 8 reads: printf(" Hello,pick a country using the numbers below:\n");.
+
+And then we tell the user that the number 1 corresponds to the country China, 2 corresponds to India, 3 corresponds to Japan, and so on.
+
+Line 9 reads: printf("1. China\n2. India\n3. Japan\n4. South Korea\nCountry?:");.
+
+Then we make use of the scanf on line 10,
+
+Line 10 reads: scanf(" %d",&response);.
+
+in order to prompt the user for her response and save that response in the variable of the same name. That brings us then to a switch statement. The response is now going to be compared to each of the cases.
+
+The next set of codes is highlighted: Line 13 reads: case 1:. Line 14 reads:printf(" Say \"Ni hao\" for hello in Chinese\n");. Line 15 reads: break; // End of case 1. Line 17 reads: case 2:. Line 18 reads: printf(" Say\"Namaste\" for hello in Hindi \n");. Line 19 reads: break; // End of case 2. Line 21 reads: case 3:. Line 22 reads: printf(" Say\"Konnichiwa \" for hello in Japanese\n");. Line 23 reads: break; // End of case 3. Line 25 reads: case 4:. Line 26 reads: printf(" Say\"Annyeohghaseyo \" for hello in Korean\n");. Line 27 reads: break; // End of case 4.
+
+Those cases can be seen on lines 13,17,21, and 25 and in addition there is a default case on line 29.
+
+Line 29 reads: default:.
+
+Note how each of those cases has an integer value associated with it. And the values in each case must match our variable in type. Here our variable is an int and that's why the cases have the values 1,2,3, and 4 associated with them. The value of the response variable is going to be compared to each of these cases. This comparison is going to happen in a linear fashion from top to bottom. The first comparison which returns true will cause control to be transferred to the corresponding case. For instance, let's say that our user typed in the integer 3. On line 13, response would be compared against the value 1, 3 is not equal to 1, so control would then pass to the next case, that is line 17.
+
+Once again, response would be tested against the value 2 for equality, 3 is not equal to 2, and again control would move on to line 21. There where response is indeed equal to 3, control would pass into the corresponding case, and the printf statement on line 22 will be executed. That in turn will lead to the break statement that you see there on line 23. If we look closely, we see that we have break statements in each one of our cases. And that's because if we don't place this break in there, control will fall through from one case to the next, we'll see what that implies in a moment.
+
+Here, after encountering the break statement, control will exit out of the switch statement and to the very end of the program.
+
+Line 36 reads: return EXIT_SUCCESS;.
+
+This is in outline how a switch construct works in C. Let's go ahead and compile and run our code and try it out with different combinations of the input. The first time we run the code when prompted, we type in the integer 1. This corresponds to China and as expected,
+
+An output pane appears underneath the editor pane. It contains 4 sections: PROBLEMS, OUTPUT, DEBUG CONSOLE, and TERMINAL. He highlights various lines of output in the terminal section.
+
+this leads to the greeting, Say Ni hao for hello in Chinese. This corresponds with the printf statement on line 14. Notice that none of the other cases have been executed, and that's because after the printf on line 14, the break statement is encountered and that transfers control right out of the switch construct. Remember that the comparisons of the response variable with the cases happen in order from top to bottom.
+
+Let's rerun our code and try entering a different integer. This time let's pick 2. The first comparison with the integer value 1, which is performed on line 13, will not return the true value, and that's why the printf statement on line 14 is not executed. However, the test on line 17 will return true because the response is indeed equal to 2. And that's why the printf statement say, Namaste for hello in Hindi will be printed out and that's what we see on screen below. That takes us to line 19 in the code, which is a break statement and that transfers control out of the switch structure and to the end of the program. Let's try again. We rerun our code and this time we type in the integer 3.
+
+Once again, comparisons with the different cases will start from the very top of the switch code on line 12. The first comparison is on line 13. Here, response is equal to 3, 3 is not equal to 1 and so the equality check on line 13 will return false. Control passes to the next case, which is on line 17, once again, that returns false. That takes us to the next case, which is on line 21. This time response is indeed equal to 3, and that's why the printf statement on line 22 is executed and the output matches what we see on the screen below. Then the break statement on line 23 is executed and control goes to the end of the program.
+
+In similar fashion, we can verify for ourselves that if we rerun the code and enter the integer 4, it's going to be the Korean greeting, the one that's on line 26, which is going to be executed. Then comes the break statement, which ensures that no other greetings are printed. Now let's try and execute our code yet again and enter an integer value of 5, and this throws up an interesting observation. The message displayed is Sorry, it seems the language you are looking for is currently not available in our library yet.
+
+Line 30 reads: printf("Sorry, it seems the language you are looking for is currently ". Line 31 reads: " not available in our library yet. \n");.
+
+And the reason that we see this message is because that value of 5 did not match any of the explicit cases in our code. That in turn led to the default case, which we can see there on line 29. Within the default case, we have the printf which you see on screen.
+
+And that default case also had a break statement, although it wasn't really required because even in the absence of that break statement on line 32, control would pass to the end of the switch.
+
+Line 32 reads: break;// End of default. Line 34 reads: }// End of Switch. 
+
+What this little example has proven so far, is that when a switch statement is used with a default, if none of the cases happen to match the value of the switch variable, it's the default case that's going to be executed. Now in the code that we just executed, we entered 5 which is larger than each of the case values, but it doesn't really matter what value we pass in, as long as that value does not match any of the explicit cases, it's the default that's going to be executed.
+
+We can see here that we've rerun our code and typed in the integer value -1, which is smaller than 1,2,3 or 4. And despite the fact that it's smaller rather than larger, those explicit cases, it's again the default case that got executed. Let's try one last time and this time we enter the value 456. Just a random combination of digits and again, it's the default that gets executed. That gets us to the end of this demo, in which we introduced the basic architecture of a switch case construct. In the next demo, let's see what happens if we eliminate the default case as well as the break statements.
+
+14. Video: Using switch Statements for Various Situations in C 
+
+Objectives
+demonstrate the use of switch statements in various scenarios
+Topic title: Using switch Statements for Various Situations in C. Your host for this session is Vitthal Srinivasan.
+In the previous demo, we saw how the switch construct in C relies on syntax, which makes use of different cases, and in addition, we can also have a default case. Also, as we noted, each of those cases typically tends to have a break statement ending the code for the case.
+
+An editor pane labeled switch_statements.c appears in Visual Studio Code. It contains various lines of codes. An output pane appears underneath the editor pane. He highlights various lines of output in the terminal section.
+
+In this demo, we will tweak our switch statements, first, eliminating the default case, and then trying and eliminating each of the break statements. Let's go ahead and get started. In the code that you see on screen now, as before, we have a variable called response and then we have cases 1, 2, 3, and 4.
+
+Line 6 reads: int response;. Line 8 reads:printf("Hello,pick a country using the numbers below:\n");. Line 9 reads: printf("1. China\n2. India\n3. Japan\n4. South Korea\nCountry?:");. Line 10 reads: scanf(" %d",&response);. Line 12 reads: switch(response){. 
+
+The next set of codes is highlighted: Line 13 reads: case 1:. Line 14 reads:printf(" Say\"Ni hao\" for hello in Chinese\n");. Line 15 reads: break; // End of case 1. Line 17 reads: case 2:. Line 18 reads: printf(" Say\"Namaste\" for hello in Hindi \n");. Line 19 reads: break; // End of case 2. Line 21 reads: case 3:. Line 22 reads: printf(" Say\"Konnichiwa \" for hello in Japanese\n");. Line 23 reads: break; // End of case 3. Line 25 reads: case 4:. Line 26 reads: printf(" Say\"Annyeohghaseyo \" for hello in Korean\n");. Line 27 reads: break; // End of case 4.
+
+You can see these all on screen now. However, if you look closely, you can see that we've eliminated the default from this particular switch, no other changes for now.
+
+We quickly compile and run our code, and when we are prompted for the input, we start as before, by typing in integers which correspond to the country names. Here we start by typing 3, and as expected, we get back the greeting in Japanese. Where it gets interesting is when we rerun our code and type in an integer, which is not exactly included in one of the cases. For instance, let's try typing out 7. When we hit Enter, we see that there is no output at all. What just happened? Well, the integer value 7 did not exactly match any of the cases that we had explicitly included in our switch construct. 7 is not equal to 1,2,3 or 4. Also, because we had permitted a default case from our switch, there was no code that actually got executed and control skipped right from the top of the switch case, the very bottom that's line 29.
+
+Line 29 reads: }// End of Switch. 
+
+And as a result, we have no output at all, appear here. We can try with a couple of other values other than 1,2,3, and 4, and in each instance, we will see that there is no output at all. Here we've rerun our code and entered -1 and again, control skips to line 29. The end of the switch construct and no output appears. Next, let's see what happens if we try and tweak our code to eliminate each of the break statements. We've added back the default, but we've eliminated each of the breaks. The code is visible on screen now.
+
+The next set of codes is highlighted: Line 12 reads: switch(response){. Line 13 reads: case 1:. Line 14 reads:printf(" Say\"Ni hao\" for hello in Chinese\n");. Line 16 reads: case 2:. Line 17 reads: printf(" Say\"Namaste\" for hello in Hindi \n");. Line 19 reads: case 3:. Line 20 reads: printf(" Say\"Konnichiwa \" for hello in Japanese\n");. Line 22 reads: case 4:. Line 23 reads: printf(" Say\"Annyeohghaseyo \" for hello in Korean\n");. Line 25 reads: default:. Line 26 reads: printf("Sorry, it seems the language you are looking for is currently ". Line 27 reads: " not available in our library yet. \n");. Line 29 reads: }// End of Switch.
+
+Notice for instance that on line 14, we have a printf, but then on line 15, we no longer have a break.
+
+In similar fashion, we've deleted the breaks from lines 18, 21, and 24. What do you think is going to happen when we try and run this code? Let's go ahead and find out. To begin with, when we try and compile the code using clang, there's no warning or error. So, this elimination of the break statements is not something that alarms the compiler. When we run the code and we have prompted for our input, we start by typing in the integer 1 that corresponds to China. We hit Enter and now we find that every one of our
+
+He highlights various lines of output in the terminal section.
+
+greetings appears on screen and so does the code for the default. Here's what happened. The value of the response variable is equal to 1. That value was compared to the literal 1 on line 13.
+
+That evaluation worked out to true, and the printf statement on line 14 was executed. But what happened next was that the condition on line 16 was not checked and instead the code on line 17 was executed directly and that's why on screen, we also see the greeting saying, Say Namaste for hello in Hindi. Then came the case statement on line 19, once again, the equality check was not performed and control passed to the printf statement on line 20. And that's why we see on screen down below, Say Konnichiwa for hello in Japanese. In similar fashion, control passed linearly to line 23 and then to line 26. The lesson from this little demo is that when we eliminate break statements from our switch, no compiler warning or error results.
+
+So, it's entirely possible to just leave out the break statements inadvertently. But if we do so, not only is the first bit of code executed when an equality is found, but all subsequent cases are also going to be executed, including the default. And those cases, and the default are going to be executed without testing the value of the expression or the variable versus the cases. In this particular run of our code, the value that we typed in was 1, and that happened to match the very first case which we see on line 13. And that's why all of the code in case 1 as well as in case 2, 3, 4, as well as the default was executed. Let's try re running our code and this time let's try and enter a different integer. You can see on screen now, that we've typed in the integer value 3 corresponding to Japan.
+
+When we do this, the output contains the greeting in Japanese, this is the one printed out on line 20. It also includes the greeting in Korean, printed out on line 23. And then the default message from line 26. Once again, this run of our program showed us, what happens when we eliminate the break statements. The equality evaluations happen starting from the first case that's on line 13 here, because our value is 3, 3 is not equal to 1, 3 is also not equal to 2, and that's why the printf statements on lines 14 and 17 were not printed out. However, case 3 does succeed because the response was equal to 3 and then control just falls through and all of the cases as well as the default are then executed. Let's try again, let's run our code one more time and this time the integer that we enter is 4.
+
+As you might imagine now, we see the greeting in Korean, that's the printf statement on line 23. And then we see the default, that's the printf statement on line 26. The printf statements from cases 1, 2, and 3 are not executed. Let's rerun our code yet again. This time, the integer that we enter is 7. 7 will not match any of the cases that we've explicitly specified, and so it's the default case, which is the first to be executed. And because the default case is the last, it's also the only case to be executed. So, when we enter the integer value 7, we only get the message telling us, Sorry, it seems the language you are looking for is currently not available in our library yet. Next, let's tweak our code to add back a break statement in exactly one of the cases.
+
+Line 21 now reads: break;.
+
+You can see now that we've done so on line 21, case 3 now has a break statement. But case 1, case 2 and, case 4 do not have break statements, and nor does the default. When we try to compile our code, there's no warning or error, so this is perfectly acceptable as far as the C compiler is concerned. And if we now run our code, if the integer that we type in happens to be 3, then we get the exactly correct functionality. Let's, however, first try with a different input, let's try with 1. 1 corresponds to China and that causes a match on line 13. This causes the printf on line 14 to be executed. Control falls through linearly to the printf on line 17 because there is no break on line 15. That's why we also see the greeting, Say Namaste for hello in Hindi.
+
+Again, there's no break statement on line 18, so control passes through to line 20. We see the greeting in Japanese and then the break statement on line 21 is encountered and that break statement sends control right out of the switch construct and to the end of the program. And that's why when we entered the integer 1, the greetings that we saw were in Chinese, Hindi, and Japanese, we did not see the greeting in Korean and we also did not see the default Sorry message. Let's rerun our program and this time the integer that we type in is going to be 3. This will entirely bypass case 1 and case 2, so we won't see the greetings either in Chinese or in Hindi.
+
+Case 3 will be executed, this means that the printf statement on line 20 is executed, we see the greeting in Japanese and then the break statement on line 21 is encountered, sending control to the end of the program. As we saw from this little demo, neither the default case nor the break statements in a switch case construct are required. The compiler will not enforce the presence of either of these, but it's easy for our program to develop subtle bugs if we inadvertently miss either the default case or some break constructs. These are important points to keep in mind while working with the switch control structure in C.
+
+15. Video: Exploring Nuances of switch Statements in C 
+
+Objectives
+demonstrate the use of characters in switch statements
+Topic title: Exploring Nuances of switch Statements in C. Your host for this session is Vitthal Srinivasan.
+In this demo, we will continue with our exploration of the switch construct. As you can see now, however, we've changed our usage of the switch construct so that the variable which we rely on is no longer an int, instead, it's a char. As you see here, we declare the char response variable on line 6,
+
+An editor pane labeled switch_statements.c appears in Visual Studio Code. It contains various lines of codes. Line 1 reads: # include <stdlib.h>. Line 2 reads: # include <stdio.h>. Line 4 reads: int main(). Line 5 reads:{. Line 6 reads: char response;.
+
+then on line 10, we read in user input using scanf and save that user input into the response variable.
+
+Line 8 reads:printf("Hello,pick a country using the characters below:\n");. Line 9 reads: printf("A. China\nB. India\nC. Japan\nD. South Korea\nCountry?:");. Line 10 reads: scanf(" %c",&response);.
+
+Then we have a fairly typical switch construct, just like the ones we had in the previous demos. The only difference is that every one of these cases has as its associated case value a character literal.
+
+The next set of codes is highlighted: Line 12 reads: switch(response){. Line 13 reads: case 'A':. Line 14 reads:printf(" Say\"Ni hao\" for hello in Chinese\n");. Line 15 reads: break;. Line 17 reads: case 'B':. Line 18 reads: printf(" Say\"Namaste\" for hello in Hindi \n");. Line 19 reads: break;. Line 21 reads: case 'C':. Line 22 reads: printf(" Say \"Konnichiwa \" for hello in Japanese\n");. Line 23 reads: break; . Line 25 reads: case 'D':. Line 26 reads: printf(" Say\"Annyeohghaseyo \" for hello in Korean\n");. Line 27 reads: break;. Line 29 reads: default:. Line 30 reads: printf("Sorry, it seems the language you are looking for is currently ". Line 31 reads: " not available in our library yet. \n");. Line 32 reads: break;. Line 34 reads:}// End of Switch.
+
+For instance, on line 13 we have the character literal uppercase A. Notice how the uppercase A is enclosed within single quotes rather than double quotes.
+
+Single quotes are used for character literals and double quotes for string literals in C and C++. In similar fashion, on line 17, we have the character literal uppercase B, on line 21, uppercase C, and on line 25, uppercase D. Other than this one change in the type of the variable we used in the case, the structure is pretty much identical to the previous demo. We have breaks at the end of each of the cases. We can see those on lines 15, 19, 23, and 27, as well as in the default, that's on line 32. We also have a default that starts on line 29. Let's go ahead and compile and run this code and see how it works. The compiler has no problems with it, no warnings or errors.
+
+And then when we use a.out, in order to run it, we are prompted for the user input.
+
+An output pane appears underneath the editor pane. He highlights various lines of output in the terminal section.
+
+Let's start by typing out the uppercase A literal. Please be careful and only type in that one character. This successfully matches the case on line 13 and we see the greeting saying, Ni hao for hello in Chinese. So far so good. Let's rerun our code and try a different character. This time when we are prompted, we enter the uppercase D, and this correctly matches the case on line 25 and we see the greeting for hello in Korean appear on screen. Once again, everything seems to be working well. Let's try a third time and see what happens if we enter a lowercase d instead of an uppercase D.
+
+Now this will actually not work, and that's because the lowercase d literal does not match the uppercase D literal on line 25, when checked using the == operator. This drives home a really important point about the switch construct in C. The cases are always evaluated using the == operator, i.e. always testing for equality. And this is why C will not allow the variable or the expression in the switch to be a string or a float because the == operator would not make sense with these data types. So again, if we are making use of a character variable in a switch, matches on the different case statements need to be exact, they will be considered in case sensitive fashion. Let's quickly move on to another example of a switch statement which uses a character variable.
+
+Line 6 reads: char operator;.
+
+The code is visible on screen now, you can see that our variable is called operator
+
+Line 15 reads: switch (operator){. Line 16 reads: case '+' :. Line 17 reads:printf(" % .2 f + % .2 f = % .2 f \n",num1,num2,num1 + num2);. Line 18 reads: break;. Line 19 reads: case '-':. Line 20 reads: printf(" % .2 f - % .2 f = % .2 f \n",num1,num2,num1 - num2);. Line 21 reads: break;. Line 22 reads: case '*':. Line 23 reads: printf(" % .2 f * % .2 f = % .2 f \n",num1,num2,num1*num2);. Line 24 reads: break;. Line 25 reads: case '/' :. Line 26 reads:printf(" % .2 f / % .2 f = % .2 f \n",num1,num2,num1/num2);. Line 27 reads: break;.
+
+and the acceptable values are plus, minus, multiply, and divide. If we scroll down a little, we also see that we have a default statement prompting the user to Please enter a valid operator. As you might imagine, each of these operators is used to perform the corresponding operation on two operands, num1 and num2. And the result of the operation is displayed on screen in each of the cases, followed by a break statement. Where do the operands take their values from? Well, look at line 13, there's a scanf there, where we have format specifiers for two float operands, %f, that's for both num1 and num2.
+
+Line 12 reads:printf("\n Enter two operands:");. Line 13 reads: scanf("% f %f" ,&num1,&num2 );.
+
+Let's go ahead and compile and run our code and quickly see how this particular case construct works in practice. When we hit a.out, we are prompted first for the operator. Let's type in the + character. We are then going to be prompted for the two operands. Let's type in two floats, 120.24 and 10.1. We hit Enter, we find that the correct case is hit, and indeed we see the addition of these two operands on screen now. We can re run the same code a few more times to satisfy ourselves that each of the other cases as well as the default are hit as well, but the basic point remains.
+
+As this example drove home, it's possible for us to have a switch statement in C where the variable that we use is of type character. Remember again that these cases are going to be evaluated in case sensitive fashion. And the reason that char and int variables can be used with switch statements, is because both of them work fine when compared for equality using the == operator. That gets us to the end of our quick exploration of the switch control structure. In the demo coming up ahead, we will turn our attention from switch statements to the use of the ternary operator in C.
+
+16. Video: Shortening if-else Blocks Using Ternary Operator 
+
+Objectives
+demonstrate the use of the ternary operator to shorten if-else blocks
+Topic title: Shortening if-else Blocks Using Ternary Operator. Your host for this session is Vitthal Srinivasan.
+In this demo, we're going to talk about the C ternary operator. Now a ternary operator is one which has three operands. It doesn't really say anything about what the ternary operator does. It might strike you as odd that we refer to the ternary operator as such. After all, we don't refer to the binary operator in C or C++, because, of course, there are multiple binary operators. And it wouldn't make sense to refer to any one of them as the binary operator. However, there is only one ternary operator in C and C++ and that's why it's called that. The ternary operator is used to perform a conditional evaluation within a single line of code. You can think of it as a shorthand for an if-else block. Let's go ahead and see how the ternary operator works, but first, let's create a simple program which does not use a ternary operator, and instead does things the long way using an if-else.
+
+An editor pane labeled ternary_operator.c appears in Visual Studio Code. It contains various lines of codes. Line 1 reads: # include <stdlib.h>. Line 2 reads: # include <stdio.h>. Line 4 reads: int main(). Line 5 reads:{. Line 6 reads: float first_num;. Line 7 reads: float second_num;.
+
+On screen now, is such a program. We declare a couple of variables, both of type float on lines 6 and 7. Then on lines 9 and 10 we prompt the user for the value of the first number, and we accept that input using scanf.
+
+Line 9 reads:printf(" Please enter the first number :");. Line 10 reads: scanf("% f" ,&first_num );.
+
+We repeat this for the second number on lines 12 and 13.
+
+Line 12 reads:printf(" Please enter the second number :");. Line 13 reads: scanf("% f" ,&second_num );.
+
+By the time we get to line 15, we have initialized the variables, first_num and second_num.
+
+Line 15 reads: float max_value;.
+
+Then if first_num > second_num,
+
+ Line 16 reads: if ( first_num > second _num){. 
+
+we set the max_value to be the first_num as done on line 17,
+
+Line 17 reads: max_value = first_ num;. Line 18 reads:}else {.
+else max_value = second_num that's done on line 19.
+
+Line 19 reads: max_value = second_ num;. Line 20 reads:}.
+
+Finally, on line 22, we print out the maximum of the two numbers. Notice how we have three format specifiers on line 22, each of these is of the form %.2f.
+
+Line 22 reads:printf(" The maximum of % .2 f and % .2 f is: % .2 f \n", first_ num, second_ num, max_value);.
+
+The %f indicates that the numbers or variables which follow are floating-point numbers, and the .2 indicates that we are interested in 2 digits after the decimal point. This is a simple enough program. Let's go ahead and compile and run our code. We do this by invoking clang on our file, ternary_operator.c and then running it. We are prompted for the values of the first and the second number and let's try and type in the values 24.5 and 134.
+
+An output pane appears underneath the editor pane. He highlights various lines of output in the terminal section.
+
+134 is the larger of these two values and the program correctly tells us that the maximum is 134. So far so good. This simple program was able to compute the max of these two values typed in. Now, let's introduce a ternary operator.
+
+And doing so is going to really simplify the code on lines 15 through 20. We highlight all of that code and we just replace it with one single line of code. That single line of code makes use of the syntax which you now see on screen, and this indeed is the ternary operator. This one line has the variable max_value. This variable is being declared as of type float. That's on the left-hand side of the equal to sign.
+
+Line 15 now reads: float max_value = first_ num > second_ num ? first_ num: second_ num ;.
+
+On the right-hand side of that equal to sign, comes the ternary operator. The ternary operator has two bits of syntax, the ? and the :. Before the question mark, we have a condition and that condition is going to be evaluated and it will evaluate to either true or false. If that condition which comes before the question mark evaluates to true, then whatever comes immediately after the question mark will be the return value from this operator.
+
+If on the other hand, the condition evaluates to false, then control passes to right after the colon, and that in turn becomes a return value. Taken altogether, the ternary operator, which is on the right-hand side of the equal to sign, can be read as is first_num > second_num? If yes, return first_num else return second_num. This also tells us why the ternary operator is also a control structure of sorts. When the first part of the ternary operator is evaluated, control will then get transferred to either the second part or to the third part, and that's why this is not just an operator, but also a control structure. The ternary operator is a very succinct way of getting code logic across.
+
+Let's now recompile and rerun our code and ensure that we get the same output as we did with the longer version with the if-else. The compilation goes through successfully. So, clearly the ? and the : were recognized by the compiler. We then run the code, we are prompted for the values of the first number and the second number. Let's type in 145.34 for the first number and 10.2 for the second number. The maximum of these is, of course, 145.34, and that's what the program tells us, the ternary operator has worked correctly. Let's try one more time to make sure that this was not a fluke, no need to recompile, the first number we type in is 19, the second is 34.5, so this time it's the second number we typed in that's larger and the ternary operator is able to deal with these as well. The maximum correctly shows up as 34.5.
+
+Next, let's add another line of code into this program. You can now see that we have not one, but two uses of the ternary operator. On line 15, use the ternary operator to compute the max_value of first_num and second_num and then on line 17, we use the same ternary operator to compute the min_value.
+
+Line 17 now reads: float min_value = first_ num < second_ num ? first_ num: second_ num ;.
+
+The only difference is that the first operand passed into these two ternary operators differ. On line 15, the first operand, which is the conditional expression, reads first_num > second_num, while in the second line, it reads first_num < second_num. We can recompile and rerun our code. Compilation goes through smoothly, there are no errors or warnings.
+
+And when we rerun our code and are prompted for numbers, we type in 9.99 as the first number and 10 as the second number. When we hit Enter, both of our ternary expressions are going to be evaluated. The maximum is correctly identified as 10 and the minimum correctly identified as 9.99. That gets us to the end of this little demo, in which we introduced the ternary operator and saw how it can be used to simplify quick if-else computations into a single line of code. The first operand passed into the ternary operator is an expression which evaluates to either true or false. Now we've discussed on multiple occasions that C does not officially have a type for true or false, but it turns out that there is indeed a way to introduce a bool type into your C programs by importing the correct header file. And we'll see how that works in the demo coming up next.
+
+17. Video: Course Summary 
+
+Objectives
+summarize the key concepts covered in this course
+Topic title: Course Summary
+We have now reached the end of this course, getting started with control structures in C. We started this course off by introducing the concept of control structures in C. A Control structure is any code construct that changes the flow of control, that is the order of execution in a program. We understood that the three main types of control structures in C are decision making control structures, which execute code based on whether a condition is met or not. Looping control structures that will repeat the same code until one condition is met or not met. And finally, unconditional control structures that change the flow of a program when used. Decision making control structures include if-else blocks and switch statements. We began the demos of this course by creating basic if statements that check whether a value represents true or false and returned an output based on that.
+
+In C, the value 0 represents false and any non-zero number, even a negative number represents true. As we saw, it's possible to combine predicates or expressions that return a true or false value using logical operators, such as and, or and not. After that we introduce the else block, which specifies alternate code paths based on whether condition is met or not. We also created nested if-else blocks, where one block is contained within another. We then move to the if-else-if ladder and to switch statements. The if-else-if ladder is a way to create multiple conditions that will be checked in order, the code block for the first condition that is satisfied will be executed, and then none of the subsequent conditions will be checked. After discussing these, we took a look at the close cousin of the if-else-if ladder, the switch statement.
+
+This is used as a concise syntactic construct to execute different blocks of code based on the value of an expression that takes an int or char value. We noted how the break statement is important in the switch construct to prevent fall through execution of code across different blocks, as well as how the default keyword can be used to make sure that unanticipated values are handled correctly. Finally, we touched upon the ternary operator, which makes use of the question mark and the colon symbols to create an if-else block and stores its result in a variable, all in one line.
+
+This uses three operands, the condition, the value if the condition evaluates to true and the value if the condition evaluates to false. The ternary operator is so named, because it is the only operator in C to take in three operands which happen to be separated by the question mark and colon symbols. You now have a solid foundation on basic decision making control structures in C. You are now ready to move on to more complex looping and unconditional control structures in C coming up ahead.
+
+Course File-based Resources
+•	Using if Statements in C
+Topic Asset
+
+•	Using Relational Operators with if Statements in C
+Topic Asset
+
+•	Chaining Relational Operators with Logical Operators
+Topic Asset
+
+•	Exploring Quirks of if Statements in C
+Topic Asset
+
+•	Using if-else Conditional Blocks in C
+Topic Asset
+
+•	Creating Nested if-else Blocks in C
+Topic Asset
+
+•	Exploring Nested if Statements in C
+Topic Asset
+
+•	Using the if-else-if Ladder in C
+Topic Asset
+
+•	Running Code with the switch Statement in C
+Topic Asset
+
+•	Using switch Statements for Various Situations in C
+Topic Asset
+
+•	Exploring Nuances of switch Statements in C
+Topic Asset
+
+•	Shortening if-else Blocks Using Ternary Operator
+Topic Asset
+© 2022 Skillsoft Ireland Limited - All rights reserved.

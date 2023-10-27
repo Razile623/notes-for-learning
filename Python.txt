@@ -1,0 +1,3586 @@
+
+Getting Started with Python: Introduction
+
+
+Installing And Set-up Anaconda on Windows for Python
+	"install anaconda on windows"
+Anaconda- open source distribution of the python and R programming languages
+Conda Package Manager- Download and install and libraries in pythons
+
+Python 2 vs Python 3- for students starting afresh, best to use Python 3
+
+
+Run Jupyter notebooks on MacOs for python
+Using Python as Calculator
+
+Working with Python Built-in Functions
+
+Functions are reusable bits of Code - perform calculations, actions, and give you a results
+Introducing Python Variable to Store values
+Working with different Types of Variables in Python
+Assigning Values to Variable in python
+Updating Variable Values in python
+Working with python Simple data Types
+Creating Single-line and Multi-line Strings in Python
+Formatting Operations with Strings in Python
+
+CONCLUSION:
+
+Jupyter Notebooks to Write Python Code
+	Browser based shell -not a desktop application
+	Interactive environment -can write code in code cells and execute it right away
+	The results of code execution, including errors, are displayed right below the code
+	Very easy to install and intuitive to work with focus on the code rather than learning the IDE
+
+
+Built-in Functions in Python
+	print(): Takes in any data types and prints it to screen as a string
+	len(): To find the length of a sequence, the sequence can be a list or a string
+	type(): Takes in a variable or a value and displays the data type
+	round(): Takes a numeric value and rounds it to the next highest interger
+	
+Variables
+	Containers to store values
+	Values can be of any data type
+	Instead of using values directly can use variable to represent those values
+	Changing the value in a variable will change all locations where the variable is referenced
+
+
+
+
+Strings in Python
+	'This is a valid string in single quotes'
+	"This is a valid string in double quotes"
+	"""This is a valid string in triple qoutes"""
+	'Double "qoutes" within single-quoted strings'
+	"I'm really interested in learning Python"
+	"""Multi-line strings require triple quotes"""
+
+
+What is the correct syntax for specifying multi-line strings in Python?
+“”” This is a multi-line string “””
+
+Which of the following is an open source distribution of the Python and R programming languages that uses the Conda package manager?
+Anaconda
+
+
+Consider this bit of Python code:
+Code Editor:
+num_1 = 10
+num_2 = 20
+num_3 = num_1
+num_1 = 100
+What is the final value stored in num_3?
+10
+
+
+If you want to increment the value stored in the num_1 variable by 10 which of the following Python statements are valid?
+num_1 += 10
+num_1 = num_1 + 10
+
+
+Which of the following commands are valid to store a numeric value of 2 in a variable named num_x?
+num_x = 2
+num_x = 6 – 4
+
+
+Which of the following terms best describes Jupyter notebooks that you can use to write Python code?
+Can view results on the same screen as the code
+Browser-based
+Interactive
+
+
+Which of the following functions are valid built-in functions in Python?
+type()
+print()
+len()
+
+
+
+Consider two Python variables initialized as shown below. Which of the following logical statements below will have a value of True?
+Code Editor:
+a = True
+b = True
+
+a and b
+a or b
+
+
+
+As a new user of Python which version of Python should you use?
+Either version of Python is fine but 3.7 should be preferred
+
+
+Which of the following are valid data types in Python?
+int
+bool
+float
+
+
+What is the output of the following bit of code?
+Code Editor:
+ 
+13 // 5
+
+2
+
+
+How can you execute shell commands on Jupyter notebook code cells?
+Prefix the shell command using ! i.e. !python –version
+
+
+ Which of the following are valid string operations in Python?
+“Hello” + “World”
+“Hello” * 3
+
+____________________________________________________________________________________________________________________
+
+
+Complex Data Types in Python: Working with Lists & Tuples in Python
+
+Introducing Lists
+	List can contain duplicates
+		Order is significant, the elements are accessed in the order they appear
+
+ 
+Performing Simple List Operations
+Performing Useful List Operations
+Using Buil-in Functions with lists
+Perform Slicing Operations on Lists
+Using Step Size in Slicing Operations
+Working With Strings as a List of Characters
+Invoking Functions on Strings
+Perform Slicing Operations on Strings
+Introducing Tuples
+Understanding Tuple Immutability
+Introducing Other Complex Data Types
+
+CONCLUSION: 
+
+ All of the following statements are ways in which lists and tuples are different. Which one of these is true?
+A list can be changed once creating, a tuple is immutable and cannot be changed
+
+
+
+What is the result of executing this code?
+ 
+ 
+Code Editor:  
+city = ‘Los Angeles’
+city.find(‘x’)
+
+-1
+
+
+Which of the following are valid complex data types in Python?
+Sets
+Lists
+Dictionaries
+
+
+
+Which of the following statements about Python lists are true?
+Lists in Python can have elements of different data types
+Lists are ordered collections
+
+
+
+What is the result of executing this code?
+ 
+Code Editor:  
+some_string = “Python”
+a, b, c, d = some_string
+
+This is an error, “too many values to unpack”
+
+
+
+
+What will be the result of this slicing operation of the names_list?
+ 
+ 
+Code Editor:  
+names_list = [‘John’, ‘James’, ‘Lily’, ‘Emily’, ‘Nina’]
+names_list[::2]
+
+
+
+[‘John’, ‘Lily’, ‘Nina’]
+
+
+
+ If you wanted to sort the elements in the list names_list in alphabetical order which of the following statements in Python are valid?
+
+names_list = sorted(names_list)
+names_list.sort()
+
+
+
+If you wanted to insert an element at index 2 in a particular list named names_list what is the function that you would invoke?
+names_list.insert(2, “John”)
+
+
+
+ Consider the list:
+Code Editor:  
+some_list = [‘a’, ‘b’, ‘c’, ‘d’, ‘e’, ‘f’]
+
+
+How do you slice this list to access the elements ‘c’, ‘d’?
+some_list[2:4]
+
+
+
+All of the following statements are ways in which lists and tuples are similar. Which one of these is NOT true?
+Both, once created, cannot be updated
+
+
+
+
+If you want to count the number of times the name “John” appears in the names_list what function would you invoke?
+names_list.count(“John”)
+
+
+
+Which of the following lines of code will print this string in reverse i.e. print out “olleH”
+ 
+ 
+Code Editor:  
+some_str = “Hello”
+
+
+some_str[::-1]
+
+
+____________________________________________________________________________________________________________________
+
+Complex Data Types in Python: Working with Dictionaries & Sets in Python
+
+Dictionary -mapping of key-value pair
+
+Nesting Complex Data Types within Dictionaries
+
+
+Invoking Functions on Dictionaries
+
+
+Introducing Sets
+
+Set is a collection of elements where the element are unique , contains no duplicates, no intrinsic order
+Set can only contain immutable elements
+	This is how a set can ensure that its elements are unique
+
+
+Performing Sets Operations
+Working with Nested Lists
+Perfoming List Conversions
+
+
+Dictionaries in Python
+	Unordered collection of key-value pairs
+	Every key is associated with a value
+	Each key in a dictionary is unique, values can be duplicates
+	Values are looked up by key
+	Values can  be simple or complex data types
+	Dictionaries are mutable, key can be added, values can be updated
+
+Sets in Python
+	Unordered collection of unique elements
+	Adding duplicates to sets will add the elements exactly once
+	Cannot contains mutable elements i.e list or dictionaries within sets
+	Can perform set operation such as union, intersection, difference etc.
+Comparing list, Dictionaries and Sets
+	List are ordered collections,  both dictionaries and sets are unordered
+	List can contain duplicates, sets cannot contains duplicates, dictionaries cannot have duplicate keys
+	List can contain nested complex data types and so can values in dictionaries
+	Set can contain only immutable tuples and cannot contain other complex data types
+	List elements can be looked up by index
+	No lookup for set elements
+	Dictionary values can be looked up by key
+
+
+CONCLUSION:
+
+
+Consider two sets of integers:
+ 
+Code Editor:  
+ 
+set_1 = {2, 4, 6, 8}
+set_2 = {1, 2, 5, 6, 7, 8}
+ 
+What operation would I run to get a result set with all of the elements from both sets?
+set_1.union(set_2)
+
+
+Consider a dictionary of names and ages set up as below:
+ 
+Code Editor:  
+names_ages = {‘John’: 35, ‘Jim’: 45, ‘Alice’: 25}
+ 
+How would you look up Alice’s age in this dictionary?
+names_ages[‘Alice’]
+
+
+
+Consider a dictionary of names and ages set up as below:
+ 
+Code Editor:  
+names_ages = {‘John’: 35, ‘Jim’: 45, ‘Alice’: 25}
+ 
+What would the output be if you were to run this code?
+ 
+names_ages[‘Tim’]
+
+KeyError: ‘Tim’
+
+
+
+ A set in Python can contain which of the following data types?
+Strings
+Tuples
+Floats
+
+
+
+Consider a dictionary of names and ages set up as below:
+ 
+Code Editor:  
+names_ages = {‘John’: 35, ‘Jim’: 45, ‘Alice’: 25}
+ 
+and a second dictionary as below:
+ 
+Code Editor:  
+updated_names_ages = {‘Ella’: 29, ‘John’: 36}
+ 
+How would you update the names_ages dictionary with the values in updated_names_ages dictionary?
+names_ages.update(updated_names_ages)
+
+
+
+Consider a nested list of names and ages:
+ 
+Code Editor:  
+names_ages = [[‘John’, 35], [‘Jill’, 38], [‘Tim’, 27]]
+ 
+ 
+How would you convert this to a dictionary with names as the keys and ages as values?
+dict(names_ages)
+
+
+
+Consider a nested list of names and ages:
+ 
+Code Editor:  
+names_ages = [[‘John’, 35], [‘Jill’, 38], [‘Tim’, 27]]
+ 
+How would you access Tim’s age in this nested list?
+names_ages[2][1]
+
+
+____________________________________________________________________________________________________________________
+
+Complex Data Types in Python: Shallow & Deep Copies in Python
+
+Coping Strings
+
+	import copy- allows you to access other libraries in python
+	copy.copy() - copy is the module and copy() is the fucntion within the moddule
+
+Perfoming Shallow Copies of Lists
+
+	new_names = names - shallow copy of a list, both variable refer to the same list under the hood
+	copy.copy(list)- the copy function creates a deep copy of list
+	copy.copy(list) - created a deep copy of the outer list and a shallow copy  of the inner list
+	copy.copy() created a deep copy of outer list - changes to the outer list will be reflected in the copy
+
+Performing Shallow and Deep Copies of Tuples
+Creating Shallow Copies of Dictionaries
+
+Shallow and Deep Copies
+	Shallow copies are made when two variables point to the same location in memory
+	Updates made using one variable are reflected when accessing the data using the other variable
+	The same complex data types has just two names i.e the two variables
+
+	Deep copies are made when the same data is copies over to an entirely new memory location
+	Changes made to the deep copy are not reflected in the original memory
+	
+String Copy
+	Strings are immutable in python
+	Once created, strings cannot be updated
+	Using assignment operations with strings reference the same location in memory
+	But that location cannot be changed
+	Assigning a new string value to a variable just creates a new string
+
+List Copy
+	list_b = list_a
+	This created a shallow copy of a list
+	
+	list_b = list_a[:]
+	This creates a deep copy of a list
+	
+	list_b = copy.copy(list_a)
+	This creates a deep copy of the outer list but shallow copies of any nested complex data types
+	
+	list_b = copy.deepcopy(list_a)
+	This creates a deep copy of the outer list and all of the nested data types
+
+
+
+CONCLUSION:
+
+Consider a tuple as shown below:
+ 
+Code Editor:  
+tuple_a = (“John”, “Amy”, “Jules”, [“Jim”, “Ana”])
+ 
+What code would you run to create a deep copy of this tuple?
+deep_copy = copy.deepcopy(tuple_a)
+
+
+
+Consider the following bit of code:
+ 
+Code Editor:  
+dict_a = {“John”: 35, “Jim”: 22, “Jill”: 44}
+dict_copy = dict_a.copy()
+dict_copy[‘John’] = 40
+ 
+After executing this code, what is the value associated with John in dict_a?
+35
+
+
+
+
+
+Consider the following code:
+ 
+Code Editor:  
+old_str = “Hello”
+new_str = old_str
+new_str = “World”
+ 
+What will be the value stored in old_str after these lines of code are executed?
+“Hello”
+
+
+
+Consider the following bit of code:
+ 
+Code Editor:  
+dict_a = {“John”: 35, “Jim”: 22, “Jill”: 44}
+dict_copy = dict_a
+dict_copy[‘John’] = 40
+del dict_copy[‘John’]
+ 
+After executing this code, what is the value associated with John in dict_a?
+The key John does not exist in dict_a
+
+
+
+Consider the following code:
+ 
+Code Editor:  
+old_list = [“John”, “Amy”, “Jules”]
+new_list = old_list.copy()
+new_list.append(“Emily”)
+ 
+What will be the value stored in old_list after these lines of code are executed?
+[“John”, “Amy”, “Jules”]
+
+
+
+Consider the following code:
+ 
+Code Editor:  
+old_list = [“John”, “Amy”, “Jules”]
+new_list = old_list
+new_list.append(“Emily”)
+ 
+What will be the value stored in old_list after these lines of code are executed?
+[“John”, “Amy”, “Jules”, “Emily”]
+
+
+
+For a set in Python what is the difference between copy.copy() and the copy.deepcopy() method?
+No difference between the two because sets cannot hold mutable types like lists
+____________________________________________________________________________________________________________________
+
+Conditional Statements & Loops: If-else Control Structures in Python
+
+Python Conditions
+
+If statement with Primitive Datatypes
+If statement with Complex Datatypes
+
+If-else Elif Statements
+	Ternary Operator(conditional expressions)
+		evaluate something based on a condition being true or not
+	
+	elif is used to chain together if-else conditions
+		The condition are evaluated in order
+Nested if-else statements
+If-else statements with complex datatypes
+Type conversions with primitive datatypes
+	
+Type conversion with complex datatypes
+Type Conversion and Base Conversions
+Basic Program - Part 1
+Basic Program - Part 2
+Basic Program - Part 3
+Basic Program - Part 4
+
+
+
+Changing the order of Precedence
+10-4*2=2
+(10-4)*2=12
+
+Membership Operators
+colors=["pink", "blue", "red"]
+
+in
+	if"pink" in colors:
+		print("this color is present in the list")
+not in
+	if"purple" not in colors:
+		print("this color is  not present in the list")
+
+
+Convert a String to a List
+	my_string ="hello"
+	my_list = list(my_string)
+	print(my_list)
+	output: ['h', 'e', 'l', 'l', 'o']
+
+CONCLUSION:
+
+How is the body of an if-statement block syntactically represented in Python?
+Using additional indentation from the left relative to lines just before and after the block
+
+
+What do the values of d[0], d[1], d[2], d[3] evaluate to after the execution of the Python code below?
+new_list = [“Red”, “Blue”, “White”, “Green”]
+z = sorted(new_list)
+d = list(z)
+d[0], d[1], d[2], d[3] = d[3], d[2], d[1], d[0]
+
+“White”, “Red”, “Green”, “Blue”
+
+
+What would the output of the following code snippet be?
+num_one = 76
+num_two = 23.4
+print("datatype of num_one:", type(num_one))
+print("datatype of num_two:", type(num_two))
+
+datatype of num_one: <class 'int'> datatype of num_two: <class 'float'>
+
+
+
+What is the output of the code?
+a = [1, 'one', {2: 'two'}, 3]
+b = len(a)
+
+if b == 4:
+   print('Length of this list is 4')
+   if b == 5:
+       print('Length of this list is 5')
+   else:
+         print(b)
+
+Length of this list is 4 4
+
+
+What is the output for this code?
+if None:
+          print('Hi')
+
+Nothing is printed - no output
+
+
+
+What is the output of the code snippet below?
+value = 4 
+
+a = str(value)
+b = a + “^” + “2”
+c = a + “^” + “3”
+
+print(value, “+”, b, “+”, c)
+4 + 4 ^ 2 + 4 ^ 3
+
+
+
+What is the output for this code?
+if 'bin' in {'float': 1.2, 'bin': 0b010}:
+     print('a')
+     print('b')
+print('c')
+a b c
+
+
+Consider three variables with values as shown: 
+a = 5
+b = 10
+c = “five”
+What are the results of evaluating the conditional expression?
+a == c
+a >= b
+not(a < b and a > b)
+
+False, False, True
+
+
+Evaluate the expression provided. What does the following expression evaluate to?
+'1' + '2' if  '123'.isdigit() else '2'  + '3'
+
+‘12’
+
+
+What is the value of b in the snippet of python code?
+a = “six”
+b = (int(a), float(a))
+
+ValueError: invalid literal for int() with base 10: 'six'
+
+
+
+
+What is the output of the program below?
+var = "hi"
+if(type(var) == int):
+    print("Type of the variable is Integer")
+elif(type(var) == float):
+    print("Type of the variable is Float")
+elif(type(var) == complex):
+    print("Type of the variable is Complex")
+else:
+    print("Type of the variable is Unknown")
+
+Type of the variable is Unknown
+
+
+Consider the following snippet of Python code:
+a  =  “40.6 ”
+b  =  “60.4 ” 
+c  =  a + b
+
+What does c evaluate to?
+‘40.6 60.4’
+
+
+
+What is the output of the program below?
+total_classes = 100
+attended_classes = 67
+
+attendance = (attended_classes/total_classes)*100
+if attendance >= 75:
+    print ("You are eligible to appear for the test.")
+else:
+    print ("Sorry, you are ineligible to appear for the test.")
+
+Sorry, you are ineligible to appear for the test.
+
+
+
+____________________________________________________________________________________________________________________
+
+Functions in Python: Gaining a Deeper Understanding of Python Functions
+
+
+Global and local variable
+
+Global variable - defines and assigned values outside the scope of a function
+Local variable - defined and assigned values within the function body
+
+Local variable hide global variable
+	When they have the same name
+
+
+Argument Passing by Value
+Argument Passing by Reference
+	Modifying a complex data type
+		Modifies the actual data outside the function as well
+
+
+A python module is a file
+	containing python code for variable, fuctions and objects
+
+Function are first-class citizens
+	just like all other data types in python
+Function can be passed in as input arguments
+	just like all other data types in python
+
+fn(*args)- unpack the args tuple and pass the arguments in individually
+Function can be return values from functions- just like all other data types in python
+	
+
+lambda <input_arguments>: <expression> 
+	structure of a lambda definition
+
+Global Variable
+	defines outside the scope of a function
+	can be accessed from within a function
+	Provided the function does not have a local variable with the same name
+	Updates to global variable from within a function require the use of the "global" keyword
+	
+Local Variable
+	Variable that is defined inside the scope of a function i.e. the function body
+	Cannot be referenced outside the function
+	Hide global variable with the same name
+
+Passing by Reference
+	Basic types can only be reassigned within a function
+	Does not affect the variable outside the function
+	Complex types such as list, dictionaries are passed by reference
+	Reassigning complex types within a function does not affect the original data outside the function
+	Updating the content of a complex type within a function will update the content outside the function as 	well.
+	
+First Class Functions
+	Everything in Python is an object, including the functions
+	Functions, once defined, can be assigned to variables
+	The variable can be used to invoke the function
+	Functions can be passed in as input arguments to another function 
+	Function can be return values from a function i.e. one function can return another
+	Function can be elements in a list or tuple or values in a dictionary
+	
+Lambdas 
+	Python function that have no name
+	lambda<input arguments>:<expression>
+	The body of a lambda can only contain an expression
+	The result of the expression is the return value of the lambda
+	Lambdas can be assigned to variable and invoked
+	Lambdas can be defined and invoked in a single statement
+	Lambdas cab accept any number of arguments, can have defaults as well as variable length arguments
+	Lambdas are often used with the built-in filter() function in python
+
+
+
+CONCLUSION:
+
+Which of the following is possible using other data types but not functions?
+Updating function code programmatically
+
+
+Which of the following types of arguments are passed by reference to Python functions?
+Lists
+
+
+Which statement is false about functions as first class citizens in Python?
+Functions can have any name
+
+
+Which of the following are valid use cases for lambdas in Python?
+Defining a function on the fly
+Use and throw away functions which may not be reused
+To use with the built-in filter() function in Python
+
+
+Which of the following is true about functions as first class citizens in Python?
+Functions can be passed in as input arguments to other functions
+
+
+Which of the following statement(s) about global and local variables is/are true?
+Local variables with the same name hide global variables
+
+
+Which of the following is true of lambdas in Python?
+Lambdas can be defined and invoked right away in one statement
+The body of a lambda can only have expressions
+
+
+What are lambdas in Python?
+Functions with no name
+
+
+How do you access a new module’s functions from within Python?
+Import the module first using the “import” statement
+
+
+Which of the following statement(s) about passing arguments by value is/are true?
+Changes made to numeric variables inside a function are NOT reflected outside a function
+Changes made to string variables inside a function are NOT reflected outside a function
+
+
+Which of the following are modules which are available as a part of the Anaconda distribution of Python?
+os
+datetime
+random
+
+____________________________________________________________________________________________________________________
+
+Functions in Python: Working with Advanced Features of Python Functions
+
+Recursion - Invoking Functions
+	Infinite recursion - can cause you to run out memory and crash
+	
+		
+
+Recursion - Conditions
+	Terminating Conditions
+		Ensure that your recurve invocation is terminated based on some condition
+
+
+Recursion - Calls
+
+Generator Functions 
+	Iterator - any object that responds to the built-on next() function
+	Generator - a funtion that is a simply way of creating iterator over a sequence
+
+	Invoked a function - control passess into the function till return is encountered
+
+Generators for Infinite Sequences
+	how to do we know that it is a generator it is has yield function in the body
+
+Closures
+
+Closures and Local State
+	
+Decorators - Code Modification
+
+Decorators  - Customization
+
+Chaining Decorators
+
+
+
+
+
+
+Recursive Function
+	A function which invokes itself from within the function body
+	Python has a limit for how many times a function can call itself
+	This limit is configurable
+	Need to specify a terminating condition
+	Recursive function may or may not return values
+	
+Generator Functions
+	A function that is used to create an iterator, allowing iteration over the elements in a sequence
+	A memory efficient way to iterate over infinite sequences
+	A generator function has the "yield" command in the function body
+	Invoking the generator function does NOT execute the code of the function, it returns a generator object
+	Code is executed when next() is called on the generator objects
+	The generator remembers the state of the local variable across function invocations
+
+Closures
+	a function nested within another function
+	Can refer to local variable defined within the outer function
+	Has access to these local variable even whent the outer function is  no longer present in Python memory
+	Closure carry around local state along with the function definition
+	Closure are important concepts used to implement decorators
+	Decorators are a technique to add functionality to code without modifying the code itself
+
+
+CONCLUSION:
+
+What is the biggest advantage of the decorator in Python?
+Adds functionality to existing code without modifying the code itself
+
+
+Which of the following is true about a generator function?
+It returns a generator object
+It has a yield statement rather than a return statement
+
+
+Why would you prefer generator functions over regular lists for generating infinite sequences?
+Generators are more memory efficient while generating infinite sequences
+Infinite sequences cannot fit in a list because it won’t fit in Python memory
+
+
+Which of the following statement(s) is/are true about Python decorators?
+Can be constructed in such a way that they can be used with functions which have any number of arguments
+Are built using closure under the hood
+
+
+Consider the code below:
+
+
+@decorator_1
+@decorator_2
+def some_function():
+    print(“Hello”)
+
+Which of the following statement(s) is/are true?
+This is referred to as chaining decorators and is valid
+decorator_2 will be applied to the function first
+
+
+What is recursion?
+A function invoking itself within its function body
+
+
+What are closures?
+Nested functions which carry with them local state
+
+
+Your recursive function call can go on forever till Python terminates it. To fix this you need to:
+Specify a clear terminating condition for the recursive call
+
+
+Which of the following is true about local state and closures?
+The local state information associated with a closure remains even if the outer functions is no longer in Python memory
+
+
+Which of the following functions can be written recursively?
+Printing numbers in ascending order
+Find the Fibonacci series
+
+
+____________________________________________________________________________________________________________________
+
+Final Exam: Python Novice
+
+In Python, you have written the following code:
+
+
+fruits = ['Apple', 'Orange', 'Banana']
+fruits.sort(reverse=False)
+print(fruits)
+
+What is the expected output?
+['Apple', 'Banana', 'Orange']
+
+
+Which keyword is used to define a function in Python?
+def
+
+
+Which statement allows you to have a for loop without any content?
+pass
+
+
+Which of the following allows you to iterate over collections of elements? [Choose all that apply.]
+for loop
+while loop
+
+
+
+To display the output of the print command, which of the following conditions must be met?
+a = 60 
+b = 35 
+if a > b and b < a:
+    print("a is greater than b")
+
+Both the conditions in the if statement must be true
+
+
+How many iterations of the while loop will run in the given code?
+number = 20 
+while number < 25:
+    print(number)
+    break
+
+1
+
+
+You need to import path from the OS module. Which code segment should you use?
+from os import path
+
+
+
+You need to work with the math module in Python. Which statement should you use?
+import
+
+
+With which of the following are generators used? [Choose all that apply.]
+while loop
+for loop
+
+
+
+Evaluate the following code:
+
+
+print(int(390.8))
+What is the output?
+390
+
+
+What is the correct syntax for calling the test function in Python?
+test()
+
+
+Evaluate the following code: 
+number = 20 
+while number <= (25+5):
+    print(number)
+    number += 1
+
+What is the last number that is printed in the output?
+30
+
+
+What is the default location for Python that comes built-in Mac operating system?
+/usr/bin/python
+
+
+Evaluate the following code:
+num_1 = int(input("enter first number: "))
+num_2 = int(input("enter second number: "))
+Quotient = int(num_1 // num_2)
+Remainder = num_1 % num_2
+print("\nQuotient:" , Quotient, "Remainder:", Remainder)
+
+If the first number inputted is 13 and the second number is 4, what is the output?
+Quotient = 3 Remainder = 1
+
+
+Evaluate the following code:
+num = 0
+while num < 10:
+    num = num + 1 
+    if num % 2 == 0:
+        continue 
+    print (num) 
+
+What is the output?
+Option 1		Option 2
+2			1
+			3
+			5
+			7
+			9
+
+Option 3		Option 4
+2			0
+4			2
+6			4
+8			6
+10			8
+
+
+Option 2
+
+ 
+Evaluate the following code:
+empty_list = []
+print(empty_list)
+
+What is the output?
+[ ]
+
+
+
+Evaluate the following code:
+for x in range(10):
+    print(x)
+else:
+    print("Done")
+
+What is the last value that is printed?
+Done
+
+
+Which statements are true for global variables in Python? [Choose all that apply.]
+You can create local and global variables with the same name
+They are created outside a function
+Any function can use a global variable
+
+
+ _____________, which are blocks of code, can be passed in as input arguments just like all other data types in Python.
+Functions
+
+
+
+What is the expected output of the given code?
+r = subtract(100, 50)
+print(r)
+
+NameError
+
+
+Evaluate the following code:
+def hello(name):
+    print("Hello!",  name)
+    hello(name)
+
+hello("Ron")
+What is the result?
+Hello! Ron is generated in an infinite loop until an error is generated
+
+
+valuate the following code:
+names =  ["Jennifer", "Watson", "Billy", "Josh"]
+new_names = names 
+new_names[1] = 'James' 
+print(names)
+print(new_names)
+
+What is the output?
+Option 1
+
+
+['Jennifer', 'Watson', 'Billy', 'Josh']
+['Jennifer', 'James', 'Billy', 'Josh']
+
+Option 2
+
+
+['Jennifer', 'Watson', 'Billy', 'Josh']
+['Jennifer', 'Watson', 'Billy', 'Josh']
+
+Option 3
+
+
+['Jennifer', 'James', 'Billy', 'Josh']
+['Jennifer', 'Watson', 'Billy', 'Josh']
+
+Option 4
+
+
+['Jennifer', 'James', 'Billy', 'Josh']
+['Jennifer', 'James', 'Billy', 'Josh']
+
+
+Option 4
+
+
+
+Which statements are true for variables in Python? [Choose all that apply.]
+A variable is created automatically when a value is assigned
+Variable types can always be changed even after they are declared
+
+
+Complete the code by filling in the blank:
+num = 0
+while num in __________(0, 10):
+    print(num)
+    num = num + 1
+
+range
+
+
+In Python, which of the following symbol is used for equality?
+==
+
+
+Evaluate the following code:
+for letter in "python":
+    if letter == "o":
+        break
+    print(letter)
+
+Which of the following will be printed as the output?
+Option 1		Option 2
+o			p
+			y
+			t
+			h
+			o
+
+Option 3		Option 4			
+p			n
+y
+t
+h
+
+Option 3
+
+
+
+Evaluate the following code:
+my_range = range(5)
+print(my_range)
+
+What is the output?
+range(0, 5)
+
+
+
+Evaluate the following code:
+set_1 = {'c++', 'php', 'java', 'python'}
+set_2 = set_1 
+set_2.add('sql') 
+print(set_1)
+print(set_2)
+
+Which of the following would be valid output? [Choose all that apply.]
+Option 1
+{'c++', 'php', 'java', 'python', 'sql'}
+{'c++', 'php', 'java', 'python', 'sql'}
+
+Option 2
+{'sql', 'c++', 'php', 'java', 'python'}
+{'sql', 'c++', 'php', 'java', 'python'}
+
+Option 3
+{'c++', 'php', 'java', 'python'}
+{'c++', 'php', 'java', 'python', 'sql'}
+
+Option 4
+{'c++', 'php', 'java', 'python'}
+{'c++', 'php', 'java', 'python'}
+
+
+Option 2
+Option 1
+
+
+
+On your Windows system, you have installed Python and Anaconda. On the command prompt, you want to be within the Conda Package Manager.
+Which command should you use?
+activate base
+
+
+Which statement helps you make decisions and take appropriate actions based on those decisions?
+if
+
+
+Evaluate the following code:
+salary = 1000
+expense = 300
+
+def my_savings(a, b):
+    print("My total savings: ", salary - expense)
+
+Which of the following are represented by salary and expense?
+Global variables
+
+
+Anaconda is the open-source distribution for which programming languages? [Choose all that apply.]
+Python
+R
+
+
+Evaluate the following code:
+fruit_qty = {}
+fruit_qty['Orange'] = 80
+fruit_qty['Apple'] = 20
+
+Which code segment will allow you to retrieve the value of Apple?
+fruit_qty['Apple']
+
+
+Which of the following are containers that hold values that can be updated?
+Variables
+
+
+You have written the following function:
+def introduction(name): 
+    print("Hello, my name is", name)
+    print("I live and work in Dallas")
+
+Which code segment will successfully call this function?
+introduction("James")
+
+
+
+Evaluate the following code:
+i = 1
+while i < 5:
+    print(i)
+
+What is the result?
+Loop will continue forever
+
+
+Which of the following are the re-usable bits of codes?
+Functions
+
+
+Evaluate the following code:
+cars_list = ['Toyota Camry',  'Honda Accord', 'Honda Civic', 'Toyota Corolla']
+cars_list[4] = 'Hyundai Elantra'
+
+What is the result?
+An error is generated
+
+
+
+Evaluate the following code:  
+square = (100, 100)
+print(square[0]) = 250
+print(square[1]) = 250
+
+What is the output of this code?
+An error is generated
+
+
+If you have the following code in Python:
+x = True
+y = False
+print('not x is:', not x)
+
+What is the output?
+not x is: False
+
+
+Which of the following statements are true for a set? [Choose all that apply.]
+Sets do not return items in a specific order
+A set contains unique items
+Like dictionaries, sets also use braces
+
+
+
+Evaluate the following code:
+car = {'color': 'red', 'speed': 250}
+print(car)
+car['height'] = 5
+car['width'] = 5
+print(car)
+
+What is the correct output of this code?
+Option 1
+{'color': 'red', 'speed': 250}
+
+Option 2
+{'color': 'red', 'speed': 250, 'height': 5, 'width': 5}
+
+Option 3
+{'color': 'red', 'speed': 250}
+{'color': 'red', 'speed': 250, 'height': 5, 'width': 5}
+
+Option 4
+An error is generated
+
+
+Option 3
+
+
+
+Which type of copy is used by the following code?
+names =  ["Jennifer", "Watson", "Billy", "Josh"]
+new_names = names.copy()
+
+Shallow copy
+
+
+
+You run the Jupyter Notebook server on your local system. When you need to open it in the Web browser, what is the default port that it uses?
+8888
+
+
+Which data types can be passed as arguments to a function? [Choose all that apply.]
+Dictionary
+Number
+List
+String
+
+
+
+Evaluate the following code:
+old_str = "Python"
+new_str = old_str
+print(new_str[2])
+
+What is the output?
+t
+
+
+
+Evaluate the following code:
+def test():
+print("Test Message")
+
+Identify the issue with the code.
+The code is not indented properly
+
+
+
+You have the following list:
+
+
+list = ["1", "2", "3", "4", "5", "6", "7"]
+print(list[1:5])
+
+Which values do the print command return?
+2, 3, 4, 5
+
+
+
+You have a list that you want to slice through. To be able to do this, you write the following code:
+students = ['Nicole', 'Emma', 'Louis', 'Etalie', 'Jordan']
+print("Toppers in the class:")
+for student in students[:3]:
+    print(student)
+
+When you execute this code, what is the output of this code
+Option 1
+Toppers in the class:
+Nicole
+Emma
+Louis
+
+Option 2
+Toppers in the class:
+Emma
+Louis
+
+Option 3
+Toppers in the class:
+Louis
+Etalie
+Jordan
+
+Option 4
+Toppers in the class:
+Emma
+Louis
+Etalie
+
+
+Option 1
+
+
+
+Evaluate the following code:
+def documented_function():
+    """ This function does something that is well documented """
+    print("Hello") 
+documented_function()
+
+What is the output?
+Hello
+
+
+Evaluate the following code:
+numbers = [4, 6, 9, 10]
+for num in numbers:
+    quotient = num // 2
+    print(quotient, "is the quotient of" , num, "/2")
+
+What is the value of quotient in the first iteration of the for loop?
+2
+
+
+Which type of loop allows you to process the elements in a sequence, one at a time?
+for
+
+
+
+Which statements are true for iterators in Python? [Choose all that apply.]
+Strings are also known as iterable objects
+It is an object that can traverse through the defined values
+It is an object that responds to the built-in next() function
+
+
+
+
+Evaluate the following code:
+num = 50
+num = num - 20 if num > 20 else num + 20
+print(num)
+
+What is the output?
+30
+
+
+
+What is the output of the following code?
+def hello (name):
+    print("Hello!",  name)
+
+greet = hello
+greet("Tom")
+
+Hello! Tom
+
+
+
+Which statement correctly defines function recursion?
+A function can call itself
+
+
+
+Identify the correct output of the following code:
+test = ["1", "2", "3"]
+for x in test:
+    if x == "2":
+        continue
+    print(x)
+
+Option 1
+1
+2
+
+Option 2
+2
+3
+
+Option 3
+1
+3
+
+Option 4
+1
+2
+3
+
+Option 3
+
+
+
+Evaluate the following code:
+bike_details = {"bike_owner:" : "Janes Smith", 
+                "bike_model": "Ducati Monster 1200",
+                "bike_price": 28140,
+                "engine_displacement": 11}
+
+print(len(bike_details))
+
+What is the output?
+4
+
+
+Evaluate the following code:
+for country in "Germany","India","Israel":
+    print(country)
+
+What is the expected result?
+Each country name will be displayed on a new line
+
+
+
+Evaluate the following code:
+cars_list = ["Toyota Camry", "Honda Accord", "Honda Civic", "Toyota Corolla"] 
+cars_list_temp = cars_list[0] 
+cars_list[0] = cars_list[2] 
+cars_list[2] = cars_list_temp 
+print(cars_list)
+
+What is the output?
+['Honda Civic', 'Honda Accord', 'Toyota Camry', 'Toyota Corolla']
+
+
+____________________________________________________________________________________________________________________
+
+Advanced Python Topics: File Operations in Python
+
+Opening a File in Python
+The different Read Functions
+Writing to files in Python
+The r+ and a+ Modes
+Reading JSON Data in Python
+Transforming Python Object into JSON
+Parsing Different Forms of CSV files
+Transforming Python object into CSV
+CSB dialects
+
+CONCLUSION:
+
+Which of these classes can be used to load the contents of a CSV file into a Python dictionary?
+csv.DictReader
+
+
+Which of these file opening modes will open a file for reading and writing with the “cursor” pointing to the end of the file?
+a+
+
+
+Given a Python dictionary my_dict, which of these functions will transform the contents into a JSON string with the keys sorted alphabetically?
+json.dumps(my_dict, sort_keys=True)
+
+
+Which file object function can be used to move the “cursor” to a specific file location?
+seek
+
+
+Which TWO of the following statements about the csv.reader object are true?
+It can read data with a variety of value delimiters
+The default value separator is a comma
+
+
+Which of these file object functions can be invoked to check whether a file is writable?
+writable()
+
+
+Which of these functions in the JSON module takes in a file object and can be used to load JSON data in a text file into a Python object?
+load
+
+Which function in the CSV module can be used to create a new dialect?
+csv.register_dialect()
+
+
+What is the default mode in which a file is opened when invoking the open() function?
+read
+
+
+____________________________________________________________________________________________________________________
+
+Advanced Python Topics: Exceptions & Command Line Arguments
+
+
+The try and except Blocks
+Defining Custom Exeption Handlers
+The Exception Hierarchy
+Chaining except Blocks
+Going 
+
+
+
+
+
+Development Approach
+Iterative Waterfall
+
+Client Development
+	Tech Study
+	Requirements Analysis
+	Software Composition
+	Coding 
+	Testing with Test  Specs
+
+
+Server Development
+	Tech Study
+	Requirements Analysis
+	Software Composition
+	Coding 
+	Testing with Test  Specs
+
+Integration
+	Tech Study
+	Requirements Analysis
+	Software Composition
+	Coding 
+	Testing with Test  Specs
+
+Demo
+
+
+
+Software Architecture
+is a set of structure needed to reason about a software system and the discipline of creating structures and systems. Each Structure comprises software architecture
+
+
+asta
+Tues - 130 - 300 pm
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

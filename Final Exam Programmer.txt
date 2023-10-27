@@ -1,0 +1,532 @@
+
+
+
+
+Final Exam: Programmer
+
+
+You are using a common database interface with two classes that need to perform logic for talking to a SQL database and an Oracle database, respectively. You, however, want the client can use that interface without knowing the type of database is being used. Which of the concept of object-oriented programming are you practicing in this scenario?
+-Polymorphism
+
+
+In Behavioral patterns, which of the following encapsulates an algorithm in a class?
+-Strategy
+
+
+Which of the following reasons can cause technical debt? [Choose all that apply.]
+-Poor requirement
+-Lack of documentation
+-Inadequate testing
+-Tight deadline
+
+
+
+Without using microservices in a traditional-styled application, which of the following problems are likely to happen? [Choose all that apply.]
+-A small change may require a major refactoring
+-Making a change in one spot can adversely affect another part of the application
+-Fixing one error can introduce more errors
+
+
+Which of the following are the characteristics of the stateless APIs? [Choose all that apply.]
+-Responses are independent
+-It is the fundamental aspect of the REST API
+-Information is stored locally
+
+
+
+Which of the following examples can be considered as the common use of Application Programming Interfaces (API)? [Choose all that apply.]
+-Performing a payment transaction on a mobile app
+-Retrieving the weather information on a mobile
+-Performing a user login on a server through a mobile app
+
+
+If you are using decoupled microservices with a cloud application and if one microservice fails, what is likely to be the outcome?
+-Other microservices will continue to work
+
+
+
+Which of the following type of testing should you perform to test the contracts of the individual microservices?
+-Acceptance testing
+
+
+Which of the following statements define the principle of SOLID Design? [Choose all that apply.]
+-Interface segregation principle states that a class should never be forced to implement an interface it does not    use
+-Single responsibility principle states that a class should have only one job
+-Liskov substitution principle states that a derived class should be substitutable for base classes
+
+
+
+
+When using the reusable code patterns, which of the following statements can be considered as concerns? [Choose all that apply.]
+-There can be a greater level of dependencies on the code libraries
+-Upgrading third-party libraries may require rework
+-Code libraries may not be fully tested
+-Insecure code can cause issues
+
+
+
+You write an automated test before any production code is written. What is likely to be the outcome when the test is run?
+-The automated test fails without the code
+
+
+
+Which of the following is the first step in the Behavior Driven Development (BDD)? [Choose all that apply.]
+-Select a small unit of work
+
+
+
+You have an API that is used by various customers. You are releasing a new API that provides important enhancements. You have ensured that the new version of the API will not break the customer application.
+Which type of version of the API are you releasing?
+-Minor
+
+
+
+Which of the following reasons are valid for using the mock frameworks? [Choose all that apply.]
+-They are useful for creating fake objects that have a state that is difficult to create
+-They are used as substitutes for real objects that return non-deterministic results
+
+
+
+You are creating a SOAP API in Visual Studio 2019. You have defined the contract on line 11. Once you define this, what is likely to happen if you change the contract?
+
+
+01 Directives
+07
+08 namespace SOAP_API
+09 {
+10
+11 [ServiceContract]
+12 public interface IRectangleService
+13 {
+14 #region Methods
+15
+16 [OperationContract]
+17 double GetArea(doble width, double height);
+18
+19 [OperationContract]
+20 double GetPerimeter(double width, double height);
+21
+22 #endregion
+23 }
+24 }
+
+-The API and callers will have to be recompiled
+
+
+
+
+When creating the unit tests, which of the following best practices should you follow? [Choose all that apply.]
+-Unit tests must be visible as soon as they are available
+-Unit tests must return the same result every time they are run.
+
+
+
+In the context of access control and authorization, which of the following security practices should you implement with the REST APIs? [Choose all that apply.]
+-Use the separation of privileges principle
+-Use complete mediation
+-Use fail-safe defaults
+-Use the least privileges model
+
+
+
+Which type of testing is offered by the Katalon API testing tool? [Choose all that apply.]
+-Regression testing
+-Error-detection testing
+-Load testing
+-Penetration testing
+
+
+
+Which type of Test-driven Development (TDD) design patterns help to avoid duplication and separate concepts?
+-Structural design patterns
+
+
+
+You need to access a database using multiple connections, which you know will take many system resources. You want to share a connection to the database even though you will be performing different operations.
+
+
+Which of the following design pattern should you use in this case?
+-Singleton
+
+
+
+
+Which of the following statements describe the importance of an Application Programming Interface (API)? [Choose all that apply.]
+-Allows the use of existing code
+-Provide an interface for the clients
+-Provides integration with other systems
+
+
+
+Which of the following statement describe a stub?
+-Are fake methods that can replace or override an existing method
+
+
+
+
+In SOAP, which of the following transfer protocols can be used? [Choose all that apply.]
+-SMTP
+-HTTP
+-FTP
+-TCP
+
+
+
+Which of the following statements are the goals of component-based development? [Choose all that apply.]
+-Using premade components saves development time and costs
+-High-quality component improve the overall quality of your software
+-Testing components increases fault detection in the system
+
+
+
+Which of the following statements are true for code refactoring? [Choose all that apply.]
+-It can help you clean your code
+-It makes your code more efficient and maintainable
+-It improves time management
+
+
+
+
+In the given code, as the SOLID Design principle, which of the following principle is violated?
+
+
+12
+13 private readonly double _radius;
+14 private readonly string _type;
+15 private readonly double _width;
+16
+17 #endregion
+18
+19 #region Initializers & Finalizers
+20
+21 public ShapeNotOpenClosed(double width, double radius, string type)
+22 {
+23 _width = width;
+24 _radius = radius;
+25 _type = type;
+26 }
+27
+28 #endregion
+29
+30 #region Methods
+31
+32 public double GetArea()
+33 {
+34 switch (_type)
+35 {
+36 case “square”:
+37 return Math.Pow(_width, 2);
+38 case “circle”:
+39 return Math.PI * Math.Pow(_radius, 2);
+40 }
+41
+42 return 0;
+43 }
+
+-Open closed principle
+
+
+
+
+You need to create a visual of a use case. Which of the following programming language can be used for this purpose?
+-UML
+
+
+
+Which of the following characteristics belong to the Test Driven Development (TDD)?
+-Tests small pieces of functionality in isolation
+
+
+
+Which type of Creational Design pattern lets you create instances of related objects without specifying their concrete classes?
+-Abstract Factory
+
+
+
+
+In the given code, as the SOLID Design principle, which of the following principle is violated?
+
+
+08 namespace Single_Responsibility_Principle
+09 {
+10 public class WidgetRepository
+11 {
+12 #region Fields
+13
+14 private readonly ICollection<Widget> widgets;
+15
+16 #endregion
+17
+18 #region Methods
+19
+20 public void AddWidget(Widget widget)
+21 {
+22 _widgets.Add(widget);
+23 }
+24
+25 public void ChangeWidgetName(Widget widget, string newname)
+26 {
+27 widget.Name = newname;
+28 }
+29
+30 public Widget CreateWidget(string name) => new Widget {Name = name};
+31
+32 public Widget GetWidgetByName(string name)
+33 {
+34 return _widgets.FirstOrDefault(x => x.Name == name);
+35 }
+36
+37 public void RemoveWidget(Widget widget)
+38 {
+39 _widgets.Remove(widget);
+40 }
+
+-Single responsibility principle
+
+
+
+
+Which of the following type of testing is not impacted by code refactoring?
+-Unit testing
+
+
+
+Which of the software refactoring method is most useful when you have a large amount of refactoring to do?
+-Abstraction
+
+
+
+In the Test First development process, which of the following step should be performed first?
+-The developer writes the tests
+
+
+
+
+
+You have the following code in Spring Boot:
+
+
+15 <description>Demo project for Spring Boot</description>
+16
+17 <properties>
+18 <java.version>1.8</java.version>
+19 </properties>
+20
+21 <dependencies>
+22 <dependency>
+23 <groupId>org.springframework.boot</groupId>
+24 <artifactId>spring-boot-starter-web-services</artifactId>
+25 </dependency>
+26
+27 <dependency>
+28 <groupId>org.springframework.boot</groupId>
+29 <artifactId>spring-boot-starter-data-jpa</artifactId>
+30 </dependency>
+31
+32 <dependency>
+33 <groupId>com.h2database</groupId>
+34 <artifactId>h2</artifactId>
+35 <scope>runtime</scope>
+36 </dependency>
+37
+38 <dependency>
+39 <groupId>org.springframework.boot</groupId>
+40 <artifactId>spring-boot-starter-test</artifactId>
+41 <scope>test</scope>
+42 </dependency>
+43 </dependencies>
+44
+45 <build>
+
+Which of the following layer is being worked up in Spring Boot?
+-Application layer
+
+
+
+Which of the following statement describes the business use cases
+-Describe the steps that need to be taken to see positive results
+
+
+
+
+
+Consider a scenario in which you have created several conditions that check the validity of each parameter in a given piece of code. Using several conditions has added complexity to the code.
+
+
+Which of the following method should you use to remove the complexity?
+-Consolidate the conditions into a single expression
+
+
+
+Which of the following application is likely to use the offset pagination?
+-SQL database
+
+
+Which of the following two layers are connected with a database API?
+-Application and data layers
+
+
+
+Which layers are included in the multi-tier software architecture? [Choose all that apply.]
+-Application layer
+-Presentation layer
+-Data layer
+
+
+
+In the Test Last Development (TLD), at which stage of the software development are the tests written?
+-After complete code is written
+
+
+
+Which of the following are the features of the Acceptance Test-driven Development (ATDD)? [Choose all that apply.]
+-It focuses on capturing system requirements
+-Tests are written in plain and simple English
+
+
+
+When creating the user stories, which of the following best practices must be considered? [Choose all that apply.]
+-The users who will use the product must be identified before writing the user stories
+-Written user stories should be clear and precise and should be written in an active voice
+-Personas should be created to represent groups of users with defined characteristic and behavior
+-User stories need to be created collaboratively with the product owner and the team
+
+
+
+Which of the following statements describe the importance of code refactoring? [Choose all that apply.]
+-Improved maintenance
+-Increased reusability
+
+
+
+
+Which of the following is the first step in the Test Drive Development (ADD) API Design process?
+-Tests are written based on scenarios and required functionality
+
+
+
+Of the given choices, which of the following uses the batch operations rather than bulk operations on its resources?
+-Facebook
+
+
+
+In the test-driven development, at which stage of the software development are the tests written?
+-Before the code is written
+
+
+
+
+Which of the following tool can you use for the Behavior Driven Development?
+-Cucumber
+
+
+
+When working with the user stories, which of the following considerations should be kept in mind? [Choose all that apply.]
+-Each user story must be considered as a step in a larger process
+-Feedback from the users can capture the problem in their words
+-User stories that take weeks or months should be clubbed into an epic
+
+
+
+In the API Lifecycle Management process, after you plan the API business strategy, which of the following step should you perform next?
+-Design and develop the API services
+
+
+
+When using the reusable code, which of the following best practices should you follow? [Choose all that apply.]
+-Code should be written with high cohesion
+-Code should be modular in design
+-Unit tests should be created for each class and method
+
+
+
+Which of the following statements describe the common issues with the Application Programming Interface (API)? [Choose all that apply.]
+-Calling an API method using HTTP instead of HTTPS
+-Providing incorrect authentication credentials
+-Passing incorrect content type or header
+-Returning invalid content types when an error occurs
+
+
+
+Which of the following considerations should be used when using Test Driven Development (TDD) for microservices? [Choose all that apply.]
+-Creating libraries will be time-consuming and resource extensive
+-The environment should be ready to use TDD
+-Testing will be more efficient with the reusable code
+-Tested libraries can be used as a benchmark when creating new microservices
+
+
+
+In which of the following situations should you avoid code refactoring? [Choose all that apply.]
+-When there is a time constraint in developing an application
+-When you are revamping or re-engineering an application
+
+
+
+In an API, which of the following is the recipient of the resources sent by the endpoint?
+-Web browser
+
+
+
+Which of the following are back-end REST API development frameworks? [Choose all that apply.]
+-Express.js
+-Laravel
+-Spring Boot
+-Django
+
+
+
+In the user story mapping process, you have captured the customer’s problem that needs to be solved. What should be your next step to proceed in the user story mapping process?
+-Identify the audience for the product
+
+
+
+In an API, you are using the static string method for authentication. Which type of attacks can take place with this method? [Choose all that apply.]
+-Eavesdropping
+-Man-in-the-middle (MITM)
+
+
+
+
+In Visual Studio Code, you have executed the following command in the terminal window:
+
+
+dotnet new webapi -o weatherapi
+
+
+A folder named weatherapi is created with several files. One of the files contains the following code:
+
+
+09
+10 namespace weatherapi
+11 {
+12 public class Program
+13 {
+14 public static void Main(string[] args)
+15 {
+16 CreateHostBuilder(args).Build().Run();
+17 }
+18
+19 public static IHostBuilder CreateHostBuilder(string[] args) =>
+20 Host.CreateDefaultBuilder(args)
+21 .ConfigureWebHostDefaults(webBuilder =>
+22 {
+23 webBuilder.UseStartup<Startup>();
+24 });
+25 }
+26 }
+27
+
+Which of the file that serves as the main entry point into the application?
+-Program.cs
+
+
+
+
+Which type of Structural design pattern separates an object's interface from its implementation?
+-Bridge
+
+
+
+In the context of the security, which of the following advantages does SOAP have over the REST APIs? [Choose all that apply.]
+-It has WS-Security along with Secure Socket Layer (SSL)
+-It has built-in error handling

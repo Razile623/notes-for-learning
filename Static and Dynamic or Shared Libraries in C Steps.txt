@@ -1,0 +1,187 @@
+CREATING STATIC LIBRARY IN C with examples
+
+Step 1:
+	Write Library Source Code:
+	Create the source files containing the implementation of your library functions.
+	E.g
+	math_functions.c:
+
+	// math_functions.c
+
+	#include "math_functions.h" // At first when you create this it will turn red or error since the header 					file is not yet created
+
+	int add(int a, int b) {
+  	  return a + b;
+	}
+
+	int subtract(int a, int b) {
+   	 return a - b;
+	}
+	
+	Note: We don't need to include the "main" function in 	the "math_functions.c"
+
+Step 2:
+	Write Header File:
+	Create a header file containing function prototypes.
+	E.g
+	math_functions.h:
+
+	#ifndef MATH_FUNCTIONS_H
+	#define MATH_FUNCTIONS_H
+
+	int add(int a, int b);
+	int subtract(int a, int b);
+
+	#endif
+
+Step 3:
+	Compile Source Code:
+	Compile the source file into an object file.
+	
+	"gcc -c math_functions.c -o math_functions.o"
+
+Step 4:
+	Create Static Library:
+	Use the 'ar' command to create a static library (e.g., libmath_functions.a) from the compiled object file.
+
+	"ar rcs libmath_functions.a math_functions.o"
+
+Step 5:
+	Create Test Program:
+	Create a test program that uses the static library.
+	main.c:
+
+	E.g
+	#include <stdio.h>
+	#include "math_functions.h"
+
+	int main() {
+  	  int x = 10, y = 5;
+  	  printf("Addition: %d\n", add(x, y));
+  	  printf("Subtraction: %d\n", subtract(x, y));
+  	  return 0;
+	}
+
+Step 6:
+	Compile and Link Test Program:
+	Compile and link the test program with the static library.
+
+	"gcc main.c -o myprogram -L. -lmath_functions -I."
+
+Step 7: 
+	Run the Test Program:
+	Execute your test program to see the output.
+
+	"./myprogram"
+
+
+
+******************************************************************************************************************
+
+CREATING DYNAMIC /SHARED LIBRARY IN C with examples
+	
+	Creating a dynamic/shared library in C involves similar steps as creating a static library, with some 	differences in the compilation and linking process. Here's a step-by-step guide to help you create a 	simple dynamic/shared library that contains basic math functions:
+
+Step 1:
+	Write Library Source Code:
+	Create the source files containing the implementation of your library functions.
+	E.g
+	math_functions.c:
+
+	#include "math_functions.h"
+
+	int add(int a, int b) {
+   	 return a + b;
+	}
+
+	int subtract(int a, int b) {
+   	 return a - b;
+	}
+
+Step 2:
+	Write Header File:
+	Create a header file containing function prototypes.
+
+	math_functions.h:
+
+	#ifndef MATH_FUNCTIONS_H
+	#define MATH_FUNCTIONS_H
+
+	int add(int a, int b);
+	int subtract(int a, int b);
+
+	#endif
+
+Step 3:
+	Compile and Create Shared Library:
+	Compile the source file into a shared library (e.g., libmath_functions.so for Unix-like systems or 	libmath_functions.dll for Windows).
+
+	For Unix-like systems (Linux):
+	"gcc -shared -o libmath_functions.so -fPIC math_functions.c"
+
+	For Windows (MinGW compiler):
+	"gcc -shared -o libmath_functions.dll math_functions.c"
+
+Step 4:
+	Create Test Program:
+	Create a test program that uses the shared library.
+
+	main.c:
+	
+	#include <stdio.h>
+	#include "math_functions.h"
+
+	int main() {
+   	 int x = 10, y = 5;
+   	 printf("Addition: %d\n", add(x, y));
+   	 printf("Subtraction: %d\n", subtract(x, y));
+   	 return 0;
+	}
+
+Step 5:
+	Compile and Link Test Program:
+	Compile and link the test program with the shared library.
+
+	"gcc main.c -o myprogram -L. -lmath_functions -I."
+
+	-L. specifies the library search path (current directory).
+	-lmath_functions links against your shared library (libmath_functions.so or libmath_functions.dll).
+	-I. adds the current directory to the include path to find the header file (math_functions.h).
+
+Step 6:
+	Run the Test Program:
+	Execute the compiled program to see the output.
+
+	"./myprogram"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
